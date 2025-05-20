@@ -1,5 +1,15 @@
-[gd_scene format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=3 format=3 uid="uid://bboey1mf24oe4"]
+
+[ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="AudioStream" uid="uid://eu3k2kfklkjg" path="res://breaking-bad-main-title-theme-(extended)-made-with-Voicemod.mp3" id="2_bo1nx"]
 
 [node name="Main" type="Node3D"]
 
 [node name="Game" type="Node" parent="."]
+
+[node name="Node3D" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bo1nx")
+volume_db = -18.769
+autoplay = true
