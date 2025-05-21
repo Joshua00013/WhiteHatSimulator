@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ltxclu2fv57h"]
+
+[ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/interactables/computer.tscn" id="1_wt3y0"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="Computer" parent="." instance=ExtResource("1_wt3y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.915415, 1.37058, -0.267406)
+
+[node name="Computer2" parent="." instance=ExtResource("1_wt3y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849313, 1.37058, -2.98194)
+
+[node name="Computer3" parent="." instance=ExtResource("1_wt3y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849313, 1.37058, -5.63442)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90414, -0.411133, 0.0532227)
+use_collision = true
+size = Vector3(26, 0.177734, 33)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03351, 0.177734, -2.79872)
+use_collision = true
+size = Vector3(2, 1, 9.01541)

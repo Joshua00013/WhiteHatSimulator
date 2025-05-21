@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx0pda45jmvnh"]
+
+[ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
+[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="1_uvt2j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd3qi"]
+albedo_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmuk0"]
+albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbmqn"]
+albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al4kr"]
+albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aje88"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm1dk"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_aje88")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mrdty"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_bm1dk")
+size = Vector2(1.4, 0.8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rmuk0"]
+data = PackedVector3Array(0.7, -0.4, 0, -0.7, -0.4, 0, 0.7, 0.4, 0, -0.7, -0.4, 0, -0.7, 0.4, 0, 0.7, 0.4, 0)
+
+[node name="Computer" type="Node3D"]
+script = ExtResource("1_jd3qi")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(0.1, 0.9, 1.5)
+material = SubResource("StandardMaterial3D_jd3qi")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0641646, 0, 0)
+operation = 2
+size = Vector3(0.125, 0.8, 1.4)
+material = SubResource("StandardMaterial3D_rmuk0")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108549, -0.252428, 0)
+radius = 0.059
+height = 0.817355
+material = SubResource("StandardMaterial3D_rbmqn")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0765058, -0.677844, 0)
+size = Vector3(0.425, 0.03, 0.69)
+material = SubResource("StandardMaterial3D_al4kr")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/TabContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_uvt2j")
+metadata/_tab_index = 0
+
+[node name="TextureRect2" type="TextureRect" parent="SubViewport/Control/TabContainer"]
+modulate = Color(0.347817, 0.347817, 0.347817, 1)
+layout_mode = 2
+texture = ExtResource("1_uvt2j")
+metadata/_tab_index = 1
+
+[node name="TextureRect3" type="TextureRect" parent="SubViewport/Control/TabContainer"]
+visible = false
+modulate = Color(0.765126, 0.565924, 0.833674, 1)
+layout_mode = 2
+texture = ExtResource("1_uvt2j")
+metadata/_tab_index = 2
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0196455, 0, 0)
+mesh = SubResource("QuadMesh_mrdty")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_rmuk0")
