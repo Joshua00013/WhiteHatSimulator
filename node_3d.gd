@@ -6,10 +6,17 @@ const JUMP_VELOCITY = 4.5
 var sensitivity := 5
 @onready var camera_3d = $Camera3D
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * sensitivity
-		camera_3d.rotation_degrees.x - event.relative.y
+		rotation_degrees.y -= event.relative.x * 0.2
+		camera_3d.rotation_degrees.x -= event.relative.y * 0.2
+		camera_3d.rotation_degrees.x = clamp(
+			camera_3d.rotation_degrees.x, -60, 60.0
+		)
+	elif event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
