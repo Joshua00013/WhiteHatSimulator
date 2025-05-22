@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 10
 @export var max_angle = 90
 @export var accel = 16
 @export var crouch_height = 1.0 #Crouch height for adjusting character size
-@export var crouch_transition = 8.0 #Crouch movement smoothing for lerping
+@export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
 
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
@@ -36,9 +36,12 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	elif Input.is_action_just_pressed("crouch"):
-		GameManager.is_crouching = !GameManager.is_crouching
-		crouch(GameManager.is_crouching)
+	elif Input.is_action_pressed("crouch"):
+		GameManager.is_crouching = false
+		crouch(delta,GameManager.is_crouching)
+	else:
+		GameManager.is_crouching = true
+		crouch(delta,GameManager.is_crouching)
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -56,8 +59,8 @@ func _physics_process(delta):
 	head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
 	rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
 	
-func crouch(inactive = false):
+func crouch(delta : float, inactive = false):
 	var target_height : float = crouch_height if inactive == false else stand_height
-	collision_shape.shape.height = target_height
-	collision_shape.position.y = target_height * 0.5 # Set the position of the collision shape to the half of the target height
-	head.position.y = target_height # Set the position of the head
+	collision_shape.shape.height =lerp(collision_shape.shape.height, target_height, crouch_transition*delta)
+	collision_shape.position.y = lerp(collision_shape.position.y,target_height * 0.5,crouch_transition*delta) # Set the position of the collision shape to the half of the target height
+	head.position.y = lerp(head.position.y, target_height, crouch_transition * delta) # Set the position of the head
