@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://0iek6ri88gkb"]
 
-[ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_panel_3d.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_in_3d/gui_panel_3d.tscn" id="1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1lgdv"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,7 +33,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uw4n0"]
 _data = {
-"Move_camera": SubResource("1")
+&"Move_camera": SubResource("1")
 }
 
 [sub_resource type="PlaneMesh" id="2"]
@@ -55,6 +55,7 @@ shadow_enabled = true
 environment = SubResource("Environment_niyks")
 
 [node name="GUIPanel3D" parent="." instance=ExtResource("1")]
+script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 3)
@@ -69,7 +70,7 @@ omni_range = 10.0
 
 [node name="Camera_Move" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uw4n0")
+&"": SubResource("AnimationLibrary_uw4n0")
 }
 autoplay = "Move_camera"
 

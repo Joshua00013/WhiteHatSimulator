@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=8 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://ltxclu2fv57h" path="res://Scenes/maps/environment1.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/interactables/computer.tscn" id="3_8gbba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -33,3 +34,6 @@ shape = SubResource("CapsuleShape3D_bo1nx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60091, -0.238458)
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
+
+[node name="Computer" parent="." instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82364, 0.530149, 6.21647)
