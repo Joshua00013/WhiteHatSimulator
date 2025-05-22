@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://4d6admfoa0q5"]
+
+[node name="InteractRay" type="RayCast3D"]
+target_position = Vector3(0, 0, -4)

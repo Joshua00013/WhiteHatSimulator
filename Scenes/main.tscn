@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ltxclu2fv57h" path="res://Scenes/maps/environment1.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/interactables/computer.tscn" id="3_8gbba"]
 
@@ -15,23 +16,16 @@ background_energy_multiplier = 1.87
 sky = SubResource("Sky_21xkr")
 ambient_light_source = 3
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1nx"]
-
 [node name="Main" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_jjvhh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39486, -0.322265, -0.126328)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_bo1nx")
-
-[node name="Camera3D2" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60091, -0.238458)
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
 
