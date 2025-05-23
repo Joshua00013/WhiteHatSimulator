@@ -17,6 +17,7 @@ var look_rotation : Vector2
 
 func _ready():
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
@@ -25,10 +26,13 @@ func _unhandled_input(event):
 		look_rotation.x -= (event.relative.y * sensitivity)
 		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle) #Minimum and maximum rotation of the vertical rotation
 		
-	elif event.is_action_pressed("interact") && GameManager.ui_active == true || event.is_action_pressed("pause"):
+	elif event.is_action_pressed("interact") && GameManager.ui_active == true :
 		#Set the cursor visibility to default when a UI is active or game has been paused.
 		#Maybe handle game pause/resume and ui active in gamemanager later instead of in the player node.
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	elif event.is_action_pressed("ui_cancel"):
+		$PauseMenu.pause()
 	
 func _physics_process(delta):
 	# Add the gravity.
