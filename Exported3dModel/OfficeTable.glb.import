@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dx2ctwpdjypu4"
-path="res://.godot/imported/Flashdrive_models.fbx-cc63d21d84dee35997cbe658911872e5.scn"
+uid="uid://bn7kf725ef5sd"
+path="res://.godot/imported/OfficeTable.glb-606f041f59c33680b545538d98b1b2f5.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/Flashdrive_models.fbx"
-dest_files=["res://.godot/imported/Flashdrive_models.fbx-cc63d21d84dee35997cbe658911872e5.scn"]
+source_file="res://Exported3dModel/OfficeTable.glb"
+dest_files=["res://.godot/imported/OfficeTable.glb-606f041f59c33680b545538d98b1b2f5.scn"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

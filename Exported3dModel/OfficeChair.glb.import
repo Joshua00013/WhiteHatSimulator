@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3sgr24kvtnyy"
-path="res://.godot/imported/Laptop.fbx-2dfed289c27a67e171fb10ef4ba35343.scn"
+uid="uid://cvwtkslypj3mf"
+path="res://.godot/imported/OfficeChair.glb-f91e3f93eae2fd60aad1bea5da024f70.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/Laptop.fbx"
-dest_files=["res://.godot/imported/Laptop.fbx-2dfed289c27a67e171fb10ef4ba35343.scn"]
+source_file="res://Exported3dModel/OfficeChair.glb"
+dest_files=["res://.godot/imported/OfficeChair.glb-f91e3f93eae2fd60aad1bea5da024f70.scn"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

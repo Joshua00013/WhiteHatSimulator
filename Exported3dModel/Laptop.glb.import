@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bmv8ioexldn57"
-path="res://.godot/imported/KeyCard.fbx-df080502f30515b77df495405573f2ed.scn"
+uid="uid://dseqfa5hfbge2"
+path="res://.godot/imported/Laptop.glb-8c6906985ff9074ad22b88a096e2c2bc.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/KeyCard.fbx"
-dest_files=["res://.godot/imported/KeyCard.fbx-df080502f30515b77df495405573f2ed.scn"]
+source_file="res://Exported3dModel/Laptop.glb"
+dest_files=["res://.godot/imported/Laptop.glb-8c6906985ff9074ad22b88a096e2c2bc.scn"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

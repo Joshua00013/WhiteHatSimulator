@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqp2f3sw8g41w"
-path="res://.godot/imported/OfficeChair.fbx-fca3b40257ff32ed558e7d0f18b06084.scn"
+uid="uid://cxvaen1j6e3iu"
+path="res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/OfficeChair.fbx"
-dest_files=["res://.godot/imported/OfficeChair.fbx-fca3b40257ff32ed558e7d0f18b06084.scn"]
+source_file="res://Exported3dModel/DoorLock.glb"
+dest_files=["res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

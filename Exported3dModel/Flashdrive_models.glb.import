@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cdkut58jql6sg"
-path="res://.godot/imported/CoveredSimpleTable.fbx-c55cb7056ae3baf7c2bb54c6dac82e46.scn"
+uid="uid://xodfswf8co2x"
+path="res://.godot/imported/Flashdrive_models.glb-dfe85e417baca9a939b432648f696e37.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/CoveredSimpleTable.fbx"
-dest_files=["res://.godot/imported/CoveredSimpleTable.fbx-c55cb7056ae3baf7c2bb54c6dac82e46.scn"]
+source_file="res://Exported3dModel/Flashdrive_models.glb"
+dest_files=["res://.godot/imported/Flashdrive_models.glb-dfe85e417baca9a939b432648f696e37.scn"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1
