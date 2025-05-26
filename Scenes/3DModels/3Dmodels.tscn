@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://qp8q1ua281ea"]
+
+[ext_resource type="PackedScene" uid="uid://bn7kf725ef5sd" path="res://Exported3dModel/OfficeTable.glb" id="1_c8n31"]
+[ext_resource type="PackedScene" uid="uid://cvwtkslypj3mf" path="res://Exported3dModel/OfficeChair.glb" id="2_277ha"]
+[ext_resource type="PackedScene" uid="uid://dseqfa5hfbge2" path="res://Exported3dModel/Laptop.glb" id="3_8wq4k"]
+[ext_resource type="PackedScene" uid="uid://bea8vrwt0biyk" path="res://Exported3dModel/KeyCard.glb" id="4_o3snp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="OfficeTable" parent="." instance=ExtResource("1_c8n31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1774, 0, 0.00251675)
+
+[node name="OfficeTable" parent="OfficeTable" instance=ExtResource("1_c8n31")]
+
+[node name="OfficeChair" parent="." instance=ExtResource("2_277ha")]
+transform = Transform3D(0.0243216, 0, -1.64513, 0, 1.64531, 0, 1.64513, 0, 0.0243216, 3.09716, 0, 0.0370017)
+
+[node name="Laptop2" parent="." instance=ExtResource("3_8wq4k")]
+transform = Transform3D(0.508647, 0, 0, 0, 0.508647, 0, 0, 0, 0.508647, 1.6525, 1.75814, 0.364323)
+
+[node name="KeyCard2" parent="." instance=ExtResource("4_o3snp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565206, 0, 3.2523)
