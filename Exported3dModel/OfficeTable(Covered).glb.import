@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bn7kf725ef5sd"
-path="res://.godot/imported/OfficeTable.glb-606f041f59c33680b545538d98b1b2f5.scn"
+uid="uid://i7l0p2n33x1k"
+path="res://.godot/imported/OfficeTable(Covered).glb-5a4e09d05299493111fcb54f4e5bec0c.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/OfficeTable.glb"
-dest_files=["res://.godot/imported/OfficeTable.glb-606f041f59c33680b545538d98b1b2f5.scn"]
+source_file="res://Exported3dModel/OfficeTable(Covered).glb"
+dest_files=["res://.godot/imported/OfficeTable(Covered).glb-5a4e09d05299493111fcb54f4e5bec0c.scn"]
 
 [params]
 
