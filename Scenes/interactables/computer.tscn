@@ -23,7 +23,7 @@ albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
 size = Vector2(1.4, 0.8)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rbmqn"]
-viewport_path = NodePath("SubViewport2")
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aje88"]
 resource_local_to_scene = true
@@ -91,8 +91,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_aje88")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_rmuk0")
 
-[node name="SubViewport2" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
 
-[node name="SignInUI" parent="SubViewport2" instance=ExtResource("4_rbmqn")]
+[node name="SignInUI" parent="SubViewport" instance=ExtResource("4_rbmqn")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.809907, 0, -3.54022e-08)
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

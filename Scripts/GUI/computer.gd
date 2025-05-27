@@ -10,6 +10,7 @@ var last_event_time: float = -1.0
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $Quad
 @onready var node_area = $Quad/Area3D
+@onready var camera = $Camera3D
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
@@ -30,6 +31,8 @@ func _unhandled_input(event):
 			# If the event is a mouse/touch event, then we can ignore it here, because it will be
 			# handled via Physics Picking.
 			return
+	node_viewport.push_input(event)
+
 
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
@@ -96,7 +99,9 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
 
-
-
 func _on_interactable_interact_triggered():
-	print("You interacted with this shit")
+	if camera.is_current() == false:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		camera.current = true
+	else:
+		GameManager.player_camera.current = true
