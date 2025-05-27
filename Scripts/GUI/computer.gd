@@ -95,3 +95,8 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
+
+
+
+func _on_interactable_interact_triggered():
+	print("You interacted with this shit")

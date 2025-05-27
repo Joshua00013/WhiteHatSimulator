@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dx0pda45jmvnh"]
+[gd_scene load_steps=13 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
-[ext_resource type="Script" uid="uid://ul5xngt1nprw" path="res://Scripts/GUI/interactable.gd" id="3_rbmqn"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="3_rmuk0"]
 [ext_resource type="PackedScene" uid="uid://bb774yratnc62" path="res://gui_in_3d/ComputerUI/sign_in_ui.tscn" id="4_rbmqn"]
 
@@ -39,8 +38,6 @@ data = PackedVector3Array(0.7, -0.4, 0, -0.7, -0.4, 0, 0.7, 0.4, 0, -0.7, -0.4, 
 script = ExtResource("1_jd3qi")
 
 [node name="Interactable" parent="." instance=ExtResource("3_rmuk0")]
-script = ExtResource("3_rbmqn")
-prompt_message = "Interact"
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 shape = SubResource("ConcavePolygonShape3D_rbmqn")
@@ -97,3 +94,5 @@ shape = SubResource("ConcavePolygonShape3D_rmuk0")
 [node name="SubViewport2" type="SubViewport" parent="."]
 
 [node name="SignInUI" parent="SubViewport2" instance=ExtResource("4_rbmqn")]
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

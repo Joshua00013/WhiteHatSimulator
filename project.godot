@@ -28,6 +28,10 @@ project/assembly_name="WhiteHatSimulator"
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg")
 
+[global_group]
+
+interact_ray=""
+
 [input]
 
 strafe_left={
