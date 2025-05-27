@@ -92,6 +92,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_aje88")
 shape = SubResource("ConcavePolygonShape3D_rmuk0")
 
 [node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1400, 800)
 
 [node name="SignInUI" parent="SubViewport" instance=ExtResource("4_rbmqn")]
 
