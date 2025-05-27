@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 10
 @export var accel = 16
 @export var crouch_height = 1.0 #Crouch height for adjusting character size
 @export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
+@export var sprint_speed = 10.0
 
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
@@ -55,8 +56,12 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction: #Used lerping for smoother movement
-		velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
-		velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
+		if Input.is_action_pressed("sprint"):
+			velocity.x = lerp(velocity.x, direction.x * sprint_speed, accel * delta)
+			velocity.z = lerp(velocity.z, direction.z * sprint_speed, accel * delta)
+		else:
+			velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
+			velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
 	else:
 		velocity.x = lerp(velocity.x, 0.0, accel * delta)
 		velocity.z = lerp(velocity.z, 0.0, accel * delta)
