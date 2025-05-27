@@ -11,13 +11,14 @@ const JUMP_VELOCITY = 10
 
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
+@onready var exit_tool_tip = $PanelContainer/ExitToolTip
 
 var stand_height : float
 var look_rotation : Vector2
 
 func _ready():
+	GameManager.player = self
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
@@ -30,6 +31,7 @@ func _unhandled_input(event):
 		#Set the cursor visibility to default when a UI is active or game has been paused.
 		#Maybe handle game pause/resume and ui active in gamemanager later instead of in the player node.
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 		
 	elif event.is_action_pressed("exit_ui") && GameManager.ui_active == false:
 		#If a ui is active, the game won't pause. The ui_cancel can instead be used to disable the GUI

@@ -110,15 +110,16 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 func _on_interactable_interact_triggered():
 	if camera.is_current() == false:
+		GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		camera.current = true
 		GameManager.ui_active = true
 		active = true
-	else:
-		GameManager.player_camera.current = true
+
 		
 func exit_ui():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GameManager.player.exit_tool_tip.visible = false
 	active = false
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false

@@ -5,3 +5,4 @@ var game_paused : bool = false # Variable for pausing the game
 var is_crouching :bool = false
 
 var player_camera : Camera3D
+var player : CharacterBody3D
