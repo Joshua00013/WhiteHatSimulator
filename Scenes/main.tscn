@@ -46,7 +46,6 @@ stream = ExtResource("5_kry3j")
 autoplay = true
 
 [node name="AndroidUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Control" type="Control" parent="AndroidUI"]
 layout_mode = 3
@@ -55,6 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
 layout_mode = 1
