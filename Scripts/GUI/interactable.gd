@@ -1,8 +1,5 @@
-extends Area3D
+extends CollisionObject3D
 
-@export var interact_name: String = ""
-@export var interactable: bool = true
+class_name Interactable
 
-var interact: Callable = func(): # Assign a variable to the function for interacting
-	#Define what to do with the interaction here
-	pass
+@export var prompt_message = "Interact"
