@@ -31,7 +31,8 @@ func _unhandled_input(event):
 		#Maybe handle game pause/resume and ui active in gamemanager later instead of in the player node.
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("exit_ui") && GameManager.ui_active == false:
+		#If a ui is active, the game won't pause. The ui_cancel can instead be used to disable the GUI
 		$PauseMenu.pause()
 	
 func _physics_process(delta):

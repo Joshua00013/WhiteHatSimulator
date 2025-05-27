@@ -12,6 +12,8 @@ var last_event_time: float = -1.0
 @onready var node_area = $Quad/Area3D
 @onready var camera = $Camera3D
 
+var active := false
+
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
@@ -24,7 +26,14 @@ func _mouse_entered_area():
 func _mouse_exited_area():
 	is_mouse_inside = false
 
+func _process(delta):
+	if Input.is_action_just_pressed("exit_ui") && active == true:
+		exit_ui()
+
 func _unhandled_input(event):
+	#Check if the event is esc
+	if event is InputEventKey && event.keycode == KEY_ESCAPE:
+		return
 	# Check if the event is a non-mouse/non-touch event
 	for mouse_event in [InputEventMouseButton, InputEventMouseMotion, InputEventScreenDrag, InputEventScreenTouch]:
 		if is_instance_of(event, mouse_event):
@@ -95,7 +104,7 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Update last_event_time to current time.
 	last_event_time = now
-
+	
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
 
@@ -103,5 +112,14 @@ func _on_interactable_interact_triggered():
 	if camera.is_current() == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		camera.current = true
+		GameManager.ui_active = true
+		active = true
 	else:
 		GameManager.player_camera.current = true
+		
+func exit_ui():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	active = false
+	GameManager.player_camera.current = true
+	GameManager.ui_active = false
+	
