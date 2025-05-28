@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://yma6vkusf8cc"]
+
+[ext_resource type="Script" uid="uid://cihpg2focy55q" path="res://gui_in_3d/Computer login/computer_login_screen_gui.gd" id="1_lfks7"]
+[ext_resource type="Texture2D" uid="uid://dc1o5ahpo6pl8" path="res://gui_in_3d/Computer login/download__3_-removebg-preview (1).png" id="2_3dhwv"]
+[ext_resource type="Texture2D" uid="uid://dw6n7dgtsra4t" path="res://gui_in_3d/Computer login/b64f8fcf0e0aed9537c800eb5e9ca1ed-removebg-preview.png" id="3_wdc70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6wus"]
+bg_color = Color(0.211765, 0.239216, 0.321569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpomq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epux4"]
+bg_color = Color(0.347467, 0.369752, 0.428993, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwri2"]
+bg_color = Color(0.534959, 0.56049, 0.62784, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrhvm"]
+bg_color = Color(0.141176, 0.152941, 0.184314, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -178.0
+offset_right = 429.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lfks7")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1.4, 0.8)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.173862
+anchor_top = -0.396694
+anchor_right = 1.49592
+anchor_bottom = 1.87879
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6wus")
+
+[node name="Username" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = 47.5
+offset_right = 137.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Username"
+secret_character = "*"
+
+[node name="Password" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = 100.5
+offset_right = 137.5
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Password"
+secret = true
+secret_character = "*"
+
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 97.5
+offset_top = 105.5
+offset_right = 322.5
+offset_bottom = 330.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.129116, 0.12792)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xpomq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epux4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrhvm")
+icon = ExtResource("2_3dhwv")
+
+[node name="B64f8Fcf0e0Aed9537c800Eb5e9Ca1Ed-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(427, 66)
+scale = Vector2(0.505988, 0.508032)
+texture = ExtResource("3_wdc70")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -17.0
+offset_right = 109.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Welcome, User"
+
+[node name="Warning_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 146.0
+offset_right = 101.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
