@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnek8sh3amkns"]
+
+[ext_resource type="Script" uid="uid://dwp1cjpr0n3ee" path="res://gui_in_3d/Mobile UI/mobile_ui.gd" id="1_duqqb"]
+[ext_resource type="Texture2D" uid="uid://d2ntvs71exuwb" path="res://gui_in_3d/Mobile UI/Cellphone template.png" id="2_wpbai"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 9.0
+offset_right = -339.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_duqqb")
+
+[node name="CellphoneTemplate" type="Sprite2D" parent="."]
+position = Vector2(219.25, 326.5)
+scale = Vector2(0.955013, 0.936137)
+texture = ExtResource("2_wpbai")
+
+[node name="Time_Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -243.0
+offset_right = 70.5
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
+theme_override_font_sizes/font_size = 55
+text = "08:00"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="Day_Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = -181.0
+offset_right = 22.5
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Day 01"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
