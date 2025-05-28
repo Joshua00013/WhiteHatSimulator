@@ -193,6 +193,12 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Quit"
 
+[node name="SaveButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rbhmu")
