@@ -33,15 +33,9 @@ corner_radius_bottom_left = 5
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(250, 30)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -428.0
-offset_top = -178.0
-offset_right = 429.0
-offset_bottom = 185.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lfks7")
@@ -49,15 +43,11 @@ script = ExtResource("1_lfks7")
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(1.4, 0.8)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.173862
-anchor_top = -0.396694
-anchor_right = 1.49592
-anchor_bottom = 1.87879
-offset_left = 1.0
-offset_top = -2.0
-offset_right = 1.0
-offset_bottom = -2.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a6wus")
 
 [node name="Username" type="LineEdit" parent="."]
@@ -115,10 +105,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrhvm")
 icon = ExtResource("2_3dhwv")
 
-[node name="B64f8Fcf0e0Aed9537c800Eb5e9Ca1Ed-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(427, 66)
-scale = Vector2(0.505988, 0.508032)
+[node name="B64f8Fcf0e0Aed9537c800Eb5e9Ca1Ed-removebg-preview" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384549
+anchor_top = 0.087963
+anchor_right = 0.617218
+anchor_bottom = 0.49912
+offset_right = 232.965
+offset_bottom = 231.57
+grow_horizontal = 2
+scale = Vector2(0.535, 0.535)
 texture = ExtResource("3_wdc70")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
