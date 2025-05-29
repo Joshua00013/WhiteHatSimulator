@@ -34,6 +34,7 @@ environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.64372, -0.322266, -3.65995)
+visible = false
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
 
@@ -58,14 +59,8 @@ mouse_filter = 2
 
 [node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
 offset_top = -300.0
-offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(150, 150)
 size_flags_horizontal = 4
