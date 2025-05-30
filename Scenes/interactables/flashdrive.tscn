@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs2187eyfrekt"]
+
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_b2osy"]
+[ext_resource type="Script" uid="uid://ep1vp75f8qcw" path="res://Scripts/flashdrive.gd" id="1_u1pj4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u1pj4"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgjl5"]
+
+[node name="flashdrive" type="Node3D"]
+script = ExtResource("1_u1pj4")
+
+[node name="Interactable" parent="." instance=ExtResource("1_b2osy")]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_u1pj4")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.363176, 0, 0, 0, 0.111157, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_bgjl5")
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
+
+[editable path="Interactable"]

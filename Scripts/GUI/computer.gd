@@ -6,7 +6,7 @@ var is_mouse_inside = false
 var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
-
+@onready var tab = $SubViewport/TabContainer
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $Quad
 @onready var node_area = $Quad/Area3D
@@ -124,3 +124,7 @@ func exit_ui():
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false
 	
+
+
+func _on_sign_in_ui_to_desktop() -> void:
+	tab.current_tab = 1
