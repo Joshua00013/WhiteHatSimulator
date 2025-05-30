@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 10
+
+@export var inventory : Inv
 @export var sensitivity := 0.25
 @export var min_angle = -80
 @export var max_angle = 90
