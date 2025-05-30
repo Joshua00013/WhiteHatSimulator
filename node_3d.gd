@@ -21,6 +21,7 @@ func _ready():
 	GameManager.player = self
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:

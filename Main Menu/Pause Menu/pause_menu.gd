@@ -1,6 +1,7 @@
 extends ColorRect
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var player = get_node("../Player")
 @onready var play_button: Button = find_child("ResumeButton")
 @onready var quit_button: Button = find_child("QuitButton")
 
@@ -17,3 +18,4 @@ func pause():
 	animator.play("Pause")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
