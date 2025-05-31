@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://Main Menu/Pause Menu/pause_menu.tscn" id="4_vgqql"]
-[ext_resource type="PackedScene" uid="uid://bva0yfimteh3a" path="res://Scenes/gui/inventory_ui.tscn" id="7_8erm5"]
+[ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/gui/inventory_ui.tscn" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 

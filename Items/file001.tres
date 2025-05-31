@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://ck77iafps7s6u"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_csv02"]
+
+[resource]
+script = ExtResource("1_csv02")
+name = "001-Mission File"
+description = "Phishing is a type of cyberattack that uses fraudulent emails, text messages, phone calls or websites to trick people into sharing sensitive data, downloading malware or otherwise exposing themselves to cybercrime.Your mission is to use Phishing to gain access to any employee's computer by preparing it and sending it through email or fake application."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

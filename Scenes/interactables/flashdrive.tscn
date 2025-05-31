@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs2187eyfrekt"]
+[gd_scene load_steps=6 format=3 uid="uid://cs2187eyfrekt"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_b2osy"]
 [ext_resource type="Script" uid="uid://ep1vp75f8qcw" path="res://Scripts/flashdrive.gd" id="1_u1pj4"]
+[ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_bgjl5"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u1pj4"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
@@ -10,6 +11,7 @@ data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0
 
 [node name="flashdrive" type="Node3D"]
 script = ExtResource("1_u1pj4")
+itemRes = ExtResource("2_bgjl5")
 
 [node name="Interactable" parent="." instance=ExtResource("1_b2osy")]
 
