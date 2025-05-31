@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=17 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cs2187eyfrekt" path="res://Scenes/interactables/flashdrive.tscn" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://cuinrvnv3n26a" path="res://Assets/Interact.png" id="9_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://dfkkvj0kcca4s" path="res://Assets/Pause.png" id="11_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="12_k12tt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -36,7 +40,6 @@ environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.64372, -0.322266, -3.65995)
-visible = false
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
 
@@ -72,6 +75,49 @@ action_left = "strafe_left"
 action_right = "strafe_right"
 action_up = "move_forward"
 action_down = "move_backward"
+
+[node name="InteractButton" type="Button" parent="AndroidUI/Control"]
+layout_mode = 0
+anchor_left = 0.90625
+anchor_top = 0.618827
+anchor_right = 0.96875
+anchor_bottom = 0.729938
+icon = ExtResource("9_fdnlq")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryButton" type="Button" parent="AndroidUI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0199653
+anchor_top = 0.029321
+anchor_right = 0.0824653
+anchor_bottom = 0.140432
+icon = ExtResource("10_jkdf5")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseButton" type="Button" parent="AndroidUI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919271
+anchor_top = 0.029321
+anchor_right = 0.981771
+anchor_bottom = 0.140432
+icon = ExtResource("11_wsu2k")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SprintButton" type="Button" parent="AndroidUI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.835069
+anchor_top = 0.729938
+anchor_right = 0.897569
+anchor_bottom = 0.841049
+icon = ExtResource("12_k12tt")
+flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="flashdrive" parent="." instance=ExtResource("8_344ge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581563, 0.733312, 1.07754)
