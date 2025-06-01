@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0qfb2b1l0kbl"]
+
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_xnljy"]
+[ext_resource type="PackedScene" uid="uid://cxvaen1j6e3iu" path="res://Exported3dModel/DoorLock.glb" id="2_sgvwx"]
+[ext_resource type="PackedScene" uid="uid://bea8vrwt0biyk" path="res://Exported3dModel/KeyCard.glb" id="3_ylcda"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bnpop"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="CardSwipe" type="Node3D"]
+
+[node name="Interactable" parent="." instance=ExtResource("1_xnljy")]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_bnpop")
+
+[node name="DoorLock" parent="." instance=ExtResource("2_sgvwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768625, -2.20048, -0.152019)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
+
+[node name="KeyCard2" parent="." instance=ExtResource("3_ylcda")]
+transform = Transform3D(-0.0189009, 0.070539, 3.08336e-09, 0, -3.19213e-09, 0.0730273, 0.070539, 0.0189009, 8.26183e-10, -0.123481, 0.726866, -0.199951)
+
+[editable path="Interactable"]
