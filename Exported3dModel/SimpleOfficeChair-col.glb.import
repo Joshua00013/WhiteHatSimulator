@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvwtkslypj3mf"
-path="res://.godot/imported/OfficeChair.glb-f91e3f93eae2fd60aad1bea5da024f70.scn"
+uid="uid://c5i02kwr77xt8"
+path="res://.godot/imported/SimpleOfficeChair-col.glb-b45293c7f3c6b4747065a1dbe3f34019.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/OfficeChair.glb"
-dest_files=["res://.godot/imported/OfficeChair.glb-f91e3f93eae2fd60aad1bea5da024f70.scn"]
+source_file="res://Exported3dModel/SimpleOfficeChair-col.glb"
+dest_files=["res://.godot/imported/SimpleOfficeChair-col.glb-b45293c7f3c6b4747065a1dbe3f34019.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=1.4
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

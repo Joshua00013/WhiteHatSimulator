@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dseqfa5hfbge2"
-path="res://.godot/imported/Laptop.glb-8c6906985ff9074ad22b88a096e2c2bc.scn"
+uid="uid://b5anwlb4xmmjc"
+path="res://.godot/imported/singlekeycard.glb-08d3d0fee135043f145f6d75eb516f1f.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/Laptop.glb"
-dest_files=["res://.godot/imported/Laptop.glb-8c6906985ff9074ad22b88a096e2c2bc.scn"]
+source_file="res://Exported3dModel/singlekeycard.glb"
+dest_files=["res://.godot/imported/singlekeycard.glb-08d3d0fee135043f145f6d75eb516f1f.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.04
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -32,6 +32,22 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"singlekeycard_Cube_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:KeyCard": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
