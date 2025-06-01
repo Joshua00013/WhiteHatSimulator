@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhcg6wstrexnf"]
+
+[ext_resource type="PackedScene" uid="uid://b5anwlb4xmmjc" path="res://Exported3dModel/singlekeycard.glb" id="1_jou5r"]
+
+[node name="singlekeycard" instance=ExtResource("1_jou5r")]
+
+[node name="StaticBody3D" parent="KeyCard" index="0"]
+visible = false

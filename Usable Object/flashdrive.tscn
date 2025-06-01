@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://5b8qcgis32nf"]
+
+[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Exported3dModel/Flashdrive.glb" id="1_t2ln3"]
+
+[node name="Flashdrive" instance=ExtResource("1_t2ln3")]
+
+[node name="StaticBody3D" parent="Flashdrive_red" index="0"]
+visible = false
