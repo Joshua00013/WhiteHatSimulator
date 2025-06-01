@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://4fjgut4ak6ob"]
+[gd_scene load_steps=10 format=3 uid="uid://4fjgut4ak6ob"]
 
 [ext_resource type="Script" uid="uid://cnwlth5l2crfv" path="res://node_3d.gd" id="1_4flbx"]
+[ext_resource type="Resource" uid="uid://ysbc0wl30il1" path="res://Items/player_inventory.tres" id="2_3smsa"]
 [ext_resource type="PackedScene" uid="uid://4d6admfoa0q5" path="res://Components/interact_ray.tscn" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://Main Menu/Pause Menu/pause_menu.tscn" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://bva0yfimteh3a" path="res://Scenes/gui/inventory_ui.tscn" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
@@ -12,6 +14,7 @@
 
 [node name="Node3D" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
+inventory = ExtResource("2_3smsa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -55,3 +58,5 @@ theme_override_constants/outline_size = 2
 text = "Press ESC to exit"
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_vgqql")]
+
+[node name="InventoryUI" parent="." instance=ExtResource("7_8erm5")]
