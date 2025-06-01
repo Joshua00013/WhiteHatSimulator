@@ -1,33 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs2187eyfrekt"]
+[gd_scene load_steps=8 format=3 uid="uid://cs2187eyfrekt"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_b2osy"]
 [ext_resource type="Script" uid="uid://ep1vp75f8qcw" path="res://Scripts/flashdrive.gd" id="1_u1pj4"]
-[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Exported3dModel/Flashdrive.glb" id="3_ns1sk"]
+[ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_bgjl5"]
 [ext_resource type="Script" uid="uid://dmig86ges05bp" path="res://Scenes/interactables/usb_interaction.gd" id="4_ns1sk"]
-[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Exported3dModel/Laptop-col.glb" id="5_he35h"]
+[ext_resource type="PackedScene" uid="uid://dseqfa5hfbge2" path="res://Exported3dModel/Laptop.glb" id="5_dfemj"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u1pj4"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_bgjl5"]
+
 [node name="flashdrive" type="Node3D"]
 script = ExtResource("1_u1pj4")
+itemRes = ExtResource("2_bgjl5")
 
 [node name="Interactable" parent="." instance=ExtResource("1_b2osy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.684902)
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_u1pj4")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0.240528, 0.187844, -1.32475)
-
-[node name="Flashdrive" parent="." instance=ExtResource("3_ns1sk")]
-transform = Transform3D(-0.0300326, 0, -0.999549, 0, 1, 0, 0.999549, 0, -0.0300326, 0.333072, 0.0279979, -1.12855)
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.100812, 0, 0, 0, 0.0308553, 0, 0, 0, 0.277583, 0.718675, 0.0916728, -1.19238)
+use_collision = true
+mesh = SubResource("BoxMesh_bgjl5")
 script = ExtResource("4_ns1sk")
 
-[node name="Laptop-col2" parent="." instance=ExtResource("5_he35h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118183, 0, -0.486146)
+[node name="Laptop2" parent="." instance=ExtResource("5_dfemj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125595, 0, 0.418398)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0.240528, 0.411981, -1.54764)
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 

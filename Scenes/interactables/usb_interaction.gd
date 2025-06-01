@@ -4,23 +4,8 @@ var sensitivity = 0.01
 var dragging = false
 var camera : Camera3D
 var moving_in_z = false
-var screen_limit_ratio = 0.64
 
-var active := false
-func _on_interactable_interact_triggered():
-	if camera.is_current() == false:
-		GameManager.player.exit_tool_tip.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		camera.current = true
-		GameManager.ui_active = true
-		active = true
-		
-func exit_ui():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	GameManager.player.exit_tool_tip.visible = false
-	active = false
-	GameManager.player_camera.current = true
-	GameManager.ui_active = false
+var screen_limit_ratio = 0.86
 
 func _ready():
 	camera = get_viewport().get_camera_3d()
@@ -39,7 +24,7 @@ func _input(event):
 
 		if not moving_in_z:
 			if screen_pos.x < screen_limit:
-				position.x += event.relative.x * sensitivity
+				position.x -= event.relative.x * sensitivity * 0.1
 			else:
 				moving_in_z = true
 		else:
