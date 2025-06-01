@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1n8alkecfxpk"]
+
+[ext_resource type="PackedScene" uid="uid://cf3ca03h1tgm0" path="res://Exported3dModel/SimpleTable.glb" id="1_4s6h1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6ujh5"]
+points = PackedVector3Array(-0.35, -7.46311, -0.35, 0.349932, -7.46311, -0.35, -0.35, -7.46311, 0.349932, -0.35, 0.35, -0.35, 0.349932, -7.46311, 0.349932, 0.349932, 0.35, -0.35, -0.35, 0.35, 0.349932, 0.349932, 0.35, 0.349932)
+
+[node name="Table" type="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.32381, 0, 0, 0, 0.121835, 0, 0, 0, -3.53206, 0, 0.793684, 0)
+shape = SubResource("ConvexPolygonShape3D_6ujh5")
+
+[node name="SimpleTable" parent="." instance=ExtResource("1_4s6h1")]

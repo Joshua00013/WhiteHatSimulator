@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://ltxclu2fv57h"]
+[gd_scene load_steps=8 format=3 uid="uid://ltxclu2fv57h"]
 
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/interactables/computer.tscn" id="1_wt3y0"]
-[ext_resource type="PackedScene" uid="uid://bf4oi4dwpoim7" path="res://Scenes/interactables/door.tscn" id="2_kr7xx"]
+[ext_resource type="PackedScene" uid="uid://cvxruy1r4oigx" path="res://Scenes/interactables/door.tscn" id="2_kr7xx"]
+[ext_resource type="PackedScene" uid="uid://cm2wl1va6ycfr" path="res://Usable Object/laptop_2.tscn" id="3_4pbh8"]
+[ext_resource type="PackedScene" uid="uid://5b8qcgis32nf" path="res://Usable Object/flashdrive.tscn" id="4_0op5b"]
+[ext_resource type="PackedScene" uid="uid://ckiuehkjcud2v" path="res://Usable Object/office_chair.tscn" id="5_vr4cb"]
+[ext_resource type="PackedScene" uid="uid://cbwfw5xwh2aek" path="res://Usable Object/simple_table.tscn" id="6_irg36"]
+[ext_resource type="PackedScene" uid="uid://b5anwlb4xmmjc" path="res://Exported3dModel/singlekeycard.glb" id="7_ojhvg"]
 
 [node name="Environment" type="Node3D"]
 
@@ -581,4 +586,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.8886
 size = Vector3(1.46429, 1, 3)
 
 [node name="Door" parent="." instance=ExtResource("2_kr7xx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2607, -0.321713, -20.4207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2607, -0.26746, -20.5003)
+
+[node name="Laptop2" parent="." instance=ExtResource("3_4pbh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308555, 0.655001, 1.54807)
+
+[node name="Flashdrive" parent="." instance=ExtResource("4_0op5b")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.430773, 0.681036, 0.948185)
+
+[node name="OfficeChair" parent="." instance=ExtResource("5_vr4cb")]
+transform = Transform3D(-4.36629e-08, 2.05909e-09, -1, 0.0471065, 0.99889, 0, 0.99889, -0.0471065, -4.37114e-08, 0.54525, -0.430177, 0.932919)
+
+[node name="SimpleTable" parent="." instance=ExtResource("6_irg36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.29042, -0.694502, 3.0855)
+
+[node name="singlekeycard" parent="." instance=ExtResource("7_ojhvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240691, 0.650684, 0.716846)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf4oi4dwpoim7"]
+[gd_scene load_steps=5 format=3 uid="uid://cvxruy1r4oigx"]
 
 [ext_resource type="Script" uid="uid://5e4wj5qybo0p" path="res://Scripts/Interactables/door.gd" id="1_rf133"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="2_d8yqa"]
