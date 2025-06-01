@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://i7l0p2n33x1k"
-path="res://.godot/imported/OfficeTable(Covered).glb-5a4e09d05299493111fcb54f4e5bec0c.scn"
+uid="uid://dupw6ocq2d2ma"
+path="res://.godot/imported/Table-col.glb-3d7a01f9751de6bd57d110200c4f8af4.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/OfficeTable(Covered).glb"
-dest_files=["res://.godot/imported/OfficeTable(Covered).glb-5a4e09d05299493111fcb54f4e5bec0c.scn"]
+source_file="res://Exported3dModel/Table-col.glb"
+dest_files=["res://.godot/imported/Table-col.glb-3d7a01f9751de6bd57d110200c4f8af4.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.35
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

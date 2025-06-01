@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bea8vrwt0biyk"
-path="res://.godot/imported/KeyCard.glb-a286b345e28897b10315a0d0f9ab20a7.scn"
+uid="uid://k08da8cppptj"
+path="res://.godot/imported/Laptop-col.glb-dccf8ce9697a0d64dcb852ebb53124f1.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/KeyCard.glb"
-dest_files=["res://.godot/imported/KeyCard.glb-a286b345e28897b10315a0d0f9ab20a7.scn"]
+source_file="res://Scenes/Laptop-col.glb"
+dest_files=["res://.godot/imported/Laptop-col.glb-dccf8ce9697a0d64dcb852ebb53124f1.scn"]
 
 [params]
 

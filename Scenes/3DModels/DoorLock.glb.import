@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xodfswf8co2x"
-path="res://.godot/imported/Flashdrive_models.glb-dfe85e417baca9a939b432648f696e37.scn"
+uid="uid://du4d05om3kvgd"
+path="res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/Flashdrive_models.glb"
-dest_files=["res://.godot/imported/Flashdrive_models.glb-dfe85e417baca9a939b432648f696e37.scn"]
+source_file="res://Exported3dModel/DoorLock.glb"
+dest_files=["res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.9
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
