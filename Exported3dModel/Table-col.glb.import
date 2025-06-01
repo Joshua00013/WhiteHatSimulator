@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bea8vrwt0biyk"
-path="res://.godot/imported/KeyCard.glb-a286b345e28897b10315a0d0f9ab20a7.scn"
+uid="uid://dupw6ocq2d2ma"
+path="res://.godot/imported/Table-col.glb-3d7a01f9751de6bd57d110200c4f8af4.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/KeyCard.glb"
-dest_files=["res://.godot/imported/KeyCard.glb-a286b345e28897b10315a0d0f9ab20a7.scn"]
+source_file="res://Exported3dModel/Table-col.glb"
+dest_files=["res://.godot/imported/Table-col.glb-3d7a01f9751de6bd57d110200c4f8af4.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.35
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

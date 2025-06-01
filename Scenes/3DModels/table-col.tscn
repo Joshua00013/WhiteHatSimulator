@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5ijngej4fyh"]
+
+[ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Exported3dModel/Table-col.glb" id="1_uylgr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Table-col" parent="." instance=ExtResource("1_uylgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56798, 0, -1.40134)

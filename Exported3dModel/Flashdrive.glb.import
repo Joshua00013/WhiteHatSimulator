@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://du4d05om3kvgd"
-path="res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"
+uid="uid://c2g21yn168t7i"
+path="res://.godot/imported/Flashdrive.glb-0a69092db127b538b3928eade66224d6.scn"
 
 [deps]
 
-source_file="res://Exported3dModel/DoorLock.glb"
-dest_files=["res://.godot/imported/DoorLock.glb-3a6ba4371f04f3d39feeede5915a8667.scn"]
+source_file="res://Exported3dModel/Flashdrive.glb"
+dest_files=["res://.godot/imported/Flashdrive.glb-0a69092db127b538b3928eade66224d6.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.9
+nodes/root_scale=0.02
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Flashdrive_red": {
+"generate/physics": true,
+"primitive/rotation": Vector3(0, -90, 0)
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
