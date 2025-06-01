@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=12 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/interactables/computer.tscn" id="3_8gbba"]
 [ext_resource type="AudioStream" uid="uid://bdq157g434mnf" path="res://Sounds/Harvest Dawn 4.mp3" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cs2187eyfrekt" path="res://Scenes/interactables/flashdrive.tscn" id="8_344ge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -34,6 +35,7 @@ environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.64372, -0.322266, -3.65995)
+visible = false
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
 
@@ -58,14 +60,8 @@ mouse_filter = 2
 
 [node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
 offset_top = -300.0
-offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(150, 150)
 size_flags_horizontal = 4
@@ -74,3 +70,6 @@ action_left = "strafe_left"
 action_right = "strafe_right"
 action_up = "move_forward"
 action_down = "move_backward"
+
+[node name="flashdrive" parent="." instance=ExtResource("8_344ge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581563, 0.733312, 1.07754)
