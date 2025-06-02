@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=23 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Exported3dModel/Laptop-col.glb" id="17_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d07bmjtmbnvn8" path="res://Scenes/3DModels/officechair.tscn" id="18_b3802"]
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Exported3dModel/Table-col.glb" id="19_fevyy"]
+[ext_resource type="PackedScene" uid="uid://bgbh6mw4uc4fo" path="res://Scenes/3DModels/clipboard.tscn" id="19_hibaj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -141,3 +142,6 @@ transform = Transform3D(-0.0023373, 0.00410244, 0.999989, 0.00167753, 0.99999, -
 
 [node name="Chair" parent="." instance=ExtResource("18_b3802")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87703, -0.322266, 0.695957)
+
+[node name="Clipboard" parent="." instance=ExtResource("19_hibaj")]
+transform = Transform3D(-0.999982, 0.0059839, -0.000899712, 0.00598294, 0.999982, 0.00106409, 0.000906072, 0.00105868, -0.999999, 1.35267, 0.56881, 2.62021)
