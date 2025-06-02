@@ -29,6 +29,9 @@ script = ExtResource("4_ns1sk")
 [node name="Laptop-col2" parent="." instance=ExtResource("5_he35h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118183, 0, -0.486146)
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.979698, 0.200479, 0, -0.200479, -0.979698, 0, 0.276536, -4.0954)
+
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 
 [editable path="Interactable"]
