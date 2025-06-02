@@ -17,7 +17,7 @@ transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bnpop")
 
 [node name="DoorLock" parent="." instance=ExtResource("2_sgvwx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768625, -2.20048, -0.152019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768625, -2.1245, -0.152019)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
@@ -25,5 +25,8 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
 [node name="singlekeycard" parent="." instance=ExtResource("3_xnljy")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 0.000331052, 0.209148, -0.156962)
 script = ExtResource("4_sgvwx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -0.649913, 3.23746)
 
 [editable path="Interactable"]
