@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready():
+	GameManager.android_ui = self
 	match OS.get_name():
 		#"Windows":
 			#visible = false

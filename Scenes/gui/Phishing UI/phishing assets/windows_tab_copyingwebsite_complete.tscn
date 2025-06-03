@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://cctm4xwevy8od"]
+
+[ext_resource type="Texture2D" uid="uid://cf2frugo4cc31" path="res://Scenes/gui/Phishing UI/phishing assets/2959755_money_paypal_transfer_icon.png" id="1_8pwvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx5qo"]
+bg_color = Color(0.960297, 0.966104, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvkfy"]
+bg_color = Color(0.137255, 0.737255, 0.811765, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v158"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3fa4"]
+bg_color = Color(0.653034, 0.74187, 0.809296, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jx5qo")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.099
+offset_bottom = -0.152008
+theme_override_styles/panel = SubResource("StyleBoxFlat_jvkfy")
+
+[node name="Label" type="Label" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -32.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 1152.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5v158")
+
+[node name="Label" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -16.0
+offset_right = 160.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 67
+text = "<-"
+
+[node name="Label2" type="Label" parent="Panel/Panel2"]
+offset_left = 96.0
+offset_top = -16.0
+offset_right = 240.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 67
+text = "->"
+
+[node name="Panel" type="Panel" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 16.0
+offset_right = 1096.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3fa4")
+
+[node name="Panel2" type="Panel" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 232.0
+offset_right = 1072.0
+offset_bottom = 280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3fa4")
+
+[node name="Panel3" type="Panel" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 336.0
+offset_right = 1072.0
+offset_bottom = 384.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3fa4")
+
+[node name="Label4" type="Label" parent="Panel/Panel2"]
+offset_left = 512.0
+offset_top = 168.0
+offset_right = 987.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Username"
+
+[node name="Label4" type="Label" parent="Panel/Panel2/Label4"]
+offset_left = -8.0
+offset_top = 112.0
+offset_right = 467.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Password"
+
+[node name="Label3" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 691.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "www.bacefook.com"
+
+[node name="2959755MoneyPaypalTransferIcon" type="Sprite2D" parent="."]
+position = Vector2(264, 352)
+scale = Vector2(0.667339, -0.569247)
+texture = ExtResource("1_8pwvf")
