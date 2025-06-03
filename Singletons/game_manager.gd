@@ -7,6 +7,7 @@ var ui_active : bool = false #Variable for checking if theres an active ui. Defa
 var game_paused : bool = false # Variable for pausing the game
 var is_crouching :bool = false
 
+var android_ui : CanvasLayer
 var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control

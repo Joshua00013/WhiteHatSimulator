@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0qfb2b1l0kbl"]
+[gd_scene load_steps=7 format=3 uid="uid://d0qfb2b1l0kbl"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_xnljy"]
+[ext_resource type="Script" uid="uid://cx4vr46x14xm4" path="res://Scripts/Interactables/card_swipe.gd" id="1_ylcda"]
 [ext_resource type="PackedScene" uid="uid://du4d05om3kvgd" path="res://Exported3dModel/DoorLock.glb" id="2_sgvwx"]
 [ext_resource type="PackedScene" uid="uid://b5anwlb4xmmjc" path="res://Exported3dModel/singlekeycard.glb" id="3_xnljy"]
-[ext_resource type="Script" uid="uid://cdf5kx7b611xa" path="res://Exported3dModel/singlekeycard.gd" id="4_sgvwx"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bnpop"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
 
+[sub_resource type="GDScript" id="GDScript_sgvwx"]
+
 [node name="CardSwipe" type="Node3D"]
+script = ExtResource("1_ylcda")
 
 [node name="Interactable" parent="." instance=ExtResource("1_xnljy")]
 
@@ -24,9 +27,8 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
 
 [node name="singlekeycard" parent="." instance=ExtResource("3_xnljy")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 0.000331052, 0.209148, -0.156962)
-script = ExtResource("4_sgvwx")
+script = SubResource("GDScript_sgvwx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -0.649913, 3.23746)
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 
 [editable path="Interactable"]

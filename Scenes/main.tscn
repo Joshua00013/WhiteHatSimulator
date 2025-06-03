@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=23 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -13,11 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://dfkkvj0kcca4s" path="res://Assets/Pause.png" id="11_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="12_k12tt"]
-[ext_resource type="PackedScene" uid="uid://d2iemwvwj0lrh" path="res://Scenes/3DModels/doorlock.tscn" id="14_b3802"]
 [ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Exported3dModel/Flashdrive.glb" id="15_fevyy"]
 [ext_resource type="PackedScene" uid="uid://d07bmjtmbnvn8" path="res://Scenes/3DModels/officechair.tscn" id="18_b3802"]
 [ext_resource type="PackedScene" uid="uid://c7yowoih0rjeg" path="res://Scenes/gui/Phishing UI/phishing assets/computer_phishing.tscn" id="18_fevyy"]
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Exported3dModel/Table-col.glb" id="19_fevyy"]
+[ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Server/hand_tracker_server.gd" id="19_hibaj"]
+[ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/interactables/card_swipe.tscn" id="19_pdsj5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -126,35 +127,28 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Time_Label" type="Label" parent="AndroidUI/Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 294.0
-offset_top = -293.0
-offset_right = 435.0
-offset_bottom = -217.0
+anchors_preset = -1
+anchor_left = 0.480903
+anchor_top = 0.0216049
+anchor_right = 0.603299
+anchor_bottom = 0.138889
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
 theme_override_font_sizes/font_size = 55
 text = "08:30"
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="AndroidUI/Control"]
 process_callback = 0
 
 [node name="Day_Label" type="Label" parent="AndroidUI/Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 342.0
-offset_top = -231.0
-offset_right = 391.0
-offset_bottom = -209.0
+anchors_preset = -1
+anchor_left = 0.517361
+anchor_top = 0.137346
+anchor_right = 0.559896
+anchor_bottom = 0.171296
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 15
@@ -162,9 +156,6 @@ text = "Day 01"
 
 [node name="flashdrive" parent="." instance=ExtResource("8_344ge")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.21585, 0.897541, 2.01885)
-
-[node name="Node3D" parent="." instance=ExtResource("14_b3802")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.76232, -0.2569, 3.36069)
 
 [node name="Flashdrive" parent="." instance=ExtResource("15_fevyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53338, 0.877069, 2.23091)
@@ -177,3 +168,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87703, -0.322266, 0.695957)
 
 [node name="Computer Phishing" parent="." instance=ExtResource("18_fevyy")]
 transform = Transform3D(0.0757097, 0, 0.99713, 0, 1, 0, -0.99713, 0, 0.0757097, -16.0276, 1.40113, -4.61071)
+
+[node name="HandTrackerServer" type="Node" parent="."]
+script = ExtResource("19_hibaj")
+
+[node name="CardSwipe" parent="." instance=ExtResource("19_pdsj5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.86808, 1.97332, 4.04397)

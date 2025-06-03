@@ -141,3 +141,5 @@ offset_top = 8.0
 offset_right = -763.0
 offset_bottom = 0.064003
 theme_override_styles/panel = SubResource("StyleBoxFlat_w6r3j")
+
+[editable path="Control"]
