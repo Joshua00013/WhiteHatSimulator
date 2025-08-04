@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2irbl8uv8h51"]
+[gd_scene load_steps=3 format=3 uid="uid://bb774yratnc62"]
 
 [ext_resource type="Script" uid="uid://j8jbegx2jw6x" path="res://GUI/ComputerUI/sign_in_ui.gd" id="1_2kdl3"]
 [ext_resource type="Texture2D" uid="uid://iby6n4c6087m" path="res://GUI/ComputerUI/user_image.png" id="1_c7rbw"]
@@ -28,28 +28,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -197.0
+offset_left = -152.0
 offset_top = -251.0
-offset_right = 197.0
-offset_bottom = 190.0
+offset_right = 274.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.714151, 0.714151)
 
-[node name="LineEdit" type="LineEdit" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -197.0
-offset_top = -15.5
-offset_right = 197.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(50, 250)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_c7rbw")
+expand_mode = 1
 
-[node name="Button" type="Button" parent="ColorRect/LineEdit"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "***********"
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/LineEdit"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -63,19 +67,4 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "->"
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 2
-offset_left = 384.0
-offset_top = 272.0
-offset_right = 778.0
-offset_bottom = 295.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "LOGIN"
-horizontal_alignment = 1
-
-[node name="UserImage" type="Sprite2D" parent="."]
-position = Vector2(256, 120)
-scale = Vector2(0.40625, 0.375)
-texture = ExtResource("1_c7rbw")
-
-[connection signal="pressed" from="ColorRect/LineEdit/Button" to="." method="_on_signin_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/LineEdit/Button" to="." method="_on_signin_pressed"]

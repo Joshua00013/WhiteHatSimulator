@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://do5ijngej4fyh"]
 
-[ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Exported3dModel/Table-col.glb" id="1_uylgr"]
+[ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="1_uylgr"]
 
 [node name="Node3D" type="Node3D"]
 

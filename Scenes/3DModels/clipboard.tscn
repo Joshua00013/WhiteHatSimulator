@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgbh6mw4uc4fo"]
 
-[ext_resource type="PackedScene" uid="uid://b3x50mr6nly82" path="res://Exported3dModel/Clipboard.glb" id="1_mmbcg"]
-[ext_resource type="PackedScene" uid="uid://cvc518cuqmub8" path="res://gui_in_3d/quiz_ui.tscn" id="2_u4jk6"]
+[ext_resource type="PackedScene" uid="uid://b3x50mr6nly82" path="res://Assets/Exported3dModel/Clipboard.glb" id="1_mmbcg"]
+[ext_resource type="PackedScene" uid="uid://cvc518cuqmub8" path="res://GUI/quiz_ui.tscn" id="2_u4jk6"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_mmbcg"]
 size = Vector2(1.4, 0.8)

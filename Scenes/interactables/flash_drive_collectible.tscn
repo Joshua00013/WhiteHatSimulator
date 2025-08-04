@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bas4ywriyhh35"]
 
 [ext_resource type="Script" uid="uid://copm4645nk7rx" path="res://Scripts/Interactables/flash_drive_collectible.gd" id="1_erscu"]
-[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Exported3dModel/Flashdrive.glb" id="2_in7iu"]
+[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Assets/Exported3dModel/Flashdrive.glb" id="2_in7iu"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_m5ela"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="3_m5ela"]
 

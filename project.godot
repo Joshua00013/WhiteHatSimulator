@@ -34,6 +34,12 @@ project/assembly_name="WhiteHatSimulator"
 
 enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/gui/": "green"
+}
+
 [global_group]
 
 interact_ray=""
