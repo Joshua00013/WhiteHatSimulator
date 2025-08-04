@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs2187eyfrekt"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="1_b2osy"]
-[ext_resource type="Script" uid="uid://ep1vp75f8qcw" path="res://Scripts/flashdrive.gd" id="1_u1pj4"]
-[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Exported3dModel/Flashdrive.glb" id="3_ns1sk"]
-[ext_resource type="Script" path="res://Scenes/interactables/usb_interaction.gd" id="4_ns1sk"]
-[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Exported3dModel/Laptop-col.glb" id="5_he35h"]
+[ext_resource type="Script" uid="uid://ep1vp75f8qcw" path="res://Scripts/Interactables/flashdrive.gd" id="1_u1pj4"]
+[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Assets/Exported3dModel/Flashdrive.glb" id="3_ns1sk"]
+[ext_resource type="Script" uid="uid://dmig86ges05bp" path="res://Scenes/interactables/usb_interaction.gd" id="4_ns1sk"]
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="5_he35h"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u1pj4"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)

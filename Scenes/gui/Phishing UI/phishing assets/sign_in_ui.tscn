@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2irbl8uv8h51"]
 
-[ext_resource type="Script" uid="uid://j8jbegx2jw6x" path="res://gui_in_3d/ComputerUI/sign_in_ui.gd" id="1_2kdl3"]
-[ext_resource type="Texture2D" uid="uid://iby6n4c6087m" path="res://gui_in_3d/ComputerUI/user_image.png" id="1_c7rbw"]
+[ext_resource type="Script" uid="uid://j8jbegx2jw6x" path="res://GUI/ComputerUI/sign_in_ui.gd" id="1_2kdl3"]
+[ext_resource type="Texture2D" uid="uid://iby6n4c6087m" path="res://GUI/ComputerUI/user_image.png" id="1_c7rbw"]
 
 [node name="SignInUI" type="Control"]
 layout_mode = 3

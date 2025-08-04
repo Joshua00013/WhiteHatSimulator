@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d07bmjtmbnvn8"]
 
-[ext_resource type="PackedScene" uid="uid://c5i02kwr77xt8" path="res://Exported3dModel/SimpleOfficeChair-col.glb" id="1_kucbj"]
+[ext_resource type="PackedScene" uid="uid://c5i02kwr77xt8" path="res://Assets/Exported3dModel/SimpleOfficeChair-col.glb" id="1_kucbj"]
 
 [node name="Node3D" type="Node3D"]
 
