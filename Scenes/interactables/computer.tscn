@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
-[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="3_rmuk0"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rmuk0"]
 [ext_resource type="Script" uid="uid://c6sn4oxhw386x" path="res://Scenes/gui/Phishing UI/phishing assets/computer_ui.gd" id="4_aje88"]
-[ext_resource type="PackedScene" path="res://GUI/ComputerUI/computer_ui.tscn" id="4_al4kr"]
+[ext_resource type="PackedScene" uid="uid://blecc4c484i7r" path="res://GUI/ComputerUI/computer_ui.tscn" id="4_al4kr"]
 [ext_resource type="PackedScene" uid="uid://bb774yratnc62" path="res://GUI/ComputerUI/sign_in_ui.tscn" id="4_rbmqn"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rbmqn"]
