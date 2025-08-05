@@ -35,7 +35,7 @@ offset_bottom = 192.0
 theme = ExtResource("1_cfprh")
 
 [node name="RadialMenu" parent="ColorRect" instance=ExtResource("3_vg3yh")]
-visible = true
+custom_minimum_size = Vector2(300, 222.263)
 offset_left = 554.0
 offset_top = 196.0
 offset_right = 854.0

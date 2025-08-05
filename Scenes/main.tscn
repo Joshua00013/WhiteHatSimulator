@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=24 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -13,23 +13,23 @@
 [ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://dfkkvj0kcca4s" path="res://Assets/Pause.png" id="11_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="12_k12tt"]
+[ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="13_hibaj"]
 [ext_resource type="PackedScene" uid="uid://d07bmjtmbnvn8" path="res://Scenes/3DModels/officechair.tscn" id="18_b3802"]
 [ext_resource type="PackedScene" uid="uid://c7yowoih0rjeg" path="res://Scenes/gui/Phishing UI/phishing assets/computer_phishing.tscn" id="18_fevyy"]
 [ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/interactables/flash_drive_collectible.tscn" id="19_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="19_fevyy"]
-[ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Server/hand_tracker_server.gd" id="19_hibaj"]
+[ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/interactables/card_swipe.tscn" id="19_pdsj5"]
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
-[sub_resource type="Sky" id="Sky_21xkr"]
+[sub_resource type="Sky" id="Sky_hibaj"]
 sky_material = SubResource("ProceduralSkyMaterial_kry3j")
 
 [sub_resource type="Environment" id="Environment_6bp64"]
 background_mode = 2
 background_energy_multiplier = 1.87
-sky = SubResource("Sky_21xkr")
+sky = SubResource("Sky_hibaj")
 ambient_light_source = 3
 
 [node name="Main" type="Node3D"]
@@ -57,10 +57,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82364, 0.530149, 6.21647)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29966, 0, 6.36938)
 stream = ExtResource("5_kry3j")
 
-[node name="AndroidUI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("7_ynf5e")
 
-[node name="Control" type="Control" parent="AndroidUI"]
+[node name="AndroidOverlay" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
+[node name="Virtual Joystick" parent="UI/AndroidOverlay" instance=ExtResource("7_6bp64")]
 layout_mode = 1
 offset_top = -300.0
 offset_bottom = 0.0
@@ -82,7 +82,7 @@ action_right = "strafe_right"
 action_up = "move_forward"
 action_down = "move_backward"
 
-[node name="InteractButton" type="Button" parent="AndroidUI/Control"]
+[node name="InteractButton" type="Button" parent="UI/AndroidOverlay"]
 layout_mode = 0
 anchor_left = 0.90625
 anchor_top = 0.618827
@@ -92,7 +92,7 @@ icon = ExtResource("9_fdnlq")
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="InventoryButton" type="Button" parent="AndroidUI/Control"]
+[node name="InventoryButton" type="Button" parent="UI/AndroidOverlay"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0199653
@@ -103,7 +103,7 @@ icon = ExtResource("10_jkdf5")
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="PauseButton" type="Button" parent="AndroidUI/Control"]
+[node name="PauseButton" type="Button" parent="UI/AndroidOverlay"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.919271
@@ -114,7 +114,7 @@ icon = ExtResource("11_wsu2k")
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="SprintButton" type="Button" parent="AndroidUI/Control"]
+[node name="SprintButton" type="Button" parent="UI/AndroidOverlay"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.835069
@@ -125,34 +125,8 @@ icon = ExtResource("12_k12tt")
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Time_Label" type="Label" parent="AndroidUI/Control"]
+[node name="TimerUI" parent="UI/AndroidOverlay" instance=ExtResource("13_hibaj")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.480903
-anchor_top = 0.0216049
-anchor_right = 0.603299
-anchor_bottom = 0.138889
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
-theme_override_font_sizes/font_size = 55
-text = "08:30"
-metadata/_edit_use_anchors_ = true
-
-[node name="Timer" type="Timer" parent="AndroidUI/Control"]
-process_callback = 0
-
-[node name="Day_Label" type="Label" parent="AndroidUI/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.517361
-anchor_top = 0.137346
-anchor_right = 0.559896
-anchor_bottom = 0.171296
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 15
-text = "Day 01"
 
 [node name="flashdrive" parent="." instance=ExtResource("8_344ge")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.21585, 0.897541, 2.01885)
