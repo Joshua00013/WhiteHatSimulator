@@ -3,3 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://bx13rwxrl7i2c" path="res://Assets/Exported3dModel/liz_smooth.glb" id="1_3qni5"]
 
 [node name="liz_smooth" instance=ExtResource("1_3qni5")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, 0.721213, -0.0220776)
+bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
+bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
+bones/2/rotation = Quaternion(-0.00651702, -0.06579, 0.985258, -0.157787)
+bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
+bones/4/rotation = Quaternion(-0.0277263, -0.000249151, 0.999599, -0.00581791)
+bones/4/scale = Vector3(1, 1, 1.00003)
+bones/5/rotation = Quaternion(-0.105168, -0.000397456, -0.0587278, 0.992719)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.627705, 0.0102008, 0.0677391, 0.775431)
+bones/6/scale = Vector3(0.999999, 1.00001, 1)
+bones/7/rotation = Quaternion(0.00792212, -0.0467273, 0.988003, 0.146982)
+bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
+bones/9/rotation = Quaternion(-0.00388458, -0.00186775, 0.999948, 0.00926886)
+bones/9/scale = Vector3(1, 1, 1.00003)
+bones/10/rotation = Quaternion(-0.105168, 0.000397457, 0.0587278, 0.992719)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.628066, -0.0369063, -0.050403, 0.775648)
+bones/11/scale = Vector3(1, 1.00001, 1)
