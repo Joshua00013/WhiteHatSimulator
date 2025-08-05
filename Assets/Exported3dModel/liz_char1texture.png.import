@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u5skk0we4pev"
-path.s3tc="res://.godot/imported/liz_2_char1texture.png-74b811f1d0b4fccc64f15b2dbb9435de.s3tc.ctex"
-path.etc2="res://.godot/imported/liz_2_char1texture.png-74b811f1d0b4fccc64f15b2dbb9435de.etc2.ctex"
+uid="uid://dou1ys06hxodi"
+path.s3tc="res://.godot/imported/liz_char1texture.png-b0a8e2971cd387e6acbcf32ed3028a22.s3tc.ctex"
+path.etc2="res://.godot/imported/liz_char1texture.png-b0a8e2971cd387e6acbcf32ed3028a22.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Exported3dModel/liz_2_char1texture.png"
-dest_files=["res://.godot/imported/liz_2_char1texture.png-74b811f1d0b4fccc64f15b2dbb9435de.s3tc.ctex", "res://.godot/imported/liz_2_char1texture.png-74b811f1d0b4fccc64f15b2dbb9435de.etc2.ctex"]
+source_file="res://Assets/Exported3dModel/liz_char1texture.png"
+dest_files=["res://.godot/imported/liz_char1texture.png-b0a8e2971cd387e6acbcf32ed3028a22.s3tc.ctex", "res://.godot/imported/liz_char1texture.png-b0a8e2971cd387e6acbcf32ed3028a22.etc2.ctex"]
 
 [params]
 

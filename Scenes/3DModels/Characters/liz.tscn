@@ -1,23 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckpgtgoooit7y"]
+[gd_scene load_steps=2 format=3 uid="uid://bovai05xuoedp"]
 
-[ext_resource type="PackedScene" uid="uid://berdtr0u1a0ig" path="res://Assets/Exported3dModel/liz.glb" id="1_1pwc6"]
+[ext_resource type="PackedScene" uid="uid://bcjo4jso4u4ot" path="res://Assets/Exported3dModel/liz.glb" id="1_1pwc6"]
 
 [node name="liz" instance=ExtResource("1_1pwc6")]
-
-[node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(-1.21535e-17, 0.725273, -0.0221518)
-bones/0/rotation = Quaternion(0.0524951, 0, 0, 0.998621)
-bones/1/rotation = Quaternion(0.138716, 1.16719e-07, 2.42413e-08, 0.990332)
-bones/2/rotation = Quaternion(-0.00630482, -0.00986833, 0.992807, -0.119152)
-bones/3/rotation = Quaternion(0.221415, -0.0391935, -0.0120629, 0.974317)
-bones/4/rotation = Quaternion(-0.140606, 0.354773, 0.917549, -0.111674)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.679188, -0.000249336, -0.379276, 0.628374)
-bones/6/rotation = Quaternion(0.563337, -0.131232, 0.217036, 0.786336)
-bones/7/rotation = Quaternion(0.00176648, 0.035918, 0.992831, 0.113993)
-bones/8/rotation = Quaternion(0.137046, 0.01876, 0.0133508, 0.990297)
-bones/9/rotation = Quaternion(0.00193969, -0.0200206, 0.999608, -0.0194889)
-bones/9/scale = Vector3(1, 0.999999, 1.00003)
-bones/10/rotation = Quaternion(-0.00322685, 0.000400405, 0.00180208, 0.999993)
-bones/11/rotation = Quaternion(0.613555, -0.0157953, -0.0301326, 0.788919)
-bones/11/scale = Vector3(1, 1.00001, 0.999994)
