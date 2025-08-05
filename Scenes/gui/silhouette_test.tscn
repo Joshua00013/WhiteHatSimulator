@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://csw5mfxjxfyqf"]
+
+[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="1_c72ie"]
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_yoe3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkc3m"]
+shader = ExtResource("1_yoe3m")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.17, 0.175)
+shader_parameter/hole_size = Vector2(1.29, 1.775)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 498.0
+offset_bottom = 387.0
+texture = ExtResource("1_c72ie")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 272.0
+offset_right = 563.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 11
+theme_override_constants/shadow_outline_size = 1
+text = "John mhike bold"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kkc3m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
