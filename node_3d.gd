@@ -42,37 +42,38 @@ func _unhandled_input(event):
 		$PauseMenu.pause()
 	
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	elif Input.is_action_pressed("crouch"):
-		GameManager.is_crouching = false
-		crouch(delta,GameManager.is_crouching)
-	else:
-		GameManager.is_crouching = true
-		crouch(delta,GameManager.is_crouching)
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction: #Used lerping for smoother movement
-		if Input.is_action_pressed("sprint"):
-			velocity.x = lerp(velocity.x, direction.x * sprint_speed, accel * delta)
-			velocity.z = lerp(velocity.z, direction.z * sprint_speed, accel * delta)
+	if GameManager.ui_active == false:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif Input.is_action_pressed("crouch"):
+			GameManager.is_crouching = false
+			crouch(delta,GameManager.is_crouching)
 		else:
-			velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
-			velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
-	else:
-		velocity.x = lerp(velocity.x, 0.0, accel * delta)
-		velocity.z = lerp(velocity.z, 0.0, accel * delta)
+			GameManager.is_crouching = true
+			crouch(delta,GameManager.is_crouching)
+		
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_backward")
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction: #Used lerping for smoother movement
+			if Input.is_action_pressed("sprint"):
+				velocity.x = lerp(velocity.x, direction.x * sprint_speed, accel * delta)
+				velocity.z = lerp(velocity.z, direction.z * sprint_speed, accel * delta)
+			else:
+				velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
+				velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
+		else:
+			velocity.x = lerp(velocity.x, 0.0, accel * delta)
+			velocity.z = lerp(velocity.z, 0.0, accel * delta)
 
-	move_and_slide()
-	
-	head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
-	rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
+		move_and_slide()
+		
+		head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
+		rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
 	
 func crouch(delta : float, inactive = false):
 	var target_height : float = crouch_height if inactive == false else stand_height
