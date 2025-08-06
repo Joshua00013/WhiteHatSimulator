@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=26 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="19_fevyy"]
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Server/hand_tracker_server.gd" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/interactables/card_swipe.tscn" id="19_pdsj5"]
-
+[ext_resource type="PackedScene" uid="uid://nxworudlncla" path="res://Scenes/3DModels/Structures/window_wall_single_door.tscn" id="20_hibaj"]
+[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz_smooth.tscn" id="21_pdsj5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -32,23 +33,31 @@ background_energy_multiplier = 1.87
 sky = SubResource("Sky_21xkr")
 ambient_light_source = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdsj5"]
+transparency = 1
+albedo_color = Color(1, 0.666667, 1, 0.533333)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_6bp64")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 14.1334, 0)
-shadow_enabled = true
-
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_jjvhh")
+
+[node name="HandTrackerServer" type="Node" parent="."]
+script = ExtResource("19_hibaj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 14.1334, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.64372, -0.322266, -3.65995)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.6229, -0.322266, -52.5124)
 
 [node name="Environment" parent="." instance=ExtResource("2_bo1nx")]
+material_override = SubResource("StandardMaterial3D_pdsj5")
 
 [node name="Computer" parent="." instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82364, 0.530149, 6.21647)
@@ -56,6 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82364, 0.530149, 6.21647)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29966, 0, 6.36938)
 stream = ExtResource("5_kry3j")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09586, -0.411133, -23.9468)
+use_collision = true
+size = Vector3(70, 0.177734, 81)
 
 [node name="AndroidUI" type="CanvasLayer" parent="."]
 script = ExtResource("7_ynf5e")
@@ -166,11 +180,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87703, -0.322266, 0.695957)
 [node name="Computer Phishing" parent="." instance=ExtResource("18_fevyy")]
 transform = Transform3D(0.0757097, 0, 0.99713, 0, 1, 0, -0.99713, 0, 0.0757097, -16.0276, 1.40113, -4.61071)
 
-[node name="HandTrackerServer" type="Node" parent="."]
-script = ExtResource("19_hibaj")
-
 [node name="CardSwipe" parent="." instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.86808, 1.97332, 4.04397)
 
 [node name="FlashDriveCollectible" parent="." instance=ExtResource("19_ee4r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46316, 0.847611, 1.69157)
+
+[node name="WindowWallSingleDoor" parent="." instance=ExtResource("20_hibaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8684, -0.322266, -55.5338)
+
+[node name="liz_smooth" parent="." instance=ExtResource("21_pdsj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2532, -0.322267, -54.495)
