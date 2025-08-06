@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=26 format=3 uid="uid://bboey1mf24oe4"]
 
-[ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ltxclu2fv57h" path="res://Scenes/maps/environment1.tscn" id="2_bo1nx"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="19_fevyy"]
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Server/hand_tracker_server.gd" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/interactables/card_swipe.tscn" id="19_pdsj5"]
-
+[ext_resource type="PackedScene" uid="uid://cp7034y6onwxg" path="res://Assets/PC_Assets/pc_collecting_info.tscn" id="20_hibaj"]
+[ext_resource type="PackedScene" uid="uid://dkw0i2jbufepl" path="res://Scenes/interactables/laptop_collectible.tscn" id="21_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://be1wgtjowtlre" path="res://Scenes/interactables/player_laptop.tscn" id="22_ee4r6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -174,3 +176,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.8680
 
 [node name="FlashDriveCollectible" parent="." instance=ExtResource("19_ee4r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46316, 0.847611, 1.69157)
+
+[node name="PC-Collecting-Info" parent="." instance=ExtResource("20_hibaj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9804, 1.43428, 0.339316)
+
+[node name="LaptopCollectible" parent="." instance=ExtResource("21_pdsj5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.92561, -0.322266, -8.56556)
+
+[node name="Player_Laptop" parent="." instance=ExtResource("22_ee4r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0647038, -0.322266, -8.56132)
