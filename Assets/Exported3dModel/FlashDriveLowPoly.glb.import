@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bux42k1daomws"
-path="res://.godot/imported/Laptop-col.glb-14aadf0ad6a224a36e27bc9eca6395a7.scn"
+uid="uid://cr85yrvrk6q68"
+path="res://.godot/imported/FlashDriveLowPoly.glb-b73554ff8e97b5e1a2bf1c06fed6fecd.scn"
 
 [deps]
 
-source_file="res://Assets/Exported3dModel/Laptop-col.glb"
-dest_files=["res://.godot/imported/Laptop-col.glb-14aadf0ad6a224a36e27bc9eca6395a7.scn"]
+source_file="res://Assets/Exported3dModel/FlashDriveLowPoly.glb"
+dest_files=["res://.godot/imported/FlashDriveLowPoly.glb-b73554ff8e97b5e1a2bf1c06fed6fecd.scn"]
 
 [params]
 

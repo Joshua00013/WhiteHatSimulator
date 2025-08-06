@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bcq8tytibj4i1" path="res://Assets/Exported3dModel/GlassWall.glb" id="1_erxey"]
 
 [node name="GlassWall" instance=ExtResource("1_erxey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0376729, 0)
 
 [node name="GlassWall" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291869, 0.032, 0.00416422)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0583738, 0, -0.0223942)
