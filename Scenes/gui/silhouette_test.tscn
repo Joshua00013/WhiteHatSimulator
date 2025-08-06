@@ -6,10 +6,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kkc3m"]
 shader = ExtResource("1_yoe3m")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.17, 0.175)
-shader_parameter/hole_size = Vector2(1.29, 1.775)
+shader_parameter/hole_position = Vector2(1.13, 1.59)
+shader_parameter/hole_size = Vector2(1.765, 2.43)
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(1.455, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,24 +20,37 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 498.0
-offset_bottom = 387.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -249.0
+offset_top = -387.0
+offset_right = 249.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("1_c72ie")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 437.0
-offset_top = 272.0
-offset_right = 563.0
-offset_bottom = 295.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 126.0
+offset_bottom = 11.5
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 11
 theme_override_constants/shadow_outline_size = 1
 text = "John mhike bold"
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kkc3m")
 layout_mode = 1
 anchors_preset = 15
@@ -44,3 +58,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
