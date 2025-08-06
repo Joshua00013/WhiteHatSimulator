@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b23e5f1whnwci"]
+
+[ext_resource type="PackedScene" uid="uid://harhc3jbcnvp" path="res://Assets/Exported3dModel/WallDoubleDoor.glb" id="1_clocb"]
+
+[node name="WallDoubleDoor" instance=ExtResource("1_clocb")]
+
+[node name="DoubleDoorWall" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000267982)
