@@ -168,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0708679, 0.187532, -1.25816
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="FlashdriveChecker" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.392961, 0, 0, 0, 0.157214, 0, 0, 0, 0.381536, -0.212016, 0.0432428, 0.176385)
 shape = SubResource("BoxShape3D_bhn80")
 
