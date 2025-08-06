@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnaq8sr3khlq"]
+
+[ext_resource type="PackedScene" uid="uid://1e7h4nr5rbao" path="res://Assets/export_LPOP_FULL/Projector.fbx" id="1_3y8l5"]
+
+[node name="Projector" instance=ExtResource("1_3y8l5")]
