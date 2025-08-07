@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf8yyv0x2pmml"]
+
+[ext_resource type="PackedScene" uid="uid://c1b7n3jb1wfv5" path="res://Assets/export_LPOP_FULL/FilingCabinetThreeStack_Case.fbx" id="1_5g62g"]
+
+[node name="FilingCabinetThreeStack_Case" instance=ExtResource("1_5g62g")]
