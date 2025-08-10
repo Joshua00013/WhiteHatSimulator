@@ -4,19 +4,19 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2ins3v1vhryn"
-path="res://.godot/imported/Table_OfficeDesk2.fbx-42c12a3506c57301a7dfd7d08b2150f0.scn"
+path="res://.godot/imported/Table_OfficeDesk2-col.fbx-85ecf5379aa2c4b241eb5c981afda416.scn"
 
 [deps]
 
-source_file="res://Assets/export_LPOP_FULL/Table_OfficeDesk2.fbx"
-dest_files=["res://.godot/imported/Table_OfficeDesk2.fbx-42c12a3506c57301a7dfd7d08b2150f0.scn"]
+source_file="res://Assets/export_LPOP_FULL/Table_OfficeDesk2-col.fbx"
+dest_files=["res://.godot/imported/Table_OfficeDesk2-col.fbx-85ecf5379aa2c4b241eb5c981afda416.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=2.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
