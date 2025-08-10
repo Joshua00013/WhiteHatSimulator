@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=36 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://d27e6grbkefq1" path="res://Scenes/3DModels/Decorations/simple_office_chair_col.tscn" id="22_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://bjktsnvh7d76c" path="res://Scenes/3DModels/Structures/glass_wall.tscn" id="23_gt3je"]
 [ext_resource type="PackedScene" uid="uid://bpj3mqo28yw4f" path="res://Scenes/3DModels/Structures/window_wall_double.tscn" id="26_cbgmd"]
+[ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="29_6vcvc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -614,3 +615,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71709, 0.849262, 1.91281)
 
 [node name="liz_smooth" parent="NPC" instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8642, -1.90735e-06, 3.0922)
+
+[node name="mococo_hair" parent="." instance=ExtResource("29_6vcvc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.48974, 4.76837e-07, 6.50731)
