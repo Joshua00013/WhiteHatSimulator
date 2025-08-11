@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2ins3v1vhryn"
-path="res://.godot/imported/Table_OfficeDesk2.fbx-42c12a3506c57301a7dfd7d08b2150f0.scn"
+uid="uid://cr85yrvrk6q68"
+path="res://.godot/imported/FlashDriveLowPoly.glb-b73554ff8e97b5e1a2bf1c06fed6fecd.scn"
 
 [deps]
 
-source_file="res://Assets/export_LPOP_FULL/Table_OfficeDesk2.fbx"
-dest_files=["res://.godot/imported/Table_OfficeDesk2.fbx-42c12a3506c57301a7dfd7d08b2150f0.scn"]
+source_file="res://Assets/Exported3dModel/FlashDriveLowPoly.glb"
+dest_files=["res://.godot/imported/FlashDriveLowPoly.glb-b73554ff8e97b5e1a2bf1c06fed6fecd.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=2.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

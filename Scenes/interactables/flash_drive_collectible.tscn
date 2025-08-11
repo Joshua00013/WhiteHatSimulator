@@ -1,25 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://bas4ywriyhh35"]
 
 [ext_resource type="Script" uid="uid://copm4645nk7rx" path="res://Scripts/Interactables/flash_drive_collectible.gd" id="1_erscu"]
-[ext_resource type="PackedScene" uid="uid://c2g21yn168t7i" path="res://Assets/Exported3dModel/Flashdrive.glb" id="2_in7iu"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_m5ela"]
-[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Components/interactable.tscn" id="3_m5ela"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_m5ela"]
+[ext_resource type="PackedScene" uid="uid://b81xiro3fx3ve" path="res://Scenes/3DModels/Interactables/flash_drive_low_poly.tscn" id="4_in7iu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlntu"]
-size = Vector3(0.170837, 0.0639648, 0.0877686)
+size = Vector3(0.221664, 0.0639648, 0.0877686)
 
 [node name="FlashDriveCollectible" type="Node3D"]
 script = ExtResource("1_erscu")
 resource = ExtResource("2_m5ela")
 
-[node name="Flashdrive" parent="." instance=ExtResource("2_in7iu")]
-
 [node name="Interactable" parent="." instance=ExtResource("3_m5ela")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00259399, -0.000732422, -0.0756226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0312665, -0.000732422, -0.00133003)
 shape = SubResource("BoxShape3D_jlntu")
 
-[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
+[node name="FlashDriveLowPoly" parent="." instance=ExtResource("4_in7iu")]
 
-[editable path="Flashdrive"]
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

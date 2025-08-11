@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var card_camera: Camera3D = $Camera3D
-@onready var keycard: Node3D = $singlekeycard
+@onready var keycard: Node3D = $keycard
 
 var sensitivity = 0.01
 var dragging = false

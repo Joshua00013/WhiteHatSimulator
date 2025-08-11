@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bux42k1daomws"
-path="res://.godot/imported/Laptop-col.glb-14aadf0ad6a224a36e27bc9eca6395a7.scn"
+uid="uid://c1ygryi0os6g3"
+path="res://.godot/imported/mococo_hair.glb-9d046b27f386ec0bf00c469ac77d68fa.scn"
 
 [deps]
 
-source_file="res://Assets/Exported3dModel/Laptop-col.glb"
-dest_files=["res://.godot/imported/Laptop-col.glb-14aadf0ad6a224a36e27bc9eca6395a7.scn"]
+source_file="res://Assets/Exported3dModel/mococo_hair.glb"
+dest_files=["res://.godot/imported/mococo_hair.glb-9d046b27f386ec0bf00c469ac77d68fa.scn"]
 
 [params]
 
