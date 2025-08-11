@@ -27,6 +27,27 @@ func _on_ransomware_2_back_pressed() -> void:
 	ransomware_player.current_tab -= 1
 
 
-func _on_ransomeware_2_next_pressed() -> void:
-	#get_tree().change_scene_to_file("res://Scenes/gui/Ransomware/ransomwareEncrypt_Part3.tscn")
+
+
+
+
+
+#Next button 
+func _on_ransomeware_next_pressed() -> void:
 	ransomware_player.current_tab += 1
+
+#Back button
+func _on_ransomeware_back_btn_pressed() -> void:
+	ransomware_player.current_tab -= 1.
+
+#Pdf icon Button
+func _pdf_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/gui/Ransomware/ransomwareEncrypt_Start1.tscn")
+
+#Godot svg Button
+func _on_godot_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/gui/Ransomware/ransomwareEncrypt_Start2.tscn")
+
+
+func _on_companyfile_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/gui/Ransomware/ransomwareEncrypt_Start3.tscn")

@@ -12,12 +12,10 @@ script = ExtResource("1_joet6")
 
 [node name="Time_Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 486.0
-offset_right = 627.0
-offset_bottom = 76.0
+anchors_preset = -1
+anchor_left = 12.65
+anchor_right = 16.175
+anchor_bottom = 1.9
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
 theme_override_font_sizes/font_size = 55
@@ -26,13 +24,10 @@ text = "08:30"
 [node name="Day_Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.55
-offset_left = 539.0
-offset_top = 59.0
-offset_right = 580.0
-offset_bottom = 59.0
+anchor_left = 13.975
+anchor_top = 1.475
+anchor_right = 15.0
+anchor_bottom = 2.025
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 15
 text = "Day 1"

@@ -1,0 +1,315 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpgibxwpepovg"]
+
+[ext_resource type="Script" uid="uid://c1bgcv5xcb0p1" path="res://Scenes/gui/Ransomware/ransomware_encrypt_start_1.gd" id="1_h0fld"]
+[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="2_fqgw6"]
+
+[sub_resource type="FontFile" id="FontFile_gclbg"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/79/0/ascent = 0.0
+cache/0/79/0/descent = 0.0
+cache/0/79/0/underline_position = 0.0
+cache/0/79/0/underline_thickness = 0.0
+cache/0/79/0/scale = 1.0
+cache/0/94/0/ascent = 0.0
+cache/0/94/0/descent = 0.0
+cache/0/94/0/underline_position = 0.0
+cache/0/94/0/underline_thickness = 0.0
+cache/0/94/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/114/0/ascent = 0.0
+cache/0/114/0/descent = 0.0
+cache/0/114/0/underline_position = 0.0
+cache/0/114/0/underline_thickness = 0.0
+cache/0/114/0/scale = 1.0
+cache/0/129/0/ascent = 0.0
+cache/0/129/0/descent = 0.0
+cache/0/129/0/underline_position = 0.0
+cache/0/129/0/underline_thickness = 0.0
+cache/0/129/0/scale = 1.0
+cache/0/134/0/ascent = 0.0
+cache/0/134/0/descent = 0.0
+cache/0/134/0/underline_position = 0.0
+cache/0/134/0/underline_thickness = 0.0
+cache/0/134/0/scale = 1.0
+cache/0/139/0/ascent = 0.0
+cache/0/139/0/descent = 0.0
+cache/0/139/0/underline_position = 0.0
+cache/0/139/0/underline_thickness = 0.0
+cache/0/139/0/scale = 1.0
+cache/0/144/0/ascent = 0.0
+cache/0/144/0/descent = 0.0
+cache/0/144/0/underline_position = 0.0
+cache/0/144/0/underline_thickness = 0.0
+cache/0/144/0/scale = 1.0
+cache/0/149/0/ascent = 0.0
+cache/0/149/0/descent = 0.0
+cache/0/149/0/underline_position = 0.0
+cache/0/149/0/underline_thickness = 0.0
+cache/0/149/0/scale = 1.0
+cache/0/154/0/ascent = 0.0
+cache/0/154/0/descent = 0.0
+cache/0/154/0/underline_position = 0.0
+cache/0/154/0/underline_thickness = 0.0
+cache/0/154/0/scale = 1.0
+cache/0/159/0/ascent = 0.0
+cache/0/159/0/descent = 0.0
+cache/0/159/0/underline_position = 0.0
+cache/0/159/0/underline_thickness = 0.0
+cache/0/159/0/scale = 1.0
+cache/0/124/0/ascent = 0.0
+cache/0/124/0/descent = 0.0
+cache/0/124/0/underline_position = 0.0
+cache/0/124/0/underline_thickness = 0.0
+cache/0/124/0/scale = 1.0
+cache/0/104/0/ascent = 0.0
+cache/0/104/0/descent = 0.0
+cache/0/104/0/underline_position = 0.0
+cache/0/104/0/underline_thickness = 0.0
+cache/0/104/0/scale = 1.0
+cache/0/89/0/ascent = 0.0
+cache/0/89/0/descent = 0.0
+cache/0/89/0/underline_position = 0.0
+cache/0/89/0/underline_thickness = 0.0
+cache/0/89/0/scale = 1.0
+cache/0/84/0/ascent = 0.0
+cache/0/84/0/descent = 0.0
+cache/0/84/0/underline_position = 0.0
+cache/0/84/0/underline_thickness = 0.0
+cache/0/84/0/scale = 1.0
+cache/0/69/0/ascent = 0.0
+cache/0/69/0/descent = 0.0
+cache/0/69/0/underline_position = 0.0
+cache/0/69/0/underline_thickness = 0.0
+cache/0/69/0/scale = 1.0
+cache/0/59/0/ascent = 0.0
+cache/0/59/0/descent = 0.0
+cache/0/59/0/underline_position = 0.0
+cache/0/59/0/underline_thickness = 0.0
+cache/0/59/0/scale = 1.0
+cache/0/54/0/ascent = 0.0
+cache/0/54/0/descent = 0.0
+cache/0/54/0/underline_position = 0.0
+cache/0/54/0/underline_thickness = 0.0
+cache/0/54/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/74/0/ascent = 0.0
+cache/0/74/0/descent = 0.0
+cache/0/74/0/underline_position = 0.0
+cache/0/74/0/underline_thickness = 0.0
+cache/0/74/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtdv5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtdv5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6brux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7830"]
+bg_color = Color(0.831373, 0.831373, 0.831373, 0.235294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imu3t"]
+texture = ExtResource("2_fqgw6")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0fld")
+
+[node name="Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 66.0
+grow_horizontal = 2
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -554.0
+offset_top = 13.0
+offset_right = 547.0
+offset_bottom = 53.0
+grow_horizontal = 2
+color = Color(0.332881, 0.332881, 0.332881, 1)
+
+[node name="HeaderText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 20.0
+offset_right = -82.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontFile_gclbg")
+theme_override_font_sizes/font_size = 18
+text = "Destop  >  Ransomware  >  godot.svg"
+
+[node name="Body" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -581.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 23.0
+offset_right = 219.0
+offset_bottom = 46.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdv5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtdv5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6brux")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7830")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.351
+anchor_top = 0.259
+anchor_right = 0.649
+anchor_bottom = 0.741
+offset_left = -0.35202
+offset_top = 0.167999
+offset_right = 0.351929
+offset_bottom = -0.16803
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_imu3t")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

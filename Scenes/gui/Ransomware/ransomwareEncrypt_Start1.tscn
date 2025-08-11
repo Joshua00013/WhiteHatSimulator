@@ -1,9 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc0buatvhcvhp"]
+[gd_scene load_steps=7 format=3 uid="uid://emryxlr5jty2"]
 
-[ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="1_qrujy"]
-[ext_resource type="Texture2D" uid="uid://d0bledml4xvhm" path="res://Assets/41445993-1fd4-4f83-be0e-58a50be61bc9-removebg-preview.png" id="2_jkgvp"]
-[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="3_omt8o"]
-[ext_resource type="Texture2D" uid="uid://5yf3qlkg070e" path="res://Assets/document_papers_paper_files_icon_paper_-removebg-preview.png" id="4_ydok0"]
+[ext_resource type="Script" uid="uid://c1bgcv5xcb0p1" path="res://Scenes/gui/Ransomware/ransomware_encrypt_start_1.gd" id="1_r7830"]
 
 [sub_resource type="FontFile" id="FontFile_gclbg"]
 cache/0/16/0/ascent = 0.0
@@ -222,17 +219,15 @@ cache/0/18/0/underline_position = 0.0
 cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qffa"]
-texture = ExtResource("1_qrujy")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtdv5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqnaq"]
-texture = ExtResource("2_jkgvp")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtdv5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucc52"]
-texture = ExtResource("3_omt8o")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6brux"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lts1d"]
-texture = ExtResource("4_ydok0")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7830"]
+bg_color = Color(0.831373, 0.831373, 0.831373, 0.235294)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -241,6 +236,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r7830")
 
 [node name="Header" type="ColorRect" parent="."]
 layout_mode = 1
@@ -267,14 +263,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -534.0
+offset_left = -550.0
 offset_top = 20.0
-offset_right = -343.0
+offset_right = -82.0
 offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_fonts/font = SubResource("FontFile_gclbg")
 theme_override_font_sizes/font_size = 18
-text = "Destop  >  Ransomware"
+text = "Destop  >  Ransomware  >  my file"
 
 [node name="Body" type="ColorRect" parent="."]
 layout_mode = 1
@@ -285,154 +281,25 @@ anchor_bottom = 1.0
 offset_top = -581.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.162066, 0.162066, 0.162066, 1)
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -30.9999
-offset_top = -212.0
-offset_right = 46.0001
-offset_bottom = -141.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.880109, 0.968706)
-theme_override_styles/panel = SubResource("StyleBoxTexture_8qffa")
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -452.0
-offset_top = -206.0
-offset_right = -412.0
-offset_bottom = -166.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.3973, 1.41684)
-theme_override_styles/panel = SubResource("StyleBoxTexture_oqnaq")
-
-[node name="Panel3" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -306.0
-offset_top = -203.0
-offset_right = -266.0
-offset_bottom = -163.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.36426, 1.353)
-theme_override_styles/panel = SubResource("StyleBoxTexture_ucc52")
-
-[node name="Panel4" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -171.0
-offset_top = -218.0
-offset_right = -131.0
-offset_bottom = -178.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.86775, 1.9397)
-theme_override_styles/panel = SubResource("StyleBoxTexture_lts1d")
-
-[node name="Panel5" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 92.0
-offset_top = -218.0
-offset_right = 132.0
-offset_bottom = -178.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.86775, 1.9397)
-theme_override_styles/panel = SubResource("StyleBoxTexture_lts1d")
-
-[node name="Panel6" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 217.0
-offset_top = -218.0
-offset_right = 257.0
-offset_bottom = -178.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.86775, 1.9397)
-theme_override_styles/panel = SubResource("StyleBoxTexture_lts1d")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 176.0
-offset_right = 176.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 9
-text = "my file.pdf"
+offset_left = 7.0
+offset_top = 72.0
+offset_right = 1108.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hello World! this is my file"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 275.0
-offset_top = 176.0
-offset_right = 322.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 9
-text = "godot.svg"
+offset_left = 111.0
+offset_top = 23.0
+offset_right = 219.0
+offset_bottom = 46.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdv5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtdv5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6brux")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7830")
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 420.0
-offset_top = 176.0
-offset_right = 467.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 9
-text = "malware.py"
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 551.0
-offset_top = 176.0
-offset_right = 609.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 9
-text = "Company.file"
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_left = 690.0
-offset_top = 176.0
-offset_right = 723.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 9
-text = "Mhike.text"
-
-[node name="Label6" type="Label" parent="."]
-layout_mode = 0
-offset_left = 816.0
-offset_top = 175.0
-offset_right = 849.0
-offset_bottom = 188.0
-theme_override_font_sizes/font_size = 9
-text = "key.key"
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
