@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://vhhufpni2bkm"]
+[gd_scene load_steps=4 format=3 uid="uid://qdvxy3bbjci5"]
 
-[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_qbprc"]
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_llvvg"]
 
 [sub_resource type="FontFile" id="FontFile_ifstv"]
 subpixel_positioning = 0
@@ -223,10 +223,10 @@ cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wddvm"]
-shader = ExtResource("1_qbprc")
+shader = ExtResource("1_llvvg")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.015, 0.635)
-shader_parameter/hole_size = Vector2(1.955, 0.15)
+shader_parameter/hole_position = Vector2(0.015, 1.975)
+shader_parameter/hole_size = Vector2(1.955, 0.72)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -377,10 +377,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 600.0
-offset_top = 101.0
-offset_right = 1113.0
-offset_bottom = 150.0
+offset_top = 326.0
+offset_right = 1069.0
+offset_bottom = 375.0
 theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "It acts as a container for target files."
+text = "Loop through every file gathered earlier."
 autowrap_mode = 3
 justification_flags = 162
