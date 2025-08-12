@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bojq1sdo633rm"]
+
+[ext_resource type="PackedScene" uid="uid://d16gte62m0ei0" path="res://Assets/export_LPOP_FULL/Shelving_3Tier_Stylised_Brown.fbx" id="1_pwh1h"]
+
+[node name="Shelving_3Tier_Stylised_Brown" instance=ExtResource("1_pwh1h")]
