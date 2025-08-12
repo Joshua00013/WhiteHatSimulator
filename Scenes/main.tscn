@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bpj3mqo28yw4f" path="res://Scenes/3DModels/Structures/window_wall_double.tscn" id="26_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="29_6vcvc"]
 [ext_resource type="PackedScene" uid="uid://0fkypkbaaqgw" path="res://Scenes/3DModels/Characters/myrione.tscn" id="32_e08e2"]
-[ext_resource type="PackedScene" uid="uid://5rqhdyag12rp" path="res://Scenes/3DModels/Characters/mike.tscn" id="33_neg2b"]
+[ext_resource type="PackedScene" uid="uid://b5ttcbpwy5ssx" path="res://Scenes/3DModels/Characters/mike.tscn" id="33_neg2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -653,8 +653,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8642, -1.90735e-06, 3.0922)
 [node name="myrione" parent="NPC" instance=ExtResource("32_e08e2")]
 transform = Transform3D(-0.08493, 0, -0.996387, 0, 1, 0, 0.996387, 0, -0.08493, 11.7493, 4.76837e-07, 4.97471)
 
-[node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8329, 2.38419e-07, 1.80454)
-
 [node name="Door" parent="." instance=ExtResource("24_e08e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936584, 4.76837e-07, 0.673151)
+
+[node name="mike" parent="." instance=ExtResource("33_neg2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6837, 4.76837e-07, 3.19061)
