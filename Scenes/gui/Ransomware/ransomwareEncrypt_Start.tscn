@@ -253,6 +253,7 @@ anchor_right = 1.0
 offset_bottom = 66.0
 grow_horizontal = 2
 color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -265,6 +266,7 @@ offset_right = 547.0
 offset_bottom = 53.0
 grow_horizontal = 2
 color = Color(0.332881, 0.332881, 0.332881, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="HeaderText" type="Label" parent="."]
 layout_mode = 1
@@ -279,6 +281,7 @@ grow_horizontal = 2
 theme_override_fonts/font = SubResource("FontFile_gclbg")
 theme_override_font_sizes/font_size = 18
 text = "Destop  >  Ransomware"
+metadata/_edit_use_anchors_ = true
 
 [node name="Body" type="ColorRect" parent="."]
 layout_mode = 1
@@ -290,6 +293,7 @@ offset_top = -581.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.162066, 0.162066, 0.162066, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1

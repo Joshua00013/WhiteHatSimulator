@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dk4gi6kkn3olt"]
+[gd_scene load_steps=26 format=3 uid="uid://dk4gi6kkn3olt"]
 
 [ext_resource type="PackedScene" uid="uid://xjc0rqxgpjdp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn" id="1_ga11f"]
-[ext_resource type="Script" path="res://Scripts/ransomware_attack.gd" id="1_tsboj"]
+[ext_resource type="Script" uid="uid://do1svo7hf88dx" path="res://Scripts/ransomware_attack.gd" id="1_tsboj"]
+[ext_resource type="PackedScene" uid="uid://brfa613gvi1ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
 [ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="2_tsboj"]
 [ext_resource type="PackedScene" uid="uid://bcwvmcp1jrv52" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part2.tscn" id="3_e3sn3"]
 [ext_resource type="PackedScene" uid="uid://c2yg7jovlnqqb" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part3.tscn" id="4_yqa2c"]
@@ -66,11 +67,11 @@ grow_vertical = 2
 current_tab = 0
 tabs_visible = false
 
-[node name="Control18" parent="RansomwarePlayer" instance=ExtResource("6_tsboj")]
+[node name="RansomwareStart" parent="RansomwarePlayer" instance=ExtResource("2_tq67b")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="pdfButton" type="Button" parent="RansomwarePlayer/Control18"]
+[node name="pdfButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.109375
@@ -83,7 +84,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 
-[node name="godotButton" type="Button" parent="RansomwarePlayer/Control18"]
+[node name="godotButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.233507
@@ -96,7 +97,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 
-[node name="malwareButton" type="Button" parent="RansomwarePlayer/Control18"]
+[node name="malwareButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.480035
@@ -109,7 +110,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 
-[node name="companyfileButton" type="Button" parent="RansomwarePlayer/Control18"]
+[node name="companyfileButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.361111
@@ -982,10 +983,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 icon = ExtResource("2_tsboj")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="RansomwarePlayer/Control18/pdfButton" to="." method="_pdf_button_pressed"]
-[connection signal="pressed" from="RansomwarePlayer/Control18/godotButton" to="." method="_on_godot_button_pressed"]
-[connection signal="pressed" from="RansomwarePlayer/Control18/malwareButton" to="." method="_on_malware_button_pressed"]
-[connection signal="pressed" from="RansomwarePlayer/Control18/companyfileButton" to="." method="_on_companyfile_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/pdfButton" to="." method="_pdf_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/godotButton" to="." method="_on_godot_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/malwareButton" to="." method="_on_malware_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/companyfileButton" to="." method="_on_companyfile_button_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Ransomware2/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
