@@ -9,10 +9,8 @@ func _on_interactable_interact_triggered():
 		return
 	
 	if is_open == false:
-		print("Opened")
 		is_open = true
 		animation_player.play("open")
 	else:
-		print("Closed")
-		#is_open = false
-		#animation_player.play("close")
+		is_open = false
+		animation_player.play("close")

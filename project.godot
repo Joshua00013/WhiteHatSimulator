@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg", "res://addons/ri
 [file_customization]
 
 folder_colors={
+"res://Scenes/": "red",
 "res://Scenes/gui/": "green"
 }
 
