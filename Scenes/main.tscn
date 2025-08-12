@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=41 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://c2v5sap2ns8ix" path="res://Scenes/3DModels/Decorations/table_office_desk_2_col.tscn" id="25_neg2b"]
 [ext_resource type="PackedScene" uid="uid://bpj3mqo28yw4f" path="res://Scenes/3DModels/Structures/window_wall_double.tscn" id="26_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="29_6vcvc"]
+[ext_resource type="PackedScene" uid="uid://0fkypkbaaqgw" path="res://Scenes/3DModels/Characters/myrione.tscn" id="32_e08e2"]
+[ext_resource type="PackedScene" uid="uid://5rqhdyag12rp" path="res://Scenes/3DModels/Characters/mike.tscn" id="33_neg2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -614,6 +616,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0457, 9.53674e-07, 8.85893
 [node name="Table_OfficeDesk2-col" parent="Structures" instance=ExtResource("25_neg2b")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.62602, 5.68735e-07, 24.3178)
 
+[node name="Column6" parent="Structures" instance=ExtResource("23_kltya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4986, 4.76837e-07, 8.8894)
+
+[node name="Column7" parent="Structures" instance=ExtResource("23_kltya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50716, 9.53674e-07, 62.1397)
+
+[node name="Column8" parent="Structures" instance=ExtResource("23_kltya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2214, -9.53674e-07, -6.10164)
+
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="flashdrive" parent="Objects" instance=ExtResource("8_344ge")]
@@ -633,20 +644,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71709, 0.849262, 1.91281)
 
 [node name="NPC" type="Node3D" parent="."]
 
+[node name="mococo_hair" parent="NPC" instance=ExtResource("29_6vcvc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.48974, 4.76837e-07, 6.50731)
+
 [node name="liz_smooth" parent="NPC" instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8642, -1.90735e-06, 3.0922)
 
-[node name="mococo_hair" parent="." instance=ExtResource("29_6vcvc")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.48974, 4.76837e-07, 6.50731)
+[node name="myrione" parent="NPC" instance=ExtResource("32_e08e2")]
+transform = Transform3D(-0.08493, 0, -0.996387, 0, 1, 0, 0.996387, 0, -0.08493, 11.7493, 4.76837e-07, 4.97471)
 
-[node name="Column" parent="." instance=ExtResource("23_kltya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4986, 4.76837e-07, 8.8894)
-
-[node name="Column2" parent="." instance=ExtResource("23_kltya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50716, 9.53674e-07, 62.1397)
-
-[node name="Column3" parent="." instance=ExtResource("23_kltya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2214, -9.53674e-07, -6.10164)
+[node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8329, 2.38419e-07, 1.80454)
 
 [node name="Door" parent="." instance=ExtResource("24_e08e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.936584, 4.76837e-07, 0.673151)
