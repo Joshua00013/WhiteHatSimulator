@@ -51,3 +51,7 @@ func _on_godot_button_pressed() -> void:
 
 func _on_companyfile_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/gui/Ransomware/ransomwareEncrypt_Start3.tscn")
+
+
+func _on_malware_button_pressed() -> void:
+	ransomware_player.current_tab += 1.

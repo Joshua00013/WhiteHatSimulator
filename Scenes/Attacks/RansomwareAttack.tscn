@@ -989,6 +989,7 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="RansomwarePlayer/Control18/pdfButton" to="." method="_pdf_button_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control18/godotButton" to="." method="_on_godot_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control18/malwareButton" to="." method="_on_malware_button_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control18/companyfileButton" to="." method="_on_companyfile_button_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
