@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5tyfv7noortn"]
+
+[ext_resource type="Script" uid="uid://dam3cx5uupkrt" path="res://Scripts/GUI/name_text_box.gd" id="1_ewqwg"]
+
+[node name="NameTextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewqwg")
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.258247
+anchor_top = 0.278549
+anchor_right = 0.741753
+anchor_bottom = 0.721451
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.178281, 0.191094, 0.218991, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381508
+anchor_top = 0.0783972
+anchor_right = 0.620287
+anchor_bottom = 0.158537
+grow_horizontal = 2
+text = "Enter Your Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]

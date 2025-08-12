@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkxk782e7nadr"
-path="res://.godot/imported/Door.glb-b6c03da46818cc83a7d4ea9e0019672c.scn"
+uid="uid://2ins3v1vhryn"
+path="res://.godot/imported/Table_OfficeDesk2-col.fbx-85ecf5379aa2c4b241eb5c981afda416.scn"
 
 [deps]
 
-source_file="res://Assets/Exported3dModel/Door.glb"
-dest_files=["res://.godot/imported/Door.glb-b6c03da46818cc83a7d4ea9e0019672c.scn"]
+source_file="res://Assets/export_LPOP_FULL/Table_OfficeDesk2-col.fbx"
+dest_files=["res://.godot/imported/Table_OfficeDesk2-col.fbx-85ecf5379aa2c4b241eb5c981afda416.scn"]
 
 [params]
 
@@ -28,10 +28,11 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

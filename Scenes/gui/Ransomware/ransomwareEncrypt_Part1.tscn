@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://xjc0rqxgpjdp"]
 
-[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_8tn60"]
+[ext_resource type="Shader" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_8tn60"]
 
 [sub_resource type="FontFile" id="FontFile_ifstv"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -222,14 +225,16 @@ cache/0/18/0/scale = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wddvm"]
 shader = ExtResource("1_8tn60")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.015, 0.635)
-shader_parameter/hole_size = Vector2(1.955, 0.645)
+shader_parameter/hole_position = Vector2(0.015, 0.31)
+shader_parameter/hole_size = Vector2(1.955, 0.125)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -370,3 +375,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 57.0
+offset_right = 1113.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "The \"os\" is a python’s built-in library for interacting with the file system. It allows you to list files, check if something is a file, etc."
+autowrap_mode = 3
+justification_flags = 162

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bovai05xuoedp"]
+[gd_scene load_steps=2 format=3 uid="uid://k13rolchshia"]
 
-[ext_resource type="PackedScene" uid="uid://bcjo4jso4u4ot" path="res://Assets/Exported3dModel/liz.glb" id="1_1pwc6"]
+[ext_resource type="PackedScene" uid="uid://c1ygryi0os6g3" path="res://Assets/Exported3dModel/mococo_hair.glb" id="1_q7fol"]
 
-[node name="liz" instance=ExtResource("1_1pwc6")]
+[node name="mococo_hair" instance=ExtResource("1_q7fol")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 0.725706, -0.0220776)
+bones/0/position = Vector3(0, 1.45141, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
 bones/2/rotation = Quaternion(-0.00867314, -0.055828, 0.991244, -0.119348)

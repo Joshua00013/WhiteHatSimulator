@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Singletons/game_manager.gd"
-SaveGame="*res://save_game.gd"
 DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
 
 [display]
