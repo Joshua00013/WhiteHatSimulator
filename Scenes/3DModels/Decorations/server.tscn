@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://blpwoddkm3wqs"]
+
+[ext_resource type="PackedScene" uid="uid://cy7181rd83qbu" path="res://Assets/Exported3dModel/Server.glb" id="1_7qrva"]
+
+[node name="Server" instance=ExtResource("1_7qrva")]
