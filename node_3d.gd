@@ -18,10 +18,11 @@ const JUMP_VELOCITY = 10
 
 var stand_height : float
 var look_rotation : Vector2
-
+var stand_height_offset : float = 0.0
 func _ready():
 	GameManager.player = self
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
+	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 

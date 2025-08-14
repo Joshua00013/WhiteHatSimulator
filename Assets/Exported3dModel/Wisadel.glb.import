@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://tsvsvgcgr1ly"
-path="res://.godot/imported/SheetOfPaper_A4_2Sided.fbx-41ca2c4b312a3e28b4583797ea9e6d7b.scn"
+uid="uid://bjmc1t6k0ujy8"
+path="res://.godot/imported/Wisadel.glb-a966a12da2887316b49063e80ab2b9fb.scn"
 
 [deps]
 
-source_file="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx"
-dest_files=["res://.godot/imported/SheetOfPaper_A4_2Sided.fbx-41ca2c4b312a3e28b4583797ea9e6d7b.scn"]
+source_file="res://Assets/Exported3dModel/Wisadel.glb"
+dest_files=["res://.godot/imported/Wisadel.glb-a966a12da2887316b49063e80ab2b9fb.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=2.5
+nodes/root_scale=2.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

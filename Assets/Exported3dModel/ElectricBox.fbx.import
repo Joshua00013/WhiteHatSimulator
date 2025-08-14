@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://tsvsvgcgr1ly"
-path="res://.godot/imported/SheetOfPaper_A4_2Sided.fbx-41ca2c4b312a3e28b4583797ea9e6d7b.scn"
+uid="uid://dblrblepnw5lc"
+path="res://.godot/imported/ElectricBox.fbx-617bcf5400252e3ccb9135b9a6ad2808.scn"
 
 [deps]
 
-source_file="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx"
-dest_files=["res://.godot/imported/SheetOfPaper_A4_2Sided.fbx-41ca2c4b312a3e28b4583797ea9e6d7b.scn"]
+source_file="res://Assets/Exported3dModel/ElectricBox.fbx"
+dest_files=["res://.godot/imported/ElectricBox.fbx-617bcf5400252e3ccb9135b9a6ad2808.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=2.5
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

@@ -3,10 +3,11 @@ extends Node
 var tcpserver = TCPServer.new()
 var client: StreamPeerTCP = null
 var port := 5858 #Change depending on python program
-
+@export var enabled : bool = false
 
 func _ready():
-	start_server()
+	if enabled:
+		start_server()
 
 func start_server():
 	var result = tcpserver.listen(port)
