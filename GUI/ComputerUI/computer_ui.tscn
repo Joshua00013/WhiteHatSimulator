@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://blecc4c484i7r"]
 
 [ext_resource type="Theme" uid="uid://w7itbpdtx3tq" path="res://Scenes/gui/Phishing UI/phishing assets/folder.tres" id="1_cfprh"]
-[ext_resource type="Script" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
+[ext_resource type="Script" uid="uid://m3td4ykphy7g" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
 [ext_resource type="Theme" uid="uid://c3hh7g67wuk35" path="res://Scenes/gui/Phishing UI/phishing assets/computer.tres" id="2_3r5r1"]
 [ext_resource type="Theme" uid="uid://mnd5sc2vkpu" path="res://Scenes/gui/Phishing UI/phishing assets/recycle.tres" id="3_py1sq"]
 [ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="3_vg3yh"]
