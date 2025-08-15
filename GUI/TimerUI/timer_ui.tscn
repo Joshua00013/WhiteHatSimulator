@@ -20,6 +20,7 @@ grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
 theme_override_font_sizes/font_size = 55
 text = "08:30"
+metadata/_edit_use_anchors_ = true
 
 [node name="Day_Label" type="Label" parent="."]
 layout_mode = 1
@@ -31,6 +32,7 @@ anchor_bottom = 2.025
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 15
 text = "Day 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

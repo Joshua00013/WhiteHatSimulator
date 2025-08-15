@@ -1,14 +1,15 @@
-[gd_scene load_steps=40 format=3 uid="uid://cc0buatvhcvhp"]
+[gd_scene load_steps=39 format=3 uid="uid://cnv1pkk0wsxok"]
 
-[ext_resource type="Script" uid="uid://diu3h7hvk08jx" path="res://Scenes/gui/Ransomware/ransomware_encrypt_start.gd" id="1_lpa1l"]
-[ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="1_qrujy"]
-[ext_resource type="Texture2D" uid="uid://d0bledml4xvhm" path="res://Assets/41445993-1fd4-4f83-be0e-58a50be61bc9-removebg-preview.png" id="2_jkgvp"]
-[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="3_omt8o"]
-[ext_resource type="Texture2D" uid="uid://5yf3qlkg070e" path="res://Assets/document_papers_paper_files_icon_paper_-removebg-preview.png" id="4_ydok0"]
-[ext_resource type="Texture2D" uid="uid://8eu6hic8rgm6" path="res://Assets/Screenshot_2025-08-12_233656-removebg-preview.png" id="5_cg2l2"]
-[ext_resource type="Texture2D" uid="uid://cnrmm2sfpmak8" path="res://Assets/Screenshot_2025-08-12_233716-removebg-preview (1).png" id="6_n40ia"]
-[ext_resource type="Texture2D" uid="uid://ds744s3psti62" path="res://Assets/12+_Burger_Menu_Icon_White_Png-removebg-preview.png" id="7_lpa1l"]
-[ext_resource type="Texture2D" uid="uid://htj0yl2ovqe2" path="res://Assets/aad868f7-e868-4153-835a-777ac43dfe55-removebg-preview.png" id="9_m05lw"]
+[ext_resource type="Script" uid="uid://cyfq8m8jtail8" path="res://Scenes/gui/Ransomware/ransomware_encrypt_middle.gd" id="1_eqh5w"]
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="2_itnco"]
+[ext_resource type="Texture2D" uid="uid://8eu6hic8rgm6" path="res://Assets/Screenshot_2025-08-12_233656-removebg-preview.png" id="3_oujqx"]
+[ext_resource type="Texture2D" uid="uid://cnrmm2sfpmak8" path="res://Assets/Screenshot_2025-08-12_233716-removebg-preview (1).png" id="4_rvpvu"]
+[ext_resource type="Texture2D" uid="uid://ds744s3psti62" path="res://Assets/12+_Burger_Menu_Icon_White_Png-removebg-preview.png" id="5_50or7"]
+[ext_resource type="Texture2D" uid="uid://d0bledml4xvhm" path="res://Assets/41445993-1fd4-4f83-be0e-58a50be61bc9-removebg-preview.png" id="6_i0235"]
+[ext_resource type="Texture2D" uid="uid://5yf3qlkg070e" path="res://Assets/document_papers_paper_files_icon_paper_-removebg-preview.png" id="7_vknwe"]
+[ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="8_ni0mc"]
+[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="9_gu0i2"]
+[ext_resource type="Texture2D" uid="uid://htj0yl2ovqe2" path="res://Assets/aad868f7-e868-4153-835a-777ac43dfe55-removebg-preview.png" id="10_x7jp5"]
 
 [sub_resource type="FontFile" id="FontFile_gclbg"]
 subpixel_positioning = 0
@@ -230,38 +231,9 @@ cache/0/18/0/underline_position = 0.0
 cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 
-[sub_resource type="Shader" id="Shader_m05lw"]
-code = "shader_type canvas_item;
-render_mode blend_mix, unshaded;
-
-// The full color of the rectangle
-uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
-
-// Hole configuration
-uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
-uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
-
-void fragment() {
-    // Convert UV to local pixel coordinates
-    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
-
-    // Check if we're inside the hole area
-    bool in_hole = pixel_pos.x > hole_position.x &&
-                   pixel_pos.x < hole_position.x + hole_size.x &&
-                   pixel_pos.y > hole_position.y &&
-                   pixel_pos.y < hole_position.y + hole_size.y;
-
-    if (in_hole) {
-        discard; // Make transparent
-    }
-
-    COLOR = rect_color;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_njx80"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8u0on"]
 resource_local_to_scene = true
-shader = SubResource("Shader_m05lw")
+shader = ExtResource("2_itnco")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.015, 0.305)
 shader_parameter/hole_size = Vector2(1.955, 0.25)
@@ -322,9 +294,6 @@ bg_color = Color(0.662452, 0.662452, 0.662452, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6br5"]
 bg_color = Color(0.832256, 0.2259, 0.177873, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m05lw"]
-texture = ExtResource("3_omt8o")
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -332,7 +301,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lpa1l")
+script = ExtResource("1_eqh5w")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_vertical_guides_ = [-779.0]
 
@@ -372,14 +341,16 @@ anchors_preset = -1
 anchor_top = 0.103395
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
 offset_top = -0.999962
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.162066, 0.162066, 0.162066, 1)
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
-material = SubResource("ShaderMaterial_njx80")
+material = SubResource("ShaderMaterial_8u0on")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -419,7 +390,7 @@ scale = Vector2(0.325553, 0.368064)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
-icon = ExtResource("5_cg2l2")
+icon = ExtResource("3_oujqx")
 metadata/_edit_use_anchors_ = true
 
 [node name="nav_Home" type="Button" parent="Mobile Navigator"]
@@ -437,7 +408,7 @@ scale = Vector2(0.325553, 0.368064)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
-icon = ExtResource("6_n40ia")
+icon = ExtResource("4_rvpvu")
 metadata/_edit_use_anchors_ = true
 
 [node name="nav_Tab" type="Button" parent="Mobile Navigator"]
@@ -455,7 +426,7 @@ scale = Vector2(0.0415386, 0.0399975)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
-icon = ExtResource("7_lpa1l")
+icon = ExtResource("5_50or7")
 metadata/_edit_use_anchors_ = true
 
 [node name="Buttons" type="Control" parent="."]
@@ -487,17 +458,18 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_uoolu")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pci8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j2p12")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
-icon = ExtResource("2_jkgvp")
+icon = ExtResource("6_i0235")
 metadata/_edit_use_anchors_ = true
 
 [node name="malwareButton" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.875
-anchor_top = 2.87499
-anchor_right = 15.1853
-anchor_bottom = 4.43353
-offset_right = 307.586
+anchor_left = 13.7
+anchor_top = 2.87498
+anchor_right = 15.0103
+anchor_bottom = 4.43354
+offset_left = -24.0
+offset_right = 283.586
 offset_bottom = 297.658
 grow_horizontal = 2
 grow_vertical = 2
@@ -507,7 +479,28 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fe1v0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lpa1l")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5hjx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
-icon = ExtResource("4_ydok0")
+icon = ExtResource("7_vknwe")
+metadata/_edit_use_anchors_ = true
+
+[node name="keyButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.95
+anchor_top = 2.87498
+anchor_right = 18.2604
+anchor_bottom = 4.43354
+offset_left = -24.0
+offset_right = 283.586
+offset_bottom = 297.658
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.145594, 0.173171)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fe1v0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lpa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5hjx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
+icon = ExtResource("7_vknwe")
 metadata/_edit_use_anchors_ = true
 
 [node name="companyButton" type="Button" parent="Buttons"]
@@ -517,7 +510,9 @@ anchor_left = 10.525
 anchor_top = 2.95
 anchor_right = 11.772
 anchor_bottom = 4.39904
-offset_right = 400.121
+offset_left = -24.0
+offset_top = -0.000190735
+offset_right = 376.121
 offset_bottom = 392.038
 grow_horizontal = 2
 grow_vertical = 2
@@ -526,28 +521,33 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_njx80")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_w68uy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
-icon = ExtResource("1_qrujy")
+icon = ExtResource("8_ni0mc")
 metadata/_edit_use_anchors_ = true
 
 [node name="godotButton" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.9
+anchor_left = 7.1
 anchor_top = 3.3
-anchor_right = 7.90496
+anchor_right = 8.10496
 anchor_bottom = 4.30034
-offset_right = 87.8015
+offset_left = -15.0
+offset_right = 72.8015
 offset_bottom = 87.9864
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.314051, 0.312606)
-theme_override_icons/icon = ExtResource("3_omt8o")
+theme_override_icons/icon = ExtResource("9_gu0i2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bo788")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i5hjx")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7np07")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a3qw6")
-icon = ExtResource("3_omt8o")
-metadata/_edit_use_anchors_ = true
+icon = ExtResource("9_gu0i2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="computerWindowsTemplate" type="Control" parent="."]
 visible = false
@@ -593,7 +593,7 @@ scale = Vector2(0.0408402, 0.0414445)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h4cu3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tm44q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_j6br5")
-icon = ExtResource("9_m05lw")
+icon = ExtResource("10_x7jp5")
 metadata/_edit_use_anchors_ = true
 
 [node name="computerWindowsAssets" type="Control" parent="."]
@@ -602,23 +602,18 @@ anchor_right = 0.0347222
 anchor_bottom = 0.0617284
 metadata/_edit_use_anchors_ = true
 
-[node name="image" type="Panel" parent="computerWindowsAssets"]
+[node name="image" type="Label" parent="computerWindowsAssets"]
 visible = false
-custom_minimum_size = Vector2(23.18, 17.765)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 12.4102
-anchor_top = 7.203
-anchor_right = 17.1714
-anchor_bottom = 11.0573
-offset_left = 11.59
-offset_top = 8.88
-offset_right = -178.857
-offset_bottom = -145.291
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(8.21601, 8.67836)
-theme_override_styles/panel = SubResource("StyleBoxTexture_m05lw")
+anchor_left = 8.95
+anchor_top = 6.75
+anchor_right = 20.45
+anchor_bottom = 12.075
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "njsvopwurhuaosnsiqir893j2ndioambehkajirofmqnplf4jv"
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="companyfileText" type="Label" parent="computerWindowsAssets"]
@@ -631,13 +626,7 @@ anchor_right = 20.45
 anchor_bottom = 12.075
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
-text = "This is company's file! 
-This file has confidencial information from the clients such as:
-->Their Name
-->Their Contact Numbers
-->Their Address
-->Their Email Address and Password
-->Their Card Numbers and Pin Numbers"
+text = "ahashIasjalhdcwucroj82ojslcjdhnjfmirtq1odbsmabcmp"
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
@@ -652,20 +641,18 @@ anchor_bottom = 10.05
 offset_right = -0.000244141
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
-text = "This file has are has your personal informations such as: 
--> Your Name
--> Email Address and Passwords
--> Card numbers and Pin numbers
--> Mobile Numbers"
+text = "njsiwoqfrelu29veinsonsalnveuybreqpbufdjncoaernveiao"
 metadata/_edit_use_anchors_ = true
 
 [node name="companyLabel" type="Label" parent="computerWindowsAssets"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 10.375
+anchor_left = 10.425
 anchor_top = 4.4
-anchor_right = 11.825
+anchor_right = 11.875
 anchor_bottom = 4.725
+offset_left = -24.0
+offset_right = -24.0
 theme_override_font_sizes/font_size = 9
 text = "Company.file"
 metadata/_edit_use_anchors_ = true
@@ -685,10 +672,12 @@ metadata/_edit_use_anchors_ = true
 [node name="imageLabel" type="Label" parent="computerWindowsAssets"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.87499
+anchor_left = 7.07499
 anchor_top = 4.4
-anchor_right = 7.92499
+anchor_right = 8.12499
 anchor_bottom = 4.725
+offset_left = -15.0
+offset_right = -15.0
 theme_override_font_sizes/font_size = 9
 text = "godot.svg"
 metadata/_edit_use_anchors_ = true
@@ -696,16 +685,21 @@ metadata/_edit_use_anchors_ = true
 [node name="malwareLabel" type="Label" parent="computerWindowsAssets"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.9
+anchor_left = 13.725
 anchor_top = 4.4
-anchor_right = 15.175
+anchor_right = 15.0
 anchor_bottom = 4.725
+offset_left = -24.0
+offset_top = -1.52588e-05
+offset_right = -24.0
+offset_bottom = -1.52588e-05
 theme_override_font_sizes/font_size = 9
 text = "malware.py"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Buttons/pdfButton" to="." method="_on_pdf_button_pressed"]
 [connection signal="pressed" from="Buttons/malwareButton" to="." method="_on_malware_button_pressed"]
+[connection signal="pressed" from="Buttons/keyButton" to="." method="_on_malware_button_pressed"]
 [connection signal="pressed" from="Buttons/companyButton" to="." method="_on_company_button_pressed"]
 [connection signal="pressed" from="Buttons/godotButton" to="." method="_on_godot_button_pressed"]
 [connection signal="pressed" from="computerWindowsTemplate/exitButton" to="." method="_on_exit_button_pressed"]

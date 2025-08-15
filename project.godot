@@ -24,7 +24,9 @@ DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [dotnet]
 

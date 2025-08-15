@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xjc0rqxgpjdp"]
+[gd_scene load_steps=30 format=3 uid="uid://xjc0rqxgpjdp"]
 
 [ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_8tn60"]
+[ext_resource type="Script" uid="uid://nldlt3wiro0e" path="res://Scenes/gui/Ransomware/ransomware_encrypt_part_1.gd" id="1_xuryp"]
+[ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="3_e6q40"]
 
 [sub_resource type="FontFile" id="FontFile_ifstv"]
 subpixel_positioning = 0
@@ -222,83 +224,461 @@ cache/0/18/0/underline_position = 0.0
 cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pom6j"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdw7s"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux4tv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wddvm"]
+resource_local_to_scene = true
 shader = ExtResource("1_8tn60")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.015, 0.31)
+shader_parameter/hole_position = Vector2(0.015, 0.35)
+shader_parameter/hole_size = Vector2(1.955, 0.25)
+
+[sub_resource type="Shader" id="Shader_xuryp"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6q40"]
+resource_local_to_scene = true
+shader = SubResource("Shader_xuryp")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.34)
 shader_parameter/hole_size = Vector2(1.955, 0.125)
+
+[sub_resource type="Shader" id="Shader_pom6j"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdw7s"]
+resource_local_to_scene = true
+shader = SubResource("Shader_pom6j")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.435)
+shader_parameter/hole_size = Vector2(1.955, 0.14)
+
+[sub_resource type="Shader" id="Shader_e6q40"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pom6j"]
+resource_local_to_scene = true
+shader = SubResource("Shader_e6q40")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.66)
+shader_parameter/hole_size = Vector2(1.955, 0.125)
+
+[sub_resource type="Shader" id="Shader_kdw7s"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xuryp"]
+resource_local_to_scene = true
+shader = SubResource("Shader_kdw7s")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.765)
+shader_parameter/hole_size = Vector2(1.955, 0.47)
+
+[sub_resource type="Shader" id="Shader_ux4tv"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ux4tv"]
+resource_local_to_scene = true
+shader = SubResource("Shader_ux4tv")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.885)
+shader_parameter/hole_size = Vector2(1.955, 0.21)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j26w1"]
+resource_local_to_scene = true
+shader = ExtResource("1_8tn60")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.085)
+shader_parameter/hole_size = Vector2(1.955, 0.35)
+
+[sub_resource type="Shader" id="Shader_8wdvq"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wdvq"]
+resource_local_to_scene = true
+shader = SubResource("Shader_8wdvq")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.495)
+shader_parameter/hole_size = Vector2(1.955, 0.435)
+
+[sub_resource type="Shader" id="Shader_j26w1"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1knj"]
+resource_local_to_scene = true
+shader = SubResource("Shader_j26w1")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.526)
+shader_parameter/hole_size = Vector2(1.955, 0.135)
+
+[sub_resource type="Shader" id="Shader_b1knj"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tg0b"]
+resource_local_to_scene = true
+shader = SubResource("Shader_b1knj")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.615)
+shader_parameter/hole_size = Vector2(1.955, 0.235)
+
+[sub_resource type="Shader" id="Shader_7y10v"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5q62r"]
+resource_local_to_scene = true
+shader = SubResource("Shader_7y10v")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.935)
+shader_parameter/hole_size = Vector2(1.955, 0.7)
+
+[sub_resource type="Shader" id="Shader_5q62r"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtbif"]
+resource_local_to_scene = true
+shader = SubResource("Shader_5q62r")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 2.65)
+shader_parameter/hole_size = Vector2(1.955, 0.2)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Header" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 48.0
-grow_horizontal = 2
-color = Color(0.241156, 0.241156, 0.241156, 1)
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 307.0
-offset_top = 9.0
-offset_right = 358.0
-offset_bottom = 40.0
-grow_horizontal = 2
-text = "Run"
-
-[node name="malware" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -40.5
-offset_top = 12.0
-offset_right = 40.5
-offset_bottom = 35.0
-grow_horizontal = 2
-theme_override_fonts/font = SubResource("FontFile_ifstv")
-theme_override_font_sizes/font_size = 18
-text = "malware.py"
+script = ExtResource("1_xuryp")
 
 [node name="Body" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.0679012
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = -600.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 color = Color(0.102971, 0.0952661, 0.0829469, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0740741
+grow_horizontal = 2
+color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="malware" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.447049
+anchor_top = 0.0262346
+anchor_right = 0.525174
+anchor_bottom = 0.0679012
+offset_left = 4.5
+offset_right = -4.5
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_ifstv")
+theme_override_font_sizes/font_size = 18
+text = "malware"
 
 [node name="Sidebar" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = -1
+anchor_top = 0.0740741
+anchor_right = 0.0208333
 anchor_bottom = 1.0
-offset_top = 48.0
-offset_right = 22.0
 grow_vertical = 2
 color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Linenumbers" type="Label" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 50.0
-offset_right = 21.0
-offset_bottom = 649.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00173609
+anchor_top = 0.0851393
+anchor_right = 0.0182292
+anchor_bottom = 1.01238
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_spacing = -5
 text = " 1
  2
@@ -334,20 +714,25 @@ text = " 1
 32
 33"
 autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 1
-offset_left = 25.0
-offset_top = 49.0
-offset_right = 331.0
-offset_bottom = 90.0
+anchors_preset = -1
+anchor_left = 0.0243056
+anchor_top = 0.0824361
+anchor_right = 0.467014
+anchor_bottom = 0.729041
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/line_spacing = -5
 text = "import os
 from cryptography.fernet import fernet
 
 allfiles = [ ]
 for file in os.listdir (  )  : 
-        if file == \"malware.py\"  or  file  ==  \"key.key\"  or  file ==  \"decr.py\" :   
+        if file == \"malware\"  or  file  ==  \"key.key\"  or  file ==  \"decry\" :   
                   continue
         if os.path.isfile (file) :  allfiles.append (file)
 
@@ -365,9 +750,588 @@ for file in allfiles:
                    thefile.write(content_encr) 
 
 print (\"All your  files has been encrypted\")"
+metadata/_edit_use_anchors_ = true
 
-[node name="Overlay" type="ColorRect" parent="."]
+[node name="next_bt01" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label01" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = 0.231476
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "This code demonstrates the logic of how malware infects a system. Let's explore and understand, line by line, how this code works."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay1" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_wddvm")
+layout_mode = 2
+anchor_left = -0.00173612
+anchor_right = 1.0
+anchor_bottom = 1.00464
+offset_left = 2.00001
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn1" type="Button" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn1" type="Button" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 573.496
+offset_bottom = 495.454
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label1" type="Label" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+offset_bottom = 0.151398
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Stage 1: Importing Required Modules
+We need to bring in the modules to handle files and encryption."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_e6q40")
+layout_mode = 2
+anchor_left = -0.0138889
+anchor_right = 0.986979
+anchor_bottom = 1.0031
+offset_left = 16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn2" type="Button" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn2" type="Button" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 573.496
+offset_bottom = 495.454
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "The \"os\" is a python’s built-in library for interacting with the file system. It allows you to list files, check if something is a file, etc."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay3" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_kdw7s")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0138889
+anchor_right = 0.986979
+anchor_bottom = 1.00619
+offset_left = 16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+offset_bottom = 0.151398
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It imports the Fernet class from the cryptography library, which provides strong and secure encryption and decryption functions."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay4" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_pom6j")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00087
+anchor_bottom = 1.00929
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+offset_bottom = 0.151398
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Creates an empty list to store the names of the files we want to encrypt."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay5" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xuryp")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn5" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn5" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.537037
+offset_bottom = 0.391998
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Stage 2: Collecting Target Files
+The program loops through all entries in the current directory (the folder where the script runs), selecting files to encrypt while avoiding itself, the encryption key file, and any decryption program"
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay6" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ux4tv")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn6" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn6" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.537037
+offset_bottom = 0.391998
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Skips certain files:
+\"malware\" — the script itself (so it doesn’t self-encrypt).
+\"key.key\" — the key file we will generate.
+\"decr\" — likely a decryption script.
+continue tells the loop to skip to the next item."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay7" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_j26w1")
+layout_mode = 2
+anchor_left = -0.00173612
+anchor_right = 1.0
+anchor_bottom = 1.00464
+offset_left = 2.00001
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn7" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn7" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = 0.231476
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It checks if the current item is a regular file (not a folder), and if so, adds it to the allfiles list and prints the list of files to be encrypted, mainly for checking or demonstration purposes."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay8" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8wdvq")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn8" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn8" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.496913
+offset_bottom = 0.311829
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Stage 3: Generating and Saving the Encryption Key
+The program creates a special secret key, like a password used to lock and unlock the files. It then saves that key into a file called key.key."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay9" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_b1knj")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -376,13 +1340,362 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 600.0
-offset_top = 57.0
-offset_right = 1113.0
-offset_bottom = 106.0
+[node name="next_btn9" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn9" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+offset_bottom = 0.151398
 theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "The \"os\" is a python’s built-in library for interacting with the file system. It allows you to list files, check if something is a file, etc."
+text = "It creates a new encryption key using Fernet’s built-in function, which will be required to decrypt the files later."
 autowrap_mode = 3
 justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay10" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_5tg0b")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn10" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn10" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = 0.231476
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It opens a file called key.key in write-binary mode, saves the generated encryption key inside, and acts like storing the “password” in a separate note to unlock the files later."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay11" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_5q62r")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn11" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn11" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label11" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = 0.231476
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Stage 4: Encrypting the Files
+Each file in the list is opened, its content is read, encrypted with the key, and then written back in its scrambled (unreadable) form."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay12" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_5q62r")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn12" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn12" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label12" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.617284
+offset_bottom = 0.552155
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It loops through all entries (files and folders) in the current directory, then goes through each file in allfiles, opens it in read-binary mode to load its contents, encrypts the data using Fernet(key).encrypt(content) to turn it into unreadable data, and finally opens the file again in write-binary mode to replace the original content with the encrypted version, making the readable data inaccessible unless decrypted with the same key."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay13" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_qtbif")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.285
+offset_bottom = -0.284973
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn13" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 431.968
+offset_bottom = 421.0
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn13" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pom6j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdw7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ux4tv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ux4tv")
+icon = ExtResource("3_e6q40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label13" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+offset_top = -0.0756989
+offset_bottom = 0.0757141
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "Finally, the program prints a message letting you know that all the files have been encrypted."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="next_bt01" to="." method="_on_next_bt_01_pressed"]
+[connection signal="pressed" from="next_btn1" to="." method="_on_next_btn_1_pressed"]
+[connection signal="pressed" from="back_btn1" to="." method="_on_back_btn_1_pressed"]
+[connection signal="pressed" from="next_btn2" to="." method="_on_next_btn_2_pressed"]
+[connection signal="pressed" from="back_btn2" to="." method="_on_back_btn_2_pressed"]
+[connection signal="pressed" from="next_btn3" to="." method="_on_next_btn_3_pressed"]
+[connection signal="pressed" from="back_btn3" to="." method="_on_back_btn_3_pressed"]
+[connection signal="pressed" from="next_btn4" to="." method="_on_next_btn_4_pressed"]
+[connection signal="pressed" from="back_btn4" to="." method="_on_back_btn_4_pressed"]
+[connection signal="pressed" from="next_btn5" to="." method="_on_next_btn_5_pressed"]
+[connection signal="pressed" from="back_btn5" to="." method="_on_back_btn_5_pressed"]
+[connection signal="pressed" from="next_btn6" to="." method="_on_next_btn_6_pressed"]
+[connection signal="pressed" from="back_btn6" to="." method="_on_back_btn_6_pressed"]
+[connection signal="pressed" from="next_btn7" to="." method="_on_next_btn_7_pressed"]
+[connection signal="pressed" from="back_btn7" to="." method="_on_back_btn_7_pressed"]
+[connection signal="pressed" from="next_btn8" to="." method="_on_next_btn_8_pressed"]
+[connection signal="pressed" from="back_btn8" to="." method="_on_back_btn_8_pressed"]
+[connection signal="pressed" from="next_btn9" to="." method="_on_next_btn_9_pressed"]
+[connection signal="pressed" from="back_btn9" to="." method="_on_back_btn_9_pressed"]
+[connection signal="pressed" from="next_btn10" to="." method="_on_next_btn_10_pressed"]
+[connection signal="pressed" from="back_btn10" to="." method="_on_back_btn_10_pressed"]
+[connection signal="pressed" from="next_btn11" to="." method="_on_next_btn_11_pressed"]
+[connection signal="pressed" from="back_btn11" to="." method="_on_back_btn_11_pressed"]
+[connection signal="pressed" from="next_btn12" to="." method="_on_next_btn_12_pressed"]
+[connection signal="pressed" from="back_btn12" to="." method="_on_back_btn_12_pressed"]
+[connection signal="pressed" from="next_btn13" to="." method="_on_next_btn_13_pressed"]
+[connection signal="pressed" from="back_btn13" to="." method="_on_back_btn_13_pressed"]

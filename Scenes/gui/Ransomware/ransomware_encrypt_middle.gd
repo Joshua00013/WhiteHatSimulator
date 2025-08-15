@@ -1,7 +1,8 @@
 extends Control
+
 @onready var companyfile_text: Label = $computerWindowsAssets/companyfileText
 @onready var myfile_text: Label = $computerWindowsAssets/myfileText
-@onready var image: Panel = $computerWindowsAssets/image
+@onready var image: Label = $computerWindowsAssets/image
 
 @onready var pdf_button: Button = $Buttons/pdfButton
 @onready var malware_button: Button = $Buttons/malwareButton
