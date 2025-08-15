@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://mlxpg5dsbqht"]
+
+[ext_resource type="PackedScene" uid="uid://gm4uf38u4ib0" path="res://Assets/Exported3dModel/DoorIron.glb" id="1_p2e5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yx78e"]
+size = Vector3(0.245605, 3.79639, 1.7887)
+
+[node name="DoorIron" instance=ExtResource("1_p2e5w")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorIron" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorIron/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00512695, 1.89674, 0.897888)
+shape = SubResource("BoxShape3D_yx78e")

@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=40 format=3 uid="uid://cc0buatvhcvhp"]
+=======
+<<<<<<< HEAD
+[gd_scene load_steps=10 format=3 uid="uid://brfa613gvi1ku"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://c166tmenkbdtt"]
+>>>>>>> 14a1f3caa5d3f04a35c5daab7dfd3bc010ca5ed2
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 
 [ext_resource type="Script" uid="uid://diu3h7hvk08jx" path="res://Scenes/gui/Ransomware/ransomware_encrypt_start.gd" id="1_lpa1l"]
 [ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="1_qrujy"]
@@ -343,6 +351,7 @@ anchor_right = 1.0
 anchor_bottom = 0.101852
 grow_horizontal = 2
 color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="innerHeader" type="ColorRect" parent="."]
 layout_mode = 1
@@ -353,6 +362,7 @@ anchor_right = 0.974826
 anchor_bottom = 0.0817901
 grow_horizontal = 2
 color = Color(0.332881, 0.332881, 0.332881, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="HeaderText" type="Label" parent="."]
 layout_mode = 1
@@ -365,6 +375,7 @@ grow_horizontal = 2
 theme_override_fonts/font = SubResource("FontFile_gclbg")
 theme_override_font_sizes/font_size = 18
 text = "Destop  >  Ransomware"
+metadata/_edit_use_anchors_ = true
 
 [node name="Body" type="ColorRect" parent="."]
 layout_mode = 1
@@ -376,6 +387,7 @@ offset_top = -0.999962
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.162066, 0.162066, 0.162066, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false

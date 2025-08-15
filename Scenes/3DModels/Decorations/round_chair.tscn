@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcq2vo0y47pfb"]
+
+[ext_resource type="PackedScene" uid="uid://j05i4rbq32b0" path="res://Assets/Exported3dModel/round_chair.glb" id="1_d0j7d"]
+
+[node name="round_chair" instance=ExtResource("1_d0j7d")]

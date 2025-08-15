@@ -31,6 +31,9 @@ tracks/1/keys = {
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_g1yat"]
+resource_name = "default"
+
 [sub_resource type="Animation" id="Animation_f6o8t"]
 resource_name = "open"
 tracks/0/type = "value"
@@ -58,9 +61,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_g1yat"]
-resource_name = "default"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7b7s"]
 _data = {
 &"close": SubResource("Animation_x7b7s"),
@@ -75,6 +75,7 @@ data = PackedVector3Array(0.0986093, 0.2, 1.59796, 0.0386092, 3.6, 1.59796, 0.03
 script = ExtResource("2_blamm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_x7b7s")
 }
@@ -89,5 +90,8 @@ shape = SubResource("ConcavePolygonShape3D_3arda")
 
 [node name="Door" parent="." index="2"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.0419166, 0, 0.0202673)
+
+[node name="StaticBody3D" parent="Door" index="0"]
+collision_layer = 4
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

@@ -1,9 +1,33 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk4gi6kkn3olt"]
 
 [ext_resource type="PackedScene" uid="uid://xjc0rqxgpjdp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn" id="1_ga11f"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cc0buatvhcvhp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
 [ext_resource type="PackedScene" uid="uid://0w4kvb0cp6ed" path="res://Scenes/gui/Ransomware/ransomwarwDecrypt.tscn" id="3_n2t3j"]
 [ext_resource type="PackedScene" uid="uid://cnv1pkk0wsxok" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Middle.tscn" id="3_usm0c"]
+=======
+[ext_resource type="Script" uid="uid://do1svo7hf88dx" path="res://Scripts/ransomware_attack.gd" id="1_tsboj"]
+[ext_resource type="PackedScene" uid="uid://brfa613gvi1ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
+[ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="2_tsboj"]
+[ext_resource type="PackedScene" uid="uid://bcwvmcp1jrv52" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part2.tscn" id="3_e3sn3"]
+[ext_resource type="PackedScene" uid="uid://c2yg7jovlnqqb" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part3.tscn" id="4_yqa2c"]
+[ext_resource type="PackedScene" uid="uid://cc0buatvhcvhp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part4.tscn" id="6_tsboj"]
+[ext_resource type="PackedScene" uid="uid://b01enymyahclu" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part5.tscn" id="7_e3sn3"]
+[ext_resource type="PackedScene" uid="uid://djx36h0pi5hfo" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part7.tscn" id="8_yqa2c"]
+[ext_resource type="PackedScene" uid="uid://velg2hygxw6v" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part8.tscn" id="9_nuxc3"]
+[ext_resource type="PackedScene" uid="uid://cce6wdw54hhem" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part9.tscn" id="10_n6k6l"]
+[ext_resource type="PackedScene" uid="uid://ftlffjkhver6" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part10.tscn" id="11_4pme6"]
+[ext_resource type="PackedScene" uid="uid://bo8yq628bdulu" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part11.tscn" id="12_d3wrb"]
+[ext_resource type="PackedScene" uid="uid://c4ibrdyylws25" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part13.tscn" id="13_3l4gl"]
+[ext_resource type="PackedScene" uid="uid://bgm6gnh7rgmej" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part12.tscn" id="13_hdarq"]
+[ext_resource type="PackedScene" uid="uid://chdefbm0u2vuy" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part15.tscn" id="14_3vc37"]
+[ext_resource type="PackedScene" uid="uid://courwmm6paohe" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part14.tscn" id="15_rhdso"]
+[ext_resource type="PackedScene" uid="uid://qdvxy3bbjci5" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part16.tscn" id="17_at1ji"]
+[ext_resource type="PackedScene" uid="uid://djp8fwhrwim3u" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part17.tscn" id="18_c6877"]
+[ext_resource type="PackedScene" uid="uid://bb67nixe8x8ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part18.tscn" id="18_gnamn"]
+[ext_resource type="PackedScene" uid="uid://csj80tyfh1rg" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part19.tscn" id="20_m553r"]
+[ext_resource type="PackedScene" uid="uid://cbys5wyehbo2e" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part20.tscn" id="21_tq67b"]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 
 [node name="RansomwareAttack" type="Control"]
 layout_mode = 3
@@ -12,9 +36,85 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< HEAD
 metadata/_edit_use_anchors_ = true
 
 [node name="RansomwareEncryt_Start" parent="." instance=ExtResource("2_tq67b")]
+=======
+script = ExtResource("1_tsboj")
+
+[node name="RansomwarePlayer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = 7.0
+offset_right = -13.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="RansomwareStart" parent="RansomwarePlayer" instance=ExtResource("2_tq67b")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="pdfButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109375
+anchor_top = 0.182099
+anchor_right = 0.153646
+anchor_bottom = 0.291667
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+
+[node name="godotButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233507
+anchor_top = 0.182099
+anchor_right = 0.282986
+anchor_bottom = 0.291667
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+
+[node name="malwareButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.480035
+anchor_top = 0.182099
+anchor_right = 0.529514
+anchor_bottom = 0.291667
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+
+[node name="companyfileButton" type="Button" parent="RansomwarePlayer/RansomwareStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361111
+anchor_top = 0.180556
+anchor_right = 0.413194
+anchor_bottom = 0.290124
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+
+[node name="Ransomeware1" parent="RansomwarePlayer" instance=ExtResource("1_ga11f")]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 visible = false
 layout_mode = 1
 
@@ -31,3 +131,802 @@ layout_mode = 1
 anchors_preset = -1
 offset_bottom = 6.10352e-05
 metadata/_edit_use_anchors_ = true
+<<<<<<< HEAD
+=======
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control4" parent="RansomwarePlayer" instance=ExtResource("7_e3sn3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware3" parent="RansomwarePlayer" instance=ExtResource("4_yqa2c")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Ransomeware3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Ransomeware3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" parent="RansomwarePlayer" instance=ExtResource("8_yqa2c")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control3" parent="RansomwarePlayer" instance=ExtResource("8_yqa2c")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control5" parent="RansomwarePlayer" instance=ExtResource("9_nuxc3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control6" parent="RansomwarePlayer" instance=ExtResource("10_n6k6l")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 9
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control8" parent="RansomwarePlayer" instance=ExtResource("11_4pme6")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 10
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control7" parent="RansomwarePlayer" instance=ExtResource("12_d3wrb")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 11
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control10" parent="RansomwarePlayer" instance=ExtResource("13_hdarq")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 12
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control12" parent="RansomwarePlayer" instance=ExtResource("14_3vc37")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 13
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control12"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control12"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control9" parent="RansomwarePlayer" instance=ExtResource("13_3l4gl")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 14
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control11" parent="RansomwarePlayer" instance=ExtResource("15_rhdso")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 15
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control11"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control11"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control13" parent="RansomwarePlayer" instance=ExtResource("17_at1ji")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 16
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control13"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control13"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control16" parent="RansomwarePlayer" instance=ExtResource("18_gnamn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 17
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control16"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control16"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control14" parent="RansomwarePlayer" instance=ExtResource("18_c6877")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 18
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control14"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control14"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control15" parent="RansomwarePlayer" instance=ExtResource("20_m553r")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 19
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control15"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control15"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control17" parent="RansomwarePlayer" instance=ExtResource("21_tq67b")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 20
+
+[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control17"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878087
+anchor_right = 1.02679
+anchor_bottom = 1.04398
+offset_right = 401.106
+offset_bottom = 392.5
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control17"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794154
+anchor_top = 0.878
+anchor_right = 0.860111
+anchor_bottom = 0.993056
+offset_left = 76.1345
+offset_top = 0.0559692
+offset_right = 511.122
+offset_bottom = 425.5
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
+icon = ExtResource("2_tsboj")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/pdfButton" to="." method="_pdf_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/godotButton" to="." method="_on_godot_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/malwareButton" to="." method="_on_malware_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/RansomwareStart/companyfileButton" to="." method="_on_companyfile_button_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomeware1/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomware2/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomware2/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control4/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control4/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomeware3/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Ransomeware3/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control2/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control2/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control3/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control3/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control5/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control5/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control6/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control6/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control8/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control8/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control7/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control7/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control10/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control10/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control12/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control12/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control9/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control9/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control11/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control11/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control13/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control13/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control16/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control16/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control14/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control14/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control15/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control15/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
+[connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
