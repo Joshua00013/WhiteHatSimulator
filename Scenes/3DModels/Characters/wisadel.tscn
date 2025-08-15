@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgi50ryqrb6q8"]
+
+[ext_resource type="PackedScene" uid="uid://bjmc1t6k0ujy8" path="res://Assets/Exported3dModel/Wisadel.glb" id="1_8n1k0"]
+
+[node name="Wisadel" instance=ExtResource("1_8n1k0")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, 1.45141, -0.0441553)
+bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
+bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
+bones/2/rotation = Quaternion(-0.00338508, -0.0595, 0.987823, -0.143717)
+bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
+bones/4/rotation = Quaternion(-0.0109034, -0.0371184, 0.99918, 0.0119006)
+bones/4/scale = Vector3(1, 1, 1.00003)
+bones/5/rotation = Quaternion(-0.0346094, -0.000400112, -0.0193267, 0.999214)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.600809, 0.0138908, 0.0425772, 0.798137)
+bones/6/scale = Vector3(1, 1.00001, 1)
+bones/7/rotation = Quaternion(0.00338508, -0.0595, 0.987823, 0.143717)
+bones/8/rotation = Quaternion(0.0516092, 0.00022717, 0.0150832, 0.998554)
+bones/9/rotation = Quaternion(0.0109034, -0.0371184, 0.99918, -0.0119006)
+bones/9/scale = Vector3(1, 1, 1.00003)
+bones/10/rotation = Quaternion(-0.0346094, 0.000400112, 0.0193267, 0.999214)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.600809, -0.0138908, -0.0425773, 0.798137)
+bones/11/scale = Vector3(1, 1.00001, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "idle"

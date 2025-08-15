@@ -82,13 +82,16 @@ libraries = {
 autoplay = "default"
 
 [node name="Interactable" parent="." index="1" instance=ExtResource("3_f6o8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0167053, 0, -0.00906849)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.0167053, 0, -0.00906849)
 
 [node name="Interactable" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0501159, 0, 0.0272055)
 shape = SubResource("ConcavePolygonShape3D_3arda")
 
 [node name="Door" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0419166, 0, 0.0202673)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.0419166, 0, 0.0202673)
+
+[node name="StaticBody3D" parent="Door" index="0"]
+collision_layer = 4
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
