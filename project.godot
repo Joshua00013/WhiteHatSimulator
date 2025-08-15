@@ -35,7 +35,7 @@ project/assembly_name="WhiteHatSimulator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
+enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
 [file_customization]
 
