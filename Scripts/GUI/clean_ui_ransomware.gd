@@ -3,13 +3,14 @@ extends MarginContainer
 @onready var code_edit: CodeEdit = $HSplitContainer/CodeEdit
 @onready var overlay: ColorRect = $HSplitContainer/CodeEdit/Overlay
 
-@onready var rich_text_label: RichTextLabel = $HFlowContainer/RichTextLabel
+@onready var rich_text_label: RichTextLabel = $HSplitContainer/HFlowContainer/RichTextLabel
+
 
 var step: int = 0
 
 func _on_back_button_down() -> void:
 	# TODO: Set limits on back and next
-	if step > 1:
+	if step > 0:
 		step -= 1
 		set_step(step)
 
