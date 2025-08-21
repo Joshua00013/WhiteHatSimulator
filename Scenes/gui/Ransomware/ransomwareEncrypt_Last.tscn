@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcevw50ajtfbw"]
+[gd_scene load_steps=4 format=3 uid="uid://ct6jeeo28fybi"]
 
-[ext_resource type="Shader" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_1lcux"]
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_1lcux"]
 
 [sub_resource type="FontFile" id="FontFile_ifstv"]
 subpixel_positioning = 0

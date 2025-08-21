@@ -1,7 +1,7 @@
 extends MarginContainer
 
-@onready var code_edit: CodeEdit = $CodeEdit
-@onready var overlay: ColorRect = $CodeEdit/Overlay
+@onready var code_edit: CodeEdit = $HSplitContainer/CodeEdit
+@onready var overlay: ColorRect = $HSplitContainer/CodeEdit/Overlay
 
 @onready var rich_text_label: RichTextLabel = $HFlowContainer/RichTextLabel
 
