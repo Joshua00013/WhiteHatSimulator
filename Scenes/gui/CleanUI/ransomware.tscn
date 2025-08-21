@@ -53,7 +53,6 @@ gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
-delimiter_strings = Array[String](["\" \"", "' '"])
 
 [node name="Overlay" type="ColorRect" parent="CodeEdit"]
 material = SubResource("ShaderMaterial_rtgtv")

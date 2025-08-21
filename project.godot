@@ -24,11 +24,8 @@ DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
 
 [display]
 
-<<<<<<< HEAD
-=======
 window/size/viewport_width=1920
 window/size/viewport_height=1080
->>>>>>> 2d96ae0527d0f7effd2fd70a913c62ce7bf2d773
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
