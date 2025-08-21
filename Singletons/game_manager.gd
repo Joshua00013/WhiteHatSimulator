@@ -21,3 +21,6 @@ func _ready():
 
 func add_item(item:InvItem):
 	inv.add(item)
+	
+func adjust_screen_size():
+	get_window().mode = Window.MODE_MAXIMIZED
