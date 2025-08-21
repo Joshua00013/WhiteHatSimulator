@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ibrdyylws25"]
+[gd_scene load_steps=4 format=3 uid="uid://b3f2cbfgvlqau"]
 
 [ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_jg5s5"]
 
