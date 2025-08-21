@@ -54,4 +54,5 @@ func _on_companyfile_button_pressed() -> void:
 
 
 func _on_malware_button_pressed() -> void:
-	ransomware_player.current_tab += 1.
+	
+	ransomware_player.current_tab = 1.

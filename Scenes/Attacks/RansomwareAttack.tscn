@@ -1,6 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://dk4gi6kkn3olt"]
+[gd_scene load_steps=5 format=3 uid="uid://dk4gi6kkn3olt"]
 
 [ext_resource type="PackedScene" uid="uid://xjc0rqxgpjdp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn" id="1_ga11f"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://cc0buatvhcvhp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
+[ext_resource type="PackedScene" uid="uid://0w4kvb0cp6ed" path="res://Scenes/gui/Ransomware/ransomwarwDecrypt.tscn" id="3_n2t3j"]
+[ext_resource type="PackedScene" uid="uid://cnv1pkk0wsxok" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Middle.tscn" id="3_usm0c"]
+=======
 [ext_resource type="Script" uid="uid://do1svo7hf88dx" path="res://Scripts/ransomware_attack.gd" id="1_tsboj"]
 [ext_resource type="PackedScene" uid="uid://brfa613gvi1ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
 [ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="2_tsboj"]
@@ -22,35 +27,20 @@
 [ext_resource type="PackedScene" uid="uid://bb67nixe8x8ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part18.tscn" id="18_gnamn"]
 [ext_resource type="PackedScene" uid="uid://csj80tyfh1rg" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part19.tscn" id="20_m553r"]
 [ext_resource type="PackedScene" uid="uid://cbys5wyehbo2e" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part20.tscn" id="21_tq67b"]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pme6"]
-resource_local_to_scene = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3wrb"]
-bg_color = Color(0.211765, 0.211765, 0.211765, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdarq"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[node name="Control" type="Control"]
+[node name="RansomwareAttack" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -6.0
-offset_right = 13.0
-offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< HEAD
+metadata/_edit_use_anchors_ = true
+
+[node name="RansomwareEncryt_Start" parent="." instance=ExtResource("2_tq67b")]
+=======
 script = ExtResource("1_tsboj")
 
 [node name="RansomwarePlayer" type="TabContainer" parent="."]
@@ -124,113 +114,25 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 
 [node name="Ransomeware1" parent="RansomwarePlayer" instance=ExtResource("1_ga11f")]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Ransomeware1"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.931424
-anchor_top = 0.878087
-anchor_right = 1.02679
-anchor_bottom = 1.04398
-offset_right = 401.106
-offset_bottom = 392.5
-grow_vertical = 2
-scale = Vector2(0.148887, 0.148887)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
-icon = ExtResource("2_tsboj")
-metadata/_edit_use_anchors_ = true
 
-[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Ransomeware1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.794154
-anchor_top = 0.878
-anchor_right = 0.860111
-anchor_bottom = 0.993056
-offset_left = 76.1345
-offset_top = 0.0559692
-offset_right = 511.122
-offset_bottom = 425.5
-grow_vertical = 2
-scale = Vector2(-0.149, 0.149)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
-icon = ExtResource("2_tsboj")
-metadata/_edit_use_anchors_ = true
-
-[node name="Ransomware2" parent="RansomwarePlayer" instance=ExtResource("3_e3sn3")]
+[node name="RansomwareEncryt_Part1" parent="." instance=ExtResource("1_ga11f")]
 visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Ransomware2"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.931424
-anchor_top = 0.878087
-anchor_right = 1.02679
-anchor_bottom = 1.04398
-offset_right = 401.106
-offset_bottom = 392.5
-grow_vertical = 2
-scale = Vector2(0.148887, 0.148887)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
-icon = ExtResource("2_tsboj")
-metadata/_edit_use_anchors_ = true
 
-[node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Ransomware2"]
+[node name="Control" parent="." instance=ExtResource("3_usm0c")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.794154
-anchor_top = 0.878
-anchor_right = 0.860111
-anchor_bottom = 0.993056
-offset_left = 76.1345
-offset_top = 0.0559692
-offset_right = 511.122
-offset_bottom = 425.5
-grow_vertical = 2
-scale = Vector2(-0.149, 0.149)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
-icon = ExtResource("2_tsboj")
-metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="RansomwarePlayer" instance=ExtResource("6_tsboj")]
+[node name="RansomwareDecrypt_Part2" parent="." instance=ExtResource("3_n2t3j")]
 visible = false
-layout_mode = 2
-metadata/_tab_index = 3
-
-[node name="Ransomeware_next_btn" type="Button" parent="RansomwarePlayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.931424
-anchor_top = 0.878087
-anchor_right = 1.02679
-anchor_bottom = 1.04398
-offset_right = 401.106
-offset_bottom = 392.5
-grow_vertical = 2
-scale = Vector2(0.148887, 0.148887)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4pme6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d3wrb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
-icon = ExtResource("2_tsboj")
+offset_bottom = 6.10352e-05
 metadata/_edit_use_anchors_ = true
+<<<<<<< HEAD
+=======
 
 [node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control"]
 layout_mode = 1
@@ -1027,3 +929,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="RansomwarePlayer/Control15/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
+>>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
