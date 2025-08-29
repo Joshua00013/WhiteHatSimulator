@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtsroqbsrh7jg"]
 
-[sub_resource type="Shader" id="Shader_wwpmy"]
+[sub_resource type="Shader" id="Shader_je1oo"]
 code = "shader_type canvas_item;
 render_mode blend_mix, unshaded;
 
@@ -29,18 +29,24 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtgtv"]
-shader = SubResource("Shader_wwpmy")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp4eq"]
+shader = SubResource("Shader_je1oo")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.115, 0.045)
 shader_parameter/hole_size = Vector2(1.765, 0.29)
 
 [node name="Ransomware" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 1.25868
+anchor_bottom = 0.509259
+offset_right = -1450.0
+offset_bottom = -330.0
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_right = 75
 theme_override_constants/margin_bottom = 75
 metadata/_tab_index = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CodeEdit" type="CodeEdit" parent="."]
 custom_minimum_size = Vector2(1300, 0)
@@ -55,7 +61,7 @@ gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="CodeEdit"]
-material = SubResource("ShaderMaterial_rtgtv")
+material = SubResource("ShaderMaterial_tp4eq")
 custom_minimum_size = Vector2(1080, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -64,7 +70,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 custom_minimum_size = Vector2(350, 0)

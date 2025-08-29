@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctd13mbtkg4w"]
 
-[ext_resource type="Script" uid="uid://bee4l3skdbucv" path="res://Scripts/GUI/pc_gui_joshua.gd" id="1_je1oo"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_tp4eq"]
-[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_8m0dg"]
-[ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware.gd" id="4_tmtoj"]
+[ext_resource type="Script" uid="uid://dv3jdsalftjbv" path="res://GUI/ComputerUI/pc_gui_macky.gd" id="1_tp4eq"]
+[ext_resource type="PackedScene" uid="uid://dwuxkxcvrv88b" path="res://Scenes/gui/Ransomware/ComputerUI.tscn" id="2_je1oo"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="3_tp4eq"]
+[ext_resource type="Script" uid="uid://dckq8i5rw622n" path="res://GUI/ComputerUI/ransomware#2.gd" id="5_tmtoj"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
@@ -37,72 +37,60 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rtgtv"]
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.115, 0.055)
-shader_parameter/hole_size = Vector2(3.495, 0.215)
+shader_parameter/hole_position = Vector2(0.115, 3.57)
+shader_parameter/hole_size = Vector2(3.495, 1.53)
 
 [node name="ComputerGUI" type="TabContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.089726
+anchor_top = -0.151924
+anchor_right = 1.08973
+anchor_bottom = 1.15192
+offset_left = 103.364
+offset_top = 98.4466
+offset_right = -103.364
+offset_bottom = -98.4466
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 tabs_visible = false
-script = ExtResource("1_je1oo")
+script = ExtResource("1_tp4eq")
+metadata/_edit_use_anchors_ = true
 
-[node name="Margin" type="MarginContainer" parent="."]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 95
-theme_override_constants/margin_top = 95
-theme_override_constants/margin_right = 95
-theme_override_constants/margin_bottom = 95
-metadata/_tab_index = 0
-
-[node name="Desktop" type="VFlowContainer" parent="Margin"]
-custom_minimum_size = Vector2(1152, 648)
-layout_mode = 2
-theme_override_constants/h_separation = 20
-
-[node name="Icon" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
+[node name="Margin" parent="." instance=ExtResource("2_je1oo")]
 layout_mode = 2
 
-[node name="Label" parent="Margin/Desktop/Icon" index="1"]
-text = "PDF"
+[node name="Icon6" parent="Margin/Desktop" index="5"]
+visible = true
 
-[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
-layout_mode = 2
-
-[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
-layout_mode = 2
-
-[node name="Label" parent="Margin/Desktop/Icon3" index="1"]
-text = "PNG"
-
-[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
-layout_mode = 2
-
-[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("2_tp4eq")]
-layout_mode = 2
-
-[node name="RadialMenu" type="Control" parent="Margin/Desktop"]
-visible = false
+[node name="RadialMenu" parent="Margin/Desktop" index="6"]
 custom_minimum_size = Vector2(300, 222.263)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-script = ExtResource("3_8m0dg")
 
-[node name="Ransomware" type="MarginContainer" parent="."]
+[node name="Window" parent="Margin" index="1"]
+visible = false
+
+[node name="windowsUI2" parent="Margin" instance=ExtResource("3_tp4eq")]
+visible = false
+layout_mode = 2
+
+[node name="Ransomware#2" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_right = 75
 theme_override_constants/margin_bottom = 75
-script = ExtResource("4_tmtoj")
+script = ExtResource("5_tmtoj")
 metadata/_tab_index = 1
 
-[node name="CodeEdit" type="CodeEdit" parent="Ransomware"]
+[node name="Overlay" type="ColorRect" parent="Ransomware#2"]
+material = SubResource("ShaderMaterial_rtgtv")
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CodeEdit" type="CodeEdit" parent="Ransomware#2"]
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -118,63 +106,52 @@ for file in os.listdir (  )  :
 
 print (allfiles)
 
-key  =  Fernet.generate_key ( )
-with open (\"key.key\",  \"wb\")  as  thekey : 
-        thekey.write (key)
-
-for file in allfiles: 
-        with open (file, \"rb\")  as thefile: 
-                   content  = thefeli.read( ) 
-        content_encr  = Fernet (key) .encrypt ( content ) 
-        with  open (file, \"wb\")  as the file; 
-                   thefile.write(content_encr) 
-
-print (\"All your  files has been encrypted\")"
+with  open (\"key.key\",  \"rb)  as key; 
+        password  = key.read( )
+passphrase  = \"WhiteHaT\" 
+userpass  = input (\"Enter the password you received from us:  \") 
+if userpass == passphrase:  
+        for file in allfiles:  
+                with  open(file,  \"rb\")  as the file: 
+                        contents  = thefile.read( )                                 
+                content_decr  = Fernet (password) .decrypt (contents)
+                with open (file, \"wb\")  as  thefile:
+                        thefile.write(content_decr)
+                print (\"You got your files back\")
+else;
+print (\"Wrong password!  Pay to receive the right password\")"
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
-[node name="Overlay" type="ColorRect" parent="Ransomware/CodeEdit"]
-visible = false
-material = SubResource("ShaderMaterial_rtgtv")
-custom_minimum_size = Vector2(1080, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware"]
+[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware#2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 alignment = 1
 last_wrap_alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware/HFlowContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware#2/HFlowContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 33
 fit_content = true
 
-[node name="Spacing" type="Panel" parent="Ransomware/HFlowContainer"]
+[node name="Spacing" type="Panel" parent="Ransomware#2/HFlowContainer"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 
-[node name="Buttons" type="Panel" parent="Ransomware/HFlowContainer"]
+[node name="Buttons" type="Panel" parent="Ransomware#2/HFlowContainer"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 40.18)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Back" type="Button" parent="Ransomware/HFlowContainer/Buttons"]
+[node name="Back" type="Button" parent="Ransomware#2/HFlowContainer/Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.0701842
@@ -187,7 +164,7 @@ theme_override_font_sizes/font_size = 25
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="Ransomware/HFlowContainer/Buttons"]
+[node name="Next" type="Button" parent="Ransomware#2/HFlowContainer/Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.835
@@ -202,11 +179,15 @@ theme_override_font_sizes/font_size = 25
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="Margin/Desktop/Icon/Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="Ransomware/HFlowContainer/Buttons/Back" to="Ransomware" method="_on_back_button_down"]
-[connection signal="button_down" from="Ransomware/HFlowContainer/Buttons/Next" to="Ransomware" method="_on_next_button_down"]
+[connection signal="pressed" from="Margin/Desktop/Malware/Button" to="." method="_on_malware_button_pressed"]
+[connection signal="button_down" from="Ransomware#2/HFlowContainer/Buttons/Back" to="Ransomware#2" method="_on_back_button_down"]
+[connection signal="button_down" from="Ransomware#2/HFlowContainer/Buttons/Next" to="Ransomware#2" method="_on_next_button_down"]
 
-[editable path="Margin/Desktop/Icon"]
-[editable path="Margin/Desktop/Icon2"]
-[editable path="Margin/Desktop/Icon3"]
-[editable path="Margin/Desktop/Icon4"]
+[editable path="Margin"]
+[editable path="Margin/Desktop/PDFIcon"]
+[editable path="Margin/Desktop/imageIcon"]
+[editable path="Margin/Desktop/companyFile"]
+[editable path="Margin/Desktop/Malware"]
+[editable path="Margin/Desktop/Icon5"]
+[editable path="Margin/Desktop/Icon6"]
+[editable path="Margin/Window"]
