@@ -1,6 +1,5 @@
-[gd_scene load_steps=39 format=3 uid="uid://cnv1pkk0wsxok"]
+[gd_scene load_steps=39 format=3 uid="uid://c8peboqrmkorg"]
 
-[ext_resource type="Script" uid="uid://cyfq8m8jtail8" path="res://Scenes/gui/Ransomware/ransomware_encrypt_middle.gd" id="1_eqh5w"]
 [ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="2_itnco"]
 [ext_resource type="Texture2D" uid="uid://8eu6hic8rgm6" path="res://Assets/Screenshot_2025-08-12_233656-removebg-preview.png" id="3_oujqx"]
 [ext_resource type="Texture2D" uid="uid://cnrmm2sfpmak8" path="res://Assets/Screenshot_2025-08-12_233716-removebg-preview (1).png" id="4_rvpvu"]
@@ -8,8 +7,83 @@
 [ext_resource type="Texture2D" uid="uid://d0bledml4xvhm" path="res://Assets/41445993-1fd4-4f83-be0e-58a50be61bc9-removebg-preview.png" id="6_i0235"]
 [ext_resource type="Texture2D" uid="uid://5yf3qlkg070e" path="res://Assets/document_papers_paper_files_icon_paper_-removebg-preview.png" id="7_vknwe"]
 [ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="8_ni0mc"]
-[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="9_gu0i2"]
+[ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="9_gu0i2"]
 [ext_resource type="Texture2D" uid="uid://htj0yl2ovqe2" path="res://Assets/aad868f7-e868-4153-835a-777ac43dfe55-removebg-preview.png" id="10_x7jp5"]
+
+[sub_resource type="GDScript" id="GDScript_bag6k"]
+script/source = "extends Control
+
+@onready var companyfile_text: Label = $computerWindowsAssets/companyfileText
+@onready var myfile_text: Label = $computerWindowsAssets/myfileText
+@onready var image: Label = $computerWindowsAssets/image
+
+@onready var pdf_button: Button = $Buttons/pdfButton
+@onready var malware_button: Button = $Buttons/malwareButton
+@onready var company_button: Button = $Buttons/companyButton
+@onready var godot_button: Button = $Buttons/godotButton
+
+@onready var computer_windows_template: Control = $computerWindowsTemplate
+
+func _on_pdf_button_pressed() -> void:
+	computer_windows_template.visible = true
+	myfile_text.visible = true
+	
+	godot_button.flat = false
+	company_button.flat = false
+	malware_button.flat = false
+	
+	godot_button.disabled = true
+	company_button.disabled = true
+	malware_button.disabled = true
+
+	
+func _on_exit_button_pressed() -> void:
+	companyfile_text.visible = false
+	myfile_text.visible = false
+	image.visible = false
+	computer_windows_template.visible = false
+	
+	
+	pdf_button.flat = false
+	godot_button.flat = false
+	company_button.flat = false
+	
+	
+	pdf_button.disabled = false
+	godot_button.disabled = false
+	company_button.disabled = false
+	malware_button.disabled = false
+
+
+func _on_godot_button_pressed() -> void:
+	computer_windows_template.visible = true
+	image.visible = true
+	
+	pdf_button.flat = true
+	company_button.flat = true
+	malware_button.flat = true
+	
+	pdf_button.disabled = true
+	company_button.disabled = true
+	malware_button.disabled = true
+
+
+func _on_company_button_pressed() -> void:
+	computer_windows_template.visible = true
+	companyfile_text.visible = true
+	
+	pdf_button.flat = true
+	godot_button.flat = true
+	malware_button.flat = true
+
+	pdf_button.disabled = true
+	godot_button.disabled = true
+	malware_button.disabled = true
+
+
+func _on_malware_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn\")
+"
 
 [sub_resource type="FontFile" id="FontFile_gclbg"]
 subpixel_positioning = 0
@@ -301,7 +375,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eqh5w")
+script = SubResource("GDScript_bag6k")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_vertical_guides_ = [-779.0]
 
@@ -557,6 +631,7 @@ anchor_bottom = 0.0617284
 metadata/_edit_use_anchors_ = true
 
 [node name="Body" type="ColorRect" parent="computerWindowsTemplate"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 8.75
@@ -631,7 +706,6 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="myfileText" type="Label" parent="computerWindowsAssets"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 8.9

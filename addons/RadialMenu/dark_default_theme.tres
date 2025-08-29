@@ -1,15 +1,15 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://6txfgg00boom"]
 
-[ext_resource type="Texture2D" uid="uid://cy0wcmq53hail" path="res://addons/RadialMenu/icons/InterpLinear.svg" id="1"]
+[ext_resource type="Texture2D" uid="uid://b5qjroija1slp" path="res://addons/RadialMenu/icons/InterpLinear.svg" id="1"]
 
 [resource]
 RadialMenu/colors/Background = Color(0.12549, 0.12549, 0.12549, 0.901961)
 RadialMenu/colors/CenterBackground = Color(0.0980392, 0.0980392, 0.0980392, 0.827451)
-RadialMenu/colors/CenterStroke = Color(0.188235, 0.556863, 0.776471, 1)
+RadialMenu/colors/CenterStroke = Color(0.112927, 0.0726145, 0.168138, 1)
 RadialMenu/colors/ExpandIconModulation = Color(1, 1, 1, 1)
 RadialMenu/colors/IconModulation = Color(0.710938, 0.710938, 0.710938, 1)
-RadialMenu/colors/RingBackground = Color(0, 0.454902, 0.72549, 1)
-RadialMenu/colors/RingStroke = Color(0.0980392, 0.509804, 0.752941, 1)
+RadialMenu/colors/RingBackground = Color(0.174537, 0.169284, 0.191538, 1)
+RadialMenu/colors/RingStroke = Color(0.0646476, 0.125559, 0.173501, 1)
 RadialMenu/colors/SelectedBackground = Color(0.219608, 0.580392, 0.894118, 0.901961)
 RadialMenu/colors/SelectedStroke = Color(0.203922, 0.556863, 0.996078, 1)
 RadialMenu/colors/SelectorSegment = Color(0.52549, 0.784314, 1, 1)

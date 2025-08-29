@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcejk3vddejkh"]
+
+[ext_resource type="Script" uid="uid://ddqc5mpx2cbwe" path="res://Scenes/gui/CleanUI/window.gd" id="1_u6pv2"]
+[ext_resource type="Texture2D" uid="uid://htj0yl2ovqe2" path="res://Assets/aad868f7-e868-4153-835a-777ac43dfe55-removebg-preview.png" id="2_sqbpe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrbje"]
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnifk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4rbn"]
+bg_color = Color(0.846945, 0.332292, 0.308337, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whyjd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0woaw"]
+bg_color = Color(0.266592, 0.266569, 0.266574, 1)
+
+[node name="Window" type="Control"]
+layout_mode = 3
+anchor_right = 0.512153
+anchor_bottom = 0.580247
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u6pv2")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrbje")
+metadata/_edit_use_anchors_ = true
+
+[node name="exit_Button" type="Button" parent="VBoxContainer/Header"]
+layout_mode = 2
+anchor_left = 0.90339
+anchor_top = 0.0799997
+anchor_right = 0.98339
+anchor_bottom = 0.848
+offset_top = 1.52588e-05
+offset_right = 542.8
+offset_bottom = 441.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.08, 0.08)
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jnifk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f4rbn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_whyjd")
+icon = ExtResource("2_sqbpe")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0169492
+anchor_top = 0.04
+anchor_right = 0.677966
+anchor_bottom = 0.92
+text = "Title"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Body" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0woaw")
+metadata/_edit_use_anchors_ = true
+
+[node name="body_Label_Margin" type="MarginContainer" parent="VBoxContainer/Body"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="body_Label" type="Label" parent="VBoxContainer/Body/body_Label_Margin"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Add description here
+"
+
+[connection signal="pressed" from="VBoxContainer/Header/exit_Button" to="." method="_on_exit_button_pressed"]
