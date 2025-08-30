@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/liz_smooth.glb-05a5638376bfc15d3221391effa7b6
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0

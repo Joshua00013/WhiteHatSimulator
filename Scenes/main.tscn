@@ -1,6 +1,6 @@
 [gd_scene load_steps=85 format=3 uid="uid://bboey1mf24oe4"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ltxclu2fv57h" path="res://Scenes/maps/environment1.tscn" id="2_bo1nx"]
@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://c2v5sap2ns8ix" path="res://Scenes/3DModels/Decorations/table_office_desk_2_col.tscn" id="25_neg2b"]
 [ext_resource type="PackedScene" uid="uid://bpj3mqo28yw4f" path="res://Scenes/3DModels/Structures/window_wall_double.tscn" id="26_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="29_6vcvc"]
-[ext_resource type="PackedScene" uid="uid://cs6ie6cejwxt6" path="res://Scenes/3DModels/Decorations/lamp_conical_small.tscn" id="30_r33sp"]
+[ext_resource type="PackedScene" uid="uid://whmp2wv6xbv8" path="res://Scenes/3DModels/Decorations/lamp_conical_small.tscn" id="30_r33sp"]
 [ext_resource type="PackedScene" uid="uid://dsdgqpaegnvhw" path="res://Scenes/3DModels/Decorations/light_suspended_strip_light_a.tscn" id="31_hdf80"]
 [ext_resource type="PackedScene" uid="uid://0fkypkbaaqgw" path="res://Scenes/3DModels/Characters/myrione.tscn" id="32_e08e2"]
 [ext_resource type="PackedScene" uid="uid://b5ttcbpwy5ssx" path="res://Scenes/3DModels/Characters/mike.tscn" id="33_neg2b"]
@@ -214,11 +214,14 @@ layout_mode = 1
 [node name="mococo_hair" parent="NPC" instance=ExtResource("29_6vcvc")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 3, 0, -1)
 
-[node name="liz_smooth" parent="NPC" instance=ExtResource("21_pdsj5")]
+[node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("target_area") instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)
+target_area = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col2")
 
-[node name="myrione" parent="NPC" instance=ExtResource("32_e08e2")]
-transform = Transform3D(0.996387, 0, -0.08493, 0, 1, 0, 0.08493, 0, 0.996387, 15.9092, 9.53674e-07, 13.5249)
+[node name="myrione" parent="NPC" node_paths=PackedStringArray("target_area", "target_area_1") instance=ExtResource("32_e08e2")]
+transform = Transform3D(0.996387, 0, -0.08493, 0, 1, 0, 0.08493, 0, 0.996387, 17.2003, -0.00113249, 28.7215)
+target_area = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col7")
+target_area_1 = NodePath("../../Markers/MyrioneChair")
 
 [node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
@@ -375,8 +378,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3723, -0.00113297, 3.19454
 end_position = Vector3(0, 0, 8.965)
 
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3767, 0, 38.036)
-end_position = Vector3(0, 0, 6.76)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3767, 0.550693, 39.68)
+end_position = Vector3(0, 0, 4.28)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_v1mrv")
@@ -926,7 +929,7 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 60.0444,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.6851, 0.25322, 49.244)
 
 [node name="SimpleOfficeChair-col7" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 34, 0.253, 49.244)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.8405, 0.252086, 49.2944)
 
 [node name="SimpleOfficeChair-col3" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.6851, 0.25322, 54.855)
@@ -1269,3 +1272,8 @@ affect_navigation_mesh = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475828, 0.203655, 0.210667)
 vertices = PackedVector3Array(21.6924, 0, 65.6419, 21.5763, 0, 72.0116, 72.146, 0, 71.7509, 72.0856, 0, -13.5668, -8.53667, 0, -13.7058, -8.372, 0, 67.1256, -2.45319, 0, 67.0401, -2.63416, 0, 62.5671, -2.55484, 0, -7.01863, 67.9091, 0, -6.89688, 68.0185, 0, 60.8504, 38.3054, 0, 60.8781, 38.2792, 0, 64.6074, 41.6134, 0, 64.7197, 41.6018, 0, 65.7494)
 affect_navigation_mesh = true
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="MyrioneChair" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.42266, -0.00113297, 53.0446)

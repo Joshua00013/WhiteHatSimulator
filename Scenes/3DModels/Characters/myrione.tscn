@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://0fkypkbaaqgw"]
+[gd_scene load_steps=11 format=3 uid="uid://0fkypkbaaqgw"]
 
 [ext_resource type="PackedScene" uid="uid://bctqthg8vm5cg" path="res://Assets/Exported3dModel/myrione.glb" id="1_jbe5r"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_p1dbb"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_e5w7g"]
+[ext_resource type="Script" uid="uid://cy3b5invm48gj" path="res://Scripts/NPC/schedule_component.gd" id="4_ehqv8"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -32,28 +33,29 @@ nodes/Sit/position = Vector2(520, 320)
 nodes/output/position = Vector2(940, 340)
 node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
 
-[node name="myrione" instance=ExtResource("1_jbe5r")]
+[node name="myrione" node_paths=PackedStringArray("collision_shape") instance=ExtResource("1_jbe5r")]
 script = ExtResource("2_p1dbb")
+collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.45141, -0.0441553)
+bones/0/position = Vector3(0, 1.44173, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00338508, -0.0595, 0.987823, -0.143717)
+bones/2/rotation = Quaternion(-0.00650431, -0.0658483, 0.985218, -0.158012)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0109034, -0.0371184, 0.99918, 0.0119006)
+bones/4/rotation = Quaternion(-0.0277282, -0.000108689, 0.999598, -0.00589066)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0346094, -0.000400112, -0.0193267, 0.999214)
+bones/5/rotation = Quaternion(-0.105439, -0.000397441, -0.0588796, 0.992681)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.600809, 0.0138908, 0.0425772, 0.798137)
-bones/6/scale = Vector3(1, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00338508, -0.0595, 0.987823, 0.143717)
-bones/8/rotation = Quaternion(0.0516092, 0.00022717, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(0.0109034, -0.0371184, 0.99918, -0.0119006)
+bones/6/rotation = Quaternion(0.62781, 0.0102384, 0.0678001, 0.775341)
+bones/6/scale = Vector3(0.999999, 1.00001, 1)
+bones/7/rotation = Quaternion(0.00790415, -0.0466358, 0.987978, 0.147178)
+bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
+bones/9/rotation = Quaternion(-0.00388212, -0.00172972, 0.999947, 0.00934605)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0346094, 0.000400112, 0.0193267, 0.999214)
+bones/10/rotation = Quaternion(-0.105439, 0.000397442, 0.0588796, 0.992681)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.600809, -0.0138908, -0.0425773, 0.798137)
+bones/11/rotation = Quaternion(0.628169, -0.0369463, -0.0504676, 0.775559)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -69,6 +71,7 @@ shape = ExtResource("3_e5w7g")
 
 [node name="DebugTimer" type="Timer" parent="." index="4"]
 wait_time = 5.0
+one_shot = true
 autostart = true
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="5"]
@@ -77,4 +80,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Run/blend_amount = 0.0
 parameters/Sit/blend_amount = 0.0
 
+[node name="ScheduleComponent" type="Node3D" parent="." index="6"]
+script = ExtResource("4_ehqv8")
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="DebugTimer" to="." method="_on_debug_timer_timeout"]

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ccljfhbqrwmhf"]
 
-[ext_resource type="Texture2D" uid="uid://biqkhwsyr2sm4" path="res://Assets/texture_LowPolyOfficeProps/LPOP_TextureAtlas1_FULL.png" id="1_bocbb"]
+[ext_resource type="Texture2D" uid="uid://cpfi840uuo4wr" path="res://Assets/texture_LowPolyOfficeProps/LPOP_TextureAtlas1_FULL.png" id="1_bocbb"]
 [ext_resource type="Texture2D" uid="uid://d10bagp86ecfq" path="res://Assets/texture_LowPolyOfficeProps/LPOP_TextureAtlas1_FULL-Emissive.png" id="2_thuok"]
 
 [resource]

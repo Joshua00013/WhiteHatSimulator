@@ -2,16 +2,43 @@ extends CharacterBody3D
 
 enum {IDLE, RUN, SIT}
 var cur_anim = IDLE
+var sitting := false
 
 var speed = 3
 var run_val = 0
 var sit_val = 0
 
 @export var blend_speed = 15
+@export var target_area : Node3D
+@export var collision_shape : CollisionShape3D
+@export var target_area_1 : Node3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+
+func _ready() -> void:
+	navigation_agent_3d.set_target_position(target_area.global_position)
+	DayAndNightManager.time_tick.connect(calc_schedule)
+	
+
+func calc_schedule(day: int, hour: int, minutes: int):
+	match hour:
+		8:
+			pass
+		10:
+			change_target(target_area_1)
+
+func change_target(new_target):
+	sitting = false
+	target_area = new_target
+	navigation_agent_3d.set_target_position(target_area.global_position)
+func sit():
+	global_position.x = target_area.global_position.x
+	global_position.z = target_area.global_position.z
+	global_rotation = target_area.global_rotation
+	print(target_area.global_rotation)
+	sitting = true
 
 func handle_animation(delta):
 	match cur_anim:
@@ -33,7 +60,7 @@ func _on_debug_timer_timeout() -> void:
 	var random_position := Vector3.ZERO
 	random_position.z = randf_range(-5.0, -5.0)
 	random_position.x = randf_range(-5.0, -5.0)
-	navigation_agent_3d.set_target_position(GameManager.player.global_position)
+	navigation_agent_3d.set_target_position(target_area.global_position)
 	
 func _physics_process(delta: float) -> void:
 	handle_animation(delta)
@@ -46,7 +73,12 @@ func _physics_process(delta: float) -> void:
 	
 	#Handle animations
 	var stop_threshold := 0.0
-	if local_destination.length() <= stop_threshold or navigation_agent_3d.is_navigation_finished():
+	if sitting:
+		velocity = Vector3.ZERO
+		cur_anim = SIT
+		move_and_slide()
+		return
+	elif local_destination.length() <= stop_threshold or navigation_agent_3d.is_navigation_finished():
 		velocity = Vector3.ZERO
 		cur_anim = IDLE
 	elif direction:
@@ -62,3 +94,8 @@ func _physics_process(delta: float) -> void:
 	rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
 	
 	move_and_slide()
+
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	if target_area.has_node("Chair"):
+		sit()
