@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxi4f6remoigf"
-path="res://.godot/imported/Asset 18.png-19762538c18d972bbc3b357256ec5be5.ctex"
+uid="uid://dry2p2161qtif"
+path="res://.godot/imported/WindowDarkNinePatch.png-15365f369f3d4a0e5079485245a6f089.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Illustrator/Asset 18.png"
-dest_files=["res://.godot/imported/Asset 18.png-19762538c18d972bbc3b357256ec5be5.ctex"]
+source_file="res://Assets/Illustrator/WindowDarkNinePatch.png"
+dest_files=["res://.godot/imported/WindowDarkNinePatch.png-15365f369f3d4a0e5079485245a6f089.ctex"]
 
 [params]
 
