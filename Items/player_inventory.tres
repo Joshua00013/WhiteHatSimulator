@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://ysbc0wl30il1"]
 
-[ext_resource type="Script" path="res://Resources/inventory_item.gd" id="1_31lxn"]
-[ext_resource type="Script" path="res://Resources/inventory.gd" id="3_2nala"]
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_31lxn"]
+[ext_resource type="Script" uid="uid://bic7e0057ra4q" path="res://Resources/inventory.gd" id="3_2nala"]
 [ext_resource type="Resource" uid="uid://ck77iafps7s6u" path="res://Items/file001.tres" id="3_52ph3"]
 
 [resource]

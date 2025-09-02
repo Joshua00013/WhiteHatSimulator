@@ -83,6 +83,7 @@ autoplay = "default"
 
 [node name="Interactable" parent="." index="1" instance=ExtResource("3_f6o8t")]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.0167053, 0, -0.00906849)
+collision_layer = 6
 
 [node name="Interactable" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0501159, 0, 0.0272055)
