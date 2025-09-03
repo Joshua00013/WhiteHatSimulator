@@ -45,11 +45,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 
 [node name="Margin" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -90,14 +91,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("2_hvxal")
 
-[node name="Ransomware" type="MarginContainer" parent="."]
-visible = false
+[node name="Ransomware" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button")]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("3_qtjlq")
+back_button = NodePath("HSplitContainer/TutorialToolTip/Buttons/Back")
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Ransomware"]
@@ -123,12 +124,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware/HSplitContainer"]
+[node name="TutorialToolTip" type="VBoxContainer" parent="Ransomware/HSplitContainer"]
 layout_mode = 2
-alignment = 1
-last_wrap_alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware/HSplitContainer/HFlowContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware/HSplitContainer/TutorialToolTip"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -136,26 +135,26 @@ theme_override_font_sizes/normal_font_size = 18
 text = "Create the code for the good shit"
 fit_content = true
 
-[node name="Buttons" type="HBoxContainer" parent="Ransomware/HSplitContainer/HFlowContainer"]
+[node name="Buttons" type="HBoxContainer" parent="Ransomware/HSplitContainer/TutorialToolTip"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 165
 
-[node name="Back" type="Button" parent="Ransomware/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Back" type="Button" parent="Ransomware/HSplitContainer/TutorialToolTip/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="Ransomware/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Next" type="Button" parent="Ransomware/HSplitContainer/TutorialToolTip/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="Ransomware/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware" method="_on_back_button_down"]
-[connection signal="button_down" from="Ransomware/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware" method="_on_next_button_down"]
+[connection signal="button_down" from="Ransomware/HSplitContainer/TutorialToolTip/Buttons/Back" to="Ransomware" method="_on_back_button_down"]
+[connection signal="button_down" from="Ransomware/HSplitContainer/TutorialToolTip/Buttons/Next" to="Ransomware" method="_on_next_button_down"]
 
 [editable path="Margin/Desktop/Icon"]
 [editable path="Margin/Desktop/Icon2"]

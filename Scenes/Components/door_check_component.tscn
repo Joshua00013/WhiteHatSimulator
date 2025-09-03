@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcmywpe6e7kmv"]
+
+[ext_resource type="Script" uid="uid://c6ppp4jug8k3p" path="res://Scripts/Components/door_check_component.gd" id="1_jx7hl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ehqv8"]
+radius = 1.85143
+
+[node name="DoorCheckComponent" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_jx7hl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71152, 0)
+shape = SubResource("SphereShape3D_ehqv8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
