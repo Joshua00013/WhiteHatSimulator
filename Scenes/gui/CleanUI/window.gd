@@ -1,5 +1,4 @@
 extends Control
-@onready var windows_ui: Control = $"."
 
 @export var textbox := TextEdit
 @export var password_message := Label
@@ -11,7 +10,7 @@ signal window_exited
 
 
 func _on_exit_button_pressed() -> void:
-	windows_ui.visible = false
+	visible = false
 	window_exited.emit()
 	
 func submit_password(password):

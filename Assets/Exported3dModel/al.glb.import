@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/al.glb-2baacb8c0dd996d30ed31cedb1af2b19.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0

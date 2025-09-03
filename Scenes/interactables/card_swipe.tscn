@@ -10,6 +10,7 @@ data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0
 
 [node name="CardSwipe" type="Node3D"]
 script = ExtResource("1_ylcda")
+keycard_scene = ExtResource("5_bnpop")
 
 [node name="Interactable" parent="." instance=ExtResource("1_xnljy")]
 
@@ -22,9 +23,6 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
 
 [node name="keycard_reader" parent="." instance=ExtResource("4_ylcda")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="keycard" parent="." instance=ExtResource("5_bnpop")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0774789, 0.196309, 3.38671e-09)
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 

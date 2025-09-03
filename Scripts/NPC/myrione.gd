@@ -45,11 +45,11 @@ func _ready() -> void:
 }
 	
 	if schedule[8]!=null:
-		var target_area = schedule[8]
+		target_area = schedule[8]
 		navigation_agent_3d.set_target_position(target_area.global_position)
 	DayAndNightManager.time_tick.connect(calc_schedule)
 
-func calc_schedule(day: int, hour: int, minutes: int):
+func calc_schedule(_day: int, hour: int, _minutes: int):
 	change_target(schedule[hour])
 
 func change_target(new_target):
@@ -122,13 +122,10 @@ func _physics_process(delta: float) -> void:
 		ROTATION_SPEED = 20 #Rotate faster if more than 60 degrees needed
 	rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
 	
-	
-
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	if target_area.has_node("Chair"):
 		sit()
-
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity, .25)

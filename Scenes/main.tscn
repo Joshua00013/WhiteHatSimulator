@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=86 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -78,6 +78,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
+[ext_resource type="Script" uid="uid://d157ppus016ub" path="res://Scripts/Debug/fps_counter.gd" id="79_fd3ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -244,8 +245,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 [node name="Brian" parent="NPC" instance=ExtResource("53_v1mrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
 
-[node name="al" parent="NPC" instance=ExtResource("68_ovafv")]
+[node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("68_ovafv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col12")
 
 [node name="John" parent="NPC" instance=ExtResource("69_owhal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)
@@ -383,6 +385,10 @@ end_position = Vector3(0, 0, 8.965)
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3767, 0.550693, 39.68)
 end_position = Vector3(0.008, 0, 2.262)
+
+[node name="NavigationLink3D4" type="NavigationLink3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4869, -0.00113273, 10.802)
+end_position = Vector3(1.848, 0, -0.423)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_v1mrv")
@@ -961,8 +967,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.9676
 [node name="Computer Phishing" parent="NavigationRegion3D/Objects" instance=ExtResource("18_fevyy")]
 transform = Transform3D(0.0757097, 0, 0.99713, 0, 1, 0, -0.99713, 0, 0.0757097, 4.30614, 0.692845, 4.67624)
 
-[node name="CardSwipe" parent="NavigationRegion3D/Objects" instance=ExtResource("19_pdsj5")]
+[node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
+door = NodePath("../../../Interactables/DoorIron")
 
 [node name="FlashDriveCollectible" parent="NavigationRegion3D/Objects" instance=ExtResource("19_ee4r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71709, 0.849262, 1.91281)
@@ -1280,3 +1287,20 @@ affect_navigation_mesh = true
 
 [node name="Cafeteria" type="Marker3D" parent="Markers"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.42266, -0.00113297, 53.0446)
+
+[node name="DebugUI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="DebugUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FPSCounter" type="Label" parent="DebugUI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("79_fd3ed")
