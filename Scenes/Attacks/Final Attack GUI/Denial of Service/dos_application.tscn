@@ -1,0 +1,468 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3dn8ch6v2rb3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0thw"]
+bg_color = Color(0.0862745, 0.152941, 0.188235, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.642386, 0.703609, 0.856338, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2oy5"]
+bg_color = Color(0, 0.25098, 0.388235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvfvp"]
+bg_color = Color(0.0156863, 0.184314, 0.247059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcd61"]
+bg_color = Color(0, 0.25098, 0.388235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.176471, 0.364706, 0.478431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex3sr"]
+bg_color = Color(0.0156863, 0.184314, 0.247059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55yhg"]
+draw_center = false
+
+[node name="DosApplication" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.207843, 0.239216, 1)
+
+[node name="Body" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.099
+anchor_right = 0.993
+anchor_bottom = 0.989
+offset_left = -0.0640001
+offset_top = -0.152008
+offset_right = 0.0639648
+offset_bottom = 11.128
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+color = Color(0.0196078, 0.0901961, 0.12549, 1)
+
+[node name="Label" type="Label" parent="ColorRect/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.395833
+anchor_top = 0.0123457
+anchor_right = 0.604167
+anchor_bottom = 0.0864198
+offset_left = -1.82343
+offset_top = -64.3489
+offset_right = -1.82343
+offset_bottom = -64.3489
+text = "Low Orbit Ion Cannon"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CHARGING" type="Panel" parent="ColorRect/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619896
+anchor_top = 0.0968056
+anchor_right = 0.97172
+anchor_bottom = 0.324654
+offset_left = -0.448002
+offset_top = 0.167999
+offset_right = -0.120178
+offset_bottom = 0.192993
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0thw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Charging BOX" type="Panel" parent="ColorRect/Body/CHARGING"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0993353
+anchor_top = 0.122396
+anchor_right = 0.899335
+anchor_bottom = 0.868664
+theme_override_styles/panel = SubResource("StyleBoxFlat_o2oy5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Charging Label" type="Label" parent="ColorRect/Body/CHARGING/Charging BOX"]
+layout_mode = 2
+anchor_left = 0.275
+anchor_top = 0.33
+anchor_right = 0.725
+anchor_bottom = 0.69
+theme_override_font_sizes/font_size = 26
+text = "CHARGING"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="url & ip" type="Panel" parent="ColorRect/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0211194
+anchor_top = 0.0970913
+anchor_right = 0.577457
+anchor_bottom = 0.31988
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0thw")
+metadata/_edit_use_anchors_ = true
+
+[node name="url bar" type="Panel" parent="ColorRect/Body/url & ip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123292
+anchor_top = 0.161021
+anchor_right = 0.808222
+anchor_bottom = 0.438777
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="url text" type="RichTextLabel" parent="ColorRect/Body/url & ip/url bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_alignment = 1
+
+[node name="url label" type="Label" parent="ColorRect/Body/url & ip/url bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.12
+anchor_top = 0.222
+anchor_right = -0.042
+anchor_bottom = 0.8
+offset_top = -0.880001
+offset_right = -0.199999
+offset_bottom = -1.0
+text = "URL"
+
+[node name="ip bar" type="Panel" parent="ColorRect/Body/url & ip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123
+anchor_top = 0.556
+anchor_right = 0.808
+anchor_bottom = 0.833
+offset_left = 0.167999
+offset_top = -0.0640106
+offset_right = 0.127991
+offset_bottom = 0.0479889
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+
+[node name="ip text" type="RichTextLabel" parent="ColorRect/Body/url & ip/ip bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ip label" type="Label" parent="ColorRect/Body/url & ip/ip bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.12
+anchor_top = 0.2
+anchor_right = -0.042
+anchor_bottom = 0.775
+offset_right = -0.199991
+text = "IP"
+
+[node name="LOCKON1" type="Panel" parent="ColorRect/Body/url & ip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.849
+anchor_top = 0.167
+anchor_right = 0.959
+anchor_bottom = 0.444
+offset_left = -7.81601
+offset_top = -0.0480022
+offset_right = 7.94397
+offset_bottom = 0.0639954
+theme_override_styles/panel = SubResource("StyleBoxFlat_kcd61")
+
+[node name="Label" type="Label" parent="ColorRect/Body/url & ip/LOCKON1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.225
+anchor_right = 0.9781
+anchor_bottom = 0.8
+text = "LOCK"
+metadata/_edit_use_anchors_ = true
+
+[node name="LOCKON2" type="Panel" parent="ColorRect/Body/url & ip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.849
+anchor_top = 0.167
+anchor_right = 0.959
+anchor_bottom = 0.444
+offset_left = -7.81601
+offset_top = 55.952
+offset_right = 7.94397
+offset_bottom = 56.064
+theme_override_styles/panel = SubResource("StyleBoxFlat_kcd61")
+
+[node name="Label" type="Label" parent="ColorRect/Body/url & ip/LOCKON2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.225
+anchor_right = 0.9656
+anchor_bottom = 0.8
+text = "LOCK"
+metadata/_edit_use_anchors_ = true
+
+[node name="Selected Target" type="Panel" parent="ColorRect/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028169
+anchor_top = 0.387755
+anchor_right = 0.978873
+anchor_bottom = 0.610544
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0thw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Selected Target Body" type="Panel" parent="ColorRect/Body/Selected Target"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0148148
+anchor_top = 0.129771
+anchor_right = 0.985185
+anchor_bottom = 0.877863
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="ADDRESS" type="Label" parent="ColorRect/Body/Selected Target"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = 0.33
+anchor_right = 0.725
+anchor_bottom = 0.69
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_font_sizes/font_size = 37
+text = "N  O  N  E"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Attack Option" type="Panel" parent="ColorRect/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0281592
+anchor_top = 0.651899
+anchor_right = 0.978863
+anchor_bottom = 0.874688
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0thw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timeout" type="Panel" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0222222
+anchor_top = 0.251908
+anchor_right = 0.140741
+anchor_bottom = 0.435115
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTP Subtitle" type="Panel" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.251908
+anchor_right = 0.555556
+anchor_bottom = 0.435115
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TCP UDP" type="Panel" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.614815
+anchor_top = 0.251908
+anchor_right = 0.97037
+anchor_bottom = 0.435115
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timeout Label" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 0
+anchor_left = 0.0518337
+anchor_top = 0.0622573
+anchor_right = 0.112019
+anchor_bottom = 0.23783
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "Timeout"
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTP Subtitle Label" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.325926
+anchor_top = 0.0610687
+anchor_right = 0.42963
+anchor_bottom = 0.236641
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "HTTP Subtitle"
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTP Subtitle Label2" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.718267
+anchor_top = 0.0622573
+anchor_right = 0.866415
+anchor_bottom = 0.23783
+offset_right = -6.10352e-05
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "TCP / UDP message"
+metadata/_edit_use_anchors_ = true
+
+[node name="Port" type="Panel" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0222222
+anchor_top = 0.687023
+anchor_right = 0.17037
+anchor_bottom = 0.870229
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Method" type="OptionButton" parent="ColorRect/Body/Attack Option"]
+layout_mode = 0
+anchor_left = 0.18512
+anchor_top = 0.684828
+anchor_right = 0.333269
+anchor_bottom = 0.890934
+offset_right = -3.05176e-05
+offset_bottom = -3.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ex3sr")
+alignment = 2
+item_count = 6
+popup/item_0/text = " TCP"
+popup/item_0/id = 1
+popup/item_1/text = "UDP"
+popup/item_1/id = 2
+popup/item_2/text = "HTTP"
+popup/item_2/id = 3
+popup/item_3/text = "ReCol"
+popup/item_3/id = 4
+popup/item_4/text = "slowLOIC"
+popup/item_4/id = 5
+popup/item_5/text = "ICMP"
+popup/item_5/id = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Threads" type="Panel" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.348026
+anchor_top = 0.684828
+anchor_right = 0.496174
+anchor_bottom = 0.868034
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvfvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Wait for reply" type="CheckBox" parent="ColorRect/Body/Attack Option"]
+layout_mode = 0
+anchor_left = 0.503704
+anchor_top = 0.687023
+anchor_right = 0.62963
+anchor_bottom = 0.89313
+theme_override_colors/font_color = Color(0.482353, 0.741176, 0.87451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_55yhg")
+text = "Wait for reply"
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="HSlider" parent="ColorRect/Body/Attack Option"]
+layout_mode = 0
+anchor_left = 0.637037
+anchor_top = 0.625954
+anchor_right = 0.97037
+anchor_bottom = 0.748092
+step = 10.0
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Port Label" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0592385
+anchor_top = 0.498056
+anchor_right = 0.103683
+anchor_bottom = 0.673629
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "Port"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Methods Label" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.207335
+anchor_top = 0.498056
+anchor_right = 0.311039
+anchor_bottom = 0.673629
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "Methods"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Threads Label" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.370241
+anchor_top = 0.498056
+anchor_right = 0.473944
+anchor_bottom = 0.673629
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "Threads"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTP Subtitle Label3" type="Label" parent="ColorRect/Body/Attack Option"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.696053
+anchor_top = 0.809341
+anchor_right = 0.90346
+anchor_bottom = 0.984914
+theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
+text = "<= faster   Speed   slower =>"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
