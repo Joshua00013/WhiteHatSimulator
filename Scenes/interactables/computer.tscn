@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
-[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/Fileless.tscn" id="3_rbmqn"]
+[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/FilelessMalware/Fileless.tscn" id="3_rbmqn"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rmuk0"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rbmqn"]
@@ -22,14 +22,14 @@ albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_rmuk0"]
 size = Vector2(1.4, 0.8)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rbmqn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rmuk0"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aje88"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_rbmqn")
+emission_texture = SubResource("ViewportTexture_rmuk0")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rmuk0"]
 data = PackedVector3Array(0.7, -0.4, 0, -0.7, -0.4, 0, 0.7, 0.4, 0, -0.7, -0.4, 0, -0.7, 0.4, 0, 0.7, 0.4, 0)
