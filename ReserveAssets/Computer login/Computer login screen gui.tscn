@@ -52,48 +52,40 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a6wus")
 
 [node name="Username" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = 47.5
-offset_right = 137.5
-offset_bottom = 88.5
+anchors_preset = -1
+anchor_left = 0.382378
+anchor_top = 0.573302
+anchor_right = 0.619358
+anchor_bottom = 0.636574
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Username"
 secret_character = "*"
+metadata/_edit_use_anchors_ = true
 
 [node name="Password" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = 100.5
-offset_right = 137.5
-offset_bottom = 141.5
+anchors_preset = -1
+anchor_left = 0.382378
+anchor_top = 0.655093
+anchor_right = 0.619358
+anchor_bottom = 0.718364
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Password"
 secret = true
 secret_character = "*"
+metadata/_edit_use_anchors_ = true
 
 [node name="Confirm" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 97.5
-offset_top = 105.5
-offset_right = 322.5
-offset_bottom = 330.5
+anchors_preset = -1
+anchor_left = 0.584635
+anchor_top = 0.662809
+anchor_right = 0.609853
+anchor_bottom = 0.707225
+offset_right = 195.949
+offset_bottom = 196.218
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.129116, 0.12792)
@@ -104,6 +96,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_epux4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrhvm")
 icon = ExtResource("2_3dhwv")
+metadata/_edit_use_anchors_ = true
 
 [node name="B64f8Fcf0e0Aed9537c800Eb5e9Ca1Ed-removebg-preview" type="TextureRect" parent="."]
 layout_mode = 1
@@ -122,33 +115,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = -17.0
-offset_right = 109.0
-offset_bottom = 25.0
+anchors_preset = -1
+anchor_left = 0.407118
+anchor_top = 0.473765
+anchor_right = 0.594618
+anchor_bottom = 0.53858
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Welcome, User"
+metadata/_edit_use_anchors_ = true
 
 [node name="Warning_label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = 146.0
-offset_right = 101.0
-offset_bottom = 188.0
+anchors_preset = -1
+anchor_left = 0.414063
+anchor_top = 0.725309
+anchor_right = 0.587674
+anchor_bottom = 0.790123
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 13
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

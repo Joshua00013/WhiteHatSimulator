@@ -911,7 +911,7 @@ for file in allfiles:
 
 print('All your files have been encrypted')"
 editable = false
-scroll_vertical = 6.0
+scroll_vertical = 4.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -1115,11 +1115,12 @@ text = "sdfsdfjo4589098sgjj564908gfdokop9056"
 visible = false
 layout_mode = 2
 anchors_preset = 0
-anchor_left = 0.472777
-anchor_top = 0.280936
-anchor_right = 0.937387
-anchor_bottom = 0.777592
-offset_bottom = 3.05176e-05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = -25.0
 
 [node name="Label" parent="DesktopEncrypted/WindowContainer/Key_Window/VBoxContainer/Header" index="1"]
 text = "key.key"
@@ -1129,15 +1130,16 @@ text = "kljki9000-9jjlji998jiljklj89jljklftyft"
 
 [node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
+anchors_preset = -1
+anchor_left = 0.0154265
+anchor_top = 0.958194
+anchor_right = 0.99637
+anchor_bottom = 1.01003
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
 text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="DesktopEncrypted/WindowContainer"]
 layout_mode = 1
