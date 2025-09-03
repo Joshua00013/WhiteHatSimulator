@@ -26,5 +26,5 @@ func _on_fileless_pressed() -> void:
 func _on_phishing_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Stages/Phishing/stage_phishing.tscn")
 
-func _on_denial_of_service_pressed() -> void:
+func _on_dos_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Stages/DOS/stage_dos.tscn")

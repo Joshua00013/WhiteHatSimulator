@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_1i1bv"]
 [ext_resource type="Script" uid="uid://0mvx1bct5blp" path="res://Scenes/interactables/final_player_laptop.gd" id="1_6vtq2"]
-[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/FilelessMalware/Fileless.tscn" id="3_lo8gw"]
-[ext_resource type="PackedScene" uid="uid://cbreuyxskm8gt" path="res://Scenes/Attacks/Final Attack GUI/Phishing/PhishingAttack.tscn" id="4_bn7lr"]
+[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/Fileless.tscn" id="3_lo8gw"]
+[ext_resource type="PackedScene" uid="uid://cbreuyxskm8gt" path="res://Scenes/Attacks/PhishingAttack.tscn" id="4_bn7lr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kf2c"]
 

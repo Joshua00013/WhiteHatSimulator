@@ -414,222 +414,6 @@ tracks/22/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_3gfa8"]
-resource_name = "pishing_start"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Margin:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_s48hh"]
-resource_name = "website_pressed"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Margin:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/Google/Label:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("website/ColorRect/Google/wrong_url:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("website/ColorRect/Google:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("website/ColorRect/Company Website:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("website/ColorRect/Google/Label:text")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [" Type the URL here"]
-}
-
-[sub_resource type="Animation" id="Animation_6udbi"]
-resource_name = "website_searching_track_1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website/ColorRect/Google/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's type in the website url"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("website/ColorRect/Google/wrong_url:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_sp02v"]
-resource_name = "wrong_url"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website/ColorRect/Google/wrong_url:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_87taf"]
 resource_name = "correct_url"
 tracks/0/type = "value"
@@ -738,6 +522,368 @@ tracks/2/path = NodePath("Margin:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6ieen"]
+resource_name = "pishing_backend"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("website:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("source_code_phishing:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Margin:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's now create the backend for our website, so the credentials that they will type will be sent out to our database"]
+}
+
+[sub_resource type="Animation" id="Animation_8rdof"]
+resource_name = "pishing_backend_2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["This is just a simple database form", "Great! now let's deploy and send them the link"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password_hash);", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password_hash);
+
+$stmt->close();
+$conn->close();
+?>"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_po1lb"]
+resource_name = "pishing_deployment"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Body/body_Label_Margin/body_Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Deploying...", "Website Deployed"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/RansomwareApp:value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Website finally deployed let's try to find our first victim by sending an email to them"]
+}
+
+[sub_resource type="Animation" id="Animation_6h8qb"]
+resource_name = "pishing_fake_website"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("source_code_phishing:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Margin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("website:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["  localhost:5000"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Pu1sefire"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("website/ColorRect/Google:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("website/ColorRect/Company Website/Label:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Our website is almost finished, as seen here we are near almost identical to the original website, with 
+one detail that is different..."]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("website/ColorRect/Company Website/circlered:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g11jc"]
+resource_name = "pishing_fake_website_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("website/ColorRect/Company Website/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The website name is different, let's leave it here and see if they spot it"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("website/ColorRect/Company Website/circlered:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3gfa8"]
+resource_name = "pishing_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Margin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1671,19 +1817,19 @@ tracks/4/keys = {
 "values": [" Next ", "Next"]
 }
 
-[sub_resource type="Animation" id="Animation_6h8qb"]
-resource_name = "pishing_fake_website"
+[sub_resource type="Animation" id="Animation_s48hh"]
+resource_name = "website_pressed"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing:visible")
+tracks/0/path = NodePath("website:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1700,38 +1846,38 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("website:visible")
+tracks/2/path = NodePath("source_code_phishing:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
+tracks/3/path = NodePath("website/ColorRect/Google/Label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["  localhost:5000"]
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
+tracks/4/path = NodePath("website/ColorRect/Google/wrong_url:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Pu1sefire"]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1748,32 +1894,31 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("website/ColorRect/Google:visible")
+tracks/6/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("website/ColorRect/Company Website/Label:text")
+tracks/7/path = NodePath("website/ColorRect/Google:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Our website is almost finished, as seen here we are near almost identical to the original website, with 
-one detail that is different..."]
+"values": [true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("website/ColorRect/Company Website/circlered:visible")
+tracks/8/path = NodePath("website/ColorRect/Company Website:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1782,240 +1927,95 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("website/ColorRect/Google/Label:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" Type the URL here"]
+}
 
-[sub_resource type="Animation" id="Animation_g11jc"]
-resource_name = "pishing_fake_website_2"
+[sub_resource type="Animation" id="Animation_6udbi"]
+resource_name = "website_searching_track_1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("website/ColorRect/Company Website/Label:text")
+tracks/0/path = NodePath("website/ColorRect/Google/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The website name is different, let's leave it here and see if they spot it"]
+"values": ["Let's type in the website url"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("website/ColorRect/Company Website/circlered:visible")
+tracks/1/path = NodePath("website/ColorRect/Google/wrong_url:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_6ieen"]
-resource_name = "pishing_backend"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("source_code_phishing:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Margin:visible")
+tracks/2/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
+tracks/3/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's now create the backend for our website, so the credentials that they will type will be sent out to our database"]
-}
-
-[sub_resource type="Animation" id="Animation_8rdof"]
-resource_name = "pishing_backend_2"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["This is just a simple database form", "Great! now let's deploy and send them the link"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": ["<?php
-// Database connection
-$host = \"localhost\";
-$user = \"dbuser\";
-$pass = \"dbpass\";
-$dbname = \"mydatabase\";
-", "<?php
-// Database connection
-$host = \"localhost\";
-$user = \"dbuser\";
-$pass = \"dbpass\";
-$dbname = \"mydatabase\";
-
-$conn = new mysqli($host, $user, $pass, $dbname);", "<?php
-// Database connection
-$host = \"localhost\";
-$user = \"dbuser\";
-$pass = \"dbpass\";
-$dbname = \"mydatabase\";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-$username = $_POST['username'];
-$password = $_POST['password'];", "<?php
-// Database connection
-$host = \"localhost\";
-$user = \"dbuser\";
-$pass = \"dbpass\";
-$dbname = \"mydatabase\";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
-$stmt->bind_param(\"ss\", $username, $password_hash);", "<?php
-// Database connection
-$host = \"localhost\";
-$user = \"dbuser\";
-$pass = \"dbpass\";
-$dbname = \"mydatabase\";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
-$stmt->bind_param(\"ss\", $username, $password_hash);
-
-$stmt->close();
-$conn->close();
-?>"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_po1lb"]
-resource_name = "pishing_deployment"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Body/body_Label_Margin/body_Label:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+
+[sub_resource type="Animation" id="Animation_sp02v"]
+resource_name = "wrong_url"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("website/ColorRect/Google/wrong_url:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Deploying...", "Website Deployed"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/RansomwareApp:value")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 100.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Website finally deployed let's try to find our first victim by sending an email to them"]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2g0of"]
@@ -2113,6 +2113,7 @@ size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
 theme_override_font_sizes/font_size = 18
 scroll_smooth = true
+scroll_vertical = 1.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -2137,12 +2138,6 @@ anchor_left = 0.43149
 anchor_top = 0.237458
 anchor_right = 0.956898
 anchor_bottom = 0.834448
-
-[node name="Label" parent="source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Header" index="1"]
-text = "Deploying Website"
-
-[node name="body_Label" parent="source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "Deploying..."
 
 [node name="RansomwareApp" type="ProgressBar" parent="source_code_phishing/HSplitContainer/CodeEdit/deployment"]
 layout_mode = 1

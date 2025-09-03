@@ -702,14 +702,21 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 decr_icon = NodePath("DesktopDefault/Desktop/Decr_icon")
 key_icon = NodePath("DesktopDefault/Desktop/Key_icon")
 
+[node name="Ransomware_decrypt_HSplitContainer_CodeEdit_DecryptorWindow_VBoxContainer_Body#TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+metadata/_tab_index = 0
+
 [node name="DesktopDefault" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("2_4yk5j")
-metadata/_tab_index = 0
+metadata/_tab_index = 1
 
 [node name="Desktop" type="VFlowContainer" parent="DesktopDefault"]
 layout_mode = 2
@@ -806,14 +813,7 @@ anchor_top = 0.162207
 anchor_right = 0.95735
 anchor_bottom = 0.737458
 
-[node name="Label" parent="DesktopDefault/WindowContainer/GodotWindow/VBoxContainer/Header" index="1"]
-text = "godot.png"
-
-[node name="body_Label" parent="DesktopDefault/WindowContainer/GodotWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "
-"
-
-[node name="Icon" type="Sprite2D" parent="DesktopDefault/WindowContainer/GodotWindow/VBoxContainer" index="2"]
+[node name="Icon" type="Sprite2D" parent="DesktopDefault/WindowContainer/GodotWindow/VBoxContainer" index="0"]
 position = Vector2(298.999, 180)
 texture = ExtResource("7_xi5cb")
 
@@ -825,18 +825,6 @@ anchor_top = 0.135452
 anchor_right = 0.90326
 anchor_bottom = 0.715698
 
-[node name="Label" parent="DesktopDefault/WindowContainer/SQLWindow/VBoxContainer/Header" index="1"]
-text = "data.sql"
-
-[node name="body_Label" parent="DesktopDefault/WindowContainer/SQLWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "create database test;
-use database test ;
-
-create table ransom(
-   rid int auto_increment,
-   rkey bigint not null
-)"
-
 [node name="Text_1Window" parent="DesktopDefault/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
@@ -844,13 +832,6 @@ anchor_left = 0.342105
 anchor_top = 0.0769231
 anchor_right = 0.854258
 anchor_bottom = 0.65717
-
-[node name="Label" parent="DesktopDefault/WindowContainer/Text_1Window/VBoxContainer/Header" index="1"]
-text = "text1.txt"
-
-[node name="body_Label" parent="DesktopDefault/WindowContainer/Text_1Window/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "Ransomware is very dangerous!
-"
 
 [node name="Label" type="Label" parent="DesktopDefault/WindowContainer"]
 layout_mode = 1
@@ -867,6 +848,13 @@ grow_vertical = 0
 text = "Sample Text"
 metadata/_edit_use_anchors_ = true
 
+[node name="Ransomware_decrypt_HSplitContainer_CodeEdit_DecryptorWindow_VBoxContainer_Body#Button" type="Button" parent="."]
+visible = false
+layout_mode = 2
+text = "Submit"
+metadata/_edit_use_anchors_ = true
+metadata/_tab_index = 2
+
 [node name="Ransomware_encrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation")]
 visible = false
 layout_mode = 2
@@ -877,7 +865,7 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("6_pnwk5")
 back_button = NodePath("HSplitContainer/HFlowContainer/Buttons/Back")
 animation = NodePath("HSplitContainer/CodeEdit/AnimationPlayer")
-metadata/_tab_index = 1
+metadata/_tab_index = 3
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Ransomware_encrypt"]
 layout_mode = 2
@@ -942,12 +930,6 @@ anchor_top = 0.200669
 anchor_right = 0.813926
 anchor_bottom = 0.795987
 
-[node name="Label" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow/VBoxContainer/Header" index="1"]
-text = "Ransomware.exe"
-
-[node name="body_Label" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "Key Generated!"
-
 [node name="RansomwareApp" type="ProgressBar" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow"]
 layout_mode = 0
 anchor_left = 0.0843835
@@ -986,6 +968,12 @@ theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
+[node name="Ransomware_decrypt_HSplitContainer_CodeEdit_DecryptorWindow_VBoxContainer_Header#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_vfaog")
+}
+
 [node name="DesktopEncrypted" type="MarginContainer" parent="."]
 visible = false
 layout_mode = 2
@@ -994,7 +982,7 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("2_4yk5j")
-metadata/_tab_index = 2
+metadata/_tab_index = 4
 
 [node name="Desktop" type="VFlowContainer" parent="DesktopEncrypted"]
 layout_mode = 2
@@ -1064,14 +1052,7 @@ anchor_top = 0.162207
 anchor_right = 0.95735
 anchor_bottom = 0.737458
 
-[node name="Label" parent="DesktopEncrypted/WindowContainer/GodotWindow/VBoxContainer/Header" index="1"]
-text = "godot.png"
-
-[node name="body_Label" parent="DesktopEncrypted/WindowContainer/GodotWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "dfsdkf9945ksdf054ksdf5906r5k6posgf
-"
-
-[node name="Icon" type="Sprite2D" parent="DesktopEncrypted/WindowContainer/GodotWindow/VBoxContainer" index="2"]
+[node name="Icon" type="Sprite2D" parent="DesktopEncrypted/WindowContainer/GodotWindow/VBoxContainer" index="0"]
 visible = false
 position = Vector2(298.999, 180)
 texture = ExtResource("7_xi5cb")
@@ -1084,12 +1065,6 @@ anchor_top = 0.135452
 anchor_right = 0.90326
 anchor_bottom = 0.715698
 
-[node name="Label" parent="DesktopEncrypted/WindowContainer/SQLWindow/VBoxContainer/Header" index="1"]
-text = "data.sql"
-
-[node name="body_Label" parent="DesktopEncrypted/WindowContainer/SQLWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "asdasdpofgdi95698t56dogkdfgd"
-
 [node name="Text_1Window" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
@@ -1098,17 +1073,11 @@ anchor_top = 0.0769231
 anchor_right = 0.854258
 anchor_bottom = 0.65717
 
-[node name="VBoxContainer" parent="DesktopEncrypted/WindowContainer/Text_1Window" index="0"]
+[node name="VBoxContainer" parent="DesktopEncrypted/WindowContainer/Text_1Window" index="2"]
 offset_left = -5.99973
 offset_top = 3.99998
 offset_right = -5.99976
 offset_bottom = 4.0
-
-[node name="Label" parent="DesktopEncrypted/WindowContainer/Text_1Window/VBoxContainer/Header" index="1"]
-text = "text1.txt"
-
-[node name="body_Label" parent="DesktopEncrypted/WindowContainer/Text_1Window/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "sdfsdfjo4589098sgjj564908gfdokop9056"
 
 [node name="Key_Window" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
@@ -1119,12 +1088,6 @@ anchor_top = 0.280936
 anchor_right = 0.937387
 anchor_bottom = 0.777592
 offset_bottom = 3.05176e-05
-
-[node name="Label" parent="DesktopEncrypted/WindowContainer/Key_Window/VBoxContainer/Header" index="1"]
-text = "key.key"
-
-[node name="body_Label" parent="DesktopEncrypted/WindowContainer/Key_Window/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "kljki9000-9jjlji998jiljklj89jljklftyft"
 
 [node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer"]
 layout_mode = 1
@@ -1163,7 +1126,7 @@ script = ExtResource("4_pnwk5")
 back_button = NodePath("HSplitContainer/HFlowContainer/Buttons/Back")
 animation = NodePath("HSplitContainer/CodeEdit/AnimationPlayer")
 decryptor_window = NodePath("HSplitContainer/CodeEdit/DecryptorWindow")
-metadata/_tab_index = 3
+metadata/_tab_index = 5
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Ransomware_decrypt"]
 layout_mode = 2
@@ -1223,7 +1186,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_4yk5j")
 }
 
-[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" node_paths=PackedStringArray("textbox", "password_message", "animation", "desktop", "decryptor_finish_button_window") instance=ExtResource("3_7e48o")]
+[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" node_paths=PackedStringArray("desktop", "decryptor_finish_button_window") instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 2
 anchors_preset = 0
@@ -1231,47 +1194,8 @@ anchor_left = 0.267707
 anchor_top = 0.262542
 anchor_right = 0.885954
 anchor_bottom = 0.742475
-textbox = NodePath("VBoxContainer/Body/TextEdit")
-password_message = NodePath("VBoxContainer/Body/body_Label_Margin/body_Label")
-animation = NodePath("VBoxContainer/Header/AnimationPlayer")
 desktop = NodePath("../../../../DesktopDefault")
 decryptor_finish_button_window = NodePath("Button")
-
-[node name="Label" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Header" index="1"]
-text = "Decryptor.exe"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Header" index="2"]
-root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_vfaog")
-}
-
-[node name="TextEdit" type="TextEdit" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Body" index="0"]
-layout_mode = 2
-anchor_left = 0.0155341
-anchor_top = 0.161017
-anchor_right = 0.704854
-anchor_bottom = 0.36017
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Password"
-metadata/_edit_use_anchors_ = true
-
-[node name="body_Label_Margin" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Body" index="1"]
-mouse_filter = 2
-
-[node name="body_Label" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Body/body_Label_Margin" index="0"]
-text = "Enter the password:"
-
-[node name="Button" type="Button" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Body" index="2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.765049
-anchor_top = 0.194915
-anchor_right = 0.887379
-anchor_bottom = 0.326271
-text = "Submit"
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow"]
 visible = false
@@ -1327,7 +1251,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="ransomware_start" from="DesktopEncrypted/WindowContainer" to="." method="_on_window_container_ransomware_start"]
 [connection signal="button_down" from="DesktopEncrypted/WindowContainer/Button" to="." method="_on_button_button_down"]
 [connection signal="window_exited" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow" to="." method="_on_decryptor_window_window_exited"]
-[connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/VBoxContainer/Body/Button" to="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow" method="_on_button_button_down"]
 [connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/Button" to="." method="finish_button_down"]
 [connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware_decrypt" method="_on_back_button_down"]
 [connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware_decrypt" method="_on_next_button_down"]
