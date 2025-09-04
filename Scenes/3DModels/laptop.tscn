@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5hv7ttjn1yq"]
+
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_4ikr3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Laptop-col2" parent="." instance=ExtResource("1_4ikr3")]

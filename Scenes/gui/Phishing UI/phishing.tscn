@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5ybr4psxlrb6"]
+
+[ext_resource type="Texture2D" uid="uid://c5x62prpu6d6m" path="res://Scenes/gui/Phishing UI/phishing assets/trash.png" id="2_wofe8"]
+[ext_resource type="Texture2D" uid="uid://p636w3knxqpy" path="res://Scenes/gui/Phishing UI/phishing assets/computer.png" id="3_daqaf"]
+[ext_resource type="PackedScene" uid="uid://cctm4xwevy8od" path="res://Scenes/gui/Phishing UI/phishing assets/windows_tab_copyingwebsite_complete.tscn" id="4_daqaf"]
+[ext_resource type="Texture2D" uid="uid://cpwbqcusojype" path="res://Scenes/gui/Phishing UI/phishing assets/folder.png" id="4_w6r3j"]
+[ext_resource type="PackedScene" uid="uid://cajoy080wal4o" path="res://Scenes/gui/Phishing UI/phishing assets/vscode.tscn" id="4_wofe8"]
+[ext_resource type="PackedScene" uid="uid://cxryhhxmr56v2" path="res://Scenes/gui/Phishing UI/phishing assets/windows_tab_copyingwebsite.tscn" id="5_wofe8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daqaf"]
+bg_color = Color(0.27451, 0.266667, 0.270588, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6r3j"]
+bg_color = Color(0.911527, 0.949603, 0.992647, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 28
+
+[node name="Phishing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.996078, 0.964706, 0.823529, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.099
+anchor_right = 0.056
+anchor_bottom = 0.099
+offset_left = -40.512
+offset_top = -40.152
+offset_right = 479.488
+offset_bottom = 479.848
+scale = Vector2(0.158468, 0.144459)
+icon = ExtResource("2_wofe8")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.099
+anchor_right = 0.056
+anchor_bottom = 0.099
+offset_left = -40.512
+offset_top = 215.848
+offset_right = 479.488
+offset_bottom = 735.848
+scale = Vector2(0.158468, 0.144459)
+icon = ExtResource("3_daqaf")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.099
+anchor_right = 0.056
+anchor_bottom = 0.099
+offset_left = -40.512
+offset_top = 87.848
+offset_right = 479.488
+offset_bottom = 607.848
+scale = Vector2(0.158468, 0.144459)
+icon = ExtResource("4_w6r3j")
+
+[node name="Control3" parent="." instance=ExtResource("4_daqaf")]
+layout_mode = 1
+offset_left = 160.0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 16.0
+scale = Vector2(0.577733, 0.577733)
+
+[node name="Control2" parent="." instance=ExtResource("4_wofe8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0280556
+anchor_top = 0.370296
+anchor_right = 0.437056
+anchor_bottom = 0.802296
+offset_left = -0.320007
+offset_top = 0.0479965
+offset_right = 680.512
+offset_bottom = 368.112
+scale = Vector2(0.414194, 0.425859)
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="." instance=ExtResource("5_wofe8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.451556
+anchor_top = 0.222185
+anchor_right = 0.991556
+anchor_bottom = 0.728185
+offset_left = -0.192017
+offset_top = 0.0240002
+offset_right = 529.728
+offset_bottom = 286.136
+scale = Vector2(0.540078, 0.534204)
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 656.0
+offset_right = 1304.0
+offset_bottom = 784.0
+scale = Vector2(0.767188, 0.71223)
+theme_override_styles/panel = SubResource("StyleBoxFlat_daqaf")
+
+[node name="Panel3" type="Panel" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.937
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -763.0
+offset_bottom = 0.064003
+theme_override_styles/panel = SubResource("StyleBoxFlat_w6r3j")
+
+[editable path="Control"]

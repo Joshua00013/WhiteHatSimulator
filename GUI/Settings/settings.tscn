@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cj1bwed1k0ycb"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.310617, 0.310617, 0.310617, 0.498039)
+
+[node name="Settings" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.127604
+anchor_top = 0.111111
+anchor_right = 0.901042
+anchor_bottom = 0.850309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HandTracking" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="HandtrackingLabel" type="Label" parent="Settings/HandTracking"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Handtracking:"
+
+[node name="handtrackingCheckBox" type="CheckBox" parent="Settings/HandTracking"]
+layout_mode = 2
+
+[node name="Display" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="DisplayLabel" type="Label" parent="Settings/Display"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Display:"
+
+[node name="DisplayOptionButton" type="OptionButton" parent="Settings/Display"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Windowed/Borderless"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed/Fullscreen"
+popup/item_1/id = 1
+
+[node name="Music" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="MusictrackingLabel" type="Label" parent="Settings/Music"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music:"
+
+[node name="MusicHSlider2" type="HSlider" parent="Settings/Music"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Sounds" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="SoundsLabel" type="Label" parent="Settings/Sounds"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sounds:"
+
+[node name="SoundsHSlider3" type="HSlider" parent="Settings/Sounds"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Sensitivity" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="SensitivityLabel" type="Label" parent="Settings/Sensitivity"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sensitivity:"
+
+[node name="DensitivityHSlider" type="HSlider" parent="Settings/Sensitivity"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2

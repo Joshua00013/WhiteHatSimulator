@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://dho6k74etc68v"]
+
+[ext_resource type="PackedScene" uid="uid://c5yk10phhn0hv" path="res://Assets/Exported3dModel/al.glb" id="1_vp2hp"]
+[ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_pjn6v"]
+[ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_r8q6d"]
+[ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_r8q6d"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ehqv8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nf8c0"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndxcc"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0p50"]
+animation = &"sitting"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_so210"]
+graph_offset = Vector2(-214.101, 59.1805)
+nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
+nodes/Run/position = Vector2(320, 320)
+nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
+nodes/Sit/position = Vector2(520, 320)
+"nodes/anim idle/node" = SubResource("AnimationNodeAnimation_nf8c0")
+"nodes/anim idle/position" = Vector2(60, 120)
+"nodes/anim run/node" = SubResource("AnimationNodeAnimation_ndxcc")
+"nodes/anim run/position" = Vector2(60, 300)
+"nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
+"nodes/anim sit/position" = Vector2(320, 600)
+nodes/output/position = Vector2(940, 340)
+node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
+
+[node name="al" instance=ExtResource("1_vp2hp")]
+script = ExtResource("2_pjn6v")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, 1.4413, -0.0441553)
+bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
+bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
+bones/2/rotation = Quaternion(-0.00623074, -0.0671011, 0.984346, -0.162857)
+bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
+bones/4/rotation = Quaternion(-0.027759, 0.00217025, 0.999587, -0.00707081)
+bones/4/scale = Vector3(1, 1, 1.00003)
+bones/5/rotation = Quaternion(-0.111154, -0.000397101, -0.0620706, 0.991863)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.629498, 0.0108484, 0.0687909, 0.773875)
+bones/6/scale = Vector3(0.999999, 1.00001, 1)
+bones/7/rotation = Quaternion(0.00753505, -0.0447572, 0.987461, 0.151195)
+bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
+bones/9/rotation = Quaternion(-0.00384196, 0.000509754, 0.999936, 0.0105981)
+bones/9/scale = Vector3(1, 1, 1.00003)
+bones/10/rotation = Quaternion(-0.111154, 0.000397104, 0.0620706, 0.991863)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.629826, -0.037595, -0.0515167, 0.774114)
+bones/11/scale = Vector3(1, 1.00001, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
+shape = ExtResource("3_r8q6d")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]
+path_height_offset = 1.0
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeBlendTree_so210")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Run/blend_amount = 0.0
+parameters/Sit/blend_amount = 0.0
+
+[node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("4_r8q6d")]
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

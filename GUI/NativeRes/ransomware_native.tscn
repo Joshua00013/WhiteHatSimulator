@@ -1,0 +1,164 @@
+[gd_scene load_steps=6 format=3 uid="uid://doynxiiidibl2"]
+
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_ksx4e"]
+[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_61kte"]
+[ext_resource type="Script" uid="uid://bg3vexhs4fdsf" path="res://Scripts/GUI/ransomware.gd" id="3_ksx4e"]
+
+[sub_resource type="Shader" id="Shader_wwpmy"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4e7k"]
+shader = SubResource("Shader_wwpmy")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.115, 0.045)
+shader_parameter/hole_size = Vector2(1.765, 0.29)
+
+[node name="Control" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+clip_tabs = false
+tabs_visible = false
+
+[node name="Margin" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_tab_index = 0
+
+[node name="Desktop" type="VFlowContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="Icon" parent="Margin/Desktop" instance=ExtResource("1_ksx4e")]
+layout_mode = 2
+
+[node name="Label" parent="Margin/Desktop/Icon" index="1"]
+text = "PDF"
+
+[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("1_ksx4e")]
+layout_mode = 2
+
+[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("1_ksx4e")]
+layout_mode = 2
+
+[node name="Label" parent="Margin/Desktop/Icon3" index="1"]
+text = "PNG"
+
+[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("1_ksx4e")]
+layout_mode = 2
+
+[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("1_ksx4e")]
+layout_mode = 2
+
+[node name="RadialMenu" type="Control" parent="Margin/Desktop"]
+visible = false
+custom_minimum_size = Vector2(300, 222.263)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("2_61kte")
+
+[node name="Ransomware" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("3_ksx4e")
+metadata/_tab_index = 1
+
+[node name="HSplitContainer" type="HBoxContainer" parent="Ransomware"]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="Ransomware/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+editable = false
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="Ransomware/HSplitContainer/CodeEdit"]
+material = SubResource("ShaderMaterial_j4e7k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware/HSplitContainer"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware/HSplitContainer/HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 18
+text = "Create the code for the good shit"
+fit_content = true
+
+[node name="Buttons" type="HBoxContainer" parent="Ransomware/HSplitContainer/HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 165
+
+[node name="Back" type="Button" parent="Ransomware/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="Ransomware/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Ransomware/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware" method="_on_back_button_down"]
+[connection signal="button_down" from="Ransomware/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware" method="_on_next_button_down"]
+
+[editable path="Margin/Desktop/Icon"]
+[editable path="Margin/Desktop/Icon2"]
+[editable path="Margin/Desktop/Icon3"]
+[editable path="Margin/Desktop/Icon4"]

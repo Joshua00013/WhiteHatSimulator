@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkw0i2jbufepl"]
+
+[ext_resource type="PackedScene" uid="uid://k08da8cppptj" path="res://Scenes/Laptop-col.glb" id="1_mb1yb"]
+[ext_resource type="Script" uid="uid://trl2bimckcb0" path="res://Scenes/interactables/laptop_collectible.gd" id="1_ua44q"]
+[ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="2_00kpk"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="2_qklrv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qklrv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00kpk"]
+size = Vector3(0.707886, 0.639389, 0.882568)
+
+[node name="LaptopCollectible" type="Node3D"]
+script = ExtResource("1_ua44q")
+resource = ExtResource("2_00kpk")
+
+[node name="Laptop-col2" parent="." instance=ExtResource("1_mb1yb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.586512)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Laptop-col2"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Laptop-col2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Laptop-col2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qklrv")
+
+[node name="Interactable" parent="." instance=ExtResource("2_qklrv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(2.00922, 0, 0, 0, 2.00922, 0, 0, 0, 2.00922, 0.14998, 0.703593, 0.0537133)
+shape = SubResource("BoxShape3D_00kpk")
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

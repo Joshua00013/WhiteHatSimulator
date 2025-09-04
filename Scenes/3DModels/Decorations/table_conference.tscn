@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bndvs2wdb5fpg"]
+
+[ext_resource type="PackedScene" uid="uid://bqufobf5evuo0" path="res://Assets/export_LPOP_FULL/Table_Conference.fbx" id="1_4vgmc"]
+
+[node name="Table_Conference" instance=ExtResource("1_4vgmc")]

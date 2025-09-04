@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://di5juvawhmoq6"]
+
+[ext_resource type="Script" path="res://Resources/inventory_item.gd" id="1_5p04s"]
+[ext_resource type="Texture2D" uid="uid://uaym1o80x0uq" path="res://icon.svg" id="2_dqq45"]
+
+[resource]
+script = ExtResource("1_5p04s")
+name = "Flash Drive"
+description = "This contains John Mhike's homework files."
+texture = ExtResource("2_dqq45")
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

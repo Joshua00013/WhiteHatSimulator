@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://vfaaa7v574w2"]
+
+[ext_resource type="Script" uid="uid://dn3dky4tybpwm" path="res://Scripts/GUI/load_menu.gd" id="1_fswdp"]
+
+[node name="LoadMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fswdp")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+text = "Save file 1 - John Mhike"
+alignment = 0
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 2
+text = "Save file 2 - Macky"
+alignment = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.0338542
+anchor_top = 0.896605
+anchor_right = 0.0729167
+anchor_bottom = 0.944444
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

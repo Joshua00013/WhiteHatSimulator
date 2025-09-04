@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjktsnvh7d76c"]
+
+[ext_resource type="PackedScene" uid="uid://bcq8tytibj4i1" path="res://Assets/Exported3dModel/GlassWall.glb" id="1_erxey"]
+
+[node name="GlassWall" instance=ExtResource("1_erxey")]
+
+[node name="GlassWall" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0583738, 0, -0.0223942)
