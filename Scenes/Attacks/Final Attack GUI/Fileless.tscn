@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://biq1t4o3no8ef"]
 
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_hq362"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_hq362"]
 [ext_resource type="Script" uid="uid://bkb8jr7yeiwnk" path="res://Scenes/Attacks/Final Attack GUI/fileless.gd" id="1_tpj4y"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_b8r0q"]
 [ext_resource type="Script" uid="uid://bwie15hglluo4" path="res://Scenes/Attacks/Final Attack GUI/fileless_terminal.gd" id="4_tpj4y"]

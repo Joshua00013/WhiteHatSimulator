@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://doynxiiidibl2"]
 
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_ksx4e"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_ksx4e"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_61kte"]
 [ext_resource type="Script" uid="uid://bg3vexhs4fdsf" path="res://Scripts/GUI/ransomware.gd" id="3_ksx4e"]
 

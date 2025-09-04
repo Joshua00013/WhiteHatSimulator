@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dwuxkxcvrv88b"]
 
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_6vjkc"]
-[ext_resource type="Script" uid="uid://bea7aohb4k0hh" path="res://Scenes/gui/Ransomware/computer_ui.gd" id="1_fp5b4"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_6vjkc"]
+[ext_resource type="Script" uid="uid://bea7aohb4k0hh" path="res://Scenes/GUI/Ransomware/computer_ui.gd" id="1_fp5b4"]
 [ext_resource type="Texture2D" uid="uid://d0trr7hg3ddtw" path="res://Assets/Icons - icones/notepad-02.png" id="2_fp5b4"]
 [ext_resource type="Texture2D" uid="uid://dq3vnscjkrf3m" path="res://Assets/Icons - icones/trash bin-full.png" id="3_eb50o"]
 [ext_resource type="Texture2D" uid="uid://cxyput4ubfiim" path="res://Assets/Icons - icones/notepad-01.png" id="4_26g6d"]
 [ext_resource type="Texture2D" uid="uid://cqq656qel2mv8" path="res://Assets/Icons - icones/folder-06.png" id="5_x4axu"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="6_ivukx"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="7_7q173"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="7_7q173"]
 
 [node name="Margin" type="MarginContainer" node_paths=PackedStringArray("windows_ui")]
 anchors_preset = -1

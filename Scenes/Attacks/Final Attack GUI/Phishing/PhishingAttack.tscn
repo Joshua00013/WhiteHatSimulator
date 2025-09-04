@@ -1,10 +1,10 @@
 [gd_scene load_steps=46 format=3 uid="uid://cbreuyxskm8gt"]
 
 [ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_jjlhw"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_jjlhw"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_3gfa8"]
 [ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="4_s48hh"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="4_xtrfx"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="5_87taf"]
 [ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="6_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="7_hwprx"]

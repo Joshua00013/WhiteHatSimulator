@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf2frugo4cc31"
-path="res://.godot/imported/2959755_money_paypal_transfer_icon.png-b9c5ff3fea7c8123e2f0b59f45257627.ctex"
+path="res://.godot/imported/2959755_money_paypal_transfer_icon.png-11bd9bec2c4636b26532950bba8df9bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/gui/Phishing UI/phishing assets/2959755_money_paypal_transfer_icon.png"
-dest_files=["res://.godot/imported/2959755_money_paypal_transfer_icon.png-b9c5ff3fea7c8123e2f0b59f45257627.ctex"]
+source_file="res://Scenes/GUI/Phishing UI/phishing assets/2959755_money_paypal_transfer_icon.png"
+dest_files=["res://.godot/imported/2959755_money_paypal_transfer_icon.png-11bd9bec2c4636b26532950bba8df9bd.ctex"]
 
 [params]
 

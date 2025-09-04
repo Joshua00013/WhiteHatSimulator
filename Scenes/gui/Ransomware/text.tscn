@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgtt4udo5eboy"]
 
-[ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/gui/CleanUI/icon.gd" id="1_emn3h"]
+[ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/GUI/CleanUI/icon.gd" id="1_emn3h"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dr2o8"]
 load_path = "res://.godot/imported/_icons.png-ab2725697d4ff2a5f87fb0b310ad6903.ctex"
