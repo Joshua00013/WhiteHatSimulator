@@ -1,7 +1,11 @@
 extends Control
 
-@onready var slots : Array = $InventoryItems/GridContainer.get_children()
-@onready var inventory_description = $InventoryDescription
+var slots : Array
+
+@export var slot_container : GridContainer
+@export var item_name : Label
+@export var item_description : Label
+
 @onready var inv : Inv = preload("res://Items/player_inventory.tres")
 
 func _ready() -> void:
@@ -16,14 +20,16 @@ func add(item : InvItem):
 	update_slots()
 
 func _on_slot_clicked(description, name):
-	inventory_description.item_name.text = name
-	inventory_description.item_description.text = description
+	item_name.text = name
+	item_description.text = description
 	
 func clear_description():
-	inventory_description.item_name.text = ""
-	inventory_description.item_description.text = ""
+	item_name.text = ""
+	item_description.text = ""
 
 func update_slots():
+	slots = slot_container.get_children()
+	
 	for slot in slots:
 		slot.slot_clicked.connect(self._on_slot_clicked)
 	

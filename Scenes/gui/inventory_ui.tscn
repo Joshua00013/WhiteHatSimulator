@@ -1,87 +1,151 @@
 [gd_scene load_steps=4 format=3 uid="uid://br15oeyra3fbx"]
 
 [ext_resource type="Script" uid="uid://dpn0l7v8vhtk6" path="res://Scripts/GUI/inventory_ui.gd" id="1_jkvmd"]
-[ext_resource type="PackedScene" uid="uid://36j43vtteoib" path="res://Scenes/GUI/inventory_slot.tscn" id="2_3pjjw"]
-[ext_resource type="PackedScene" uid="uid://b6lbrvmvf5bp0" path="res://Scenes/GUI/inventory_description.tscn" id="3_jcg7x"]
+[ext_resource type="PackedScene" uid="uid://36j43vtteoib" path="res://Scenes/gui/inventory_slot.tscn" id="2_3pjjw"]
+[ext_resource type="Texture2D" uid="uid://bjh7gye0hhd4" path="res://Assets/Illustrator/UINinePatch.png" id="2_5v173"]
 
-[node name="InventoryUI" type="Control"]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("slot_container", "item_name", "item_description")]
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jkvmd")
+slot_container = NodePath("MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer")
+item_name = NodePath("MarginContainer/HBoxContainer/InventoryDescription/MarginContainer/NamePanel/ItemName")
+item_description = NodePath("MarginContainer/HBoxContainer/InventoryDescription/MarginContainer/NamePanel/ItemDescription")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.227451)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034662
+anchor_top = -0.0671296
+anchor_right = 1.03466
+anchor_bottom = 1.06713
+offset_left = 40.0
+offset_top = 43.5
+offset_right = -40.0
+offset_bottom = -43.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryItems" type="NinePatchRect" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(0.505882, 0.505882, 0.505882, 1)
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+texture = ExtResource("2_5v173")
+region_rect = Rect2(0, 0, 300, 300)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/InventoryItems"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+metadata/_edit_use_anchors_ = true
 
-[node name="InventoryItems" type="ColorRect" parent="."]
-self_modulate = Color(0.281187, 0.281187, 0.281187, 1)
-custom_minimum_size = Vector2(850, 648)
-layout_mode = 1
-offset_right = 850.0
-offset_bottom = 648.0
-
-[node name="GridContainer" type="GridContainer" parent="InventoryItems"]
-custom_minimum_size = Vector2(800, 566)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -283.0
-offset_right = 400.0
-offset_bottom = 283.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 columns = 6
 
-[node name="inv_slot" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="inv_slot2" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot2" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot3" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot3" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot4" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot4" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot5" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot5" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot6" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot6" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot7" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot7" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot8" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot8" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot9" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot9" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot10" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot10" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot11" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot11" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="inv_slot12" parent="InventoryItems/GridContainer" instance=ExtResource("2_3pjjw")]
+[node name="inv_slot12" parent="MarginContainer/HBoxContainer/InventoryItems/MarginContainer/GridContainer" instance=ExtResource("2_3pjjw")]
 layout_mode = 2
 
-[node name="InventoryDescription" parent="." instance=ExtResource("3_jcg7x")]
+[node name="InventoryDescription" type="NinePatchRect" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(0.505344, 0.505344, 0.505344, 1)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("2_5v173")
+patch_margin_left = 14
+patch_margin_top = 16
+patch_margin_right = 14
+patch_margin_bottom = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/InventoryDescription"]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
+
+[node name="NamePanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer/InventoryDescription/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemName" type="Label" parent="MarginContainer/HBoxContainer/InventoryDescription/MarginContainer/NamePanel"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "ItemName"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/InventoryDescription/MarginContainer/NamePanel"]
+layout_mode = 2
+
+[node name="ItemDescription" type="Label" parent="MarginContainer/HBoxContainer/InventoryDescription/MarginContainer/NamePanel"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+text = "Description"
+autowrap_mode = 2
