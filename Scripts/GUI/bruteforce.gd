@@ -82,6 +82,6 @@ func set_step(step: int):
 		13:
 			description.text = "Now lets run the code"
 		14: 
-			pass
+			queue_free()
 			
 			

@@ -67,8 +67,35 @@ tracks/1/keys = {
 "values": [Vector2(3.565, 0.29)]
 }
 
-[sub_resource type="Animation" id="Animation_ihm5t"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_v7ikg"]
+resource_name = "Bruteforce_step_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.165, 2.455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.205, 0.195)]
+}
+
+[sub_resource type="Animation" id="Animation_v8676"]
+resource_name = "Bruteforce_step_11"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,7 +106,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.115, -0.04)]
+"values": [Vector2(0.165, 2.845)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -91,7 +118,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.565, 0.29)]
+"values": [Vector2(1.59, 0.195)]
 }
 
 [sub_resource type="Animation" id="Animation_g1511"]
@@ -121,8 +148,8 @@ tracks/1/keys = {
 "values": [Vector2(3.565, 0.395)]
 }
 
-[sub_resource type="Animation" id="Animation_ckyc5"]
-resource_name = "Bruteforce_step_4"
+[sub_resource type="Animation" id="Animation_l3iel"]
+resource_name = "Bruteforce_step_3"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -133,7 +160,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.115, 1.24)]
+"values": [Vector2(0.115, 0.84)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -148,8 +175,8 @@ tracks/1/keys = {
 "values": [Vector2(3.565, 0.19)]
 }
 
-[sub_resource type="Animation" id="Animation_l3iel"]
-resource_name = "Bruteforce_step_3"
+[sub_resource type="Animation" id="Animation_ckyc5"]
+resource_name = "Bruteforce_step_4"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -160,7 +187,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.115, 0.84)]
+"values": [Vector2(0.115, 1.24)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -310,35 +337,8 @@ tracks/1/keys = {
 "values": [Vector2(0.805, 0.195)]
 }
 
-[sub_resource type="Animation" id="Animation_v7ikg"]
-resource_name = "Bruteforce_step_10"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.165, 2.455)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.205, 0.195)]
-}
-
-[sub_resource type="Animation" id="Animation_v8676"]
-resource_name = "Bruteforce_step_11"
+[sub_resource type="Animation" id="Animation_ihm5t"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -349,7 +349,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.165, 2.845)]
+"values": [Vector2(0.115, -0.04)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -361,7 +361,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.59, 0.195)]
+"values": [Vector2(3.565, 0.29)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g1511"]
@@ -423,12 +423,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_ckyc5")
 
 [node name="Bruteforce_Attack" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "overlay", "code_edit", "description", "animation")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -521,7 +522,6 @@ libraries = {
 }
 
 [node name="Brute_force_terminal" type="MarginContainer" parent="." node_paths=PackedStringArray("animation")]
-visible = false
 layout_mode = 2
 script = ExtResource("3_l3iel")
 animation = NodePath("AnimationPlayer")
@@ -530,16 +530,8 @@ metadata/_tab_index = 1
 [node name="Window" parent="Brute_force_terminal" instance=ExtResource("4_4pc1q")]
 layout_mode = 2
 
-[node name="exit_Button" parent="Brute_force_terminal/Window/VBoxContainer/Header" index="0"]
-anchor_right = 0.947484
-offset_top = 0.0
-offset_right = 584.163
-
-[node name="Label" parent="Brute_force_terminal/Window/VBoxContainer/Header" index="1"]
+[node name="Title" parent="Brute_force_terminal/Window/HBoxContainer" index="0"]
 text = "Terminal"
-
-[node name="body_Label" parent="Brute_force_terminal/Window/VBoxContainer/Body/body_Label_Margin" index="0"]
-visible = false
 
 [node name="CodeEdit" type="CodeEdit" parent="Brute_force_terminal/Window"]
 layout_mode = 1
