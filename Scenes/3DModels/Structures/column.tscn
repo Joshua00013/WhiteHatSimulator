@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7prijsacrgov"]
-
-[ext_resource type="PackedScene" uid="uid://ditg2qm0splcw" path="res://Assets/Exported3dModel/Column.glb" id="1_ckdc6"]
-
-[node name="Column" instance=ExtResource("1_ckdc6")]
-
-[node name="Pillar" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00145951, 0, -0.00261295)

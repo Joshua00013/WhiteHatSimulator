@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnhjxi2pgu1xx"]
-
-[ext_resource type="PackedScene" uid="uid://bh8jljsw6j80q" path="res://Assets/export_LPOP_FULL/WaterCooler.fbx" id="1_kubyc"]
-
-[node name="WaterCooler" instance=ExtResource("1_kubyc")]

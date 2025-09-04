@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq8fjheau1w5b"]
-
-[ext_resource type="PackedScene" uid="uid://cmgbicatlbg2c" path="res://Assets/export_LPOP_FULL/ProjectorScreen.fbx" id="1_xgdwf"]
-
-[node name="ProjectorScreen" instance=ExtResource("1_xgdwf")]

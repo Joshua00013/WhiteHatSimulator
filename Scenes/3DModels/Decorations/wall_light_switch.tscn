@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckhqrhhkycemp"]
-
-[ext_resource type="PackedScene" uid="uid://c5nnaik53lhto" path="res://Assets/export_LPOP_FULL/Wall_LightSwitch.fbx" id="1_ix83i"]
-
-[node name="Wall_LightSwitch" instance=ExtResource("1_ix83i")]

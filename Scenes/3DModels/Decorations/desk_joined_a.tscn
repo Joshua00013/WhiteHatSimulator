@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqgrldw7cks82"]
-
-[ext_resource type="PackedScene" uid="uid://peas5p6mto5g" path="res://Assets/export_LPOP_FULL/Desk_Joined_A.fbx" id="1_bef3i"]
-
-[node name="Desk_Joined_A" instance=ExtResource("1_bef3i")]

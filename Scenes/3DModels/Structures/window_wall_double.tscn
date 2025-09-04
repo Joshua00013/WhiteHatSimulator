@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpj3mqo28yw4f"]
-
-[ext_resource type="PackedScene" uid="uid://dbyghhedhhlkb" path="res://Assets/Exported3dModel/WindowWallDouble.glb" id="1_lxxva"]
-
-[node name="WindowWallDouble" instance=ExtResource("1_lxxva")]
-
-[node name="DoubleWindowWall" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176477, 0, -0.0534306)

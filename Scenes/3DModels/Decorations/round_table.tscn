@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhrdgw6ptyqo1"]
-
-[ext_resource type="PackedScene" uid="uid://cgfeahwbg8gmu" path="res://Assets/Exported3dModel/round_table.glb" id="1_0ppv8"]
-
-[node name="round_table" instance=ExtResource("1_0ppv8")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://edri81jaiv43"]
-
-[ext_resource type="PackedScene" uid="uid://cjaqpfkp70msh" path="res://Assets/Exported3dModel/Battery.glb" id="1_3lany"]
-
-[node name="Battery2" instance=ExtResource("1_3lany")]

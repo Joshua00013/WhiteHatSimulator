@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6061x1r2nqo5"]
-
-[ext_resource type="PackedScene" uid="uid://8hidckbayk1l" path="res://Assets/Exported3dModel/monitor_large.glb" id="1_o1mlk"]
-
-[node name="monitor_large" instance=ExtResource("1_o1mlk")]
