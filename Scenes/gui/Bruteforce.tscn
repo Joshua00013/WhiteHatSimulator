@@ -408,7 +408,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [211.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jse0w"]
@@ -773,8 +773,9 @@ sn2MKbJtÑ5
 EyUw0qd9Hc
 ['ñ', 'A', '7', 'e', 'Q', 'N', '4', 'J', 'k', 'Z']
 ñA7eQN4JkZ
-The password is Cypher 2025"
+The password is Cypher2025"
 editable = false
+scroll_vertical = 211.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true

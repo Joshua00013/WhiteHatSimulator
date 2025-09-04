@@ -893,7 +893,7 @@ for file in allfiles:
 
 print('All your files have been encrypted')"
 editable = false
-scroll_vertical = 4.0
+scroll_vertical = 6.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
