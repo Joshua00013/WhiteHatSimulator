@@ -82,6 +82,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "Username"
 secret_character = "*"
+metadata/_edit_use_anchors_ = true
 
 [node name="Password" type="HBoxContainer" parent="Login"]
 layout_mode = 2
@@ -96,6 +97,7 @@ size_flags_vertical = 4
 placeholder_text = "Password"
 secret = true
 secret_character = "*"
+metadata/_edit_use_anchors_ = true
 
 [node name="Confirm" type="Button" parent="Login/Password"]
 custom_minimum_size = Vector2(40, 0)
@@ -112,5 +114,6 @@ text = ">"
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 13
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Login/Password/Confirm" to="." method="_on_confirm_pressed"]

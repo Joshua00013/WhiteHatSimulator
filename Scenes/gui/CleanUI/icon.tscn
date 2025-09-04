@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnlake8o686ww"]
+[gd_scene load_steps=5 format=3 uid="uid://cnlake8o686ww"]
 
 [ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/GUI/CleanUI/icon.gd" id="1_4kctp"]
 [ext_resource type="Texture2D" uid="uid://yhjc1ekownnt" path="res://Assets/Icons - icones/_icons.png" id="1_nsh2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kctp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kctp"]
 atlas = ExtResource("1_nsh2i")
@@ -22,7 +24,9 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4kctp")
 icon = SubResource("AtlasTexture_4kctp")
+icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 

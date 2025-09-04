@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://csoskaat0mxia"]
+[gd_scene load_steps=5 format=3 uid="uid://csoskaat0mxia"]
 
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_fi43v"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_hvxal"]
-[ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="3_qtjlq"]
 
-[sub_resource type="Shader" id="Shader_wwpmy"]
+[sub_resource type="Shader" id="Shader_fi43v"]
 code = "shader_type canvas_item;
 render_mode blend_mix, unshaded;
 
@@ -34,7 +33,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4e7k"]
-shader = SubResource("Shader_wwpmy")
+shader = SubResource("Shader_fi43v")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.115, 0.045)
 shader_parameter/hole_size = Vector2(1.765, 0.29)
@@ -91,14 +90,12 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("2_hvxal")
 
-[node name="Ransomware" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button")]
+[node name="Ransomware" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_qtjlq")
-back_button = NodePath("HSplitContainer/TutorialToolTip/Buttons/Back")
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Ransomware"]
