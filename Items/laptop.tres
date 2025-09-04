@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://cvrsfb05tresp"]
-
-[ext_resource type="Script" path="res://Resources/inventory_item.gd" id="1_4e556"]
-
-[resource]
-script = ExtResource("1_4e556")
-name = "Laptop"
-description = "This is your laptop"

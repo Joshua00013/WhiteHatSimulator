@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsdgqpaegnvhw"]
-
-[ext_resource type="PackedScene" uid="uid://dph82c416w64i" path="res://Assets/export_LPOP_FULL/Light_SuspendedStripLight_A.fbx" id="1_h4w58"]
-
-[node name="Light_SuspendedStripLight_A" instance=ExtResource("1_h4w58")]

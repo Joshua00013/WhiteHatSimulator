@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b81xiro3fx3ve"]
-
-[ext_resource type="PackedScene" uid="uid://cr85yrvrk6q68" path="res://Assets/Exported3dModel/FlashDriveLowPoly.glb" id="1_87247"]
-
-[node name="FlashDriveLowPoly" instance=ExtResource("1_87247")]
