@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cctm4xwevy8od"]
 
-[ext_resource type="Texture2D" uid="uid://cf2frugo4cc31" path="res://Scenes/gui/Phishing UI/phishing assets/2959755_money_paypal_transfer_icon.png" id="1_8pwvf"]
+[ext_resource type="Texture2D" uid="uid://cf2frugo4cc31" path="res://Scenes/GUI/Phishing UI/phishing assets/2959755_money_paypal_transfer_icon.png" id="1_8pwvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx5qo"]
 bg_color = Color(0.960297, 0.966104, 1, 1)

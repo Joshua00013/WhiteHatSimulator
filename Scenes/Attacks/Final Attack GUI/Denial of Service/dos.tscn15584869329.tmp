@@ -1,0 +1,266 @@
+[gd_scene load_steps=8 format=3 uid="uid://ofe618bgkock"]
+
+[ext_resource type="Script" uid="uid://w4enlc3e3p0r" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.gd" id="1_nlydn"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_57peu"]
+[ext_resource type="PackedScene" uid="uid://d3dn8ch6v2rb3" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos_application.tscn" id="2_qs6s7"]
+[ext_resource type="Script" uid="uid://tjt3n3w55xdi" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/ddos_application.gd" id="2_wy1dg"]
+[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_qs6s7"]
+
+[sub_resource type="Shader" id="Shader_xw1ye"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bh3fo"]
+shader = SubResource("Shader_xw1ye")
+shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
+shader_parameter/hole_position = Vector2(0.115, 0.045)
+shader_parameter/hole_size = Vector2(3.3, 0.2)
+
+[node name="Dos" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+script = ExtResource("1_nlydn")
+
+[node name="ddos_application" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("2_wy1dg")
+metadata/_tab_index = 0
+
+[node name="HSplitContainer" type="HBoxContainer" parent="ddos_application"]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="ddos_application/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0.000256838, 0.0171302, 0.0816404, 1)
+theme_override_font_sizes/font_size = 18
+text = "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>Login Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .login-container input[type=\"text\"],
+    .login-container input[type=\"password\"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .login-container input[type=\"submit\"] {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-container input[type=\"submit\"]:hover {
+      background: #0056b3;
+    }
+
+    .login-container p {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-container p a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .login-container p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class=\"login-container\">
+    <h2>Login</h2>
+    <form>
+      <input type=\"text\" placeholder=\"Username\" required>
+      <input type=\"password\" placeholder=\"Password\" required>
+      <input type=\"submit\" value=\"Login\">
+    </form>
+    <p>Don't have an account? <a href=\"#\">Sign Up</a></p>
+  </div>
+
+</body>
+</html>"
+scroll_smooth = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="ddos_application/HSplitContainer/CodeEdit"]
+material = SubResource("ShaderMaterial_bh3fo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DosApplication" parent="ddos_application/HSplitContainer/CodeEdit" instance=ExtResource("2_qs6s7")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -8.0
+offset_right = 834.0
+offset_bottom = 602.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ddos_application/HSplitContainer"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ddos_application/HSplitContainer/HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 18
+text = "Let's now do a Distributed Denial of Service attack or DDOS
+
+You already have found the URL of the company that's already a good sign"
+fit_content = true
+
+[node name="Buttons" type="HBoxContainer" parent="ddos_application/HSplitContainer/HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 165
+
+[node name="Back" type="Button" parent="ddos_application/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="ddos_application/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="Margin" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_tab_index = 1
+
+[node name="Desktop" type="VFlowContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="Icon" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+
+[node name="Label" parent="Margin/Desktop/Icon" index="1"]
+text = "PDF"
+
+[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+
+[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+
+[node name="Label" parent="Margin/Desktop/Icon3" index="1"]
+text = "PNG"
+
+[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+
+[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+
+[node name="RadialMenu" type="Control" parent="Margin/Desktop"]
+visible = false
+custom_minimum_size = Vector2(300, 222.263)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("3_qs6s7")
+
+[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Back" to="ddos_application" method="_on_back_button_down"]
+[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Next" to="ddos_application" method="_on_next_button_down"]
+[connection signal="pressed" from="Margin/Desktop/Icon4/Button" to="." method="_on_button_pressed_application"]
+
+[editable path="Margin/Desktop/Icon"]
+[editable path="Margin/Desktop/Icon2"]
+[editable path="Margin/Desktop/Icon3"]
+[editable path="Margin/Desktop/Icon4"]

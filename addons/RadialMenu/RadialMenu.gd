@@ -33,6 +33,7 @@ const STAR_TEXTURE = preload("icons/Favorites.svg")
 const BACK_TEXTURE = preload("icons/Back.svg")
 const CLOSE_TEXTURE = preload("icons/Close.svg")
 const RANSOMWARE_TEXTURE = preload("res://addons/phantom_camera/examples/textures/2D/player_sprite.svg")
+const FILELESS_TEXTURE = preload("res://addons/phantom_camera/examples/textures/2D/player_sprite.svg")
 
 const JOY_DEADZONE = 0.2
 const JOY_AXIS_RESCALE = 1.0/(1.0-JOY_DEADZONE)
@@ -78,7 +79,7 @@ var tween : Tween
 # default menu itemsmn
 var menu_items = [
 	{ 'texture': RANSOMWARE_TEXTURE, 'title': 'Ransomware', 'id': 'cyberattack_1'},
-	{ 'texture': STAR_TEXTURE, 'title': 'Item2', 'id': 'arc_id2'},	
+	{ 'texture': FILELESS_TEXTURE, 'title': 'Fileless Malware', 'id': 'cyberattack_2'},	
 	{ 'texture': STAR_TEXTURE, 'title': 'Item3', 'id': 'arc_id3'},	
 	{ 'texture': STAR_TEXTURE, 'title': 'Item4', 'id': 'arc_id4'},	
 	{ 'texture': STAR_TEXTURE, 'title': 'Item5', 'id': 'arc_id5'},	

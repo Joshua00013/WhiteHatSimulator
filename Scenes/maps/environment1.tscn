@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ltxclu2fv57h"]
 
-[ext_resource type="PackedScene" uid="uid://bf4oi4dwpoim7" path="res://Scenes/interactables/door.tscn" id="2_kr7xx"]
+[ext_resource type="PackedScene" uid="uid://bf4oi4dwpoim7" path="res://Scenes/GUI/DesktopGUI/interactables/door.tscn" id="2_kr7xx"]
 
 [node name="Environment" type="CSGCombiner3D"]
 

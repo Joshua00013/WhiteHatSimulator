@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://blecc4c484i7r"]
+[gd_scene load_steps=3 format=3 uid="uid://blecc4c484i7r"]
 
-[ext_resource type="Theme" uid="uid://w7itbpdtx3tq" path="res://Scenes/gui/Phishing UI/phishing assets/folder.tres" id="1_cfprh"]
-[ext_resource type="Script" uid="uid://m3td4ykphy7g" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
-[ext_resource type="Theme" uid="uid://c3hh7g67wuk35" path="res://Scenes/gui/Phishing UI/phishing assets/computer.tres" id="2_3r5r1"]
-[ext_resource type="Theme" uid="uid://mnd5sc2vkpu" path="res://Scenes/gui/Phishing UI/phishing assets/recycle.tres" id="3_py1sq"]
+[ext_resource type="Script" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
 [ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="3_vg3yh"]
 
 [node name="ComputerUI" type="Control"]
@@ -32,7 +29,6 @@ offset_left = 65.0
 offset_top = 64.0
 offset_right = 193.0
 offset_bottom = 192.0
-theme = ExtResource("1_cfprh")
 
 [node name="RadialMenu" parent="ColorRect" instance=ExtResource("3_vg3yh")]
 custom_minimum_size = Vector2(300, 222.263)
@@ -55,7 +51,6 @@ offset_left = 65.0
 offset_top = 256.0
 offset_right = 193.0
 offset_bottom = 384.0
-theme = ExtResource("2_3r5r1")
 
 [node name="Button3" type="Button" parent="ColorRect"]
 layout_mode = 0
@@ -63,6 +58,5 @@ offset_left = 73.0
 offset_top = 448.0
 offset_right = 201.0
 offset_bottom = 576.0
-theme = ExtResource("3_py1sq")
 
 [connection signal="button_down" from="ColorRect/Button4" to="." method="_on_button_4_button_down"]

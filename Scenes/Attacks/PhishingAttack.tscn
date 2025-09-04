@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbreuyxskm8gt"]
 
 [ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_7lyqh"]
-[ext_resource type="Script" uid="uid://8c20w85u1pnm" path="res://Scenes/gui/Fileless Malware/silhouette.gd" id="2_dussi"]
+[ext_resource type="Script" uid="uid://8c20w85u1pnm" path="res://Scenes/GUI/Fileless Malware/silhouette.gd" id="2_dussi"]
 
 [sub_resource type="FontFile" id="FontFile_xw1ye"]
 subpixel_positioning = 0

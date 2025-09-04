@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csoskaat0mxia"]
 
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_fi43v"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_fi43v"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_hvxal"]
 
 [sub_resource type="Shader" id="Shader_fi43v"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://clngoai2te04p"]
 
 [ext_resource type="Script" uid="uid://bee4l3skdbucv" path="res://Scripts/GUI/pc_gui_joshua.gd" id="1_wwpmy"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_yoj7b"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_yoj7b"]
 [ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="3_rtgtv"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_w5pg6"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctd13mbtkg4w"]
 
 [ext_resource type="Script" uid="uid://dv3jdsalftjbv" path="res://GUI/ComputerUI/pc_gui_macky.gd" id="1_tp4eq"]
-[ext_resource type="PackedScene" uid="uid://dwuxkxcvrv88b" path="res://Scenes/gui/Ransomware/ComputerUI.tscn" id="2_je1oo"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="3_tp4eq"]
+[ext_resource type="PackedScene" uid="uid://dwuxkxcvrv88b" path="res://Scenes/GUI/Ransomware/ComputerUI.tscn" id="2_je1oo"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_tp4eq"]
 [ext_resource type="Script" uid="uid://dckq8i5rw622n" path="res://GUI/ComputerUI/ransomware#2.gd" id="5_tmtoj"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
