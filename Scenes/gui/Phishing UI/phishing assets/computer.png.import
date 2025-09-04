@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p636w3knxqpy"
-path="res://.godot/imported/computer.png-272108a6613322bebe907e685850b5a5.ctex"
+path="res://.godot/imported/computer.png-e910c74d2e8b93dfb1e25ab3710a9f73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/GUI/Phishing UI/phishing assets/computer.png"
-dest_files=["res://.godot/imported/computer.png-272108a6613322bebe907e685850b5a5.ctex"]
+source_file="res://Scenes/gui/Phishing UI/phishing assets/computer.png"
+dest_files=["res://.godot/imported/computer.png-e910c74d2e8b93dfb1e25ab3710a9f73.ctex"]
 
 [params]
 

@@ -423,13 +423,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_ckyc5")
 
 [node name="Bruteforce_Attack" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "overlay", "code_edit", "description", "animation")]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -522,6 +521,7 @@ libraries = {
 }
 
 [node name="Brute_force_terminal" type="MarginContainer" parent="." node_paths=PackedStringArray("animation")]
+visible = false
 layout_mode = 2
 script = ExtResource("3_l3iel")
 animation = NodePath("AnimationPlayer")

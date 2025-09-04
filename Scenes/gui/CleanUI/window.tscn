@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcejk3vddejkh"]
 
-[ext_resource type="Script" uid="uid://ddqc5mpx2cbwe" path="res://Scenes/GUI/CleanUI/window.gd" id="1_u6pv2"]
+[ext_resource type="Script" uid="uid://ddqc5mpx2cbwe" path="res://Scenes/gui/CleanUI/window.gd" id="1_u6pv2"]
 [ext_resource type="Texture2D" uid="uid://dry2p2161qtif" path="res://Assets/Illustrator/WindowDarkNinePatch.png" id="2_sqbpe"]
 [ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="3_fgk68"]
 
