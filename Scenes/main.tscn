@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://bdq157g434mnf" path="res://Sounds/Harvest Dawn 4.mp3" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://cs2187eyfrekt" path="res://Scenes/gui/DesktopGUI/interactables/flashdrive.tscn" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://cuinrvnv3n26a" path="res://Assets/Interact.png" id="9_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://dfkkvj0kcca4s" path="res://Assets/Pause.png" id="11_wsu2k"]
@@ -16,10 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://dtyhtvk2uy0ma" path="res://Scenes/3DModels/Structures/wall.tscn" id="17_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://b23e5f1whnwci" path="res://Scenes/3DModels/Structures/wall_double_door.tscn" id="18_u50mg"]
 [ext_resource type="PackedScene" uid="uid://c1avo5gcgfr5n" path="res://Scenes/3DModels/Decorations/desk_corner_booth_c.tscn" id="19_1w6v2"]
-[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/gui/DesktopGUI/interactables/flash_drive_collectible.tscn" id="19_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/GUI/DesktopGUI/interactables/flash_drive_collectible.tscn" id="19_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="19_fevyy"]
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="19_hibaj"]
-[ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/gui/DesktopGUI/interactables/card_swipe.tscn" id="19_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/GUI/DesktopGUI/interactables/card_swipe.tscn" id="19_pdsj5"]
 [ext_resource type="PackedScene" uid="uid://nxworudlncla" path="res://Scenes/3DModels/Structures/window_wall_single.tscn" id="20_hibaj"]
 [ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz_smooth.tscn" id="21_pdsj5"]
 [ext_resource type="PackedScene" uid="uid://c0jxt1f4ydvdi" path="res://Scenes/3DModels/Structures/door_frame.tscn" id="22_ee4r6"]
@@ -76,6 +75,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
+[ext_resource type="PackedScene" uid="uid://bsrnyslwr4n0l" path="res://Scenes/3DModels/laptop_resized.tscn" id="78_v1mrv"]
 [ext_resource type="Script" uid="uid://d157ppus016ub" path="res://Scripts/Debug/fps_counter.gd" id="79_fd3ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
@@ -956,9 +956,6 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.01991,
 [node name="Table_OfficeDesk2-col14" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 61.7011, 1.06855e-06, 54.0991)
 
-[node name="flashdrive" parent="NavigationRegion3D/Objects" instance=ExtResource("8_344ge")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.30676, 0.897541, 2.01885)
-
 [node name="Table-col" parent="NavigationRegion3D/Objects" instance=ExtResource("19_fevyy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.96769, 0.00798213, 2.01172)
 
@@ -1268,6 +1265,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4071, 1.83588, 47.0675)
 
 [node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects" instance=ExtResource("67_nay3j")]
 transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 28.4071, 1.83588, 47.2683)
+
+[node name="Laptop" parent="NavigationRegion3D/Objects" instance=ExtResource("78_v1mrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3431, 1.75, -2.74328)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 vertices = PackedVector3Array(-3.10353, 0, 62.4093, -4.10364, 0, 71.1912, 22.0169, 0, 71.8161, 21.4895, 0, 62.553)
