@@ -12,6 +12,7 @@ var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control
 
+@export var test_item: InvItem
 func _ready():
 	match OS.get_name():
 		"Windows":
@@ -20,9 +21,18 @@ func _ready():
 			ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", true)
 	adjust_screen_size()
 
+#TODO : Function for removing inventory item. Emit a signal for inventory update
+
 func add_item(item:InvItem):
 	inv.add(item)
-	
+
+func remove_item(item:InvItem):
+	return inv.remove(item)
+
+func check_inv(item:InvItem):
+	return inv.check_inv(item)
+
+
 func adjust_screen_size():
 	var screen_size = DisplayServer.screen_get_size()
 	var win = get_window()

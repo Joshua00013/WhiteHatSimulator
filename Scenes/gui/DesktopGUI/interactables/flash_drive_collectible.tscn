@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bas4ywriyhh35"]
 
-[ext_resource type="Script" uid="uid://copm4645nk7rx" path="res://Scripts/Interactables/flash_drive_collectible.gd" id="1_erscu"]
+[ext_resource type="Script" uid="uid://copm4645nk7rx" path="res://Scripts/Interactables/collectible.gd" id="1_erscu"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_m5ela"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_m5ela"]
 [ext_resource type="PackedScene" uid="uid://b81xiro3fx3ve" path="res://Scenes/3DModels/Interactables/flash_drive_low_poly.tscn" id="4_in7iu"]

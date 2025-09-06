@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c343adk236ct4"]
+
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_4umta"]
+[ext_resource type="Material" uid="uid://c52f5lxc6gr0e" path="res://Assets/materials/new_standard_material_3d.tres" id="2_nipc4"]
+
+[node name="LaptopGhost" instance=ExtResource("1_4umta")]
+
+[node name="laptop_base" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nipc4")
+
+[node name="laptop_keyboard" parent="laptop_base" index="0"]
+surface_material_override/0 = ExtResource("2_nipc4")
+
+[node name="laptop_screen" parent="laptop_base" index="1"]
+surface_material_override/0 = ExtResource("2_nipc4")
+surface_material_override/1 = ExtResource("2_nipc4")

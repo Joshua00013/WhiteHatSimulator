@@ -15,12 +15,21 @@ func _ready() -> void:
 	close()
 
 func add(item : InvItem):
-	print("ADDED")
 	inv.add(item)
 	update_slots()
+	
+func remove(item:InvItem):
+	if inv.remove(item) == true:
+		call_deferred("update_slots")
+		return true
+	else:
+		return false
 
-func _on_slot_clicked(description, name):
-	item_name.text = name
+func check_inv(item : InvItem):
+	inv.check_inv(item)
+	
+func _on_slot_clicked(description, inv_item_name):
+	item_name.text = inv_item_name
 	item_description.text = description
 	
 func clear_description():

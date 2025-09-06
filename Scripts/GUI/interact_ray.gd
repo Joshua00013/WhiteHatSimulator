@@ -9,7 +9,7 @@ func _physics_process(delta):
 	if is_colliding():
 		var collider = get_collider()
 		
-		if collider is Interactable:
+		if collider is Interactable && GameManager.ui_active == false:
 			prompt.text = collider.prompt_message
 			
 		if Input.is_action_just_pressed("interact"):

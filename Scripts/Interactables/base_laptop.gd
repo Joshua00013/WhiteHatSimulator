@@ -7,19 +7,25 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
+var active := false
+
 @export var username: String
 @export var password : String
 @export var tab : TabContainer
 @export var login_screen : Control
+@export var laptop_inv_item : InvItem
 
 @onready var node_viewport = $SubViewport
-@onready var node_quad = $Screen
+@onready var node_quad = $laptop_base/laptop_screen/Screen
 @onready var camera = $Camera3D
-@onready var node_area = $Screen/Area3D
+@onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
+@onready var animation_player = $AnimationPlayer
 
-var active := false
+signal closed
 
 func _ready():
+	animation_player.play("open_laptop")
+	
 	login_screen.password = password
 	login_screen.username = username
 	
@@ -132,5 +138,14 @@ func exit_ui():
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false
 	
+	
+	animation_player.play("close_laptop")
+	GameManager.add_item(laptop_inv_item)
+	#TODO: Create a signal to let the parent know that the laptop is gone. Add a laptop to the player inventory
+	
 func _on_login_login_successful():
 	tab.current_tab = 1
+	
+func free_laptop():
+	closed.emit()
+	call_deferred("queue_free")

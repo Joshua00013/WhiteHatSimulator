@@ -11,6 +11,7 @@ func _ready():
 
 func update(item:InvItem):
 	if !item:
+		slot_item = null
 		label.visible = false
 	else:
 		slot_item = item
