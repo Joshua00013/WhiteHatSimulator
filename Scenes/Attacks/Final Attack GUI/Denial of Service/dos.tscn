@@ -1,9 +1,21 @@
-[gd_scene load_steps=30 format=3 uid="uid://ofe618bgkock"]
+[gd_scene load_steps=38 format=3 uid="uid://ofe618bgkock"]
 
 [ext_resource type="Script" uid="uid://w4enlc3e3p0r" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.gd" id="1_nlydn"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_57peu"]
-[ext_resource type="Script" uid="uid://tjt3n3w55xdi" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/ddos_application.gd" id="2_wy1dg"]
-[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_qs6s7"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_57peu"]
+[ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sw41b"]
+[ext_resource type="Texture2D" uid="uid://codo5ncq1jscn" path="res://Assets/Icons - icones/reference-software.png" id="4_nhufn"]
+[ext_resource type="Texture2D" uid="uid://7kfaeja3hviw" path="res://Assets/Icons - icones/internet.png" id="5_j42p5"]
+[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_fi7y8"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="7_3ylxw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hb122"]
+texture = ExtResource("3_sw41b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4pqro"]
+texture = ExtResource("4_nhufn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gyji"]
+texture = ExtResource("5_j42p5")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57peu"]
 bg_color = Color(0.0862745, 0.152941, 0.188235, 1)
@@ -1168,402 +1180,6 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_4reg8"]
 resource_name = "change_ddos_scene"
-
-[sub_resource type="Animation" id="Animation_qs6s7"]
-resource_name = "ddos_1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.16, 0.8)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.76, 0.385)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/url bar/url text:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-
-[sub_resource type="Animation" id="Animation_orsoy"]
-resource_name = "ddos_10"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.43, 3.1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.6, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_tting"]
-resource_name = "ddos_11"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.045, 3.1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.6, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_biogb"]
-resource_name = "ddos_12"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.51, 3.15)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.31, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_sw41b"]
-resource_name = "ddos_2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.905, 0.82)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.375, 0.33)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/url bar/url text:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["https://www.pulseforge-studio.com"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-
-[sub_resource type="Animation" id="Animation_nhufn"]
-resource_name = "ddos_3"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.06, 1.72)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.885, 0.91)]
-}
-
-[sub_resource type="Animation" id="Animation_j42p5"]
-resource_name = "ddos_4"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.06, 2.66)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.885, 0.91)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["203.0.113.42"]
-}
-
-[sub_resource type="Animation" id="Animation_fi7y8"]
-resource_name = "ddos_5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.195, 2.775)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_3ylxw"]
-resource_name = "ddos_6"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.86, 2.775)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.395, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_hb122"]
-resource_name = "ddos_7"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.415, 2.775)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.395, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_4pqro"]
-resource_name = "ddos_8"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.205, 3.1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.6, 0.34)]
-}
-
-[sub_resource type="Animation" id="Animation_3gyji"]
-resource_name = "ddos_9"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.81, 3.1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.6, 0.34)]
-}
 
 [sub_resource type="Animation" id="Animation_cm0fh"]
 resource_name = "ddos_result"
@@ -30247,8 +29863,59 @@ tracks/2/keys = {
 203.0.113.35 - - [28/Aug/2025:10:34:27 +0800] \"GET / HTTP/1.1\" 200 12871 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\""]
 }
 
+[sub_resource type="Animation" id="Animation_c4fwb"]
+resource_name = "start_ddos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Desktop/WindowContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../Desktop/Desktop/Internet/Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_57peu"]
-resource_name = "ddos_start"
+resource_name = "loic"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30309,28 +29976,637 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../Desktop:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's now do a Distributed Denial of Service attack or DDOS
+
+You already have found the URL of the company that's already a good sign"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Overlay:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qs6s7"]
+resource_name = "loic_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.16, 0.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.76, 0.385)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/url bar/url text:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["First lets type in the URL of the companies' website"]
+}
+
+[sub_resource type="Animation" id="Animation_sw41b"]
+resource_name = "loic_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.905, 0.82)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.375, 0.33)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/url bar/url text:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["https://www.pulseforge-studio.com"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Lock it in so we can find the IP address"]
+}
+
+[sub_resource type="Animation" id="Animation_nhufn"]
+resource_name = "loic_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.06, 1.72)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.885, 0.91)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["There it is, now type it in the text box and lock it in"]
+}
+
+[sub_resource type="Animation" id="Animation_j42p5"]
+resource_name = "loic_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.06, 2.66)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.885, 0.91)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DOS_APPLICATION/Body/url & ip/ip bar/ip text:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["203.0.113.42"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now this are other options to modify our DDOS attack"]
+}
+
+[sub_resource type="Animation" id="Animation_fi7y8"]
+resource_name = "loic_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.195, 2.775)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Timeout is how long LOIC waits before giving up on a single connection or request"]
+}
+
+[sub_resource type="Animation" id="Animation_3ylxw"]
+resource_name = "loic_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.86, 2.775)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.395, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now in HTTP Subsite, it specifies which page or file we will target and will request rapidly"]
+}
+
+[sub_resource type="Animation" id="Animation_hb122"]
+resource_name = "loic_8"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.415, 2.775)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.395, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["In TCP/UDP Message, it lets you put custom data or message inside the packets that will be sent"]
+}
+
+[sub_resource type="Animation" id="Animation_4pqro"]
+resource_name = "loic_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.205, 3.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now this is where we determine which service are we attacking, the default is 80"]
+}
+
+[sub_resource type="Animation" id="Animation_3gyji"]
+resource_name = "loic_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.81, 3.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This determine which method are we choosing from TCP, UDP, HTTP"]
+}
+
+[sub_resource type="Animation" id="Animation_orsoy"]
+resource_name = "loic_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.43, 3.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now for the threads, this is the number of simultaneous attack 
+
+ More Threads, More traffic"]
+}
+
+[sub_resource type="Animation" id="Animation_tting"]
+resource_name = "loic_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.045, 3.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now this just checks for a reply"]
+}
+
+[sub_resource type="Animation" id="Animation_biogb"]
+resource_name = "loic_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.51, 3.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.31, 0.34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now this throttle is the delay between packets \\n\\n Higher speed, less delay \\n Lower speed, more delay"]
+}
+
+[sub_resource type="Animation" id="Animation_ru77x"]
+resource_name = "loic_14"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HFlowContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["All done lets now check if it is working"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sw41b"]
 _data = {
 &"RESET": SubResource("Animation_wy1dg"),
 &"change_ddos_scene": SubResource("Animation_4reg8"),
-&"ddos_1": SubResource("Animation_qs6s7"),
-&"ddos_10": SubResource("Animation_orsoy"),
-&"ddos_11": SubResource("Animation_tting"),
-&"ddos_12": SubResource("Animation_biogb"),
-&"ddos_2": SubResource("Animation_sw41b"),
-&"ddos_3": SubResource("Animation_nhufn"),
-&"ddos_4": SubResource("Animation_j42p5"),
-&"ddos_5": SubResource("Animation_fi7y8"),
-&"ddos_6": SubResource("Animation_3ylxw"),
-&"ddos_7": SubResource("Animation_hb122"),
-&"ddos_8": SubResource("Animation_4pqro"),
-&"ddos_9": SubResource("Animation_3gyji"),
 &"ddos_result": SubResource("Animation_cm0fh"),
-&"ddos_start": SubResource("Animation_57peu")
+&"loic": SubResource("Animation_57peu"),
+&"loic_10": SubResource("Animation_3gyji"),
+&"loic_11": SubResource("Animation_orsoy"),
+&"loic_12": SubResource("Animation_tting"),
+&"loic_13": SubResource("Animation_biogb"),
+&"loic_14": SubResource("Animation_ru77x"),
+&"loic_2": SubResource("Animation_qs6s7"),
+&"loic_3": SubResource("Animation_sw41b"),
+&"loic_4": SubResource("Animation_nhufn"),
+&"loic_5": SubResource("Animation_j42p5"),
+&"loic_6": SubResource("Animation_fi7y8"),
+&"loic_7": SubResource("Animation_3ylxw"),
+&"loic_8": SubResource("Animation_hb122"),
+&"loic_9": SubResource("Animation_4pqro"),
+&"start_ddos": SubResource("Animation_c4fwb")
 }
 
-[node name="Dos" type="TabContainer"]
+[node name="Dos" type="TabContainer" node_paths=PackedStringArray("animation")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30339,17 +30615,107 @@ grow_vertical = 2
 current_tab = 2
 tabs_visible = false
 script = ExtResource("1_nlydn")
+animation = NodePath("OverlayAnimation")
 
-[node name="ddos_application" type="MarginContainer" parent="." node_paths=PackedStringArray("animation")]
+[node name="Desktop" type="MarginContainer" parent="."]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("2_wy1dg")
-animation = NodePath("HSplitContainer/CodeEdit/OverlayAnimation")
 metadata/_tab_index = 0
+
+[node name="Desktop" type="VFlowContainer" parent="Desktop"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="TerminalIcon" parent="Desktop/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+script = null
+
+[node name="Button" parent="Desktop/Desktop/TerminalIcon" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hb122")
+disabled = true
+icon = ExtResource("3_sw41b")
+
+[node name="Label" parent="Desktop/Desktop/TerminalIcon" index="1"]
+text = "Terminal"
+
+[node name="Internet" parent="Desktop/Desktop" instance=ExtResource("2_57peu")]
+layout_mode = 2
+script = null
+
+[node name="Button" parent="Desktop/Desktop/Internet" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4pqro")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3gyji")
+icon = ExtResource("4_nhufn")
+
+[node name="Label" parent="Desktop/Desktop/Internet" index="1"]
+text = "LOIC"
+
+[node name="WindowContainer" type="Control" parent="Desktop" node_paths=PackedStringArray("cyberattack_lbl")]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("6_fi7y8")
+cyberattack_lbl = NodePath("Label")
+ransomware_recon_done = true
+
+[node name="deployment" parent="Desktop/WindowContainer" instance=ExtResource("7_3ylxw")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.329401
+anchor_top = 0.083612
+anchor_right = 0.854809
+anchor_bottom = 0.680602
+offset_left = -3.99988
+offset_top = 18.0
+offset_right = -3.99988
+offset_bottom = 18.0
+
+[node name="Title" parent="Desktop/WindowContainer/deployment/HBoxContainer" index="0"]
+text = "Deployment"
+
+[node name="RansomwareApp" type="ProgressBar" parent="Desktop/WindowContainer/deployment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0843835
+anchor_top = 0.273785
+anchor_right = 0.888371
+anchor_bottom = 0.377535
+value = 100.0
+
+[node name="Label" type="Label" parent="Desktop/WindowContainer/deployment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0599175
+anchor_top = 0.157303
+anchor_right = 0.650826
+anchor_bottom = 0.22191
+text = "Deployed!!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Desktop/WindowContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.948161
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "Website Deployed!!! let's create an email and send it to our first victim"
+metadata/_edit_use_anchors_ = true
+
+[node name="ddos_application" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="ddos_application"]
 layout_mode = 2
@@ -30882,11 +31248,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OverlayAnimation" type="AnimationPlayer" parent="ddos_application/HSplitContainer/CodeEdit"]
-libraries = {
-&"": SubResource("AnimationLibrary_sw41b")
-}
-
 [node name="HFlowContainer" type="HFlowContainer" parent="ddos_application/HSplitContainer"]
 layout_mode = 2
 alignment = 1
@@ -30919,48 +31280,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
-
-[node name="Margin" type="MarginContainer" parent="."]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-metadata/_tab_index = 1
-
-[node name="Desktop" type="VFlowContainer" parent="Margin"]
-layout_mode = 2
-theme_override_constants/h_separation = 20
-
-[node name="Icon" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
-layout_mode = 2
-
-[node name="Label" parent="Margin/Desktop/Icon" index="1"]
-text = "PDF"
-
-[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
-layout_mode = 2
-
-[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
-layout_mode = 2
-
-[node name="Label" parent="Margin/Desktop/Icon3" index="1"]
-text = "PNG"
-
-[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
-layout_mode = 2
-
-[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("2_57peu")]
-layout_mode = 2
-
-[node name="RadialMenu" type="Control" parent="Margin/Desktop"]
-visible = false
-custom_minimum_size = Vector2(300, 222.263)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-script = ExtResource("3_qs6s7")
 
 [node name="DDOS_Result" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -32013,14 +32332,18 @@ theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Back" to="ddos_application" method="_on_back_button_down"]
-[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Next" to="ddos_application" method="_on_next_button_down"]
-[connection signal="button_down" from="Margin/Desktop/Icon/Button" to="." method="_on_button_button_down"]
-[connection signal="pressed" from="Margin/Desktop/Icon4/Button" to="." method="_on_button_pressed_application"]
+[node name="OverlayAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ddos_application/HSplitContainer/CodeEdit")
+libraries = {
+&"": SubResource("AnimationLibrary_sw41b")
+}
+
+[connection signal="button_down" from="Desktop/Desktop/Internet/Button" to="." method="_on_loic_button_down"]
+[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="ddos_application/HSplitContainer/HFlowContainer/Buttons/Next" to="." method="_on_next_button_down"]
 [connection signal="button_down" from="DDOS_Result/HSplitContainer/HFlowContainer/Buttons/Back" to="DDOS_Result" method="_on_back_button_down"]
 [connection signal="button_down" from="DDOS_Result/HSplitContainer/HFlowContainer/Buttons/Next" to="DDOS_Result" method="_on_next_button_down"]
 
-[editable path="Margin/Desktop/Icon"]
-[editable path="Margin/Desktop/Icon2"]
-[editable path="Margin/Desktop/Icon3"]
-[editable path="Margin/Desktop/Icon4"]
+[editable path="Desktop/Desktop/TerminalIcon"]
+[editable path="Desktop/Desktop/Internet"]
+[editable path="Desktop/WindowContainer/deployment"]

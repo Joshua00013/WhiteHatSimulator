@@ -8,12 +8,13 @@ var step: int = 0
 
 func _ready() -> void:
 	animation.play("pishing_start")
-
-func _on_button_pressed_website() -> void:
-	animation.play("website_pressed")
 	
-func _on_button_pressed_vscode() -> void:
+
+func _on_terminal_button_down() -> void:
 	animation.play("vscode")
+	
+func _on_deploy_button_down() -> void:
+	animation.play("pishing_deployment")
 
 func _search_pressed() -> void:
 	if urlbar.text == url_link:
@@ -37,7 +38,7 @@ func set_step(step: int) -> void:
 		1:
 			animation.play("website_searching_track_1")
 		2:
-			animation.play("opening_vscode")
+			animation.play("vscode_desktop")
 		3:
 			animation.play("vscode_copying_website_1")
 		4:
@@ -53,9 +54,7 @@ func set_step(step: int) -> void:
 		9:
 			animation.play("pishing_backend_2")
 		10:
-			animation.play("pishing_deployment")
-		11:
-			exit_ui()
+			animation.play("deployment_desktop")
 			
 func exit_ui():
 	match OS.get_name():

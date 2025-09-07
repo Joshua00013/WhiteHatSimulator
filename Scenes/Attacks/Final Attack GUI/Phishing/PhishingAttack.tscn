@@ -1,18 +1,32 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbreuyxskm8gt"]
+[gd_scene load_steps=54 format=3 uid="uid://cbreuyxskm8gt"]
 
 [ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_jjlhw"]
-[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_3gfa8"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_jjlhw"]
+[ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sp02v"]
 [ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="4_s48hh"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_xtrfx"]
+[ext_resource type="Texture2D" uid="uid://7kfaeja3hviw" path="res://Assets/Icons - icones/internet.png" id="4_uyh3a"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="4_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="5_87taf"]
+[ext_resource type="Texture2D" uid="uid://cvif0xuuu6umk" path="res://Assets/Icons - icones/my puter.png" id="5_sp02v"]
+[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_6h8qb"]
 [ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="6_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="7_hwprx"]
-[ext_resource type="Texture2D" uid="uid://dybt5k347u881" path="res://Assets/Application Icons/download.png" id="8_6udbi"]
 [ext_resource type="Texture2D" uid="uid://5u27h4jo5fav" path="res://Assets/Application Icons/user.png" id="9_sp02v"]
 [ext_resource type="Texture2D" uid="uid://cepdohl2vcuty" path="res://Assets/Application Icons/interface.png" id="10_uyh3a"]
 [ext_resource type="Texture2D" uid="uid://0i4h1tm0auqq" path="res://Assets/Application Icons/search-337.png" id="11_87taf"]
 [ext_resource type="Texture2D" uid="uid://digdw37sjfecp" path="res://Assets/Application Icons/internet.png" id="11_s2eb3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_po1lb"]
+texture = ExtResource("3_sp02v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6udbi"]
+texture = ExtResource("4_uyh3a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rjsw"]
+texture = ExtResource("4_uyh3a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyh3a"]
+texture = ExtResource("5_sp02v")
 
 [sub_resource type="Shader" id="Shader_jjlhw"]
 code = "shader_type canvas_item;
@@ -52,8 +66,15 @@ shader_parameter/hole_size = Vector2(3.3, 0.2)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qmae"]
 bg_color = Color(0.133333, 0.133333, 0.133333, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtrfx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g11jc"]
 bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtrfx"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 0)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -124,295 +145,15 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh0u0"]
 bg_color = Color(0.0784314, 0.0784314, 0.0784314, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 0.145098, 0.0941176, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="Animation" id="Animation_krosb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Margin:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/Google/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Since you already found the url for the company's website, lets try to find it and copy it's contents into our own pishing website"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("website/ColorRect/Google/Label:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("website/ColorRect/Google/wrong_url:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("website/ColorRect/Google:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("website/ColorRect/Company Website:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's try to copy the website by scratch"]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/Overlay:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:scroll_vertical")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [5.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:disabled")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:text")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [" Next "]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["  localhost:5000"]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Pulsefire"]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("website/ColorRect/Company Website/Label:text")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Our website is almost finished, as seen here we are near almost identical to the original website, with 
-one detail that is different..."]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("website/ColorRect/Company Website/circlered:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Body/body_Label_Margin/body_Label:text")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Deploying..."]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/RansomwareApp:value")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_87taf"]
 resource_name = "correct_url"
@@ -488,44 +229,17 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_xtrfx"]
-resource_name = "opening_vscode"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("website/ColorRect/Company Website/Label/Back:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("source_code_phishing:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Margin:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6ieen"]
@@ -557,34 +271,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Margin:visible")
+tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [""]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit:text")
+tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -674,14 +376,38 @@ $conn->close();
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
+tracks/2/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeNext:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_po1lb"]
@@ -690,50 +416,38 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment:visible")
+tracks/0/path = NodePath("Desktop/WindowContainer/deployment/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": ["Deploying to the internet...", "Deployed!!!"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/VBoxContainer/Body/body_Label_Margin/body_Label:text")
+tracks/1/path = NodePath("Desktop/WindowContainer/deployment/RansomwareApp:value")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["Deploying...", "Website Deployed"]
+"update": 0,
+"values": [0.0, 100.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing/HSplitContainer/CodeEdit/deployment/RansomwareApp:value")
+tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 100.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/RichTextLabel:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Website finally deployed let's try to find our first victim by sending an email to them"]
+"values": ["Let's wait til our website is deployed", "Website Deployed!!! let's create an email and send it to our first victim"]
 }
 
 [sub_resource type="Animation" id="Animation_6h8qb"]
@@ -753,99 +467,99 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Margin:visible")
+tracks/1/path = NodePath("website:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("website:visible")
+tracks/2/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [" localhost:5000"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
+tracks/3/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["  localhost:5000"]
+"values": ["Pu1sefire"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
+tracks/4/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Pu1sefire"]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
+tracks/5/path = NodePath("website/ColorRect/Google:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("website/ColorRect/Google:visible")
+tracks/6/path = NodePath("website/ColorRect/Company Website/Label:text")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Our website is almost finished, as seen here we are near almost identical to the original website, with 
+one detail that is different..."]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("website/ColorRect/Company Website/Label:text")
+tracks/7/path = NodePath("website/ColorRect/Company Website/circlered:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Our website is almost finished, as seen here we are near almost identical to the original website, with 
-one detail that is different..."]
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("website/ColorRect/Company Website/circlered:visible")
+tracks/8/path = NodePath("website/ColorRect/SearchBar/urlbar:text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [""]
 }
 
 [sub_resource type="Animation" id="Animation_g11jc"]
@@ -880,7 +594,7 @@ resource_name = "pishing_start"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Margin:visible")
+tracks/0/path = NodePath("Desktop:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -888,6 +602,78 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/WindowContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/deployment:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Since you already found the website and written down the URL, let's open the internet and check it"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_hwprx"]
@@ -939,6 +725,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeNext:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_uyh3a"]
@@ -1086,7 +908,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeNext:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1098,14 +920,26 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:text")
+tracks/5/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [" Next ", "Next"]
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_qh0u0"]
@@ -1795,7 +1629,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/3/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeNext:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1807,14 +1641,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:text")
+tracks/4/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 13),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [" Next ", "Next"]
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_s48hh"]
@@ -1834,7 +1668,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Margin:visible")
+tracks/1/path = NodePath("source_code_phishing:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1846,31 +1680,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("source_code_phishing:visible")
+tracks/2/path = NodePath("website/ColorRect/Google/Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("website/ColorRect/Google/Label:visible")
+tracks/3/path = NodePath("website/ColorRect/Google/wrong_url:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("website/ColorRect/Google/wrong_url:visible")
+tracks/4/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1882,19 +1716,19 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("website/ColorRect/SearchBar/urlbar:editable")
+tracks/5/path = NodePath("website/ColorRect/Google:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
+tracks/6/path = NodePath("website/ColorRect/Company Website:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1906,50 +1740,86 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("website/ColorRect/Google:visible")
+tracks/7/path = NodePath("website/ColorRect/Google/Label:text")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("website/ColorRect/Company Website:visible")
+tracks/8/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [" Type the URL here"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("website/ColorRect/Google/Label:text")
+tracks/9/path = NodePath("website/ColorRect/SearchBar/Panel2/Label:text")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"]
+"values": ["Internet"]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("website/ColorRect/SearchBar/urlbar:placeholder_text")
+tracks/10/path = NodePath("website/ColorRect/Google/Label/Back:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [" Type the URL here"]
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("website/ColorRect/Google/Label/Next:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Desktop:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("website/ColorRect/Google/Label/Next:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_6udbi"]
@@ -1964,7 +1834,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Let's type in the website url"]
+"values": ["Let's type in the website url, click the search button after"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2002,6 +1872,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("website/ColorRect/Google/Label/Back:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("website/ColorRect/Google/Label/Next:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_sp02v"]
 resource_name = "wrong_url"
@@ -2018,11 +1912,212 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_0rjsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's open our terminal"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/WindowContainer/deployment/RansomwareApp:value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/WindowContainer/deployment/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Deployed!!!"]
+}
+
+[sub_resource type="Animation" id="Animation_url7y"]
+resource_name = "vscode_desktop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's open our terminal"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7qmae"]
+resource_name = "deployment_desktop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click the deploy icon"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2g0of"]
 _data = {
-&"RESET": SubResource("Animation_krosb"),
+&"RESET": SubResource("Animation_0rjsw"),
 &"correct_url": SubResource("Animation_87taf"),
-&"opening_vscode": SubResource("Animation_xtrfx"),
+&"deployment_desktop": SubResource("Animation_7qmae"),
 &"pishing_backend": SubResource("Animation_6ieen"),
 &"pishing_backend_2": SubResource("Animation_8rdof"),
 &"pishing_deployment": SubResource("Animation_po1lb"),
@@ -2033,6 +2128,7 @@ _data = {
 &"vscode_copying_website_1": SubResource("Animation_uyh3a"),
 &"vscode_copying_website_2": SubResource("Animation_qh0u0"),
 &"vscode_copying_website_3": SubResource("Animation_s2eb3"),
+&"vscode_desktop": SubResource("Animation_url7y"),
 &"website_pressed": SubResource("Animation_s48hh"),
 &"website_searching_track_1": SubResource("Animation_6udbi"),
 &"wrong_url": SubResource("Animation_sp02v")
@@ -2044,13 +2140,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 2
+current_tab = 0
 tabs_visible = false
 script = ExtResource("1_3gfa8")
 animation = NodePath("AnimationPlayer")
 
-[node name="Margin" type="MarginContainer" parent="."]
-visible = false
+[node name="Desktop" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -2058,42 +2153,97 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 0
 
-[node name="Desktop" type="VFlowContainer" parent="Margin"]
+[node name="Desktop" type="VFlowContainer" parent="Desktop"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Icon" parent="Margin/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="TerminalIcon" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Label" parent="Margin/Desktop/Icon" index="1"]
-text = "PDF"
+[node name="Button" parent="Desktop/Desktop/TerminalIcon" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_po1lb")
+icon = ExtResource("3_sp02v")
 
-[node name="Icon2" parent="Margin/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="Label" parent="Desktop/Desktop/TerminalIcon" index="1"]
+text = "Terminal"
+
+[node name="Internet" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Icon3" parent="Margin/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="Button" parent="Desktop/Desktop/Internet" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6udbi")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0rjsw")
+disabled = true
+icon = ExtResource("4_uyh3a")
+
+[node name="Label" parent="Desktop/Desktop/Internet" index="1"]
+text = "Internet"
+
+[node name="deploy" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Label" parent="Margin/Desktop/Icon3" index="1"]
-text = "PNG"
+[node name="Button" parent="Desktop/Desktop/deploy" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_uyh3a")
+icon = ExtResource("5_sp02v")
 
-[node name="Icon4" parent="Margin/Desktop" instance=ExtResource("1_jjlhw")]
-layout_mode = 2
-script = null
+[node name="Label" parent="Desktop/Desktop/deploy" index="1"]
+text = "Deploy"
 
-[node name="Icon5" parent="Margin/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="WindowContainer" type="Control" parent="Desktop" node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
+mouse_filter = 2
+script = ExtResource("6_6h8qb")
+cyberattack_lbl = NodePath("Label")
+ransomware_recon_done = true
 
-[node name="RadialMenu" type="Control" parent="Margin/Desktop"]
-visible = false
-custom_minimum_size = Vector2(300, 222.263)
+[node name="deployment" parent="Desktop/WindowContainer" instance=ExtResource("4_xtrfx")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-script = ExtResource("2_3gfa8")
+anchors_preset = 0
+anchor_left = 0.329401
+anchor_top = 0.083612
+anchor_right = 0.854809
+anchor_bottom = 0.680602
+offset_left = -3.99988
+offset_top = 18.0
+offset_right = -3.99988
+offset_bottom = 18.0
+
+[node name="Title" parent="Desktop/WindowContainer/deployment/HBoxContainer" index="0"]
+text = "Deployment"
+
+[node name="RansomwareApp" type="ProgressBar" parent="Desktop/WindowContainer/deployment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0843835
+anchor_top = 0.273785
+anchor_right = 0.888371
+anchor_bottom = 0.377535
+value = 100.0
+
+[node name="Label" type="Label" parent="Desktop/WindowContainer/deployment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0599175
+anchor_top = 0.157303
+anchor_right = 0.650826
+anchor_bottom = 0.22191
+text = "Deployed!!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Desktop/WindowContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.948161
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "Let's open our terminal"
+metadata/_edit_use_anchors_ = true
 
 [node name="source_code_phishing" type="MarginContainer" parent="."]
 visible = false
@@ -2105,15 +2255,16 @@ theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="source_code_phishing"]
+visible = false
 layout_mode = 2
 
 [node name="CodeEdit" type="CodeEdit" parent="source_code_phishing/HSplitContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
 theme_override_font_sizes/font_size = 18
 scroll_smooth = true
-scroll_vertical = 1.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -2131,22 +2282,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="deployment" parent="source_code_phishing/HSplitContainer/CodeEdit" instance=ExtResource("4_xtrfx")]
-visible = false
-layout_mode = 1
-anchor_left = 0.43149
-anchor_top = 0.237458
-anchor_right = 0.956898
-anchor_bottom = 0.834448
-
-[node name="RansomwareApp" type="ProgressBar" parent="source_code_phishing/HSplitContainer/CodeEdit/deployment"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0843835
-anchor_top = 0.273785
-anchor_right = 0.888371
-anchor_bottom = 0.377535
-
 [node name="HFlowContainer" type="HFlowContainer" parent="source_code_phishing/HSplitContainer"]
 layout_mode = 2
 alignment = 1
@@ -2157,7 +2292,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Let's try to copy the website by scratch"
+text = "Website finally deployed let's try to find our first victim by sending an email to them"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="source_code_phishing/HSplitContainer/HFlowContainer"]
@@ -2166,22 +2301,30 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 165
 
-[node name="Back" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+[node name="FakeBack" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7qmae")
-disabled = true
-text = " Next "
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="FakeNext" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="website" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -2211,13 +2354,25 @@ grow_horizontal = 2
 scale = Vector2(1.00035, 0.980913)
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="TextureButton" parent="website/ColorRect/SearchBar"]
+[node name="Panel" type="Panel" parent="website/ColorRect/SearchBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.017471
-anchor_top = 0.367957
-anchor_right = 0.0360335
-anchor_bottom = 0.766457
+anchor_left = 0.249913
+anchor_top = 0.163114
+anchor_right = 0.631857
+anchor_bottom = 0.823118
+offset_left = -3.05176e-05
+theme_override_styles/panel = SubResource("StyleBoxFlat_g11jc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0140049
+anchor_top = 0.160953
+anchor_right = 0.042116
+anchor_bottom = 0.799457
 offset_left = -0.133615
 offset_top = -0.0476208
 offset_right = -0.517616
@@ -2230,12 +2385,13 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Right" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0396401
-anchor_top = 0.35802
-anchor_right = 0.0592026
-anchor_bottom = 0.753726
+anchor_left = 0.0552645
+anchor_top = 0.128292
+anchor_right = 0.0826395
+anchor_bottom = 0.784001
 offset_left = 0.312897
 offset_top = 1.74112
 offset_right = -0.223076
@@ -2249,12 +2405,13 @@ flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Refresh" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0698189
-anchor_top = 0.372961
-anchor_right = 0.0969856
-anchor_bottom = 0.768446
+anchor_left = 0.0967192
+anchor_top = 0.128292
+anchor_right = 0.124754
+anchor_bottom = 0.803781
 offset_left = 0.540268
 offset_top = 1.74112
 offset_right = 0.244293
@@ -2269,26 +2426,27 @@ metadata/_edit_use_anchors_ = true
 [node name="urlbar" type="TextEdit" parent="website/ColorRect/SearchBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.106733
-anchor_top = 0.305838
-anchor_right = 0.74649
-anchor_bottom = 0.848695
+anchor_left = 0.263021
+anchor_top = 0.220001
+anchor_right = 0.605035
+anchor_bottom = 0.760004
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_xtrfx")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_87taf")
-placeholder_text = "  localhost:5000"
+placeholder_text = " Type the URL here"
 editable = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Favorites" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.759581
-anchor_top = 0.300824
-anchor_right = 0.788769
-anchor_bottom = 0.759304
+anchor_left = 0.659524
+anchor_top = 0.327053
+anchor_right = 0.680899
+anchor_bottom = 0.825536
 offset_left = -0.0374146
 offset_top = -0.0412102
 offset_right = 0.338501
@@ -2301,12 +2459,13 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Extensions" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.80739
-anchor_top = 0.367451
-anchor_right = 0.833709
-anchor_bottom = 0.767551
+anchor_left = 0.712805
+anchor_top = 0.347064
+anchor_right = 0.735652
+anchor_bottom = 0.847167
 offset_left = -0.438232
 offset_top = -0.0222912
 offset_right = 0.241699
@@ -2318,31 +2477,13 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Downloads" type="TextureButton" parent="website/ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.91281
-anchor_top = 0.40804
-anchor_right = 0.934657
-anchor_bottom = 0.76754
-offset_left = 0.0749512
-offset_top = -0.0128307
-offset_right = -0.0930176
-offset_bottom = 0.0121613
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_6udbi")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
 [node name="USer" type="TextureButton" parent="website/ColorRect/SearchBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.942868
-anchor_top = 0.367073
-anchor_right = 0.967055
-anchor_bottom = 0.806172
+anchor_left = 0.921174
+anchor_top = 0.428243
+anchor_right = 0.945361
+anchor_bottom = 0.867342
 offset_left = 0.435913
 offset_top = -0.0033741
 offset_right = 0.571899
@@ -2357,10 +2498,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Menu" type="TextureButton" parent="website/ColorRect/SearchBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.973397
-anchor_top = 0.449136
-anchor_right = 0.994397
-anchor_bottom = 0.743136
+anchor_left = 0.949967
+anchor_top = 0.489917
+anchor_right = 0.970967
+anchor_bottom = 0.783917
 offset_left = 0.254395
 offset_top = -0.0287056
 offset_right = 0.0623779
@@ -2384,22 +2525,23 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="website/ColorRect/SearchBar/Panel2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.231752
-anchor_top = 0.0169508
-anchor_right = 0.87881
-anchor_bottom = 1.30266
+anchor_left = 0.148736
+anchor_top = 0.053355
+anchor_right = 0.480916
+anchor_bottom = 1.1605
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Pulsefire"
+text = "Internet"
 metadata/_edit_use_anchors_ = true
 
 [node name="Search" type="TextureButton" parent="website/ColorRect/SearchBar"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.709352
-anchor_top = 0.372961
-anchor_right = 0.733046
-anchor_bottom = 0.713668
+anchor_left = 0.605222
+anchor_top = 0.250628
+anchor_right = 0.62284
+anchor_bottom = 0.686115
 offset_left = 0.540268
 offset_top = 1.74112
 offset_right = 0.244293
@@ -2411,8 +2553,19 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="website/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13884
+anchor_top = 0.163114
+anchor_right = 0.243007
+anchor_bottom = 0.783118
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Search bar:"
+metadata/_edit_use_anchors_ = true
+
 [node name="Google" type="ColorRect" parent="website/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.125
@@ -2424,10 +2577,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel" type="Panel" parent="website/ColorRect/Google"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.180285
-anchor_top = 0.324547
-anchor_right = 0.817285
-anchor_bottom = 0.407121
+anchor_left = 0.194174
+anchor_top = 0.435658
+anchor_right = 0.831174
+anchor_bottom = 0.518232
 offset_left = 0.311981
 offset_top = -0.0180016
 offset_right = -0.512085
@@ -2438,19 +2591,19 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="website/ColorRect/Google"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.201389
-anchor_top = 0.341458
-anchor_right = 0.798611
-anchor_bottom = 0.392305
+anchor_left = 0.215278
+anchor_top = 0.452569
+anchor_right = 0.8125
+anchor_bottom = 0.503416
 metadata/_edit_use_anchors_ = true
 
 [node name="TerminalIcon" type="TextureButton" parent="website/ColorRect/Google"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.444444
-anchor_top = 0.0776014
-anchor_right = 0.563368
-anchor_bottom = 0.257496
+anchor_left = 0.430556
+anchor_top = 0.111111
+anchor_right = 0.576389
+anchor_bottom = 0.375661
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("11_s2eb3")
@@ -2467,10 +2620,11 @@ anchor_right = 0.742188
 anchor_bottom = 0.944915
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Since you already found the url for the company's website, lets try to find it and copy it's contents into our own pishing website"
+text = "Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="website/ColorRect/Google/Label"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.82449
@@ -2491,7 +2645,6 @@ anchor_bottom = 1.22727
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6udbi")
-disabled = true
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
@@ -2516,12 +2669,29 @@ text = "Error: Wrong URL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TerminalIcon2" type="TextureButton" parent="website/ColorRect"]
+[node name="Search2" type="TextureButton" parent="website/ColorRect/Google"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0295139
-anchor_top = 0.0216049
-anchor_right = 0.0477431
+anchor_left = 0.790798
+anchor_top = 0.455027
+anchor_right = 0.811631
+anchor_bottom = 0.502651
+offset_right = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("11_87taf")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TerminalIcon2" type="TextureButton" parent="website/ColorRect"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138889
+anchor_top = 0.0123457
+anchor_right = 0.0355903
 anchor_bottom = 0.0509259
 grow_horizontal = 2
 grow_vertical = 2
@@ -2530,7 +2700,19 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="website/ColorRect"]
+layout_mode = 2
+anchor_left = 0.774306
+anchor_top = 0.0725309
+anchor_right = 0.876736
+anchor_bottom = 0.12037
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Downloads"
+metadata/_edit_use_anchors_ = true
+
 [node name="Company Website" type="ColorRect" parent="website/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.271605
@@ -2557,8 +2739,11 @@ anchor_left = 0.222222
 anchor_top = 0.0852878
 anchor_right = 0.778646
 anchor_bottom = 0.84435
+offset_left = 0.000259399
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 theme_override_styles/panel = SubResource("StyleBoxFlat_uyh3a")
-metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="website/ColorRect/Company Website/Panel2"]
 layout_mode = 0
@@ -2575,11 +2760,14 @@ anchor_left = 0.333333
 anchor_top = 0.255864
 anchor_right = 0.673611
 anchor_bottom = 0.341151
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0rjsw")
 placeholder_text = "Username"
-metadata/_edit_use_anchors_ = true
 
 [node name="password" type="TextEdit" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2588,11 +2776,14 @@ anchor_left = 0.333333
 anchor_top = 0.443497
 anchor_right = 0.673611
 anchor_bottom = 0.528785
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0rjsw")
 placeholder_text = "Password"
-metadata/_edit_use_anchors_ = true
 
 [node name="usernamelabel" type="Label" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2601,9 +2792,12 @@ anchor_left = 0.333333
 anchor_top = 0.178577
 anchor_right = 0.458333
 anchor_bottom = 0.227617
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000305176
+offset_bottom = -24.2559
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Username:"
-metadata/_edit_use_anchors_ = true
 
 [node name="passwordlabel" type="Label" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2612,9 +2806,12 @@ anchor_left = 0.333333
 anchor_top = 0.3854
 anchor_right = 0.458333
 anchor_bottom = 0.43444
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000305176
+offset_bottom = -24.2559
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Password:"
-metadata/_edit_use_anchors_ = true
 
 [node name="welcometopulsefire" type="Label" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2624,13 +2821,12 @@ anchor_top = -0.952932
 anchor_right = 0.241319
 anchor_bottom = -0.903891
 offset_left = 384.0
-offset_top = 510.925
-offset_right = 384.0
-offset_bottom = 510.925
+offset_top = 486.669
+offset_right = 384.001
+offset_bottom = 486.669
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "LOGIN TO PULSEFIRE "
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="needhelp?" type="Label" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2639,6 +2835,10 @@ anchor_left = 0.298611
 anchor_top = 0.720155
 anchor_right = 0.701389
 anchor_bottom = 0.769195
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
 horizontal_alignment = 1
@@ -2651,11 +2851,14 @@ anchor_left = 0.458333
 anchor_top = 0.545315
 anchor_right = 0.541667
 anchor_bottom = 0.57943
+offset_left = 0.000244141
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 11
 text = "Forgot Password?"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Login Button" type="Panel" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2664,6 +2867,10 @@ anchor_left = 0.395833
 anchor_top = 0.597015
 anchor_right = 0.604167
 anchor_bottom = 0.682303
+offset_left = 0.000274658
+offset_top = -24.2559
+offset_right = 0.000244141
+offset_bottom = -24.2559
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_url7y")
@@ -2679,7 +2886,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "LOGIN"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="website/ColorRect/Company Website"]
 layout_mode = 1
@@ -2690,11 +2896,11 @@ anchor_right = 0.894097
 anchor_bottom = 0.947034
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Our website is almost finished, as seen here we are near almost identical to the original website, with 
-one detail that is different..."
+text = "This is the company's website, let's try to copy it so we can collect their credentials"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="website/ColorRect/Company Website/Label"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.823469
@@ -2719,12 +2925,13 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="circlered" type="Panel" parent="website/ColorRect/Company Website"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0434028
-anchor_top = -0.372881
-anchor_right = 0.180556
-anchor_bottom = -0.283898
+anchor_left = 0.0104167
+anchor_top = -0.362288
+anchor_right = 0.147569
+anchor_bottom = -0.286017
 theme_override_styles/panel = SubResource("StyleBoxFlat_qh0u0")
 metadata/_edit_use_anchors_ = true
 
@@ -2733,18 +2940,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_2g0of")
 }
 
-[connection signal="pressed" from="Margin/Desktop/Icon3/Button" to="." method="_on_button_pressed_website"]
-[connection signal="pressed" from="Margin/Desktop/Icon4/Button" to="." method="_on_button_pressed_vscode"]
-[connection signal="button_down" from="source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="Desktop/Desktop/TerminalIcon/Button" to="." method="_on_terminal_button_down"]
+[connection signal="button_down" from="Desktop/Desktop/Internet/Button" to="." method="_on_internet_button_down"]
+[connection signal="button_down" from="Desktop/Desktop/deploy/Button" to="." method="_on_deploy_button_down"]
+[connection signal="button_down" from="source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next" to="." method="_on_next_button_down"]
 [connection signal="pressed" from="website/ColorRect/SearchBar/Search" to="." method="_search_pressed"]
 [connection signal="button_down" from="website/ColorRect/Google/Label/Back" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="website/ColorRect/Google/Label/Next" to="." method="_on_next_button_down"]
+[connection signal="pressed" from="website/ColorRect/Google/Search2" to="." method="_search_pressed"]
 [connection signal="button_down" from="website/ColorRect/Company Website/Label/Back" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="website/ColorRect/Company Website/Label/Next" to="." method="_on_next_button_down"]
 
-[editable path="Margin/Desktop/Icon"]
-[editable path="Margin/Desktop/Icon2"]
-[editable path="Margin/Desktop/Icon3"]
-[editable path="Margin/Desktop/Icon4"]
-[editable path="source_code_phishing/HSplitContainer/CodeEdit/deployment"]
+[editable path="Desktop/Desktop/TerminalIcon"]
+[editable path="Desktop/Desktop/Internet"]
+[editable path="Desktop/Desktop/deploy"]
+[editable path="Desktop/WindowContainer/deployment"]
