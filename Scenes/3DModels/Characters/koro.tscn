@@ -1,29 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqcp28vc5y0pl"]
+[gd_scene load_steps=11 format=3 uid="uid://dqcp28vc5y0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dek5mdad312c" path="res://Assets/Exported3dModel/Koro.glb" id="1_3wsxs"]
+[ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_w4y5k"]
+[ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_bar17"]
+[ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_hysm3"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ehqv8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nf8c0"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndxcc"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0p50"]
+animation = &"sitting"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3yqji"]
+graph_offset = Vector2(-214.101, 59.1805)
+nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
+nodes/Run/position = Vector2(320, 320)
+nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
+nodes/Sit/position = Vector2(520, 320)
+"nodes/anim idle/node" = SubResource("AnimationNodeAnimation_nf8c0")
+"nodes/anim idle/position" = Vector2(60, 120)
+"nodes/anim run/node" = SubResource("AnimationNodeAnimation_ndxcc")
+"nodes/anim run/position" = Vector2(60, 300)
+"nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
+"nodes/anim sit/position" = Vector2(320, 600)
+nodes/output/position = Vector2(940, 340)
+node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
 
 [node name="Koro" instance=ExtResource("1_3wsxs")]
+script = ExtResource("2_w4y5k")
 
-[node name="Skeleton3D" parent="Armature" index="1"]
-bones/0/position = Vector3(0, 1.45141, -0.0441553)
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, 1.45026, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00867314, -0.055828, 0.991244, -0.119348)
+bones/2/rotation = Quaternion(-0.00841918, -0.0570095, 0.99062, -0.123898)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0273058, -0.0366015, 0.998871, 0.0130898)
+bones/4/rotation = Quaternion(-0.0273788, -0.029393, 0.999149, 0.00932909)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0346094, -0.000400112, -0.0193267, 0.999214)
+bones/5/rotation = Quaternion(-0.0486294, -0.000399804, -0.0271557, 0.998448)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.600286, 0.000414062, 0.0520069, 0.798093)
+bones/6/rotation = Quaternion(0.605795, 0.00236235, 0.0551158, 0.793706)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0109727, -0.0622495, 0.991514, 0.113597)
+bones/7/rotation = Quaternion(0.0106131, -0.0604204, 0.991171, 0.117549)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00442859, -0.0375924, 0.999225, -0.0107863)
+bones/9/rotation = Quaternion(-0.00433496, -0.0305081, 0.999502, -0.00679806)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0346094, 0.000400111, 0.0193267, 0.999214)
+bones/10/rotation = Quaternion(-0.0486294, 0.000399803, 0.0271557, 0.998448)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.601152, -0.0264825, -0.0337541, 0.797983)
+bones/11/rotation = Quaternion(0.60656, -0.02856, -0.0370428, 0.793661)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
+shape = ExtResource("3_bar17")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]
+path_height_offset = 1.0
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeBlendTree_3yqji")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Run/blend_amount = 0.0
+parameters/Sit/blend_amount = 0.0
+
+[node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("4_hysm3")]

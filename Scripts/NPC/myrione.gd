@@ -31,6 +31,9 @@ var schedule : Dictionary = {}
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready() -> void:
+	navigation_agent_3d.connect("navigation_finished",_on_navigation_agent_3d_navigation_finished)
+	navigation_agent_3d.connect("velocity_computed",_on_navigation_agent_3d_velocity_computed)
+	
 	schedule = {
 	8: target_area_1,
 	9: target_area_2,

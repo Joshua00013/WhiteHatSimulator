@@ -1,6 +1,7 @@
 extends Control
 
 var slots : Array
+var active : bool = false
 
 @export var slot_container : GridContainer
 @export var item_name : Label
@@ -11,7 +12,6 @@ var slots : Array
 func _ready() -> void:
 	GameManager.inv = self
 	update_slots()
-	GameManager.ui_active = false
 	close()
 
 func add(item : InvItem):
@@ -47,18 +47,20 @@ func update_slots():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory"):
-		if GameManager.ui_active == true:
+		if GameManager.ui_active == true && active == true:
 			close()
-		else:
+		elif GameManager.ui_active == false && active == false:
 			open()
 
 func open():
-	visible = true
+	active = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	GameManager.ui_active = true
+	visible = true
 
 func close():
-	visible = false
+	active = false
 	clear_description()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.ui_active = false
+	visible = false
