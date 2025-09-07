@@ -1,18 +1,58 @@
 extends TabContainer
 
-@onready var margin: MarginContainer = $Margin
-@onready var ddos_application: MarginContainer = $ddos_application
-@onready var ddos_result: MarginContainer = $DDOS_Result
+@onready var url_text: RichTextLabel = $"HSplitContainer/CodeEdit/DOS_APPLICATION/Body/url & ip/url bar/url text"
+@export var animation:AnimationPlayer
+
+var step: int = 0
 
 func _ready() -> void:
-	margin.visible = true
-	ddos_application.visible = false
-	ddos_result.visible = false
+	animation.play("start_ddos")
 	
-func _on_button_pressed_application() -> void:
-	margin.visible = false
-	ddos_application.visible = true
-	ddos_result.visible = false
+func _on_loic_button_down() -> void:
+	animation.play("loic")
+	
+func _on_back_button_down() -> void:
+	# TODO: Set limits on back and next
+	if step >= 1:
+		step -= 1
+		set_step(step)
+		
+func _on_next_button_down() -> void:
+	step += 1
+	set_step(step)
+
+func set_step(step: int) -> void:
+	match step:
+		#Stsrt or MSFVENOM Start
+		1:
+			animation.play("loic_2")
+		2: 
+			animation.play("loic_3")
+		3:
+			animation.play("loic_4")
+		4:
+			animation.play("loic_5")
+		5:
+			animation.play("loic_6")
+		6:
+			animation.play("loic_7")
+		7:
+			animation.play("loic_8")
+		8:
+			animation.play("loic_9")
+		9:
+			animation.play("loic_10")
+		10:
+			animation.play("loic_11")
+		11:
+			animation.play("loic_12")
+		12:
+			animation.play("loic_13")
+		13:
+			animation.play("loic_14")
+		14:
+			animation.play("ddos_result")
+
 
 
 func _on_button_button_down() -> void:
