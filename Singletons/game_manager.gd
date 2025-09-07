@@ -1,9 +1,14 @@
 extends Node
 
+signal ui_updated
 
 @onready var emulate_mouse = ProjectSettings.get_setting("input_devices/pointing/emulate_mouse_from_touch")
 
-var ui_active : bool = false #Variable for checking if theres an active ui. Defaulted to false as the player doesnt spawn with UI on
+var ui_active : bool = false : #Variable for checking if theres an active ui. Defaulted to false as the player doesnt spawn with UI on
+	set(value):
+		ui_active = value
+		ui_updated.emit(value)
+
 var game_paused : bool = false # Variable for pausing the game
 var is_crouching :bool = false
 

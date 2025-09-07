@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjktsnvh7d76c"]
+[gd_scene load_steps=3 format=3 uid="uid://bjktsnvh7d76c"]
 
 [ext_resource type="PackedScene" uid="uid://bcq8tytibj4i1" path="res://Assets/Exported3dModel/GlassWall.glb" id="1_erxey"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erxey"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.498039, 0.364706, 0.709804, 0.403922)
 
 [node name="GlassWall" instance=ExtResource("1_erxey")]
 
 [node name="GlassWall" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0583738, 0, -0.0223942)
+surface_material_override/1 = SubResource("StandardMaterial3D_erxey")
