@@ -1,14 +1,185 @@
-[gd_scene load_steps=3 format=3 uid="uid://ep3w5lovayjv"]
+[gd_scene load_steps=15 format=3 uid="uid://ep3w5lovayjv"]
 
 [ext_resource type="PackedScene" uid="uid://bwgbom7231gc5" path="res://Assets/Exported3dModel/FingerPrint.glb" id="1_gyf6y"]
+[ext_resource type="Script" uid="uid://brjclyjqv4kqa" path="res://Scripts/Interactables/finger_print.gd" id="2_1su4a"]
+[ext_resource type="Texture2D" uid="uid://bjh7gye0hhd4" path="res://Assets/Illustrator/UINinePatch.png" id="3_r16xi"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_xee5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1su4a"]
 size = Vector3(0.866137, 1.38219, 0.423157)
 
-[node name="FingerPrint" instance=ExtResource("1_gyf6y")]
+[sub_resource type="Theme" id="Theme_xee5w"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_iu4m3"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_bdh0p"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_57x3u"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_fa8wg"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_a2nkf"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_iu8y2"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_wuxgg"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_74hp8"]
+default_font_size = 50
+
+[node name="FingerPrint" node_paths=PackedStringArray("ui", "password_label", "interactable") instance=ExtResource("1_gyf6y")]
+script = ExtResource("2_1su4a")
+ui = NodePath("CanvasLayer")
+password_label = NodePath("CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/ColorRect/TextEdit")
+interactable = NodePath("Interactable")
+
+[node name="Interactable" parent="." index="0" instance=ExtResource("3_xee5w")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00106338, 0.694451, -0.0727844)
+shape = SubResource("BoxShape3D_1su4a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FingerprintScanner" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FingerprintScanner/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00106338, 0.694451, -0.0727844)
 shape = SubResource("BoxShape3D_1su4a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -260.0
+offset_right = 185.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r16xi")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/NinePatchRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/NinePatchRect/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+color = Color(0, 0, 0, 0.266667)
+
+[node name="TextEdit" type="Label" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/ColorRect" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.300792
+anchor_top = -0.106667
+anchor_right = 0.699208
+anchor_bottom = 1.10667
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 66
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="TextureButton" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="0"]
+layout_mode = 2
+theme = SubResource("Theme_xee5w")
+text = "1"
+
+[node name="TextureButton2" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="1"]
+layout_mode = 2
+theme = SubResource("Theme_iu4m3")
+text = "2"
+
+[node name="TextureButton3" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_bdh0p")
+text = "3"
+
+[node name="TextureButton4" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="3"]
+layout_mode = 2
+theme = SubResource("Theme_57x3u")
+text = "4"
+
+[node name="TextureButton5" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="4"]
+layout_mode = 2
+theme = SubResource("Theme_fa8wg")
+text = "5"
+
+[node name="TextureButton6" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_a2nkf")
+text = "6"
+
+[node name="TextureButton7" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_iu8y2")
+text = "7"
+
+[node name="TextureButton8" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="7"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_wuxgg")
+text = "8"
+
+[node name="TextureButton9" type="Button" parent="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer" index="8"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_74hp8")
+text = "9"
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton2" to="." method="_on_texture_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton3" to="." method="_on_texture_button_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton4" to="." method="_on_texture_button_4_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton5" to="." method="_on_texture_button_5_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton6" to="." method="_on_texture_button_6_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton7" to="." method="_on_texture_button_7_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton8" to="." method="_on_texture_button_8_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton9" to="." method="_on_texture_button_9_button_down"]

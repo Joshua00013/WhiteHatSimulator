@@ -53,7 +53,8 @@ func _ready() -> void:
 	DayAndNightManager.time_tick.connect(calc_schedule)
 
 func calc_schedule(_day: int, hour: int, _minutes: int):
-	change_target(schedule[hour])
+	if schedule.has(hour) and schedule[hour] != null:
+		change_target(schedule[hour])
 
 func change_target(new_target):
 	if new_target == null:

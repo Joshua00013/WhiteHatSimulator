@@ -1,4 +1,4 @@
-extends Control
+extends VBoxContainer
 
 @onready var time_label: Label = $Time_Label
 @onready var day_label: Label = $Day_Label

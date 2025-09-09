@@ -137,11 +137,8 @@ func exit_ui():
 	active = false
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false
-	
-	
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
-	#TODO: Create a signal to let the parent know that the laptop is gone. Add a laptop to the player inventory
 	
 func _on_login_login_successful():
 	tab.current_tab = 1

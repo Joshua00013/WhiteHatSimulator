@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=82 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -10,8 +10,6 @@
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://cuinrvnv3n26a" path="res://Assets/Interact.png" id="9_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
-[ext_resource type="Texture2D" uid="uid://dfkkvj0kcca4s" path="res://Assets/Pause.png" id="11_wsu2k"]
-[ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="12_k12tt"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://dtyhtvk2uy0ma" path="res://Scenes/3DModels/Structures/wall.tscn" id="17_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://b23e5f1whnwci" path="res://Scenes/3DModels/Structures/wall_double_door.tscn" id="18_u50mg"]
@@ -161,51 +159,28 @@ action_right = "strafe_right"
 action_up = "move_forward"
 action_down = "move_backward"
 
-[node name="InteractButton" type="Button" parent="AndroidUI/Control"]
-layout_mode = 0
-anchor_left = 0.90625
-anchor_top = 0.618827
-anchor_right = 0.96875
-anchor_bottom = 0.729938
-icon = ExtResource("9_fdnlq")
-flat = true
+[node name="InteractButton" type="TouchScreenButton" parent="AndroidUI/Control"]
+position = Vector2(880, 456)
+texture_normal = ExtResource("9_fdnlq")
+action = "interact"
 metadata/_edit_use_anchors_ = true
 
-[node name="InventoryButton" type="Button" parent="AndroidUI/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0199653
-anchor_top = 0.029321
-anchor_right = 0.0824653
-anchor_bottom = 0.140432
-icon = ExtResource("10_jkdf5")
-flat = true
+[node name="InventoryButton" type="TouchScreenButton" parent="AndroidUI/Control"]
+position = Vector2(989, 360)
+texture_normal = ExtResource("10_jkdf5")
+action = "inventory"
 metadata/_edit_use_anchors_ = true
 
-[node name="PauseButton" type="Button" parent="AndroidUI/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.919271
-anchor_top = 0.029321
-anchor_right = 0.981771
-anchor_bottom = 0.140432
-icon = ExtResource("11_wsu2k")
-flat = true
+[node name="PauseButton" type="TouchScreenButton" parent="AndroidUI/Control"]
 metadata/_edit_use_anchors_ = true
 
-[node name="SprintButton" type="Button" parent="AndroidUI/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.835069
-anchor_top = 0.729938
-anchor_right = 0.897569
-anchor_bottom = 0.841049
-icon = ExtResource("12_k12tt")
-flat = true
+[node name="SprintButton" type="TouchScreenButton" parent="AndroidUI/Control"]
 metadata/_edit_use_anchors_ = true
 
 [node name="TimerUI" parent="AndroidUI/Control" instance=ExtResource("14_ueoa1")]
 layout_mode = 1
+anchor_left = 0.438802
+anchor_right = 0.561198
 
 [node name="NPC" type="Node3D" parent="."]
 
@@ -370,20 +345,20 @@ material = SubResource("StandardMaterial3D_cbgmd")
 [node name="Door" parent="Interactables" instance=ExtResource("24_e08e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.449, 0, 0.471)
 
-[node name="Door2" parent="Interactables" instance=ExtResource("24_e08e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.986, 0, -4.301)
-
 [node name="Door3" parent="Interactables" instance=ExtResource("24_e08e2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6925, 4.76837e-07, 8.81562)
 
 [node name="Door4" parent="Interactables" instance=ExtResource("24_e08e2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3447, 4.76837e-07, 40.833)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3447, -0.00113285, 40.6709)
 
 [node name="Door5" parent="Interactables" instance=ExtResource("24_e08e2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.4595, 4.76837e-07, 40.8228)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.4595, -0.00113273, 40.7792)
 
 [node name="DoorIron" parent="Interactables" instance=ExtResource("63_my4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0018, 0.00145566, 36.1138)
+
+[node name="DoorIron8" parent="Interactables" instance=ExtResource("63_my4ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8687, 0.000322223, -2.51204)
 
 [node name="DoorIron4" parent="Interactables" instance=ExtResource("63_my4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.1003, 0.00145555, 11.6997)
@@ -1231,8 +1206,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 59.327
 [node name="monitor_large2" parent="NavigationRegion3D/Objects" instance=ExtResource("62_y86h7")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 59.3273, 0.362069, 33.0726)
 
-[node name="FingerPrint" parent="NavigationRegion3D/Objects" instance=ExtResource("65_ynmfv")]
+[node name="FingerPrint" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("65_ynmfv")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 21.5118, 1.96338, -1.60679)
+password = "1234"
+door = NodePath("../../../Interactables/DoorIron8")
 
 [node name="SheetOfPaper_A4_2Sided" parent="NavigationRegion3D/Objects" instance=ExtResource("67_nay3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1259, 1.4687, 47.649)

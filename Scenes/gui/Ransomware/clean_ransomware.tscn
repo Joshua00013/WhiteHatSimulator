@@ -564,7 +564,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -574,6 +574,7 @@ key_icon = NodePath("DesktopDefault/Desktop/Key_icon")
 decrypted_message = NodePath("DesktopDefault/DecryptedMessage")
 
 [node name="DesktopDefault" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -747,7 +748,6 @@ text = "Now the files have been dencrypted. You can now access all the files"
 metadata/_edit_use_anchors_ = true
 
 [node name="Ransomware_encrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation")]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -790,7 +790,7 @@ for file in allfiles:
 
 print('All your files have been encrypted')"
 editable = false
-scroll_vertical = 6.0
+scroll_vertical = 4.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
