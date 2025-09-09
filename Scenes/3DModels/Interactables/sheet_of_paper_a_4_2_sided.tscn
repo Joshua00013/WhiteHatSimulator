@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr4d545ld3wj5"]
+[gd_scene load_steps=6 format=3 uid="uid://cr4d545ld3wj5"]
 
 [ext_resource type="PackedScene" uid="uid://tsvsvgcgr1ly" path="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx" id="1_a6ghd"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="2_uyweo"]
+[ext_resource type="Script" uid="uid://yumvum2o6m3a" path="res://Scripts/Interactables/sheet_of_paper_a_4_2_sided.gd" id="2_w4ni4"]
+[ext_resource type="Texture2D" uid="uid://b5f8vg7ee7pe3" path="res://Assets/Illustrator/design-space-paper-textured-background.jpg" id="4_w8jro"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a6ghd"]
 data = PackedVector3Array(-0.2638, -0.3713, 0, 0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, 0.3713, 0, -0.2638, 0.3713, 0, -0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, 0.3713, 0, 0.2638, 0.3713, 0)
 
-[node name="SheetOfPaper_A4_2Sided" instance=ExtResource("1_a6ghd")]
+[node name="SheetOfPaper_A4_2Sided" node_paths=PackedStringArray("paper_ui") instance=ExtResource("1_a6ghd")]
+script = ExtResource("2_w4ni4")
+paper_ui = NodePath("CanvasLayer")
 
 [node name="SheetOfPaper_A4_2Sided" parent="." index="0"]
 transform = Transform3D(0, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -1, -1.91069e-15, -4.37114e-08, 0, 0.0138395, 0)
@@ -14,3 +19,50 @@ transform = Transform3D(0, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -1, -
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SheetOfPaper_A4_2Sided/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_a6ghd")
+
+[node name="Interactable" parent="." index="2" instance=ExtResource("2_uyweo")]
+prompt_message = "Read"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0.0145946, 0)
+shape = SubResource("ConcavePolygonShape3D_a6ghd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
+
+[node name="Control" type="CenterContainer" parent="CanvasLayer" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="TextureRect" parent="CanvasLayer/Control" index="0"]
+custom_minimum_size = Vector2(320, 434)
+layout_mode = 2
+texture = ExtResource("4_w8jro")
+expand_mode = 5
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="CanvasLayer/Control" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0694786
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+
+
+          Pass: myrione12377586fff
+		
+
+Username: myrione"
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
