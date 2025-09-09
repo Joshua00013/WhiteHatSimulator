@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=3 uid="uid://bq6vbihdkq7x8"]
+
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_fof2r"]
+[ext_resource type="Script" uid="uid://dx172jf0hkcao" path="res://Scenes/Stages/Fileless/test_laptop_fileless.gd" id="2_nle04"]
+[ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_sfcuh"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="4_7k4lc"]
+[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="5_6uwlr"]
+[ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/gui/Ransomware/clean_ransomware.tscn" id="6_fsi6r"]
+[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/gui/DesktopGUI/interactables/flash_drive_collectible.tscn" id="7_qr4bx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
+size = Vector2(0.635, 0.735)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_57jh0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62orf"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1.1, 1.1, 1.1, 1)
+albedo_texture = SubResource("ViewportTexture_57jh0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aerrq"]
+data = PackedVector3Array(0.2875, -0.3325, 0, -0.2875, -0.3325, 0, 0.2875, 0.3325, 0, -0.2875, -0.3325, 0, -0.2875, 0.3325, 0, 0.2875, 0.3325, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_icmsk"]
+size = Vector3(60.5462, 41.7047, 43.7636)
+
+[sub_resource type="Animation" id="Animation_62orf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laptop_base/laptop_screen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_icmsk"]
+resource_name = "close_laptop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laptop_base/laptop_screen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"free_laptop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_57jh0"]
+resource_name = "open_laptop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laptop_base/laptop_screen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oho7i"]
+_data = {
+&"RESET": SubResource("Animation_62orf"),
+&"close_laptop": SubResource("Animation_icmsk"),
+&"open_laptop": SubResource("Animation_57jh0")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_qr4bx"]
+
+[node name="Laptop" node_paths=PackedStringArray("tab", "login_screen") instance=ExtResource("1_fof2r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_nle04")
+tab = NodePath("SubViewport/TabContainer")
+login_screen = NodePath("SubViewport/TabContainer/Login")
+laptop_inv_item = ExtResource("3_sfcuh")
+
+[node name="laptop_screen" parent="laptop_base" index="1"]
+transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
+
+[node name="Screen" type="MeshInstance3D" parent="laptop_base/laptop_screen" index="0"]
+transform = Transform3D(-1.76488, 0, -8.74228e-08, 0, 1.20714, 0, 1.5429e-07, 0, -1, 0.00563589, 0.45762, -0.00686061)
+mesh = SubResource("QuadMesh_oho7i")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_62orf")
+
+[node name="Area3D" type="Area3D" parent="laptop_base/laptop_screen/Screen" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="laptop_base/laptop_screen/Screen/Area3D" index="0"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_aerrq")
+
+[node name="Camera3D" type="Camera3D" parent="." index="1"]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.255)
+
+[node name="Interactable" parent="." index="2" instance=ExtResource("4_7k4lc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(0.0188931, 0, 0, 0, 0.0188931, 0, 0, 0, 0.0188931, -0.0916114, 0.460245, -0.0473305)
+shape = SubResource("BoxShape3D_icmsk")
+
+[node name="SubViewport" type="SubViewport" parent="." index="3"]
+size = Vector2i(995, 725)
+
+[node name="TabContainer" type="TabContainer" parent="SubViewport" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="Login" parent="SubViewport/TabContainer" index="1" instance=ExtResource("5_6uwlr")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="DesktopTabs" parent="SubViewport/TabContainer" index="2" instance=ExtResource("6_fsi6r")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_oho7i")
+}
+
+[node name="FlashDriveCollectible" parent="." index="5" instance=ExtResource("7_qr4bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.940751, 0.0212299, -0.226564)
+
+[node name="Flashdrive_camera" type="Camera3D" parent="." index="6"]
+transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.18557e-08, 0.866025, 0.5, 1, 0, -4.37114e-08, -1.25289, 0.249545, -0.110574)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1, 0, 0.17363)
+mesh = SubResource("BoxMesh_qr4bx")
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
+[connection signal="login_successful" from="SubViewport/TabContainer/Login" to="." method="_on_login_login_successful"]
