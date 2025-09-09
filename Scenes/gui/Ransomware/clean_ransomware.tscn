@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://dkuqbxnfaoo1b" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="7_8h5wy"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="7_xi5cb"]
-[ext_resource type="Script" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
+[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;

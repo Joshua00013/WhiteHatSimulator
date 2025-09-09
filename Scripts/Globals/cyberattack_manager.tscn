@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq7np1s3wbnlj"]
-
-[ext_resource type="Script" uid="uid://vgctiftl0tj3" path="res://Scenes/Components/cyberattack_manager.gd" id="1_lwjvg"]
-
-[node name="CyberattackManager" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0114709, -0.00244701, 0.00955993)
-script = ExtResource("1_lwjvg")

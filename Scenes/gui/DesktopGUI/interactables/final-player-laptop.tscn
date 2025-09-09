@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://cxb6vntl4eesk"]
+[gd_scene load_steps=23 format=4 uid="uid://cxb6vntl4eesk"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_1i1bv"]
 [ext_resource type="Script" uid="uid://0mvx1bct5blp" path="res://Scenes/GUI/DesktopGUI/interactables/final_player_laptop.gd" id="1_6vtq2"]
-[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="3_lo8gw"]
+[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/Fileless.tscn" id="3_lo8gw"]
+[ext_resource type="PackedScene" uid="uid://cbreuyxskm8gt" path="res://Scenes/Attacks/PhishingAttack.tscn" id="4_bn7lr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kf2c"]
 
@@ -336,12 +337,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
 [node name="Fileless" parent="SubViewport/TabContainer" instance=ExtResource("3_lo8gw")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
+
+[node name="Phishing" parent="SubViewport/TabContainer" instance=ExtResource("4_bn7lr")]
+layout_mode = 2
+metadata/_tab_index = 1
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="area_entered" from="Area3D-left" to="." method="_on_area_3_dleft_area_entered"]
