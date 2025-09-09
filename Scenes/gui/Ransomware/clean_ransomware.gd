@@ -4,6 +4,7 @@ extends TabContainer
 @export var decr_icon := VBoxContainer
 @export var key_icon := VBoxContainer
 @export var decrypted_message := Label
+@export var radial_circle_cyberattack_label : Label
 
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
@@ -24,3 +25,4 @@ func _on_password_check_component_correct_password() -> void:
 	decr_icon.visible = true
 	key_icon.visible = true
 	decrypted_message.visible = true
+	radial_circle_cyberattack_label.visible = false

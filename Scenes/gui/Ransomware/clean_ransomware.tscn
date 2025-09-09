@@ -558,13 +558,13 @@ _data = {
 &"Ransomware_Load_Complete_decryption": SubResource("Animation_dfd0b")
 }
 
-[node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon", "decr_icon", "key_icon", "decrypted_message")]
+[node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon", "decr_icon", "key_icon", "decrypted_message", "radial_circle_cyberattack_label")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 3
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -572,8 +572,10 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 decr_icon = NodePath("DesktopDefault/Desktop/Decr_icon")
 key_icon = NodePath("DesktopDefault/Desktop/Key_icon")
 decrypted_message = NodePath("DesktopDefault/DecryptedMessage")
+radial_circle_cyberattack_label = NodePath("DesktopDefault/WindowContainer/Label")
 
 [node name="DesktopDefault" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -725,7 +727,6 @@ text = "This text file is compose of your personal data such as:
 -> Mobile Numbers"
 
 [node name="Label" type="Label" parent="DesktopDefault/WindowContainer"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.45735
@@ -1064,7 +1065,6 @@ grow_horizontal = 0
 text = "Next"
 
 [node name="Ransomware_decrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "decryptor_window")]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -1134,15 +1134,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_4yk5j")
 }
 
-[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" node_paths=PackedStringArray("desktop") instance=ExtResource("3_7e48o")]
-visible = false
+[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.267707
 anchor_top = 0.262542
 anchor_right = 0.885954
 anchor_bottom = 0.742475
-desktop = NodePath("../../../../DesktopDefault")
 
 [node name="Title" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/HBoxContainer" index="0"]
 text = "decr.py"

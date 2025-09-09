@@ -5,6 +5,7 @@ extends MarginContainer
 @export var code_edit : CodeEdit
 @export var description : RichTextLabel
 @export var animation : AnimationPlayer
+@export var bruteforce_window: Control
 
 var step : int = 0
 
@@ -82,6 +83,7 @@ func set_step(step: int):
 		13:
 			description.text = "Now lets run the code"
 		14: 
-			queue_free()
+			bruteforce_window. visible = true
+			animation.play("Terminal_code_running")
 			
 			
