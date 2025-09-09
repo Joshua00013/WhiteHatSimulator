@@ -37,6 +37,7 @@ func remove_item(item:InvItem):
 func check_inv(item:InvItem):
 	return inv.check_inv(item)
 
+
 func adjust_screen_size():
 	var screen_size = DisplayServer.screen_get_size()
 	var win = get_window()
