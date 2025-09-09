@@ -43,21 +43,12 @@
 [ext_resource type="PackedScene" uid="uid://c1b7n3jb1wfv5" path="res://Assets/export_LPOP_FULL/FilingCabinetThreeStack_Case.fbx" id="41_y8scb"]
 [ext_resource type="PackedScene" uid="uid://d27e6grbkefq1" path="res://Scenes/3DModels/Decorations/simple_office_chair_col.tscn" id="42_ewuqo"]
 [ext_resource type="PackedScene" uid="uid://c2v5sap2ns8ix" path="res://Scenes/3DModels/Decorations/table_office_desk_2_col.tscn" id="43_54i3s"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cs2187eyfrekt" path="res://Scenes/Interactables/flashdrive.tscn" id="44_tw70s"]
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="45_v7rla"]
 [ext_resource type="PackedScene" uid="uid://c7yowoih0rjeg" path="res://Scenes/GUI/Phishing UI/phishing assets/computer_phishing.tscn" id="46_yvef3"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/Interactables/card_swipe.tscn" id="47_srmv5"]
 [ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/Interactables/flash_drive_collectible.tscn" id="48_a1a7m"]
 [ext_resource type="PackedScene" uid="uid://whmp2wv6xbv8" path="res://Scenes/3DModels/Decorations/lamp_conical_small.tscn" id="49_y3ucb"]
-=======
-[ext_resource type="PackedScene" uid="uid://cs2187eyfrekt" path="res://Scenes/gui/DesktopGUI/interactables/flashdrive.tscn" id="44_tw70s"]
-[ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="45_v7rla"]
-[ext_resource type="PackedScene" uid="uid://c7yowoih0rjeg" path="res://Scenes/gui/Phishing UI/phishing assets/computer_phishing.tscn" id="46_yvef3"]
-[ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/gui/DesktopGUI/interactables/card_swipe.tscn" id="47_srmv5"]
-[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/gui/DesktopGUI/interactables/flash_drive_collectible.tscn" id="48_a1a7m"]
-[ext_resource type="PackedScene" uid="uid://cs6ie6cejwxt6" path="res://Scenes/3DModels/Decorations/lamp_conical_small.tscn" id="49_y3ucb"]
->>>>>>> refs/remotes/origin/dev
 [ext_resource type="PackedScene" uid="uid://dsdgqpaegnvhw" path="res://Scenes/3DModels/Decorations/light_suspended_strip_light_a.tscn" id="50_2iiwt"]
 [ext_resource type="PackedScene" uid="uid://342ayteql1ym" path="res://Assets/export_LPOP_FULL/Printer.fbx" id="51_qvbpj"]
 [ext_resource type="PackedScene" uid="uid://dkbn7cono6tg7" path="res://Scenes/3DModels/Decorations/table_conference_b.tscn" id="52_4er7q"]
