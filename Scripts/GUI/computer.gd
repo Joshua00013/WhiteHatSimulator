@@ -6,15 +6,16 @@ var is_mouse_inside = false
 var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
-@onready var tab = $SubViewport/TabContainer
-@onready var node_viewport = $SubViewport
-@onready var node_quad = $Quad
-@onready var node_area = $Quad/Area3D
-@onready var camera = $Camera3D
 
 @export var password := ""
 @export var username := ""
 @export var login_screen : Control
+
+@export var tab : TabContainer
+@export var node_viewport : SubViewport
+@export var node_quad : MeshInstance3D
+@export var node_area : Area3D
+@export var camera : Camera3D
 
 var active := false
 

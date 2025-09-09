@@ -1,6 +1,6 @@
 [gd_scene load_steps=86 format=3 uid="uid://bpcqyj6y0hsxn"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_webra"]
+[ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_webra"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="2_vwasv"]
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="3_q2ld7"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="4_xu2kr"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="13_f4ogq"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_x1pw6"]
 [ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="15_vy7ou"]
-[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz_smooth.tscn" id="16_jfcav"]
+[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz.tscn" id="16_jfcav"]
 [ext_resource type="PackedScene" uid="uid://0fkypkbaaqgw" path="res://Scenes/3DModels/Characters/myrione.tscn" id="17_k7u46"]
 [ext_resource type="PackedScene" uid="uid://b5ttcbpwy5ssx" path="res://Scenes/3DModels/Characters/mike.tscn" id="18_3o3yv"]
 [ext_resource type="PackedScene" uid="uid://dqcp28vc5y0pl" path="res://Scenes/3DModels/Characters/koro.tscn" id="19_cehx2"]

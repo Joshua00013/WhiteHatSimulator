@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/Interactables/card_swipe.tscn" id="19_pdsj5"]
 [ext_resource type="PackedScene" uid="uid://nxworudlncla" path="res://Scenes/3DModels/Structures/window_wall_single.tscn" id="20_hibaj"]
-[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz_smooth.tscn" id="21_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz.tscn" id="21_pdsj5"]
 [ext_resource type="PackedScene" uid="uid://c0jxt1f4ydvdi" path="res://Scenes/3DModels/Structures/door_frame.tscn" id="22_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://d27e6grbkefq1" path="res://Scenes/3DModels/Decorations/simple_office_chair_col.tscn" id="22_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://c1b7n3jb1wfv5" path="res://Assets/export_LPOP_FULL/FilingCabinetThreeStack_Case.fbx" id="23_aa8k8"]
@@ -190,15 +190,15 @@ transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 3, 0, -1
 
 [node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_2", "target_area_3") instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78581, -0.00113273, 50.0606)
-target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col2")
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col2")
 target_area_2 = NodePath("../../Markers/Cafeteria")
-target_area_3 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col2")
+target_area_3 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col2")
 
 [node name="myrione" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_2", "target_area_3") instance=ExtResource("32_e08e2")]
 transform = Transform3D(0.996387, 0, -0.08493, 0, 1, 0, 0.08493, 0, 0.996387, 4.55009, -0.00113249, 53.2225)
-target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col7")
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col7")
 target_area_2 = NodePath("../../Markers/Cafeteria")
-target_area_3 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col7")
+target_area_3 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col7")
 
 [node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.7901, -0.00113225, 7.25286)
@@ -218,7 +218,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
 [node name="Brian" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("53_v1mrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2441, -0.0011332, 44.1063)
-target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col6")
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
 
 [node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("68_ovafv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
@@ -382,8 +382,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.893, 0.001, 9.147)
 [node name="FlashDriveCollectible" parent="Interactables" instance=ExtResource("19_ee4r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9692, 1.48516, 47.8101)
 
+[node name="Computer7" parent="Interactables" instance=ExtResource("31_fg68e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.8432, 2.52734, -3.14693)
+
+[node name="Computer8" parent="Interactables" instance=ExtResource("31_fg68e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.8432, 2.52734, 0.81726)
+
+[node name="Computer9" parent="Interactables" instance=ExtResource("31_fg68e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.3914, 2.52734, 7.06012)
+
+[node name="Computer10" parent="Interactables" instance=ExtResource("31_fg68e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.9214, 2.16155, 24.6267)
+password = "gigi"
+username = "username"
+
 [node name="Computer" parent="Interactables" instance=ExtResource("31_fg68e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5828, 2.16154, 50.178)
+password = "myrione12377586fff"
+username = "myrione"
 
 [node name="Computer2" parent="Interactables" instance=ExtResource("31_fg68e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5828, 2.16154, 53.646)
@@ -399,20 +415,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.527
 
 [node name="Computer6" parent="Interactables" instance=ExtResource("31_fg68e")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.5275, 2.16154, 57.9051)
-
-[node name="Computer7" parent="Interactables" instance=ExtResource("31_fg68e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.8432, 2.52734, -3.14693)
-
-[node name="Computer8" parent="Interactables" instance=ExtResource("31_fg68e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.8432, 2.52734, 0.81726)
-
-[node name="Computer9" parent="Interactables" instance=ExtResource("31_fg68e")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.3914, 2.52734, 7.06012)
-
-[node name="Computer10" parent="Interactables" instance=ExtResource("31_fg68e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.09257, 2.16155, 23.9431)
-password = "gigi"
-username = "username"
 
 [node name="NavigationLink3D2" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5769, -0.00113297, -3.28195)
@@ -613,10 +615,10 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 22.0659,
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 22.0659, 2.32458e-06, 62.674)
 
 [node name="Wall64" parent="NavigationRegion3D/Structures" instance=ExtResource("17_3pmx8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.8112, 2.32458e-06, 40.9289)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.859, 0, 40.929)
 
 [node name="Wall62" parent="NavigationRegion3D/Structures" instance=ExtResource("17_3pmx8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.6179, 2.32458e-06, 40.9289)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.659, 0, 40.929)
 
 [node name="Wall51" parent="NavigationRegion3D/Structures" instance=ExtResource("17_3pmx8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.170469, 2.32458e-06, 62.0893)
@@ -868,7 +870,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55376, 4.76837e-07, -6.105
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50012, 4.76837e-07, 8.89393)
 
 [node name="Column3" parent="NavigationRegion3D/Structures" instance=ExtResource("23_kltya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0467, 9.53674e-07, 40.9988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.155, 0, 40.999)
 
 [node name="Column4" parent="NavigationRegion3D/Structures" instance=ExtResource("23_kltya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1269, 0, -6.06254)
@@ -1014,26 +1016,74 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 60.0444,
 [node name="SimpleOfficeChair-col11" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 60.0444, 0.25322, 11.648)
 
-[node name="SimpleOfficeChair-col2" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 49.244)
-
-[node name="SimpleOfficeChair-col7" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.2351, 0.252086, 49.2944)
-
-[node name="SimpleOfficeChair-col3" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 53.4879)
-
-[node name="SimpleOfficeChair-col6" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.3946, 0.253, 53.4879)
-
-[node name="SimpleOfficeChair-col4" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 57.6043)
-
-[node name="SimpleOfficeChair-col5" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 33.3946, 0.253, 57.6046)
-
 [node name="Table_OfficeDesk2-col14" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 61.7011, 1.06855e-06, 54.0991)
+
+[node name="OfficeVisibleOnscreenNotifier" type="VisibleOnScreenNotifier3D" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("room")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3927, 2.99287, 42.2516)
+aabb = AABB(-1, -2.994, -1, 14.455, 6.107, 23.89)
+script = ExtResource("42_v1mrv")
+room = NodePath("Room")
+
+[node name="Room" type="Node3D" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3927, -2.99287, -42.2516)
+
+[node name="SimpleOfficeChair-col2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 49.244)
+
+[node name="SimpleOfficeChair-col7" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.2351, 0.252086, 49.2944)
+
+[node name="SimpleOfficeChair-col3" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 53.4879)
+
+[node name="SimpleOfficeChair-col6" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.3946, 0.253, 53.4879)
+
+[node name="SimpleOfficeChair-col4" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6336, 0.25322, 57.6043)
+
+[node name="SimpleOfficeChair-col5" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 33.3946, 0.253, 57.6046)
+
+[node name="Table_OfficeDesk2-col8" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 49.359)
+
+[node name="Table_OfficeDesk2-col9" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 49.359)
+
+[node name="Table_OfficeDesk2-col10" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 53.533)
+
+[node name="Table_OfficeDesk2-col12" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 53.533)
+
+[node name="Table_OfficeDesk2-col11" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 57.707)
+
+[node name="Table_OfficeDesk2-col13" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("25_neg2b")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 57.707)
+
+[node name="Printer" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("37_k2e45")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30.385, 1.47019, 47.8905)
+
+[node name="WaterCooler" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("36_kqrg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2012, 4.76837e-07, 41.7447)
+
+[node name="FilingCabinetThreeStack_Case" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("37_nwwfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.702, 0, 41.941)
+
+[node name="FilingCabinetThreeStack_Case2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("37_nwwfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.667, 0, 41.941)
+
+[node name="FilingCabinetThreeStack_Case3" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("37_nwwfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6322, 0, 41.941)
+
+[node name="SheetOfPaper_A4_2Sided" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("67_nay3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1259, 1.4687, 47.649)
+
+[node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("67_nay3j")]
+transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 28.8925, 1.48254, 47.6258)
 
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
@@ -1128,41 +1178,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06048, 4.50631, 2.12809)
 [node name="Light_SuspendedStripLight_A27" parent="NavigationRegion3D/Objects" instance=ExtResource("31_hdf80")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.455, 4.50631, 2.12809)
 
-[node name="Printer" parent="NavigationRegion3D/Objects" instance=ExtResource("37_k2e45")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30.385, 1.47019, 47.8905)
-
-[node name="WaterCooler" parent="NavigationRegion3D/Objects" instance=ExtResource("36_kqrg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2012, 4.76837e-07, 41.7447)
-
 [node name="WaterCooler2" parent="NavigationRegion3D/Objects" instance=ExtResource("36_kqrg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5606, 9.53674e-07, 41.9709)
-
-[node name="FilingCabinetThreeStack_Case" parent="NavigationRegion3D/Objects" instance=ExtResource("37_nwwfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.702, 0, 41.941)
-
-[node name="FilingCabinetThreeStack_Case2" parent="NavigationRegion3D/Objects" instance=ExtResource("37_nwwfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.667, 0, 41.941)
-
-[node name="FilingCabinetThreeStack_Case3" parent="NavigationRegion3D/Objects" instance=ExtResource("37_nwwfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6322, 0, 41.941)
-
-[node name="Table_OfficeDesk2-col8" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 49.359)
-
-[node name="Table_OfficeDesk2-col9" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 49.359)
-
-[node name="Table_OfficeDesk2-col10" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 53.533)
-
-[node name="Table_OfficeDesk2-col12" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 53.533)
-
-[node name="Table_OfficeDesk2-col11" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.491, 0, 57.707)
-
-[node name="Table_OfficeDesk2-col13" parent="NavigationRegion3D/Objects" instance=ExtResource("25_neg2b")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.593, 0, 57.707)
 
 [node name="Table_OfficeDesk" parent="NavigationRegion3D/Objects" instance=ExtResource("39_jut3y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35, 0, -3.225)
@@ -1243,12 +1260,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 59.327
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 21.5118, 1.96338, -1.60679)
 password = "1234"
 door = NodePath("../../../Interactables/DoorIron8")
-
-[node name="SheetOfPaper_A4_2Sided" parent="NavigationRegion3D/Objects" instance=ExtResource("67_nay3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1259, 1.4687, 47.649)
-
-[node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects" instance=ExtResource("67_nay3j")]
-transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 28.8925, 1.48254, 47.6258)
 
 [node name="ElectricalVisibilityNotifier" type="VisibleOnScreenNotifier3D" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("room")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4644, 0.998867, -4.90416)
