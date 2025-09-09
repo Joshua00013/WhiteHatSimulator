@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://cbreuyxskm8gt"]
 
-[ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
+[ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/gui/Phishing/phishing_attack.gd" id="1_3gfa8"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_jjlhw"]
 [ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sp02v"]
 [ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="4_s48hh"]
@@ -2058,18 +2058,19 @@ _data = {
 &"wrong_url": SubResource("Animation_sp02v")
 }
 
-[node name="Control" type="TabContainer" node_paths=PackedStringArray("animation")]
+[node name="Phishing" type="TabContainer" node_paths=PackedStringArray("animation")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 script = ExtResource("1_3gfa8")
 animation = NodePath("AnimationPlayer")
 
 [node name="Desktop" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -2172,7 +2173,6 @@ text = "Since you already found the website and written down the URL, let's open
 metadata/_edit_use_anchors_ = true
 
 [node name="source_code_phishing" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -2181,11 +2181,9 @@ theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="source_code_phishing"]
-visible = false
 layout_mode = 2
 
 [node name="CodeEdit" type="CodeEdit" parent="source_code_phishing/HSplitContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
@@ -2198,7 +2196,6 @@ gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="source_code_phishing/HSplitContainer/CodeEdit"]
-visible = false
 material = SubResource("ShaderMaterial_tc5ac")
 layout_mode = 1
 anchors_preset = 15
@@ -2218,7 +2215,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Website finally deployed let's try to find our first victim by sending an email to them"
+text = "Let's try to copy the website by scratch"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="source_code_phishing/HSplitContainer/HFlowContainer"]
@@ -2235,7 +2232,6 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
@@ -2244,6 +2240,7 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="FakeNext" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"

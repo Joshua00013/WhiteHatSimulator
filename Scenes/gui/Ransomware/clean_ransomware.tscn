@@ -13,12 +13,16 @@
 [ext_resource type="Script" uid="uid://dkuqbxnfaoo1b" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="7_8h5wy"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="7_xi5cb"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/gui/Ransomware/password_check_component.gd" id="10_xi5cb"]
 [ext_resource type="PackedScene" uid="uid://cgnsww3xwoxfl" path="res://Scenes/gui/cyberattack_card.tscn" id="12_wuj5n"]
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/gui/Bruteforce.tscn" id="16_a4l02"]
 [ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/FilelessMalware/Fileless.tscn" id="17_ycoch"]
 [ext_resource type="PackedScene" uid="uid://cbreuyxskm8gt" path="res://Scenes/Attacks/Final Attack GUI/Phishing/PhishingAttack.tscn" id="18_dfd0b"]
 [ext_resource type="PackedScene" uid="uid://ofe618bgkock" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.tscn" id="19_vfaog"]
+=======
+[ext_resource type="Script" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
+>>>>>>> ac4b48a (Cleanup of Malwares & Flashdrive Script)
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
