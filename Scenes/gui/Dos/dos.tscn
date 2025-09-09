@@ -1,12 +1,12 @@
 [gd_scene load_steps=38 format=3 uid="uid://ofe618bgkock"]
 
-[ext_resource type="Script" uid="uid://w4enlc3e3p0r" path="res://Scenes/gui/Dos/dos.gd" id="1_nlydn"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_57peu"]
+[ext_resource type="Script" uid="uid://w4enlc3e3p0r" path="res://Scenes/GUI/Dos/dos.gd" id="1_nlydn"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_57peu"]
 [ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sw41b"]
 [ext_resource type="Texture2D" uid="uid://codo5ncq1jscn" path="res://Assets/Icons - icones/reference-software.png" id="4_nhufn"]
 [ext_resource type="Texture2D" uid="uid://7kfaeja3hviw" path="res://Assets/Icons - icones/internet.png" id="5_j42p5"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_fi7y8"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="7_3ylxw"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="7_3ylxw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hb122"]
 texture = ExtResource("3_sw41b")

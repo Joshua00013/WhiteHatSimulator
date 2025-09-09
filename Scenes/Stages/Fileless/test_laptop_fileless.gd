@@ -16,7 +16,7 @@ var active := false
 @export var laptop_inv_item : InvItem
 @export var flashdrive_min_z: float = -0.35
 @export var flashdrive_max_z: float = 0.035
-@export var flashdrive_min_x: float = -1
+@export var flashdrive_min_x: float = -0.94
 @export var flashdrive_max_x: float = -0.72
 
 @onready var usb_camera: Camera3D = $Flashdrive_camera
