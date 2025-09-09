@@ -1,14 +1,15 @@
-[gd_scene load_steps=54 format=3 uid="uid://jm5x16eemlpo"]
+[gd_scene load_steps=55 format=3 uid="uid://jm5x16eemlpo"]
 
 [ext_resource type="Script" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_jjlhw"]
-[ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sp02v"]
+[ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="3_sp02v"]
+[ext_resource type="Texture2D" uid="uid://cyw0v5ikgxa21" path="res://Assets/Illustrator/FolderIcon.png" id="4_s2eb3"]
 [ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="4_s48hh"]
 [ext_resource type="Texture2D" uid="uid://7kfaeja3hviw" path="res://Assets/Icons - icones/internet.png" id="4_uyh3a"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="5_87taf"]
-[ext_resource type="Texture2D" uid="uid://cvif0xuuu6umk" path="res://Assets/Icons - icones/my puter.png" id="5_sp02v"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_6h8qb"]
+[ext_resource type="Texture2D" uid="uid://btcaebtnakb6o" path="res://Assets/Illustrator/ImageIcon.png" id="6_po1lb"]
 [ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="6_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="7_hwprx"]
 [ext_resource type="Texture2D" uid="uid://5u27h4jo5fav" path="res://Assets/Application Icons/user.png" id="9_sp02v"]
@@ -20,13 +21,13 @@
 texture = ExtResource("3_sp02v")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6udbi"]
-texture = ExtResource("4_uyh3a")
+texture = ExtResource("4_s2eb3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rjsw"]
 texture = ExtResource("4_uyh3a")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyh3a"]
-texture = ExtResource("5_sp02v")
+texture = ExtResource("6_po1lb")
 
 [sub_resource type="Shader" id="Shader_jjlhw"]
 code = "shader_type canvas_item;
@@ -2176,7 +2177,7 @@ script = null
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6udbi")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0rjsw")
 disabled = true
-icon = ExtResource("4_uyh3a")
+icon = ExtResource("4_s2eb3")
 
 [node name="Label" parent="Desktop/Desktop/Internet" index="1"]
 text = "Internet"
@@ -2187,7 +2188,7 @@ script = null
 
 [node name="Button" parent="Desktop/Desktop/deploy" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_uyh3a")
-icon = ExtResource("5_sp02v")
+icon = ExtResource("6_po1lb")
 
 [node name="Label" parent="Desktop/Desktop/deploy" index="1"]
 text = "Deploy"
