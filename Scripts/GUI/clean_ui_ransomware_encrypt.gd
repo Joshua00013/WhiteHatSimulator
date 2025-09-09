@@ -7,6 +7,8 @@ extends MarginContainer
 
 @export var back_button: Button
 @export var animation : AnimationPlayer
+@export var window : Control
+@export var finish_btn :Button
 
 var step: int = 0
 var ransomware_code = {
@@ -21,7 +23,7 @@ func _ready() -> void:
 	back_button.disabled = true
 	code_edit.text = ""
 	overlay.visible = false 
-	rich_text_label.text = "this program collects files in a folder, creates a secret key, saves that key, and then encrypts the files so they cannot be read without the key."
+	rich_text_label.text = "⚠️ DANGER: RANSOMWARE ALERT ⚠️\n\nRansomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them."
 	
 
 func _on_back_button_down() -> void:
@@ -46,24 +48,61 @@ func set_step(step: int) -> void:
 		1:
 			overlay.visible = true
 			code_edit.text = ransomware_code.step_1
-			rich_text_label.text = "First, the program imports two tools: os, which lets it interact with the computer’s files and folders, and Fernet from the cryptography library, which is used to lock (encrypt) and unlock (decrypt) data with a secret key."
+			rich_text_label.text = "Step 1: Importing the Tools\n\nFirst, the program imports two important tools:\n\n1. \"os\" This lets the program interact with the computer’s files and folders. Think of it as a helper that can look inside directories, check whether something is a file, and manage paths."
 			animation.play("decrypt_ransomware_step1")
-		2:
-			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2
-			rich_text_label.text = "This part creates an empty list called allfiles, which will store the names of files to be encrypted. The for loop goes through each item in the current directory using os.listdir(). If the file is named malware, key.key, or decr, it is skipped using the continue statement. This ensures the program does not encrypt itself, the secret key file, or a potential decryption file. The next if statement checks whether the item is actually a file (not a folder). If it is, the file name is added to the allfiles list. Finally, print(allfiles) displays the collected files."
-			animation.play("encrypt_ransomware_step2")
+		2:	
+			code_edit.text = ransomware_code.step_1
+			rich_text_label.text = "Step 1: Importing the Tools\n\nFirst, the program imports two important tools:\n\n2. \"Fernet from cryptography\" This is a secure encryption system. You can imagine it like a lock-and-key system: it can lock data (encrypt it) so nobody can read it, and later unlock it (decrypt it) using password key."
+			animation.play("decrypt_ransomware_step1.2")
 		3:
+			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nThe program prepares a list of files to be encrypted:\n\n- It starts with an empty list called \"allfiles.\"\n\n"
+			animation.play("encrypt_ransomware_step2")
+		4:	
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nThe program prepares a list of files to be encrypted:\n\n- It starts with an empty list called \"allfiles.\"\n\n- Then, it looks through everything in the current directory using \"os.listdir().\""
+			animation.play("encrypt_ransomware_step2.2")
+		5:	
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nCertain files are skipped:\n\n- The program file itself (malware.py)\n\n- The encryption key file (key.key)\n\n- And a possible decryption script (decr.py)\n\nThese are skipped so the program doesn’t lock itself or make the key unreachable."
+			animation.play("encrypt_ransomware_step2.3")
+		6:	
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nIf an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\"."
+			animation.play("encrypt_ransomware_step2.4")
+		7:	
+			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nFinally, the list is printed out so we can see which files are going to be encrypted"
+			animation.play("encrypt_ransomware_step2.5")
+				
+		8:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2 + ransomware_code.step_3
-			rich_text_label.text = "This section generates a secret encryption key using Fernet.generate_key(). This key is essential because it is required to encrypt and later decrypt the files. The with open statement creates a new file called key.key in binary write mode ('wb') and saves the generated key into it. By storing the key in a separate file, the program ensures it can be retrieved later when decryption is needed."
+			rich_text_label.text = "Step 3: Creating the Password Key - the most important part\n\n- The program calls Fernet.generate_key(), Technically it creates a new password key with a randomized set of characters, but this time it is set to \"WhiteHat\".\n\n- This key is what will lock and later unlock the files. Without it, the encrypted files are useless, because nobody can read them."
 			animation.play("encrypt_ransomware_step3")
-		4:
+		9:	
+			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2 + ransomware_code.step_3
+			rich_text_label.text = "Step 3: Creating the Password Key\n\n- The program then saves this key into a file called key.key, using binary write mode (wb).\n\nSo at this stage, the program has created the “master key” and stored it safely in a separate file."
+			animation.play("encrypt_ransomware_step3.2")
+					
+		10:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4
-			rich_text_label.text = "This loop processes each file stored in the allfiles list. For every file, it first opens the file in binary read mode ('rb') and reads its contents. That data is then encrypted using the Fernet key, which scrambles the contents into an unreadable form. The encrypted version (content_encryp) is then written back to the same file in binary write mode ('wb'), replacing the original readable content. After this step, the file is fully encrypted and cannot be opened normally without the secret key."
+			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list."
 			animation.play("encrypt_ransomware_step4")
-		5:
+		11:	
+			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read."
+			animation.play("encrypt_ransomware_step4.2")
+		12:
+			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read.\n\n- That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format."
+			animation.play("encrypt_ransomware_step4.3")
+		13:	
+			rich_text_label.text = "Step 4: Encrypting the Files\n\n- Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).\n\nAt this point, the files are no longer usable in their normal form — they have been locked with the secret key."
+			animation.play("encrypt_ransomware_step4.4")
+		14:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
-			rich_text_label.text = "Finally, the program prints a message to confirm that all the files have been encrypted.”"
+			rich_text_label.text = "Step 5: Final Confirmation\n\nThe program prints a message to confirm that all the files have been encrypted.”"
 			animation.play("encrypt_ransomware_step5")
-		6: 
+		15: 
 			rich_text_label.text = "Now we will run the code and generate a key. Exit the window when done"
+		16:
+			window.visible=true
 			animation.play("RansomwareRun")
+			finish_btn.visible = true
+			
+ 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd84mf3o5vdh5"]
 
-[ext_resource type="Texture2D" path="res://Assets/Illustrator/UINinePatch.png" id="1_tm1iw"]
+[ext_resource type="Texture2D" uid="uid://bjh7gye0hhd4" path="res://Assets/Illustrator/UINinePatch.png" id="1_tm1iw"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 custom_minimum_size = Vector2(347, 533)
