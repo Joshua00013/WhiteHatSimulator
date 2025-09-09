@@ -5,6 +5,7 @@ extends Node3D
 @onready var camera_3d_screen: Camera3D = $"Camera3D-Screen"
 @onready var inv : Inv = preload("res://Items/player_inventory.tres")
 
+
 @onready var node_area: Area3D = $Quad/Area3D
 @onready var node_viewport: SubViewport = $SubViewport
 @onready var node_quad: MeshInstance3D = $Quad

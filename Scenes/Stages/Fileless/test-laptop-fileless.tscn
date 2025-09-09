@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=17 format=3 uid="uid://bq6vbihdkq7x8"]
 
-[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
-[ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
-[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
-[ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
-[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="4_62orf"]
-[ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/gui/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_fof2r"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="4_7k4lc"]
+[ext_resource type="PackedScene" uid="uid://cvm45f7ftejx5" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="5_nle04"]
+[ext_resource type="PackedScene" uid="uid://hh7xs7kss11f" path="res://Scenes/GUI/Fileless Malware/FilelessFlashdriveNotPlugged.tscn" id="6_qr4bx"]
+[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/GUI/DesktopGUI/interactables/flash_drive_collectible.tscn" id="7_qr4bx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.635, 0.735)
@@ -69,6 +68,33 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_qr4bx"]
+resource_name = "no_flashdrive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/TabContainer/FilelessFlashdriveNotPlugged:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/TabContainer/Fileless:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_57jh0"]
 resource_name = "open_laptop"
 tracks/0/type = "value"
@@ -84,20 +110,44 @@ tracks/0/keys = {
 "values": [Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_tjfi1"]
+resource_name = "yes_flashdrive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/TabContainer/Fileless:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/TabContainer/FilelessFlashdriveNotPlugged:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oho7i"]
 _data = {
 &"RESET": SubResource("Animation_62orf"),
 &"close_laptop": SubResource("Animation_icmsk"),
-&"open_laptop": SubResource("Animation_57jh0")
+&"no_flashdrive": SubResource("Animation_qr4bx"),
+&"open_laptop": SubResource("Animation_57jh0"),
+&"yes_flashdrive": SubResource("Animation_tjfi1")
 }
 
-[node name="Laptop" node_paths=PackedStringArray("tab", "login_screen") instance=ExtResource("1_2ohll")]
-script = ExtResource("2_x3n0d")
-username = "whitehat"
-password = "whitehat553322"
-tab = NodePath("SubViewport/TabContainer")
-login_screen = NodePath("SubViewport/TabContainer/Login")
-laptop_inv_item = ExtResource("3_62orf")
+[node name="Laptop" instance=ExtResource("1_fof2r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="laptop_screen" parent="laptop_base" index="1"]
 transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
@@ -117,7 +167,7 @@ shape = SubResource("ConcavePolygonShape3D_aerrq")
 [node name="Camera3D" type="Camera3D" parent="." index="1"]
 transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.255)
 
-[node name="Interactable" parent="." index="2" instance=ExtResource("3_57jh0")]
+[node name="Interactable" parent="." index="2" instance=ExtResource("4_7k4lc")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(0.0188931, 0, 0, 0, 0.0188931, 0, 0, 0, 0.0188931, -0.0916114, 0.460245, -0.0473305)
@@ -135,11 +185,11 @@ grow_vertical = 2
 current_tab = 0
 tabs_visible = false
 
-[node name="Login" parent="SubViewport/TabContainer" index="1" instance=ExtResource("4_62orf")]
+[node name="Fileless" parent="SubViewport/TabContainer" index="1" instance=ExtResource("5_nle04")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="DesktopTabs" parent="SubViewport/TabContainer" index="2" instance=ExtResource("5_57jh0")]
+[node name="FilelessFlashdriveNotPlugged" parent="SubViewport/TabContainer" index="2" instance=ExtResource("6_qr4bx")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
@@ -149,5 +199,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_oho7i")
 }
 
+[node name="FlashDriveCollectible" parent="." index="5" instance=ExtResource("7_qr4bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.940751, 0.0212299, -0.226564)
+
+[node name="Flashdrive_camera" type="Camera3D" parent="." index="6"]
+transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.18557e-08, 0.866025, 0.5, 1, 0, -4.37114e-08, -1.25289, 0.249545, -0.110574)
+
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
-[connection signal="login_successful" from="SubViewport/TabContainer/Login" to="." method="_on_login_login_successful"]

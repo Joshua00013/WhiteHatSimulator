@@ -1,8 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://be1wgtjowtlre"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_ehqq7"]
+<<<<<<< HEAD:Scenes/Interactables/player_laptop.tscn
 [ext_resource type="Script" uid="uid://duum3luayetio" path="res://Scenes/Interactables/player_laptop.gd" id="1_t2jog"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="2_t2jog"]
+=======
+[ext_resource type="Script" uid="uid://duum3luayetio" path="res://Scenes/gui/DesktopGUI/interactables/player_laptop.gd" id="1_t2jog"]
+[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="2_t2jog"]
+>>>>>>> refs/remotes/origin/dev:Scenes/gui/DesktopGUI/interactables/player_laptop.tscn
 [ext_resource type="PackedScene" uid="uid://bsrnyslwr4n0l" path="res://Scenes/3DModels/laptop_resized.tscn" id="4_qrlar"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqtk5"]
