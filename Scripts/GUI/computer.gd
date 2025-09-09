@@ -12,12 +12,19 @@ var last_event_time: float = -1.0
 @onready var node_area = $Quad/Area3D
 @onready var camera = $Camera3D
 
+@export var password := ""
+@export var username := ""
+@export var login_screen : Control
+
 var active := false
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
+	
+	login_screen.username = username
+	login_screen.password = password
 
 func _mouse_entered_area():
 	is_mouse_inside = true
@@ -123,6 +130,5 @@ func exit_ui():
 	GameManager.ui_active = false
 	
 
-
-func _on_sign_in_ui_to_desktop() -> void:
+func _on_control_login_successful() -> void:
 	tab.current_tab = 1

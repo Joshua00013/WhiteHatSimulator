@@ -21,10 +21,10 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Singletons/game_manager.gd"
 DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
+CyberattackAdaptationManager="*res://Scripts/Globals/cyberattack_adaptation_manager.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
