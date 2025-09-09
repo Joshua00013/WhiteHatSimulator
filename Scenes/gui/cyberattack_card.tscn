@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd84mf3o5vdh5"]
+
+[ext_resource type="Texture2D" path="res://Assets/Illustrator/UINinePatch.png" id="1_tm1iw"]
+
+[node name="NinePatchRect" type="NinePatchRect"]
+custom_minimum_size = Vector2(347, 533)
+anchors_preset = -1
+anchor_right = 0.301215
+anchor_bottom = 0.822531
+size_flags_horizontal = 4
+texture = ExtResource("1_tm1iw")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Ransomware"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 335)
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.322767
+anchor_top = 0.945591
+anchor_right = 0.691643
+anchor_bottom = 1.03565
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+metadata/_edit_use_anchors_ = true
