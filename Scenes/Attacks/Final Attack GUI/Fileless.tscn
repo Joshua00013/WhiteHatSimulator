@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biq1t4o3no8ef"]
+[gd_scene load_steps=8 format=3 uid="uid://dbk6ewt88d35t"]
 
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_hq362"]
 [ext_resource type="Script" uid="uid://bkb8jr7yeiwnk" path="res://Scenes/Attacks/Final Attack GUI/FilelessMalware/fileless.gd" id="1_tpj4y"]
