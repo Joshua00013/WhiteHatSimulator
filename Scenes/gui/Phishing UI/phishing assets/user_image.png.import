@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7rg6leww7bdf"
-path="res://.godot/imported/termenal.png-2eaaf3cffd89ef0510a312ddc90bcfb7.ctex"
+uid="uid://iby6n4c6087m"
+path="res://.godot/imported/user_image.png-bd3ba1772c016c090e28681ef95e0e0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/gui/Ransomware/termenal.png"
-dest_files=["res://.godot/imported/termenal.png-2eaaf3cffd89ef0510a312ddc90bcfb7.ctex"]
+source_file="res://Scenes/gui/Phishing UI/phishing assets/user_image.png"
+dest_files=["res://.godot/imported/user_image.png-bd3ba1772c016c090e28681ef95e0e0c.ctex"]
 
 [params]
 

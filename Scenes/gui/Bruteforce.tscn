@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://s7ebjmaahksf"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/bruteforce.gd" id="1_7o13g"]
-[ext_resource type="Script" path="res://Scripts/GUI/bruteforce_desktop.gd" id="1_ckyc5"]
-[ext_resource type="Script" path="res://Scripts/GUI/brute_force_terminal.gd" id="3_l3iel"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_4pc1q"]
+[ext_resource type="Script" uid="uid://b2aiatoukub8p" path="res://Scripts/GUI/bruteforce.gd" id="1_7o13g"]
+[ext_resource type="Script" uid="uid://couaq31f42tdg" path="res://Scripts/GUI/bruteforce_desktop.gd" id="1_ckyc5"]
+[ext_resource type="Script" uid="uid://bb42cwocksryi" path="res://Scripts/GUI/brute_force_terminal.gd" id="3_l3iel"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="4_4pc1q"]
 
 [sub_resource type="Shader" id="Shader_fi43v"]
 code = "shader_type canvas_item;
