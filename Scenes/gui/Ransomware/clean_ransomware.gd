@@ -10,8 +10,7 @@ func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
 
 
-func _on_ransomware_window_window_exited() -> void:
-	current_tab = 2
+
 
 
 func _on_button_button_down() -> void:
@@ -26,3 +25,27 @@ func _on_password_check_component_correct_password() -> void:
 	key_icon.visible = true
 	decrypted_message.visible = true
 	radial_circle_cyberattack_label.visible = false
+
+
+func _ransomware_button_down() -> void:
+	current_tab = 1
+
+
+func _bruteforce_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/gui/Bruteforce.tscn")
+
+
+func _fileless_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Attacks/Final Attack GUI/FilelessMalware/Fileless.tscn")
+
+
+func _phishing_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Attacks/Final Attack GUI/Phishing/PhishingAttack.tscn")
+
+
+func _dos_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.tscn")
+
+
+func _finish_button_pressed() -> void:
+	current_tab= 2

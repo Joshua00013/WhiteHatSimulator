@@ -1,11 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://cbreuyxskm8gt"]
+[gd_scene load_steps=53 format=3 uid="uid://cbreuyxskm8gt"]
 
 [ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_jjlhw"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_jjlhw"]
 [ext_resource type="Texture2D" uid="uid://bb03a0tbq6fgh" path="res://Assets/Icons - icones/illustrator.png" id="3_sp02v"]
 [ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="4_s48hh"]
 [ext_resource type="Texture2D" uid="uid://7kfaeja3hviw" path="res://Assets/Icons - icones/internet.png" id="4_uyh3a"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_xtrfx"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="4_xtrfx"]
 [ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="5_87taf"]
 [ext_resource type="Texture2D" uid="uid://cvif0xuuu6umk" path="res://Assets/Icons - icones/my puter.png" id="5_sp02v"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_6h8qb"]
@@ -240,6 +240,69 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7qmae"]
+resource_name = "deployment_desktop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click the deploy icon"]
 }
 
 [sub_resource type="Animation" id="Animation_6ieen"]
@@ -1651,6 +1714,69 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_url7y"]
+resource_name = "vscode_desktop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's open our terminal"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_s48hh"]
 resource_name = "website_pressed"
 tracks/0/type = "value"
@@ -1912,210 +2038,8 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_0rjsw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's open our terminal"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/WindowContainer/deployment/RansomwareApp:value")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [100.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Desktop/WindowContainer/deployment/Label:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Deployed!!!"]
-}
-
-[sub_resource type="Animation" id="Animation_url7y"]
-resource_name = "vscode_desktop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/WindowContainer/Label:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's open our terminal"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_7qmae"]
-resource_name = "deployment_desktop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Click the deploy icon"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2g0of"]
 _data = {
-&"RESET": SubResource("Animation_0rjsw"),
 &"correct_url": SubResource("Animation_87taf"),
 &"deployment_desktop": SubResource("Animation_7qmae"),
 &"pishing_backend": SubResource("Animation_6ieen"),
@@ -2163,6 +2087,7 @@ script = null
 
 [node name="Button" parent="Desktop/Desktop/TerminalIcon" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_po1lb")
+disabled = true
 icon = ExtResource("3_sp02v")
 
 [node name="Label" parent="Desktop/Desktop/TerminalIcon" index="1"]
@@ -2175,7 +2100,6 @@ script = null
 [node name="Button" parent="Desktop/Desktop/Internet" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6udbi")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0rjsw")
-disabled = true
 icon = ExtResource("4_uyh3a")
 
 [node name="Label" parent="Desktop/Desktop/Internet" index="1"]
@@ -2187,6 +2111,7 @@ script = null
 
 [node name="Button" parent="Desktop/Desktop/deploy" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_uyh3a")
+disabled = true
 icon = ExtResource("5_sp02v")
 
 [node name="Label" parent="Desktop/Desktop/deploy" index="1"]
@@ -2200,6 +2125,7 @@ cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
 [node name="deployment" parent="Desktop/WindowContainer" instance=ExtResource("4_xtrfx")]
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.329401
@@ -2242,7 +2168,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
-text = "Let's open our terminal"
+text = "Since you already found the website and written down the URL, let's open the internet and check it"
 metadata/_edit_use_anchors_ = true
 
 [node name="source_code_phishing" type="MarginContainer" parent="."]
@@ -2435,7 +2361,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_xtrfx")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_87taf")
-placeholder_text = " Type the URL here"
+placeholder_text = "   https://www.pulseforge-studio.com"
 editable = false
 metadata/_edit_use_anchors_ = true
 
@@ -2531,7 +2457,7 @@ anchor_right = 0.480916
 anchor_bottom = 1.1605
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Internet"
+text = "Pulsefire"
 metadata/_edit_use_anchors_ = true
 
 [node name="Search" type="TextureButton" parent="website/ColorRect/SearchBar"]
@@ -2566,6 +2492,7 @@ text = "Search bar:"
 metadata/_edit_use_anchors_ = true
 
 [node name="Google" type="ColorRect" parent="website/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.125
@@ -2712,7 +2639,6 @@ text = "Downloads"
 metadata/_edit_use_anchors_ = true
 
 [node name="Company Website" type="ColorRect" parent="website/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.271605
