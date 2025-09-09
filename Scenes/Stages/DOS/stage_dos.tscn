@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://deyumohtytidm" path="res://Assets/Run.png" id="13_sjrmw"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_y3wsi"]
 [ext_resource type="PackedScene" uid="uid://k13rolchshia" path="res://Scenes/3DModels/Characters/mococo.tscn" id="15_oslc4"]
-[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz_smooth.tscn" id="16_uvaac"]
+[ext_resource type="PackedScene" uid="uid://c77tpfyc0afl5" path="res://Scenes/3DModels/Characters/liz.tscn" id="16_uvaac"]
 [ext_resource type="PackedScene" uid="uid://0fkypkbaaqgw" path="res://Scenes/3DModels/Characters/myrione.tscn" id="17_e03i1"]
 [ext_resource type="PackedScene" uid="uid://b5ttcbpwy5ssx" path="res://Scenes/3DModels/Characters/mike.tscn" id="18_ojfmj"]
 [ext_resource type="PackedScene" uid="uid://dqcp28vc5y0pl" path="res://Scenes/3DModels/Characters/koro.tscn" id="19_d80w6"]

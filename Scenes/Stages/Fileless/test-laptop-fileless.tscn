@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="4_7k4lc"]
 [ext_resource type="PackedScene" uid="uid://bfk72bgojjeyq" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="5_nle04"]
 [ext_resource type="PackedScene" uid="uid://hh7xs7kss11f" path="res://Scenes/GUI/Fileless Malware/FilelessFlashdriveNotPlugged.tscn" id="6_qr4bx"]
-[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/GUI/DesktopGUI/interactables/flash_drive_collectible.tscn" id="7_qr4bx"]
+[ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/Interactables/flash_drive_collectible.tscn" id="7_qr4bx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.635, 0.735)
