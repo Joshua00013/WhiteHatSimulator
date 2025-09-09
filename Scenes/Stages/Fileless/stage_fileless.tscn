@@ -5,11 +5,7 @@
 [ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="3_q2ld7"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="4_xu2kr"]
 [ext_resource type="PackedScene" uid="uid://ltxclu2fv57h" path="res://Scenes/maps/environment1.tscn" id="5_geulv"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="6_nj460"]
-=======
-[ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/gui/DesktopGUI/interactables/computer.tscn" id="6_nj460"]
->>>>>>> refs/remotes/origin/dev
 [ext_resource type="AudioStream" uid="uid://bdq157g434mnf" path="res://Sounds/Harvest Dawn 4.mp3" id="7_wdyr2"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="8_60252"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="9_wj6mv"]
