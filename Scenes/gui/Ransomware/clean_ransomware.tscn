@@ -1,11 +1,11 @@
 [gd_scene load_steps=48 format=3 uid="uid://c651ldtbfalgc"]
 
-[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/gui/Ransomware/clean_ransomware.gd" id="1_7e48o"]
+[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="1_ootqi"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="1_vsxan"]
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/gui/Ransomware/desktop_default.gd" id="2_4yk5j"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_vsxan"]
+[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="2_4yk5j"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_ootqi"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="3_7e48o"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_7e48o"]
 [ext_resource type="Texture2D" uid="uid://clj3qe45uaet3" path="res://Assets/Illustrator/SQLIcon.png" id="4_gq7c2"]
 [ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="4_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://btcaebtnakb6o" path="res://Assets/Illustrator/ImageIcon.png" id="5_a3c81"]
@@ -13,16 +13,12 @@
 [ext_resource type="Script" uid="uid://dkuqbxnfaoo1b" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="7_8h5wy"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="7_xi5cb"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/gui/Ransomware/password_check_component.gd" id="10_xi5cb"]
 [ext_resource type="PackedScene" uid="uid://cgnsww3xwoxfl" path="res://Scenes/gui/cyberattack_card.tscn" id="12_wuj5n"]
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/gui/Bruteforce.tscn" id="16_a4l02"]
 [ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/Attacks/Final Attack GUI/FilelessMalware/Fileless.tscn" id="17_ycoch"]
 [ext_resource type="PackedScene" uid="uid://cbreuyxskm8gt" path="res://Scenes/Attacks/Final Attack GUI/Phishing/PhishingAttack.tscn" id="18_dfd0b"]
 [ext_resource type="PackedScene" uid="uid://ofe618bgkock" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.tscn" id="19_vfaog"]
-=======
-[ext_resource type="Script" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
->>>>>>> ac4b48a (Cleanup of Malwares & Flashdrive Script)
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
