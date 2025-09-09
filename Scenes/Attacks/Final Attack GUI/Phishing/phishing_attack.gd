@@ -8,10 +8,8 @@ var step: int = 0
 
 func _ready() -> void:
 	animation.play("pishing_start")
-
-func _on_internet_button_down() -> void:
-	animation.play("website_pressed")
 	
+
 func _on_terminal_button_down() -> void:
 	animation.play("vscode")
 	
