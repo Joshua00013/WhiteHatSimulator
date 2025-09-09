@@ -1,0 +1,354 @@
+[gd_scene load_steps=14 format=3 uid="uid://brt7whjhnast1"]
+
+[ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="1_xhywx"]
+[ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="2_fbkh5"]
+[ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="3_xa1fu"]
+[ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="4_fugum"]
+[ext_resource type="Texture2D" uid="uid://dybt5k347u881" path="res://Assets/Application Icons/download.png" id="5_0h1m1"]
+[ext_resource type="Texture2D" uid="uid://5u27h4jo5fav" path="res://Assets/Application Icons/user.png" id="6_n0kfx"]
+[ext_resource type="Texture2D" uid="uid://cepdohl2vcuty" path="res://Assets/Application Icons/interface.png" id="7_yk000"]
+[ext_resource type="Texture2D" uid="uid://cjf3hys4gmi1l" path="res://Assets/Application Icons/windows.jpg" id="8_qe3jg"]
+[ext_resource type="Texture2D" uid="uid://bwd8fjj4r04gk" path="res://Assets/Application Icons/google.png" id="9_idx4b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq3yg"]
+bg_color = Color(0.823212, 0.823212, 0.823212, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6olud"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fofu6"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhg8n"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.074
+offset_bottom = 0.0480003
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+color = Color(0.834614, 0.834614, 0.834614, 1)
+
+[node name="SearchBar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0725309
+anchor_right = 1.0
+anchor_bottom = 0.137272
+offset_bottom = 0.0480003
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = -525.446
+offset_top = 1.74112
+offset_right = -576.326
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xhywx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Right" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = -493.457
+offset_top = 1.74112
+offset_right = -544.337
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xhywx")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Refresh" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = -461.468
+offset_top = 1.74112
+offset_right = -512.348
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_fbkh5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="SearchBar"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 9.0
+offset_right = 984.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cq3yg")
+
+[node name="Favorites" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = 458.21
+offset_top = 1.74112
+offset_right = 407.33
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_xa1fu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Extensions" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = 490.199
+offset_top = 1.74112
+offset_right = 439.319
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_fugum")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Downloads" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = 522.188
+offset_top = 1.74112
+offset_right = 471.308
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_0h1m1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="USer" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = 554.176
+offset_top = 1.74112
+offset_right = 503.296
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_n0kfx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Menu" type="TextureButton" parent="SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = 578.168
+offset_top = 1.74112
+offset_right = 527.288
+offset_bottom = 20.5571
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_yk000")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6olud")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.389
+anchor_top = 0.286
+anchor_right = 1.389
+anchor_bottom = 1.257
+offset_left = -0.128021
+offset_top = -0.160004
+offset_right = -0.128052
+offset_bottom = 0.0799561
+texture = ExtResource("8_qe3jg")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fofu6")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.071
+anchor_right = 0.135
+anchor_bottom = 0.112
+offset_left = -0.256001
+offset_top = 0.239998
+offset_right = 0.479996
+offset_bottom = 0.279999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Company Name"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.071
+anchor_right = 0.135
+anchor_bottom = 0.112
+offset_left = 183.744
+offset_top = 0.239998
+offset_right = 184.48
+offset_bottom = 0.279999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Login to Website    "
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 160.0
+offset_right = 1208.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhg8n")
+
+[node name="Label3" type="Label" parent="Panel/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.196
+anchor_top = 0.105
+anchor_right = 0.839
+anchor_bottom = 0.263
+offset_left = -0.128014
+offset_top = 0.119999
+offset_right = -1.75201
+offset_bottom = 56.072
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Welcome to (Company Name)
+
+
+Already a member? Log In"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 200.0
+offset_right = 312.0
+offset_bottom = 232.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cq3yg")
+
+[node name="Panel2" type="Panel" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 312.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cq3yg")
+
+[node name="Label4" type="Label" parent="Panel/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.196
+anchor_top = 0.105
+anchor_right = 0.839
+anchor_bottom = 0.263
+offset_left = -0.128014
+offset_top = 128.12
+offset_right = -156.752
+offset_bottom = 80.072
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.196
+anchor_top = 0.105
+anchor_right = 0.839
+anchor_bottom = 0.263
+offset_left = -0.128014
+offset_top = 200.12
+offset_right = -156.752
+offset_bottom = 152.072
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password"
+horizontal_alignment = 1
+
+[node name="Left" type="TextureButton" parent="Panel/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.177
+anchor_right = 0.535
+anchor_bottom = 0.285
+offset_left = -84.96
+offset_top = 247.288
+offset_right = -84.88
+offset_bottom = 222.04
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_idx4b")
+ignore_texture_size = true
+stretch_mode = 0
