@@ -1,10 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq6vbihdkq7x8"]
+[gd_scene load_steps=17 format=3 uid="uid://bq6vbihdkq7x8"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_fof2r"]
-[ext_resource type="Script" uid="uid://dx172jf0hkcao" path="res://Scenes/Stages/Fileless/test_laptop_fileless.gd" id="2_nle04"]
-[ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_sfcuh"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="4_7k4lc"]
-[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="5_nle04"]
+[ext_resource type="PackedScene" uid="uid://cvm45f7ftejx5" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="5_nle04"]
 [ext_resource type="PackedScene" uid="uid://hh7xs7kss11f" path="res://Scenes/GUI/Fileless Malware/FilelessFlashdriveNotPlugged.tscn" id="6_qr4bx"]
 [ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/GUI/DesktopGUI/interactables/flash_drive_collectible.tscn" id="7_qr4bx"]
 
@@ -148,12 +146,8 @@ _data = {
 &"yes_flashdrive": SubResource("Animation_tjfi1")
 }
 
-[node name="Laptop" node_paths=PackedStringArray("animation", "tab") instance=ExtResource("1_fof2r")]
+[node name="Laptop" instance=ExtResource("1_fof2r")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("2_nle04")
-animation = NodePath("AnimationPlayer")
-tab = NodePath("SubViewport/TabContainer")
-laptop_inv_item = ExtResource("3_sfcuh")
 
 [node name="laptop_screen" parent="laptop_base" index="1"]
 transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
