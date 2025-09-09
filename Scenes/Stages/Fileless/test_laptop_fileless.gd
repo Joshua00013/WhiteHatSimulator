@@ -17,6 +17,7 @@ var active := false
 @export var flashdrive_min_x: float = -0.94
 @export var flashdrive_max_x: float = -0.72
 
+@onready var fileless: TabContainer = $SubViewport/TabContainer/Fileless
 @onready var usb_camera: Camera3D = $Flashdrive_camera
 @onready var flashdrive: CharacterBody3D = $FlashDriveCollectible
 @onready var node_viewport = $SubViewport
@@ -39,6 +40,7 @@ func _ready():
 	animation_player.play("open_laptop")
 	flashdrive.visible = false
 	
+	fileless.request_exit_laptop.connect(exit_ui)
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
@@ -67,6 +69,9 @@ func _process(delta):
 				GameManager.ui_active = true
 				active = true
 				animation.play("yes_flashdrive")
+				
+				if CyberattackManager.fileless_weap_finished == true:
+					animation.play("weaponization_finished")
 		else:
 			var new_z = initial_flashdrive_x + horizontal_movement * sensitivity * 0.05
 			flashdrive.position.z = clamp(new_z, flashdrive_min_z, flashdrive_max_z)
@@ -157,6 +162,7 @@ func exit_ui():
 	GameManager.ui_active = false
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
+	flashdrive.visible = false
 	#TODO: Create a signal to let the parent know that the laptop is gone. Add a laptop to the player inventory
 	
 func _on_login_login_successful():

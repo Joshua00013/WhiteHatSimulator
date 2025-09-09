@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
 [ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
-[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="4_62orf"]
-[ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/gui/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
+[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="4_62orf"]
+[ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/GUI/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.635, 0.735)
