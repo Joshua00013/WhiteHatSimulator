@@ -9,10 +9,8 @@ var last_event_time: float = -1.0
 
 var active := false
 
-@export var username: String
-@export var password : String
+@export var animation:AnimationPlayer
 @export var tab : TabContainer
-@export var login_screen : Control
 @export var laptop_inv_item : InvItem
 @export var flashdrive_min_z: float = -0.35
 @export var flashdrive_max_z: float = 0.035
@@ -26,6 +24,7 @@ var active := false
 @onready var camera = $Camera3D
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
+@onready var fileless: TabContainer = $SubViewport/TabContainer/Fileless
 
 var sensitivity = 0.01
 var dragging := false
@@ -39,10 +38,9 @@ signal closed
 
 func _ready():
 	animation_player.play("open_laptop")
-	
 	flashdrive.visible = false
-	login_screen.password = password
-	login_screen.username = username
+	
+	fileless.request_exit_laptop.connect(exit_ui)
 	
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
@@ -65,8 +63,14 @@ func _process(delta):
 		if move_along_x:
 			var new_x = initial_flashdrive_z - horizontal_movement * sensitivity * 0.05
 			flashdrive.position.x = clamp(new_x, flashdrive_min_x, flashdrive_max_x)
-			if new_x >= flashdrive_max_x:
-				exit_ui()
+			if new_x >= flashdrive_max_x && camera.is_current() == false:
+				GameManager.player.exit_tool_tip.visible = true
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				camera.current = true
+				GameManager.ui_active = true
+				active = true
+				animation.play("yes_flashdrive")
+				
 		else:
 			var new_z = initial_flashdrive_x + horizontal_movement * sensitivity * 0.05
 			flashdrive.position.z = clamp(new_z, flashdrive_min_z, flashdrive_max_z)
@@ -161,16 +165,22 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 func _on_interactable_interact_triggered():
 	if not has_flashdrive():
-		print("Flashdrive not in inventory.")
-		return
-		
-	if usb_camera.is_current() == false:
-		GameManager.player.exit_tool_tip.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		usb_camera.current = true
-		GameManager.ui_active = true
-		active = true
-		flashdrive.visible = true
+		if camera.is_current() == false:
+			GameManager.player.exit_tool_tip.visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			camera.current = true
+			GameManager.ui_active = true
+			active = true
+			animation.play("no_flashdrive")
+	
+	if has_flashdrive():
+		if usb_camera.is_current() == false:
+			GameManager.player.exit_tool_tip.visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			usb_camera.current = true
+			GameManager.ui_active = true
+			active = true
+			flashdrive.visible = true
 
 func exit_ui():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -182,6 +192,8 @@ func exit_ui():
 	
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
+	closed.emit()
+	call_deferred("queue_free")
 	#TODO: Create a signal to let the parent know that the laptop is gone. Add a laptop to the player inventory
 	
 func _on_login_login_successful():

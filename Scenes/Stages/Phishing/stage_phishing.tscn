@@ -953,19 +953,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.3067
 [node name="Table-col" parent="NavigationRegion3D/Objects" instance=ExtResource("45_rvw56")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.96769, 0.00798213, 2.01172)
 
-[node name="Computer Phishing" parent="NavigationRegion3D/Objects"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.0757097, 0, 0.99713, 0, 1, 0, -0.99713, 0, 0.0757097, 4.30614, 0.692845, 4.67624)
-script = null
-
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" instance=ExtResource("47_ncn00")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
 
