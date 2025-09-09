@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_jvkh7"]
 [ext_resource type="Script" uid="uid://vxsuodevqko7" path="res://Scenes/Stages/Phishing/phishing_laptop.gd" id="1_lgi0s"]
-[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/GUI/Fileless Malware/Fileless.tscn" id="2_7oyvc"]
+[ext_resource type="PackedScene" uid="uid://biq1t4o3no8ef" path="res://Scenes/gui/Fileless Malware/Fileless.tscn" id="2_7oyvc"]
 [ext_resource type="PackedScene" path="res://Scenes/Attacks/PhishingAttack.tscn" id="4_jn7yn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kf2c"]
