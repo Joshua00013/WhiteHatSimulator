@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtsroqbsrh7jg"]
+
+[sub_resource type="Shader" id="Shader_je1oo"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp4eq"]
+shader = SubResource("Shader_je1oo")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.115, 0.045)
+shader_parameter/hole_size = Vector2(1.765, 0.29)
+
+[node name="Ransomware" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+metadata/_tab_index = 1
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+custom_minimum_size = Vector2(1300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 42
+text = "Banana"
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="CodeEdit"]
+material = SubResource("ShaderMaterial_tp4eq")
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 33
+text = "Create the code for the good shit"
+fit_content = true
+
+[node name="Spacing" type="Panel" parent="HFlowContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+
+[node name="Buttons" type="Panel" parent="HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 40.18)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Back" type="Button" parent="HFlowContainer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.0701842
+anchor_right = 0.165
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_right = -21.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="HFlowContainer/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.835
+anchor_top = -0.0701842
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Next"
+metadata/_edit_use_anchors_ = true

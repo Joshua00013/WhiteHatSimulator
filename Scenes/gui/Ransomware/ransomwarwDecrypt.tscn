@@ -1,0 +1,1286 @@
+[gd_scene load_steps=22 format=3 uid="uid://bru6s6wlbha6p"]
+
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="1_e7hcn"]
+[ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="1_jmyls"]
+
+[sub_resource type="GDScript" id="GDScript_jmyls"]
+script/source = "extends Control
+
+
+@onready var label_01: Label = $Label01
+@onready var next_bt_01: Button = $next_bt01
+
+func _on_next_bt_01_pressed() -> void:
+	label_01.visible =false
+	next_bt_01.visible = false
+	
+	overlay_1.visible = true
+	label_1.visible =true
+	next_btn_1.visible = true
+	back_btn_1.visible = true
+	
+@onready var overlay_1: ColorRect = $Overlay1	
+@onready var label_1: Label = $Label1
+@onready var next_btn_1: Button = $next_btn1
+@onready var back_btn_1: Button = $back_btn1
+
+func _on_next_btn_1_pressed() -> void:
+	overlay_1.visible = false
+	label_1.visible =false
+	next_btn_1.visible = false
+	back_btn_1.visible = false
+	
+	overlay_2.visible = true
+	label_2.visible =true
+	next_btn_2.visible = true
+	back_btn_2.visible = true
+
+
+func _on_back_btn_1_pressed() -> void:
+	overlay_1.visible = false
+	label_1.visible =false
+	next_btn_1.visible = false
+	back_btn_1.visible = false
+	
+	label_01.visible =true
+	next_bt_01.visible = true
+	
+@onready var overlay_2: ColorRect = $Overlay2	
+@onready var label_2: Label = $Label2
+@onready var next_btn_2: Button = $next_btn2
+@onready var back_btn_2: Button = $back_btn2
+
+func _on_next_btn_2_pressed() -> void:
+	overlay_2.visible = false
+	label_2.visible =false
+	next_btn_2.visible = false
+	back_btn_2.visible = false
+	
+	overlay_3.visible = true
+	label_3.visible =true
+	next_btn_3.visible = true
+	back_btn_3.visible = true
+
+
+func _on_back_btn_2_pressed() -> void:
+	overlay_2.visible = false
+	label_2.visible =false
+	next_btn_2.visible = false
+	back_btn_2.visible = false
+	
+	overlay_1.visible = true
+	label_1.visible =true
+	next_btn_1.visible = true
+	back_btn_1.visible = true
+	
+@onready var overlay_3: ColorRect = $Overlay3
+@onready var label_3: Label = $Label3
+@onready var next_btn_3: Button = $next_btn3
+@onready var back_btn_3: Button = $back_btn3
+
+
+func _on_next_btn_3_pressed() -> void:
+	overlay_3.visible = false
+	label_3.visible =false
+	next_btn_3.visible = false
+	back_btn_3.visible = false
+	
+	overlay_4.visible = true
+	label_4.visible =true
+	next_btn_4.visible = true
+	back_btn_4.visible = true
+
+
+func _on_back_btn_3_pressed() -> void:
+	overlay_3.visible = false
+	label_3.visible =false
+	next_btn_3.visible = false
+	back_btn_3.visible = false
+	
+	overlay_2.visible = true
+	label_2.visible =true
+	next_btn_2.visible = true
+	back_btn_2.visible = true
+	
+@onready var overlay_4: ColorRect = $Overlay4
+@onready var label_4: Label = $Label4
+@onready var next_btn_4: Button = $next_btn4
+@onready var back_btn_4: Button = $back_btn4
+
+
+func _on_next_btn_4_pressed() -> void:
+	overlay_4.visible = false
+	label_4.visible =false
+	next_btn_4.visible = false
+	back_btn_4.visible = false
+	
+	overlay_5.visible = true
+	label_5.visible =true
+	next_btn_5.visible = true
+	back_btn_5.visible = true
+
+func _on_back_btn_4_pressed() -> void:
+	overlay_4.visible = false
+	label_4.visible =false
+	next_btn_4.visible = false
+	back_btn_4.visible = false
+	
+	overlay_3.visible = true
+	label_3.visible =true
+	next_btn_3.visible = true
+	back_btn_3.visible = true
+	
+@onready var overlay_5: ColorRect = $Overlay5	
+@onready var label_5: Label = $Label5
+@onready var next_btn_5: Button = $next_btn5
+@onready var back_btn_5: Button = $back_btn5
+
+
+func _on_next_btn_5_pressed() -> void:
+	overlay_5.visible = false
+	label_5.visible =false
+	next_btn_5.visible = false
+	back_btn_5.visible = false
+	
+	overlay_6.visible = true
+	label_6.visible =true
+	next_btn_6.visible = true
+	back_btn_6.visible = true
+
+
+func _on_back_btn_5_pressed() -> void:
+	overlay_5.visible = false
+	label_5.visible =false
+	next_btn_5.visible = false
+	back_btn_5.visible = false
+	
+	overlay_4.visible = true
+	label_4.visible =true
+	next_btn_4.visible = true
+	back_btn_4.visible = true
+	
+@onready var overlay_6: ColorRect = $Overlay6	
+@onready var label_6: Label = $Label6
+@onready var next_btn_6: Button = $next_btn6
+@onready var back_btn_6: Button = $back_btn6
+
+func _on_next_btn_6_pressed() -> void:
+	overlay_6.visible = false
+	label_6.visible =false
+	next_btn_6.visible = false
+	back_btn_6.visible = false
+	
+	overlay_7.visible = true
+	label_7.visible =true
+	next_btn_7.visible = true
+	back_btn_7.visible = true
+
+
+func _on_back_btn_6_pressed() -> void:
+	overlay_6.visible = false
+	label_6.visible =false
+	next_btn_6.visible = false
+	back_btn_6.visible = false
+	
+	overlay_5.visible = true
+	label_5.visible =true
+	next_btn_5.visible = true
+	back_btn_5.visible = true
+	
+@onready var overlay_7: ColorRect = $Overlay7	
+@onready var label_7: Label = $Label7
+@onready var next_btn_7: Button = $next_btn7
+@onready var back_btn_7: Button = $back_btn7
+
+
+func _on_next_btn_7_pressed() -> void:
+	overlay_7.visible = false
+	label_7.visible =false
+	next_btn_7.visible = false
+	back_btn_7.visible = false
+	
+	
+
+
+func _on_back_btn_7_pressed() -> void:
+	overlay_7.visible = false
+	label_7.visible =false
+	next_btn_7.visible = false
+	back_btn_7.visible = false
+	
+	overlay_6.visible = true
+	label_6.visible =true
+	next_btn_6.visible = true
+	back_btn_6.visible = true
+"
+
+[sub_resource type="FontFile" id="FontFile_jmyls"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/79/0/ascent = 0.0
+cache/0/79/0/descent = 0.0
+cache/0/79/0/underline_position = 0.0
+cache/0/79/0/underline_thickness = 0.0
+cache/0/79/0/scale = 1.0
+cache/0/94/0/ascent = 0.0
+cache/0/94/0/descent = 0.0
+cache/0/94/0/underline_position = 0.0
+cache/0/94/0/underline_thickness = 0.0
+cache/0/94/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/114/0/ascent = 0.0
+cache/0/114/0/descent = 0.0
+cache/0/114/0/underline_position = 0.0
+cache/0/114/0/underline_thickness = 0.0
+cache/0/114/0/scale = 1.0
+cache/0/129/0/ascent = 0.0
+cache/0/129/0/descent = 0.0
+cache/0/129/0/underline_position = 0.0
+cache/0/129/0/underline_thickness = 0.0
+cache/0/129/0/scale = 1.0
+cache/0/134/0/ascent = 0.0
+cache/0/134/0/descent = 0.0
+cache/0/134/0/underline_position = 0.0
+cache/0/134/0/underline_thickness = 0.0
+cache/0/134/0/scale = 1.0
+cache/0/139/0/ascent = 0.0
+cache/0/139/0/descent = 0.0
+cache/0/139/0/underline_position = 0.0
+cache/0/139/0/underline_thickness = 0.0
+cache/0/139/0/scale = 1.0
+cache/0/144/0/ascent = 0.0
+cache/0/144/0/descent = 0.0
+cache/0/144/0/underline_position = 0.0
+cache/0/144/0/underline_thickness = 0.0
+cache/0/144/0/scale = 1.0
+cache/0/149/0/ascent = 0.0
+cache/0/149/0/descent = 0.0
+cache/0/149/0/underline_position = 0.0
+cache/0/149/0/underline_thickness = 0.0
+cache/0/149/0/scale = 1.0
+cache/0/154/0/ascent = 0.0
+cache/0/154/0/descent = 0.0
+cache/0/154/0/underline_position = 0.0
+cache/0/154/0/underline_thickness = 0.0
+cache/0/154/0/scale = 1.0
+cache/0/159/0/ascent = 0.0
+cache/0/159/0/descent = 0.0
+cache/0/159/0/underline_position = 0.0
+cache/0/159/0/underline_thickness = 0.0
+cache/0/159/0/scale = 1.0
+cache/0/124/0/ascent = 0.0
+cache/0/124/0/descent = 0.0
+cache/0/124/0/underline_position = 0.0
+cache/0/124/0/underline_thickness = 0.0
+cache/0/124/0/scale = 1.0
+cache/0/104/0/ascent = 0.0
+cache/0/104/0/descent = 0.0
+cache/0/104/0/underline_position = 0.0
+cache/0/104/0/underline_thickness = 0.0
+cache/0/104/0/scale = 1.0
+cache/0/89/0/ascent = 0.0
+cache/0/89/0/descent = 0.0
+cache/0/89/0/underline_position = 0.0
+cache/0/89/0/underline_thickness = 0.0
+cache/0/89/0/scale = 1.0
+cache/0/84/0/ascent = 0.0
+cache/0/84/0/descent = 0.0
+cache/0/84/0/underline_position = 0.0
+cache/0/84/0/underline_thickness = 0.0
+cache/0/84/0/scale = 1.0
+cache/0/69/0/ascent = 0.0
+cache/0/69/0/descent = 0.0
+cache/0/69/0/underline_position = 0.0
+cache/0/69/0/underline_thickness = 0.0
+cache/0/69/0/scale = 1.0
+cache/0/59/0/ascent = 0.0
+cache/0/59/0/descent = 0.0
+cache/0/59/0/underline_position = 0.0
+cache/0/59/0/underline_thickness = 0.0
+cache/0/59/0/scale = 1.0
+cache/0/54/0/ascent = 0.0
+cache/0/54/0/descent = 0.0
+cache/0/54/0/underline_position = 0.0
+cache/0/54/0/underline_thickness = 0.0
+cache/0/54/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/74/0/ascent = 0.0
+cache/0/74/0/descent = 0.0
+cache/0/74/0/underline_position = 0.0
+cache/0/74/0/underline_thickness = 0.0
+cache/0/74/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vsysh"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a58s4"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tb77c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmyls"]
+shader = ExtResource("1_e7hcn")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.32)
+shader_parameter/hole_size = Vector2(1.955, 0.275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a58s4"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmevn"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3nol"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63ro7"]
+shader = ExtResource("1_e7hcn")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.63)
+shader_parameter/hole_size = Vector2(1.955, 0.62)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fp7g3"]
+shader = ExtResource("1_e7hcn")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.31)
+shader_parameter/hole_size = Vector2(1.955, 0.14)
+
+[sub_resource type="Shader" id="Shader_vsysh"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a58s4"]
+shader = SubResource("Shader_vsysh")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.535)
+shader_parameter/hole_size = Vector2(1.955, 0.245)
+
+[sub_resource type="Shader" id="Shader_a58s4"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tb77c"]
+shader = SubResource("Shader_a58s4")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.76)
+shader_parameter/hole_size = Vector2(1.955, 0.245)
+
+[sub_resource type="Shader" id="Shader_gmevn"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3nol"]
+shader = SubResource("Shader_gmevn")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 1.99)
+shader_parameter/hole_size = Vector2(1.955, 1.155)
+
+[sub_resource type="Shader" id="Shader_63ro7"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6dau"]
+shader = SubResource("Shader_63ro7")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 2.08)
+shader_parameter/hole_size = Vector2(1.955, 0.805)
+
+[node name="RansomwareDecrypt_Part2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_jmyls")
+
+[node name="Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0740741
+grow_horizontal = 2
+color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766493
+anchor_top = 0.0138889
+anchor_right = 0.810764
+anchor_bottom = 0.0617284
+grow_horizontal = 2
+text = "Run"
+metadata/_edit_use_anchors_ = true
+
+[node name="decrypt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.460938
+anchor_top = 0.0185185
+anchor_right = 0.513021
+anchor_bottom = 0.0570988
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontFile_jmyls")
+theme_override_font_sizes/font_size = 18
+text = "decrypt"
+metadata/_edit_use_anchors_ = true
+
+[node name="Body" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.102971, 0.0952661, 0.0829469, 1)
+
+[node name="Sidebar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_right = 22.0
+grow_vertical = 2
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+
+[node name="Numberlines" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 50.0
+offset_right = 21.0
+offset_bottom = 649.0
+theme_override_constants/line_spacing = -5
+text = " 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33"
+autowrap_mode = 1
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.0217014
+anchor_top = 0.0756173
+anchor_right = 0.46441
+anchor_bottom = 0.777778
+offset_right = -204.0
+offset_bottom = -414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -5
+text = "import os
+from cryptography.fernet import fernet
+
+allfiles = [ ]
+for file in os.listdir (  )  : 
+        if file == \"malware\"  or  file  ==  \"key.key\"  or  file ==  \"decry\" :   
+                  continue
+        if os.path.isfile (file) :  allfiles.append (file)
+
+print (allfiles)
+
+with  open (\"key.key\",  \"rb)  as key; 
+        password  = key.read( )
+passphrase  = \"WhiteHaT\" 
+userpass  = input (\"Enter the password you received from us:  \") 
+if userpass == passphrase:  
+        for file in allfiles:  
+                with  open(file,  \"rb\")  as the file: 
+                        contents  = thefile.read( )                                 
+                content_decr  = Fernet (password) .decrypt (contents)
+                with open (file, \"wb\")  as  thefile:
+                        thefile.write(content_decr)
+                print (\"You got your files back\")
+else;
+print (\"Wrong password!  Pay to receive the right password\")"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label01" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_right = -0.00012207
+offset_bottom = 294.544
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "This program is intended to restore files that were previously locked using encryption. At the start, it loads two tools: os, which is used to look through files on the computer, and Fernet from the cryptography library, which is the method used to lock and unlock the files. The script creates an empty list called allfiles. This list will later contain all the file names that need to be unlocked."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_bt01" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vsysh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a58s4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tb77c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tb77c")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay1" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_jmyls")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label1" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.496913
+offset_bottom = -52.0003
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "The program uses os to interact with files and folders on your computer and imports Fernet from the cryptography library, a standard method for encrypting and decrypting bytes with a shared key."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn1" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn1" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_63ro7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.496913
+offset_bottom = -52.0003
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It looks at every item in the current folder, skips three special files which are the script itself (malware), the key file (key.key), and a decrypter script (decry), and if the item is an actual file (not a folder), adds it to allfiles."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786087
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.00914
+offset_left = 85.4282
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.031
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay3" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_fp7g3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.416666
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "This shows what will be processed by printing the list so you can see which files are about to be touched."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay4" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_a58s4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It loads the secret key from disk by opening key.key in binary mode and reading its bytes, which are the Fernet key used to decrypt the data"
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay5" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_tb77c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = -26.0003
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It sets a required passphrase, stored in passphrase, and uses input(...) to ask the user to type it, serving as a human check before performing any decryption."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn5" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn5" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay6" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_l3nol")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.45679
+offset_bottom = -26.0003
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It only continues if the passphrase matches; if the user typed the correct passphrase, it proceeds, otherwise it stops and shows a “wrong password” message."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn6" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn6" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay7" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_d6dau")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.341049
+anchor_right = 0.966146
+anchor_bottom = 0.537037
+offset_bottom = -78.0003
+theme_override_colors/font_color = Color(0.759059, 0.703435, 0.355522, 1)
+text = "It decrypts each file in allfiles by opening it to read all bytes, using the Fernet key (previously read from key.key) to decrypt those bytes, then opening the same file again for writing to overwrite it with the decrypted bytes and restore the original content, and finally printing a success message for each file."
+autowrap_mode = 3
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="next_btn7" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.878
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0556641
+offset_right = 497.257
+offset_bottom = 495.176
+grow_vertical = 2
+scale = Vector2(0.148887, 0.148887)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[node name="back_btn7" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.878
+anchor_right = 0.86
+anchor_bottom = 1.009
+offset_left = 85.5279
+offset_top = 0.0559692
+offset_right = 573.624
+offset_bottom = 485.122
+grow_vertical = 2
+scale = Vector2(-0.149, 0.149)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a58s4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmevn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l3nol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3nol")
+icon = ExtResource("1_jmyls")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="next_bt01" to="." method="_on_next_bt_01_pressed"]
+[connection signal="pressed" from="next_btn1" to="." method="_on_next_btn_1_pressed"]
+[connection signal="pressed" from="back_btn1" to="." method="_on_back_btn_1_pressed"]
+[connection signal="pressed" from="next_btn2" to="." method="_on_next_btn_2_pressed"]
+[connection signal="pressed" from="back_btn2" to="." method="_on_back_btn_2_pressed"]
+[connection signal="pressed" from="next_btn3" to="." method="_on_next_btn_3_pressed"]
+[connection signal="pressed" from="back_btn3" to="." method="_on_back_btn_3_pressed"]
+[connection signal="pressed" from="next_btn4" to="." method="_on_next_btn_4_pressed"]
+[connection signal="pressed" from="back_btn4" to="." method="_on_back_btn_4_pressed"]
+[connection signal="pressed" from="next_btn5" to="." method="_on_next_btn_5_pressed"]
+[connection signal="pressed" from="back_btn5" to="." method="_on_back_btn_5_pressed"]
+[connection signal="pressed" from="next_btn6" to="." method="_on_next_btn_6_pressed"]
+[connection signal="pressed" from="back_btn6" to="." method="_on_back_btn_6_pressed"]
+[connection signal="pressed" from="next_btn7" to="." method="_on_next_btn_7_pressed"]
+[connection signal="pressed" from="back_btn7" to="." method="_on_back_btn_7_pressed"]

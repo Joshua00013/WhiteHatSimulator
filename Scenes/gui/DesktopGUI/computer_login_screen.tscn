@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://yma6vkusf8cc"]
+
+[ext_resource type="Script" uid="uid://cihpg2focy55q" path="res://Scenes/GUI/DesktopGUI/computer_login_screen_gui.gd" id="1_lfks7"]
+[ext_resource type="Texture2D" uid="uid://dw6n7dgtsra4t" path="res://ReserveAssets/Computer login/b64f8fcf0e0aed9537c800eb5e9ca1ed-removebg-preview.png" id="3_wdc70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6wus"]
+bg_color = Color(0.211765, 0.239216, 0.321569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpomq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epux4"]
+bg_color = Color(0.347467, 0.369752, 0.428993, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwri2"]
+bg_color = Color(0.534959, 0.56049, 0.62784, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrhvm"]
+bg_color = Color(0.141176, 0.152941, 0.184314, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control" node_paths=PackedStringArray("username_box", "password_box", "error_message")]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lfks7")
+username_box = NodePath("Login/Username")
+password_box = NodePath("Login/Password/Password")
+error_message = NodePath("Login/ErrorMessage")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1.4, 0.8)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6wus")
+
+[node name="Login" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UserIcon" type="TextureRect" parent="Login"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("3_wdc70")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Welcome" type="Label" parent="Login"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Welcome, User"
+
+[node name="Username" type="LineEdit" parent="Login"]
+custom_minimum_size = Vector2(275, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Username"
+secret_character = "*"
+metadata/_edit_use_anchors_ = true
+
+[node name="Password" type="HBoxContainer" parent="Login"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Password" type="LineEdit" parent="Login/Password"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "Password"
+secret = true
+secret_character = "*"
+metadata/_edit_use_anchors_ = true
+
+[node name="Confirm" type="Button" parent="Login/Password"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xpomq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epux4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrhvm")
+text = ">"
+
+[node name="ErrorMessage" type="Label" parent="Login"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Login/Password/Confirm" to="." method="_on_confirm_pressed"]

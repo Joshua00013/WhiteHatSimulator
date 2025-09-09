@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfrlhmm84r6fh"]
+
+[ext_resource type="PackedScene" uid="uid://342ayteql1ym" path="res://Assets/export_LPOP_FULL/Printer.fbx" id="1_yrj2c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrj2c"]
+size = Vector3(1.27417, 0.929459, 1)
+
+[node name="Printer" instance=ExtResource("1_yrj2c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00500488, 0.475319, 0)
+shape = SubResource("BoxShape3D_yrj2c")

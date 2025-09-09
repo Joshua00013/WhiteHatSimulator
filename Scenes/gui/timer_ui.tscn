@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkyqep4sf066u"]
+
+[ext_resource type="Script" uid="uid://daj1h1xsejg3b" path="res://GUI/TimerUI/timer_ui.gd" id="1_km42e"]
+
+[node name="TimerUI" type="Control"]
+layout_mode = 3
+anchor_right = 0.299
+anchor_bottom = 0.062
+offset_right = -304.448
+offset_bottom = -0.176003
+script = ExtResource("1_km42e")
+
+[node name="Time_Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 486.0
+offset_right = 627.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
+theme_override_font_sizes/font_size = 55
+text = "08:30"
+
+[node name="Day_Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.55
+offset_left = 539.0
+offset_top = 59.0
+offset_right = 580.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 15
+text = "Day 1"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0

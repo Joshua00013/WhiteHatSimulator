@@ -1,7 +1,6 @@
 extends ColorRect
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
-@onready var player = get_node("../Player")
 @onready var play_button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton
 @onready var quit_button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton
 @onready var quit_options = $QuitOptions

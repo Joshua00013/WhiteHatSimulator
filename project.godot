@@ -20,11 +20,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Singletons/game_manager.gd"
-SaveGame="*res://save_game.gd"
+DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
 
 [display]
 
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -32,12 +35,13 @@ project/assembly_name="WhiteHatSimulator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
+enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
-"res://Scenes/gui/": "green"
+"res://Scenes/": "red",
+"res://Scenes/GUI/": "green"
 }
 
 [global_group]
@@ -104,7 +108,8 @@ dragging={
 }
 hold={
 "deadzone": 0.2,
-"events": []
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
 }
 pinch={
 "deadzone": 0.2,
@@ -119,11 +124,13 @@ release={
 
 pointing/emulate_touch_from_mouse=true
 pointing/emulate_mouse_from_touch=false
+pointing/size/resizable=true
 
 [layer_names]
 
 3d_physics/layer_1="environment"
 3d_physics/layer_2="interactions"
+3d_physics/layer_3="doors"
 
 [physics]
 

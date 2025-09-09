@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0b2smujjru1"]
+
+[ext_resource type="PackedScene" uid="uid://bi3nr2twfr3k2" path="res://Assets/export_LPOP_FULL/PlantPotLargeC.fbx" id="1_hy7v1"]
+
+[node name="PlantPotLargeC" instance=ExtResource("1_hy7v1")]

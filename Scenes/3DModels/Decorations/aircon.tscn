@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwe5ena6xdg63"]
+
+[ext_resource type="PackedScene" uid="uid://f58qex6e6qdo" path="res://Assets/Exported3dModel/Aircon.glb" id="1_y0o7y"]
+
+[node name="Aircon" instance=ExtResource("1_y0o7y")]

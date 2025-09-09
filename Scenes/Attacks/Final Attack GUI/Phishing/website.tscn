@@ -1,0 +1,301 @@
+[gd_scene load_steps=11 format=3 uid="uid://2p2oit3a4asi"]
+
+[ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="1_yw3xb"]
+[ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="2_gwytt"]
+[ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="3_302x4"]
+[ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="4_h18mn"]
+[ext_resource type="Texture2D" uid="uid://dybt5k347u881" path="res://Assets/Application Icons/download.png" id="5_qrg7f"]
+[ext_resource type="Texture2D" uid="uid://5u27h4jo5fav" path="res://Assets/Application Icons/user.png" id="6_p4q1d"]
+[ext_resource type="Texture2D" uid="uid://cepdohl2vcuty" path="res://Assets/Application Icons/interface.png" id="7_lwu35"]
+[ext_resource type="Texture2D" uid="uid://digdw37sjfecp" path="res://Assets/Application Icons/internet.png" id="8_gwytt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cln0"]
+bg_color = Color(0.823212, 0.823212, 0.823212, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[node name="Website" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.719298, 0.920553, 0.975525, 1)
+
+[node name="Header" type="ColorRect" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.118
+offset_bottom = 1.536
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+color = Color(0.834614, 0.834614, 0.834614, 1)
+
+[node name="SearchBar" type="ColorRect" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.117284
+anchor_right = 1.0
+anchor_bottom = 0.279247
+offset_bottom = 0.0480003
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.273
+anchor_right = 0.056
+anchor_bottom = 0.698
+offset_left = -0.133615
+offset_top = -0.0476208
+offset_right = -0.517616
+offset_bottom = 0.0273743
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_yw3xb")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.265383
+anchor_right = 0.1
+anchor_bottom = 0.689
+offset_left = 0.312897
+offset_top = 1.74112
+offset_right = -0.223076
+offset_bottom = -0.0441742
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_yw3xb")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Refresh" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.108
+anchor_top = 0.134166
+anchor_right = 0.156
+anchor_bottom = 0.825
+offset_left = 0.540268
+offset_top = 1.74112
+offset_right = 0.244293
+offset_bottom = -0.0331268
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_gwytt")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.169
+anchor_top = 0.218
+anchor_right = 0.806
+anchor_bottom = 0.693
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Favorites" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.827
+anchor_top = 0.172
+anchor_right = 0.864
+anchor_bottom = 0.696
+offset_left = -0.0374146
+offset_top = -0.0412102
+offset_right = 0.338501
+offset_bottom = 0.0347824
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_302x4")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Extensions" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.869
+anchor_top = 0.192
+anchor_right = 0.904
+anchor_bottom = 0.697
+offset_left = -0.438232
+offset_top = -0.0222912
+offset_right = 0.241699
+offset_bottom = -0.027298
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_h18mn")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Downloads" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.905
+anchor_top = 0.202
+anchor_right = 0.939
+anchor_bottom = 0.677
+offset_left = 0.0749512
+offset_top = -0.0128307
+offset_right = -0.0930176
+offset_bottom = 0.0121613
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_qrg7f")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="USer" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.942
+anchor_top = 0.212
+anchor_right = 0.974
+anchor_bottom = 0.667
+offset_left = 0.435913
+offset_top = -0.0033741
+offset_right = 0.571899
+offset_bottom = 0.041626
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_p4q1d")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.976
+anchor_top = 0.293
+anchor_right = 0.997
+anchor_bottom = 0.587
+offset_left = 0.254395
+offset_top = -0.0287056
+offset_right = 0.0623779
+offset_bottom = 0.00127411
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_lwu35")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="MarginContainer/ColorRect/SearchBar"]
+layout_mode = 0
+anchor_left = 0.000868056
+anchor_top = -0.638095
+anchor_right = 0.251736
+anchor_bottom = 0.00952381
+theme_override_styles/panel = SubResource("StyleBoxFlat_yw3xb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/SearchBar/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217993
+anchor_top = 0.323529
+anchor_right = 0.865052
+anchor_bottom = 0.808824
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Internet"
+metadata/_edit_use_anchors_ = true
+
+[node name="Google" type="ColorRect" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/ColorRect/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.180285
+anchor_top = 0.389869
+anchor_right = 0.817285
+anchor_bottom = 0.472443
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ColorRect/Google"]
+layout_mode = 0
+anchor_left = 0.201389
+anchor_top = 0.40678
+anchor_right = 0.798611
+anchor_bottom = 0.457627
+metadata/_edit_use_anchors_ = true
+
+[node name="TerminalIcon" type="TextureButton" parent="MarginContainer/ColorRect/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.423611
+anchor_top = 0.0169492
+anchor_right = 0.576389
+anchor_bottom = 0.347458
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_gwytt")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TerminalIcon2" type="TextureButton" parent="MarginContainer/ColorRect/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = -0.305085
+anchor_right = 0.0520833
+anchor_bottom = -0.237288
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_gwytt")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true

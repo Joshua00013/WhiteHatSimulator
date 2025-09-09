@@ -1,0 +1,779 @@
+[gd_scene load_steps=39 format=3 uid="uid://c8peboqrmkorg"]
+
+[ext_resource type="Shader" uid="uid://cectl5tsuf1ys" path="res://EnvironmentShaders/silhouette_test.gdshader" id="2_itnco"]
+[ext_resource type="Texture2D" uid="uid://8eu6hic8rgm6" path="res://Assets/Screenshot_2025-08-12_233656-removebg-preview.png" id="3_oujqx"]
+[ext_resource type="Texture2D" uid="uid://cnrmm2sfpmak8" path="res://Assets/Screenshot_2025-08-12_233716-removebg-preview (1).png" id="4_rvpvu"]
+[ext_resource type="Texture2D" uid="uid://ds744s3psti62" path="res://Assets/12+_Burger_Menu_Icon_White_Png-removebg-preview.png" id="5_50or7"]
+[ext_resource type="Texture2D" uid="uid://d0bledml4xvhm" path="res://Assets/41445993-1fd4-4f83-be0e-58a50be61bc9-removebg-preview.png" id="6_i0235"]
+[ext_resource type="Texture2D" uid="uid://5yf3qlkg070e" path="res://Assets/document_papers_paper_files_icon_paper_-removebg-preview.png" id="7_vknwe"]
+[ext_resource type="Texture2D" uid="uid://bdjj6rbtqu7sh" path="res://Assets/e3e8826a-513d-4c21-8794-d8a75d92eae1-removebg-preview.png" id="8_ni0mc"]
+[ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="9_gu0i2"]
+[ext_resource type="Texture2D" uid="uid://htj0yl2ovqe2" path="res://Assets/aad868f7-e868-4153-835a-777ac43dfe55-removebg-preview.png" id="10_x7jp5"]
+
+[sub_resource type="GDScript" id="GDScript_bag6k"]
+script/source = "extends Control
+
+@onready var companyfile_text: Label = $computerWindowsAssets/companyfileText
+@onready var myfile_text: Label = $computerWindowsAssets/myfileText
+@onready var image: Label = $computerWindowsAssets/image
+
+@onready var pdf_button: Button = $Buttons/pdfButton
+@onready var malware_button: Button = $Buttons/malwareButton
+@onready var company_button: Button = $Buttons/companyButton
+@onready var godot_button: Button = $Buttons/godotButton
+
+@onready var computer_windows_template: Control = $computerWindowsTemplate
+
+func _on_pdf_button_pressed() -> void:
+	computer_windows_template.visible = true
+	myfile_text.visible = true
+	
+	godot_button.flat = false
+	company_button.flat = false
+	malware_button.flat = false
+	
+	godot_button.disabled = true
+	company_button.disabled = true
+	malware_button.disabled = true
+
+	
+func _on_exit_button_pressed() -> void:
+	companyfile_text.visible = false
+	myfile_text.visible = false
+	image.visible = false
+	computer_windows_template.visible = false
+	
+	
+	pdf_button.flat = false
+	godot_button.flat = false
+	company_button.flat = false
+	
+	
+	pdf_button.disabled = false
+	godot_button.disabled = false
+	company_button.disabled = false
+	malware_button.disabled = false
+
+
+func _on_godot_button_pressed() -> void:
+	computer_windows_template.visible = true
+	image.visible = true
+	
+	pdf_button.flat = true
+	company_button.flat = true
+	malware_button.flat = true
+	
+	pdf_button.disabled = true
+	company_button.disabled = true
+	malware_button.disabled = true
+
+
+func _on_company_button_pressed() -> void:
+	computer_windows_template.visible = true
+	companyfile_text.visible = true
+	
+	pdf_button.flat = true
+	godot_button.flat = true
+	malware_button.flat = true
+
+	pdf_button.disabled = true
+	godot_button.disabled = true
+	malware_button.disabled = true
+
+
+func _on_malware_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn\")
+"
+
+[sub_resource type="FontFile" id="FontFile_gclbg"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/79/0/ascent = 0.0
+cache/0/79/0/descent = 0.0
+cache/0/79/0/underline_position = 0.0
+cache/0/79/0/underline_thickness = 0.0
+cache/0/79/0/scale = 1.0
+cache/0/94/0/ascent = 0.0
+cache/0/94/0/descent = 0.0
+cache/0/94/0/underline_position = 0.0
+cache/0/94/0/underline_thickness = 0.0
+cache/0/94/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/114/0/ascent = 0.0
+cache/0/114/0/descent = 0.0
+cache/0/114/0/underline_position = 0.0
+cache/0/114/0/underline_thickness = 0.0
+cache/0/114/0/scale = 1.0
+cache/0/129/0/ascent = 0.0
+cache/0/129/0/descent = 0.0
+cache/0/129/0/underline_position = 0.0
+cache/0/129/0/underline_thickness = 0.0
+cache/0/129/0/scale = 1.0
+cache/0/134/0/ascent = 0.0
+cache/0/134/0/descent = 0.0
+cache/0/134/0/underline_position = 0.0
+cache/0/134/0/underline_thickness = 0.0
+cache/0/134/0/scale = 1.0
+cache/0/139/0/ascent = 0.0
+cache/0/139/0/descent = 0.0
+cache/0/139/0/underline_position = 0.0
+cache/0/139/0/underline_thickness = 0.0
+cache/0/139/0/scale = 1.0
+cache/0/144/0/ascent = 0.0
+cache/0/144/0/descent = 0.0
+cache/0/144/0/underline_position = 0.0
+cache/0/144/0/underline_thickness = 0.0
+cache/0/144/0/scale = 1.0
+cache/0/149/0/ascent = 0.0
+cache/0/149/0/descent = 0.0
+cache/0/149/0/underline_position = 0.0
+cache/0/149/0/underline_thickness = 0.0
+cache/0/149/0/scale = 1.0
+cache/0/154/0/ascent = 0.0
+cache/0/154/0/descent = 0.0
+cache/0/154/0/underline_position = 0.0
+cache/0/154/0/underline_thickness = 0.0
+cache/0/154/0/scale = 1.0
+cache/0/159/0/ascent = 0.0
+cache/0/159/0/descent = 0.0
+cache/0/159/0/underline_position = 0.0
+cache/0/159/0/underline_thickness = 0.0
+cache/0/159/0/scale = 1.0
+cache/0/124/0/ascent = 0.0
+cache/0/124/0/descent = 0.0
+cache/0/124/0/underline_position = 0.0
+cache/0/124/0/underline_thickness = 0.0
+cache/0/124/0/scale = 1.0
+cache/0/104/0/ascent = 0.0
+cache/0/104/0/descent = 0.0
+cache/0/104/0/underline_position = 0.0
+cache/0/104/0/underline_thickness = 0.0
+cache/0/104/0/scale = 1.0
+cache/0/89/0/ascent = 0.0
+cache/0/89/0/descent = 0.0
+cache/0/89/0/underline_position = 0.0
+cache/0/89/0/underline_thickness = 0.0
+cache/0/89/0/scale = 1.0
+cache/0/84/0/ascent = 0.0
+cache/0/84/0/descent = 0.0
+cache/0/84/0/underline_position = 0.0
+cache/0/84/0/underline_thickness = 0.0
+cache/0/84/0/scale = 1.0
+cache/0/69/0/ascent = 0.0
+cache/0/69/0/descent = 0.0
+cache/0/69/0/underline_position = 0.0
+cache/0/69/0/underline_thickness = 0.0
+cache/0/69/0/scale = 1.0
+cache/0/59/0/ascent = 0.0
+cache/0/59/0/descent = 0.0
+cache/0/59/0/underline_position = 0.0
+cache/0/59/0/underline_thickness = 0.0
+cache/0/59/0/scale = 1.0
+cache/0/54/0/ascent = 0.0
+cache/0/54/0/descent = 0.0
+cache/0/54/0/underline_position = 0.0
+cache/0/54/0/underline_thickness = 0.0
+cache/0/54/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/74/0/ascent = 0.0
+cache/0/74/0/descent = 0.0
+cache/0/74/0/underline_position = 0.0
+cache/0/74/0/underline_thickness = 0.0
+cache/0/74/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8u0on"]
+resource_local_to_scene = true
+shader = ExtResource("2_itnco")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.015, 0.305)
+shader_parameter/hole_size = Vector2(1.955, 0.25)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bipqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg2l2"]
+bg_color = Color(0.625597, 0.625597, 0.625597, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cg2l2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpa1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6br5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4qjis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m05lw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u0on"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmmh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m05lw"]
+bg_color = Color(0.737193, 0.737193, 0.737193, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uoolu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pci8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2p12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njx80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fe1v0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpa1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5hjx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njx80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w68uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo788"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5hjx"]
+bg_color = Color(0.662452, 0.662452, 0.662452, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7np07"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3qw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4cu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tm44q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6br5"]
+bg_color = Color(0.832256, 0.2259, 0.177873, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_bag6k")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_vertical_guides_ = [-779.0]
+
+[node name="Header" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.101852
+grow_horizontal = 2
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="innerHeader" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0190972
+anchor_top = 0.0200617
+anchor_right = 0.974826
+anchor_bottom = 0.0817901
+grow_horizontal = 2
+color = Color(0.332881, 0.332881, 0.332881, 1)
+
+[node name="HeaderText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0364583
+anchor_top = 0.0308642
+anchor_right = 0.202257
+anchor_bottom = 0.0694444
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontFile_gclbg")
+theme_override_font_sizes/font_size = 18
+text = "Destop  >  Ransomware"
+
+[node name="Body" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.103395
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -0.999962
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.162066, 0.162066, 0.162066, 1)
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8u0on")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Mobile Navigator" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
+
+[node name="bottomHeader" type="ColorRect" parent="Mobile Navigator"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 15.275
+anchor_right = 28.8
+anchor_bottom = 16.2
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="nav_backButton" type="Button" parent="Mobile Navigator"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.975
+anchor_top = 15.325
+anchor_right = 11.6098
+anchor_bottom = 16.1071
+offset_right = 52.6069
+offset_bottom = 53.7146
+scale = Vector2(0.325553, 0.368064)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
+icon = ExtResource("3_oujqx")
+metadata/_edit_use_anchors_ = true
+
+[node name="nav_Home" type="Button" parent="Mobile Navigator"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.225
+anchor_top = 15.375
+anchor_right = 13.99
+anchor_bottom = 16.0651
+offset_right = 63.3986
+offset_bottom = 47.3953
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.325553, 0.368064)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
+icon = ExtResource("4_rvpvu")
+metadata/_edit_use_anchors_ = true
+
+[node name="nav_Tab" type="Button" parent="Mobile Navigator"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.625
+anchor_top = 15.5
+anchor_right = 16.1442
+anchor_bottom = 16.0
+offset_right = 479.231
+offset_bottom = 480.001
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.0415386, 0.0399975)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bipqc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg2l2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cg2l2")
+icon = ExtResource("5_50or7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
+
+[node name="pdfButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.24999
+anchor_top = 2.95
+anchor_right = 4.31675
+anchor_bottom = 4.21913
+offset_right = 457.33
+offset_bottom = 457.681
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0853402, 0.0998433)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j6br5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4qjis")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_m05lw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8u0on")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_kmmh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m05lw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_uoolu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pci8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j2p12")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
+icon = ExtResource("6_i0235")
+metadata/_edit_use_anchors_ = true
+
+[node name="malwareButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.7
+anchor_top = 2.87498
+anchor_right = 15.0103
+anchor_bottom = 4.43354
+offset_left = -24.0
+offset_right = 283.586
+offset_bottom = 297.658
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.145594, 0.173171)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fe1v0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lpa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5hjx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
+icon = ExtResource("7_vknwe")
+metadata/_edit_use_anchors_ = true
+
+[node name="keyButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.95
+anchor_top = 2.87498
+anchor_right = 18.2604
+anchor_bottom = 4.43354
+offset_left = -24.0
+offset_right = 283.586
+offset_bottom = 297.658
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.145594, 0.173171)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fe1v0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lpa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5hjx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
+icon = ExtResource("7_vknwe")
+metadata/_edit_use_anchors_ = true
+
+[node name="companyButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.525
+anchor_top = 2.95
+anchor_right = 11.772
+anchor_bottom = 4.39904
+offset_left = -24.0
+offset_top = -0.000190735
+offset_right = 376.121
+offset_bottom = 392.038
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.110843, 0.128804)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpa1l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njx80")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w68uy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njx80")
+icon = ExtResource("8_ni0mc")
+metadata/_edit_use_anchors_ = true
+
+[node name="godotButton" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.1
+anchor_top = 3.3
+anchor_right = 8.10496
+anchor_bottom = 4.30034
+offset_left = -15.0
+offset_right = 72.8015
+offset_bottom = 87.9864
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.314051, 0.312606)
+theme_override_icons/icon = ExtResource("9_gu0i2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bo788")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i5hjx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7np07")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a3qw6")
+icon = ExtResource("9_gu0i2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="computerWindowsTemplate" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
+
+[node name="Body" type="ColorRect" parent="computerWindowsTemplate"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.75
+anchor_top = 5.875
+anchor_right = 20.6459
+anchor_bottom = 12.7486
+offset_right = 11.1621
+offset_bottom = -8.94586
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.97708, 1.03363)
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="ColorRect" parent="computerWindowsTemplate"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.75
+anchor_top = 5.875
+anchor_right = 20.65
+anchor_bottom = 6.5
+color = Color(0.333333, 0.333333, 0.333333, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="exitButton" type="Button" parent="computerWindowsTemplate"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.1
+anchor_top = 5.95
+anchor_right = 20.5901
+anchor_bottom = 6.44733
+offset_right = 460.397
+offset_bottom = 460.107
+scale = Vector2(0.0408402, 0.0414445)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h4cu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tm44q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j6br5")
+icon = ExtResource("10_x7jp5")
+metadata/_edit_use_anchors_ = true
+
+[node name="computerWindowsAssets" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+metadata/_edit_use_anchors_ = true
+
+[node name="image" type="Label" parent="computerWindowsAssets"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.95
+anchor_top = 6.75
+anchor_right = 20.45
+anchor_bottom = 12.075
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "njsvopwurhuaosnsiqir893j2ndioambehkajirofmqnplf4jv"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="companyfileText" type="Label" parent="computerWindowsAssets"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.95
+anchor_top = 6.75
+anchor_right = 20.45
+anchor_bottom = 12.075
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "ahashIasjalhdcwucroj82ojslcjdhnjfmirtq1odbsmabcmp"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="myfileText" type="Label" parent="computerWindowsAssets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.9
+anchor_top = 6.75
+anchor_right = 20.525
+anchor_bottom = 10.05
+offset_right = -0.000244141
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "njsiwoqfrelu29veinsonsalnveuybreqpbufdjncoaernveiao"
+metadata/_edit_use_anchors_ = true
+
+[node name="companyLabel" type="Label" parent="computerWindowsAssets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.425
+anchor_top = 4.4
+anchor_right = 11.875
+anchor_bottom = 4.725
+offset_left = -24.0
+offset_right = -24.0
+theme_override_font_sizes/font_size = 9
+text = "Company.file"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="computerWindowsAssets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.225
+anchor_top = 4.4
+anchor_right = 4.39999
+anchor_bottom = 4.725
+offset_right = 1.52588e-05
+theme_override_font_sizes/font_size = 9
+text = "my file.pdf"
+metadata/_edit_use_anchors_ = true
+
+[node name="imageLabel" type="Label" parent="computerWindowsAssets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.07499
+anchor_top = 4.4
+anchor_right = 8.12499
+anchor_bottom = 4.725
+offset_left = -15.0
+offset_right = -15.0
+theme_override_font_sizes/font_size = 9
+text = "godot.svg"
+metadata/_edit_use_anchors_ = true
+
+[node name="malwareLabel" type="Label" parent="computerWindowsAssets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.725
+anchor_top = 4.4
+anchor_right = 15.0
+anchor_bottom = 4.725
+offset_left = -24.0
+offset_top = -1.52588e-05
+offset_right = -24.0
+offset_bottom = -1.52588e-05
+theme_override_font_sizes/font_size = 9
+text = "malware.py"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Buttons/pdfButton" to="." method="_on_pdf_button_pressed"]
+[connection signal="pressed" from="Buttons/malwareButton" to="." method="_on_malware_button_pressed"]
+[connection signal="pressed" from="Buttons/keyButton" to="." method="_on_malware_button_pressed"]
+[connection signal="pressed" from="Buttons/companyButton" to="." method="_on_company_button_pressed"]
+[connection signal="pressed" from="Buttons/godotButton" to="." method="_on_godot_button_pressed"]
+[connection signal="pressed" from="computerWindowsTemplate/exitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr4d545ld3wj5"]
+
+[ext_resource type="PackedScene" uid="uid://tsvsvgcgr1ly" path="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx" id="1_a6ghd"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a6ghd"]
+data = PackedVector3Array(-0.2638, -0.3713, 0, 0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, 0.3713, 0, -0.2638, 0.3713, 0, -0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, 0.3713, 0, 0.2638, 0.3713, 0)
+
+[node name="SheetOfPaper_A4_2Sided" instance=ExtResource("1_a6ghd")]
+
+[node name="SheetOfPaper_A4_2Sided" parent="." index="0"]
+transform = Transform3D(0, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -1, -1.91069e-15, -4.37114e-08, 0, 0.0138395, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SheetOfPaper_A4_2Sided" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SheetOfPaper_A4_2Sided/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_a6ghd")
