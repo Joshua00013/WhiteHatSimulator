@@ -93,6 +93,8 @@ _data = {
 
 [node name="Laptop" node_paths=PackedStringArray("tab", "login_screen") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
+username = "whitehat"
+password = "whitehat553322"
 tab = NodePath("SubViewport/TabContainer")
 login_screen = NodePath("SubViewport/TabContainer/Login")
 laptop_inv_item = ExtResource("3_62orf")

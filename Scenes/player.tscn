@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://4fjgut4ak6ob"]
+[gd_scene load_steps=10 format=3 uid="uid://4fjgut4ak6ob"]
 
-[ext_resource type="Script" uid="uid://cnwlth5l2crfv" path="res://node_3d.gd" id="1_4flbx"]
+[ext_resource type="Script" path="res://node_3d.gd" id="1_4flbx"]
 [ext_resource type="Resource" uid="uid://ysbc0wl30il1" path="res://Items/player_inventory.tres" id="2_3smsa"]
-[ext_resource type="PackedScene" uid="uid://4d6admfoa0q5" path="res://Scenes/Components/interact_ray.tscn" id="2_6t5aa"]
-[ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
+[ext_resource type="PackedScene" uid="uid://jpkebly5onkg" path="res://Scenes/Components/interact_ray.tscn" id="2_6t5aa"]
+[ext_resource type="Script" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://GUI/Pause Menu/pause_menu.tscn" id="4_vgqql"]
 [ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="7_8erm5"]
@@ -13,9 +13,6 @@ height = 2.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
 height = 2.2
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3smsa"]
-height = 1.14127
 
 [node name="Node3D" type="CharacterBody3D"]
 collision_mask = 5
@@ -70,7 +67,3 @@ text = "Press ESC to exit"
 [node name="PauseMenu" parent="." instance=ExtResource("4_vgqql")]
 
 [node name="InventoryUI" parent="." instance=ExtResource("7_8erm5")]
-
-[node name="HeadCollission" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25172, 0)
-shape = SubResource("CapsuleShape3D_3smsa")
