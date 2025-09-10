@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Shion.glb-c2dd224dbfee235802bb2a94c858f458.sc
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Wisadel.glb-a966a12da2887316b49063e80ab2b9fb.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0

@@ -207,18 +207,20 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.790
 [node name="Koro" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("49_sasc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9747, -0.00113273, 44.1785)
 PersonalComputer = NodePath("../../Computer3")
-target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col3")
+target_area_1 = NodePath("../../Markers/Reception")
 
 [node name="Gigi" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("50_jekl6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.499518, -0.00113344, 20.5286)
 PersonalComputer = NodePath("../../Computer")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/HRVisibleOnScreenNotifier3D/Room/SimpleOfficeChair-col")
 
-[node name="Joe" parent="NPC" instance=ExtResource("51_v1mrv")]
+[node name="Joe" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("51_v1mrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col11")
 
-[node name="Robert" parent="NPC" instance=ExtResource("52_fd3ed")]
+[node name="Robert" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("52_fd3ed")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col13")
 
 [node name="Brian" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("53_v1mrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2441, -0.0011332, 44.1063)
@@ -227,25 +229,29 @@ target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreen
 
 [node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5") instance=ExtResource("68_ovafv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
-target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col12")
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_5 = NodePath("../../Markers/Cafeteria")
 
-[node name="John" parent="NPC" instance=ExtResource("69_owhal")]
+[node name="John" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("69_owhal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col15")
 
-[node name="Sai" parent="NPC" instance=ExtResource("70_uv6w5")]
+[node name="Sai" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("70_uv6w5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col14")
 
 [node name="Walter" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("71_r7bbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1)
 PersonalComputer = NodePath("../../Computer7")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col5")
 
-[node name="Wisadel" parent="NPC" instance=ExtResource("72_e5peh")]
+[node name="Wisadel" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("72_e5peh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col10")
 
-[node name="Shion" parent="NPC" instance=ExtResource("73_f6rfp")]
+[node name="Shion" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("73_f6rfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
+target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col9")
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -1320,6 +1326,15 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 53.6849,
 [node name="SimpleOfficeChair-col12" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 54.1066, 0.252086, 11.5887)
 
+[node name="SimpleOfficeChair-col13" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 32.8261, 0.252086, 1.77982)
+
+[node name="SimpleOfficeChair-col14" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 32.8261, 0.252086, -2.47663)
+
+[node name="SimpleOfficeChair-col15" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 29.8528, 0.252086, 5.08657)
+
 [node name="SimpleOfficeChair-col10" parent="NavigationRegion3D/Objects" instance=ExtResource("22_ueoa1")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 60.0444, 0.25322, 21.9485)
 
@@ -1345,6 +1360,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7271, 1.78271, -1.82909)
 
 [node name="Cafeteria" type="Marker3D" parent="Markers"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.42266, -0.00113297, 53.0446)
+
+[node name="Reception" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.4679, -0.00113273, -2.92516)
 
 [node name="DebugUI" type="CanvasLayer" parent="."]
 

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Robert.glb-bcabd4ea601d994bb6aab13e5732eb45.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0
