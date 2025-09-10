@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxxmt6q0sooxp"]
+
+[ext_resource type="PackedScene" uid="uid://cr85yrvrk6q68" path="res://Assets/Exported3dModel/FlashDriveLowPoly.glb" id="1_40nxo"]
+[ext_resource type="Script" uid="uid://cjcg7r4eyfreh" path="res://Scripts/Components/Minigames/flash_drive_low_poly.gd" id="2_dhl5o"]
+
+[node name="FlashDriveLowPoly" instance=ExtResource("1_40nxo")]
+script = ExtResource("2_dhl5o")

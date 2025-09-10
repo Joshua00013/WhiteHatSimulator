@@ -137,9 +137,8 @@ metadata/_tab_index = 1
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Data_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
+[node name="Data_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-window = NodePath("")
 
 [node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/Data_icon" index="0"]
 icon = ExtResource("6_a8fdl")
@@ -147,9 +146,8 @@ icon = ExtResource("6_a8fdl")
 [node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/Data_icon" index="1"]
 text = "data.sql"
 
-[node name="Godot_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
+[node name="Godot_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-window = NodePath("")
 
 [node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/Godot_icon" index="0"]
 icon = ExtResource("7_tdfle")
@@ -157,9 +155,8 @@ icon = ExtResource("7_tdfle")
 [node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/Godot_icon" index="1"]
 text = "godot.png"
 
-[node name="Text_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
+[node name="Text_icon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-window = NodePath("")
 
 [node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/Text_icon" index="0"]
 icon = ExtResource("8_phuxm")

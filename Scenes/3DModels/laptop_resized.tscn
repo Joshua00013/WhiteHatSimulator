@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=19 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
 [ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="4_62orf"]
+[ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="4_itk1b"]
 [ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/GUI/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
+[ext_resource type="PackedScene" uid="uid://bxxmt6q0sooxp" path="res://Scenes/Components/Minigames/flash_drive_low_poly.tscn" id="7_oho7i"]
+[ext_resource type="Script" uid="uid://c72iqie28grx3" path="res://Scripts/Components/Minigames/laptop_minigame_component.gd" id="8_itk1b"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.635, 0.735)
@@ -91,13 +94,15 @@ _data = {
 &"open_laptop": SubResource("Animation_57jh0")
 }
 
-[node name="Laptop" node_paths=PackedStringArray("tab", "login_screen") instance=ExtResource("1_2ohll")]
+[node name="Laptop" node_paths=PackedStringArray("tab", "login_screen", "minigame") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
 username = "whitehat"
 password = "whitehat553322"
 tab = NodePath("SubViewport/TabContainer")
 login_screen = NodePath("SubViewport/TabContainer/Login")
 laptop_inv_item = ExtResource("3_62orf")
+flashdrive_item = ExtResource("4_itk1b")
+minigame = NodePath("LaptopMinigameComponent")
 
 [node name="laptop_screen" parent="laptop_base" index="1"]
 transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
@@ -148,6 +153,19 @@ metadata/_tab_index = 1
 libraries = {
 &"": SubResource("AnimationLibrary_oho7i")
 }
+
+[node name="FlashDriveLowPoly" parent="." index="5" instance=ExtResource("7_oho7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704168, 0.0189063, 0.0390009)
+
+[node name="LaptopMinigameComponent" type="Node3D" parent="." index="6" node_paths=PackedStringArray("flash_drive", "camera", "laptop_camera")]
+script = ExtResource("8_itk1b")
+flash_drive = NodePath("../FlashDriveLowPoly")
+camera = NodePath("Camera3D")
+laptop_camera = NodePath("../Camera3D")
+flash_drive_item = ExtResource("4_itk1b")
+
+[node name="Camera3D" type="Camera3D" parent="LaptopMinigameComponent" index="0"]
+transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119, 1, 1.07582e-08, -4.23668e-08, -1.38729, 0.229147, -0.0490917)
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="login_successful" from="SubViewport/TabContainer/Login" to="." method="_on_login_login_successful"]

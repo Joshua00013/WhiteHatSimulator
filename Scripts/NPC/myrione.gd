@@ -2,15 +2,18 @@ extends CharacterBody3D
 
 class_name NPC
 
-enum {IDLE, RUN, SIT}
+enum {IDLE, RUN, SIT, SPRINT}
 enum WorkState {WORK, BREAK, CHASE}
 var cur_anim = IDLE
 var sitting := false
 var target_area
+var logged_in := false
 
 var speed = 3
 var run_val = 0
 var sit_val = 0
+
+@export var PersonalComputer : Node3D
 @export var state = WorkState.WORK
 @export var target_area_1 : Node3D
 @export var target_area_2 : Node3D
@@ -60,11 +63,20 @@ func calc_schedule(_day: int, hour: int, _minutes: int):
 		change_target(schedule[hour])
 		
 		if hour >= 8 and hour <= 10:
-			state = WorkState.WORK
+			change_state(WorkState.WORK)
 		elif hour >= 11 and hour <= 13:
-			state = WorkState.BREAK
+			change_state(WorkState.BREAK)
 		elif hour >= 14 and hour <= 17:
-			state = WorkState.WORK
+			change_state(WorkState.WORK)
+			
+	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
+		if logged_in == false:
+			logged_in = true
+			PersonalComputer.login()
+	elif cur_anim == RUN && state == WorkState.BREAK && PersonalComputer != null:
+		if logged_in == true:
+			logged_in = false
+			PersonalComputer.logout()
 
 func change_target(new_target):
 	if new_target == null:
@@ -91,6 +103,9 @@ func handle_animation(delta):
 		SIT:
 			run_val = lerpf(run_val, 0, blend_speed * delta)
 			sit_val = lerpf(sit_val, 1, blend_speed * delta)
+		SPRINT:
+			run_val = lerpf(run_val, 1.5, blend_speed * delta)
+			sit_val = lerpf(sit_val, 0, blend_speed * delta)
 
 func update_tree():
 	animation_tree["parameters/Run/blend_amount"] = run_val
@@ -125,6 +140,8 @@ func _physics_process(delta: float) -> void:
 	elif local_destination.length() <= stop_threshold or navigation_agent_3d.is_navigation_finished():
 		velocity = Vector3.ZERO
 		cur_anim = IDLE
+	elif direction && state == WorkState.CHASE:
+		cur_anim = SPRINT
 	elif direction:
 		cur_anim = RUN
 	else:
@@ -148,6 +165,7 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 func change_state(value):
 	state = value
 	if state == WorkState.CHASE:
+		speed *= 2
 		change_target(GameManager.player)
 		nav_agent_refresh_timer.start()
 
