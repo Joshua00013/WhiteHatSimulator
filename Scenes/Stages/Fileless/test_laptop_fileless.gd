@@ -27,8 +27,7 @@ var active := false
 @onready var animation_player = $AnimationPlayer
 
 var sensitivity = 0.01
-var dragging := false
-var blocked := false 
+var dragging := false 
 var initial_cursor_x = 0.0
 var initial_flashdrive_x
 var initial_flashdrive_z
@@ -82,7 +81,7 @@ func _process(delta):
 				initial_flashdrive_z = flashdrive.position.x
 
 func _input(event): 
-	if event.is_action_pressed("hold") and active and not blocked:
+	if event.is_action_pressed("hold") and active:
 		initial_cursor_x = get_viewport().get_mouse_position().x
 		initial_flashdrive_x = flashdrive.position.z   # starting Z
 		initial_flashdrive_z = flashdrive.position.x   # starting X
