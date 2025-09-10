@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/mococo_hair.glb-9d046b27f386ec0bf00c469ac77d6
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=2.0

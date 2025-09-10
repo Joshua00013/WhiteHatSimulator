@@ -104,12 +104,14 @@ func handle_animation(delta):
 			run_val = lerpf(run_val, 0, blend_speed * delta)
 			sit_val = lerpf(sit_val, 1, blend_speed * delta)
 		SPRINT:
-			run_val = lerpf(run_val, 1.5, blend_speed * delta)
+			run_val = lerpf(run_val, 1, blend_speed * delta)
 			sit_val = lerpf(sit_val, 0, blend_speed * delta)
 
 func update_tree():
 	animation_tree["parameters/Run/blend_amount"] = run_val
 	animation_tree["parameters/Sit/blend_amount"] = sit_val
+	animation_tree.set("parameters/Run/playback_speed", run_val)
+
 
 func randomize_position():
 	var random_position := Vector3.ZERO
@@ -147,12 +149,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		cur_anim = IDLE
 	
-	#Rotation
-	var ROTATION_SPEED = 1
-	var target_rotation := rotation_dir.signed_angle_to(Vector3.MODEL_FRONT, Vector3.DOWN)
-	if abs (target_rotation - rotation.y) > deg_to_rad(100):
-		ROTATION_SPEED = 20 #Rotate faster if more than 60 degrees needed
-	rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
+	##Rotation
+	#var ROTATION_SPEED = 1
+	#var target_rotation := rotation_dir.signed_angle_to(Vector3.MODEL_FRONT, Vector3.DOWN)
+	#if abs (target_rotation - rotation.y) > deg_to_rad(100):
+		#ROTATION_SPEED = 20 #Rotate faster if more than 60 degrees needed
+	#rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
+	
+		# Rotation (yaw only)
+	if direction != Vector3.ZERO:
+		var target_rotation = atan2(direction.x, direction.z)  # yaw angle in radians
+		var ROTATION_SPEED = 5.0  # radians/sec (~286 deg/sec)
+		rotation.y = move_toward(rotation.y, target_rotation, ROTATION_SPEED * delta)
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	if target_area.has_node("Chair"):
