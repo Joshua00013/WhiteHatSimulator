@@ -1,16 +1,16 @@
-[gd_scene load_steps=34 format=3 uid="uid://c651ldtbfalgc"]
+[gd_scene load_steps=45 format=3 uid="uid://c651ldtbfalgc"]
 
 [ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
-[ext_resource type="Script" path="res://Scripts/GUI/desktop.gd" id="1_ootqi"]
+[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="1_ootqi"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_vsxan"]
 [ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="2_4yk5j"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_ootqi"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="3_7e48o"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_7e48o"]
 [ext_resource type="Texture2D" uid="uid://clj3qe45uaet3" path="res://Assets/Illustrator/SQLIcon.png" id="4_gq7c2"]
-[ext_resource type="Script" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="4_pnwk5"]
+[ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="4_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://btcaebtnakb6o" path="res://Assets/Illustrator/ImageIcon.png" id="5_a3c81"]
 [ext_resource type="Texture2D" uid="uid://b0gtdkbrhcgjr" path="res://Assets/Illustrator/TextIcon.png" id="6_d3ylh"]
-[ext_resource type="Script" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
+[ext_resource type="Script" uid="uid://dkuqbxnfaoo1b" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="7_8h5wy"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="7_xi5cb"]
 [ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
@@ -51,11 +51,8 @@ shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.135, 0.05)
 shader_parameter/hole_size = Vector2(3.025, 0.385)
 
-[sub_resource type="Animation" id="Animation_ycoch"]
-resource_name = "Ransomware_password"
-
-[sub_resource type="Animation" id="Animation_pnwk5"]
-resource_name = "decrypt_ransomware_step1"
+[sub_resource type="Animation" id="Animation_7e48o"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,7 +87,73 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [6.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../Ransomware_decrypt/HSplitContainer/CodeEdit:scroll_vertical")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Window/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ycoch"]
+resource_name = "Ransomware_password"
+
+[sub_resource type="Animation" id="Animation_pnwk5"]
+resource_name = "decrypt_ransomware_step1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.185)]
 }
 
 [sub_resource type="Animation" id="Animation_j3jxu"]
@@ -332,38 +395,38 @@ resource_name = "encrypt_ransomware_step2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/0/path = NodePath(".:scroll_vertical")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 0.655)]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 1.37)]
+"values": [Vector2(0.135, 0.655)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scroll_vertical")
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(3.025, 0.18)]
 }
 
 [sub_resource type="Animation" id="Animation_htfik"]
@@ -402,7 +465,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.6)]
+"values": [Vector2(3.025, 0.18)]
 }
 
 [sub_resource type="Animation" id="Animation_wuj5n"]
@@ -441,7 +504,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 1.18)]
+"values": [Vector2(3.025, 0.185)]
 }
 
 [sub_resource type="Animation" id="Animation_a4l02"]
@@ -483,10 +546,419 @@ tracks/2/keys = {
 "values": [4.0]
 }
 
+[sub_resource type="Animation" id="Animation_atxjj"]
+resource_name = "decrypt_ransomware_step1.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.18)]
+}
+
+[sub_resource type="Animation" id="Animation_lko46"]
+resource_name = "encrypt_ransomware_step2.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.85)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.18)]
+}
+
+[sub_resource type="Animation" id="Animation_6er24"]
+resource_name = "encrypt_ransomware_step2.3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.04)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.385)]
+}
+
+[sub_resource type="Animation" id="Animation_k518g"]
+resource_name = "encrypt_ransomware_step2.4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.435)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.385)]
+}
+
+[sub_resource type="Animation" id="Animation_3jqaa"]
+resource_name = "encrypt_ransomware_step2.6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.835)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.205)]
+}
+
+[sub_resource type="Animation" id="Animation_03xvr"]
+resource_name = "encrypt_ransomware_step3.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.465)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.385)]
+}
+
+[sub_resource type="Animation" id="Animation_b0i1v"]
+resource_name = "encrypt_ransomware_step4.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.445)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.395)]
+}
+
+[sub_resource type="Animation" id="Animation_bm3md"]
+resource_name = "encrypt_ransomware_step4.3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.835)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_yptqu"]
+resource_name = "encrypt_ransomware_step4.4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.045)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.425)]
+}
+
+[sub_resource type="Animation" id="Animation_pkhx6"]
+resource_name = "encrypt_ransomware_step2.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.845)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.195)]
+}
+
+[sub_resource type="Animation" id="Animation_wdywc"]
+resource_name = "RansomwareRun"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.97, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 43.99, 80.6, 100.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4yk5j"]
 _data = {
+&"RESET": SubResource("Animation_7e48o"),
+&"RansomwareRun": SubResource("Animation_wdywc"),
 &"Ransomware_password": SubResource("Animation_ycoch"),
 &"decrypt_ransomware_step1": SubResource("Animation_pnwk5"),
+&"decrypt_ransomware_step1.2": SubResource("Animation_atxjj"),
 &"decrypt_ransomware_step2": SubResource("Animation_j3jxu"),
 &"decrypt_ransomware_step3": SubResource("Animation_4yk5j"),
 &"decrypt_ransomware_step4": SubResource("Animation_xi5cb"),
@@ -494,8 +966,17 @@ _data = {
 &"decrypt_ransomware_step6": SubResource("Animation_a3c81"),
 &"decrypt_ransomware_step7": SubResource("Animation_8h5wy"),
 &"encrypt_ransomware_step2": SubResource("Animation_d3ylh"),
+&"encrypt_ransomware_step2.2": SubResource("Animation_lko46"),
+&"encrypt_ransomware_step2.3": SubResource("Animation_6er24"),
+&"encrypt_ransomware_step2.4": SubResource("Animation_k518g"),
+&"encrypt_ransomware_step2.5": SubResource("Animation_pkhx6"),
+&"encrypt_ransomware_step2.6": SubResource("Animation_3jqaa"),
 &"encrypt_ransomware_step3": SubResource("Animation_htfik"),
+&"encrypt_ransomware_step3.2": SubResource("Animation_03xvr"),
 &"encrypt_ransomware_step4": SubResource("Animation_wuj5n"),
+&"encrypt_ransomware_step4.2": SubResource("Animation_b0i1v"),
+&"encrypt_ransomware_step4.3": SubResource("Animation_bm3md"),
+&"encrypt_ransomware_step4.4": SubResource("Animation_yptqu"),
 &"encrypt_ransomware_step5": SubResource("Animation_a4l02")
 }
 
@@ -513,7 +994,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -523,6 +1004,7 @@ key_icon = NodePath("DesktopDefault/Desktop/Key_icon")
 decrypted_message = NodePath("DesktopDefault/DecryptedMessage")
 
 [node name="DesktopDefault" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -687,20 +1169,6 @@ grow_vertical = 0
 text = "simple"
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="DesktopDefault/WindowContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DesktopDefault/WindowContainer/ScrollContainer"]
-layout_mode = 2
-
-[node name="NinePatchRect" parent="DesktopDefault/WindowContainer/ScrollContainer/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
 [node name="DecryptedMessage" type="Label" parent="DesktopDefault"]
 visible = false
 layout_mode = 2
@@ -709,8 +1177,47 @@ theme_override_font_sizes/font_size = 22
 text = "Now the files have been dencrypted. You can now access all the files"
 metadata/_edit_use_anchors_ = true
 
-[node name="Ransomware_encrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation")]
-visible = false
+[node name="Cyber_attack_Cards" type="ScrollContainer" parent="DesktopDefault"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="DesktopDefault/Cyber_attack_Cards"]
+layout_mode = 2
+
+[node name="Ransomware_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
+layout_mode = 2
+
+[node name="Label" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card/MarginContainer/VBoxContainer" index="2"]
+text = "Ransomware is a kind of harmful software that locks your files and asks for money to unlock them. Imagine someone putting a padlock on your school bag and saying you need to pay to get the key. It usually spreads through suspicious emails, links, or downloads, and once it’s in your computer, it blocks you from your own files. The problem is, even if you pay, there’s no promise you’ll get them back, which is why it’s so important to be careful online, keep backups, and update your devices.
+"
+
+[node name="Bruteforce_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
+layout_mode = 2
+
+[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="0"]
+text = "Bruteforce"
+
+[node name="Label" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="2"]
+text = "A brute force attack is when someone tries to guess a password by testing every possible combination until they find the right one. It’s like trying every key on a keychain to open a locked door—slow but effective if the lock (or password) is weak. To prevent this change your password more frequently and use special characters."
+
+[node name="Phishing_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
+layout_mode = 2
+
+[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
+text = "Phishing"
+
+[node name="Fileless_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
+layout_mode = 2
+
+[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Fileless_card/MarginContainer/VBoxContainer" index="0"]
+text = "Fileless"
+
+[node name="DoS_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
+layout_mode = 2
+
+[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/DoS_card/MarginContainer/VBoxContainer" index="0"]
+text = "Denial of Services"
+
+[node name="Ransomware_encrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "window", "finish_btn")]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -718,7 +1225,9 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("6_pnwk5")
 back_button = NodePath("HSplitContainer/HFlowContainer/Buttons/Back")
-animation = NodePath("HSplitContainer/CodeEdit/AnimationPlayer")
+animation = NodePath("HSplitContainer/AnimationPlayer")
+window = NodePath("HSplitContainer/CodeEdit/Window")
+finish_btn = NodePath("HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer/FInish")
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Ransomware_encrypt"]
@@ -769,28 +1278,35 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ransomware_encrypt/HSplitContainer/CodeEdit"]
+[node name="Window" parent="Ransomware_encrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
+visible = false
+layout_mode = 1
+anchor_left = 0.204082
+anchor_top = 0.232441
+anchor_right = 0.810324
+anchor_bottom = 0.777592
+offset_bottom = 3.05176e-05
+
+[node name="Title" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/HBoxContainer" index="0"]
+text = "malware.py"
+
+[node name="VBoxContainer" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer" index="0"]
+theme_override_constants/separation = 12
+
+[node name="ProgressBar" type="ProgressBar" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="FInish" type="Button" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Finish"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ransomware_encrypt/HSplitContainer"]
+root_node = NodePath("../CodeEdit")
 libraries = {
 &"": SubResource("AnimationLibrary_4yk5j")
 }
-
-[node name="RansomwareWindow" parent="Ransomware_encrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchor_left = 0.232893
-anchor_top = 0.200669
-anchor_right = 0.813926
-anchor_bottom = 0.795987
-
-[node name="Title" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow/HBoxContainer" index="0"]
-text = "Window"
-
-[node name="RansomwareApp" type="ProgressBar" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow"]
-layout_mode = 0
-anchor_left = 0.0843835
-anchor_top = 0.273785
-anchor_right = 0.888371
-anchor_bottom = 0.377535
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Ransomware_encrypt/HSplitContainer"]
 layout_mode = 2
@@ -1095,7 +1611,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_4yk5j")
 }
 
-[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" node_paths=PackedStringArray("desktop") instance=ExtResource("3_7e48o")]
+[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 2
 anchors_preset = 0
@@ -1103,7 +1619,6 @@ anchor_left = 0.267707
 anchor_top = 0.262542
 anchor_right = 0.885954
 anchor_bottom = 0.742475
-desktop = NodePath("../../../../DesktopDefault")
 
 [node name="Title" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/HBoxContainer" index="0"]
 text = "decr.py"
@@ -1176,7 +1691,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="ransomware_start" from="DesktopDefault/WindowContainer" to="." method="_on_window_container_ransomware_start"]
 [connection signal="item_hovered" from="DesktopDefault/WindowContainer/RadialMenu" to="DesktopDefault/WindowContainer" method="_on_radial_menu_item_hovered"]
 [connection signal="item_selected" from="DesktopDefault/WindowContainer/RadialMenu" to="DesktopDefault/WindowContainer" method="_on_radial_menu_item_selected"]
-[connection signal="window_exited" from="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow" to="." method="_on_ransomware_window_window_exited"]
+[connection signal="pressed" from="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card/Button" to="." method="_ransomware_button_pressed"]
+[connection signal="pressed" from="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer/FInish" to="." method="_on_finish_pressed"]
 [connection signal="button_down" from="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware_encrypt" method="_on_back_button_down"]
 [connection signal="button_down" from="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware_encrypt" method="_on_next_button_down"]
 [connection signal="pressed" from="DesktopEncrypted/Desktop/Malware_icon/Button" to="." method="_on_button_pressed"]
@@ -1197,7 +1713,12 @@ metadata/_edit_use_anchors_ = true
 [editable path="DesktopDefault/WindowContainer/GodotWindow"]
 [editable path="DesktopDefault/WindowContainer/SQLWindow"]
 [editable path="DesktopDefault/WindowContainer/Text_1Window"]
-[editable path="Ransomware_encrypt/HSplitContainer/CodeEdit/RansomwareWindow"]
+[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card"]
+[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card"]
+[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Phishing_card"]
+[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Fileless_card"]
+[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/DoS_card"]
+[editable path="Ransomware_encrypt/HSplitContainer/CodeEdit/Window"]
 [editable path="DesktopEncrypted/Desktop/Data_icon"]
 [editable path="DesktopEncrypted/Desktop/Godot_icon"]
 [editable path="DesktopEncrypted/Desktop/Text_icon"]
