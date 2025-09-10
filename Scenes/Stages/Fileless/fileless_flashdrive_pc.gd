@@ -5,6 +5,7 @@ extends Node3D
 @export var flashdrive_max_z: float = 0.265
 @export var flashdrive_min_x: float = -1.15
 @export var flashdrive_max_x: float = -0.7
+
 var sensitivity = 0.01
 var dragging := false
 var blocked := false 
@@ -14,6 +15,7 @@ var initial_flashdrive_z
 var move_along_x := false
 var active := false
 
+@onready var screen_camera: Camera3D = $Model/Camera3D
 @onready var usb_camera: Camera3D = $Flashdrivecamera
 @onready var flashdrive: CharacterBody3D = $FlashDriveCollectible
 
@@ -81,3 +83,11 @@ func exit_ui():
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false
 	flashdrive.visible = false
+
+func _on_exploit_3d_body_entered(body: Node3D) -> void:
+	print("nigga")
+	if screen_camera.is_current() == false:
+		GameManager.player.exit_tool_tip.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		screen_camera.current = true
+		GameManager.ui_active = true

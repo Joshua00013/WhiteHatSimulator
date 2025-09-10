@@ -18,6 +18,10 @@ var active := false
 @export var flashdrive_max_x: float = -0.72
 
 @onready var fileless: TabContainer = $SubViewport/TabContainer/Fileless
+@onready var phishing: TabContainer = $SubViewport/TabContainer/Phishing
+@onready var dos: TabContainer = $SubViewport/TabContainer/Dos
+@onready var card_window: TabContainer = $SubViewport/TabContainer/CardWindow
+
 @onready var usb_camera: Camera3D = $Flashdrive_camera
 @onready var flashdrive: CharacterBody3D = $FlashDriveCollectible
 @onready var node_viewport = $SubViewport
@@ -27,7 +31,7 @@ var active := false
 @onready var animation_player = $AnimationPlayer
 
 var sensitivity = 0.01
-var dragging := false 
+var dragging := false
 var initial_cursor_x = 0.0
 var initial_flashdrive_x
 var initial_flashdrive_z
@@ -38,6 +42,7 @@ signal closed
 func _ready():
 	animation_player.play("open_laptop")
 	flashdrive.visible = false
+	
 	
 	fileless.request_exit_laptop.connect(exit_ui)
 	node_area.mouse_entered.connect(_mouse_entered_area)
@@ -51,34 +56,15 @@ func _mouse_exited_area():
 	is_mouse_inside = false
 
 func _process(delta):
+	if CyberattackManager.fileless_selected == true:
+		fileless.visible = true
+	if CyberattackManager.phishing_selected == true:
+		phishing.visible = true
+	if CyberattackManager.dos_selected == true:
+		dos.visible = true
 	if Input.is_action_just_pressed("exit_ui") and active:
 		exit_ui()
-
-	if Input.is_action_pressed("hold") and active and dragging:
-		var current_mouse_pos = get_viewport().get_mouse_position()
-		var horizontal_movement = current_mouse_pos.x - initial_cursor_x
-		
-		if move_along_x:
-			var new_x = initial_flashdrive_z - horizontal_movement * sensitivity * 0.05
-			flashdrive.position.x = clamp(new_x, flashdrive_min_x, flashdrive_max_x)
-			if new_x >= flashdrive_max_x && camera.is_current() == false:
-				GameManager.player.exit_tool_tip.visible = true
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				camera.current = true
-				GameManager.ui_active = true
-				active = true
-				animation.play("yes_flashdrive")
 				
-				if CyberattackManager.fileless_weap_finished == true:
-					animation.play("weaponization_finished")
-		else:
-			var new_z = initial_flashdrive_x + horizontal_movement * sensitivity * 0.05
-			flashdrive.position.z = clamp(new_z, flashdrive_min_z, flashdrive_max_z)
-			
-			if new_z >= flashdrive_max_z:
-				move_along_x = true
-				initial_cursor_x = current_mouse_pos.x
-				initial_flashdrive_z = flashdrive.position.x
 
 func _input(event): 
 	if event.is_action_pressed("hold") and active:
@@ -142,16 +128,15 @@ func _on_interactable_interact_triggered():
 			camera.current = true
 			GameManager.ui_active = true
 			active = true
-			animation.play("no_flashdrive")
+			card_window.visible = true
 	
-	if has_flashdrive():
+	if has_flashdrive() && CyberattackManager.fileless_recon_finished == true:
 		if usb_camera.is_current() == false:
 			GameManager.player.exit_tool_tip.visible = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			usb_camera.current = true
 			GameManager.ui_active = true
 			active = true
-			flashdrive.visible = true
 
 func exit_ui():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -163,9 +148,6 @@ func exit_ui():
 	GameManager.add_item(laptop_inv_item)
 	flashdrive.visible = false
 	#TODO: Create a signal to let the parent know that the laptop is gone. Add a laptop to the player inventory
-	
-func _on_login_login_successful():
-	tab.current_tab = 1
 	
 func free_laptop():
 	closed.emit()
