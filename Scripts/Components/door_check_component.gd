@@ -13,6 +13,6 @@ func _on_area_exited(area: Area3D) -> void:
 	
 	if parent.is_open == true && parent.security_door == true: #Handling of security doors/locked doors
 		area.trigger()
-		parent.locked = true #Lock after door leaves the area
+		#parent.locked = true #Lock after door leaves the area
 	elif parent.is_open == true:
 		area.trigger()

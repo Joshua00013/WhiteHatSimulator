@@ -17,7 +17,7 @@ func start_server():
 		print("Failed to start server")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if tcpserver.is_connection_available() and client == null:
 		client = tcpserver.take_connection()
 		print("Client connected")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfdsy8k3erseu"]
+[gd_scene load_steps=13 format=3 uid="uid://dfdsy8k3erseu"]
 
 [ext_resource type="PackedScene" uid="uid://ugseipi45ywe" path="res://Assets/Exported3dModel/Gigi.glb" id="1_55d3d"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_brddr"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_3rfs0"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_2pfhg"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_3rfs0"]
+[ext_resource type="Script" uid="uid://crltns0px1fim" path="res://Scripts/Components/dialogue_handler_component.gd" id="6_2pfhg"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -38,24 +39,24 @@ script = ExtResource("2_brddr")
 collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.45038, -0.0441553)
+bones/0/position = Vector3(0, 1.4417, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00846575, -0.0567929, 0.990736, -0.123064)
+bones/2/rotation = Quaternion(-0.00647879, -0.0659652, 0.985137, -0.158464)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0273665, -0.0305825, 0.999108, 0.00994936)
+bones/4/rotation = Quaternion(-0.027732, 0.000173199, 0.999597, -0.00603667)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0463167, -0.000399862, -0.0258643, 0.998592)
+bones/5/rotation = Quaternion(-0.105985, -0.00039741, -0.0591841, 0.992605)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.604888, 0.00204106, 0.0546025, 0.794434)
+bones/6/rotation = Quaternion(0.628019, 0.0103138, 0.0679227, 0.77516)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0106791, -0.0607559, 0.991235, 0.116824)
+bones/7/rotation = Quaternion(0.00786807, -0.0464522, 0.987929, 0.147571)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00435081, -0.0316771, 0.999461, -0.00745586)
+bones/9/rotation = Quaternion(-0.00387719, -0.00145272, 0.999946, 0.00950096)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0463167, 0.000399861, 0.0258643, 0.998592)
+bones/10/rotation = Quaternion(-0.105985, 0.00039741, 0.0591841, 0.992605)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.60567, -0.0282175, -0.0364999, 0.794377)
+bones/11/rotation = Quaternion(0.628374, -0.0370266, -0.0505974, 0.775381)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
@@ -81,3 +82,15 @@ prompt_message = "Gigi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_3rfs0")
+
+[node name="DialogueHandlerComponent" type="Label3D" parent="." index="7" node_paths=PackedStringArray("interactable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17772, 0)
+billboard = 1
+script = ExtResource("6_2pfhg")
+interactable = NodePath("../Interactable")
+
+[node name="Timer" type="Timer" parent="DialogueHandlerComponent" index="0"]
+wait_time = 15.0
+one_shot = true
+
+[node name="NavAgentRefreshTimer" type="Timer" parent="." index="8"]

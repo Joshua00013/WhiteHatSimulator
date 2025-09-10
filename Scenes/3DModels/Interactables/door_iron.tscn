@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_qbop1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yx78e"]
-size = Vector3(0.245605, 3.79639, 1.7887)
+size = Vector3(0.213989, 3.79639, 1.7887)
 
 [sub_resource type="Animation" id="Animation_qbop1"]
 length = 0.001
@@ -107,7 +107,7 @@ transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 0, 
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorIron/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00512695, 1.89674, 0.897888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00751156, 1.89622, -0.893871)
 shape = SubResource("BoxShape3D_yx78e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -120,7 +120,7 @@ libraries = {
 collision_layer = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00512695, 1.89674, -0.886769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00513337, 1.89674, 0.887969)
 shape = SubResource("BoxShape3D_yx78e")
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

@@ -84,5 +84,6 @@ func minigame_success():
 	if door.locked == true:
 		door.locked = false
 		door.interactable.trigger()
+		door.player_unlocked = true
 		interactable.set_collision_layer_value(2, false)
 		exit_ui()
