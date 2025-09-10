@@ -14,6 +14,8 @@ var active := false
 @export var tab : TabContainer
 @export var login_screen : Control
 @export var laptop_inv_item : InvItem
+@export var flashdrive_item : InvItem
+@export var minigame : Node3D
 
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $laptop_base/laptop_screen/Screen
@@ -123,7 +125,9 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	node_viewport.push_input(event)
 
 func _on_interactable_interact_triggered():
-	if camera.is_current() == false:
+	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
+		minigame.minigame_start()
+	elif camera.is_current() == false:
 		GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		camera.current = true

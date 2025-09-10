@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1l3s2t2bcv5t"]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D"]
+path_height_offset = 1.0
+avoidance_enabled = true
+debug_enabled = true

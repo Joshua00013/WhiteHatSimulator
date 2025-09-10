@@ -1,83 +1,49 @@
-[gd_scene load_steps=13 format=3 uid="uid://0fkypkbaaqgw"]
+[gd_scene load_steps=11 format=3 uid="uid://0fkypkbaaqgw"]
 
 [ext_resource type="PackedScene" uid="uid://bctqthg8vm5cg" path="res://Assets/Exported3dModel/myrione.glb" id="1_jbe5r"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_p1dbb"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_e5w7g"]
+[ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="3_olryk"]
+[ext_resource type="PackedScene" uid="uid://6xahguv8f3rg" path="res://Scenes/Components/NPC_Parts/collision_shape_3d.tscn" id="4_5yclb"]
+[ext_resource type="PackedScene" uid="uid://vskcj500jrbd" path="res://Scenes/Components/NPC_Parts/animation_tree.tscn" id="5_20lve"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_ndxcc"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="5_nf8c0"]
-[ext_resource type="Script" uid="uid://crltns0px1fim" path="res://Scripts/Components/dialogue_handler_component.gd" id="6_ndxcc"]
+[ext_resource type="PackedScene" uid="uid://dlnvq3kiuxxeo" path="res://Scenes/Components/NPC_Parts/dialogue_handler_component.tscn" id="9_kvdnt"]
+[ext_resource type="PackedScene" uid="uid://cad55in337a26" path="res://Scenes/Components/NPC_Parts/nav_agent_refresh_timer.tscn" id="10_x75sr"]
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ehqv8"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nf8c0"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndxcc"]
-animation = &"run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0p50"]
-animation = &"sitting"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gqh46"]
-graph_offset = Vector2(-129.369, 139.564)
-nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
-nodes/Run/position = Vector2(320, 320)
-nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
-nodes/Sit/position = Vector2(520, 320)
-"nodes/anim idle/node" = SubResource("AnimationNodeAnimation_nf8c0")
-"nodes/anim idle/position" = Vector2(60, 120)
-"nodes/anim run/node" = SubResource("AnimationNodeAnimation_ndxcc")
-"nodes/anim run/position" = Vector2(60, 300)
-"nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
-"nodes/anim sit/position" = Vector2(320, 600)
-nodes/output/position = Vector2(940, 340)
-node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
-
-[node name="myrione" node_paths=PackedStringArray("collision_shape") instance=ExtResource("1_jbe5r")]
+[node name="myrione" instance=ExtResource("1_jbe5r")]
 script = ExtResource("2_p1dbb")
-state = 2
-collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44993, -0.0441553)
+bones/0/position = Vector3(0, 1.44982, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00834898, -0.0573356, 0.990444, -0.125155)
+bones/2/rotation = Quaternion(-0.0083208, -0.0574665, 0.990373, -0.125659)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.027396, -0.0277731, 0.999203, 0.00848477)
+bones/4/rotation = Quaternion(-0.0274028, -0.0271313, 0.999223, 0.00815031)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0517787, -0.000399719, -0.0289144, 0.99824)
+bones/5/rotation = Quaternion(-0.0530261, -0.000399684, -0.029611, 0.998154)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.607046, 0.00280545, 0.055826, 0.792699)
+bones/6/rotation = Quaternion(0.607516, 0.00297288, 0.0560924, 0.792319)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0105138, -0.0599149, 0.991072, 0.11864)
+bones/7/rotation = Quaternion(0.0104739, -0.059712, 0.991032, 0.119078)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00431284, -0.0289161, 0.999555, -0.00590261)
+bones/9/rotation = Quaternion(-0.00430404, -0.0282854, 0.999575, -0.00554789)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0517787, 0.000399719, 0.0289144, 0.99824)
+bones/10/rotation = Quaternion(-0.0530261, 0.000399684, 0.029611, 0.998154)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.607787, -0.0290322, -0.0377933, 0.792669)
+bones/11/rotation = Quaternion(0.608265, -0.0292166, -0.038086, 0.792281)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="2"]
-path_height_offset = 1.0
-avoidance_enabled = true
-debug_enabled = true
+[node name="NavigationAgent3D" parent="." index="2" instance=ExtResource("3_olryk")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+[node name="CollisionShape3D" parent="." index="3" instance=ExtResource("4_5yclb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
-shape = ExtResource("3_e5w7g")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
-tree_root = SubResource("AnimationNodeBlendTree_gqh46")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Run/blend_amount = 0.0
-parameters/Sit/blend_amount = 0.0
+[node name="AnimationTree" parent="." index="4" instance=ExtResource("5_20lve")]
 
 [node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("5_nf8c0")]
 
@@ -88,14 +54,9 @@ prompt_message = "Myrione"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_e5w7g")
 
-[node name="DialogueHandlerComponent" type="Label3D" parent="." index="7" node_paths=PackedStringArray("interactable")]
+[node name="DialogueHandlerComponent" parent="." index="7" node_paths=PackedStringArray("interactable") instance=ExtResource("9_kvdnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17772, 0)
-billboard = 1
-script = ExtResource("6_ndxcc")
 interactable = NodePath("../Interactable")
 
-[node name="Timer" type="Timer" parent="DialogueHandlerComponent" index="0"]
-wait_time = 15.0
-one_shot = true
-
-[node name="NavAgentRefreshTimer" type="Timer" parent="." index="8"]
+[node name="NavAgentRefreshTimer" parent="." index="8" instance=ExtResource("10_x75sr")]
+wait_time = 0.5

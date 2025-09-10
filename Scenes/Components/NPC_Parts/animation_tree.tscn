@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://vskcj500jrbd"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ehqv8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nf8c0"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndxcc"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0p50"]
+animation = &"sitting"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gqh46"]
+nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
+nodes/Run/position = Vector2(320, 320)
+nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
+nodes/Sit/position = Vector2(520, 320)
+"nodes/anim idle/node" = SubResource("AnimationNodeAnimation_nf8c0")
+"nodes/anim idle/position" = Vector2(60, 120)
+"nodes/anim run/node" = SubResource("AnimationNodeAnimation_ndxcc")
+"nodes/anim run/position" = Vector2(60, 300)
+"nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
+"nodes/anim sit/position" = Vector2(320, 600)
+nodes/output/position = Vector2(940, 340)
+node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
+
+[node name="AnimationTree" type="AnimationTree"]
+tree_root = SubResource("AnimationNodeBlendTree_gqh46")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Run/blend_amount = 0.0
+parameters/Sit/blend_amount = 0.0

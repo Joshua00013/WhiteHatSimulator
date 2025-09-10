@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://brrqyxvc4whc0"]
-
-[ext_resource type="PackedScene" uid="uid://dpcvurnt6alxg" path="res://Assets/Exported3dModel/keycard_reader.glb" id="1_t7x0p"]
-
-[node name="keycard_reader" instance=ExtResource("1_t7x0p")]

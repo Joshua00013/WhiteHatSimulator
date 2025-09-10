@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlnvq3kiuxxeo"]
+
+[ext_resource type="Script" uid="uid://crltns0px1fim" path="res://Scripts/Components/dialogue_handler_component.gd" id="1_imt2l"]
+
+[node name="DialogueHandlerComponent" type="Label3D" node_paths=PackedStringArray("interactable")]
+billboard = 1
+script = ExtResource("1_imt2l")
+interactable = NodePath("")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
