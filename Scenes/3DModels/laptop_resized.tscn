@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bsrnyslwr4n0l"]
 
-[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Scenes/Interactables/Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
 [ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
