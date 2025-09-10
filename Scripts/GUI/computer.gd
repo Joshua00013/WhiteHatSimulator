@@ -132,4 +132,10 @@ func exit_ui():
 	
 
 func _on_control_login_successful() -> void:
+	login()
+
+func login():
 	tab.current_tab = 1
+	
+func logout():
+	tab.current_tab = 0

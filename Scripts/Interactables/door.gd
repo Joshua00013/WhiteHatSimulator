@@ -1,10 +1,11 @@
 extends Node3D
 
-@onready var animation_player = $AnimationPlayer
 @onready var interactable: Interactable = $Interactable
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var is_open := false
 
+@export var player_unlocked := false
 @export var security_door := false
 @export var locked : bool = false
 
@@ -13,7 +14,7 @@ func _ready() -> void:
 		interactable.prompt_message = "Locked"
 
 func _on_interactable_interact_triggered():
-	if locked:
+	if locked && player_unlocked == false:
 		#TODO: Add a message saying door is locked
 		return
 	
@@ -26,3 +27,9 @@ func _on_interactable_interact_triggered():
 	else:
 		is_open = false
 		animation_player.play("close")
+		lock()
+
+func lock():
+	if player_unlocked == false:
+		locked = true
+		interactable.prompt_message = "Locked"

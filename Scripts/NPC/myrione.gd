@@ -1,15 +1,17 @@
 extends CharacterBody3D
 
+class_name NPC
+
 enum {IDLE, RUN, SIT}
+enum WorkState {WORK, BREAK, CHASE}
 var cur_anim = IDLE
 var sitting := false
-
 var target_area
 
 var speed = 3
 var run_val = 0
 var sit_val = 0
-
+@export var state = WorkState.WORK
 @export var target_area_1 : Node3D
 @export var target_area_2 : Node3D
 @export var target_area_3 : Node3D
@@ -26,6 +28,7 @@ var schedule : Dictionary = {}
 @export var blend_speed = 15
 @export var collision_shape : CollisionShape3D
 
+@onready var nav_agent_refresh_timer: Timer = $NavAgentRefreshTimer
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -33,6 +36,8 @@ var schedule : Dictionary = {}
 func _ready() -> void:
 	navigation_agent_3d.connect("navigation_finished",_on_navigation_agent_3d_navigation_finished)
 	navigation_agent_3d.connect("velocity_computed",_on_navigation_agent_3d_velocity_computed)
+	nav_agent_refresh_timer.connect("timeout",refresh_agent)
+	DayAndNightManager.time_tick.connect(calc_schedule)
 	
 	schedule = {
 	8: target_area_1,
@@ -45,16 +50,21 @@ func _ready() -> void:
 	15: target_area_8,
 	16: target_area_9,
 	17: target_area_10,
-}
-	
+	}
 	if schedule[8]!=null:
 		target_area = schedule[8]
 		navigation_agent_3d.set_target_position(target_area.global_position)
-	DayAndNightManager.time_tick.connect(calc_schedule)
 
 func calc_schedule(_day: int, hour: int, _minutes: int):
-	if schedule.has(hour) and schedule[hour] != null:
+	if schedule.has(hour) and schedule[hour] != null and state != WorkState.CHASE: #Proceed as usual if not chasing a target
 		change_target(schedule[hour])
+		
+		if hour >= 8 and hour <= 10:
+			state = WorkState.WORK
+		elif hour >= 11 and hour <= 13:
+			state = WorkState.BREAK
+		elif hour >= 14 and hour <= 17:
+			state = WorkState.WORK
 
 func change_target(new_target):
 	if new_target == null:
@@ -92,6 +102,7 @@ func randomize_position():
 	random_position.x = randf_range(-5.0, -5.0)
 
 func _physics_process(delta: float) -> void:
+	
 	handle_animation(delta)
 	update_tree()
 	var destination = navigation_agent_3d.get_next_path_position()
@@ -125,7 +136,6 @@ func _physics_process(delta: float) -> void:
 	if abs (target_rotation - rotation.y) > deg_to_rad(100):
 		ROTATION_SPEED = 20 #Rotate faster if more than 60 degrees needed
 	rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
-	
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	if target_area.has_node("Chair"):
@@ -134,3 +144,12 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity, .25)
 	move_and_slide()
+
+func change_state(value):
+	state = value
+	if state == WorkState.CHASE:
+		change_target(GameManager.player)
+		nav_agent_refresh_timer.start()
+
+func refresh_agent():
+	change_target(GameManager.player)

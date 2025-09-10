@@ -13,7 +13,7 @@ var screen_limit_ratio = 1  # 90% of the screen width
 var active := false
 var last_mouse_y := 192.0 # Initial value of the object position relative to the mouse
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
 
@@ -81,5 +81,6 @@ func minigame_success():
 	if door.locked == true:
 		door.locked = false
 		door.interactable.trigger()
+		door.player_unlocked = true
 		interactable.set_collision_layer_value(2, false)
 		exit_ui()
