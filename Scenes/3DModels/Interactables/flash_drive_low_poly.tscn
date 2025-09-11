@@ -1,5 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://b81xiro3fx3ve"]
+[gd_scene load_steps=8 format=3 uid="uid://b81xiro3fx3ve"]
 
 [ext_resource type="PackedScene" uid="uid://cr85yrvrk6q68" path="res://Assets/Exported3dModel/FlashDriveLowPoly.glb" id="1_87247"]
+[ext_resource type="Shader" uid="uid://c5nbrao2pil" path="res://EnvironmentShaders/shine.gdshader" id="2_yrvle"]
+[ext_resource type="Texture2D" uid="uid://dkenmdb6mpghx" path="res://Assets/Exported3dModel/FlashDriveLowPoly_flashdrive.png" id="3_ouraw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvtfn"]
+render_priority = 0
+shader = ExtResource("2_yrvle")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2uvqo"]
+resource_name = "FlashDriveBase"
+next_pass = SubResource("ShaderMaterial_bvtfn")
+cull_mode = 2
+albedo_color = Color(0.906569, 0.22664, 0.22664, 1)
+roughness = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0www"]
+render_priority = 0
+shader = ExtResource("2_yrvle")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1j4g"]
+resource_name = "Material.023"
+next_pass = SubResource("ShaderMaterial_c0www")
+cull_mode = 2
+albedo_texture = ExtResource("3_ouraw")
+roughness = 0.5
+texture_filter = 2
 
 [node name="FlashDriveLowPoly" instance=ExtResource("1_87247")]
+
+[node name="Flashdrive2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2uvqo")
+surface_material_override/1 = SubResource("StandardMaterial3D_h1j4g")

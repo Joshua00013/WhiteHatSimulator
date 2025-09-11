@@ -1,1 +1,7 @@
 How may I help you?
+- (Lie) I'm here to apply for a job position.
+	I see. Please head to the HR department, first room to the right.
+	Here is a pass that you can show to the guard.
+	set {has_pass} = true
+	do GameManager.dialogue_add_item("Pass")
+- Nothing right now.

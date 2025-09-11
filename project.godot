@@ -36,7 +36,9 @@ directories/dtl_directory={
 "Myrione": "res://Dialogues/Timelines/Myrione.dtl"
 }
 variables={
-"has_coffee": false
+"has_coffee": false,
+"has_id": false,
+"has_pass": false
 }
 layout/style_list=["res://Dialogues/Styles/Default.tres"]
 layout/default_style="res://Dialogues/Styles/Default.tres"

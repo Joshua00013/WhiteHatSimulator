@@ -38,11 +38,23 @@ func remove_item(item:InvItem):
 func check_inv(item:InvItem):
 	return inv.check_inv(item)
 	
-func _dialogue_remove_item(target_item: String):
+func dialogue_remove_item(target_item: String):
+	var item : InvItem
 	match target_item:
 		"Coffee":
-			var item : InvItem = load("res://Items/coffee.tres")
-			inv.remove(item)
+			item = load("res://Items/coffee.tres")
+		"Pass":
+			item = load("res://Items/pass.tres")
+	inv.remove(item)
+
+func dialogue_add_item(target_item: String):
+	var item : InvItem
+	match target_item:
+		"Coffee":
+			item = load("res://Items/coffee.tres")
+		"Pass":
+			item = load("res://Items/pass.tres")
+	inv.add(item)
 
 func adjust_screen_size():
 	var screen_size = DisplayServer.screen_get_size()

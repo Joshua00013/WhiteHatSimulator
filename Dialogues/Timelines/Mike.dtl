@@ -1,7 +1,11 @@
-Show me your ID or i will cut your fucking balls off
-- Show ID
+Show me your ID
+- Show ID | [if {has_id} == true] [else="disable"]
 	Alright, you can go in.
+	[signal arg="corridor_unlocked"]
+- Show Office Pass | [if {has_pass} == true] [else="disable"]
+	Oh, so you here for an interview. Please head right in.
+	[signal arg="corridor_unlocked"]
 - (Lie) I'm here to check on the data server
 	Oh sure, its right behind the security door at the end of the corridor.
 - I don't have one
-	Balls or ID?
+	I can't allow unauthorized people inside

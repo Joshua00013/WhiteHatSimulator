@@ -79,8 +79,7 @@ func initialize_keycard():
 func minigame_success():
 	#TODO: Change the light color to green here
 	if door.locked == true:
-		door.locked = false
+		door.unlock()
 		door.interactable.trigger()
-		door.player_unlocked = true
 		interactable.set_collision_layer_value(2, false)
 		exit_ui()

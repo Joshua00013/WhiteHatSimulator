@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://byb762hkx1ps2"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_oiebl"]
+
+[resource]
+script = ExtResource("1_oiebl")
+name = "Pass"
+description = "A pass granted to non-employees in order to get inside the office."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"
