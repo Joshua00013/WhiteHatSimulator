@@ -71,6 +71,8 @@ layout_mode = 2
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
 layout_mode = 2
+username = "whitehat"
+password = "whitehat553322"
 metadata/_tab_index = 10
 
 [connection signal="boilerplate" from="." to="Fileless" method="_on_change_boilerplate"]
