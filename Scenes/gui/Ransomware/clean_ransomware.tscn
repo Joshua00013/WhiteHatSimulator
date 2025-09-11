@@ -19,14 +19,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 10
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
-visible = false
 layout_mode = 2
 
 [node name="Desktop" parent="DesktopDefault" index="0"]
@@ -70,6 +69,7 @@ visible = false
 layout_mode = 2
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
+visible = false
 layout_mode = 2
 username = "whitehat"
 password = "whitehat553322"

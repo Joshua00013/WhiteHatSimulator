@@ -48,6 +48,22 @@ shader_parameter/hole_size = Vector2(3.565, 0.29)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwum3"]
 
+[sub_resource type="Animation" id="Animation_m86c1"]
+resource_name = "BruteforceWindow"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CodeEdit/Window/CodeEdit:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 220.0]
+}
+
 [sub_resource type="Animation" id="Animation_7o13g"]
 resource_name = "Bruteforce_step_1"
 tracks/0/type = "value"
@@ -73,6 +89,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3.565, 0.29)]
+}
+
+[sub_resource type="Animation" id="Animation_e7cge"]
+resource_name = "Bruteforce_step_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 2.855)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.565, 0.19)]
 }
 
 [sub_resource type="Animation" id="Animation_g1511"]
@@ -210,97 +253,6 @@ tracks/1/keys = {
 "values": [Vector2(3.565, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ihm5t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.115, -0.04)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CodeEdit/Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.565, 0.29)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CodeEdit/Window/CodeEdit:scroll_vertical")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CodeEdit:scroll_vertical")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CodeEdit/Overlay:material:shader")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("Shader_fi43v")]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CodeEdit/Overlay:material")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("ShaderMaterial_lyrax")]
-}
-
-[sub_resource type="Animation" id="Animation_m86c1"]
-resource_name = "BruteforceWindow"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CodeEdit/Window/CodeEdit:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 220.0]
-}
-
 [sub_resource type="Animation" id="Animation_o65mf"]
 resource_name = "Bruteforce_step_7"
 tracks/0/type = "value"
@@ -382,8 +334,8 @@ tracks/1/keys = {
 "values": [Vector2(3.565, 0.395)]
 }
 
-[sub_resource type="Animation" id="Animation_e7cge"]
-resource_name = "Bruteforce_step_10"
+[sub_resource type="Animation" id="Animation_ihm5t"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -394,7 +346,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.115, 2.855)]
+"values": [Vector2(0.115, -0.04)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -406,7 +358,55 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.565, 0.19)]
+"values": [Vector2(3.565, 0.29)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CodeEdit/Window/CodeEdit:scroll_vertical")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CodeEdit:scroll_vertical")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CodeEdit/Overlay:material:shader")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Shader_fi43v")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CodeEdit/Overlay:material")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_lyrax")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g1511"]
@@ -477,9 +477,15 @@ gutters_zero_pad_line_numbers = true
 [node name="Overlay" type="ColorRect" parent="HSplitContainer/CodeEdit"]
 material = SubResource("ShaderMaterial_lyrax")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.03
+anchor_top = -0.042
+anchor_right = 1.353
+anchor_bottom = 1.042
+offset_left = 24.99
+offset_top = 25.116
+offset_right = -294.049
+offset_bottom = -25.116
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
