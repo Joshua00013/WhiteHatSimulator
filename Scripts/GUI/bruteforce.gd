@@ -43,45 +43,45 @@ func set_step(step: int):
 	match step:
 		1: 
 			code_edit.text = bruteforce_code.step_1
-			description.text = "Step 1 – Import the random module:\n\nWe start by importing Python’s random module. This gives us tools to generate random values. Without this, we couldn’t make random guesses."
+			description.text = "step 1 – Import the random module:\n\nWe start by importing Python’s random module. This gives us tools to generate random values. Without this, we couldn’t make random guesses."
 			animation.play("Bruteforce_step_1")
 		2:
-			description.text = "Step 1 – Import the random module:\n\nIt’s like telling Python, ‘Hey, I want to use tools that can generate random numbers or random choices.’ Without this line, the program won’t know how to pick random letters."
+			description.text = "step 1 – Import the random module:\n\nIt’s like telling Python, ‘Hey, I want to use tools that can generate random numbers or random choices.’ Without this line, the program won’t know how to pick random letters."
 		3: 
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2
-			description.text = "Step 2 – Define possible characters:\n\nThe character variable contains all the characters we allow in our password attempts such as:\n\nNumbers (0–9), small letters (a–z, ñ), capital letters (A–Z, Ñ), and even a space."
+			description.text = "step 2 – Define possible characters:\n\nThe character variable contains all the characters we allow in our password attempts such as:\n\nNumbers (0–9), small letters (a–z, ñ), capital letters (A–Z, Ñ), and even a space."
 			animation.play("Bruteforce_step_2")
 		4:
-			description.text = "Step 2 – Define possible characters:\n\nThe character_list variable turn the string into a list of single characters, for example: ['0', '1', 'b', 'Ñ', ' ']. \n\nThis makes it easier for Python to randomly pick letters one by one and try all possible character combinations until it matches the password we entered."
+			description.text = "step 2 – Define possible characters:\n\nThe character_list variable turn the string into a list of single characters, for example: ['0', '1', 'b', 'Ñ', ' ']. \n\nThis makes it easier for Python to randomly pick letters one by one and try all possible character combinations until it matches the password we entered."
 			animation.play("Bruteforce_step_3")
 		5: 
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3
-			description.text = "Step 3 – Setting up the password:\n\nThe user password here is specified as 'Cyper2025', and the computer will try to guess it.\n\nThe computer will combine all possible character combinations stored in character variable."
+			description.text = "step 3 – Setting up the password:\n\nThe user password here is specified as 'Cyper2025', and the computer will try to guess it..\n\nThe computer will combine all possible character combinations stored in character variable."
 			animation.play("Bruteforce_step_4")
 		6:
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3  + bruteforce_code.step_4
-			description.text = "Step 4: Initializing guess variable as the attempt container:\n\nBefore guessing begins, we set variable guess to an empty string. This will later store the computer’s password guesses."
+			description.text = "step 4: Initializing guess variable as the attempt container:\n\nBefore guessing begins, we set variable guess to an empty string. This will later store the computer’s password guesses."
 			animation.play("Bruteforce_step_5")
 		7:
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3  + bruteforce_code.step_4 + bruteforce_code.step_5
-			description.text = "Step 5: The guessing loop:\n\nThis loop will Keep guessing again and again until the guess is exactly the same as the password.The loop won’t stop until the guess variable matches the password."
+			description.text = "step 5: The guessing loop:\n\nThis loop will Keep guessing again and again until the guess is exactly the same as the password.The loop won’t stop until the guess variable matches the password."
 			animation.play("Bruteforce_step_6")
 		8:
-			description.text = "Step 6 – Make a random guess:\n\nThe \"random.choices()\" picks a random characters from the \"character_list\"."
+			description.text = "step 6 – Make a random guess:\n\nIt picks a random characters from the list."
 			animation.play("Bruteforce_step_7")
 		9:
-			description.text = "Step 6 – Make a random guess:\n\nThe \"k=len(password)\" makes sure the guess has the same number of characters as the password."
-			animation.play("Bruteforce_step_7")
-		10:
-			description.text = "Step 6 – Make a random guess:\n\nIt prints the list form so we can see the raw characters, like ['7','a']."
+			description.text = "step 6 – Make a random guess:\n\nIt makes sure the guess has the same number of letters as the password."
 			animation.play("Bruteforce_step_8")
-		11:
-			description.text = "Step 7 – Join characters into a word:\n\nIt convert the list together into a single string, like this Example: ['7','a'] → \"7a\"."
+		10:
+			description.text = "step 6 – Make a random guess:\n\nIt shows the list form so we can see the raw characters, like ['7','a']."
 			animation.play("Bruteforce_step_9")
+		11:
+			description.text = "step 7 – Join characters into a word:\n\nIt convert the list together into a single string, like this Example: ['7','a'] → \"7a\"."
+			animation.play("Bruteforce_step_10")
 		12:
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3  + bruteforce_code.step_4 + bruteforce_code.step_5 + bruteforce_code.step_6
-			description.text = "Step 8 – Print the result:\n\nWhen the loop ends, it means the computer has finally found the correct password combination. Then it will print the matched password."
-			animation.play("Bruteforce_step_10")
+			description.text = "step 8 – Print the result:\n\nWhen the loop ends, it means the computer has finally found the correct password combination. Then it will print the matched password."
+			animation.play("Bruteforce_step_11")
 		13:
 			description.text = "Now lets run the code"
 		14: 

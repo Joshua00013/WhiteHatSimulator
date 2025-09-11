@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://jm5x16eemlpo"]
+[gd_scene load_steps=54 format=3 uid="uid://jm5x16eemlpo"]
 
 [ext_resource type="Script" uid="uid://csujp6x747m4h" path="res://Scenes/Attacks/Final Attack GUI/Phishing/phishing_attack.gd" id="1_3gfa8"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_jjlhw"]
@@ -29,7 +29,7 @@ texture = ExtResource("4_uyh3a")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyh3a"]
 texture = ExtResource("6_po1lb")
 
-[sub_resource type="Shader" id="Shader_jjlhw"]
+[sub_resource type="Shader" id="Shader_sp02v"]
 code = "shader_type canvas_item;
 render_mode blend_mix, unshaded;
 
@@ -59,7 +59,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tc5ac"]
-shader = SubResource("Shader_jjlhw")
+shader = SubResource("Shader_sp02v")
 shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
 shader_parameter/hole_position = Vector2(0.115, 0.045)
 shader_parameter/hole_size = Vector2(3.3, 0.2)
@@ -156,81 +156,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="Animation" id="Animation_0rjsw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Let's open our terminal"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/WindowContainer/deployment/RansomwareApp:value")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [100.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Desktop/WindowContainer/deployment/Label:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Deployed!!!"]
-}
-
 [sub_resource type="Animation" id="Animation_87taf"]
 resource_name = "correct_url"
 tracks/0/type = "value"
@@ -323,7 +248,7 @@ resource_name = "deployment_desktop"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop:visible")
+tracks/0/path = NodePath("PhishingDesktop:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -335,7 +260,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/1/path = NodePath("PhishingDesktop/Desktop/Internet/Button:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -347,7 +272,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/path = NodePath("PhishingDesktop/Desktop/TerminalIcon/Button:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -359,7 +284,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/3/path = NodePath("PhishingDesktop/Desktop/deploy/Button:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -371,7 +296,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/4/path = NodePath("PhishingDesktop/WindowContainer/Label:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -555,7 +480,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop/WindowContainer/deployment/Label:text")
+tracks/0/path = NodePath("PhishingDesktop/WindowContainer/deployment/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -567,7 +492,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/WindowContainer/deployment/RansomwareApp:value")
+tracks/1/path = NodePath("PhishingDesktop/WindowContainer/deployment/RansomwareApp:value")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -579,7 +504,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/2/path = NodePath("PhishingDesktop/WindowContainer/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -733,7 +658,7 @@ resource_name = "pishing_start"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop:visible")
+tracks/0/path = NodePath("PhishingDesktop:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -745,7 +670,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/WindowContainer:visible")
+tracks/1/path = NodePath("PhishingDesktop/WindowContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -757,7 +682,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/WindowContainer/deployment:visible")
+tracks/2/path = NodePath("PhishingDesktop/WindowContainer/deployment:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -769,7 +694,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/3/path = NodePath("PhishingDesktop/WindowContainer/Label:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -781,7 +706,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/4/path = NodePath("PhishingDesktop/Desktop/deploy/Button:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -793,7 +718,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/5/path = NodePath("PhishingDesktop/Desktop/TerminalIcon/Button:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -805,7 +730,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/6/path = NodePath("PhishingDesktop/Desktop/Internet/Button:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1795,7 +1720,7 @@ resource_name = "vscode_desktop"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Desktop:visible")
+tracks/0/path = NodePath("PhishingDesktop:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1807,7 +1732,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/1/path = NodePath("PhishingDesktop/WindowContainer/Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1819,7 +1744,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/2/path = NodePath("PhishingDesktop/Desktop/TerminalIcon/Button:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1831,7 +1756,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Desktop/Desktop/Internet/Button:disabled")
+tracks/3/path = NodePath("PhishingDesktop/Desktop/Internet/Button:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1843,7 +1768,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Desktop/Desktop/deploy/Button:disabled")
+tracks/4/path = NodePath("PhishingDesktop/Desktop/deploy/Button:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -2002,7 +1927,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Desktop:visible")
+tracks/12/path = NodePath("PhishingDesktop:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -2116,7 +2041,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2g0of"]
 _data = {
-&"RESET": SubResource("Animation_0rjsw"),
 &"correct_url": SubResource("Animation_87taf"),
 &"deployment_desktop": SubResource("Animation_7qmae"),
 &"pishing_backend": SubResource("Animation_6ieen"),
@@ -2141,12 +2065,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 script = ExtResource("1_3gfa8")
 animation = NodePath("AnimationPlayer")
 
-[node name="Desktop" type="MarginContainer" parent="."]
+[node name="PhishingDesktop" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -2154,53 +2079,55 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 0
 
-[node name="Desktop" type="VFlowContainer" parent="Desktop"]
+[node name="Desktop" type="VFlowContainer" parent="PhishingDesktop"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="TerminalIcon" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="TerminalIcon" parent="PhishingDesktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Button" parent="Desktop/Desktop/TerminalIcon" index="0"]
+[node name="Button" parent="PhishingDesktop/Desktop/TerminalIcon" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_po1lb")
+disabled = true
 icon = ExtResource("3_sp02v")
 
-[node name="Label" parent="Desktop/Desktop/TerminalIcon" index="1"]
+[node name="Label" parent="PhishingDesktop/Desktop/TerminalIcon" index="1"]
 text = "Terminal"
 
-[node name="Internet" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="Internet" parent="PhishingDesktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Button" parent="Desktop/Desktop/Internet" index="0"]
+[node name="Button" parent="PhishingDesktop/Desktop/Internet" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6udbi")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0rjsw")
-disabled = true
 icon = ExtResource("4_s2eb3")
 
-[node name="Label" parent="Desktop/Desktop/Internet" index="1"]
+[node name="Label" parent="PhishingDesktop/Desktop/Internet" index="1"]
 text = "Internet"
 
-[node name="deploy" parent="Desktop/Desktop" instance=ExtResource("1_jjlhw")]
+[node name="deploy" parent="PhishingDesktop/Desktop" instance=ExtResource("1_jjlhw")]
 layout_mode = 2
 script = null
 
-[node name="Button" parent="Desktop/Desktop/deploy" index="0"]
+[node name="Button" parent="PhishingDesktop/Desktop/deploy" index="0"]
 theme_override_styles/disabled = SubResource("StyleBoxTexture_uyh3a")
+disabled = true
 icon = ExtResource("6_po1lb")
 
-[node name="Label" parent="Desktop/Desktop/deploy" index="1"]
+[node name="Label" parent="PhishingDesktop/Desktop/deploy" index="1"]
 text = "Deploy"
 
-[node name="WindowContainer" type="Control" parent="Desktop" node_paths=PackedStringArray("cyberattack_lbl")]
+[node name="WindowContainer" type="Control" parent="PhishingDesktop" node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("6_6h8qb")
 cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
-[node name="deployment" parent="Desktop/WindowContainer" instance=ExtResource("4_xtrfx")]
+[node name="deployment" parent="PhishingDesktop/WindowContainer" instance=ExtResource("4_xtrfx")]
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.329401
@@ -2212,10 +2139,10 @@ offset_top = 18.0
 offset_right = -3.99988
 offset_bottom = 18.0
 
-[node name="Title" parent="Desktop/WindowContainer/deployment/HBoxContainer" index="0"]
+[node name="Title" parent="PhishingDesktop/WindowContainer/deployment/HBoxContainer" index="0"]
 text = "Deployment"
 
-[node name="RansomwareApp" type="ProgressBar" parent="Desktop/WindowContainer/deployment"]
+[node name="RansomwareApp" type="ProgressBar" parent="PhishingDesktop/WindowContainer/deployment"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0843835
@@ -2224,7 +2151,7 @@ anchor_right = 0.888371
 anchor_bottom = 0.377535
 value = 100.0
 
-[node name="Label" type="Label" parent="Desktop/WindowContainer/deployment"]
+[node name="Label" type="Label" parent="PhishingDesktop/WindowContainer/deployment"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0599175
@@ -2234,7 +2161,7 @@ anchor_bottom = 0.22191
 text = "Deployed!!!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Desktop/WindowContainer"]
+[node name="Label" type="Label" parent="PhishingDesktop/WindowContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.948161
@@ -2243,11 +2170,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
-text = "Let's open our terminal"
+text = "Since you already found the website and written down the URL, let's open the internet and check it"
 metadata/_edit_use_anchors_ = true
 
 [node name="source_code_phishing" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -2256,15 +2182,31 @@ theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="source_code_phishing"]
-visible = false
 layout_mode = 2
 
 [node name="CodeEdit" type="CodeEdit" parent="source_code_phishing/HSplitContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
 theme_override_font_sizes/font_size = 18
+text = "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password_hash);
+
+$stmt->close();
+$conn->close();
+?>"
 scroll_smooth = true
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
@@ -2293,7 +2235,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Website finally deployed let's try to find our first victim by sending an email to them"
+text = "Great! now let's deploy and send them the link"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="source_code_phishing/HSplitContainer/HFlowContainer"]
@@ -2310,7 +2252,6 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
@@ -2319,6 +2260,7 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="FakeNext" type="Button" parent="source_code_phishing/HSplitContainer/HFlowContainer/Buttons"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"
@@ -2436,7 +2378,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_xtrfx")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_87taf")
-placeholder_text = " Type the URL here"
+placeholder_text = " localhost:5000"
 editable = false
 metadata/_edit_use_anchors_ = true
 
@@ -2532,7 +2474,7 @@ anchor_right = 0.480916
 anchor_bottom = 1.1605
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Internet"
+text = "Pu1sefire"
 metadata/_edit_use_anchors_ = true
 
 [node name="Search" type="TextureButton" parent="website/ColorRect/SearchBar"]
@@ -2621,7 +2563,7 @@ anchor_right = 0.742188
 anchor_bottom = 0.944915
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"
+text = "Let's type in the website url, click the search button after"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="website/ColorRect/Google/Label"]
@@ -2637,6 +2579,7 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="website/ColorRect/Google/Label"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -2646,6 +2589,7 @@ anchor_bottom = 1.22727
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6udbi")
+disabled = true
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
@@ -2713,7 +2657,6 @@ text = "Downloads"
 metadata/_edit_use_anchors_ = true
 
 [node name="Company Website" type="ColorRect" parent="website/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.271605
@@ -2897,7 +2840,7 @@ anchor_right = 0.894097
 anchor_bottom = 0.947034
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "This is the company's website, let's try to copy it so we can collect their credentials"
+text = "The website name is different, let's leave it here and see if they spot it"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="website/ColorRect/Company Website/Label"]
@@ -2926,7 +2869,6 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="circlered" type="Panel" parent="website/ColorRect/Company Website"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -2941,9 +2883,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_2g0of")
 }
 
-[connection signal="button_down" from="Desktop/Desktop/TerminalIcon/Button" to="." method="_on_terminal_button_down"]
-[connection signal="button_down" from="Desktop/Desktop/Internet/Button" to="." method="_on_internet_button_down"]
-[connection signal="button_down" from="Desktop/Desktop/deploy/Button" to="." method="_on_deploy_button_down"]
+[connection signal="button_down" from="PhishingDesktop/Desktop/TerminalIcon/Button" to="." method="_on_terminal_button_down"]
+[connection signal="button_down" from="PhishingDesktop/Desktop/Internet/Button" to="." method="_on_internet_button_down"]
+[connection signal="button_down" from="PhishingDesktop/Desktop/deploy/Button" to="." method="_on_deploy_button_down"]
 [connection signal="button_down" from="source_code_phishing/HSplitContainer/HFlowContainer/Buttons/FakeBack" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="source_code_phishing/HSplitContainer/HFlowContainer/Buttons/Next" to="." method="_on_next_button_down"]
 [connection signal="pressed" from="website/ColorRect/SearchBar/Search" to="." method="_search_pressed"]
@@ -2953,7 +2895,7 @@ libraries = {
 [connection signal="button_down" from="website/ColorRect/Company Website/Label/Back" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="website/ColorRect/Company Website/Label/Next" to="." method="_on_next_button_down"]
 
-[editable path="Desktop/Desktop/TerminalIcon"]
-[editable path="Desktop/Desktop/Internet"]
-[editable path="Desktop/Desktop/deploy"]
-[editable path="Desktop/WindowContainer/deployment"]
+[editable path="PhishingDesktop/Desktop/TerminalIcon"]
+[editable path="PhishingDesktop/Desktop/Internet"]
+[editable path="PhishingDesktop/Desktop/deploy"]
+[editable path="PhishingDesktop/WindowContainer/deployment"]
