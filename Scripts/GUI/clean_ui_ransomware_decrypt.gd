@@ -14,7 +14,7 @@ var step: int = 0
 signal ransomware_decrypt_finished
 
 var ransomware_code = {
-	"step_1" : "import os from cryptography.fernet\nimport fernet",
+	"step_1" : "import os from\ncryptography.fernet import fernet",
 	"step_2": "allfiles = []\nfor file in os.listdir():\n\tif file == malware or file == key.key or file == decry:\n\t\tcontinue\n\tif os.path.isfile(file):\n\t\tallfiles.append(file)\n\n",
 	"step_3": "print(allfiles)\n\n",
 	"step_4": "with open('key.key', 'rb') as key:\n\t\tpassword = key.read()\n",
@@ -56,23 +56,23 @@ func set_step(step: int) -> void:
 			animation.play("decrypt_ransomware_step1.3")		
 		2:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2 + ransomware_code.step_3
-			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nOn this part of the code is just collecting the files that will later be decrypted. It looks at everything in the current folder, skips over \"malware.py\", \"key.key\", and \"decr.py\" (so they won’t be touched), and then checks if each item is actually a file, not a folder. All valid files get added to the allfiles[] list, which is then printed so you can see which files are included."
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nOn this part of the code is just collecting the files that will later be decrypted. It looks at file in the current folder, skips over \"malware.py\", \"key.key\", and \"decr.py\" (so they won’t be touched), and then checks if each item is actually a file, not a folder. All valid files get added to the \"allfiles[] list\", which is then printed so we can see which files are included."
 			animation.play("decrypt_ransomware_step3")			
 		3:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4
-			rich_text_label.text = "Step 3: Loadi the \"Password key\"\n\nThe program opens the file named \"key.key\" in binary mode and reads its contents. Those contents are actually the secret Fernet key, and that’s what the program needs in order to unlock, or decrypt, the data."
+			rich_text_label.text = "Step 3: Loading the \"Password key\"\n\nThe program opens the file named \"key.key\" in binary mode and reads its contents. Those contents are actually the secret Fernet key, and that’s what the program needs in order to unlock, or decrypt, the data."
 			animation.play("decrypt_ransomware_step4")
 		4:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
-			rich_text_label.text = "Step 4: Ask for the Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\"."
+			rich_text_label.text = "Step 4: The Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\"."
 			animation.play("decrypt_ransomware_step5")
 		5:	
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
-			rich_text_label.text = "Step 4: Ask for the Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\".\n\n- Then, it asks the user to type the password they received.\n\nThis step is like a security guard at the door.Even if someone stole the real key \"key.key\", they still wouldn’t get inside unless they also knew the secret password."
+			rich_text_label.text = "Step 4: The Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\".\n\n- Then, it asks the user to type the password they received.\n\nThink of this step like having a security guard at the door. Even if someone managed to steal the real key, called \"key.key\", they still couldn’t get inside unless they also knew the secret password."
 			animation.play("decrypt_ransomware_step5.2")						
 		6:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5 + ransomware_code.step_6
-			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n"
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase(password), the decyption program begins the real work:\n\n"
 			animation.play("decrypt_ransomware_step6")
 		7:	
 			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside."
@@ -81,7 +81,7 @@ func set_step(step: int) -> void:
 			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside.\n\n- It uses the Fernet key to decrypt (or “unscramble”) that data."
 			animation.play("decrypt_ransomware_step6.3")
 		9:	
-			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside.\n\n- It uses the Fernet key to decrypt (or “unscramble”) that data.\n\n- It opens the same file again, but this time in write mode, and replaces the scrambled content with the original, readable version."
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside.\n\n- It uses the Fernet key to decrypt (or “unscramble”) that data.\n\n- It opens the same file again, but this time in write mode(wb), and replaces the scrambled content with the original, readable version."
 			animation.play("decrypt_ransomware_step6.4")
 		10:	
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5 + ransomware_code.step_6

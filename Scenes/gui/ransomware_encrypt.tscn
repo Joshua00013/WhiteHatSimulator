@@ -287,30 +287,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 0.64)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 1.605)]
-}
 
 [sub_resource type="Animation" id="Animation_xi5cb"]
 resource_name = "decrypt_ransomware_step4"
@@ -1203,8 +1179,12 @@ _data = {
 &"encrypt_ransomware_step5": SubResource("Animation_a4l02")
 }
 
-[node name="RansomwareEncrypt" type="MarginContainer" node_paths=PackedStringArray("back_button", "animation", "window", "finish_btn")]
-visible = false
+[node name="RansomwareEncrypt" type="MarginContainer" node_paths=PackedStringArray("back_button", "animation", "window")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
@@ -1213,7 +1193,6 @@ script = ExtResource("1_tb1mf")
 back_button = NodePath("HSplitContainer/HFlowContainer/Buttons/Back")
 animation = NodePath("HSplitContainer/AnimationPlayer")
 window = NodePath("HSplitContainer/CodeEdit/Window")
-finish_btn = NodePath("")
 metadata/_tab_index = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="."]
@@ -1224,8 +1203,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
-text = "import os from cryptography.fernet 
-import fernet
+text = "import 
+os from cryptography.fernet import fernet
 
 allfiles = [ ]
 for file in os.listdir():

@@ -5,19 +5,22 @@ extends MarginContainer
 @export var code_edit : CodeEdit
 @export var description : RichTextLabel
 @export var animation : AnimationPlayer
+@export var terminal_window : Control
 
 var step : int = 0
+signal terminal_exited
 
 var bruteforce_code = {
 	"step_1" : "import random\n\n",
 	"step_2" : "character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFGHIJKLMNOPQ\nRSTUVWXYZÑ \"\ncharacter_list = list(character)\n\n",
-	"step_3" : "password = \"Cypher2025 \")\n",
+	"step_3" : "password = \"Cypher2025\")\n",
 	"step_4" : "guess = \"\"\n\n",
 	"step_5" : "while (guess != password):\n\tguess = random.choices(character_list, k=len(password))\n\tprint(guess)\n\tguess = \"\".join(guess)\n\tprint(guess)\n",
 	"step_6" : "print(\"The password is \" + guess)"
 }
 
 func _ready() -> void:
+	terminal_window.visible = false
 	code_edit.text=""
 	description.text = "Brute Force\n\nA brute force attack is a way hackers try to break into a system by guessing the password or key through every possible combination. Instead of using smart tricks, they rely on the computer’s speed to test thousands or even millions of possibilities until the right one works. Think of it like trying to open a lock by testing every single key until one finally fits. While this method always works eventually, it can take a very long time if the password is strong and complex."
 
@@ -53,7 +56,7 @@ func set_step(step: int):
 			animation.play("Bruteforce_step_3")
 		5: 
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3
-			description.text = "Step 3 – Setting up the password:\n\nThe user password here is specified as 'Cyper2025', and the computer will try to guess it..\n\nThe computer will combine all possible character combinations stored in character variable."
+			description.text = "Step 3 – Setting up the password:\n\nThe user password here is specified as 'Cyper2025', and the computer will try to guess it.\n\nThe computer will combine all possible character combinations stored in character variable."
 			animation.play("Bruteforce_step_4")
 		6:
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3  + bruteforce_code.step_4
@@ -64,24 +67,26 @@ func set_step(step: int):
 			description.text = "Step 5: The guessing loop:\n\nThis loop will Keep guessing again and again until the guess is exactly the same as the password.The loop won’t stop until the guess variable matches the password."
 			animation.play("Bruteforce_step_6")
 		8:
-			description.text = "Step 6 – Make a random guess:\n\nIt picks a random characters from the list."
+			description.text = "Step 6 – Make a random guess:\n\nThe \"random.choices()\" picks a random characters from the \"character_list\"."
 			animation.play("Bruteforce_step_7")
 		9:
-			description.text = "Step 6 – Make a random guess:\n\nIt makes sure the guess has the same number of letters as the password."
-			animation.play("Bruteforce_step_8")
+			description.text = "Step 6 – Make a random guess:\n\nThe \"k=len(password)\" makes sure the guess has the same number of characters as the password."
+			animation.play("Bruteforce_step_7")
 		10:
-			description.text = "Step 6 – Make a random guess:\n\nIt shows the list form so we can see the raw characters, like ['7','a']."
-			animation.play("Bruteforce_step_9")
+			description.text = "Step 6 – Make a random guess:\n\nIt prints the list form so we can see the raw characters, like ['7','a']."
+			animation.play("Bruteforce_step_8")
 		11:
 			description.text = "Step 7 – Join characters into a word:\n\nIt convert the list together into a single string, like this Example: ['7','a'] → \"7a\"."
-			animation.play("Bruteforce_step_10")
+			animation.play("Bruteforce_step_9")
 		12:
 			code_edit.text = bruteforce_code.step_1 + bruteforce_code.step_2 + bruteforce_code.step_3  + bruteforce_code.step_4 + bruteforce_code.step_5 + bruteforce_code.step_6
 			description.text = "Step 8 – Print the result:\n\nWhen the loop ends, it means the computer has finally found the correct password combination. Then it will print the matched password."
-			animation.play("Bruteforce_step_11")
+			animation.play("Bruteforce_step_10")
 		13:
 			description.text = "Now lets run the code"
 		14: 
-			queue_free()
-			
-			
+			terminal_window.visible = true
+			animation.play("BruteforceWindow")
+						
+func _on_window_window_exited() -> void:
+	terminal_exited.emit()
