@@ -46,7 +46,7 @@ func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 			pass
 
 		"Fileless":
-			pass
+			current_tab = 5
 		
 		"DOS":
 			pass	
