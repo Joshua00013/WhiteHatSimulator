@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpyjt63bw16vk"]
+
+[ext_resource type="PackedScene" uid="uid://crhf7h83g2riu" path="res://Assets/export_LPOP_FULL/VendingCupCoffee_Grande.fbx" id="1_tcbnm"]
+[ext_resource type="Script" uid="uid://de76j38l43lcv" path="res://Scripts/Interactables/vending_cup_coffee_grande.gd" id="2_6f1ua"]
+[ext_resource type="Resource" uid="uid://xvpierkq3mv3" path="res://Items/coffee.tres" id="3_yfmpw"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="4_6f1ua"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yfmpw"]
+height = 0.376343
+radius = 0.135254
+
+[node name="VendingCupCoffee_Grande" instance=ExtResource("1_tcbnm")]
+script = ExtResource("2_6f1ua")
+resource = ExtResource("3_yfmpw")
+
+[node name="Interactable" parent="." index="2" instance=ExtResource("4_6f1ua")]
+prompt_message = "Take"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186707, 0)
+shape = SubResource("CylinderShape3D_yfmpw")
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

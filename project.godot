@@ -27,13 +27,19 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
-}
+directories/dch_directory={}
 directories/dtl_directory={
+"Alwyn": "res://Dialogues/Timelines/Alwyn.dtl",
+"Koro": "res://Dialogues/Timelines/Koro.dtl",
+"Liz": "res://Dialogues/Timelines/Liz.dtl",
 "Mike": "res://Dialogues/Timelines/Mike.dtl",
 "Myrione": "res://Dialogues/Timelines/Myrione.dtl"
 }
+variables={
+"has_coffee": false
+}
+layout/style_list=["res://Dialogues/Styles/Default.tres"]
+layout/default_style="res://Dialogues/Styles/Default.tres"
 
 [display]
 

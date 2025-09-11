@@ -7,6 +7,7 @@ enum WorkState {WORK, BREAK, CHASE}
 var cur_anim = IDLE
 var sitting := false
 var talking := false
+var idle := false
 var target_area
 var logged_in := false
 
@@ -46,7 +47,7 @@ func _ready() -> void:
 	interactable.connect("interact_triggered",_on_interactable_interact_triggered)
 	
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
-	DayAndNightManager.time_tick.connect(calc_schedule)
+	DayAndNightManager.time_tick_hour.connect(calc_schedule)
 	
 	schedule = {
 	8: target_area_1,
@@ -64,7 +65,7 @@ func _ready() -> void:
 		target_area = schedule[8]
 		navigation_agent_3d.set_target_position(target_area.global_position)
 
-func calc_schedule(_day: int, hour: int, _minutes: int):
+func calc_schedule(hour: int):
 	if schedule.has(hour) and schedule[hour] != null and state != WorkState.CHASE: #Proceed as usual if not chasing a target
 		change_target(schedule[hour])
 		
@@ -85,10 +86,11 @@ func calc_schedule(_day: int, hour: int, _minutes: int):
 			PersonalComputer.logout()
 
 func change_target(new_target):
-	if new_target == null:
+	if new_target == null || new_target == target_area:
 		return
 		
 	sitting = false
+	idle = false
 	target_area =  new_target
 	navigation_agent_3d.set_target_position(new_target.global_position)
 
@@ -131,7 +133,6 @@ func _physics_process(delta: float) -> void:
 	var local_destination = destination - global_position
 	var direction = local_destination.normalized()
 	var new_velocity = direction * speed
-	
 	navigation_agent_3d.set_velocity(new_velocity)
 	
 	var rotation_dir = global_position.direction_to(destination)
@@ -139,7 +140,7 @@ func _physics_process(delta: float) -> void:
 	
 	#Handle animations
 	var stop_threshold := 0.0
-	if talking:
+	if talking || idle:
 		stop_movement()
 		cur_anim = IDLE
 		return
@@ -163,8 +164,13 @@ func _physics_process(delta: float) -> void:
 		rotation.y = move_toward(rotation.y, target_rotation, ROTATION_SPEED * delta)
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
+	if "copy_rotate" in target_area and target_area.copy_rotate:
+		global_rotation = target_area.global_rotation
+		print("ROTATE")
 	if target_area.has_node("Chair"):
 		sit()
+	else:
+		idle = true
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	if talking or sitting:
@@ -193,9 +199,14 @@ func show_dialogoue(dialogue_string):
 	if Dialogic.current_timeline != null:
 		return
 	Dialogic.start(dialogue_string)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	GameManager.ui_active = true
+
+func _on_timeline_ended():
+	talking = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GameManager.ui_active = false
 
 func _on_interactable_interact_triggered() -> void:
 	show_dialogoue(dialogue)
 	
-func _on_timeline_ended():
-	talking = false

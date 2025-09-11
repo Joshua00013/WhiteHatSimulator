@@ -13,12 +13,13 @@ var initial_minutes: int = 30
 
 var time: float = 0.0
 var current_minutes: int = -1
+var current_hour: int = 0
 var current_days: int = 0
 
 signal game_time(time: float)
 signal time_tick(day: int, hour: int, minutes: int)
 signal time_tick_day(day: int)
-
+signal time_tick_hour(hour:int)
 func _ready() ->void:
 	set_initial_time()
 	
@@ -43,6 +44,10 @@ func recalculate_time() -> void:
 	if current_minutes != minutes:
 		current_minutes = minutes
 		time_tick.emit(day, hour, minutes)
+		
+	if current_hour != hour:
+		current_hour = hour
+		time_tick_hour.emit(hour)
 		
 	if  current_days != day:
 		current_days = day

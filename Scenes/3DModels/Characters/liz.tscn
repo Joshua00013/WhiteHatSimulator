@@ -37,27 +37,28 @@ node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, 
 
 [node name="liz_smooth" node_paths=PackedStringArray("collision_shape") instance=ExtResource("1_3qni5")]
 script = ExtResource("2_f4v16")
+dialogue = "Liz"
 collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.443, -0.0441553)
+bones/0/position = Vector3(0, 1.44609, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00679505, -0.0645141, 0.986117, -0.152855)
+bones/2/rotation = Quaternion(-0.00748751, -0.0613252, 0.988146, -0.14054)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.027684, -0.00345899, 0.999602, -0.00415443)
+bones/4/rotation = Quaternion(-0.0275701, -0.0125, 0.999542, 0.000537503)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0989556, -0.000397802, -0.0552589, 0.993556)
+bones/5/rotation = Quaternion(-0.0814362, -0.000398656, -0.0454757, 0.99564)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.625321, 0.00934073, 0.0663447, 0.777486)
+bones/6/rotation = Quaternion(0.618566, 0.00691382, 0.0624225, 0.783219)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00831525, -0.0487282, 0.988531, 0.142698)
+bones/7/rotation = Quaternion(0.00929466, -0.0537123, 0.98975, 0.132001)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00393974, -0.00502205, 0.999952, 0.00750406)
+bones/9/rotation = Quaternion(-0.00408779, -0.0139067, 0.999892, 0.00252673)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0989556, 0.000397802, 0.0552589, 0.993556)
+bones/10/rotation = Quaternion(-0.0814362, 0.000398658, 0.0454757, 0.99564)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.625726, -0.0359915, -0.0489267, 0.777674)
+bones/11/rotation = Quaternion(0.619097, -0.0334088, -0.0447748, 0.783325)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://xvpierkq3mv3"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_ic6kj"]
+
+[resource]
+script = ExtResource("1_ic6kj")
+name = "Coffee"
+description = "A hot cup of coffee."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

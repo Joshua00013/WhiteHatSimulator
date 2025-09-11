@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=86 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -73,8 +73,10 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
+[ext_resource type="Script" uid="uid://dt3afsg6tphbb" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="75_pfx1i"]
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
+[ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]
 [ext_resource type="Script" uid="uid://d157ppus016ub" path="res://Scripts/Debug/fps_counter.gd" id="79_fd3ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
@@ -1362,7 +1364,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7271, 1.78271, -1.82909)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.42266, -0.00113297, 53.0446)
 
 [node name="Reception" type="Marker3D" parent="Markers"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.4679, -0.00113273, -2.92516)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4679, -0.00113273, -2.92516)
+script = ExtResource("74_v1mrv")
+copy_rotate = true
 
 [node name="DebugUI" type="CanvasLayer" parent="."]
 
@@ -1415,3 +1419,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7595, 1.4687, 51.468)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrimeCheckComponent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16972, 0.9021, 1.74832)
 shape = SubResource("BoxShape3D_jekl6")
+
+[node name="VendingCupCoffee_Grande" parent="." instance=ExtResource("77_jekl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2946, 1.8346, 50.5916)

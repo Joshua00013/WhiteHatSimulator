@@ -1,1 +1,8 @@
 I could really use a hot cup of coffee right now
+- Heres a coffee | [if {has_coffee} == true] [else="disable"]
+	do GameManager._dialogue_remove_item("Coffee")
+	Oh thank you!
+	set {has_coffee} = false
+	- What were you talking about with Liz earlier?
+		She's complaining about her computer. Maybe you should go ask her.
+- Same

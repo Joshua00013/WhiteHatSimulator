@@ -37,26 +37,27 @@ node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, 
 
 [node name="Koro" instance=ExtResource("1_3wsxs")]
 script = ExtResource("2_w4y5k")
+dialogue = "Koro"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.45129, -0.0441553)
+bones/0/position = Vector3(0, 1.44459, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00865354, -0.0559193, 0.991196, -0.119699)
+bones/2/rotation = Quaternion(-0.00715039, -0.0628797, 0.987178, -0.146541)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0273096, -0.0362131, 0.998888, 0.012887)
+bones/4/rotation = Quaternion(-0.0276274, -0.00787275, 0.999586, -0.00186507)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.035365, -0.000400097, -0.0197487, 0.999179)
+bones/5/rotation = Quaternion(-0.0904066, -0.00039824, -0.050485, 0.994624)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.600583, 0.000519117, 0.0521743, 0.797858)
+bones/6/rotation = Quaternion(0.62203, 0.00815676, 0.0644288, 0.780295)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0109563, -0.0621664, 0.991499, 0.113776)
+bones/7/rotation = Quaternion(0.00881901, -0.0512919, 0.989175, 0.1372)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00442372, -0.0372107, 0.999242, -0.0105713)
+bones/9/rotation = Quaternion(-0.00401341, -0.00935946, 0.999935, 0.00507536)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.035365, 0.000400097, 0.0197487, 0.999179)
+bones/10/rotation = Quaternion(-0.0904066, 0.000398241, 0.050485, 0.994624)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.601444, -0.0265945, -0.0339312, 0.797751)
+bones/11/rotation = Quaternion(0.622497, -0.0347317, -0.0468985, 0.780444)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]

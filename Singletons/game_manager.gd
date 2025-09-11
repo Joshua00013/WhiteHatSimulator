@@ -17,6 +17,7 @@ var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control
 
+
 @export var test_item: InvItem
 func _ready():
 	match OS.get_name():
@@ -36,7 +37,12 @@ func remove_item(item:InvItem):
 
 func check_inv(item:InvItem):
 	return inv.check_inv(item)
-
+	
+func _dialogue_remove_item(target_item: String):
+	match target_item:
+		"Coffee":
+			var item : InvItem = load("res://Items/coffee.tres")
+			inv.remove(item)
 
 func adjust_screen_size():
 	var screen_size = DisplayServer.screen_get_size()

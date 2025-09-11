@@ -75,7 +75,7 @@ func _physics_process(delta):
 		
 		head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
 		rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
-	
+
 func crouch(delta : float, inactive = false):
 	var target_height : float = crouch_height if inactive == false else stand_height
 	collision_shape.shape.height =lerp(collision_shape.shape.height, target_height, crouch_transition*delta)
