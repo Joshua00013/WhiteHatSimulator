@@ -29,8 +29,8 @@ signal closed
 func _ready():
 	animation_player.play("open_laptop")
 	
-	login_screen.password = password
-	login_screen.username = username
+	#login_screen.password = password
+	#login_screen.username = username
 	
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
@@ -147,8 +147,8 @@ func exit_ui():
 	if flash_drive_inserted:
 		GameManager.add_item(flashdrive_item)
 	
-func _on_login_login_successful():
-	tab.current_tab = 1
+#func _on_login_login_successful():
+	#tab.current_tab = 1
 	
 func free_laptop():
 	closed.emit()

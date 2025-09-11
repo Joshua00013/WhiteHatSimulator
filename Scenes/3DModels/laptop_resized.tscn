@@ -1,17 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=18 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
 [ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
-[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="4_62orf"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="4_itk1b"]
 [ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/GUI/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
 [ext_resource type="PackedScene" uid="uid://bxxmt6q0sooxp" path="res://Scenes/Components/Minigames/flash_drive_low_poly.tscn" id="7_oho7i"]
 [ext_resource type="Script" uid="uid://c72iqie28grx3" path="res://Scripts/Components/Minigames/laptop_minigame_component.gd" id="8_itk1b"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
-size = Vector2(0.635, 0.735)
+size = Vector2(0.63, 0.545)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_57jh0"]
 viewport_path = NodePath("SubViewport")
@@ -94,12 +93,10 @@ _data = {
 &"open_laptop": SubResource("Animation_57jh0")
 }
 
-[node name="Laptop" node_paths=PackedStringArray("tab", "login_screen", "minigame") instance=ExtResource("1_2ohll")]
+[node name="Laptop" node_paths=PackedStringArray("minigame") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
 username = "whitehat"
 password = "whitehat553322"
-tab = NodePath("SubViewport/TabContainer")
-login_screen = NodePath("SubViewport/TabContainer/Login")
 laptop_inv_item = ExtResource("3_62orf")
 flashdrive_item = ExtResource("4_itk1b")
 minigame = NodePath("LaptopMinigameComponent")
@@ -108,7 +105,7 @@ minigame = NodePath("LaptopMinigameComponent")
 transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
 
 [node name="Screen" type="MeshInstance3D" parent="laptop_base/laptop_screen" index="0"]
-transform = Transform3D(-1.76488, 0, -8.74228e-08, 0, 1.20714, 0, 1.5429e-07, 0, -1, 0.00563589, 0.45762, -0.00686061)
+transform = Transform3D(-1.76488, 0, -8.74228e-08, 0, 1.20714, 0, 1.5429e-07, 0, -1, -0.000462141, 0.45762, -0.00686061)
 mesh = SubResource("QuadMesh_oho7i")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_62orf")
@@ -129,28 +126,9 @@ transform = Transform3D(0.0188931, 0, 0, 0, 0.0188931, 0, 0, 0, 0.0188931, -0.09
 shape = SubResource("BoxShape3D_icmsk")
 
 [node name="SubViewport" type="SubViewport" parent="." index="3"]
-size = Vector2i(995, 725)
+size = Vector2i(1280, 720)
 
 [node name="DesktopTabs" parent="SubViewport" index="0" instance=ExtResource("5_57jh0")]
-
-[node name="TabContainer" type="TabContainer" parent="SubViewport" index="1"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-current_tab = 0
-tabs_visible = false
-
-[node name="Login" parent="SubViewport/TabContainer" index="1" instance=ExtResource("4_62orf")]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="DesktopTabs" parent="SubViewport/TabContainer" index="2" instance=ExtResource("5_57jh0")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 libraries = {
@@ -172,5 +150,4 @@ flash_drive_item = ExtResource("4_itk1b")
 transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119, 1, 1.07582e-08, -4.23668e-08, -1.38729, 0.229147, -0.0490917)
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
-[connection signal="login_successful" from="SubViewport/TabContainer/Login" to="." method="_on_login_login_successful"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]
