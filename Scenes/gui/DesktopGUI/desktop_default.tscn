@@ -88,11 +88,10 @@ icon = ExtResource("5_hyjlr")
 [node name="Label" parent="Desktop/Key_icon" index="1"]
 text = "key.key"
 
-[node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("radial_menu", "cyberattack_lbl")]
+[node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("7_pga4f")
-radial_menu = NodePath("")
 cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
