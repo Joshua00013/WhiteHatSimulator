@@ -15,7 +15,7 @@ var ransomware_code = {
 	"step_2": "allfiles = []\nfor file in os.listdir():\n\tif file == malware or file == key.key or file == decry:\n\t\tcontinue\n\tif os.path.isfile(file):\n\t\tallfiles.append(file)\n\n",
 	"step_3": "print(allfiles)\n\n",
 	"step_4": "with open('key.key', 'rb') as key:\n\t\tpassword = key.read()\n",
-	"step_5": "passphrase = 'WhiteHaT'\nuserpass = input('Enter the password you received from us:')\n\n",
+	"step_5": "passphrase = 'WhiteHat'\nuserpass = input('Enter the password you received from us:')\n\n",
 	"step_6": "if userpass == passphrase:\n\tfor file in allfiles:\n\t\twith open(file, \'rb\') as thefile:\n\t\t\t contents = thefile.read()\n\t\tcontent_decr = Fernet(password).decrypt(contents)\n\t\twith open(file, \"wb\") as thefile:\n \t\t\tthefile.write(content_decr)\n\t\tprint(\"You got your files back\')\nelse:\n \tprint('Wrong password! Pay to receive the right password')",
 	
 }
@@ -23,7 +23,7 @@ func _ready() -> void:
 	back_button.disabled = true
 	code_edit.text = ""
 	overlay.visible = false 
-	rich_text_label.text = "This program works like a simple file locker: it looks for files in a folder, skips a few special ones, and then asks the user for a password. If the password matches the one set inside the code (“WhiteHaT”), it uses a secret key stored in 'key.key' to unlock (decrypt) all the files and restore them to their original form. If the password is wrong, it refuses to unlock anything and shows a warning message instead, similar to how ransomware works."
+	rich_text_label.text = "This code is a simple decryption program that scans through all files in the folder, skipping \"malware.py\", \"key.key\", and \"decr.py\". It asks the user for a password and checks if it matches a preset passphrase \"WhiteHat\". If the password is correct, it retrieves the actual encryption key from key.key, uses it with the Fernet library to decrypt each file’s contents, and restores them to their original state. If the password is wrong, the program refuses to decrypt and instead displays a message demanding payment, imitating the behavior of ransomware."
 	
 
 func _on_back_button_down() -> void:
@@ -49,32 +49,45 @@ func set_step(step: int) -> void:
 		1:
 			overlay.visible = true
 			code_edit.text = ransomware_code.step_1
-			rich_text_label.text = "The program uses os to interact with files and folders on your computer and imports Fernet from the cryptography library, a standard method for encrypting and decrypting bytes with a shared key."
-			animation.play("decrypt_ransomware_step1")
+			rich_text_label.text = "Step 1: Importing the Tools\n\nThis part is about imports. The \"os\" module is brought in so the program can look through files and directories, while \"cryptography.fernet\" (with Fernet) is imported to handle the actual encryption and decryption of file contents. In short, \"os\" manages the files, and Fernet provides the security tools."
+			animation.play("decrypt_ransomware_step1.3")		
 		2:
-			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2
-			rich_text_label.text = "It looks at every item in the current folder, skips three special files which are the script itself (malware), the key file (key.key), and a decrypter script (decry), and if the item is an actual file (not a folder), adds it to allfiles."
-			animation.play("decrypt_ransomware_step2")
-		3:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2 + ransomware_code.step_3
-			rich_text_label.text = "This shows what will be processed by printing the list so you can see which files are about to be touched."
-			animation.play("decrypt_ransomware_step3")
-		4:
+			rich_text_label.text = "Step 2: Collecting Files to Encrypt\n\nOn this part of the code is just collecting the files that will later be decrypted. It looks at everything in the current folder, skips over \"malware.py\", \"key.key\", and \"decr.py\" (so they won’t be touched), and then checks if each item is actually a file, not a folder. All valid files get added to the allfiles[] list, which is then printed so you can see which files are included."
+			animation.play("decrypt_ransomware_step3")			
+		3:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4
-			rich_text_label.text = "It loads the secret key from disk by opening key.key in binary mode and reading its bytes, which are the Fernet key used to decrypt the data"
+			rich_text_label.text = "Step 3: Loadi the \"Password key\"\n\nThe program opens the file named \"key.key\" in binary mode and reads its contents. Those contents are actually the secret Fernet key, and that’s what the program needs in order to unlock, or decrypt, the data."
 			animation.play("decrypt_ransomware_step4")
-		5:
+		4:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
-			rich_text_label.text = "It sets a required passphrase, stored in passphrase, and uses input(...) to ask the user to type it, serving as a human check before performing any decryption."
+			rich_text_label.text = "Step 4: Ask for the Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\"."
 			animation.play("decrypt_ransomware_step5")
+		5:	
+			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
+			rich_text_label.text = "Step 4: Ask for the Passphrase(Password)\n\n- Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\".\n\n- Then, it asks the user to type the password they received.\n\nThis step is like a security guard at the door.Even if someone stole the real key \"key.key\", they still wouldn’t get inside unless they also knew the secret password."
+			animation.play("decrypt_ransomware_step5.2")						
 		6:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5 + ransomware_code.step_6
-			rich_text_label.text = "It only continues if the passphrase matches; if the user typed the correct passphrase, it proceeds, otherwise it stops and shows a “wrong password” message."
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n"
 			animation.play("decrypt_ransomware_step6")
-		7:
-			rich_text_label.text = "It decrypts each file in allfiles by opening it to read all bytes, using the Fernet key (previously read from key.key) to decrypt those bytes, then opening the same file again for writing to overwrite it with the decrypted bytes and restore the original content, and finally printing a success message for each file."
+		7:	
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside."
+			animation.play("decrypt_ransomware_step6.2")
+		8:	
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside.\n\n- It uses the Fernet key to decrypt (or “unscramble”) that data."
+			animation.play("decrypt_ransomware_step6.3")
+		9:	
+			rich_text_label.text = "Step 5: Decrypt the Files\n\nIf the user types the correct passphrase, the decyption program begins the real work:\n\n- It opens each encrypted file and reads the scrambled data inside.\n\n- It uses the Fernet key to decrypt (or “unscramble”) that data.\n\n- It opens the same file again, but this time in write mode, and replaces the scrambled content with the original, readable version."
+			animation.play("decrypt_ransomware_step6.4")
+		10:	
+			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5 + ransomware_code.step_6
+			rich_text_label.text = "Step 5: Decrypt the Files\n\n- Finally, it tells the user: “You got your files back.” \n\nAt this point, the files are restored, just like they were before being locked."
+			animation.play("decrypt_ransomware_step6.5")
+		11:
+			rich_text_label.text = "Step 6 : Handle Wrong Passwords\n\n- If the user types the wrong passphrase, the program refuses to continue.\n\nThe files stay locked, and the script shows a threatening message that mimics how real ransomware works: it tells you to pay money to get the right password."
 			animation.play("decrypt_ransomware_step7")
-		8:
+		12:
 			decryptor_window.visible = true
 			#_exit_button_decryptor_window.disabled=true
 			

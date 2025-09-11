@@ -2,12 +2,19 @@ extends MarginContainer
 
 var encrypted := false
 
-func _on_button_button_down() -> void:
-	if encrypted == true:
-		show_pdf_enrypt()
+signal cyberattack_selected(cyberattack)
 
-func show_pdf_enrypt():
-	pass
+func _ransomware_pressed():
+	cyberattack_selected.emit("Ransomware")
 	
-func show_file_enrypt():
-	pass
+func _bruteforce_pressed():
+	cyberattack_selected.emit("Bruteforce")
+	
+func _phishing_pressed():
+	cyberattack_selected.emit("Phishing")
+	
+func _fileless_pressed():
+	cyberattack_selected.emit("Fileless")
+	
+func _dos_pressed():
+	cyberattack_selected.emit("DenialOfService")

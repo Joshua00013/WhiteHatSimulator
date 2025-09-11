@@ -32,3 +32,21 @@ func _ransomware_button_pressed() -> void:
 
 func _on_finish_pressed() -> void:
 		current_tab = 2
+
+
+func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
+	match cyberattack:
+		"Ransomware":
+			current_tab = 1
+			
+		"Bruteforce":
+			current_tab = 4
+		
+		"Phishing":
+			pass
+
+		"Fileless":
+			current_tab = 5
+		
+		"DOS":
+			pass	
