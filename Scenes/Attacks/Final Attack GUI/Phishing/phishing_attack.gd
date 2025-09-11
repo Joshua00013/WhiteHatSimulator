@@ -18,7 +18,7 @@ func _on_deploy_button_down() -> void:
 
 func _search_pressed() -> void:
 	if urlbar.text == url_link:
-		animation.play("correct_url")
+		step += 1
 	else:
 		if urlbar.text != url_link:
 			animation.play("wrong_url")

@@ -1,145 +1,1190 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5ybr4psxlrb6"]
+[gd_scene load_steps=12 format=3 uid="uid://cyrattnnrxu4k"]
 
-[ext_resource type="Texture2D" uid="uid://c5x62prpu6d6m" path="res://Scenes/GUI/Phishing UI/phishing assets/trash.png" id="2_wofe8"]
-[ext_resource type="Texture2D" uid="uid://p636w3knxqpy" path="res://Scenes/GUI/Phishing UI/phishing assets/computer.png" id="3_daqaf"]
-[ext_resource type="PackedScene" uid="uid://cctm4xwevy8od" path="res://Scenes/GUI/Phishing UI/phishing assets/windows_tab_copyingwebsite_complete.tscn" id="4_daqaf"]
-[ext_resource type="Texture2D" uid="uid://cpwbqcusojype" path="res://Scenes/GUI/Phishing UI/phishing assets/folder.png" id="4_w6r3j"]
-[ext_resource type="PackedScene" uid="uid://cajoy080wal4o" path="res://Scenes/GUI/Phishing UI/phishing assets/vscode.tscn" id="4_wofe8"]
-[ext_resource type="PackedScene" uid="uid://cxryhhxmr56v2" path="res://Scenes/GUI/Phishing UI/phishing assets/windows_tab_copyingwebsite.tscn" id="5_wofe8"]
+[ext_resource type="Script" uid="uid://dpn418dc3ynn5" path="res://Scenes/GUI/Phishing UI/phishing.gd" id="1_65cbd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daqaf"]
-bg_color = Color(0.27451, 0.266667, 0.270588, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
+[sub_resource type="Shader" id="Shader_jjlhw"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6r3j"]
-bg_color = Color(0.911527, 0.949603, 0.992647, 1)
-corner_radius_top_left = 28
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 28
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
 
-[node name="Phishing" type="Control"]
-layout_mode = 3
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm60n"]
+shader = SubResource("Shader_jjlhw")
+shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
+shader_parameter/hole_position = Vector2(0.115, 0.045)
+shader_parameter/hole_size = Vector2(3.3, 0.2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojgsj"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[sub_resource type="Animation" id="Animation_g3xo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HTML is done, now let's copy the design using CSS"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:scroll_vertical")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8.0]
+}
+
+[sub_resource type="Animation" id="Animation_65cbd"]
+resource_name = "phishing_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's try to copy the website"]
+}
+
+[sub_resource type="Animation" id="Animation_l74se"]
+resource_name = "phishing_2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Let's try to copy the website", "HTML is done, now let's copy the design using CSS"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["<!DOCTYPE html>
+", "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+", "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+
+<div class=\"login-box\">
+      <form>
+        <label for=\"username\">Username</label>
+        <input type=\"text\" id=\"username\" name=\"username\" 
+		placeholder=\"Enter username\">
+", "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+
+<div class=\"login-box\">
+      <form>
+        <label for=\"username\">Username</label>
+        <input type=\"text\" id=\"username\" name=\"username\" 
+		placeholder=\"Enter username\">
+
+		<label for=\"password\">Password</label>
+        <input type=\"password\" id=\"password\" name=\"password\" 
+		placeholder=\"Enter password\">
+
+		<a href=\"#\" class=\"forgot\">Forgot Password?</a>
+
+", "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+
+<div class=\"login-box\">
+      <form>
+        <label for=\"username\">Username</label>
+        <input type=\"text\" id=\"username\" name=\"username\" 
+		placeholder=\"Enter username\">
+
+		<label for=\"password\">Password</label>
+        <input type=\"password\" id=\"password\" name=\"password\" 
+		placeholder=\"Enter password\">
+
+		<a href=\"#\" class=\"forgot\">Forgot Password?</a>
+
+		<button type=\"submit\">Login</button>
+      </form>
+    </div>
+", "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+
+<div class=\"login-box\">
+      <form>
+        <label for=\"username\">Username</label>
+        <input type=\"text\" id=\"username\" name=\"username\" 
+		placeholder=\"Enter username\">
+
+		<label for=\"password\">Password</label>
+        <input type=\"password\" id=\"password\" name=\"password\" 
+		placeholder=\"Enter password\">
+
+		<a href=\"#\" class=\"forgot\">Forgot Password?</a>
+
+		<button type=\"submit\">Login</button>
+      </form>
+    </div>
+
+		<div class=\"help-banner\">
+      <a href=\"#\">Need help logging in or recovering your account?</a>
+    </div>
+  </div>
+</body>
+</html>"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8lx8m"]
+resource_name = "phishing_3"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 90%;
+  padding: 10px;
+  background-color: #7d36d6; /* purple login button */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 90%;
+  padding: 10px;
+  background-color: #7d36d6; /* purple login button */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+.login-box button:hover {
+  background-color: #5e28a4;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 90%;
+  padding: 10px;
+  background-color: #7d36d6; /* purple login button */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+.login-box button:hover {
+  background-color: #5e28a4;
+}
+
+.help-banner {
+  background-color: #8a2be2; 
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 90%;
+  padding: 10px;
+  background-color: #7d36d6; /* purple login button */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+.login-box button:hover {
+  background-color: #5e28a4;
+}
+
+.help-banner {
+  background-color: #8a2be2; 
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.help-banner a {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+", "body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4; /* matches gray background */
+}
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.error-banner {
+  background-color: #d9534f; /* red banner */
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 15px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 90%;
+  padding: 10px;
+  background-color: #7d36d6; /* purple login button */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+.login-box button:hover {
+  background-color: #5e28a4;
+}
+
+.help-banner {
+  background-color: #8a2be2; 
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.help-banner a {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.help-banner a:hover {
+  text-decoration: underline;
+}"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Now for the design of the website...", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/CodeEdit:scroll_vertical")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.0, 8.0, 16.0, 24.0, 32.0, 47.0, 52.0, 59.0, 66.0, 69.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cp0a6"]
+resource_name = "phishing_4"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["A simple database script to collect information", "All done, let's check our website"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password_hash);
+", "<?php
+// Database connection
+$host = \"localhost\";
+$user = \"dbuser\";
+$pass = \"dbpass\";
+$dbname = \"mydatabase\";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$stmt = $conn->prepare(\"INSERT INTO users (nickname, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password_hash);
+
+$stmt->close();
+$conn->close();
+?>"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_an7l2"]
+resource_name = "start_of_phishing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["⚠️ DANGER: FILELESS MALWARE ALERT ⚠️
+
+Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l74se"]
+_data = {
+&"RESET": SubResource("Animation_g3xo2"),
+&"phishing_1": SubResource("Animation_65cbd"),
+&"phishing_2": SubResource("Animation_l74se"),
+&"phishing_3": SubResource("Animation_8lx8m"),
+&"phishing_4": SubResource("Animation_cp0a6"),
+&"start_of_phishing": SubResource("Animation_an7l2")
+}
+
+[node name="Phishing" type="MarginContainer" node_paths=PackedStringArray("animation")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_65cbd")
+animation = NodePath("AnimationPlayer")
+metadata/_tab_index = 7
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
+theme_override_font_sizes/font_size = 18
+text = "<!DOCTYPE html>
+
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <title>Pulsefire</title>
+  <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+"
+scroll_smooth = true
+scroll_vertical = 8.0
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="HSplitContainer/CodeEdit"]
+visible = false
+material = SubResource("ShaderMaterial_qm60n")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.996078, 0.964706, 0.823529, 1)
+mouse_filter = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.099
-anchor_right = 0.056
-anchor_bottom = 0.099
-offset_left = -40.512
-offset_top = -40.152
-offset_right = 479.488
-offset_bottom = 479.848
-scale = Vector2(0.158468, 0.144459)
-icon = ExtResource("2_wofe8")
+[node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.099
-anchor_right = 0.056
-anchor_bottom = 0.099
-offset_left = -40.512
-offset_top = 215.848
-offset_right = 479.488
-offset_bottom = 735.848
-scale = Vector2(0.158468, 0.144459)
-icon = ExtResource("3_daqaf")
+[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 18
+text = "HTML is done, now let's copy the design using CSS"
+fit_content = true
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.099
-anchor_right = 0.056
-anchor_bottom = 0.099
-offset_left = -40.512
-offset_top = 87.848
-offset_right = 479.488
-offset_bottom = 607.848
-scale = Vector2(0.158468, 0.144459)
-icon = ExtResource("4_w6r3j")
+[node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 165
 
-[node name="Control3" parent="." instance=ExtResource("4_daqaf")]
-layout_mode = 1
-offset_left = 160.0
-offset_top = 16.0
-offset_right = 160.0
-offset_bottom = 16.0
-scale = Vector2(0.577733, 0.577733)
-
-[node name="Control2" parent="." instance=ExtResource("4_wofe8")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0280556
-anchor_top = 0.370296
-anchor_right = 0.437056
-anchor_bottom = 0.802296
-offset_left = -0.320007
-offset_top = 0.0479965
-offset_right = 680.512
-offset_bottom = 368.112
-scale = Vector2(0.414194, 0.425859)
+[node name="Back" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="." instance=ExtResource("5_wofe8")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.451556
-anchor_top = 0.222185
-anchor_right = 0.991556
-anchor_bottom = 0.728185
-offset_left = -0.192017
-offset_top = 0.0240002
-offset_right = 529.728
-offset_bottom = 286.136
-scale = Vector2(0.540078, 0.534204)
+[node name="Next" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ojgsj")
+text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel2" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.4)
-layout_mode = 0
-offset_left = 280.0
-offset_top = 656.0
-offset_right = 1304.0
-offset_bottom = 784.0
-scale = Vector2(0.767188, 0.71223)
-theme_override_styles/panel = SubResource("StyleBoxFlat_daqaf")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l74se")
+}
 
-[node name="Panel3" type="Panel" parent="Panel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.937
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -763.0
-offset_bottom = 0.064003
-theme_override_styles/panel = SubResource("StyleBoxFlat_w6r3j")
-
-[editable path="Control"]
+[connection signal="pressed" from="HSplitContainer/HFlowContainer/Buttons/Next" to="." method="_on_next_pressed"]
