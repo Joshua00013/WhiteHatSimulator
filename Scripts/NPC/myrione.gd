@@ -6,6 +6,7 @@ enum {IDLE, RUN, SIT, SPRINT}
 enum WorkState {WORK, BREAK, CHASE}
 var cur_anim = IDLE
 var sitting := false
+var talking := false
 var target_area
 var logged_in := false
 
@@ -13,6 +14,7 @@ var speed = 3
 var run_val = 0
 var sit_val = 0
 
+@export var dialogue : String
 @export var PersonalComputer : Node3D
 @export var state = WorkState.WORK
 @export var target_area_1 : Node3D
@@ -35,11 +37,15 @@ var schedule : Dictionary = {}
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var interactable: Interactable = $Interactable
 
 func _ready() -> void:
 	navigation_agent_3d.connect("navigation_finished",_on_navigation_agent_3d_navigation_finished)
 	navigation_agent_3d.connect("velocity_computed",_on_navigation_agent_3d_velocity_computed)
 	nav_agent_refresh_timer.connect("timeout",refresh_agent)
+	interactable.connect("interact_triggered",_on_interactable_interact_triggered)
+	
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	DayAndNightManager.time_tick.connect(calc_schedule)
 	
 	schedule = {
@@ -112,7 +118,6 @@ func update_tree():
 	animation_tree["parameters/Sit/blend_amount"] = sit_val
 	animation_tree.set("parameters/Run/playback_speed", run_val)
 
-
 func randomize_position():
 	var random_position := Vector3.ZERO
 	random_position.z = randf_range(-5.0, -5.0)
@@ -134,10 +139,13 @@ func _physics_process(delta: float) -> void:
 	
 	#Handle animations
 	var stop_threshold := 0.0
-	if sitting:
-		velocity = Vector3.ZERO
+	if talking:
+		stop_movement()
+		cur_anim = IDLE
+		return
+	elif sitting:
+		stop_movement()
 		cur_anim = SIT
-		move_and_slide()
 		return
 	elif local_destination.length() <= stop_threshold or navigation_agent_3d.is_navigation_finished():
 		velocity = Vector3.ZERO
@@ -148,14 +156,6 @@ func _physics_process(delta: float) -> void:
 		cur_anim = RUN
 	else:
 		cur_anim = IDLE
-	
-	##Rotation
-	#var ROTATION_SPEED = 1
-	#var target_rotation := rotation_dir.signed_angle_to(Vector3.MODEL_FRONT, Vector3.DOWN)
-	#if abs (target_rotation - rotation.y) > deg_to_rad(100):
-		#ROTATION_SPEED = 20 #Rotate faster if more than 60 degrees needed
-	#rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
-	
 		# Rotation (yaw only)
 	if direction != Vector3.ZERO:
 		var target_rotation = atan2(direction.x, direction.z)  # yaw angle in radians
@@ -167,8 +167,16 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 		sit()
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
+	if talking or sitting:
+		stop_movement()
+		return
 	velocity = velocity.move_toward(safe_velocity, .25)
 	move_and_slide()
+
+func stop_movement():
+	velocity = Vector3.ZERO
+	move_and_slide()
+	return
 
 func change_state(value):
 	state = value
@@ -179,3 +187,15 @@ func change_state(value):
 
 func refresh_agent():
 	change_target(GameManager.player)
+
+func show_dialogoue(dialogue_string):
+	talking = true
+	if Dialogic.current_timeline != null:
+		return
+	Dialogic.start(dialogue_string)
+
+func _on_interactable_interact_triggered() -> void:
+	show_dialogoue(dialogue)
+	
+func _on_timeline_ended():
+	talking = false
