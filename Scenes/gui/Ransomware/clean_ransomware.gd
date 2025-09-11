@@ -8,31 +8,12 @@ extends TabContainer
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
 
-
-#func _on_ransomware_window_window_exited() -> void:
-	#current_tab = 2
-
-
-func _on_button_button_down() -> void:
-	current_tab = 3
-
-
-
 func _on_password_check_component_correct_password() -> void:
 	current_tab = 0
 	malware_icon.visible = true
 	decr_icon.visible = true
 	key_icon.visible = true
 	decrypted_message.visible = true
-
-
-func _ransomware_button_pressed() -> void:
-	current_tab = 1
-
-
-func _on_finish_pressed() -> void:
-		current_tab = 2
-
 
 func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 	match cyberattack:
@@ -50,3 +31,12 @@ func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 		
 		"DOS":
 			pass	
+
+func _on_window_window_exited() -> void:
+	current_tab = 2
+
+func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
+	current_tab = 3
+
+func _on_ransomware_decrypt_ransomware_decrypt_finished() -> void:
+	current_tab = 0
