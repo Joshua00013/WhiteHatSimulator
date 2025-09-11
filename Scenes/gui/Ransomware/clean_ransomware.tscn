@@ -2172,6 +2172,7 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
+visible = false
 layout_mode = 2
 
 [node name="Window" parent="RansomwareEncrypt/HSplitContainer/CodeEdit" index="7"]
@@ -2214,7 +2215,6 @@ text = "root@cali :~ # msfpoison -p windows/meterpreter/reverse_tcp LHOST=
 
 [-] No platform was selected, choosing Msf::Module::Platform::Windows 
 from the payload"
-scroll_vertical = 6.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
