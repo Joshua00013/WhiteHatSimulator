@@ -10,7 +10,7 @@ signal boilerplate
 signal listener
 
 func _ready() -> void:
-	desktop_default.visible = true
+	pass
 
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
@@ -64,3 +64,7 @@ func _on_phishing_change_to_website() -> void:
 
 func _on_phishing_website_change_to_terminal() -> void:
 	current_tab = 7
+
+
+func _on_login_login_successful() -> void:
+	current_tab = 0

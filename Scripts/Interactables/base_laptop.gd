@@ -8,6 +8,7 @@ var last_event_pos2D = null
 var last_event_time: float = -1.0
 
 var active := false
+var flash_drive_inserted := false
 
 @export var username: String
 @export var password : String
@@ -143,6 +144,8 @@ func exit_ui():
 	GameManager.ui_active = false
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
+	if flash_drive_inserted:
+		GameManager.add_item(flashdrive_item)
 	
 func _on_login_login_successful():
 	tab.current_tab = 1
@@ -150,3 +153,9 @@ func _on_login_login_successful():
 func free_laptop():
 	closed.emit()
 	call_deferred("queue_free")
+
+
+func _on_laptop_minigame_component_minigame_finished() -> void:
+	active = true
+	flash_drive_inserted = true
+	camera.current = true

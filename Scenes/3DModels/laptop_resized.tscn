@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bsrnyslwr4n0l"]
 
-[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Scenes/Interactables/Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
+[ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_57jh0"]
 [ext_resource type="Resource" uid="uid://cvrsfb05tresp" path="res://Items/laptop.tres" id="3_62orf"]
@@ -131,7 +131,10 @@ shape = SubResource("BoxShape3D_icmsk")
 [node name="SubViewport" type="SubViewport" parent="." index="3"]
 size = Vector2i(995, 725)
 
-[node name="TabContainer" type="TabContainer" parent="SubViewport" index="0"]
+[node name="DesktopTabs" parent="SubViewport" index="0" instance=ExtResource("5_57jh0")]
+
+[node name="TabContainer" type="TabContainer" parent="SubViewport" index="1"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -156,6 +159,7 @@ libraries = {
 
 [node name="FlashDriveLowPoly" parent="." index="5" instance=ExtResource("7_oho7i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704168, 0.0189063, 0.0390009)
+visible = false
 
 [node name="LaptopMinigameComponent" type="Node3D" parent="." index="6" node_paths=PackedStringArray("flashdrive", "camera", "laptop_camera")]
 script = ExtResource("8_itk1b")
@@ -169,3 +173,4 @@ transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="login_successful" from="SubViewport/TabContainer/Login" to="." method="_on_login_login_successful"]
+[connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]

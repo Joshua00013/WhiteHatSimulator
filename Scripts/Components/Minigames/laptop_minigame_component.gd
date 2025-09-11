@@ -31,6 +31,11 @@ func _process(_delta):
 		if move_along_x:
 			var new_x = initial_flashdrive_z - horizontal_movement * sensitivity * 0.1
 			flashdrive.position.x = clamp(new_x, x_snap_position.x, laptop_snap_position.x)
+			
+			# SUCCESS: flashdrive fully plugged
+			if is_equal_approx(flashdrive.position.x, laptop_snap_position.x):
+				active = false
+				minigame_finished.emit()
 		else:
 			var new_z = initial_flashdrive_x + horizontal_movement * sensitivity * 0.08
 			flashdrive.position.z = clamp(new_z, position_minimum_x.z, x_snap_position.z)
@@ -45,15 +50,15 @@ func _input(event):
 		initial_flashdrive_x = flashdrive.position.z   # starting Z
 		initial_flashdrive_z = flashdrive.position.x   # starting X
 		dragging = true
-	elif event.is_action_released("hold"):
+	elif event.is_action_released("hold") and active:
 		dragging = false
 
 func initialize_minigame():
+	flashdrive.show()
 	flashdrive.position = starting_position
 	camera.current = true
 
 func minigame_start() -> void:
-	
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = false #Change Android UI visibility to hidden
