@@ -1,0 +1,226 @@
+[gd_scene load_steps=9 format=3 uid="uid://4g07llena6ub"]
+
+[ext_resource type="Script" uid="uid://cj8kbppv1mu68" path="res://Scripts/GUI/post_ransomware_encrypt.gd" id="1_qli7n"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_ebhja"]
+[ext_resource type="Texture2D" uid="uid://clj3qe45uaet3" path="res://Assets/Illustrator/SQLIcon.png" id="3_1kqxe"]
+[ext_resource type="Texture2D" uid="uid://btcaebtnakb6o" path="res://Assets/Illustrator/ImageIcon.png" id="4_svgyg"]
+[ext_resource type="Texture2D" uid="uid://b0gtdkbrhcgjr" path="res://Assets/Illustrator/TextIcon.png" id="5_jebyr"]
+[ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="6_2t71g"]
+[ext_resource type="Script" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="8_cclec"]
+
+[node name="PostRansomwareEncrypt" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_qli7n")
+metadata/_tab_index = 2
+
+[node name="Desktop" type="VFlowContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
+layout_mode = 2
+window = NodePath("../../WindowContainer/SQLWindow")
+
+[node name="Button" parent="Desktop/Data_icon" index="0"]
+icon = ExtResource("3_1kqxe")
+
+[node name="Label" parent="Desktop/Data_icon" index="1"]
+text = "data.sql"
+
+[node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
+layout_mode = 2
+window = NodePath("../../WindowContainer/GodotWindow")
+
+[node name="Button" parent="Desktop/Godot_icon" index="0"]
+icon = ExtResource("4_svgyg")
+
+[node name="Label" parent="Desktop/Godot_icon" index="1"]
+text = "godot.png"
+
+[node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
+layout_mode = 2
+window = NodePath("../../WindowContainer/TextWindow")
+
+[node name="Button" parent="Desktop/Text_icon" index="0"]
+icon = ExtResource("5_jebyr")
+
+[node name="Label" parent="Desktop/Text_icon" index="1"]
+text = "text.txt"
+
+[node name="Malware_icon" parent="Desktop" instance=ExtResource("2_ebhja")]
+layout_mode = 2
+script = null
+
+[node name="Button" parent="Desktop/Malware_icon" index="0"]
+icon = ExtResource("6_2t71g")
+
+[node name="Label" parent="Desktop/Malware_icon" index="1"]
+text = "malware.py"
+
+[node name="Key_icon" parent="Desktop" instance=ExtResource("2_ebhja")]
+layout_mode = 2
+
+[node name="Button" parent="Desktop/Key_icon" index="0"]
+icon = ExtResource("6_2t71g")
+
+[node name="Label" parent="Desktop/Key_icon" index="1"]
+text = "key.key"
+
+[node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("7_t7dtt")
+cyberattack_lbl = NodePath("Label")
+ransomware_recon_done = true
+
+[node name="GodotWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
+visible = false
+layout_mode = 1
+anchor_left = 0.392015
+anchor_top = 0.162207
+anchor_right = 0.95735
+anchor_bottom = 0.737458
+
+[node name="Title" parent="WindowContainer/GodotWindow/HBoxContainer" index="0"]
+text = "godot.png"
+
+[node name="MarginContainer2" type="MarginContainer" parent="WindowContainer/GodotWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0930232
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="WindowContainer/GodotWindow/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "hsbhfieurmzbhiwwefpwbhabewibdjs"
+metadata/_edit_use_anchors_ = true
+
+[node name="SQLWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
+visible = false
+layout_mode = 1
+anchor_left = 0.391107
+anchor_top = 0.135452
+anchor_right = 0.90326
+anchor_bottom = 0.715698
+
+[node name="Title" parent="WindowContainer/SQLWindow/HBoxContainer" index="0"]
+text = "data.sql"
+
+[node name="MarginContainer2" type="MarginContainer" parent="WindowContainer/SQLWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0930232
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="WindowContainer/SQLWindow/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "jbqisbsifsbcsierqobamfkdoneuvindfjxf"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
+visible = false
+layout_mode = 1
+anchor_left = 0.342105
+anchor_top = 0.0769231
+anchor_right = 0.854258
+anchor_bottom = 0.65717
+
+[node name="Title" parent="WindowContainer/TextWindow/HBoxContainer" index="0"]
+text = "text.txt"
+
+[node name="MarginContainer2" type="MarginContainer" parent="WindowContainer/TextWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0930232
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="WindowContainer/TextWindow/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "jiaoosfbmsntigtwpqkvmdvuwtrovmiel"
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = -25.0
+
+[node name="Label" type="Label" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0154265
+anchor_top = 0.958194
+anchor_right = 0.99637
+anchor_bottom = 1.01003
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.886216
+anchor_top = -15.0862
+anchor_right = 0.986035
+anchor_bottom = -15.0009
+offset_left = -1.61053
+offset_top = 9031.54
+offset_right = -1.61047
+offset_bottom = 9031.54
+grow_horizontal = 0
+text = "Next"
+
+[connection signal="pressed" from="WindowContainer/Button" to="." method="_on_button_pressed"]
+
+[editable path="Desktop/Data_icon"]
+[editable path="Desktop/Godot_icon"]
+[editable path="Desktop/Text_icon"]
+[editable path="Desktop/Malware_icon"]
+[editable path="Desktop/Key_icon"]
+[editable path="WindowContainer/GodotWindow"]
+[editable path="WindowContainer/SQLWindow"]
+[editable path="WindowContainer/TextWindow"]
+[editable path="WindowContainer/KeyWindow"]

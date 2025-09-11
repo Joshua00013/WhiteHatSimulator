@@ -19,6 +19,8 @@ var ransomware_code = {
 	"step_5": "print('All your files have been encrypted')\n",
 	
 }
+signal ransomware_encrypt_finished
+
 func _ready() -> void:
 	back_button.disabled = true
 	code_edit.text = ""
@@ -103,6 +105,9 @@ func set_step(step: int) -> void:
 		16:
 			window.visible=true
 			animation.play("RansomwareRun")
-			finish_btn.visible = true
 			
  
+
+
+func _on_window_window_exited() -> void:
+	ransomware_encrypt_finished.emit()

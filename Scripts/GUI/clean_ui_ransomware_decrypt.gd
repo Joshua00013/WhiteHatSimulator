@@ -10,6 +10,9 @@ extends MarginContainer
 @export var _exit_button_decryptor_window : Button
 
 var step: int = 0
+
+signal ransomware_decrypt_finished
+
 var ransomware_code = {
 	"step_1" : "import os from cryptography.fernet\nimport fernet",
 	"step_2": "allfiles = []\nfor file in os.listdir():\n\tif file == malware or file == key.key or file == decry:\n\t\tcontinue\n\tif os.path.isfile(file):\n\t\tallfiles.append(file)\n\n",
@@ -92,4 +95,5 @@ func set_step(step: int) -> void:
 			#_exit_button_decryptor_window.disabled=true
 			
 			
-			
+func _on_password_check_component_correct_password() -> void:
+	ransomware_decrypt_finished.emit()
