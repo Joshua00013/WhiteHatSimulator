@@ -86,7 +86,7 @@ func calc_schedule(hour: int):
 			PersonalComputer.logout()
 
 func change_target(new_target):
-	if new_target == null || new_target == target_area:
+	if new_target == null:
 		return
 		
 	sitting = false
