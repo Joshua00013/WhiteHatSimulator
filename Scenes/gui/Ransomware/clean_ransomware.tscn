@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 10
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -30,11 +30,7 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 visible = false
 layout_mode = 2
 
-[node name="Desktop" parent="DesktopDefault" index="0"]
-visible = false
-
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
-visible = false
 layout_mode = 2
 
 [node name="PostRansomwareEncrypt" parent="." instance=ExtResource("4_atxjj")]
@@ -72,6 +68,7 @@ visible = false
 layout_mode = 2
 
 [node name="DDOSResult" parent="." instance=ExtResource("12_ojgsj")]
+visible = false
 layout_mode = 2
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
@@ -108,10 +105,10 @@ metadata/_tab_index = 11
 [editable path="DesktopDefault/WindowContainer/KeyWindow"]
 [editable path="DesktopDefault/WindowContainer/MalwareWindow"]
 [editable path="DesktopDefault/WindowContainer/DecryWindow"]
-[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Ransomware_card"]
-[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Bruteforce_card"]
-[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Phishing_card"]
-[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/Fileless_card"]
-[editable path="DesktopDefault/Cyber_attack_Cards/VBoxContainer/DoS_card"]
+[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Ransomware_card"]
+[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Bruteforce_card"]
+[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Phishing_card"]
+[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Fileless_card"]
+[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/DoS_card"]
 [editable path="RansomwareEncrypt"]
 [editable path="RansomwareEncrypt/HSplitContainer/CodeEdit/Window"]

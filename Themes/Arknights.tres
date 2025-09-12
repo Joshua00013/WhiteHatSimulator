@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cgx7d6dgoy5t3"]
+
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="1_7d0ro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1slqh"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgb2x"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_7d0ro")
+Button/styles/hover = SubResource("StyleBoxFlat_1slqh")
+Button/styles/normal = SubResource("StyleBoxFlat_xgb2x")
+Label/colors/font_color = Color(1, 1, 1, 0.486275)
+Label/fonts/font = ExtResource("1_7d0ro")

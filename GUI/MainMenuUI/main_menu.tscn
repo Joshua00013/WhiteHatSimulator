@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw63rufk8of5w"]
+[gd_scene load_steps=9 format=3 uid="uid://bw63rufk8of5w"]
 
 [ext_resource type="Script" uid="uid://skwa24u0pu8" path="res://GUI/MainMenuUI/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="1_v5uxc"]
 [ext_resource type="PackedScene" uid="uid://cj1bwed1k0ycb" path="res://GUI/Settings/settings.tscn" id="2_amrsn"]
+
+[sub_resource type="Theme" id="Theme_lfg1o"]
+Label/fonts/font = ExtResource("1_v5uxc")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vccqd"]
 bg_color = Color(0, 0, 0, 1)
@@ -45,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_lfg1o")
 script = ExtResource("1_7vrkn")
 metadata/_edit_use_anchors_ = true
 
@@ -78,7 +83,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.185981, 0.185981, 0.185981, 1)
 theme_override_constants/shadow_offset_y = 30
 theme_override_font_sizes/font_size = 63
 text = "White Hat Simulator"

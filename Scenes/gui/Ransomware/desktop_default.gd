@@ -1,7 +1,8 @@
 extends MarginContainer
 
 var encrypted := false
-
+@export var shader: ColorRect
+@export var cards_container: ScrollContainer
 signal cyberattack_selected(cyberattack)
 
 func _ransomware_pressed():
@@ -18,3 +19,11 @@ func _fileless_pressed():
 	
 func _dos_pressed():
 	cyberattack_selected.emit("DOS")
+
+func hide_cards():
+	shader.hide()
+	cards_container.hide()
+	
+func show_cards():
+	shader.show()
+	cards_container.show()

@@ -1,14 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd84mf3o5vdh5"]
+[gd_scene load_steps=3 format=3 uid="uid://bd84mf3o5vdh5"]
 
-[ext_resource type="Texture2D" uid="uid://bjh7gye0hhd4" path="res://Assets/Illustrator/UINinePatch.png" id="1_tm1iw"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_5lndt"]
+[ext_resource type="Texture2D" uid="uid://i4cuokj58hcj" path="res://Assets/Illustrator/dark-9patch.png" id="2_ao5hk"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0.65098)
 custom_minimum_size = Vector2(347, 533)
 anchors_preset = -1
 anchor_right = 0.301215
 anchor_bottom = 0.822531
 size_flags_horizontal = 4
-texture = ExtResource("1_tm1iw")
+theme = ExtResource("1_5lndt")
+texture = ExtResource("2_ao5hk")
 patch_margin_left = 14
 patch_margin_top = 14
 patch_margin_right = 14
@@ -32,6 +35,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 26
 text = "Ransomware"
 horizontal_alignment = 1
@@ -48,11 +52,12 @@ autowrap_mode = 2
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.322767
+anchor_left = 0.276657
 anchor_top = 0.945591
-anchor_right = 0.691643
+anchor_right = 0.737752
 anchor_bottom = 1.03565
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_5lndt")
 text = "Select"
 metadata/_edit_use_anchors_ = true
