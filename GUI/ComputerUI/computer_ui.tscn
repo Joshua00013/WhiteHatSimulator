@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blecc4c484i7r"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
+[ext_resource type="Script" uid="uid://m3td4ykphy7g" path="res://Scripts/GUI/computer_ui.gd" id="1_wj2d0"]
 [ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="3_vg3yh"]
 
 [node name="ComputerUI" type="Control"]
