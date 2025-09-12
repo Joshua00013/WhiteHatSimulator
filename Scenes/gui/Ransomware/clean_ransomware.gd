@@ -10,7 +10,7 @@ signal boilerplate
 signal listener
 
 func _ready() -> void:
-	current_tab = 10
+	current_tab = 11
 
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
@@ -37,7 +37,7 @@ func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 			current_tab = 5
 		
 		"DOS":
-			pass	
+			current_tab = 9
 
 func _on_window_window_exited() -> void:
 	current_tab = 2
@@ -60,11 +60,13 @@ func _on_terminal_listener() -> void:
 	emit_signal("listener")
 
 func _on_phishing_change_to_website() -> void:
-	current_tab = 9
+	current_tab = 8
 
 func _on_phishing_website_change_to_terminal() -> void:
 	current_tab = 7
 
-
 func _on_login_login_successful() -> void:
 	current_tab = 0
+
+func _on_ddos_change_to_result() -> void:
+	current_tab = 10
