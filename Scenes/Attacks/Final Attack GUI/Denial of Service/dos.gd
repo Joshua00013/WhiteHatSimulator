@@ -1,6 +1,5 @@
 extends TabContainer
 
-@onready var url_text: RichTextLabel = $"HSplitContainer/CodeEdit/DOS_APPLICATION/Body/url & ip/url bar/url text"
 @export var animation:AnimationPlayer
 
 var step: int = 0

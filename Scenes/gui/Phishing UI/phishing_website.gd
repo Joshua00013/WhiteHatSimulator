@@ -31,12 +31,13 @@ func set_step(step: int) -> void:
 			animation.play("phishing_desktop_3")
 		3:
 			emit_signal("change_to_terminal")
-			_play_scene_animation()
 			scene += 1
+			_play_scene_animation()
 		4:
 			animation.play("phishing_fake_website")
 		5:
 			animation.play("phishing_fake_website_2")
+
 func _play_scene_animation() -> void:
 	if scene == 1:
 		animation.play("phishing_desktop_start")
