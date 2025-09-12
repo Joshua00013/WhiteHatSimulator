@@ -800,6 +800,7 @@ text = "Downloads"
 metadata/_edit_use_anchors_ = true
 
 [node name="Company Website" type="ColorRect" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.271605

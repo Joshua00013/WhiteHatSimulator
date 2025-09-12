@@ -17,4 +17,4 @@ func _fileless_pressed():
 	cyberattack_selected.emit("Fileless")
 	
 func _dos_pressed():
-	cyberattack_selected.emit("DenialOfService")
+	cyberattack_selected.emit("DOS")
