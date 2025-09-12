@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" uid="uid://daj1h1xsejg3b" path="res://GUI/TimerUI/timer_ui.gd" id="1_joet6"]
 
-[node name="TimerUI" type="VBoxContainer"]
+[node name="TimerUI" type="VBoxContainer" node_paths=PackedStringArray("time_label", "day_label")]
 anchors_preset = -1
 anchor_right = 0.122396
 anchor_bottom = 0.157407
 grow_horizontal = 2
 script = ExtResource("1_joet6")
+time_label = NodePath("TimeLabel")
+day_label = NodePath("DayLabel")
 metadata/_edit_use_anchors_ = true
 
-[node name="Time_Label" type="Label" parent="."]
+[node name="TimeLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
@@ -18,7 +20,7 @@ theme_override_font_sizes/font_size = 55
 text = "08:30"
 metadata/_edit_use_anchors_ = true
 
-[node name="Day_Label" type="Label" parent="."]
+[node name="DayLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 15

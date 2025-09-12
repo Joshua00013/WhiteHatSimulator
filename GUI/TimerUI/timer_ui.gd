@@ -1,7 +1,7 @@
 extends VBoxContainer
 
-@onready var time_label: Label = $Time_Label
-@onready var day_label: Label = $Day_Label
+@export var time_label: Label
+@export var day_label : Label
 
 #@export var normal_speed: int = 5
 #@export var fast_speed: int = 100
