@@ -5,7 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_67fnu"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_f6k7j"]
 
-[node name="QuizUI" type="CanvasLayer" node_paths=PackedStringArray("score_label", "status", "quiz_card")]
+[node name="QuizUI" type="Control" node_paths=PackedStringArray("score_label", "status", "quiz_card")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wmnlc")
 score_label = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Results")
 status = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Status")
@@ -13,11 +19,12 @@ passing_score = 2
 quiz_card = NodePath("QuizCard")
 
 [node name="QuizCard" parent="." instance=ExtResource("2_f6k7j")]
+layout_mode = 1
 theme = ExtResource("3_f6k7j")
 
 [node name="FinishedWindow" type="Control" parent="."]
 visible = false
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -18,6 +18,7 @@ var last_event_time: float = -1.0
 @export var camera : Camera3D
 
 var active := false
+var in_use := false
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)

@@ -1,16 +1,14 @@
 extends Node3D
 
-@export var quiz_ui : CanvasLayer
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	quiz_ui.hide()
+var quiz_ui : Control
 
 func _on_interactable_interact_triggered():
 	if GameManager.stage_finished == false:
 		UiManager.popup.display_popup("STOP!","You can't leave until you finish your tasks")
-	else:
+	elif GameManager.stage_finished == true:
 		show_quiz()
 		
 func show_quiz():
-	quiz_ui.show()
-	quiz_ui.start_quiz()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	UiManager.quiz_ui.show()
+	UiManager.quiz_ui.start_quiz()

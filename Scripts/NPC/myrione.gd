@@ -76,15 +76,16 @@ func calc_schedule(hour: int):
 		elif hour >= 14 and hour <= 17:
 			change_state(WorkState.WORK)
 	
-	print (state)
 	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
 			PersonalComputer.login()
-	elif state == WorkState.BREAK && PersonalComputer != null:
+			PersonalComputer.in_use = true
+	elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
 		if logged_in == true:
 			logged_in = false
 			PersonalComputer.logout()
+			PersonalComputer.in_use = false
 
 func change_target(new_target):
 	if new_target == null:

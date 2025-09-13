@@ -1,16 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://eshr53785n80"]
+[gd_scene load_steps=5 format=3 uid="uid://eshr53785n80"]
 
 [ext_resource type="PackedScene" uid="uid://dkxk782e7nadr" path="res://Assets/Exported3dModel/Door.glb" id="1_lisxu"]
 [ext_resource type="Script" uid="uid://cfc8882con3so" path="res://Scripts/Interactables/quiz_door.gd" id="2_fchni"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_t1fu2"]
-[ext_resource type="PackedScene" uid="uid://b788xwn3k7nxn" path="res://Scenes/GUI/Quiz/quiz_ui.tscn" id="4_qopb2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1o6of"]
 size = Vector3(0.276855, 3.80907, 1.83105)
 
-[node name="Door" node_paths=PackedStringArray("quiz_ui") instance=ExtResource("1_lisxu")]
+[node name="Door" instance=ExtResource("1_lisxu")]
 script = ExtResource("2_fchni")
-quiz_ui = NodePath("QuizUI")
 
 [node name="Door" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153972, 0, -0.00226784)
@@ -20,7 +18,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153972, 0, -0.00226784)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.137379, 1.91473, 0.88623)
 shape = SubResource("BoxShape3D_1o6of")
-
-[node name="QuizUI" parent="." index="2" instance=ExtResource("4_qopb2")]
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
