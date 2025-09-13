@@ -2,6 +2,9 @@ extends Control
 
 @onready var settings = $Settings
 
+func _ready():
+	DayAndNightManager.active = false
+
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 

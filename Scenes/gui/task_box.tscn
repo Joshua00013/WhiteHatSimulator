@@ -36,6 +36,7 @@ offset_top = -146.0
 offset_bottom = 125.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_ht230")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ht230")
 

@@ -330,7 +330,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.309804)
 
 [node name="CyberAttackCards" type="ScrollContainer" parent="."]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CyberAttackCards"]

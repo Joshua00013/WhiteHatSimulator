@@ -31,4 +31,9 @@ func _on_quit_to_desktop_button_down():
 
 
 func _on_quit_to_menu_button_down():
-	get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://GUI/MainMenuUI/main_menu.tscn")
+
+
+func _on_restart_button_button_down():
+	get_tree().paused = false
+	get_tree().reload_current_scene()

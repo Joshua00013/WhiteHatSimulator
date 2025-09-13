@@ -141,7 +141,6 @@ func exit_ui():
 	GameManager.player.exit_tool_tip.visible = false
 	active = false
 	GameManager.player_camera.current = true
-	GameManager.ui_active = false
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
 	if flash_drive_inserted:
@@ -151,6 +150,7 @@ func exit_ui():
 	#tab.current_tab = 1
 	
 func free_laptop():
+	GameManager.ui_active = false
 	closed.emit()
 	call_deferred("queue_free")
 

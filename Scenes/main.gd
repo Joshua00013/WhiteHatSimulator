@@ -13,6 +13,8 @@ func _ready() -> void:
 			UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
 			
 	GameManager.stage_finished = true
+	DayAndNightManager.active = true
+	DayAndNightManager.set_initial_time()
 
 func _on_dialogic_signal(argument: String):
 	match argument:
