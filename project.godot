@@ -24,6 +24,7 @@ DayAndNightManager="*res://Scripts/Globals/day_and_night_manager.gd"
 CyberattackAdaptationManager="*res://Scripts/Globals/cyberattack_adaptation_manager.gd"
 CyberattackManager="*res://Scripts/Globals/cyberattack_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+UiManager="*res://Scripts/Globals/ui_manager.gd"
 
 [dialogic]
 
@@ -170,3 +171,4 @@ pointing/size/resizable=true
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_3d=1

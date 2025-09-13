@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr4d545ld3wj5"]
+[gd_scene load_steps=7 format=3 uid="uid://cr4d545ld3wj5"]
 
 [ext_resource type="PackedScene" uid="uid://tsvsvgcgr1ly" path="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx" id="1_a6ghd"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="2_uyweo"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a6ghd"]
 data = PackedVector3Array(-0.2638, -0.3713, 0, 0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, 0.3713, 0, -0.2638, 0.3713, 0, -0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, 0.3713, 0, 0.2638, 0.3713, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8jro"]
+texture = ExtResource("4_w8jro")
 
 [node name="SheetOfPaper_A4_2Sided" node_paths=PackedStringArray("paper_ui") instance=ExtResource("1_a6ghd")]
 script = ExtResource("2_w4ni4")
@@ -28,41 +31,27 @@ transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 
 shape = SubResource("ConcavePolygonShape3D_a6ghd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
+visible = false
 
-[node name="Control" type="CenterContainer" parent="CanvasLayer" index="0"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="ColorRect" type="TextureRect" parent="CanvasLayer/Control" index="0"]
+[node name="ColorRect" type="PanelContainer" parent="CanvasLayer" index="0"]
 custom_minimum_size = Vector2(320, 434)
-layout_mode = 2
-texture = ExtResource("4_w8jro")
-expand_mode = 5
-stretch_mode = 6
+offset_left = 416.0
+offset_top = 107.0
+offset_right = 736.0
+offset_bottom = 541.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_w8jro")
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="CanvasLayer/Control" index="1"]
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" index="0"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/Control" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.0694786
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
 
 
-          Pass: myrione12377586fff
+       
 		
-
+Pass: myrione12377586fff
 Username: myrione"
+horizontal_alignment = 1
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

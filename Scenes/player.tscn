@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4fjgut4ak6ob"]
+[gd_scene load_steps=11 format=3 uid="uid://4fjgut4ak6ob"]
 
 [ext_resource type="Script" uid="uid://cnwlth5l2crfv" path="res://node_3d.gd" id="1_4flbx"]
 [ext_resource type="Resource" uid="uid://ysbc0wl30il1" path="res://Items/player_inventory.tres" id="2_3smsa"]
@@ -6,13 +6,15 @@
 [ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://GUI/Pause Menu/pause_menu.tscn" id="4_vgqql"]
-[ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="7_8erm5"]
+[ext_resource type="Script" uid="uid://eh1hfcmjlvad" path="res://Scripts/States/state_machine.gd" id="8_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 height = 2.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
 height = 2.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3smsa"]
 
 [node name="Node3D" type="CharacterBody3D"]
 collision_mask = 5
@@ -29,6 +31,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09598, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_i3pqv")
 
+[node name="HeadCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72327, 0)
+shape = SubResource("SphereShape3D_3smsa")
+
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58059, 0)
 
@@ -39,6 +45,7 @@ far = 3990.4
 script = ExtResource("2_fkybt")
 
 [node name="InteractRay" parent="Head" instance=ExtResource("2_6t5aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0415704, 0)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -66,4 +73,5 @@ text = "Press ESC to exit"
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_vgqql")]
 
-[node name="InventoryUI" parent="." instance=ExtResource("7_8erm5")]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("8_8erm5")

@@ -27,7 +27,7 @@ func _ready():
 	
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && GameManager.ui_active == false:
 		look_rotation.y -= (event.relative.x * sensitivity) #Subtract horizontal mouse movement (x) from the head's y rotation (horizontal rotation from y pole)
 		look_rotation.x -= (event.relative.y * sensitivity)
 		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle) #Minimum and maximum rotation of the vertical rotation

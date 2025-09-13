@@ -20,13 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 8
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
+visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
@@ -59,7 +60,6 @@ visible = false
 layout_mode = 2
 
 [node name="PhishingWebsite" parent="." instance=ExtResource("10_e7as3")]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 8
 
@@ -83,7 +83,8 @@ metadata/_tab_index = 11
 [connection signal="cyberattack_selected" from="DesktopDefault" to="." method="_on_desktop_default_cyberattack_selected"]
 [connection signal="ransomware_encrypt_finished" from="RansomwareEncrypt" to="." method="_on_window_window_exited"]
 [connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
-[connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_ransomware_decrypt_ransomware_decrypt_finished"]
+[connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_weaponization_finished"]
+[connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="fileless_change_scene" from="Fileless" to="." method="_on_fileless_scene_change"]
 [connection signal="boilerplate" from="FilelessDesktop" to="." method="_on_terminal_boilerplate"]
 [connection signal="listener" from="FilelessDesktop" to="." method="_on_terminal_listener"]

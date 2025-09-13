@@ -826,7 +826,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Create the code for the good shit"
+text = "Write the code"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]

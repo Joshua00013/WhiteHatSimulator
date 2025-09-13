@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cj8kbppv1mu68" path="res://Scripts/GUI/post_ransomware_encrypt.gd" id="1_qli7n"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_ebhja"]
-[ext_resource type="Texture2D" uid="uid://clj3qe45uaet3" path="res://Assets/Illustrator/SQLIcon.png" id="3_1kqxe"]
-[ext_resource type="Texture2D" uid="uid://btcaebtnakb6o" path="res://Assets/Illustrator/ImageIcon.png" id="4_svgyg"]
-[ext_resource type="Texture2D" uid="uid://b0gtdkbrhcgjr" path="res://Assets/Illustrator/TextIcon.png" id="5_jebyr"]
-[ext_resource type="Texture2D" uid="uid://bxsekq15pnni8" path="res://Assets/Illustrator/PythonIcon.png" id="6_2t71g"]
-[ext_resource type="Script" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
+[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_qli7n"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_ebhja"]
+[ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_1kqxe"]
+[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_svgyg"]
+[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="8_cclec"]
 
 [node name="PostRansomwareEncrypt" type="MarginContainer"]
@@ -31,7 +31,7 @@ layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
 
 [node name="Button" parent="Desktop/Data_icon" index="0"]
-icon = ExtResource("3_1kqxe")
+icon = ExtResource("3_qli7n")
 
 [node name="Label" parent="Desktop/Data_icon" index="1"]
 text = "data.sql"
@@ -41,7 +41,7 @@ layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
 
 [node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = ExtResource("4_svgyg")
+icon = ExtResource("4_ebhja")
 
 [node name="Label" parent="Desktop/Godot_icon" index="1"]
 text = "godot.png"
@@ -51,7 +51,7 @@ layout_mode = 2
 window = NodePath("../../WindowContainer/TextWindow")
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]
-icon = ExtResource("5_jebyr")
+icon = ExtResource("5_1kqxe")
 
 [node name="Label" parent="Desktop/Text_icon" index="1"]
 text = "text.txt"
@@ -61,7 +61,7 @@ layout_mode = 2
 window = NodePath("../../WindowContainer/MalwareWindow")
 
 [node name="Button" parent="Desktop/Malware_icon" index="0"]
-icon = ExtResource("6_2t71g")
+icon = ExtResource("6_svgyg")
 
 [node name="Label" parent="Desktop/Malware_icon" index="1"]
 text = "malware.py"
@@ -71,7 +71,7 @@ layout_mode = 2
 window = NodePath("../../WindowContainer/KeyWindow")
 
 [node name="Button" parent="Desktop/Key_icon" index="0"]
-icon = ExtResource("6_2t71g")
+icon = ExtResource("6_svgyg")
 
 [node name="Label" parent="Desktop/Key_icon" index="1"]
 text = "key.key"

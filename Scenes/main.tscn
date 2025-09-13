@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=88 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -78,6 +78,8 @@
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
 [ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]
 [ext_resource type="Script" uid="uid://d157ppus016ub" path="res://Scripts/Debug/fps_counter.gd" id="79_fd3ed"]
+[ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="79_qnggo"]
+[ext_resource type="PackedScene" uid="uid://b1mlskr54ypql" path="res://Scenes/GUI/task_box.tscn" id="80_qnggo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -140,6 +142,7 @@ stream = ExtResource("5_kry3j")
 script = ExtResource("7_ynf5e")
 
 [node name="Control" type="Control" parent="AndroidUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,11 +181,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SprintButton" type="TouchScreenButton" parent="AndroidUI/Control"]
 metadata/_edit_use_anchors_ = true
-
-[node name="TimerUI" parent="AndroidUI/Control" instance=ExtResource("14_ueoa1")]
-layout_mode = 1
-anchor_left = 0.438802
-anchor_right = 0.561198
 
 [node name="NPC" type="Node3D" parent="."]
 
@@ -1391,13 +1389,13 @@ affect_navigation_mesh = true
 [node name="FlashDriveCollectible" parent="." instance=ExtResource("19_ee4r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7271, 1.78271, -1.82909)
 
-[node name="Markers" type="Node3D" parent="."]
+[node name="Markers" type="Node" parent="."]
 
 [node name="Cafeteria" type="Marker3D" parent="Markers"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.42266, -0.00113297, 53.0446)
 
 [node name="Reception" type="Marker3D" parent="Markers"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4679, -0.00113273, -2.92516)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.7758, -0.00113273, -2.92516)
 script = ExtResource("74_v1mrv")
 copy_rotate = true
 
@@ -1413,9 +1411,13 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="FPSCounter" type="Label" parent="DebugUI/Control"]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 23.0
+grow_horizontal = 0
 script = ExtResource("79_fd3ed")
 
 [node name="CrimeCheckComponent2" parent="." instance=ExtResource("76_fg68e")]
@@ -1436,3 +1438,29 @@ shape = SubResource("BoxShape3D_jekl6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2946, 1.8346, 50.5916)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="HUD" instance=ExtResource("79_qnggo")]
+visible = false
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TaskBox" parent="HUD/MarginContainer" instance=ExtResource("80_qnggo")]
+layout_mode = 2
+
+[node name="TimerUI" parent="HUD/MarginContainer" instance=ExtResource("14_ueoa1")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0

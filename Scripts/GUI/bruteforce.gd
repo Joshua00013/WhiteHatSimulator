@@ -8,7 +8,7 @@ extends MarginContainer
 @export var terminal_window : Control
 
 var step : int = 0
-signal terminal_exited
+signal bruteforce_ready
 
 var bruteforce_code = {
 	"step_1" : "import random\n\n",
@@ -89,4 +89,4 @@ func set_step(step: int):
 			animation.play("BruteforceWindow")
 						
 func _on_window_window_exited() -> void:
-	terminal_exited.emit()
+	bruteforce_ready.emit()
