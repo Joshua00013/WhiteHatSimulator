@@ -25,6 +25,8 @@ func _ready():
 	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	look_rotation = Vector2(head.rotation_degrees.x, rotation_degrees.y)
+	
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && GameManager.ui_active == false:

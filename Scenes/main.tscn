@@ -155,7 +155,7 @@ shadow_enabled = true
 environment = SubResource("Environment_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.10104, 0.00288725, 1.86093)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.02907, 0.00288701, 4.04424)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109589, 1.50504, -1.10609)
