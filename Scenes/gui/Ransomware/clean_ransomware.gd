@@ -40,6 +40,7 @@ func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
 	current_tab = 3
 
 func _on_weaponization_finished() -> void:
+	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack")
 	CyberattackManager.weaponization_finished = true
 	desktop_default.hide_cards()
 	current_tab = 0

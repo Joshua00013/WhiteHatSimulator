@@ -12,7 +12,7 @@ texture_margin_right = 14.0
 texture_margin_bottom = 25.0
 region_rect = Rect2(0, 0, 608, 210)
 
-[node name="Popup" type="Control"]
+[node name="Popup" type="Control" node_paths=PackedStringArray("heading", "body")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -22,6 +22,8 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7jnqt")
+heading = NodePath("PanelContainer/VBoxContainer/Heading")
+body = NodePath("PanelContainer/VBoxContainer/Body")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 clip_contents = true
