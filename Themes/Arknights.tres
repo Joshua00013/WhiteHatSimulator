@@ -1,14 +1,7 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cgx7d6dgoy5t3"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cgx7d6dgoy5t3"]
 
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="1_7d0ro"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_xgb2x"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s72ha"]
-bg_color = Color(0.6, 0.6, 0.6, 0.0666667)
-corner_radius_top_left = 90
-corner_radius_top_right = 90
-corner_radius_bottom_right = 90
-corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm86w"]
 bg_color = Color(1, 1, 1, 1)
@@ -55,7 +48,6 @@ Button/colors/font_focus_color = Color(0.473974, 0.473976, 0.473977, 1)
 Button/colors/font_hover_color = Color(0.678942, 0.678944, 0.678945, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/fonts/font = ExtResource("1_7d0ro")
-Button/styles/disabled = SubResource("StyleBoxFlat_s72ha")
 Button/styles/focus = SubResource("StyleBoxFlat_sm86w")
 Button/styles/hover = SubResource("StyleBoxFlat_1slqh")
 Button/styles/normal = SubResource("StyleBoxFlat_xgb2x")

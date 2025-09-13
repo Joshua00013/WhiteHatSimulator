@@ -5,7 +5,7 @@
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_rfsek"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_0pu0i"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_otknr"]
-[ext_resource type="Script" uid="uid://crltns0px1fim" path="res://Scripts/Components/dialogue_handler_component.gd" id="6_gw22a"]
+[ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="6_gw22a"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -21,7 +21,6 @@ animation = &"run"
 animation = &"sitting"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_rfsek"]
-graph_offset = Vector2(-214.101, 59.1805)
 nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
 nodes/Run/position = Vector2(320, 320)
 nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
@@ -41,24 +40,24 @@ dialogue = "Liz"
 collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44097, -0.0441553)
+bones/0/position = Vector3(0, 1.44462, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00619782, -0.0672517, 0.984239, -0.16344)
+bones/2/rotation = Quaternion(-0.00715819, -0.0628438, 0.987201, -0.146402)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0277667, 0.00273701, 0.999584, -0.0073642)
+bones/4/rotation = Quaternion(-0.0276263, -0.00795545, 0.999585, -0.00182215)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.1128, -0.000396999, -0.0629901, 0.991619)
+bones/5/rotation = Quaternion(-0.0902463, -0.000398247, -0.0503955, 0.994644)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.629917, 0.011, 0.0690375, 0.77351)
+bones/6/rotation = Quaternion(0.621969, 0.00813457, 0.0643929, 0.780348)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00745435, -0.0443464, 0.987346, 0.152073)
+bones/7/rotation = Quaternion(0.00882896, -0.0513425, 0.989188, 0.137091)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00383186, 0.0010667, 0.999933, 0.0109094)
+bones/9/rotation = Quaternion(-0.00401477, -0.00944074, 0.999935, 0.00502983)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.1128, 0.000397002, 0.0629901, 0.991619)
+bones/10/rotation = Quaternion(-0.0902463, 0.000398249, 0.0503955, 0.994644)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.630237, -0.0377562, -0.0517777, 0.773754)
+bones/11/rotation = Quaternion(0.622436, -0.0347081, -0.0468605, 0.780495)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -68,39 +67,21 @@ autoplay = "idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_rfsek")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]
-path_height_offset = 1.0
-avoidance_enabled = true
-debug_enabled = true
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeBlendTree_rfsek")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Run/blend_amount = 0.0
 parameters/Sit/blend_amount = 0.0
 
-[node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("4_0pu0i")]
+[node name="DoorCheckComponent" parent="." index="4" instance=ExtResource("4_0pu0i")]
 
-[node name="Interactable" parent="." index="6" instance=ExtResource("5_otknr")]
+[node name="Interactable" parent="." index="5" instance=ExtResource("5_otknr")]
 prompt_message = "Liz"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_rfsek")
 
-[node name="DialogueHandlerComponent" type="Label3D" parent="." index="7" node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17772, 0)
-billboard = 1
-script = ExtResource("6_gw22a")
-interactable = NodePath("../Interactable")
+[node name="NavAgentRefreshTimer" type="Timer" parent="." index="6"]
 
-[node name="Timer" type="Timer" parent="DialogueHandlerComponent" index="0"]
-wait_time = 15.0
-one_shot = true
-
-[node name="NavAgentRefreshTimer" type="Timer" parent="." index="8"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="9"]
-
-[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[node name="NavigationAgent3D" parent="." index="7" instance=ExtResource("6_gw22a")]

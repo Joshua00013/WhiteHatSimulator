@@ -31,10 +31,18 @@ UiManager="*res://Scripts/Globals/ui_manager.gd"
 directories/dch_directory={}
 directories/dtl_directory={
 "Alwyn": "res://Dialogues/Timelines/Alwyn.dtl",
+"Brian": "res://Dialogues/Timelines/Brian.dtl",
+"Gigi": "res://Dialogues/Timelines/Gigi.dtl",
+"John": "res://Dialogues/Timelines/John.dtl",
 "Koro": "res://Dialogues/Timelines/Koro.dtl",
 "Liz": "res://Dialogues/Timelines/Liz.dtl",
 "Mike": "res://Dialogues/Timelines/Mike.dtl",
-"Myrione": "res://Dialogues/Timelines/Myrione.dtl"
+"Myrione": "res://Dialogues/Timelines/Myrione.dtl",
+"Robert": "res://Dialogues/Timelines/Robert.dtl",
+"Sai": "res://Dialogues/Timelines/Sai.dtl",
+"Shion": "res://Dialogues/Timelines/Shion.dtl",
+"Walter": "res://Dialogues/Timelines/Walter.dtl",
+"Wisadel": "res://Dialogues/Timelines/Wisadel.dtl"
 }
 variables={
 "has_coffee": false,

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgi50ryqrb6q8"]
+[gd_scene load_steps=10 format=3 uid="uid://bgi50ryqrb6q8"]
 
 [ext_resource type="PackedScene" uid="uid://bjmc1t6k0ujy8" path="res://Assets/Exported3dModel/Wisadel.glb" id="1_8n1k0"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_r2q8s"]
 [ext_resource type="PackedScene" uid="uid://vskcj500jrbd" path="res://Scenes/Components/NPC_Parts/animation_tree.tscn" id="3_5trn1"]
 [ext_resource type="PackedScene" uid="uid://6xahguv8f3rg" path="res://Scenes/Components/NPC_Parts/collision_shape_3d.tscn" id="4_202pv"]
-[ext_resource type="PackedScene" uid="uid://dlnvq3kiuxxeo" path="res://Scenes/Components/NPC_Parts/dialogue_handler_component.tscn" id="5_sh623"]
 [ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="6_mb3ci"]
 [ext_resource type="PackedScene" uid="uid://cad55in337a26" path="res://Scenes/Components/NPC_Parts/nav_agent_refresh_timer.tscn" id="7_i0pca"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="8_n88cj"]
@@ -13,26 +12,27 @@
 
 [node name="Wisadel" instance=ExtResource("1_8n1k0")]
 script = ExtResource("2_r2q8s")
+dialogue = "Wisadel"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44551, -0.0441553)
+bones/0/position = Vector3(0, 1.4467, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00735652, -0.0619296, 0.987774, -0.142873)
+bones/2/rotation = Quaternion(-0.00762323, -0.0606983, 0.988524, -0.138121)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0275929, -0.0106443, 0.999563, -0.000426283)
+bones/4/rotation = Quaternion(-0.0275457, -0.0145284, 0.999514, 0.00159148)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0850346, -0.000398495, -0.0474851, 0.995246)
+bones/5/rotation = Quaternion(-0.0775015, -0.000398825, -0.0432785, 0.996052)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.619957, 0.00741248, 0.0632269, 0.782049)
+bones/6/rotation = Quaternion(0.617043, 0.00636843, 0.0615436, 0.784493)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00910889, -0.052767, 0.989529, 0.134032)
+bones/7/rotation = Quaternion(0.00948812, -0.0546967, 0.989974, 0.129884)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00405828, -0.0120831, 0.999913, 0.00354909)
+bones/9/rotation = Quaternion(-0.0041195, -0.0159, 0.999864, 0.00140872)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0850346, 0.000398496, 0.0474851, 0.995246)
+bones/10/rotation = Quaternion(-0.0775015, 0.000398827, 0.0432785, 0.996052)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.620462, -0.0339396, -0.0456262, 0.782172)
+bones/11/rotation = Quaternion(0.617602, -0.0328281, -0.0438446, 0.784581)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -43,16 +43,13 @@ autoplay = "idle"
 [node name="CollisionShape3D" parent="." index="3" instance=ExtResource("4_202pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47014, 0)
 
-[node name="DialogueHandlerComponent" parent="." index="4" node_paths=PackedStringArray("interactable") instance=ExtResource("5_sh623")]
-interactable = NodePath("../Interactable")
+[node name="NavigationAgent3D" parent="." index="4" instance=ExtResource("6_mb3ci")]
 
-[node name="NavigationAgent3D" parent="." index="5" instance=ExtResource("6_mb3ci")]
+[node name="NavAgentRefreshTimer" parent="." index="5" instance=ExtResource("7_i0pca")]
 
-[node name="NavAgentRefreshTimer" parent="." index="6" instance=ExtResource("7_i0pca")]
+[node name="DoorCheckComponent" parent="." index="6" instance=ExtResource("8_n88cj")]
 
-[node name="DoorCheckComponent" parent="." index="7" instance=ExtResource("8_n88cj")]
-
-[node name="Interactable" parent="." index="8" instance=ExtResource("9_2dess")]
+[node name="Interactable" parent="." index="7" instance=ExtResource("9_2dess")]
 prompt_message = "Shion"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
