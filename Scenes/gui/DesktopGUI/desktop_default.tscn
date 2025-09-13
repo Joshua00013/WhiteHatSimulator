@@ -333,6 +333,7 @@ text = "Ransomware is a kind of harmful software that locks your files and asks 
 
 [node name="Bruteforce_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
+unlocked_day = 2
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="0"]
 text = "Bruteforce"
@@ -342,18 +343,21 @@ text = "A brute force attack is when someone tries to guess a password by testin
 
 [node name="Phishing_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
+unlocked_day = 3
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
 text = "Phishing"
 
 [node name="Fileless_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
+unlocked_day = 4
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Fileless_card/MarginContainer/VBoxContainer" index="0"]
 text = "Fileless"
 
 [node name="DoS_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
+unlocked_day = 5
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/DoS_card/MarginContainer/VBoxContainer" index="0"]
 text = "Denial of Services"

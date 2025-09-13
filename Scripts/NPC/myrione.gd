@@ -75,12 +75,13 @@ func calc_schedule(hour: int):
 			change_state(WorkState.BREAK)
 		elif hour >= 14 and hour <= 17:
 			change_state(WorkState.WORK)
-			
+	
+	print (state)
 	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
 			PersonalComputer.login()
-	elif cur_anim == RUN && state == WorkState.BREAK && PersonalComputer != null:
+	elif state == WorkState.BREAK && PersonalComputer != null:
 		if logged_in == true:
 			logged_in = false
 			PersonalComputer.logout()

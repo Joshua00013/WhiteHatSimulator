@@ -204,6 +204,9 @@ func _ready() -> void:
 
 	display_question(current_question)
 
+func start_quiz():
+	timer.start()
+
 func _physics_process(_delta: float) -> void:
 	timer_label.text = str(timer.time_left)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=90 format=3 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -81,6 +81,7 @@
 [ext_resource type="Script" uid="uid://d157ppus016ub" path="res://Scripts/Debug/fps_counter.gd" id="79_fd3ed"]
 [ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="79_qnggo"]
 [ext_resource type="PackedScene" uid="uid://b1mlskr54ypql" path="res://Scenes/GUI/task_box.tscn" id="80_qnggo"]
+[ext_resource type="PackedScene" uid="uid://eshr53785n80" path="res://Scenes/Interactables/quiz_door.tscn" id="82_1tvlp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -350,9 +351,6 @@ size = Vector3(70.6067, 0.919189, 72.3385)
 material = SubResource("StandardMaterial3D_cbgmd")
 
 [node name="Interactables" type="Node3D" parent="."]
-
-[node name="Door" parent="Interactables" instance=ExtResource("24_e08e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.449, 0, 0.471)
 
 [node name="Door3" parent="Interactables" instance=ExtResource("24_e08e2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6925, 4.76837e-07, 8.81562)
@@ -1467,3 +1465,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="Door" parent="." instance=ExtResource("82_1tvlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56889, -0.00113273, 0.493915)

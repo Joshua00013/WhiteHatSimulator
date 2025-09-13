@@ -10,6 +10,11 @@ var installation_finished: bool = false : set = set_installation
 var command_and_control_finished: bool = false : set = set_command_and_control
 var actions_on_objectives_finished: bool = false : set = set_actions_on_objectives
 
+var ransomware_ready : bool = false
+var bruteforce_ready : bool = false
+var phishing_ready : bool = false
+var fileless_ready : bool = false
+var dos_ready : bool = false
 
 func set_reconnaissance(value: bool) -> void:
 	if not reconnaissance_finished and value:

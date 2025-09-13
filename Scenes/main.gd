@@ -5,6 +5,14 @@ extends Node3D
 func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
+	match OS.get_name():
+		"Windows":
+			UiManager.popup.display_popup("Controls","Use the WASD keys to move and your mouse to look around")
+		"Android":
+			UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
+			
+	GameManager.stage_finished = false
 
 func _on_dialogic_signal(argument: String):
 	match argument:
