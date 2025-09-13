@@ -165,7 +165,6 @@ stream = ExtResource("5_kry3j")
 script = ExtResource("7_ynf5e")
 
 [node name="Control" type="Control" parent="AndroidUI"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1587,8 +1586,6 @@ light_data = ExtResource("78_6h1fc")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Popup" parent="HUD" instance=ExtResource("78_tab3y")]
-
 [node name="InventoryUI" parent="HUD" instance=ExtResource("79_qnggo")]
 visible = false
 mouse_filter = 2
@@ -1615,6 +1612,8 @@ size_flags_vertical = 0
 
 [node name="QuizUI" parent="HUD" instance=ExtResource("82_wl4bb")]
 visible = false
+
+[node name="Popup" parent="HUD" instance=ExtResource("78_tab3y")]
 
 [node name="Door" parent="." instance=ExtResource("82_1tvlp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56889, -0.00113273, 0.493915)

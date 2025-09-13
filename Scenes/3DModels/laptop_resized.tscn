@@ -118,7 +118,7 @@ transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_aerrq")
 
 [node name="Camera3D" type="Camera3D" parent="." index="1"]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.255)
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.225)
 
 [node name="Interactable" parent="." index="2" instance=ExtResource("3_57jh0")]
 

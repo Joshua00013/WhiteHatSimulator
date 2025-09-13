@@ -323,7 +323,6 @@ text = "Now the files have been dencrypted. You can now access all the files"
 metadata/_edit_use_anchors_ = true
 
 [node name="BlurShader" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_bikpg")
 layout_mode = 2
 mouse_filter = 2

@@ -27,6 +27,9 @@ var flash_drive_inserted := false
 signal closed
 
 func _ready():
+	if OS.get_name() == "Android":
+		camera.position.z = -0.12
+	
 	animation_player.play("open_laptop")
 	
 	#login_screen.password = password

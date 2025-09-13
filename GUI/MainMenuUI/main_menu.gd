@@ -1,6 +1,6 @@
 extends Control
 
-@onready var settings = $Settings
+@export var settings : Control
 
 func _ready():
 	DayAndNightManager.active = false

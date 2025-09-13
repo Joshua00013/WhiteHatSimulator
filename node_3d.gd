@@ -12,6 +12,8 @@ const JUMP_VELOCITY = 10
 @export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
 @export var sprint_speed = 10.0
 
+@export_group("Headbob")
+
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
 @onready var exit_tool_tip = $PanelContainer/ExitToolTip

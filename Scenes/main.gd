@@ -3,16 +3,17 @@ extends Node3D
 @export var corridor_door : Node3D
 
 func _ready() -> void:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
 	match OS.get_name():
 		"Windows":
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 			UiManager.popup.display_popup("Controls","Use the WASD keys to move and your mouse to look around")
 		"Android":
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 			UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
 			
-	GameManager.stage_finished = true
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
 

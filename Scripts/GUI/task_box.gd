@@ -21,7 +21,7 @@ func _on_phase_updated(phase : String):
 		"reconnaissance":
 			task_desc.text = "Weaponization: go to the cafeteria and program a cyberattack"
 		"weaponization":
-			task_desc.text = "Delivery: deliver the cyberattack through yo	ur chosen method. You may plant flashdrives to PCs or make the website go live"
+			task_desc.text = "Delivery: deliver the cyberattack through your chosen method. You may plant flashdrives to PCs or make the website go live"
 		"delivery":
 			task_desc.text = "Exploitation: execute the program. Be ready to abort if detected."
 		"exploitation":

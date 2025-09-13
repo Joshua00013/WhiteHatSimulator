@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1mlskr54ypql"]
 
 [ext_resource type="Script" uid="uid://d15ycunt5xw5n" path="res://Scripts/GUI/task_box.gd" id="1_48jjc"]
-[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_ht230"]
+[ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="2_48jjc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht230"]
 bg_color = Color(0, 0, 0, 0.470588)
@@ -37,7 +37,7 @@ offset_bottom = 125.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_ht230")
+theme = ExtResource("2_48jjc")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ht230")
 
 [node name="MarginContainer" type="MarginContainer" parent="TaskBoxPanel"]
