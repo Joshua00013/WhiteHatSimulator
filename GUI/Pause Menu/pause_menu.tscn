@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://duf7na8if78iu"]
+[gd_scene load_steps=12 format=3 uid="uid://duf7na8if78iu"]
 
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="1_cdf32"]
 [ext_resource type="Script" uid="uid://cqx5uvbrhx5rs" path="res://GUI/Pause Menu/pause_menu.gd" id="2_itokw"]
 [ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="2_meld0"]
+[ext_resource type="PackedScene" uid="uid://cj1bwed1k0ycb" path="res://GUI/Settings/settings.tscn" id="4_d7js6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nrq0x"]
 shader = ExtResource("1_cdf32")
@@ -247,7 +248,12 @@ libraries = {
 }
 autoplay = "Unpause"
 
+[node name="Settings" parent="." instance=ExtResource("4_d7js6")]
+visible = false
+layout_mode = 1
+
 [connection signal="button_down" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_button_down"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="button_down" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
 [connection signal="button_down" from="QuitOptions/PanelContainer2/PanelContainer/QuitToMenu" to="." method="_on_quit_to_menu_button_down"]
 [connection signal="button_down" from="QuitOptions/PanelContainer2/PanelContainer/QuitToDesktop" to="." method="_on_quit_to_desktop_button_down"]

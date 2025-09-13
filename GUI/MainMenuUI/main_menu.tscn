@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw63rufk8of5w"]
+[gd_scene load_steps=12 format=3 uid="uid://bw63rufk8of5w"]
 
 [ext_resource type="Script" uid="uid://skwa24u0pu8" path="res://GUI/MainMenuUI/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://clf722iyeb32e" path="res://Scripts/GUI/main_menu.gd" id="1_ir4l5"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="1_v5uxc"]
 [ext_resource type="PackedScene" uid="uid://cj1bwed1k0ycb" path="res://GUI/Settings/settings.tscn" id="2_amrsn"]
 [ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_41b15"]
@@ -20,6 +21,7 @@ Label/fonts/font = ExtResource("1_v5uxc")
 size = Vector2(2000, 2000)
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_ir4l5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lxi0n")
@@ -72,14 +74,14 @@ theme_override_font_sizes/font_size = 30
 text = "New Game"
 alignment = 0
 
-[node name="Button4" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+[node name="LoadGame" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Load Game"
 alignment = 0
 
-[node name="Button2" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
@@ -87,7 +89,7 @@ text = "Options
 "
 alignment = 0
 
-[node name="Button3" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
@@ -115,3 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510874, 0, -1.37005)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.675709, 2.16154, -1.47457)
 
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/NewGame" to="MainMenuUI" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/LoadGame" to="MainMenuUI" method="_on_load_pressed"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Settings" to="MainMenuUI" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Quit" to="MainMenuUI" method="_on_quit_pressed"]

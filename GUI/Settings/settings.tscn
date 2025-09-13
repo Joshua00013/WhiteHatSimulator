@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj1bwed1k0ycb"]
+[gd_scene load_steps=8 format=3 uid="uid://cj1bwed1k0ycb"]
 
 [ext_resource type="Script" uid="uid://is38xhv82hfh" path="res://Scripts/GUI/settings.gd" id="1_c5w52"]
+[ext_resource type="Texture2D" uid="uid://b6efktoei1703" path="res://Assets/1. Free Hologram Interface Wenrexa/Button 1/Button Disable.png" id="2_bmfx4"]
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="3_2u0xs"]
+[ext_resource type="Texture2D" uid="uid://cfa0eduxbhcxm" path="res://Assets/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/asset/svg/Panel/Body/Headless.svg" id="4_2u0xs"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="5_kqylv"]
 
-[node name="Settings" type="Control"]
+[sub_resource type="FontVariation" id="FontVariation_b2q6u"]
+base_font = ExtResource("3_2u0xs")
+spacing_glyph = 3
+
+[sub_resource type="Theme" id="Theme_m5ym5"]
+default_font_size = 30
+HSlider/icons/grabber = ExtResource("2_bmfx4")
+HSlider/icons/grabber_highlight = ExtResource("2_bmfx4")
+Label/fonts/font = SubResource("FontVariation_b2q6u")
+
+[node name="Settings" type="Control" node_paths=PackedStringArray("hand_tracking", "display")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,17 +24,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c5w52")
+hand_tracking = NodePath("NinePatchRect/Settings/HandTracking")
+display = NodePath("NinePatchRect/Settings/Display")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.309804, 0.309804, 0.309804, 1)
+theme = SubResource("Theme_m5ym5")
+texture = ExtResource("4_2u0xs")
+patch_margin_left = 13
+patch_margin_top = 18
+patch_margin_right = 13
+patch_margin_bottom = 26
 
-[node name="Settings" type="VBoxContainer" parent="."]
+[node name="Settings" type="VBoxContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.127604
@@ -32,76 +53,93 @@ grow_vertical = 2
 theme_override_constants/separation = 45
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="Settings"]
+[node name="Title" type="Label" parent="NinePatchRect/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="HandTracking" type="HBoxContainer" parent="Settings"]
+[node name="HandTracking" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 
-[node name="HandtrackingLabel" type="Label" parent="Settings/HandTracking"]
+[node name="HandtrackingLabel" type="Label" parent="NinePatchRect/Settings/HandTracking"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Handtracking:"
 
-[node name="handtrackingCheckBox" type="CheckBox" parent="Settings/HandTracking"]
+[node name="handtrackingCheckBox" type="CheckBox" parent="NinePatchRect/Settings/HandTracking"]
 layout_mode = 2
 
-[node name="Display" type="HBoxContainer" parent="Settings"]
+[node name="Display" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 
-[node name="DisplayLabel" type="Label" parent="Settings/Display"]
+[node name="DisplayLabel" type="Label" parent="NinePatchRect/Settings/Display"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Display:"
 
-[node name="DisplayOptionButton" type="OptionButton" parent="Settings/Display"]
+[node name="DisplayOptionButton" type="OptionButton" parent="NinePatchRect/Settings/Display"]
 layout_mode = 2
-item_count = 2
-popup/item_0/text = "Windowed/Borderless"
+selected = 0
+item_count = 3
+popup/item_0/text = "Window"
 popup/item_0/id = 0
-popup/item_1/text = "Windowed/Fullscreen"
+popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
 
-[node name="Music" type="HBoxContainer" parent="Settings"]
+[node name="Music" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 
-[node name="MusictrackingLabel" type="Label" parent="Settings/Music"]
+[node name="MusictrackingLabel" type="Label" parent="NinePatchRect/Settings/Music"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Music:"
 
-[node name="MusicHSlider2" type="HSlider" parent="Settings/Music"]
+[node name="MusicSlider" type="HSlider" parent="NinePatchRect/Settings/Music"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
-[node name="Sounds" type="HBoxContainer" parent="Settings"]
+[node name="Sounds" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 
-[node name="SoundsLabel" type="Label" parent="Settings/Sounds"]
+[node name="SoundsLabel" type="Label" parent="NinePatchRect/Settings/Sounds"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Sounds:"
 
-[node name="SoundsHSlider3" type="HSlider" parent="Settings/Sounds"]
+[node name="SoundSlider" type="HSlider" parent="NinePatchRect/Settings/Sounds"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
-[node name="Sensitivity" type="HBoxContainer" parent="Settings"]
+[node name="Sensitivity" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 
-[node name="SensitivityLabel" type="Label" parent="Settings/Sensitivity"]
+[node name="SensitivityLabel" type="Label" parent="NinePatchRect/Settings/Sensitivity"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Sensitivity:"
 
-[node name="DensitivityHSlider" type="HSlider" parent="Settings/Sensitivity"]
+[node name="DensitivityHSlider" type="HSlider" parent="NinePatchRect/Settings/Sensitivity"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="NinePatchRect/Settings"]
+layout_mode = 2
+theme = ExtResource("5_kqylv")
+theme_override_constants/separation = 255
+alignment = 1
+
+[node name="Cancel" type="Button" parent="NinePatchRect/Settings/Buttons"]
+custom_minimum_size = Vector2(168, 42)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Apply" type="Button" parent="NinePatchRect/Settings/Buttons"]
+custom_minimum_size = Vector2(157, 42)
+layout_mode = 2
+text = "Apply"
+
+[connection signal="pressed" from="NinePatchRect/Settings/Buttons/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="NinePatchRect/Settings/Buttons/Apply" to="." method="_on_apply_pressed"]

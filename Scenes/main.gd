@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 	match OS.get_name():
 		"Windows":
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 			UiManager.popup.display_popup("Controls","Use the WASD keys to move and your mouse to look around")
 		"Android":
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
@@ -16,6 +16,8 @@ func _ready() -> void:
 			
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
+	
+	ConfigFileHandler.apply_display_mode()
 
 func _on_dialogic_signal(argument: String):
 	match argument:

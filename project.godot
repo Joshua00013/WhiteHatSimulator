@@ -25,6 +25,8 @@ CyberattackAdaptationManager="*res://Scripts/Globals/cyberattack_adaptation_mana
 CyberattackManager="*res://Scripts/Globals/cyberattack_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UiManager="*res://Scripts/Globals/ui_manager.gd"
+ConfigFileHandler="*res://Scripts/Globals/config_file_handler.gd"
+HandTrackerServer="*res://Scripts/Globals/hand_tracker_server.gd"
 
 [dialogic]
 
