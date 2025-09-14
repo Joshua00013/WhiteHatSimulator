@@ -7,7 +7,7 @@ signal boilerplate
 signal listener
 
 func _ready() -> void:
-	current_tab = 11
+	current_tab = 0
 
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
@@ -67,3 +67,6 @@ func _on_login_login_successful() -> void:
 
 func _on_ddos_change_to_result() -> void:
 	current_tab = 10
+
+func _on_phishing_website_change_to_deployment() -> void:
+	current_tab = 12

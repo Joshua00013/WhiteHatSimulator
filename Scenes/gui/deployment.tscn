@@ -1,0 +1,650 @@
+[gd_scene load_steps=20 format=3 uid="uid://cu6h5swcvjacb"]
+
+[ext_resource type="Script" uid="uid://3o1evong2bps" path="res://deployment.gd" id="1_gg846"]
+[ext_resource type="Texture2D" uid="uid://cpdlmht5cqsjg" path="res://Assets/Application Icons/reference.jpg" id="2_x3iag"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_ddttp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdlp0"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q435"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh6p6"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vc754"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="FontVariation" id="FontVariation_ah03v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f273f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25g26"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikdni"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="FontVariation" id="FontVariation_i2qw3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v7hs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgfdd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_gg846"]
+resource_name = "choices"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Choices:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Choices/TextPanel/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's host our website, click the host website choice"]
+}
+
+[sub_resource type="Animation" id="Animation_x3iag"]
+resource_name = "host"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Host Website:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Host Website/Uploading:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ddttp"]
+resource_name = "uploading"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Host Website/Uploading:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Host Website/Uploading/RansomwareApp:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TabContainer/Host Website/Uploading/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["WEBSITE DEPLOYED!!!"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deployment_finished"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_xdlp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Host Website/Uploading/RansomwareApp:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Host Website/Uploading:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5q435"]
+_data = {
+&"RESET": SubResource("Animation_xdlp0"),
+&"choices": SubResource("Animation_gg846"),
+&"host": SubResource("Animation_x3iag"),
+&"uploading": SubResource("Animation_ddttp")
+}
+
+[node name="Deployment" type="TabContainer" node_paths=PackedStringArray("animation")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+script = ExtResource("1_gg846")
+animation = NodePath("AnimationPlayer")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+current_tab = 1
+tabs_visible = false
+metadata/_tab_index = 0
+
+[node name="Choices" type="ColorRect" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Background2" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdlp0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5q435")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.765432
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh6p6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Choices/TextPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.148148
+anchor_right = 0.971354
+anchor_bottom = 0.299464
+offset_right = -265.999
+offset_bottom = -1.74584
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Let's host our website, click the host website choice"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="TabContainer/Choices/TextPanel/Label"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675776
+anchor_top = 3.97308
+anchor_right = 0.76047
+anchor_bottom = 5.09878
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Header2" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "D E P L O Y M E N T"
+metadata/_edit_use_anchors_ = true
+
+[node name="Reference" type="Sprite2D" parent="TabContainer/Choices"]
+position = Vector2(-440, 168)
+texture = ExtResource("2_x3iag")
+
+[node name="Header3" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0694444
+anchor_top = 0.246914
+anchor_right = 0.284722
+anchor_bottom = 0.641975
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Choices/Header3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193548
+anchor_top = 0.15625
+anchor_right = 0.790323
+anchor_bottom = 0.449219
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "H O S T
+W E B S I T E"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TabContainer/Choices/Header3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f273f")
+
+[node name="Header4" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388889
+anchor_top = 0.246914
+anchor_right = 0.604167
+anchor_bottom = 0.641975
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Choices/Header4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193548
+anchor_top = 0.15625
+anchor_right = 0.790323
+anchor_bottom = 0.449219
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "UPLOAD
+MALWARE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TabContainer/Choices/Header4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f273f")
+
+[node name="Header5" type="Panel" parent="TabContainer/Choices"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.715278
+anchor_top = 0.246914
+anchor_right = 0.930556
+anchor_bottom = 0.641975
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Choices/Header5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193548
+anchor_top = 0.15625
+anchor_right = 0.790323
+anchor_bottom = 0.449219
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "????"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TabContainer/Choices/Header5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f273f")
+
+[node name="Host Website" type="ColorRect" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Background2" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdlp0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5q435")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.765432
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh6p6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Host Website/TextPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.148148
+anchor_right = 0.971354
+anchor_bottom = 0.299464
+offset_right = -265.999
+offset_bottom = -1.74584
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Enter a URL name that looks similar to the companies website and click upload"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="TabContainer/Host Website/TextPanel/Label"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675776
+anchor_top = 3.97308
+anchor_right = 0.76047
+anchor_bottom = 5.09878
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Header2" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "D E P L O Y M E N T"
+metadata/_edit_use_anchors_ = true
+
+[node name="Header3" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.229167
+anchor_top = 0.246914
+anchor_right = 0.784722
+anchor_bottom = 0.703704
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vc754")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Host Website/Header3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.162162
+anchor_right = 0.690625
+anchor_bottom = 0.283784
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ah03v")
+theme_override_font_sizes/font_size = 26
+text = "H O S T  W E B S I T E"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar" type="Panel" parent="TabContainer/Host Website/Header3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162013
+anchor_top = 0.513574
+anchor_right = 0.6258
+anchor_bottom = 0.648625
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_25g26")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Host Website/Header3/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136253
+anchor_right = 1.0
+anchor_bottom = 0.962963
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "w"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TabContainer/Host Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.596951
+anchor_top = 0.481509
+anchor_right = 0.729611
+anchor_bottom = 0.540113
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_ikdni")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Host Website/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.210526
+anchor_right = 0.842106
+anchor_bottom = 0.947368
+offset_left = -1.52588e-05
+offset_top = 1.4782e-05
+offset_right = -1.52588e-05
+offset_bottom = 3.05176e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_i2qw3")
+theme_override_font_sizes/font_size = 26
+text = "Upload"
+metadata/_edit_use_anchors_ = true
+
+[node name="UploadButton" type="Button" parent="TabContainer/Host Website/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.01217
+anchor_bottom = 1.03704
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2v7hs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgfdd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Uploading" parent="TabContainer/Host Website" instance=ExtResource("3_ddttp")]
+visible = false
+layout_mode = 1
+anchor_left = 0.329401
+anchor_top = 0.083612
+anchor_right = 0.854809
+anchor_bottom = 0.680602
+offset_left = -99.4699
+offset_top = 57.8194
+offset_right = -99.4699
+offset_bottom = 57.8194
+
+[node name="Title" parent="TabContainer/Host Website/Uploading/HBoxContainer" index="0"]
+text = "UPLOADING TO INTERNET"
+
+[node name="RansomwareApp" type="ProgressBar" parent="TabContainer/Host Website/Uploading"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0843835
+anchor_top = 0.273785
+anchor_right = 0.888371
+anchor_bottom = 0.377535
+value = 100.0
+
+[node name="Label" type="Label" parent="TabContainer/Host Website/Uploading"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0599175
+anchor_top = 0.157303
+anchor_right = 0.650826
+anchor_bottom = 0.22191
+text = "WEBSITE DEPLOYED!!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5q435")
+}
+
+[connection signal="pressed" from="TabContainer/Choices/Header3/Button" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="TabContainer/Host Website/Panel/UploadButton" to="." method="_on_upload_button_pressed"]
+
+[editable path="TabContainer/Host Website/Uploading"]

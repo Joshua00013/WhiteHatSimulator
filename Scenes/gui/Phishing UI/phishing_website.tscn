@@ -1,98 +1,69 @@
-[gd_scene load_steps=29 format=3 uid="uid://ch21mccnclukw"]
+[gd_scene load_steps=50 format=3 uid="uid://ch21mccnclukw"]
 
 [ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/Phishing UI/phishing_website.gd" id="1_b7w0f"]
-[ext_resource type="Texture2D" uid="uid://c20pp2avwps8k" path="res://Assets/Application Icons/arrow.png" id="1_bnq4w"]
-[ext_resource type="Texture2D" uid="uid://cw0huh1ritm32" path="res://Assets/Application Icons/refresh.png" id="2_b7w0f"]
-[ext_resource type="Texture2D" uid="uid://drn24808ld1dx" path="res://Assets/Application Icons/star.png" id="3_4rrk1"]
-[ext_resource type="Texture2D" uid="uid://ckdcsmy1pp7si" path="res://Assets/Application Icons/puzzle.png" id="4_io6ah"]
-[ext_resource type="Texture2D" uid="uid://5u27h4jo5fav" path="res://Assets/Application Icons/user.png" id="5_6u6vw"]
-[ext_resource type="Texture2D" uid="uid://cepdohl2vcuty" path="res://Assets/Application Icons/interface.png" id="6_22wq5"]
-[ext_resource type="Texture2D" uid="uid://0i4h1tm0auqq" path="res://Assets/Application Icons/search-337.png" id="7_e6qcw"]
-[ext_resource type="Texture2D" uid="uid://digdw37sjfecp" path="res://Assets/Application Icons/internet.png" id="8_pbmhk"]
+[ext_resource type="Texture2D" uid="uid://codr1j7llw0rc" path="res://Assets/Application Icons/585e4ae1cb11b227491c3393.png" id="2_yc5dg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7as"]
-bg_color = Color(0.823529, 0.823529, 0.823529, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4pc"]
-bg_color = Color(0.823529, 0.823529, 0.823529, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7gv8"]
-bg_color = Color(0.823529, 0.823529, 0.823529, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbxnd"]
-bg_color = Color(0.941176, 0.941176, 0.941176, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7w0f"]
+bg_color = Color(0.937255, 0.980392, 0.470588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq7fy"]
-bg_color = Color(0.823212, 0.823212, 0.823212, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io6ah"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rrk1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af7me"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="FontVariation" id="FontVariation_af7me"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unsyy"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtke"]
 bg_color = Color(0.458824, 0.458824, 0.458824, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgs5f"]
-bg_color = Color(0.859895, 0.377335, 0.294675, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1js"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8wsj"]
-bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
-shadow_color = Color(0.366595, 0.366595, 0.366595, 0.784314)
-shadow_size = 3
-shadow_offset = Vector2(0, 10)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm5q4"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g46c"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yc5dg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r74k5"]
-bg_color = Color(0.614341, 0.512609, 0.961783, 1)
-shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
-shadow_size = 1
-shadow_offset = Vector2(0, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvf6f"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnq4w"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk66u"]
-bg_color = Color(0.452027, 0.270059, 0.836414, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_io6ah"]
 resource_name = "phishing_desktop_2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Google/Label:text")
+tracks/0/path = NodePath("TabContainer/Google/TextPanel/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,74 +75,50 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/SearchBar/urlbar:editable")
+tracks/1/path = NodePath("TabContainer/Company Website:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Google/wrong_url:visible")
+tracks/2/path = NodePath("TabContainer/Google/TextPanel/Label/Next:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/SearchBar/urlbar:text")
+tracks/3/path = NodePath("TabContainer/Google/TextPanel/Label/Next:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect/Company Website:visible")
+tracks/4/path = NodePath("TabContainer/Google/Label Header:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect/Google/Label/Next:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ColorRect/Google/Label/Next:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": ["I N T E R N E T"]
 }
 
 [sub_resource type="Animation" id="Animation_e6qcw"]
@@ -179,7 +126,7 @@ resource_name = "phishing_desktop_3"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Company Website:visible")
+tracks/0/path = NodePath("TabContainer/Company Website:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -191,70 +138,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/SearchBar/Panel2/Label:text")
+tracks/1/path = NodePath("TabContainer/Company Website/TextPanel/Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Pulsefire"]
+"values": ["Now this is the companies website, somehow it's plain, let's try to duplicate this for our phishing website"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/SearchBar/urlbar:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["https://www.pulseforge-studio.com"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/SearchBar/urlbar:editable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_4rrk1"]
-resource_name = "phishing_desktop_start"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Google/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Since you already found the url for the company's website, let's try to find it and copy it's contents into our own pishing website"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/SearchBar/urlbar:editable")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Google/wrong_url:visible")
+tracks/2/path = NodePath("TabContainer/Company Website/TextPanel/Label/Back:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -266,7 +162,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/Company Website:visible")
+tracks/3/path = NodePath("TabContainer/Company Website/TextPanel/Label/Next:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -278,58 +174,34 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect/Google:visible")
+tracks/4/path = NodePath("TabContainer/Company Website/Label Header:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect/Google/Label/Next:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ColorRect/Google/Label/Next:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": ["P U L S E F I R E"]
 }
 
-[sub_resource type="Animation" id="Animation_b7w0f"]
-resource_name = "phishing_fake_website"
+[sub_resource type="Animation" id="Animation_4rrk1"]
+resource_name = "phishing_desktop_start"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Company Website:visible")
+tracks/0/path = NodePath("TabContainer/Google/TextPanel/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Type in the URL of the website to begin"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Google:visible")
+tracks/1/path = NodePath("TabContainer/Company Website:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -341,26 +213,173 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Company Website/Label:text")
+tracks/2/path = NodePath("TabContainer/Google:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Great! our website is done but with one thing different..."]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/SearchBar/Panel2/Label:text")
+tracks/3/path = NodePath("TabContainer/Google/TextPanel/Label/Next:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Pulsef1re"]
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TabContainer/Google/TextPanel/Label/Next:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TabContainer/Google/TextPanel/Label/Next:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TabContainer/Google/TextPanel/Label/Back:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TabContainer/Google/TextPanel/Label/Back:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Type here"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TabContainer/Google/Searchbar/SearchButton:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TabContainer/Google/Panel/SearchButton:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TabContainer/Google/Label Header:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I N T E R N E T"]
+}
+
+[sub_resource type="Animation" id="Animation_b7w0f"]
+resource_name = "phishing_fake_website"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Company Website:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Google:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TabContainer/Company Website/Label Header:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["P U L S E F 1 R E"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TabContainer/Company Website/TextPanel/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Our website is almost done, with one key difference..."]
 }
 
 [sub_resource type="Animation" id="Animation_pbmhk"]
@@ -368,39 +387,487 @@ resource_name = "phishing_fake_website_2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Company Website/Label:text")
+tracks/0/path = NodePath("TabContainer/Company Website/TextPanel/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The website name is different, let's leave it like that and see if they will notice it, Let's deploy our website"]
+"values": ["As seen up top, the website name is mispelled, let's keep it like that and see if they notice it , Let's host our website and find our first victim"]
+}
+
+[sub_resource type="Animation" id="Animation_jh7as"]
+resource_name = "typing_site_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_r74k5"]
+resource_name = "typing_site_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulse"]
+}
+
+[sub_resource type="Animation" id="Animation_xvf6f"]
+resource_name = "typing_site_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulsef"]
+}
+
+[sub_resource type="Animation" id="Animation_gk66u"]
+resource_name = "typing_site_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulsefo"]
+}
+
+[sub_resource type="Animation" id="Animation_icyxv"]
+resource_name = "typing_site_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulsefor"]
+}
+
+[sub_resource type="Animation" id="Animation_5t2jl"]
+resource_name = "typing_site_14"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforg"]
+}
+
+[sub_resource type="Animation" id="Animation_pc040"]
+resource_name = "typing_site_15"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge"]
+}
+
+[sub_resource type="Animation" id="Animation_8u540"]
+resource_name = "typing_site_16"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-"]
+}
+
+[sub_resource type="Animation" id="Animation_7vc38"]
+resource_name = "typing_site_17"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-s"]
+}
+
+[sub_resource type="Animation" id="Animation_e77si"]
+resource_name = "typing_site_18"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-st"]
+}
+
+[sub_resource type="Animation" id="Animation_njgd4"]
+resource_name = "typing_site_19"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-stu"]
+}
+
+[sub_resource type="Animation" id="Animation_qk4pc"]
+resource_name = "typing_site_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["w"]
+}
+
+[sub_resource type="Animation" id="Animation_7n42i"]
+resource_name = "typing_site_20"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-stud"]
+}
+
+[sub_resource type="Animation" id="Animation_t8f7g"]
+resource_name = "typing_site_21"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studi"]
+}
+
+[sub_resource type="Animation" id="Animation_4v8dd"]
+resource_name = "typing_site_22"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studio"]
+}
+
+[sub_resource type="Animation" id="Animation_0lk7w"]
+resource_name = "typing_site_23"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studio."]
+}
+
+[sub_resource type="Animation" id="Animation_bhysw"]
+resource_name = "typing_site_24"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studio.c"]
+}
+
+[sub_resource type="Animation" id="Animation_nvmpv"]
+resource_name = "typing_site_25"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studio.co"]
+}
+
+[sub_resource type="Animation" id="Animation_1xcbs"]
+resource_name = "typing_site_26"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pulseforge-studio.com"]
+}
+
+[sub_resource type="Animation" id="Animation_f7gv8"]
+resource_name = "typing_site_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ww"]
+}
+
+[sub_resource type="Animation" id="Animation_jbxnd"]
+resource_name = "typing_site_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www"]
+}
+
+[sub_resource type="Animation" id="Animation_rq7fy"]
+resource_name = "typing_site_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www."]
+}
+
+[sub_resource type="Animation" id="Animation_1xtke"]
+resource_name = "typing_site_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.p"]
+}
+
+[sub_resource type="Animation" id="Animation_vgs5f"]
+resource_name = "typing_site_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pu"]
+}
+
+[sub_resource type="Animation" id="Animation_w8wsj"]
+resource_name = "typing_site_8"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.pul"]
+}
+
+[sub_resource type="Animation" id="Animation_4g46c"]
+resource_name = "typing_site_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["www.puls"]
+}
+
+[sub_resource type="Animation" id="Animation_yc5dg"]
+resource_name = "website_search"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Google/Searchbar/SearchButton:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Google/Panel/SearchButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_22wq5"]
 resource_name = "wrong_url"
 length = 3.0
+
+[sub_resource type="Animation" id="Animation_14c4n"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Google/wrong_url:visible")
+tracks/0/path = NodePath("TabContainer/Company Website/TextPanel/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": ["As seen up top, the website name is mispelled, let's keep it like that and see if they notice it , Let's host our website and find our first victim"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmhk"]
 _data = {
+&"RESET": SubResource("Animation_14c4n"),
 &"phishing_desktop_2": SubResource("Animation_io6ah"),
 &"phishing_desktop_3": SubResource("Animation_e6qcw"),
 &"phishing_desktop_start": SubResource("Animation_4rrk1"),
 &"phishing_fake_website": SubResource("Animation_b7w0f"),
 &"phishing_fake_website_2": SubResource("Animation_pbmhk"),
+&"typing_site_1": SubResource("Animation_jh7as"),
+&"typing_site_10": SubResource("Animation_r74k5"),
+&"typing_site_11": SubResource("Animation_xvf6f"),
+&"typing_site_12": SubResource("Animation_gk66u"),
+&"typing_site_13": SubResource("Animation_icyxv"),
+&"typing_site_14": SubResource("Animation_5t2jl"),
+&"typing_site_15": SubResource("Animation_pc040"),
+&"typing_site_16": SubResource("Animation_8u540"),
+&"typing_site_17": SubResource("Animation_7vc38"),
+&"typing_site_18": SubResource("Animation_e77si"),
+&"typing_site_19": SubResource("Animation_njgd4"),
+&"typing_site_2": SubResource("Animation_qk4pc"),
+&"typing_site_20": SubResource("Animation_7n42i"),
+&"typing_site_21": SubResource("Animation_t8f7g"),
+&"typing_site_22": SubResource("Animation_4v8dd"),
+&"typing_site_23": SubResource("Animation_0lk7w"),
+&"typing_site_24": SubResource("Animation_bhysw"),
+&"typing_site_25": SubResource("Animation_nvmpv"),
+&"typing_site_26": SubResource("Animation_1xcbs"),
+&"typing_site_3": SubResource("Animation_f7gv8"),
+&"typing_site_4": SubResource("Animation_jbxnd"),
+&"typing_site_5": SubResource("Animation_rq7fy"),
+&"typing_site_6": SubResource("Animation_1xtke"),
+&"typing_site_7": SubResource("Animation_vgs5f"),
+&"typing_site_8": SubResource("Animation_w8wsj"),
+&"typing_site_9": SubResource("Animation_4g46c"),
+&"website_search": SubResource("Animation_yc5dg"),
 &"wrong_url": SubResource("Animation_22wq5")
 }
 
@@ -414,259 +881,119 @@ script = ExtResource("1_b7w0f")
 animation = NodePath("AnimationPlayer")
 metadata/_tab_index = 9
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 2
-color = Color(0.719298, 0.920553, 0.975525, 1)
+current_tab = 1
+tabs_visible = false
 
-[node name="Header" type="ColorRect" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.118
-offset_bottom = -43.464
-grow_horizontal = 2
-scale = Vector2(1.00035, 0.980913)
-color = Color(0.834614, 0.834614, 0.834614, 1)
-
-[node name="SearchBar" type="ColorRect" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0493827
-anchor_right = 1.00035
-anchor_bottom = 0.12507
-offset_right = -0.403198
-offset_bottom = 0.954346
-grow_horizontal = 2
-scale = Vector2(1.00035, 0.980913)
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.249913
-anchor_top = 0.163114
-anchor_right = 0.631857
-anchor_bottom = 0.823118
-offset_left = -3.05176e-05
-theme_override_styles/panel = SubResource("StyleBoxFlat_jh7as")
-metadata/_edit_use_anchors_ = true
-
-[node name="Left" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0140049
-anchor_top = 0.160953
-anchor_right = 0.042116
-anchor_bottom = 0.799457
-offset_left = -0.133615
-offset_top = -0.0476208
-offset_right = -0.517616
-offset_bottom = 0.0273743
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("1_bnq4w")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Right" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0552645
-anchor_top = 0.128292
-anchor_right = 0.0826395
-anchor_bottom = 0.784001
-offset_left = 0.312897
-offset_top = 1.74112
-offset_right = -0.223076
-offset_bottom = -0.0441742
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("1_bnq4w")
-ignore_texture_size = true
-stretch_mode = 0
-flip_h = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Refresh" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0967192
-anchor_top = 0.128292
-anchor_right = 0.124754
-anchor_bottom = 0.803781
-offset_left = 0.540268
-offset_top = 1.74112
-offset_right = 0.244293
-offset_bottom = -0.0331268
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("2_b7w0f")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="urlbar" type="TextEdit" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263021
-anchor_top = 0.220001
-anchor_right = 0.605035
-anchor_bottom = 0.760004
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_qk4pc")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_f7gv8")
-placeholder_text = " Type the URL here"
-metadata/_edit_use_anchors_ = true
-
-[node name="Favorites" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.659524
-anchor_top = 0.327053
-anchor_right = 0.680899
-anchor_bottom = 0.825536
-offset_left = -0.0374146
-offset_top = -0.0412102
-offset_right = 0.338501
-offset_bottom = 0.0347824
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_4rrk1")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Extensions" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.712805
-anchor_top = 0.347064
-anchor_right = 0.735652
-anchor_bottom = 0.847167
-offset_left = -0.438232
-offset_top = -0.0222912
-offset_right = 0.241699
-offset_bottom = -0.027298
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("4_io6ah")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="USer" type="TextureButton" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.921174
-anchor_top = 0.428243
-anchor_right = 0.945361
-anchor_bottom = 0.867342
-offset_left = 0.435913
-offset_top = -0.0033741
-offset_right = 0.571899
-offset_bottom = 0.041626
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("5_6u6vw")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Menu" type="TextureButton" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.949967
-anchor_top = 0.489917
-anchor_right = 0.970967
-anchor_bottom = 0.783917
-offset_left = 0.254395
-offset_top = -0.0287056
-offset_right = 0.0623779
-offset_bottom = 0.00127411
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("6_22wq5")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel2" type="Panel" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.000868056
-anchor_top = -0.56
-anchor_right = 0.251736
-theme_override_styles/panel = SubResource("StyleBoxFlat_jbxnd")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="ColorRect/SearchBar/Panel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.148736
-anchor_top = 0.053355
-anchor_right = 0.480916
-anchor_bottom = 1.1605
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
-text = "Pulsef1re"
-metadata/_edit_use_anchors_ = true
-
-[node name="Search" type="TextureButton" parent="ColorRect/SearchBar"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.605222
-anchor_top = 0.250628
-anchor_right = 0.62284
-anchor_bottom = 0.686115
-offset_left = 0.540268
-offset_top = 1.74112
-offset_right = 0.244293
-offset_bottom = -0.0331268
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("7_e6qcw")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="ColorRect/SearchBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.13884
-anchor_top = 0.163114
-anchor_right = 0.243007
-anchor_bottom = 0.783118
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
-text = "Search bar:"
-metadata/_edit_use_anchors_ = true
-
-[node name="Google" type="ColorRect" parent="ColorRect"]
+[node name="Google" type="ColorRect" parent="TabContainer"]
 visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Background" type="Panel" parent="TabContainer/Google"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.125
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.52588e-05
-metadata/_edit_use_anchors_ = true
+offset_left = -1.0
+offset_top = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7w0f")
 
-[node name="Panel" type="Panel" parent="ColorRect/Google"]
+[node name="Searchbar" type="Panel" parent="TabContainer/Google"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.194174
-anchor_top = 0.435658
-anchor_right = 0.831174
-anchor_bottom = 0.518232
+anchor_top = 0.432127
+anchor_right = 0.55166
+anchor_bottom = 0.515421
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_rq7fy")
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchButton" type="Button" parent="TabContainer/Google/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.01217
+anchor_bottom = 1.03704
+theme_override_styles/disabled = SubResource("StyleBoxFlat_io6ah")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rrk1")
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchIcon" type="TextureButton" parent="TabContainer/Google/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0389294
+anchor_top = 0.296296
+anchor_right = 0.0997567
+anchor_bottom = 0.740741
+texture_normal = ExtResource("2_yc5dg")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Google/Searchbar"]
+layout_mode = 0
+anchor_left = 0.136253
+anchor_right = 1.0
+anchor_bottom = 0.962963
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "w"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_af7me")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.176215
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 26
+text = "I N T E R N E T"
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.329861
+anchor_top = 0.283951
+anchor_right = 0.654514
+anchor_bottom = 0.389203
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 36
+text = "EXPLORE THE WORLD"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.590007
+anchor_top = 0.432127
+anchor_right = 0.722667
+anchor_bottom = 0.515421
 offset_left = 0.311981
 offset_top = -0.0180016
 offset_right = -0.512085
@@ -674,61 +1001,75 @@ offset_bottom = 0.00699615
 theme_override_styles/panel = SubResource("StyleBoxFlat_rq7fy")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Google"]
+[node name="InterneWelcome" type="Label" parent="TabContainer/Google/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.215278
-anchor_top = 0.452569
-anchor_right = 0.8125
-anchor_bottom = 0.503416
+anchor_left = 0.210526
+anchor_top = 0.148148
+anchor_right = 0.842105
+anchor_bottom = 0.814814
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 26
+text = "Search "
 metadata/_edit_use_anchors_ = true
 
-[node name="TerminalIcon" type="TextureButton" parent="ColorRect/Google"]
+[node name="SearchButton" type="Button" parent="TabContainer/Google/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.430556
-anchor_top = 0.111111
-anchor_right = 0.576389
-anchor_bottom = 0.375661
+anchor_right = 1.01217
+anchor_bottom = 1.03704
+theme_override_styles/disabled = SubResource("StyleBoxFlat_io6ah")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rrk1")
+disabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.753086
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_pbmhk")
-ignore_texture_size = true
-stretch_mode = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_unsyy")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="ColorRect/Google"]
+[node name="Label" type="Label" parent="TabContainer/Google/TextPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0434028
-anchor_top = 0.805085
-anchor_right = 0.742188
-anchor_bottom = 0.944915
+anchor_left = 0.0416667
+anchor_top = 0.148148
+anchor_right = 0.740452
+anchor_bottom = 0.287978
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "Let's type in the website url, click the search button after"
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="ColorRect/Google/Label"]
-visible = false
+[node name="Back" type="Button" parent="TabContainer/Google/TextPanel/Label"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.82449
-anchor_top = 0.712121
-anchor_right = 0.909184
-anchor_bottom = 1.22727
+anchor_left = 0.675776
+anchor_top = 3.97308
+anchor_right = 0.76047
+anchor_bottom = 5.09878
 theme_override_font_sizes/font_size = 18
+disabled = true
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="ColorRect/Google/Label"]
+[node name="Next" type="Button" parent="TabContainer/Google/TextPanel/Label"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.712121
-anchor_right = 1.08469
-anchor_bottom = 1.22727
+anchor_left = 0.556521
+anchor_top = 3.97308
+anchor_right = 0.640993
+anchor_bottom = 5.03257
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1xtke")
@@ -736,280 +1077,257 @@ disabled = true
 text = "Next"
 metadata/_edit_use_anchors_ = true
 
-[node name="wrong_url" type="Panel" parent="ColorRect/Google"]
-visible = false
+[node name="Company Website" type="ColorRect" parent="TabContainer"]
 layout_mode = 2
-anchor_left = 0.219618
-anchor_top = 0.582627
-anchor_right = 0.767361
-anchor_bottom = 0.728814
-theme_override_styles/panel = SubResource("StyleBoxFlat_vgs5f")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="ColorRect/Google/wrong_url"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Error: Wrong URL"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Search2" type="TextureButton" parent="ColorRect/Google"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.790798
-anchor_top = 0.455027
-anchor_right = 0.811631
-anchor_bottom = 0.502651
-offset_right = 6.10352e-05
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("7_e6qcw")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="TerminalIcon2" type="TextureButton" parent="ColorRect"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0138889
-anchor_top = 0.0123457
-anchor_right = 0.0355903
-anchor_bottom = 0.0509259
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_pbmhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 2
-anchor_left = 0.774306
-anchor_top = 0.0725309
-anchor_right = 0.876736
-anchor_bottom = 0.12037
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
-text = "Downloads"
-metadata/_edit_use_anchors_ = true
-
-[node name="Company Website" type="ColorRect" parent="ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.271605
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 color = Color(0.650128, 0.650128, 0.650128, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_tab_index = 1
 
-[node name="Panel" type="Panel" parent="ColorRect/Company Website"]
+[node name="Background" type="Panel" parent="TabContainer/Company Website"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.000868056
-anchor_top = -0.209746
-anchor_right = 1.00087
-theme_override_styles/panel = SubResource("StyleBoxFlat_w8wsj")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel2" type="Panel" parent="ColorRect/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.222222
-anchor_top = 0.0852878
-anchor_right = 0.778646
-anchor_bottom = 0.84435
-offset_left = 0.000259399
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
-theme_override_styles/panel = SubResource("StyleBoxFlat_4g46c")
-
-[node name="Panel" type="Panel" parent="ColorRect/Company Website/Panel2"]
-layout_mode = 0
-anchor_top = 0.798781
+anchor_top = 0.493827
 anchor_right = 1.0
-anchor_bottom = 0.929878
-theme_override_styles/panel = SubResource("StyleBoxFlat_r74k5")
+anchor_bottom = 0.987654
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1js")
 metadata/_edit_use_anchors_ = true
 
-[node name="username" type="TextEdit" parent="ColorRect/Company Website"]
+[node name="Background2" type="Panel" parent="TabContainer/Company Website"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.333333
-anchor_top = 0.255864
-anchor_right = 0.673611
-anchor_bottom = 0.341151
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_xvf6f")
-placeholder_text = "Username"
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.493827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dm5q4")
+metadata/_edit_use_anchors_ = true
 
-[node name="password" type="TextEdit" parent="ColorRect/Company Website"]
+[node name="Header" type="Panel" parent="TabContainer/Company Website"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.333333
-anchor_top = 0.443497
-anchor_right = 0.673611
-anchor_bottom = 0.528785
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_xvf6f")
-placeholder_text = "Password"
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_af7me")
+metadata/_edit_use_anchors_ = true
 
-[node name="usernamelabel" type="Label" parent="ColorRect/Company Website"]
+[node name="Label Header" type="Label" parent="TabContainer/Company Website"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.333333
-anchor_top = 0.178577
-anchor_right = 0.458333
-anchor_bottom = 0.227617
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000305176
-offset_bottom = -24.2559
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Username:"
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 26
+text = "P U L S E F 1 R E"
+metadata/_edit_use_anchors_ = true
 
-[node name="passwordlabel" type="Label" parent="ColorRect/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.333333
-anchor_top = 0.3854
-anchor_right = 0.458333
-anchor_bottom = 0.43444
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000305176
-offset_bottom = -24.2559
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Password:"
-
-[node name="welcometopulsefire" type="Label" parent="ColorRect/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0972222
-anchor_top = -0.952932
-anchor_right = 0.241319
-anchor_bottom = -0.903891
-offset_left = 384.0
-offset_top = 486.669
-offset_right = 384.001
-offset_bottom = 486.669
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "LOGIN TO PULSEFIRE "
-horizontal_alignment = 1
-
-[node name="needhelp?" type="Label" parent="ColorRect/Company Website"]
+[node name="TextPanel2" type="Panel" parent="TabContainer/Company Website"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.298611
-anchor_top = 0.720155
+anchor_top = 0.197531
 anchor_right = 0.701389
-anchor_bottom = 0.769195
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unsyy")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310345
+anchor_top = 0.04
+anchor_right = 0.689655
+anchor_bottom = 0.28
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 19
+text = "W E L C O M E
+T O
+P U L S E F I R E"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="forgotpassword" type="Label" parent="ColorRect/Company Website"]
+[node name="Searchbar" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.458333
-anchor_top = 0.545315
-anchor_right = 0.541667
-anchor_bottom = 0.57943
-offset_left = 0.000244141
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
+anchor_left = 0.137259
+anchor_top = 0.340045
+anchor_right = 0.673517
+anchor_bottom = 0.439983
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_rq7fy")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="TabContainer/Company Website/TextPanel2/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0362903
+anchor_top = 0.1
+anchor_right = 0.895161
+anchor_bottom = 0.9
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 11
-text = "Forgot Password?"
-horizontal_alignment = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_yc5dg")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
 
-[node name="Login Button" type="Panel" parent="ColorRect/Company Website"]
+[node name="Searchbar2" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.395833
-anchor_top = 0.597015
-anchor_right = 0.604167
-anchor_bottom = 0.682303
-offset_left = 0.000274658
-offset_top = -24.2559
-offset_right = 0.000244141
-offset_bottom = -24.2559
+anchor_left = 0.137259
+anchor_top = 0.500045
+anchor_right = 0.673517
+anchor_bottom = 0.599983
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_rq7fy")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="TabContainer/Company Website/TextPanel2/Searchbar2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0322581
+anchor_top = 0.1
+anchor_right = 0.983871
+anchor_bottom = 0.875
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_yc5dg")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar3" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143724
+anchor_top = 0.682545
+anchor_right = 0.679983
+anchor_bottom = 0.782483
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnq4w")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Company Website/TextPanel2/Searchbar3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.210526
+anchor_top = 0.148148
+anchor_right = 0.842105
+anchor_bottom = 0.814814
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 26
+text = "Log In"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel" type="Panel" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gk66u")
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_unsyy")
 
-[node name="Label" type="Label" parent="ColorRect/Company Website/Login Button"]
+[node name="Label" type="Label" parent="TabContainer/Company Website/TextPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.39375
-anchor_top = 0.214327
-anchor_right = 0.60625
-anchor_bottom = 0.785673
-grow_horizontal = 2
-grow_vertical = 2
-text = "LOGIN"
-horizontal_alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0434028
-anchor_top = 0.845339
-anchor_right = 0.894097
-anchor_bottom = 0.947034
+anchor_left = 0.0416667
+anchor_top = 0.148148
+anchor_right = 0.971354
+anchor_bottom = 0.299464
+offset_right = -265.999
+offset_bottom = -1.74584
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Great! our website is done but with one thing different..."
+text = "As seen up top, the website name is mispelled, let's keep it like that and see if they notice it , Let's host our website and find our first victim"
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="ColorRect/Company Website/Label"]
+[node name="Back" type="Button" parent="TabContainer/Company Website/TextPanel/Label"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.823469
-anchor_top = 0.270833
-anchor_right = 0.908163
-anchor_bottom = 0.979167
+anchor_left = 0.675776
+anchor_top = 3.97308
+anchor_right = 0.76047
+anchor_bottom = 5.09878
 theme_override_font_sizes/font_size = 18
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="ColorRect/Company Website/Label"]
+[node name="Next" type="Button" parent="TabContainer/Company Website/TextPanel/Label"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.99898
-anchor_top = 0.270833
-anchor_right = 1.08367
-anchor_bottom = 0.979167
+anchor_left = 0.556521
+anchor_top = 3.97308
+anchor_right = 0.640993
+anchor_bottom = 5.03257
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1xtke")
 text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Background2" type="Panel" parent="TabContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.493827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dm5q4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_af7me")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_af7me")
+theme_override_font_sizes/font_size = 26
+text = "E M A I L"
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1017,6 +1335,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_pbmhk")
 }
 
-[connection signal="pressed" from="ColorRect/SearchBar/Search" to="." method="_on_search_pressed"]
-[connection signal="pressed" from="ColorRect/Google/Label/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="ColorRect/Company Website/Label/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="TabContainer/Google/Searchbar/SearchButton" to="." method="_on_search_button_pressed"]
+[connection signal="pressed" from="TabContainer/Google/Panel/SearchButton" to="." method="_on_search_icon_pressed"]
+[connection signal="pressed" from="TabContainer/Google/TextPanel/Label/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="TabContainer/Company Website/TextPanel/Label/Next" to="." method="_on_next_pressed"]
