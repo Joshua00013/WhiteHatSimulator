@@ -19,7 +19,7 @@ height = 2.2
 [node name="Node3D" type="CharacterBody3D"]
 collision_mask = 5
 script = ExtResource("1_4flbx")
-inventory = ExtResource("2_3smsa")
+start_inventory = ExtResource("2_3smsa")
 accel = 20
 crouch_height = 1.5
 

@@ -7,7 +7,7 @@ var active : bool = false
 @export var item_name : Label
 @export var item_description : Label
 
-@onready var inv : Inv = preload("res://Items/player_inventory.tres")
+@onready var inv : Inv = GameManager.player.inventory
 
 func _ready() -> void:
 	GameManager.inv = self

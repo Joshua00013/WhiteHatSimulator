@@ -10,4 +10,5 @@ func _ready():
 			visible = true
 
 func toggle(value):
-	visible = not value
+	if OS.get_name() == "Android":
+		visible = not value

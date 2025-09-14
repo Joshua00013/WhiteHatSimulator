@@ -3,7 +3,6 @@ extends Node3D
 @export var corridor_door : Node3D
 
 func _ready() -> void:
-	
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
 	match OS.get_name():
@@ -18,6 +17,9 @@ func _ready() -> void:
 	DayAndNightManager.set_initial_time()
 	
 	ConfigFileHandler.apply_display_mode()
+	
+	Dialogic.VAR.reset()
+	# TODO : re initialize inventory and dialogic here
 
 func _on_dialogic_signal(argument: String):
 	match argument:

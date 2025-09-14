@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 8
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -31,7 +31,6 @@ visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
-visible = false
 layout_mode = 2
 
 [node name="PostRansomwareEncrypt" parent="." instance=ExtResource("4_atxjj")]
@@ -60,6 +59,7 @@ visible = false
 layout_mode = 2
 
 [node name="PhishingWebsite" parent="." instance=ExtResource("10_e7as3")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 8
 

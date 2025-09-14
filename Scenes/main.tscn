@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=96 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -7,10 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://bdq157g434mnf" path="res://Sounds/Harvest Dawn 4.mp3" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://cuinrvnv3n26a" path="res://Assets/Interact.png" id="9_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://dcdxek3xa5bfe" path="res://Assets/Inventory.png" id="10_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://bjlrbotrykvgn" path="res://Assets/Illustrator/hand_button.svg" id="14_ihvwq"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://b555p62txmwg6" path="res://Assets/Illustrator/inventory_button.svg" id="15_k8rh3"]
+[ext_resource type="Texture2D" uid="uid://f6asdsfuqk3d" path="res://Assets/Illustrator/pause.svg" id="16_55idt"]
 [ext_resource type="PackedScene" uid="uid://dtyhtvk2uy0ma" path="res://Scenes/3DModels/Structures/wall.tscn" id="17_3pmx8"]
+[ext_resource type="Texture2D" uid="uid://b5l4gh4qwaw2t" path="res://Assets/Illustrator/run_button.svg" id="17_87bhu"]
 [ext_resource type="PackedScene" uid="uid://b23e5f1whnwci" path="res://Scenes/3DModels/Structures/wall_double_door.tscn" id="18_u50mg"]
 [ext_resource type="PackedScene" uid="uid://c1avo5gcgfr5n" path="res://Scenes/3DModels/Decorations/desk_corner_booth_c.tscn" id="19_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/Interactables/flash_drive_collectible.tscn" id="19_ee4r6"]
@@ -161,6 +163,37 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.0290
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109589, 1.50504, -1.10609)
 stream = ExtResource("5_kry3j")
 
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="HUD" instance=ExtResource("79_qnggo")]
+visible = false
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TaskBox" parent="HUD/MarginContainer" instance=ExtResource("80_qnggo")]
+layout_mode = 2
+
+[node name="TimerUI" parent="HUD/MarginContainer" instance=ExtResource("14_ueoa1")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="QuizUI" parent="HUD" instance=ExtResource("82_wl4bb")]
+visible = false
+
+[node name="Popup" parent="HUD" instance=ExtResource("78_tab3y")]
+
 [node name="AndroidUI" type="CanvasLayer" parent="."]
 script = ExtResource("7_ynf5e")
 
@@ -187,21 +220,26 @@ action_up = "move_forward"
 action_down = "move_backward"
 
 [node name="InteractButton" type="TouchScreenButton" parent="AndroidUI/Control"]
-position = Vector2(880, 456)
-texture_normal = ExtResource("9_fdnlq")
+position = Vector2(905, 502)
+texture_normal = ExtResource("14_ihvwq")
 action = "interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="InventoryButton" type="TouchScreenButton" parent="AndroidUI/Control"]
-position = Vector2(989, 360)
-texture_normal = ExtResource("10_jkdf5")
+position = Vector2(1014, 406)
+texture_normal = ExtResource("15_k8rh3")
 action = "inventory"
 metadata/_edit_use_anchors_ = true
 
 [node name="PauseButton" type="TouchScreenButton" parent="AndroidUI/Control"]
+position = Vector2(1037, 17)
+scale = Vector2(0.686567, 0.686567)
+texture_normal = ExtResource("16_55idt")
 metadata/_edit_use_anchors_ = true
 
 [node name="SprintButton" type="TouchScreenButton" parent="AndroidUI/Control"]
+position = Vector2(870, 361)
+texture_normal = ExtResource("17_87bhu")
 metadata/_edit_use_anchors_ = true
 
 [node name="NPC" type="Node3D" parent="."]
@@ -1583,37 +1621,6 @@ supersampling = true
 interior = true
 generate_probes_subdiv = 3
 light_data = ExtResource("78_6h1fc")
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="InventoryUI" parent="HUD" instance=ExtResource("79_qnggo")]
-visible = false
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="TaskBox" parent="HUD/MarginContainer" instance=ExtResource("80_qnggo")]
-layout_mode = 2
-
-[node name="TimerUI" parent="HUD/MarginContainer" instance=ExtResource("14_ueoa1")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="QuizUI" parent="HUD" instance=ExtResource("82_wl4bb")]
-visible = false
-
-[node name="Popup" parent="HUD" instance=ExtResource("78_tab3y")]
 
 [node name="Door" parent="." instance=ExtResource("82_1tvlp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56889, -0.00113273, 0.493915)

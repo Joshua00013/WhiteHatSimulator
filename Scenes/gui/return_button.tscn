@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0paynrsx1un"]
+
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_s12mo"]
+[ext_resource type="Script" uid="uid://b8x5aaccge1wb" path="res://Scripts/GUI/return_button.gd" id="2_qnofn"]
+
+[node name="ReturnButton" type="Button"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 70.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_s12mo")
+text = "Return"
+script = ExtResource("2_qnofn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

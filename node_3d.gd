@@ -3,6 +3,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 10
 
+@export var start_inventory : Inv
 @export var inventory : Inv
 @export var sensitivity := 0.25
 @export var min_angle = -80
@@ -22,7 +23,8 @@ var stand_height : float
 var look_rotation : Vector2
 var stand_height_offset : float = 0.0
 func _ready():
-	GameManager.player = self
+	GameManager.player = self # The inventory ui is pointing to the Gamemanager.player.inventory
+	inventory = start_inventory.duplicate(true)
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
 	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

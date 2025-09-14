@@ -17,6 +17,8 @@ var last_event_time: float = -1.0
 @export var node_area : Area3D
 @export var camera : Camera3D
 
+@onready var return_button = $ReturnButton
+
 var active := false
 var in_use := false
 
@@ -121,10 +123,12 @@ func _on_interactable_interact_triggered():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		camera.current = true
 		GameManager.ui_active = true
+		return_button.show()
 		active = true
 
 		
 func exit_ui():
+	return_button.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.player.exit_tool_tip.visible = false
 	active = false
@@ -140,3 +144,8 @@ func login():
 	
 func logout():
 	tab.current_tab = 0
+
+
+func _on_return_button_pressed():
+	Input.action_press("exit_ui")
+	Input.action_release("exit_ui")

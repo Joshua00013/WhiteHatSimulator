@@ -23,6 +23,7 @@ var flash_drive_inserted := false
 @onready var camera = $Camera3D
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
+@onready var return_button = $ReturnButton
 
 signal closed
 
@@ -137,9 +138,11 @@ func _on_interactable_interact_triggered():
 		camera.current = true
 		GameManager.ui_active = true
 		active = true
+		return_button.show()
 
 		
 func exit_ui():
+	return_button.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.player.exit_tool_tip.visible = false
 	active = false
