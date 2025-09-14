@@ -173,11 +173,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MarginContainer/ColorRect/Page"]
 layout_mode = 2
-anchor_left = 0.124132
+anchor_left = 0.0954861
 anchor_top = 0.451271
-anchor_right = -0.124132
-anchor_bottom = 0.574152
-offset_right = 1152.0
+anchor_right = 0.904514
+anchor_bottom = 0.574153
 theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
 metadata/_edit_use_anchors_ = true
 
