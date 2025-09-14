@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://q5ov4qrwklb6"]
+
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="1_602tj"]
+
+[sub_resource type="FontVariation" id="FontVariation_unakf"]
+base_font = ExtResource("1_602tj")
+spacing_glyph = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rweto"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6xry"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 50
+border_width_top = 10
+border_width_right = 50
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mjqs"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+border_width_left = 50
+border_width_top = 10
+border_width_right = 50
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_detail = 20
+
+[resource]
+TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
+TabContainer/constants/side_margin = 14
+TabContainer/font_sizes/font_size = 30
+TabContainer/fonts/font = SubResource("FontVariation_unakf")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_rweto")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_n6xry")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_7mjqs")

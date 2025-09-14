@@ -15,11 +15,8 @@ func _ready() -> void:
 			
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
-	
 	ConfigFileHandler.apply_display_mode()
-	
 	Dialogic.VAR.reset()
-	# TODO : re initialize inventory and dialogic here
 
 func _on_dialogic_signal(argument: String):
 	match argument:
