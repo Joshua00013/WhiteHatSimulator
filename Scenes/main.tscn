@@ -265,9 +265,8 @@ target_area_5 = NodePath("../../Markers/Cafeteria")
 [node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.7901, -0.00113225, 7.25286)
 
-[node name="Koro" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("49_sasc4")]
+[node name="Koro" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("49_sasc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3554, -0.00113297, 2.53087)
-PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer3")
 target_area_1 = NodePath("../../Markers/Reception")
 
 [node name="Gigi" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("50_jekl6")]

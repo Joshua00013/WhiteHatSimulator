@@ -8,4 +8,4 @@ func _ready():
 
 func lock_card():
 	modulate = Color(0.3, 0.3, 0.3, 1)
-	button.disabled = false
+	button.disabled = true
