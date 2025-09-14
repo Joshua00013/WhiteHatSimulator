@@ -16,6 +16,35 @@ var phishing_ready : bool = false
 var fileless_ready : bool = false
 var dos_ready : bool = false
 
+var website_seen := false
+var piracy_seen := false
+
+# Dictionary of emails and whether they are usable
+var emails := {
+	"al@company.com": false,
+	"brian@company.com": false,
+	"gigi@company.com": false,
+	"joe@company.com": false,
+	"john@company.com": false,
+	"koro@company.com": false,
+	"liz@company.com": false,
+	"mike@company.com": false,
+	"mococo@company.com": false,
+	"myrione@company.com": false,
+	"robert@company.com": false,
+	"sai@company.com": false,
+	"shion@company.com": false,
+	"walter@company.com": false,
+	"wisadel@company.com": false
+}
+
+func get_usable_emails() -> Array:
+	var usable := []
+	for address in emails.keys():
+		if emails[address] == true:
+			usable.append(address)
+	return usable
+	
 func set_reconnaissance(value: bool) -> void:
 	if not reconnaissance_finished and value:
 		reconnaissance_finished = true

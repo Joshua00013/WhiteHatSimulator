@@ -7,6 +7,7 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
+@export var npc_resource : NpcData
 @export var password := ""
 @export var username := ""
 @export var login_screen : Control
@@ -18,6 +19,8 @@ var last_event_time: float = -1.0
 @export var camera : Camera3D
 
 @onready var return_button = $ReturnButton
+@onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser
+@onready var notepad_text = %NotepadText
 
 var active := false
 var in_use := false
@@ -27,8 +30,14 @@ func _ready():
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
 	
-	login_screen.username = username
-	login_screen.password = password
+	if npc_resource != null:
+		notepad_text.text = npc_resource.text
+		login_screen.username = npc_resource.username
+		login_screen.password = npc_resource.password
+		npc_browser.change_email(npc_resource.email)
+	else: # Fallback if the resource is left empty
+		login_screen.username = username
+		login_screen.password = password
 
 func _mouse_entered_area():
 	is_mouse_inside = true

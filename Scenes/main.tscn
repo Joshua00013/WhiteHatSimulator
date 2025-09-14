@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=97 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -85,6 +85,7 @@
 [ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="79_qnggo"]
 [ext_resource type="PackedScene" uid="uid://b1mlskr54ypql" path="res://Scenes/GUI/task_box.tscn" id="80_qnggo"]
 [ext_resource type="PackedScene" uid="uid://eshr53785n80" path="res://Scenes/Interactables/quiz_door.tscn" id="82_1tvlp"]
+[ext_resource type="Resource" uid="uid://b1shwyr2jecdw" path="res://Resources/NPCResources/myrione.tres" id="82_k8rh3"]
 [ext_resource type="PackedScene" uid="uid://b788xwn3k7nxn" path="res://Scenes/GUI/Quiz/quiz_ui.tscn" id="82_wl4bb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
@@ -1555,6 +1556,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
+npc_resource = ExtResource("82_k8rh3")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)
