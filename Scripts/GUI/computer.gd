@@ -10,6 +10,7 @@ var last_event_time: float = -1.0
 @export var npc_resource : NpcData
 @export var password := ""
 @export var username := ""
+
 @export var login_screen : Control
 @export var flashdrive_item : InvItem
 @export var minigame : Node3D
@@ -19,6 +20,7 @@ var last_event_time: float = -1.0
 @export var node_area : Area3D
 @export var camera : Camera3D
 @export var interactable : Interactable
+@export var desktop_animations: AnimationPlayer
 
 @onready var return_button = $ReturnButton
 @onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser

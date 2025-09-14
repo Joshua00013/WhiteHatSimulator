@@ -354,6 +354,8 @@ libraries = {
 [node name="FlashDriveLowPoly" parent="FlashdriveMinigame" instance=ExtResource("15_2rmg2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.685721, 0, -0.996486)
 
+[node name="DesktopAnimations" type="AnimationPlayer" parent="."]
+
 [connection signal="interact_triggered" from="Model/Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="login_successful" from="Model/SubViewport/TabContainer/Login" to="." method="_on_control_login_successful"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

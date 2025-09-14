@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0qfb2b1l0kbl"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_xnljy"]
-[ext_resource type="Script" uid="uid://cx4vr46x14xm4" path="res://Scripts/Interactables/card_swipe.gd" id="1_ylcda"]
+[ext_resource type="Script" path="res://Scripts/Interactables/card_swipe.gd" id="1_ylcda"]
 [ext_resource type="PackedScene" uid="uid://b8dral0sm4tst" path="res://Scenes/3DModels/Interactables/keycard_reader.tscn" id="4_ylcda"]
 [ext_resource type="PackedScene" uid="uid://ckbahtir4oubp" path="res://Scenes/3DModels/keycard.tscn" id="5_bnpop"]
 
