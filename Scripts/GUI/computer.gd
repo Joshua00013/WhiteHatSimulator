@@ -20,7 +20,7 @@ var last_event_time: float = -1.0
 @export var node_area : Area3D
 @export var camera : Camera3D
 @export var interactable : Interactable
-@export var desktop_animations: AnimationPlayer
+@export var deployment_buttons : Control
 
 @onready var return_button = $ReturnButton
 @onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser
@@ -140,6 +140,8 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 func _on_interactable_interact_triggered():
 	if in_use:
 		return
+	if CyberattackManager.weaponization_finished:
+		deployment_buttons.show()
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
 		minigame.start_minigame()
 	if camera.is_current() == false:
@@ -149,6 +151,7 @@ func _on_interactable_interact_triggered():
 		GameManager.ui_active = true
 		return_button.show()
 		active = true
+	CyberattackManager.delivery_finished = true
 
 func exit_ui():
 	if flashdrive_plugged == true:
