@@ -1,0 +1,390 @@
+[gd_scene load_steps=16 format=3 uid="uid://brolyhuqalf2q"]
+
+[ext_resource type="Texture2D" uid="uid://codr1j7llw0rc" path="res://Assets/Application Icons/585e4ae1cb11b227491c3393.png" id="1_e8m2i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_623pw"]
+bg_color = Color(0.937255, 0.980392, 0.470588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jrgs"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0obvc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp0pp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihkhw"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="FontVariation" id="FontVariation_ko2a4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34mxu"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82v13"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7sof"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="FontVariation" id="FontVariation_fj17t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r38nc"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26j6v"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmr24"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aupwt"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+current_tab = 1
+tabs_visible = false
+metadata/_tab_index = 0
+
+[node name="Google" type="ColorRect" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Background" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_623pw")
+
+[node name="Searchbar" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194174
+anchor_top = 0.432127
+anchor_right = 0.55166
+anchor_bottom = 0.515421
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jrgs")
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchButton" type="Button" parent="TabContainer/Google/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.01217
+anchor_bottom = 1.03704
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0obvc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wp0pp")
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchIcon" type="TextureButton" parent="TabContainer/Google/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0389294
+anchor_top = 0.296296
+anchor_right = 0.0997567
+anchor_bottom = 0.740741
+texture_normal = ExtResource("1_e8m2i")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Google/Searchbar"]
+layout_mode = 0
+anchor_left = 0.136253
+anchor_right = 1.0
+anchor_bottom = 0.962963
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "w"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihkhw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.176215
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ko2a4")
+theme_override_font_sizes/font_size = 26
+text = "I N T E R N E T"
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.329861
+anchor_top = 0.283951
+anchor_right = 0.654514
+anchor_bottom = 0.389203
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ko2a4")
+theme_override_font_sizes/font_size = 36
+text = "EXPLORE THE WORLD"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TabContainer/Google"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.590007
+anchor_top = 0.432127
+anchor_right = 0.722667
+anchor_bottom = 0.515421
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jrgs")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Google/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.210526
+anchor_top = 0.148148
+anchor_right = 0.842105
+anchor_bottom = 0.814814
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ko2a4")
+theme_override_font_sizes/font_size = 26
+text = "Search "
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchButton" type="Button" parent="TabContainer/Google/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.01217
+anchor_bottom = 1.03704
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0obvc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wp0pp")
+disabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Company Website" type="ColorRect" parent="TabContainer"]
+layout_mode = 2
+color = Color(0.650128, 0.650128, 0.650128, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_tab_index = 1
+
+[node name="Background" type="Panel" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.592593
+anchor_right = 1.0
+anchor_bottom = 0.987654
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_34mxu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background2" type="Panel" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.592593
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_82v13")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12963
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a7sof")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_fj17t")
+theme_override_font_sizes/font_size = 26
+text = "P U L S E F I R E"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel2" type="Panel" parent="TabContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_top = 0.197531
+anchor_right = 0.701389
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r38nc")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310345
+anchor_top = 0.04
+anchor_right = 0.689655
+anchor_bottom = 0.28
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_fj17t")
+theme_override_font_sizes/font_size = 19
+text = "W E L C O M E
+T O
+P U L S E F I R E"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.340045
+anchor_right = 0.673517
+anchor_bottom = 0.439983
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_26j6v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="TabContainer/Company Website/TextPanel2/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0362903
+anchor_top = 0.1
+anchor_right = 0.895161
+anchor_bottom = 0.9
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmr24")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar2" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.500045
+anchor_right = 0.673517
+anchor_bottom = 0.599983
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_26j6v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="TabContainer/Company Website/TextPanel2/Searchbar2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0322581
+anchor_top = 0.1
+anchor_right = 0.983871
+anchor_bottom = 0.875
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmr24")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar3" type="Panel" parent="TabContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143724
+anchor_top = 0.682545
+anchor_right = 0.679983
+anchor_bottom = 0.782483
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_aupwt")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="TabContainer/Company Website/TextPanel2/Searchbar3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.210526
+anchor_top = 0.148148
+anchor_right = 0.842105
+anchor_bottom = 0.814814
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_fj17t")
+theme_override_font_sizes/font_size = 26
+text = "Log In"
+metadata/_edit_use_anchors_ = true
