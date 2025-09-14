@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b0o4iae3kp35t" path="res://Scenes/GUI/DDOS/ddos_result.tscn" id="12_ojgsj"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
-[ext_resource type="PackedScene" uid="uid://cu6h5swcvjacb" path="res://Scenes/GUI/deployment.tscn" id="14_atxjj"]
+[ext_resource type="PackedScene" uid="uid://cu6h5swcvjacb" path="res://Scenes/GUI/phishing_deployment.tscn" id="14_atxjj"]
 
 [node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon")]
 anchors_preset = 15
