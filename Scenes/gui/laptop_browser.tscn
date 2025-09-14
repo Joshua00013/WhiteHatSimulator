@@ -1,0 +1,281 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1uhpiic8wwi3"]
+
+[ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
+[ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="2_sx6w8"]
+[ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="3_vq5yb"]
+[ext_resource type="Texture2D" uid="uid://cjcget0bfgyd2" path="res://Assets/Illustrator/BrowserAssets/reload.png" id="4_28080"]
+[ext_resource type="Texture2D" uid="uid://b1nmo4h1pjxx" path="res://Assets/Illustrator/BrowserAssets/star.png" id="5_mqwrb"]
+[ext_resource type="Texture2D" uid="uid://dt0hmo45li3n" path="res://Assets/Illustrator/BrowserAssets/puzzle.png" id="6_213el"]
+[ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="7_hp5ny"]
+[ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="8_ekgtk"]
+[ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="9_ti25j"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="10_sx6w8"]
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_vq5yb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cln0"]
+bg_color = Color(0.823212, 0.823212, 0.823212, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="FontVariation" id="FontVariation_28080"]
+base_font = ExtResource("11_vq5yb")
+variation_embolden = 0.59
+spacing_glyph = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqwrb"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Website" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.72, 0.72, 0.72, 1)
+
+[node name="Tabs Row" type="HBoxContainer" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130208
+anchor_right = 1.0
+anchor_bottom = 0.117284
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Tab" type="Panel" parent="MarginContainer/Background/Tabs Row"]
+custom_minimum_size = Vector2(245, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yw3xb")
+metadata/_edit_use_anchors_ = true
+
+[node name="IconHBox" type="HBoxContainer" parent="MarginContainer/Background/Tabs Row/Tab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabIconContainer" type="MarginContainer" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TabIcon" type="TextureRect" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox/TabIconContainer"]
+layout_mode = 2
+texture = ExtResource("1_s45pd")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Internet"
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchBar" type="ColorRect" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 105)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.117284
+anchor_right = 1.0
+anchor_bottom = 0.279247
+offset_bottom = 0.0480003
+grow_horizontal = 2
+scale = Vector2(1.00035, 0.980913)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/Background/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.214286
+anchor_right = 1.0
+anchor_bottom = 0.785714
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_sx6w8")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_vq5yb")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Refresh" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_28080")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+custom_minimum_size = Vector2(574.12, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Favorites" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_mqwrb")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Extensions" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_213el")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Downloads" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_hp5ny")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="USer" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_ekgtk")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_ti25j")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="DeploymentPage" type="ColorRect" parent="MarginContainer/Background"]
+visible = false
+custom_minimum_size = Vector2(0, 472)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+theme = ExtResource("10_sx6w8")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/DeploymentPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -38.5
+offset_right = 108.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+custom_minimum_size = Vector2(593, 63)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_28080")
+theme_override_font_sizes/normal_font_size = 41
+bbcode_enabled = true
+text = "[shake]Choose a deployment method"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Send via Email"
+
+[node name="Button2" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Upload to a website"
+
+[node name="Button3" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Host a website"
+
+[node name="Email" type="ColorRect" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 472)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+theme = ExtResource("10_sx6w8")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Background/Email"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -217.0
+offset_right = 327.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mqwrb")
+
+[node name="Piracy" type="ColorRect" parent="MarginContainer/Background"]
+visible = false
+custom_minimum_size = Vector2(0, 472)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+theme = ExtResource("10_sx6w8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Website" type="ColorRect" parent="MarginContainer/Background"]
+visible = false
+custom_minimum_size = Vector2(0, 472)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+theme = ExtResource("10_sx6w8")
+metadata/_edit_use_anchors_ = true

@@ -18,6 +18,7 @@ const JUMP_VELOCITY = 10
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
 @onready var exit_tool_tip = $PanelContainer/ExitToolTip
+@onready var animation_player = $AnimationPlayer
 
 var stand_height : float
 var look_rotation : Vector2
@@ -70,17 +71,24 @@ func _physics_process(delta):
 			if Input.is_action_pressed("sprint"):
 				velocity.x = lerp(velocity.x, direction.x * sprint_speed, accel * delta)
 				velocity.z = lerp(velocity.z, direction.z * sprint_speed, accel * delta)
+				animation_player.speed_scale = 1.5
+				animation_player.play("headbob")
 			else:
 				velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
 				velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
+				animation_player.speed_scale = 1.0
+				animation_player.play("headbob")
 		else:
 			velocity.x = lerp(velocity.x, 0.0, accel * delta)
 			velocity.z = lerp(velocity.z, 0.0, accel * delta)
-
+			animation_player.pause()
+			
 		move_and_slide()
 		
 		head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
 		rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
+	elif GameManager.ui_active == true:
+		animation_player.pause()
 
 func crouch(delta : float, inactive = false):
 	var target_height : float = crouch_height if inactive == false else stand_height

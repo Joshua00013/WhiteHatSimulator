@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 11
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -32,6 +32,7 @@ visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
+visible = false
 layout_mode = 2
 
 [node name="PostRansomwareEncrypt" parent="." instance=ExtResource("4_atxjj")]
@@ -73,7 +74,6 @@ visible = false
 layout_mode = 2
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
-visible = false
 layout_mode = 2
 username = "whitehat"
 password = "whitehat553322"

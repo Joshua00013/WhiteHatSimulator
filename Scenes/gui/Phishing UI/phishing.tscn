@@ -1047,15 +1047,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
 theme_override_font_sizes/font_size = 18
-text = "<!DOCTYPE html>
-
-<html lang=\"en\">
-<head>
-  <meta charset=\"UTF-8\">
-  <title>Pulsefire</title>
-  <link rel=\"stylesheet\" href=\"style.css\">
-</head>
-"
 scroll_smooth = true
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
@@ -1064,7 +1055,6 @@ gutters_draw_line_numbers = true
 gutters_zero_pad_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="HSplitContainer/CodeEdit"]
-visible = false
 material = SubResource("ShaderMaterial_qm60n")
 layout_mode = 1
 anchors_preset = 15
@@ -1102,10 +1092,12 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ojgsj")
+disabled = true
 text = "Next"
 metadata/_edit_use_anchors_ = true
 

@@ -38,11 +38,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="Background" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
 color = Color(0.72, 0.72, 0.72, 1)
 
-[node name="Tabs Row" type="HBoxContainer" parent="MarginContainer/ColorRect"]
+[node name="Tabs Row" type="HBoxContainer" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0130208
@@ -51,13 +52,13 @@ anchor_bottom = 0.117284
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Tab" type="Panel" parent="MarginContainer/ColorRect/Tabs Row"]
+[node name="Tab" type="Panel" parent="MarginContainer/Background/Tabs Row"]
 custom_minimum_size = Vector2(245, 75)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yw3xb")
 metadata/_edit_use_anchors_ = true
 
-[node name="IconHBox" type="HBoxContainer" parent="MarginContainer/ColorRect/Tabs Row/Tab"]
+[node name="IconHBox" type="HBoxContainer" parent="MarginContainer/Background/Tabs Row/Tab"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,28 +66,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TabIconContainer" type="MarginContainer" parent="MarginContainer/ColorRect/Tabs Row/Tab/IconHBox"]
+[node name="TabIconContainer" type="MarginContainer" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TabIcon" type="TextureRect" parent="MarginContainer/ColorRect/Tabs Row/Tab/IconHBox/TabIconContainer"]
+[node name="TabIcon" type="TextureRect" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox/TabIconContainer"]
 layout_mode = 2
 texture = ExtResource("1_302x4")
 expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/Tabs Row/Tab/IconHBox"]
+[node name="Label" type="Label" parent="MarginContainer/Background/Tabs Row/Tab/IconHBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "Internet"
 metadata/_edit_use_anchors_ = true
 
-[node name="SearchBar" type="ColorRect" parent="MarginContainer/ColorRect"]
+[node name="SearchBar" type="ColorRect" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 105)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.117284
@@ -97,7 +99,7 @@ grow_horizontal = 2
 scale = Vector2(1.00035, 0.980913)
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/SearchBar"]
+[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/Background/SearchBar"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.214286
@@ -108,61 +110,62 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Left" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_h18mn")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Right" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Right" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_qrg7f")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Refresh" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Refresh" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_p4q1d")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 custom_minimum_size = Vector2(574.12, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Favorites" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Favorites" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_lwu35")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Extensions" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Extensions" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_0cln0")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Downloads" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Downloads" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_6h7l4")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="USer" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="USer" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8_vcr1e")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="TextureButton" parent="MarginContainer/ColorRect/SearchBar/ButtonsContainer"]
+[node name="Menu" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_owwyl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Page" type="ColorRect" parent="MarginContainer/ColorRect"]
+[node name="Page" type="ColorRect" parent="MarginContainer/Background"]
+custom_minimum_size = Vector2(0, 472)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.271605
@@ -171,7 +174,7 @@ anchor_bottom = 1.0
 offset_top = 1.52588e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="MarginContainer/ColorRect/Page"]
+[node name="Panel" type="Panel" parent="MarginContainer/Background/Page"]
 layout_mode = 2
 anchor_left = 0.0954861
 anchor_top = 0.451271
@@ -180,7 +183,7 @@ anchor_bottom = 0.574153
 theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ColorRect/Page/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Background/Page/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,7 +191,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TerminalIcon" type="TextureRect" parent="MarginContainer/ColorRect/Page"]
+[node name="TerminalIcon" type="TextureRect" parent="MarginContainer/Background/Page"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0254236
