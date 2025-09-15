@@ -7,32 +7,54 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
+@export var npc_resource : NpcData
 @export var password := ""
 @export var username := ""
-@export var login_screen : Control
 
+@export var login_screen : Control
+@export var flashdrive_item : InvItem
+@export var minigame : Node3D
 @export var tab : TabContainer
 @export var node_viewport : SubViewport
 @export var node_quad : MeshInstance3D
 @export var node_area : Area3D
 @export var camera : Camera3D
+@export var interactable : Interactable
+@export var deployment_buttons : Control
 
 @onready var return_button = $ReturnButton
+@onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser
+@onready var notepad_text = %NotepadText
 
+var default_prompt_message : String
 var active := false
-var in_use := false
+var in_use : bool = false : 
+	set(value):
+		in_use = value
+		if value == false:
+			interactable.prompt_message = default_prompt_message
+		else:
+			interactable.prompt_message = "In use"
+var flashdrive_plugged := false
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
 	
-	login_screen.username = username
-	login_screen.password = password
+	default_prompt_message = interactable.prompt_message
+	
+	if npc_resource != null:
+		notepad_text.text = npc_resource.text
+		login_screen.username = npc_resource.username
+		login_screen.password = npc_resource.password
+		npc_browser.change_email(npc_resource.email)
+	else: # Fallback if the resource is left empty
+		login_screen.username = username
+		login_screen.password = password
 
 func _mouse_entered_area():
 	is_mouse_inside = true
-
 
 func _mouse_exited_area():
 	is_mouse_inside = false
@@ -52,8 +74,6 @@ func _unhandled_input(event):
 			# handled via Physics Picking.
 			return
 	node_viewport.push_input(event)
-
-
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
@@ -118,6 +138,12 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	node_viewport.push_input(event)
 
 func _on_interactable_interact_triggered():
+	if in_use:
+		return
+	if CyberattackManager.weaponization_finished:
+		deployment_buttons.show()
+	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
+		minigame.start_minigame()
 	if camera.is_current() == false:
 		GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -125,9 +151,13 @@ func _on_interactable_interact_triggered():
 		GameManager.ui_active = true
 		return_button.show()
 		active = true
+	CyberattackManager.delivery_finished = true
 
-		
 func exit_ui():
+	if flashdrive_plugged == true:
+		flashdrive_plugged = false
+		GameManager.add_item(flashdrive_item)
+		minigame.remove_flashdrive()
 	return_button.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.player.exit_tool_tip.visible = false
@@ -135,6 +165,7 @@ func exit_ui():
 	GameManager.player_camera.current = true
 	GameManager.ui_active = false
 	
+
 
 func _on_control_login_successful() -> void:
 	login()
@@ -149,3 +180,7 @@ func logout():
 func _on_return_button_pressed():
 	Input.action_press("exit_ui")
 	Input.action_release("exit_ui")
+
+
+func _on_flashdrive_minigame_flashdrive_plugged():
+	flashdrive_plugged = true

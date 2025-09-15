@@ -1,0 +1,278 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6rxlv0hvnwmr"]
+
+[ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_2jwan"]
+[ext_resource type="Script" uid="uid://comasfojm3i37" path="res://Scripts/GUI/npc_browser.gd" id="1_qw6go"]
+[ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="2_qw6go"]
+[ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="3_ew7o2"]
+[ext_resource type="Texture2D" uid="uid://cjcget0bfgyd2" path="res://Assets/Illustrator/BrowserAssets/reload.png" id="4_t6p0q"]
+[ext_resource type="Texture2D" uid="uid://b1nmo4h1pjxx" path="res://Assets/Illustrator/BrowserAssets/star.png" id="5_e2y3f"]
+[ext_resource type="Texture2D" uid="uid://dt0hmo45li3n" path="res://Assets/Illustrator/BrowserAssets/puzzle.png" id="6_sec7e"]
+[ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="7_xj06y"]
+[ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="8_3rkm8"]
+[ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="9_c7d30"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cln0"]
+bg_color = Color(0.823212, 0.823212, 0.823212, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qw6go"]
+bg_color = Color(0, 0, 0, 0.0941176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ew7o2"]
+
+[sub_resource type="Theme" id="Theme_e2y3f"]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/styles/hover = SubResource("StyleBoxFlat_qw6go")
+OptionButton/styles/normal = SubResource("StyleBoxEmpty_ew7o2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew7o2"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_t6p0q"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ew7o2")
+
+[node name="NPCBrowser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qw6go")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.72, 0.72, 0.72, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Tabs Row" type="HBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130208
+anchor_right = 1.0
+anchor_bottom = 0.117284
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Tab" type="Panel" parent="Background/Tabs Row"]
+custom_minimum_size = Vector2(245, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yw3xb")
+metadata/_edit_use_anchors_ = true
+
+[node name="IconHBox" type="HBoxContainer" parent="Background/Tabs Row/Tab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabIconContainer" type="MarginContainer" parent="Background/Tabs Row/Tab/IconHBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TabIcon" type="TextureRect" parent="Background/Tabs Row/Tab/IconHBox/TabIconContainer"]
+layout_mode = 2
+texture = ExtResource("1_2jwan")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Background/Tabs Row/Tab/IconHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Internet"
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchBar" type="ColorRect" parent="Background"]
+custom_minimum_size = Vector2(0, 105)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.117284
+anchor_right = 1.00035
+anchor_bottom = 0.276228
+offset_right = -0.403198
+offset_bottom = 2.00414
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00035, 0.980913)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="Background/SearchBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0121528
+anchor_top = 0.219048
+anchor_right = 0.992188
+anchor_bottom = 0.790476
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_qw6go")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_ew7o2")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Refresh" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_t6p0q")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Background/SearchBar/ButtonsContainer"]
+custom_minimum_size = Vector2(565.735, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Links" type="OptionButton" parent="Background/SearchBar/ButtonsContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e2y3f")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+item_count = 2
+popup/item_0/text = "https://"
+popup/item_0/id = 0
+popup/item_1/text = "https://www.pulseforge-studio.com"
+popup/item_1/id = 1
+
+[node name="Favorites" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_e2y3f")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Extensions" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_sec7e")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Downloads" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_xj06y")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="User" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("8_3rkm8")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_c7d30")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Page" type="ColorRect" parent="Background"]
+custom_minimum_size = Vector2(0, 472)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.271605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Background/Page"]
+layout_mode = 2
+anchor_left = 0.0954861
+anchor_top = 0.451271
+anchor_right = 0.904514
+anchor_bottom = 0.574153
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Page/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TerminalIcon" type="TextureRect" parent="Background/Page"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0254236
+anchor_right = 1.0
+anchor_bottom = 0.40678
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2jwan")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Email" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.525174
+anchor_top = 0.270062
+anchor_right = 0.977431
+anchor_bottom = 0.439815
+offset_right = -32.0
+offset_bottom = -4.0
+theme = SubResource("Theme_t6p0q")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Email"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Email/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="Email/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_3rkm8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Email/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "myrione.work@gmail.com"
+
+[connection signal="item_selected" from="Background/SearchBar/ButtonsContainer/Panel/Links" to="." method="_on_links_item_selected"]
+[connection signal="toggled" from="Background/SearchBar/ButtonsContainer/User" to="." method="_on_user_toggled"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://ch21mccnclukw"]
+[gd_scene load_steps=31 format=3 uid="uid://ch21mccnclukw"]
 
 [ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/Phishing UI/phishing_website.gd" id="1_b7w0f"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="3_io6ah"]
@@ -74,48 +74,6 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g46c"]
 bg_color = Color(0.458824, 0.458824, 0.458824, 1)
-
-[sub_resource type="Animation" id="Animation_14c4n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TabContainer/Background:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TabContainer/Background/Company Website/Label Header:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["P U L S E F I R E"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TabContainer/Background/Tabs Row/Tab/IconHBox/Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Pulsef1re"]
-}
-
-[sub_resource type="Animation" id="Animation_io6ah"]
-resource_name = "phishing_desktop_2"
 
 [sub_resource type="Animation" id="Animation_e6qcw"]
 resource_name = "phishing_desktop_3"
@@ -323,84 +281,6 @@ tracks/0/keys = {
 Let's deploy our website"]
 }
 
-[sub_resource type="Animation" id="Animation_jh7as"]
-resource_name = "typing_site_1"
-
-[sub_resource type="Animation" id="Animation_r74k5"]
-resource_name = "typing_site_10"
-
-[sub_resource type="Animation" id="Animation_xvf6f"]
-resource_name = "typing_site_11"
-
-[sub_resource type="Animation" id="Animation_gk66u"]
-resource_name = "typing_site_12"
-
-[sub_resource type="Animation" id="Animation_icyxv"]
-resource_name = "typing_site_13"
-
-[sub_resource type="Animation" id="Animation_5t2jl"]
-resource_name = "typing_site_14"
-
-[sub_resource type="Animation" id="Animation_pc040"]
-resource_name = "typing_site_15"
-
-[sub_resource type="Animation" id="Animation_8u540"]
-resource_name = "typing_site_16"
-
-[sub_resource type="Animation" id="Animation_7vc38"]
-resource_name = "typing_site_17"
-
-[sub_resource type="Animation" id="Animation_e77si"]
-resource_name = "typing_site_18"
-
-[sub_resource type="Animation" id="Animation_njgd4"]
-resource_name = "typing_site_19"
-
-[sub_resource type="Animation" id="Animation_qk4pc"]
-resource_name = "typing_site_2"
-
-[sub_resource type="Animation" id="Animation_7n42i"]
-resource_name = "typing_site_20"
-
-[sub_resource type="Animation" id="Animation_t8f7g"]
-resource_name = "typing_site_21"
-
-[sub_resource type="Animation" id="Animation_4v8dd"]
-resource_name = "typing_site_22"
-
-[sub_resource type="Animation" id="Animation_0lk7w"]
-resource_name = "typing_site_23"
-
-[sub_resource type="Animation" id="Animation_bhysw"]
-resource_name = "typing_site_24"
-
-[sub_resource type="Animation" id="Animation_nvmpv"]
-resource_name = "typing_site_25"
-
-[sub_resource type="Animation" id="Animation_1xcbs"]
-resource_name = "typing_site_26"
-
-[sub_resource type="Animation" id="Animation_f7gv8"]
-resource_name = "typing_site_3"
-
-[sub_resource type="Animation" id="Animation_jbxnd"]
-resource_name = "typing_site_4"
-
-[sub_resource type="Animation" id="Animation_rq7fy"]
-resource_name = "typing_site_5"
-
-[sub_resource type="Animation" id="Animation_1xtke"]
-resource_name = "typing_site_6"
-
-[sub_resource type="Animation" id="Animation_vgs5f"]
-resource_name = "typing_site_7"
-
-[sub_resource type="Animation" id="Animation_w8wsj"]
-resource_name = "typing_site_8"
-
-[sub_resource type="Animation" id="Animation_4g46c"]
-resource_name = "typing_site_9"
-
 [sub_resource type="Animation" id="Animation_yc5dg"]
 resource_name = "website_search"
 
@@ -410,38 +290,10 @@ length = 3.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmhk"]
 _data = {
-&"RESET": SubResource("Animation_14c4n"),
-&"phishing_desktop_2": SubResource("Animation_io6ah"),
 &"phishing_desktop_3": SubResource("Animation_e6qcw"),
 &"phishing_desktop_start": SubResource("Animation_4rrk1"),
 &"phishing_fake_website": SubResource("Animation_b7w0f"),
 &"phishing_fake_website_2": SubResource("Animation_pbmhk"),
-&"typing_site_1": SubResource("Animation_jh7as"),
-&"typing_site_10": SubResource("Animation_r74k5"),
-&"typing_site_11": SubResource("Animation_xvf6f"),
-&"typing_site_12": SubResource("Animation_gk66u"),
-&"typing_site_13": SubResource("Animation_icyxv"),
-&"typing_site_14": SubResource("Animation_5t2jl"),
-&"typing_site_15": SubResource("Animation_pc040"),
-&"typing_site_16": SubResource("Animation_8u540"),
-&"typing_site_17": SubResource("Animation_7vc38"),
-&"typing_site_18": SubResource("Animation_e77si"),
-&"typing_site_19": SubResource("Animation_njgd4"),
-&"typing_site_2": SubResource("Animation_qk4pc"),
-&"typing_site_20": SubResource("Animation_7n42i"),
-&"typing_site_21": SubResource("Animation_t8f7g"),
-&"typing_site_22": SubResource("Animation_4v8dd"),
-&"typing_site_23": SubResource("Animation_0lk7w"),
-&"typing_site_24": SubResource("Animation_bhysw"),
-&"typing_site_25": SubResource("Animation_nvmpv"),
-&"typing_site_26": SubResource("Animation_1xcbs"),
-&"typing_site_3": SubResource("Animation_f7gv8"),
-&"typing_site_4": SubResource("Animation_jbxnd"),
-&"typing_site_5": SubResource("Animation_rq7fy"),
-&"typing_site_6": SubResource("Animation_1xtke"),
-&"typing_site_7": SubResource("Animation_vgs5f"),
-&"typing_site_8": SubResource("Animation_w8wsj"),
-&"typing_site_9": SubResource("Animation_4g46c"),
 &"website_search": SubResource("Animation_yc5dg"),
 &"wrong_url": SubResource("Animation_22wq5")
 }
@@ -508,7 +360,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Pulsef1re"
+text = "Pulsefire"
 metadata/_edit_use_anchors_ = true
 
 [node name="SearchBar" type="ColorRect" parent="TabContainer/Background"]
@@ -705,7 +557,6 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="Company Website" type="ColorRect" parent="TabContainer/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.259259
@@ -899,9 +750,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "As seen up top, our website's name is misspelled, let's leave it there and see if they notice it, 
-
-Let's deploy our website"
+text = "This is the company's website, let's try to duplicate and collect their credentials."
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="TabContainer/Background/Company Website/TextPanel/Label"]

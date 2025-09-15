@@ -1,16 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://dx0pda45jmvnh"]
+[gd_scene load_steps=34 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
+[ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_2rmg2"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rmuk0"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="3_wyedc"]
 [ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="4_6l7aj"]
+[ext_resource type="Script" uid="uid://vrlbq1ob1dnl" path="res://Scripts/GUI/deployment_component.gd" id="4_qfcx5"]
 [ext_resource type="Script" uid="uid://bo4cm6edw36my" path="res://Scripts/Components/room_visibility_notifier.gd" id="4_w0wty"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="5_yrttm"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="6_6l7aj"]
 [ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="7_yrttm"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="8_a8fdl"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="9_tdfle"]
+[ext_resource type="PackedScene" uid="uid://c6rxlv0hvnwmr" path="res://Scenes/GUI/npc_browser.tscn" id="10_a8fdl"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="10_tdfle"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="11_yrttm"]
+[ext_resource type="Script" uid="uid://byrcwihsa457c" path="res://Scripts/Interactables/dekstop_flashdrive_minigame.gd" id="14_dye1h"]
+[ext_resource type="PackedScene" uid="uid://bxxmt6q0sooxp" path="res://Scenes/Components/Minigames/flash_drive_low_poly.tscn" id="15_2rmg2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rbmqn"]
 data = PackedVector3Array(0.05, 0.45, 0.75, 0.05, 0.4, -0.7, 0.05, 0.4, 0.7, -0.05, -0.45, 0.75, 0.05, -0.45, 0.75, 0.05, -0.45, -0.75, -0.049549, -0.45, 0, -0.05, -0.45, 0.00108882, -0.05, -0.45, 0.75, 0.05, -0.45, 0.75, 0.05, -0.4, 0.7, 0.05, -0.45, -0.75, -0.049549, -0.45, 0, -0.05, -0.45, 0.75, 0.05, -0.45, -0.75, 0.05, -0.4, -0.7, 0.05, -0.45, -0.75, 0.05, -0.4, 0.7, -0.049549, -0.45, 0, 0.05, -0.45, -0.75, -0.05, -0.45, -0.00108882, -0.05, -0.45, 0.75, -0.05, -0.45, 0.00108882, -0.05, 0.156249, 0.00108882, 0.05, 0.45, 0.75, 0.05, -0.45, 0.75, -0.05, -0.45, 0.75, 0.05, -0.4, 0.7, 0.05, -0.45, 0.75, 0.05, 0.4, 0.7, 0.05, -0.45, -0.75, 0.05, 0.45, -0.75, -0.05, 0.45, -0.75, 0.05, 0.4, -0.7, 0.05, 0.45, -0.75, 0.05, -0.4, -0.7, -0.05, 0.45, -0.75, -0.05, 0.156249, -0.00108882, -0.05, -0.45, -0.00108882, -0.05, -0.45, -0.75, -0.05, 0.45, -0.75, -0.05, -0.45, -0.00108882, 0.05, -0.4, -0.7, 0.05, 0.45, -0.75, 0.05, -0.45, -0.75, 0.05, -0.45, -0.75, -0.05, 0.45, -0.75, -0.05, -0.45, -0.75, -0.05, -0.45, -0.00108882, 0.05, -0.45, -0.75, -0.05, -0.45, -0.75, -0.05, 0.45, -0.75, 0.05, 0.45, 0.75, -0.05, 0.45, 0.75, -0.05, 0.45, 0.75, -0.05, 0.156249, 0.00108882, -0.05, 0.156249, 0, -0.05, 0.45, 0.75, -0.05, 0.156249, 0, -0.05, 0.156249, -0.00108882, -0.05, 0.45, 0.75, -0.05, 0.156249, -0.00108882, -0.05, 0.45, -0.75, 0.05, 0.45, -0.75, 0.05, 0.45, 0.75, -0.05, 0.45, -0.75, 0.05, 0.4, -0.7, 0.05, 0.45, 0.75, 0.05, 0.45, -0.75, 0.05, 0.45, 0.75, 0.05, 0.4, 0.7, 0.05, -0.45, 0.75, -0.05, 0.45, 0.75, 0.05, 0.45, 0.75, -0.05, -0.45, 0.75, -0.05, 0.156249, 0.00108882, -0.05, 0.45, 0.75, -0.05, -0.45, 0.75, 0.0016646, 0.4, -0.7, 0.05, 0.4, -0.7, 0.05, -0.4, -0.7, 0.0016646, 0.4, 0.7, 0.05, 0.4, 0.7, 0.05, 0.4, -0.7, 0.0016646, -0.4, -0.7, 0.0016646, -0.4, 0.7, 0.0016646, 0.4, -0.7, 0.05, -0.4, -0.7, 0.0016646, -0.4, -0.7, 0.0016646, 0.4, -0.7, 0.05, -0.4, 0.7, 0.0016646, -0.4, 0.7, 0.0016646, -0.4, -0.7, 0.0016646, 0.4, -0.7, 0.0016646, 0.4, 0.7, 0.05, 0.4, -0.7, 0.05, -0.4, 0.7, 0.05, 0.4, 0.7, 0.0016646, -0.4, 0.7, 0.05, 0.4, 0.7, 0.0016646, 0.4, 0.7, 0.0016646, -0.4, 0.7, 0.0016646, -0.4, 0.7, 0.0016646, 0.4, 0.7, 0.0016646, 0.4, -0.7, 0.05, -0.4, -0.7, 0.05, -0.4, 0.7, 0.0016646, -0.4, -0.7, -0.0668297, 0.156249, 0.0417193, -0.05, -0.45, 0.00108882, -0.049549, -0.661106, 0, -0.167549, 0.156249, -5.15794e-09, -0.150268, 0.156249, 0.0417193, -0.150268, -0.661106, 0.0417193, -0.0668297, -0.661106, 0.0417193, -0.108549, -0.661106, 0.059, -0.108549, 0.156249, 0.059, -0.0668297, -0.661106, 0.0417193, -0.0668297, 0.156249, 0.0417193, -0.049549, -0.661106, 0, -0.05, -0.45, -0.00108882, -0.0668297, 0.156249, -0.0417193, -0.0668297, -0.661106, -0.0417193, -0.108549, -0.661106, 0.059, -0.150268, -0.661106, 0.0417193, -0.150268, 0.156249, 0.0417193, -0.150268, 0.156249, -0.0417193, -0.167549, 0.156249, -5.15794e-09, -0.167549, -0.661106, -5.15794e-09, -0.108549, 0.156249, -0.059, -0.150268, 0.156249, -0.0417193, -0.150268, -0.661106, -0.0417193, -0.150268, -0.661106, 0.0417193, -0.167549, -0.661106, -5.15794e-09, -0.167549, 0.156249, -5.15794e-09, -0.0668297, 0.156249, 0.0417193, -0.05, 0.156249, 0, -0.05, 0.156249, 0.00108882, -0.0668297, 0.156249, -0.0417193, -0.108549, 0.156249, -0.059, -0.108549, -0.661106, -0.059, -0.05, 0.156249, -0.00108882, -0.05, 0.156249, 0, -0.0668297, 0.156249, -0.0417193, -0.150268, 0.156249, 0.0417193, -0.108549, 0.156249, 0.059, -0.108549, -0.661106, 0.059, -0.108549, 0.156249, 0.059, -0.0668297, 0.156249, 0.0417193, -0.0668297, -0.661106, 0.0417193, -0.05, 0.156249, 0, -0.0668297, 0.156249, 0.0417193, -0.108549, 0.156249, 0, -0.108549, 0.156249, 0, -0.0668297, 0.156249, 0.0417193, -0.108549, 0.156249, 0.059, -0.108549, 0.156249, 0, -0.108549, 0.156249, 0.059, -0.150268, 0.156249, 0.0417193, -0.0668297, 0.156249, -0.0417193, -0.05, -0.45, -0.00108882, -0.05, 0.156249, -0.00108882, -0.0668297, 0.156249, 0.0417193, -0.05, 0.156249, 0.00108882, -0.05, -0.45, 0.00108882, -0.108549, 0.156249, 0, -0.150268, 0.156249, 0.0417193, -0.167549, 0.156249, -5.15794e-09, -0.108549, 0.156249, 0, -0.167549, 0.156249, -5.15794e-09, -0.150268, 0.156249, -0.0417193, -0.108549, 0.156249, -0.059, -0.108549, 0.156249, 0, -0.150268, 0.156249, -0.0417193, -0.0668297, 0.156249, -0.0417193, -0.108549, 0.156249, 0, -0.108549, 0.156249, -0.059, -0.108549, 0.156249, 0, -0.0668297, 0.156249, -0.0417193, -0.05, 0.156249, 0, -0.0668297, -0.661106, -0.0417193, -0.0668297, 0.156249, -0.0417193, -0.108549, -0.661106, -0.059, -0.150268, -0.661106, -0.0417193, -0.167549, -0.661106, -5.15794e-09, -0.049549, -0.661106, 0, -0.049549, -0.661106, 0, -0.108549, -0.661106, -0.059, -0.150268, -0.661106, -0.0417193, -0.049549, -0.661106, 0, -0.0668297, -0.661106, -0.0417193, -0.108549, -0.661106, -0.059, -0.05, -0.45, -0.00108882, -0.0668297, -0.661106, -0.0417193, -0.049549, -0.661106, 0, -0.167549, -0.661106, -5.15794e-09, -0.150268, -0.661106, 0.0417193, -0.049549, -0.661106, 0, -0.150268, -0.661106, 0.0417193, -0.108549, -0.661106, 0.059, -0.049549, -0.661106, 0, -0.108549, -0.661106, 0.059, -0.0668297, -0.661106, 0.0417193, -0.049549, -0.661106, 0, -0.05, -0.45, -0.00108882, -0.049549, -0.661106, 0, -0.049549, -0.45, 0, -0.049549, -0.661106, 0, -0.05, -0.45, 0.00108882, -0.049549, -0.45, 0, -0.108549, -0.661106, -0.059, -0.108549, 0.156249, -0.059, -0.150268, -0.661106, -0.0417193, -0.167549, -0.661106, -5.15794e-09, -0.150268, -0.661106, -0.0417193, -0.150268, 0.156249, -0.0417193, -0.289006, -0.692844, 0.345, 0.135994, -0.692844, 0.345, 0.135994, -0.692844, -0.345, -0.289006, -0.692844, -0.345, -0.289006, -0.662844, -0.345, -0.289006, -0.692844, 0.345, -0.289006, -0.662844, -0.345, -0.289006, -0.662844, 0.345, -0.289006, -0.692844, 0.345, -0.289006, -0.692844, 0.345, 0.135994, -0.692844, -0.345, -0.289006, -0.692844, -0.345, -0.289006, -0.662844, -0.345, -0.289006, -0.692844, -0.345, 0.135994, -0.692844, -0.345, 0.135994, -0.692844, -0.345, 0.135994, -0.662844, -0.345, -0.289006, -0.662844, -0.345, 0.135994, -0.662844, 0.345, 0.135994, -0.692844, 0.345, -0.289006, -0.692844, 0.345, 0.135994, -0.662844, -0.345, 0.135994, -0.662844, 0.345, -0.289006, -0.662844, -0.345, -0.289006, -0.662844, 0.345, 0.135994, -0.662844, 0.345, -0.289006, -0.692844, 0.345, 0.135994, -0.692844, 0.345, 0.135994, -0.662844, 0.345, 0.135994, -0.692844, -0.345, 0.135994, -0.692844, -0.345, 0.135994, -0.662844, 0.345, 0.135994, -0.662844, -0.345, 0.135994, -0.662844, 0.345, -0.289006, -0.662844, 0.345, -0.289006, -0.662844, -0.345, 0.398657, -0.662844, -0.648163, 0.398657, -0.692844, -0.648163, 0.823657, -0.692844, -0.648163, 0.823657, -0.692844, -0.648163, 0.823657, -0.662844, -0.648163, 0.398657, -0.662844, -0.648163, 0.398657, -0.692844, 0.592208, 0.823657, -0.692844, 0.592208, 0.823657, -0.692844, -0.648163, 0.823657, -0.662844, 0.592208, 0.823657, -0.692844, 0.592208, 0.398657, -0.692844, 0.592208, 0.398657, -0.662844, 0.592208, 0.823657, -0.662844, 0.592208, 0.398657, -0.692844, 0.592208, 0.823657, -0.692844, 0.592208, 0.823657, -0.662844, 0.592208, 0.823657, -0.692844, -0.648163, 0.823657, -0.692844, -0.648163, 0.823657, -0.662844, 0.592208, 0.823657, -0.662844, -0.648163, 0.823657, -0.662844, -0.648163, 0.823657, -0.662844, 0.592208, 0.398657, -0.662844, -0.648163, 0.823657, -0.662844, 0.592208, 0.398657, -0.662844, 0.592208, 0.398657, -0.662844, -0.648163, 0.398657, -0.662844, -0.648163, 0.398657, -0.662844, 0.592208, 0.398657, -0.692844, 0.592208, 0.398657, -0.692844, 0.592208, 0.823657, -0.692844, -0.648163, 0.398657, -0.692844, -0.648163, 0.398657, -0.662844, -0.648163, 0.398657, -0.692844, 0.592208, 0.398657, -0.692844, -0.648163, 0.666333, -0.633044, -0.872351, 0.666333, -0.692844, -0.872351, 0.45437, -0.692844, -0.872351, 0.45437, -0.692844, -0.999766, 0.45437, -0.633044, -0.999766, 0.45437, -0.692844, -0.872351, 0.45437, -0.633044, -0.999766, 0.45437, -0.633044, -0.872351, 0.45437, -0.692844, -0.872351, 0.45437, -0.633044, -0.999766, 0.45437, -0.692844, -0.999766, 0.666333, -0.692844, -0.999766, 0.45437, -0.692844, -0.872351, 0.666333, -0.692844, -0.999766, 0.45437, -0.692844, -0.999766, 0.45437, -0.633044, -0.872351, 0.666333, -0.633044, -0.872351, 0.45437, -0.692844, -0.872351, 0.45437, -0.692844, -0.872351, 0.666333, -0.692844, -0.872351, 0.666333, -0.692844, -0.999766, 0.666333, -0.692844, -0.999766, 0.666333, -0.633044, -0.999766, 0.45437, -0.633044, -0.999766, 0.666333, -0.633044, -0.999766, 0.666333, -0.633044, -0.872351, 0.45437, -0.633044, -0.999766, 0.45437, -0.633044, -0.999766, 0.666333, -0.633044, -0.872351, 0.45437, -0.633044, -0.872351, 0.666333, -0.692844, -0.872351, 0.666333, -0.633044, -0.872351, 0.666333, -0.692844, -0.999766, 0.666333, -0.692844, -0.999766, 0.666333, -0.633044, -0.872351, 0.666333, -0.633044, -0.999766, -1.17074, -0.692844, -0.863916, -1.17074, -0.692844, -1.28215, -1.17074, 0.476399, -1.28215, 0.0559174, -0.692844, -1.28215, -1.17074, 0.476399, -1.28215, -1.17074, -0.692844, -1.28215, -1.17074, -0.692844, -0.863916, 0.0559174, -0.692844, -0.863916, 0.0559174, -0.692844, -1.28215, -1.17074, -0.692844, -0.863916, 0.0559174, 0.476399, -0.863916, 0.0559174, -0.692844, -0.863916, 0.0559174, 0.476399, -0.863916, 0.0559174, 0.476399, -1.28215, 0.0559174, -0.692844, -1.28215, -1.17074, -0.692844, -1.28215, -1.17074, -0.692844, -0.863916, 0.0559174, -0.692844, -1.28215, -1.17074, 0.476399, -1.28215, -1.17074, 0.476399, -0.863916, -1.17074, -0.692844, -0.863916, -1.17074, 0.476399, -0.863916, 0.0559174, 0.476399, -0.863916, -1.17074, -0.692844, -0.863916, -1.17074, 0.476399, -1.28215, 0.0559174, 0.476399, -0.863916, -1.17074, 0.476399, -0.863916, 0.0559174, -0.692844, -1.28215, 0.0559174, 0.476399, -1.28215, -1.17074, 0.476399, -1.28215, 0.0559174, 0.476399, -1.28215, 0.0559174, 0.476399, -0.863916, -1.17074, 0.476399, -1.28215, 0.0559174, -0.692844, -0.863916, 0.0559174, 0.476399, -0.863916, 0.0559174, -0.692844, -1.28215)
@@ -42,14 +48,190 @@ emission_texture = SubResource("ViewportTexture_rmuk0")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rmuk0"]
 data = PackedVector3Array(0.7, -0.4, 0, -0.7, -0.4, 0, 0.7, 0.4, 0, -0.7, -0.4, 0, -0.7, 0.4, 0, 0.7, 0.4, 0)
 
-[node name="Computer" type="Node3D" node_paths=PackedStringArray("login_screen", "tab", "node_viewport", "node_quad", "node_area", "camera")]
+[sub_resource type="Animation" id="Animation_g5tx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Model/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.809907, 0, -3.54022e-08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Model/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlashDriveLowPoly:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.685721, 0, -0.996486)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlashDriveLowPoly:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jyd7p"]
+resource_name = "plug_flashdrive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlashDriveLowPoly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.685721, 0, -0.996486), Vector3(0.0834342, 0, -0.996486)]
+}
+
+[sub_resource type="Animation" id="Animation_qfcx5"]
+resource_name = "start_minigame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Model/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.809907, 0, -3.54022e-08), Vector3(0.403228, 0, -1.73163)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Model/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlashDriveLowPoly:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxt7v"]
+_data = {
+&"RESET": SubResource("Animation_g5tx1"),
+&"plug_flashdrive": SubResource("Animation_jyd7p"),
+&"start_minigame": SubResource("Animation_qfcx5")
+}
+
+[sub_resource type="Animation" id="Animation_ukcco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jxt7v"]
+resource_name = "execute_cyberattack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.93187, 2),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8cv3"]
+_data = {
+&"RESET": SubResource("Animation_ukcco"),
+&"execute_cyberattack": SubResource("Animation_jxt7v")
+}
+
+[node name="Computer" type="Node3D" node_paths=PackedStringArray("login_screen", "minigame", "tab", "node_viewport", "node_quad", "node_area", "camera", "interactable", "deployment_buttons")]
 script = ExtResource("1_jd3qi")
-login_screen = NodePath("Model/SubViewport/TabContainer/Control")
+login_screen = NodePath("Model/SubViewport/TabContainer/Login")
+flashdrive_item = ExtResource("2_2rmg2")
+minigame = NodePath("FlashdriveMinigame")
 tab = NodePath("Model/SubViewport/TabContainer")
 node_viewport = NodePath("Model/SubViewport")
 node_quad = NodePath("Model/Quad")
 node_area = NodePath("Model/Quad/Area3D")
 camera = NodePath("Model/Camera3D")
+interactable = NodePath("Model/Interactable")
+deployment_buttons = NodePath("Model/SubViewport/TabContainer/Desktop/DeploymentChoice")
 
 [node name="Model" type="Node3D" parent="."]
 
@@ -116,16 +298,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="Model/SubViewport/TabContainer" instance=ExtResource("3_wyedc")]
-visible = false
+[node name="Login" parent="Model/SubViewport/TabContainer" instance=ExtResource("3_wyedc")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="DesktopDefault" type="MarginContainer" parent="Model/SubViewport/TabContainer"]
+[node name="Bruteforce" type="Button" parent="Model/SubViewport/TabContainer/Login"]
+visible = false
+layout_mode = 2
+offset_left = 493.0
+offset_top = 402.5
+offset_right = 907.0
+offset_bottom = 446.5
+theme = ExtResource("11_yrttm")
+theme_override_font_sizes/font_size = 31
+text = "Deploy Bruteforce"
+
+[node name="Desktop" type="MarginContainer" parent="Model/SubViewport/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -134,48 +327,127 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("4_6l7aj")
 metadata/_tab_index = 1
 
-[node name="Desktop" type="VFlowContainer" parent="Model/SubViewport/TabContainer/DesktopDefault"]
+[node name="Desktop" type="VFlowContainer" parent="Model/SubViewport/TabContainer/Desktop"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="DatabaseIcon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
+[node name="DatabaseIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
 
-[node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/DatabaseIcon" index="0"]
+[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon" index="0"]
 icon = ExtResource("6_6l7aj")
 
-[node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/DatabaseIcon" index="1"]
+[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon" index="1"]
 text = "data.sql"
 
-[node name="GodotIcon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
+[node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
 
-[node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/GodotIcon" index="0"]
+[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="0"]
 icon = ExtResource("7_yrttm")
 
-[node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/GodotIcon" index="1"]
+[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="1"]
 text = "godot.png"
 
-[node name="TextIcon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
+[node name="TextIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
+window = NodePath("../../Windows/NotePad")
 
-[node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/TextIcon" index="0"]
+[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon" index="0"]
 icon = ExtResource("8_a8fdl")
 
-[node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/TextIcon" index="1"]
-text = "text.txt"
+[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon" index="1"]
+text = "Notepad.txt"
 
-[node name="BrowserIcon" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop" instance=ExtResource("5_yrttm")]
+[node name="BrowserIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
+window = NodePath("../../Windows/NPCBrowser")
 
-[node name="Button" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/BrowserIcon" index="0"]
+[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon" index="0"]
 icon = ExtResource("9_tdfle")
 
-[node name="Label" parent="Model/SubViewport/TabContainer/DesktopDefault/Desktop/BrowserIcon" index="1"]
+[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon" index="1"]
 text = "Browser"
 
+[node name="Windows" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
+visible = false
+layout_mode = 2
+
+[node name="NotePad" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.405185
+anchor_bottom = 0.405333
+
+[node name="Title" parent="Model/SubViewport/TabContainer/Desktop/Windows/NotePad/HBoxContainer" index="0"]
+text = "Notepad.txt"
+
+[node name="NotepadText" type="Label" parent="Model/SubViewport/TabContainer/Desktop/Windows/NotePad/MarginContainer/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hello World"
+
+[node name="NPCBrowser" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_a8fdl")]
+visible = false
+layout_mode = 1
+
+[node name="CyberattackExecution" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
+layout_mode = 1
+anchor_left = 0.319444
+anchor_top = 0.263889
+anchor_right = 0.729166
+anchor_bottom = 0.671296
+
+[node name="Title" parent="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution/HBoxContainer" index="0"]
+text = "Executing..."
+
+[node name="ProgressBar" type="ProgressBar" parent="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="DeploymentChoice" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
+visible = false
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -142.5
+offset_right = 207.0
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer"]
+custom_minimum_size = Vector2(414, 93)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[wave]Choose a cyberattack"
+fit_content = true
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ransomware" type="Button" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("11_yrttm")
+theme_override_font_sizes/font_size = 31
+text = "Ransomware"
+
+[node name="Fileless" type="Button" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("11_yrttm")
+theme_override_font_sizes/font_size = 31
+text = "Fileless Malware"
+
 [node name="Camera3D" type="Camera3D" parent="Model"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.809907, 0, -3.54022e-08)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.809907, 0, -3.54022e-08)
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." node_paths=PackedStringArray("room")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312329, -0.413228)
@@ -199,11 +471,40 @@ grow_vertical = 0
 theme = ExtResource("11_yrttm")
 text = "Return"
 
-[connection signal="interact_triggered" from="Model/Interactable" to="." method="_on_interactable_interact_triggered"]
-[connection signal="login_successful" from="Model/SubViewport/TabContainer/Control" to="." method="_on_control_login_successful"]
-[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[node name="FlashdriveMinigame" type="Node3D" parent="."]
+script = ExtResource("14_dye1h")
 
-[editable path="Model/SubViewport/TabContainer/DesktopDefault/Desktop/DatabaseIcon"]
-[editable path="Model/SubViewport/TabContainer/DesktopDefault/Desktop/GodotIcon"]
-[editable path="Model/SubViewport/TabContainer/DesktopDefault/Desktop/TextIcon"]
-[editable path="Model/SubViewport/TabContainer/DesktopDefault/Desktop/BrowserIcon"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FlashdriveMinigame"]
+libraries = {
+&"": SubResource("AnimationLibrary_jxt7v")
+}
+
+[node name="FlashDriveLowPoly" parent="FlashdriveMinigame" instance=ExtResource("15_2rmg2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.685721, 0, -0.996486)
+
+[node name="DesktopAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l8cv3")
+}
+
+[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "fileless_btn", "deployment_animation")]
+script = ExtResource("4_qfcx5")
+ransomware_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware")
+bruteforce_btn = NodePath("../Model/SubViewport/TabContainer/Login/Bruteforce")
+fileless_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Fileless")
+deployment_animation = NodePath("../DesktopAnimations")
+
+[connection signal="interact_triggered" from="Model/Interactable" to="." method="_on_interactable_interact_triggered"]
+[connection signal="login_successful" from="Model/SubViewport/TabContainer/Login" to="." method="_on_control_login_successful"]
+[connection signal="pressed" from="Model/SubViewport/TabContainer/Login/Bruteforce" to="DeploymentComponent" method="_on_bruteforce_pressed"]
+[connection signal="pressed" from="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware" to="DeploymentComponent" method="_on_ransomware_pressed"]
+[connection signal="pressed" from="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Fileless" to="DeploymentComponent" method="_on_fileless_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="flashdrive_plugged" from="FlashdriveMinigame" to="." method="_on_flashdrive_minigame_flashdrive_plugged"]
+
+[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Windows/NotePad"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution"]

@@ -48,6 +48,7 @@ func _ready() -> void:
 	
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	DayAndNightManager.time_tick_hour.connect(calc_schedule)
+	DayAndNightManager.time_tick.connect(handle_computer)
 	
 	schedule = {
 	8: target_area_1,
@@ -75,7 +76,8 @@ func calc_schedule(hour: int):
 			change_state(WorkState.BREAK)
 		elif hour >= 14 and hour <= 17:
 			change_state(WorkState.WORK)
-	
+
+func handle_computer(_day:int, _hour:int, _minutes:int):
 	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
@@ -86,7 +88,6 @@ func calc_schedule(hour: int):
 			logged_in = false
 			PersonalComputer.logout()
 			PersonalComputer.in_use = false
-
 func change_target(new_target):
 	if new_target == null:
 		return

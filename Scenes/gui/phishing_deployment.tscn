@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://cu6h5swcvjacb"]
 
-[ext_resource type="Script" uid="uid://3o1evong2bps" path="res://deployment.gd" id="1_gg846"]
-[ext_resource type="Texture2D" uid="uid://cpdlmht5cqsjg" path="res://Assets/Application Icons/reference.jpg" id="2_x3iag"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_ddttp"]
+[ext_resource type="Script" uid="uid://3o1evong2bps" path="res://deployment.gd" id="1_fif62"]
+[ext_resource type="Texture2D" uid="uid://cpdlmht5cqsjg" path="res://Assets/Application Icons/reference.jpg" id="2_haybk"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_762rg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdlp0"]
 bg_color = Color(0.490196, 0.513726, 0.819608, 1)
@@ -221,7 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
 tabs_visible = false
-script = ExtResource("1_gg846")
+script = ExtResource("1_fif62")
 animation = NodePath("AnimationPlayer")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -315,7 +315,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Reference" type="Sprite2D" parent="TabContainer/Choices"]
 position = Vector2(-440, 168)
-texture = ExtResource("2_x3iag")
+texture = ExtResource("2_haybk")
 
 [node name="Header3" type="Panel" parent="TabContainer/Choices"]
 layout_mode = 1
@@ -606,7 +606,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2v7hs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vgfdd")
 metadata/_edit_use_anchors_ = true
 
-[node name="Uploading" parent="TabContainer/Host Website" instance=ExtResource("3_ddttp")]
+[node name="Uploading" parent="TabContainer/Host Website" instance=ExtResource("3_762rg")]
 visible = false
 layout_mode = 1
 anchor_left = 0.329401

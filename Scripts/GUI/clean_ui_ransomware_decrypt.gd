@@ -96,4 +96,5 @@ func set_step(step: int) -> void:
 			
 			
 func _on_password_check_component_correct_password() -> void:
+	CyberattackManager.ransomware_ready = true
 	ransomware_decrypt_finished.emit()
