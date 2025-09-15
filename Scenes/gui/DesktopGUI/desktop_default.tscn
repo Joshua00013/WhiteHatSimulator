@@ -116,7 +116,14 @@ ransomware_recon_done = true
 
 [node name="Website" parent="WindowContainer" instance=ExtResource("9_qd57o")]
 visible = false
-layout_mode = 1
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 1127.0
+offset_bottom = 623.0
 
 [node name="GodotWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
 visible = false

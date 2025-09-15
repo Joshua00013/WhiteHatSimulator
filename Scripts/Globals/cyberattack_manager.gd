@@ -83,6 +83,7 @@ func set_actions_on_objectives(value: bool) -> void: # Tell the player to head o
 	if not actions_on_objectives_finished and value:
 		actions_on_objectives_finished = true
 		emit_signal("phase_updated", "actions_on_objectives")
+		GameManager.stage_finished = true
 
 ## Setters for the cyberattacks: -------------------------------------------------
 

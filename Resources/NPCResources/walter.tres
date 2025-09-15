@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://cwmgdhrw8p81j"]
+
+[ext_resource type="Script" uid="uid://cn4vcnytc42jl" path="res://Resources/npc_data.gd" id="1_5vb8w"]
+
+[resource]
+script = ExtResource("1_5vb8w")
+name = "Walter"
+username = ""
+password = ""
+email = "walter@company.com"
+text = ""
+pirating = false
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"
