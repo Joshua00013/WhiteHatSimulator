@@ -37,8 +37,8 @@ func _process(_delta: float) -> void:
 				set_step(step)
 				back_button.disabled = step == 0
 	
-func set_step(step: int):
-	match step:
+func set_step(new_step: int):
+	match new_step:
 		1: 
 			code_edit.text = bruteforce_code.step_1
 			description.text = "step 1 – Import the random module:\n\nWe start by importing Python’s random module. This gives us tools to generate random values. Without this, we couldn’t make random guesses."

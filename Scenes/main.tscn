@@ -75,7 +75,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
-[ext_resource type="Script" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
+[ext_resource type="Script" uid="uid://dt3afsg6tphbb" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="75_pfx1i"]
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
 [ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]

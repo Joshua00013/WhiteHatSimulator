@@ -2,6 +2,10 @@ extends Node
 
 signal phase_updated(phase: String)
 signal cyberattack_ready(attack_name: String)
+signal piracy_seen_changed
+signal website_seen_changed
+signal email_updated
+
 var reconnaissance_finished: bool = false : set = set_reconnaissance
 var weaponization_finished: bool = false : set = set_weaponization
 var delivery_finished: bool = false : set = set_delivery
@@ -37,6 +41,19 @@ var emails := {
 	"walter@company.com": false,
 	"wisadel@company.com": false
 }
+
+func set_website_seen(value: bool) -> void:
+	website_seen = value
+	website_seen_changed.emit(value)
+
+func set_piracy_seen(value: bool) -> void:
+	piracy_seen = value
+	piracy_seen_changed.emit(value)
+
+func set_email_usable(address: String, value: bool) -> void:
+	if emails.has(address):
+		emails[address] = value
+		email_updated.emit(address, value)
 
 func get_usable_emails() -> Array:
 	var usable := []
