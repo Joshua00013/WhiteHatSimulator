@@ -1,7 +1,5 @@
 extends Control
 
-signal ransomware_sent
-
 signal email_btn_pressed
 signal upload_btn_pressed
 signal website_btn_pressed
@@ -9,6 +7,8 @@ signal website_btn_pressed
 @export var email_btn : Button
 @export var upload_btn : Button
 @export var website_btn : Button
+
+@export var email : Control
 func _ready():
 	CyberattackManager.email_updated.connect(update_buttons)
 	CyberattackManager.website_seen_changed.connect(update_buttons)
@@ -37,10 +37,8 @@ func update_buttons():
 	else:
 		upload_btn.disabled = false
 
-
-
 func _on_email_button_pressed():
-	pass # Replace with function body.
+	email.show()
 
 
 func _on_upload_button_pressed():
@@ -49,3 +47,19 @@ func _on_upload_button_pressed():
 
 func _on_website_button_pressed():
 	pass # Replace with function body.
+
+
+# EMAIL SUCCESS EVENTS -- CONNECTED TO THE MAIN NODE TO TRIGGER ANIMATIONS ON SCREEN
+
+func _on_email_fileless_sent():
+	UiManager.laptop_play_fileless.emit()
+
+
+func _on_email_phishing_sent():
+	UiManager.laptop_play_phishing.emit()
+
+
+func _on_email_ransomware_sent():
+	UiManager.laptop_play_ransomware.emit()
+
+#TODO : Add piracy page and website hosting page
