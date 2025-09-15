@@ -24,20 +24,18 @@ func _ready() -> void:
 	code_edit.text=""
 	description.text = "Brute Force\n\nA brute force attack is a way hackers try to break into a system by guessing the password or key through every possible combination. Instead of using smart tricks, they rely on the computer’s speed to test thousands or even millions of possibilities until the right one works. Think of it like trying to open a lock by testing every single key until one finally fits. While this method always works eventually, it can take a very long time if the password is strong and complex."
 
-func _on_next_pressed() -> void:
-	back_button.disabled = false
-	step += 1
-	set_step(step)
-		
+func _process(_delta: float) -> void:
+	if visible:
+		if Input.is_action_just_pressed("next_pressed"):
+			back_button.disabled = false
+			step += 1
+			set_step(step)
 
-func _on_back_pressed() -> void:
-	if step > 0:
-		step -= 1
-		set_step(step)
-		back_button.disabled = false
-	if step == 0:
-		set_step(step)
-		back_button.disabled = true
+		elif Input.is_action_just_pressed("back_pressed"):
+			if step > 0:
+				step -= 1
+				set_step(step)
+				back_button.disabled = step == 0
 	
 func set_step(step: int):
 	match step:
