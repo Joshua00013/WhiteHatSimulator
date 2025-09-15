@@ -25,6 +25,7 @@ var flash_drive_inserted := false
 @onready var animation_player = $AnimationPlayer
 @onready var return_button = $ReturnButton
 @onready var next_button: Button = $NextButton
+@onready var back_button = $BackButton
 
 
 signal closed
@@ -32,7 +33,8 @@ signal closed
 func _ready():
 	if OS.get_name() == "Android":
 		camera.position.z = -0.12
-	
+	UiManager.hide_nav_buttons.connect(toggle_controller_buttons.bind(false))
+	UiManager.show_nav_buttons.connect(toggle_controller_buttons.bind(true))
 	animation_player.play("open_laptop")
 	
 	#login_screen.password = password
@@ -48,6 +50,10 @@ func _mouse_entered_area():
 
 func _mouse_exited_area():
 	is_mouse_inside = false
+
+func _process(_delta):
+	if Input.is_action_just_pressed("exit_ui") && active == true:
+		exit_ui()
 
 func _unhandled_input(event):
 	if not active:
@@ -131,19 +137,19 @@ func _on_interactable_interact_triggered():
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
 		minigame.minigame_start()
 	elif camera.is_current() == false:
-		GameManager.player.exit_tool_tip.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		camera.current = true
-		GameManager.ui_active = true
-		active = true
-		return_button.show()
-		next_button.show()
-		
-
-		
+		display_laptop_ui()
+		#GameManager.player.exit_tool_tip.visible = true
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#camera.current = true
+		#GameManager.ui_active = true
+		#active = true
+		#next_button.show()
+	# READ THE COMMENT
+	# READ: SHOW RETURN BUTTON REGARDLESS IF MINIGAME IS TRIGGERED OR NOT 
+	return_button.show()
+	
 func exit_ui():
-	next_button.hide()
-	return_button.hide()
+	toggle_controller_buttons(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.player.exit_tool_tip.visible = false
 	active = false
@@ -161,8 +167,23 @@ func free_laptop():
 	closed.emit()
 	call_deferred("queue_free")
 
+func display_laptop_ui():
+	GameManager.player.exit_tool_tip.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	camera.current = true
+	GameManager.ui_active = true
+	active = true
+
+func toggle_controller_buttons(visibility : bool):
+	if visibility == true:
+		next_button.show()
+		back_button.show()
+	elif visibility == false:
+		next_button.hide()
+		back_button.hide()
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
-	active = true
 	flash_drive_inserted = true
-	camera.current = true
+	display_laptop_ui()
+	#active = true
+	#camera.current = true

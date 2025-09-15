@@ -39,6 +39,7 @@ func _process(_delta: float) -> void:
 			set_step(step)
 			back_button.disabled = step == 0
 			
+
 func _on_back_button_down() -> void:
 	pass
 
