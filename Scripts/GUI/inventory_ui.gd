@@ -40,7 +40,8 @@ func update_slots():
 	slots = slot_container.get_children()
 	
 	for slot in slots:
-		slot.slot_clicked.connect(self._on_slot_clicked)
+		if not slot.slot_clicked.is_connected(self._on_slot_clicked):
+			slot.slot_clicked.connect(self._on_slot_clicked)
 	
 	for i in range(min(inv.items.size(), slots.size())):
 		slots[i].update(inv.items[i])

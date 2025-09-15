@@ -59,7 +59,7 @@ func _mouse_entered_area():
 func _mouse_exited_area():
 	is_mouse_inside = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
 

@@ -47,7 +47,7 @@ func _input(event):
 	var minigame_length = animation_player.current_animation_length
 	# Use the stored position for movement
 	if holding and event is InputEventMouseMotion:
-		var delta_x = event.position.x - hold_start_x
+		delta_x = event.position.x - hold_start_x
 		delta_x /= 100
 		animation_player.seek(delta_x,true)
 		if delta_x >= minigame_length:

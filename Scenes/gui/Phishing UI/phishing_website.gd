@@ -1,7 +1,6 @@
 extends MarginContainer
 
 @export var animation: AnimationPlayer
-@onready var urlbar: TextEdit = $ColorRect/SearchBar/urlbar
 
 var typing 
 var search_active = false

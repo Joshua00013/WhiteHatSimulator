@@ -2,6 +2,10 @@ extends Control
 
 signal ransomware_sent
 
+signal email_btn_pressed
+signal upload_btn_pressed
+signal website_btn_pressed
+
 @export var email_btn : Button
 @export var upload_btn : Button
 @export var website_btn : Button
@@ -32,3 +36,16 @@ func update_buttons():
 		upload_btn.disabled = true
 	else:
 		upload_btn.disabled = false
+
+
+
+func _on_email_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_upload_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_website_button_pressed():
+	pass # Replace with function body.

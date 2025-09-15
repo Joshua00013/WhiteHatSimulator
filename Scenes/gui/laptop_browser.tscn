@@ -3520,4 +3520,7 @@ offset_top = 1.52588e-05
 theme = ExtResource("10_sx6w8")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/Email/PanelContainer2/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_send_button_pressed"]
