@@ -30,7 +30,7 @@ func update_email_buttons():
 func update_attachment_options():
 	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_ready)
 	attachment_type.set_item_disabled(Attachments.RANSOMWARE, not CyberattackManager.ransomware_ready)
-	attachment_type.set_item_disabled(Attachments.FILELESS, not CyberattackManager.ransomware_ready)
+	attachment_type.set_item_disabled(Attachments.FILELESS, not CyberattackManager.fileless_ready)
 
 func play_cyberattack_animation(index : int):
 	if email_options.get_selected_id() == -1: 
@@ -48,4 +48,7 @@ func _on_animation_finished(animation : String):
 	send_button.disabled = false
 
 func _on_email_sent():
-	CyberattackManager.delivery_finished = true
+	if CyberattackAdaptationManager.phishing_used == false:
+		CyberattackManager.delivery_finished = true
+		CyberattackAdaptationManager.phishing_used = true
+		#TODO : Animation showing myrione logged in 
