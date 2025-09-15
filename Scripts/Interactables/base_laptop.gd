@@ -24,9 +24,8 @@ var flash_drive_inserted := false
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
 @onready var return_button = $ReturnButton
-@onready var next_button: Button = $Next
-@onready var back_button: Button = $Back
-
+@onready var next_button = $Next
+@onready var back_button = $Back
 
 signal closed
 
@@ -46,7 +45,6 @@ func _ready():
 
 func _mouse_entered_area():
 	is_mouse_inside = true
-
 
 func _mouse_exited_area():
 	is_mouse_inside = false
@@ -68,8 +66,6 @@ func _unhandled_input(event):
 			# handled via Physics Picking.
 			return
 	node_viewport.push_input(event)
-
-
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.

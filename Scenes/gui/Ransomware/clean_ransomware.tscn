@@ -95,7 +95,6 @@ metadata/_tab_index = 11
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
 [connection signal="dos_ready" from="DDOSResult" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
-[connection signal="phishing_ready" from="Deployment" to="." method="_on_weaponization_finished"]
 
 [editable path="DesktopDefault"]
 [editable path="DesktopDefault/Desktop/Data_icon"]
