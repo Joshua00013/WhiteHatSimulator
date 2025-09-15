@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://u3m0rbgkd64u"]
 
-[ext_resource type="Script" uid="uid://buq6jegh7dkoe" path="res://Scenes/Stages/Fileless/fileless_flashdrive_pc.gd" id="1_qicmi"]
+[ext_resource type="Script" uid="uid://buq6jegh7dkoe" path="res://TestFiles/fileless_flashdrive_pc.gd" id="1_qicmi"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_fqlbr"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="2_u52mi"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="3_tbhr8"]

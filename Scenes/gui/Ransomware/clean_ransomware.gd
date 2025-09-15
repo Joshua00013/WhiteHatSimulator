@@ -7,7 +7,7 @@ signal boilerplate
 signal listener
 
 func _ready() -> void:
-	current_tab = 0
+	current_tab = 11
 
 func _on_window_container_ransomware_start() -> void:
 	current_tab = 1
