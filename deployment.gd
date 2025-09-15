@@ -3,7 +3,7 @@ extends TabContainer
 @export var animation: AnimationPlayer
 
 signal delivery_finished
-
+signal phishing_ready
 func _ready() -> void:
 	animation.play("choices")
 
@@ -16,3 +16,5 @@ func _on_upload_button_pressed() -> void:
 	
 func deployment_finished():
 	CyberattackManager.phishing_ready = true
+	emit_signal("phishing_ready")
+	

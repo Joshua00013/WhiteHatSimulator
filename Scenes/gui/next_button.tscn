@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://df3kpbjy0gytu"]
+[gd_scene load_steps=3 format=3 uid="uid://cbqaj2456biy"]
 
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_vhhrp"]
 [ext_resource type="Script" uid="uid://dtis50fsnb3c0" path="res://Scenes/GUI/next_button.gd" id="2_shxj3"]

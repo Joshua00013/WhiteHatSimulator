@@ -24,8 +24,8 @@ var flash_drive_inserted := false
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
 @onready var return_button = $ReturnButton
-@onready var next_button: Button = $NextButton
-@onready var back_button = $BackButton
+@onready var next_button: Button = $Next
+@onready var back_button: Button = $Back
 
 
 signal closed
