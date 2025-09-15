@@ -159,6 +159,14 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+next_pressed={
+"deadzone": 0.2,
+"events": []
+}
+back_pressed={
+"deadzone": 0.2,
+"events": []
+}
 
 [input_devices]
 

@@ -1015,6 +1015,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l74se"]
 _data = {
@@ -1074,7 +1098,9 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Let's try to copy the website"
+text = "⚠️ DANGER: PHISHING ALERT ⚠️
+
+Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]
@@ -1092,12 +1118,10 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ojgsj")
-disabled = true
 text = "Next"
 metadata/_edit_use_anchors_ = true
 

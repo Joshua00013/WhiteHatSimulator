@@ -15,4 +15,4 @@ func _on_upload_button_pressed() -> void:
 	animation.play("uploading")
 	
 func deployment_finished():
-	emit_signal("delivery_finished")
+	CyberattackManager.phishing_ready = true
