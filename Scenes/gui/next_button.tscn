@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://df3kpbjy0gytu"]
+
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_vhhrp"]
+[ext_resource type="Script" uid="uid://dtis50fsnb3c0" path="res://Scenes/GUI/next_button.gd" id="2_shxj3"]
+
+[node name="Next" type="Button"]
+anchors_preset = -1
+anchor_left = 0.868056
+anchor_top = 0.567901
+anchor_right = 0.997396
+anchor_bottom = 0.625
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_vhhrp")
+theme_override_font_sizes/font_size = 27
+text = "Next"
+script = ExtResource("2_shxj3")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
