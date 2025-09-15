@@ -62,4 +62,5 @@ func _on_email_phishing_sent():
 func _on_email_ransomware_sent():
 	UiManager.laptop_play_ransomware.emit()
 
-#TODO : Add piracy page and website hosting page
+#TODO : Add piracy page and website hosting page. Create animations for uploading to piracy page then play the laptop animations
+# based on the type used

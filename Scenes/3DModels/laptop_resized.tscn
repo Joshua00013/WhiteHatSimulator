@@ -868,6 +868,20 @@ texture = ExtResource("21_714hg")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Piracy" type="Control" parent="." index="15"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hosting" type="Control" parent="." index="16"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button" to="Node" method="_on_button_pressed"]
