@@ -65,16 +65,19 @@ func set_exploitation(value: bool) -> void: # True upon the start of deployment 
 	if not exploitation_finished and value:
 		exploitation_finished = true
 		emit_signal("phase_updated", "exploitation")
+		UiManager.popup.display_popup("Exploitation Phase Finished", "You are now exploiting the system", false )
 
 func set_installation(value: bool) -> void: # True after a successful deployment
 	if not installation_finished and value:
 		installation_finished = true
 		emit_signal("phase_updated", "installation")
+		UiManager.popup.display_popup("Installation Phase Finished", "You have installed the cyberattack", false )
 
-func set_command_and_control(value: bool) -> void: # True immediately after installation or opening a laptop to access a pc
+func set_command_and_control(value: bool) -> void: # True immediately after installation or opening a laptop to access a pc. Can fail if theres antivirus
 	if not command_and_control_finished and value:
 		command_and_control_finished = true
 		emit_signal("phase_updated", "command_and_control")
+		UiManager.popup.display_popup("Command and Control Phase Finished", "Your cyberattack persisted against the defenses", false )
 
 func set_actions_on_objectives(value: bool) -> void: # Tell the player to head out of the door to evaluate the system
 	if not actions_on_objectives_finished and value:

@@ -23,14 +23,30 @@ func update_buttons(attack_name):
 		"fileless":
 			fileless_btn.disabled = not CyberattackManager.fileless_ready
 
-
+# TODO: Animations for deploying on pc
 func _on_ransomware_pressed():
-	pass # Replace with function body.
+	CyberattackManager.exploitation_finished = true
+	if not CyberattackAdaptationManager.antivirus_installed:
+		# Play successful installation here and wait until it finishes
+		CyberattackManager.installation_finished = true
+		pass
+	elif CyberattackAdaptationManager.antivirus_installed:
+		pass
+		# Play unsuccessful isntallation here
 
 
 func _on_fileless_pressed():
-	pass # Replace with function body.
-
+	CyberattackManager.exploitation_finished = true
+	if not CyberattackAdaptationManager.antivirus_updated:
+		# Play successful installation here
+		CyberattackManager.installation_finished = true
+		pass
+	elif CyberattackAdaptationManager.antivirus_updated:
+		pass
+		# Play unsuccessful installation here
 
 func _on_bruteforce_pressed():
-	pass # Replace with function body.
+	CyberattackManager.exploitation_finished = true
+	if CyberattackAdaptationManager.weak_passwords == true:
+		# Play unsuccessful installation here
+		pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jjhva651ce8b"]
+[gd_scene load_steps=15 format=3 uid="uid://jjhva651ce8b"]
 
 [ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_vlt0p"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_pga4f"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="9_p75vd"]
+[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/GUI/laptop_browser.tscn" id="9_qd57o"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="10_o41mf"]
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="10_pekke"]
 [ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
@@ -66,13 +67,14 @@ icon = ExtResource("5_qd57o")
 [node name="Label" parent="Desktop/Text_icon" index="1"]
 text = "text.txt"
 
-[node name="Control" parent="Desktop" instance=ExtResource("2_bikpg")]
+[node name="BrowserIcon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
+window = NodePath("../../WindowContainer/Website")
 
-[node name="Button" parent="Desktop/Control" index="0"]
+[node name="Button" parent="Desktop/BrowserIcon" index="0"]
 icon = ExtResource("6_bikpg")
 
-[node name="Label" parent="Desktop/Control" index="1"]
+[node name="Label" parent="Desktop/BrowserIcon" index="1"]
 text = "Browser"
 
 [node name="Malware_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
@@ -111,6 +113,10 @@ mouse_filter = 2
 script = ExtResource("7_pga4f")
 cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
+
+[node name="Website" parent="WindowContainer" instance=ExtResource("9_qd57o")]
+visible = false
+layout_mode = 1
 
 [node name="GodotWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
 visible = false
@@ -381,7 +387,7 @@ text = "Denial of Services"
 [editable path="Desktop/Data_icon"]
 [editable path="Desktop/Godot_icon"]
 [editable path="Desktop/Text_icon"]
-[editable path="Desktop/Control"]
+[editable path="Desktop/BrowserIcon"]
 [editable path="Desktop/Malware_icon"]
 [editable path="Desktop/Decr_icon"]
 [editable path="Desktop/Key_icon"]
