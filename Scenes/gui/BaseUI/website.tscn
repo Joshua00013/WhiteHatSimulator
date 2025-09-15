@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://2p2oit3a4asi"]
+[gd_scene load_steps=21 format=3 uid="uid://2p2oit3a4asi"]
 
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_302x4"]
 [ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="2_h18mn"]
@@ -21,6 +21,50 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5er4h"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3gsp"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q77s0"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_offset = Vector2(0, 7)
+
+[sub_resource type="FontVariation" id="FontVariation_uhgd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjs7i"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oidvd"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mshn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm0hk"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0uat"]
+bg_color = Color(0.458824, 0.458824, 0.458824, 1)
 
 [node name="Website" type="Control"]
 layout_mode = 3
@@ -201,4 +245,223 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_302x4")
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Company Website" type="ColorRect" parent="MarginContainer/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.650128, 0.650128, 0.650128, 1)
+metadata/_tab_index = 1
+
+[node name="Background" type="Panel" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.493827
+anchor_right = 1.0
+anchor_bottom = 0.987654
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5er4h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background2" type="Panel" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.493827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k3gsp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00625
+anchor_right = 1.0
+anchor_bottom = 0.129167
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q77s0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uhgd3")
+theme_override_font_sizes/font_size = 26
+text = "P U L S E F I R E"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel2" type="Panel" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_top = 0.197531
+anchor_right = 0.701389
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tjs7i")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="MarginContainer/Background/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310345
+anchor_top = 0.04
+anchor_right = 0.689655
+anchor_bottom = 0.28
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uhgd3")
+theme_override_font_sizes/font_size = 19
+text = "W E L C O M E
+T O
+P U L S E F I R E"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar" type="Panel" parent="MarginContainer/Background/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.340045
+anchor_right = 0.673517
+anchor_bottom = 0.439983
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_oidvd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="MarginContainer/Background/Company Website/TextPanel2/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0362903
+anchor_top = 0.1
+anchor_right = 0.895161
+anchor_bottom = 0.9
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mshn")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar2" type="Panel" parent="MarginContainer/Background/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.500045
+anchor_right = 0.673517
+anchor_bottom = 0.599983
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_oidvd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="MarginContainer/Background/Company Website/TextPanel2/Searchbar2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0322581
+anchor_top = 0.1
+anchor_right = 0.983871
+anchor_bottom = 0.875
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mshn")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar3" type="Panel" parent="MarginContainer/Background/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143724
+anchor_top = 0.682545
+anchor_right = 0.679983
+anchor_bottom = 0.782483
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm0hk")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="MarginContainer/Background/Company Website/TextPanel2/Searchbar3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.210526
+anchor_top = 0.148148
+anchor_right = 0.842105
+anchor_bottom = 0.814814
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uhgd3")
+theme_override_font_sizes/font_size = 26
+text = "Log In"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel" type="Panel" parent="MarginContainer/Background/Company Website"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tjs7i")
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Company Website/TextPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.148148
+anchor_right = 0.971354
+anchor_bottom = 0.299464
+offset_right = -265.999
+offset_bottom = -1.74584
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Now this is the companies website, somehow it's plain, let's try to duplicate this for our phishing website"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="MarginContainer/Background/Company Website/TextPanel/Label"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675776
+anchor_top = 3.97308
+anchor_right = 0.76047
+anchor_bottom = 5.09878
+theme_override_font_sizes/font_size = 18
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="MarginContainer/Background/Company Website/TextPanel/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556521
+anchor_top = 3.97308
+anchor_right = 0.640993
+anchor_bottom = 5.03257
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d0uat")
+text = "Next"
 metadata/_edit_use_anchors_ = true
