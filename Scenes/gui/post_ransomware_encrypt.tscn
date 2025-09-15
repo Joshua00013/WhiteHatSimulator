@@ -272,6 +272,7 @@ theme_override_font_sizes/font_size = 22
 text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
 
 [node name="Button" type="Button" parent="WindowContainer"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.886216
