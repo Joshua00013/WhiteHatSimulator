@@ -8,15 +8,16 @@ signal change_to_result
 func _ready() -> void:
 	animation.play("start_of_ddos")
 	
-func _on_back_button_down() -> void:
-	# TODO: Set limits on back and next
-	if step >= 1:
-		step -= 1
-		set_step(step)
-		
-func _on_next_button_down() -> void:
-	step += 1
-	set_step(step)
+func _process(_delta: float) -> void:
+	if visible:
+		if Input.is_action_just_pressed("next_pressed"):
+			step += 1
+			set_step(step)
+
+		elif Input.is_action_just_pressed("back_pressed"):
+			if step > 0:
+				step -= 1
+				set_step(step)
 
 func set_step(step: int) -> void:
 	match step:
