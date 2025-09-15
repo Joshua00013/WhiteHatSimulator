@@ -16,7 +16,7 @@ func change_email(new_email : String):
 func _on_user_toggled(toggled_on):
 	if email_seen == false && email_address != null:
 		CyberattackManager.reconnaissance_finished = true
-		CyberattackManager.emails[email_address] = true
+		CyberattackManager.set_email_usable(email_address, true)
 		UiManager.popup.display_popup("Good job!", "You have found an employee's email.", false)
 		email_seen = true
 	email.visible = toggled_on

@@ -1,5 +1,6 @@
-[gd_scene load_steps=56 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=57 format=4 uid="uid://d1uhpiic8wwi3"]
 
+[ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
 [ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="2_sx6w8"]
 [ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="3_vq5yb"]
@@ -2735,7 +2736,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(25, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(26, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -2974,7 +2975,7 @@ cache/4/14/0/glyphs/73/size = Vector2(13, 15)
 cache/4/14/0/glyphs/73/uv_rect = Rect2(96, 15, 13, 15)
 cache/4/14/0/glyphs/73/texture_idx = 0
 
-[sub_resource type="Image" id="Image_mqwrb"]
+[sub_resource type="Image" id="Image_5wnap"]
 data = {
 "data": PackedByteArray("sbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCysrIAsrKyALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsZmxsbGmsbGxErKysgCysrIAsrKyALKysgCxsbESsbGxprKyspeysrIAsbGxALGxsaaysrLZsrKysrKyshKysrIAsrKyALKyshKysrKzsrKy2bKysqWysrIAsbGxALGxsRKysrKysrKy2bKysrKysrISsrKyErKysrOysrLZsrKysrKyshGysrIAsbGxALKysgCysrISsrKysrKystmysrLFsrKyxbKystmysrKysrKyEbKysgCysrIAsrKyALKysgCysrIAsrKyErKysrKysrLZsrKy2bKysrKysrIRsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKyshKysrKlsrKypbKyshGysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIA"),
 "format": "RGBA8",
@@ -2984,7 +2985,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jc5ig"]
-image = SubResource("Image_mqwrb")
+image = SubResource("Image_5wnap")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq5yb"]
 bg_color = Color(1, 1, 1, 0)
@@ -3171,7 +3172,7 @@ _data = {
 &"ransomware_email": SubResource("Animation_ti25j")
 }
 
-[node name="Website" type="Control"]
+[node name="Website" type="Control" node_paths=PackedStringArray("email_btn", "upload_btn", "website_btn")]
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 3
 anchors_preset = 15
@@ -3179,6 +3180,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mqwrb")
+email_btn = NodePath("MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton")
+upload_btn = NodePath("MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton")
+website_btn = NodePath("MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -3315,7 +3320,6 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="DeploymentPage" type="ColorRect" parent="MarginContainer/Background"]
-visible = false
 custom_minimum_size = Vector2(0, 472)
 layout_mode = 1
 anchors_preset = -1
@@ -3352,22 +3356,23 @@ text = "[shake]Choose a deployment method"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+[node name="EmailButton" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Send via Email"
 
-[node name="Button2" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+[node name="UploadButton" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Upload to a website"
 
-[node name="Button3" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
+[node name="WebsiteButton" type="Button" parent="MarginContainer/Background/DeploymentPage/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Host a website"
 
 [node name="Email" type="Control" parent="MarginContainer/Background" node_paths=PackedStringArray("email_options", "attachment_type", "body", "send_button")]
+visible = false
 custom_minimum_size = Vector2(0, 472)
 layout_mode = 1
 anchor_top = 0.271605
@@ -3514,3 +3519,5 @@ anchor_bottom = 1.0
 offset_top = 1.52588e-05
 theme = ExtResource("10_sx6w8")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/Background/Email/PanelContainer2/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_send_button_pressed"]

@@ -75,7 +75,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
-[ext_resource type="Script" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
+[ext_resource type="Script" uid="uid://dt3afsg6tphbb" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="75_pfx1i"]
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
 [ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]
@@ -132,7 +132,7 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_33qc4"]
+[sub_resource type="Resource" id="Resource_87bhu"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -1568,7 +1568,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_33qc4")
+npc_resource = SubResource("Resource_87bhu")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)
