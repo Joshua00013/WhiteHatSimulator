@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c72iqie28grx3" path="res://Scripts/Components/Minigames/laptop_minigame_component.gd" id="8_itk1b"]
 [ext_resource type="PackedScene" uid="uid://bx0paynrsx1un" path="res://Scenes/GUI/return_button.tscn" id="9_aerrq"]
 [ext_resource type="Script" uid="uid://dwvjl10gtjqar" path="res://Scripts/Debug/viewport_adjuster.gd" id="9_itk1b"]
-[ext_resource type="PackedScene" uid="uid://df3kpbjy0gytu" path="res://Scenes/GUI/next_button.tscn" id="10_fd17r"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="10_fd17r"]
 [ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="11_bpdqv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
@@ -155,26 +155,27 @@ transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119
 
 [node name="ReturnButton" parent="." index="7" instance=ExtResource("9_aerrq")]
 visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 70.0
+offset_bottom = -33.0
 
-[node name="NextButton" parent="." index="8" instance=ExtResource("10_fd17r")]
-visible = false
-anchor_left = 0.729167
+[node name="Next" parent="." index="8" instance=ExtResource("10_fd17r")]
+anchor_left = 0.736111
 anchor_top = 0.802469
-anchor_right = 0.858507
+anchor_right = 0.865451
 anchor_bottom = 0.859568
-offset_left = -0.000305176
-offset_top = 64.0001
-offset_right = -0.000305176
-offset_bottom = 64.0001
 
-[node name="BackButton" parent="." index="9" instance=ExtResource("11_bpdqv")]
-visible = false
-anchor_left = 0.138889
+[node name="Back" parent="." index="9" instance=ExtResource("11_bpdqv")]
+anchor_left = 0.131944
 anchor_top = 0.802469
-anchor_right = 0.272569
-anchor_bottom = 0.864198
-offset_top = 64.0001
-offset_bottom = 64.0001
+anchor_right = 0.262153
+anchor_bottom = 0.859568
 text = "Back"
 
 [node name="Node" type="CanvasLayer" parent="." index="10" node_paths=PackedStringArray("subviewport")]

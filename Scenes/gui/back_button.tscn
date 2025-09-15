@@ -3,14 +3,13 @@
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_rvaxp"]
 [ext_resource type="Script" uid="uid://bstyumde5lh71" path="res://Scenes/GUI/back_button.gd" id="2_ysif3"]
 
-[node name="Back" type="Button"]
+[node name="Control" type="Button"]
 anchors_preset = -1
-anchor_left = 0.0555556
-anchor_top = 0.703704
-anchor_right = 0.277778
-anchor_bottom = 0.88889
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.0763889
+anchor_top = 0.839506
+anchor_right = 0.25
+anchor_bottom = 0.925926
+grow_vertical = 0
 theme = ExtResource("1_rvaxp")
 theme_override_font_sizes/font_size = 27
 text = "Button"
