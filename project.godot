@@ -27,6 +27,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UiManager="*res://Scripts/Globals/ui_manager.gd"
 ConfigFileHandler="*res://Scripts/Globals/config_file_handler.gd"
 HandTrackerServer="*res://Scripts/Globals/hand_tracker_server.gd"
+SceneTransition="*res://Scenes/GUI/scene_transition.tscn"
 
 [dialogic]
 

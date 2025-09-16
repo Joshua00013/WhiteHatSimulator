@@ -5,7 +5,15 @@ extends NinePatchRect
 func _ready():
 	if DayAndNightManager.current_days < unlocked_day:
 		lock_card()
+	
+	if DayAndNightManager.current_days == 2 && unlocked_day == 2:
+		lock_card()
+		GameManager.laptop_flashdrive_inserted.connect(unlock_card)
 
 func lock_card():
 	modulate = Color(0.3, 0.3, 0.3, 1)
 	button.disabled = true
+
+func unlock_card():
+	modulate = Color(1.0, 1.0, 1.0, 1.0)
+	button.disabled = false

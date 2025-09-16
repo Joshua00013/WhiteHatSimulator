@@ -110,15 +110,19 @@ func set_reconnaissance(value: bool) -> void:
 		reconnaissance_finished = true
 		current_phase = "reconnaissance"
 		emit_signal("phase_updated", "reconnaissance")
-	else:
+	elif value == false:
 		reconnaissance_finished = false
 
 func set_weaponization(value: bool) -> void:
+	print("WEAPONIZATION IS DONE")
+	print(value)
+	print(weaponization_finished)
+	print(reconnaissance_finished)
 	if reconnaissance_finished and not weaponization_finished and value:
 		weaponization_finished = true
 		current_phase = "weaponization"
 		emit_signal("phase_updated", "weaponization")
-	else:
+	elif value == false:
 		weaponization_finished = false
 
 func set_delivery(value: bool) -> void: # True upon accessing a computer, selecting a deployment button from laptop
@@ -127,7 +131,7 @@ func set_delivery(value: bool) -> void: # True upon accessing a computer, select
 		current_phase = "delivery"
 		emit_signal("phase_updated", "delivery")
 		UiManager.popup.display_popup("Delivery Phase Finished", "You have found a way to deliver a cyberattack", false )
-	else:
+	elif value == false:
 		delivery_finished = false
 
 func set_exploitation(value: bool) -> void: # True upon the start of deployment attempt
@@ -136,7 +140,7 @@ func set_exploitation(value: bool) -> void: # True upon the start of deployment 
 		current_phase = "exploitation"
 		emit_signal("phase_updated", "exploitation")
 		UiManager.popup.display_popup("Exploitation Phase Finished", "You are now exploiting the system", false )
-	else:
+	elif value == false:
 		exploitation_finished = false
 
 func set_installation(value: bool) -> void: # True after a successful deployment
@@ -145,7 +149,7 @@ func set_installation(value: bool) -> void: # True after a successful deployment
 		current_phase = "installation"
 		emit_signal("phase_updated", "installation")
 		UiManager.popup.display_popup("Installation Phase Finished", "You have installed the cyberattack", false )
-	else:
+	elif value == false:
 		installation_finished = false
 
 func set_command_and_control(value: bool) -> void: # True immediately after installation or opening a laptop to access a pc. Can fail if theres antivirus
@@ -154,7 +158,7 @@ func set_command_and_control(value: bool) -> void: # True immediately after inst
 		current_phase = "command_and_control"
 		emit_signal("phase_updated", "command_and_control")
 		UiManager.popup.display_popup("Command and Control Phase Finished", "Your cyberattack persisted against the defenses", false )
-	else:
+	elif value == false:
 		command_and_control_finished = false
 
 func set_actions_on_objectives(value: bool) -> void: # Tell the player to head out of the door to evaluate the system
@@ -163,7 +167,7 @@ func set_actions_on_objectives(value: bool) -> void: # Tell the player to head o
 		current_phase = "actions_on_objectives"
 		emit_signal("phase_updated", "actions_on_objectives")
 		GameManager.stage_finished = true
-	else:
+	elif value == false:
 		actions_on_objectives_finished = false
 
 ## Setters for the cyberattacks: -------------------------------------------------

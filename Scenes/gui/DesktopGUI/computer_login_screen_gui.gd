@@ -10,6 +10,9 @@ extends Control
 signal login_successful
 
 func _on_confirm_pressed() -> void:
+	print(username)
+	print(password)
+	
 	if username == username_box.text && password == password_box.text:
 		login_successful.emit()
 	else:

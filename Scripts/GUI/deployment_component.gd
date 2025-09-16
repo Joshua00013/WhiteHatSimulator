@@ -19,7 +19,8 @@ func update_buttons(attack_name):
 		"ransomware":
 			ransomware_btn.disabled = not CyberattackManager.ransomware_ready
 		"bruteforce":
-			bruteforce_btn.visible = CyberattackManager.bruteforce_ready
+			if CyberattackManager.bruteforce_ready:
+				bruteforce_btn.show()
 		"fileless":
 			fileless_btn.disabled = not CyberattackManager.fileless_ready
 
@@ -34,6 +35,12 @@ func _on_ransomware_pressed():
 		deployment_animation.play("play_ransomware")
 		await deployment_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
+		
+		if CyberattackAdaptationManager.no_password_used == true:
+			CyberattackAdaptationManager.no_password_used = false
+		elif CyberattackAdaptationManager.weak_passwords == true:
+			CyberattackAdaptationManager.weak_passwords = false
+			
 		GameManager.stage_finished = true
 		pass
 	elif CyberattackAdaptationManager.antivirus_installed:
@@ -66,3 +73,4 @@ func _on_bruteforce_finished():
 	if CyberattackAdaptationManager.weak_passwords == true:
 		CyberattackManager.installation_finished = true
 		CyberattackManager.command_and_control_finished = true
+		UiManager.popup.display_popup("Bruteforce Successful!","Password:" + str(get_parent().login_screen.password), false )

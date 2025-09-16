@@ -186,6 +186,7 @@ func toggle_controller_buttons(visibility : bool):
 
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
+	GameManager.laptop_flashdrive_plugged = true
 	flash_drive_inserted = true
 	display_laptop_ui()
 	#active = true

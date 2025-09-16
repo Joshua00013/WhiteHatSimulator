@@ -3,6 +3,8 @@ extends Node3D
 @export var corridor_door : Node3D
 
 func _ready() -> void:
+	SceneTransition.fade_out()
+	
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	DayAndNightManager.time_tick_hour.connect(validate_time)
 	

@@ -3,7 +3,7 @@ extends Node
 signal ui_updated
 @warning_ignore("unused_signal")
 signal item_stolen
-
+signal laptop_flashdrive_inserted
 @onready var emulate_mouse = ProjectSettings.get_setting("input_devices/pointing/emulate_mouse_from_touch")
 
 var ui_active : bool = false : #Variable for checking if theres an active ui. Defaulted to false as the player doesnt spawn with UI on
@@ -18,6 +18,7 @@ var android_ui : CanvasLayer
 var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control
+var laptop_flashdrive_plugged : bool = false : set = plug_flashdrive
 
 func _ready():
 	match OS.get_name():
@@ -27,6 +28,7 @@ func _ready():
 			ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", true)
 
 func reset():
+	laptop_flashdrive_plugged = false
 	stage_finished = false
 	is_crouching= false
 #TODO : Function for removing inventory item. Emit a signal for inventory update
@@ -57,3 +59,7 @@ func dialogue_add_item(target_item: String):
 		"Pass":
 			item = load("res://Items/pass.tres")
 	inv.add(item)
+
+func plug_flashdrive(value):
+	laptop_flashdrive_plugged = value
+	laptop_flashdrive_inserted.emit()

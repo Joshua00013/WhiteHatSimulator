@@ -26,6 +26,8 @@ var last_event_time: float = -1.0
 @onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser
 @onready var notepad_text = %NotepadText
 
+var weak_passwords = ["", "12345678"]
+var strong_password : String = "kdkfiiiJJ34"
 var default_prompt_message : String
 var active := false
 var in_use : bool = false : 
@@ -49,10 +51,15 @@ func _ready():
 		login_screen.username = npc_resource.username
 		login_screen.password = npc_resource.password
 		npc_browser.change_email(npc_resource.email)
+		login_screen.password = strong_password
 	else: # Fallback if the resource is left empty
 		login_screen.username = username
 		login_screen.password = password
 
+	if CyberattackAdaptationManager.no_password_used == true:
+		login_screen.password = weak_passwords.pick_random()
+	if CyberattackAdaptationManager.weak_passwords == false:
+		login_screen.password = strong_password
 func _mouse_entered_area():
 	is_mouse_inside = true
 
