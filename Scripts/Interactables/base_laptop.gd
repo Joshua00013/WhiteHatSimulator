@@ -24,8 +24,9 @@ var flash_drive_inserted := false
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
 @onready var return_button = $ReturnButton
-@onready var next_button = $Next
-@onready var back_button = $Back
+@onready var next_button: Button = $Next
+@onready var back_button: Button = $Back
+
 
 signal closed
 
@@ -177,6 +178,7 @@ func toggle_controller_buttons(visibility : bool):
 	elif visibility == false:
 		next_button.hide()
 		back_button.hide()
+
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
 	flash_drive_inserted = true
