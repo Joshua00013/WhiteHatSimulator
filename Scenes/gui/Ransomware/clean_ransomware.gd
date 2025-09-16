@@ -24,7 +24,7 @@ func _ready() -> void:
 func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 	match cyberattack:
 		"Ransomware":
-			current_tab = TABS.Fileless
+			current_tab = TABS.Ransomware
 			
 		"Bruteforce":
 			current_tab = TABS.Bruteforce
