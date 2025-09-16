@@ -42,8 +42,10 @@ func _on_ransomware_pressed():
 			CyberattackAdaptationManager.weak_passwords = false
 			
 		GameManager.stage_finished = true
-		pass
+		CyberattackAdaptationManager.antivirus_installed = true
 	elif CyberattackAdaptationManager.antivirus_installed:
+		deployment_animation.play("play_ransomware_fail")
+		await deployment_animation.animation_finished
 		UiManager.popup.display_popup("Installation failed", "It seems that this PC has an antivirus, you should use a better cyberattack", false)
 
 
@@ -58,19 +60,22 @@ func _on_fileless_pressed():
 		CyberattackManager.installation_finished = true
 		
 	elif CyberattackAdaptationManager.antivirus_updated:
+		#TODO : Add animation of fileless failing
 		UiManager.popup.display_popup("Installation failed", "It seems that this PC has an up-to-date antivirus, you should use a different approach", false)
 
 func _on_bruteforce_pressed():
 	bruteforce_btn.hide()
 	CyberattackManager.exploitation_finished = true
 	deployment_animation.play("execute_bruteforce")
-	await deployment_animation.animation_finished
-	
-	if CyberattackAdaptationManager.weak_passwords == false:
-		UiManager.popup.display_popup("Bruteforce failed", "It seems that this PC has a strong password, you should use a different approach", false)
 
 func _on_bruteforce_finished():
 	if CyberattackAdaptationManager.weak_passwords == true:
 		CyberattackManager.installation_finished = true
 		CyberattackManager.command_and_control_finished = true
-		UiManager.popup.display_popup("Bruteforce Successful!","Password:" + str(get_parent().login_screen.password), false )
+		
+		if CyberattackAdaptationManager.weak_passwords == false:
+			UiManager.popup.display_popup("Bruteforce failed", "It seems that this PC has a strong password, you should use a different approach", false)
+		else:
+			$"../Model/SubViewport/TabContainer/Login/Window/CodeEdit".text = "Password: " + str(get_parent().login_screen.password)
+			CyberattackAdaptationManager.bruteforce_used = true
+			UiManager.popup.display_popup("Bruteforce Successful!","You have found the password", false )

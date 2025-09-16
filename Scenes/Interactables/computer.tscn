@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dx0pda45jmvnh"]
+[gd_scene load_steps=53 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_2rmg2"]
@@ -309,6 +309,30 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Model/SubViewport/TabContainer/Login/Window:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(979.83203, 490.97046)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_l8cv3"]
 resource_name = "execute_bruteforce"
@@ -332,7 +356,7 @@ tracks/1/path = NodePath("Model/SubViewport/TabContainer/Login/Window/CodeEdit:s
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.9),
+"times": PackedFloat32Array(0, 5.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 215.0]
@@ -350,6 +374,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"_on_bruteforce_finished"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/SubViewport/TabContainer/Login/Window:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.2, 5.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(979.83203, 490.97046), Vector2(979.83203, 490.97046), Vector2(600, 300)]
 }
 
 [sub_resource type="Animation" id="Animation_jxt7v"]
@@ -379,12 +415,77 @@ tracks/1/keys = {
 "values": [0.0, 100.0]
 }
 
+[sub_resource type="Animation" id="Animation_c0nd6"]
+resource_name = "play_ransomware_fail"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.9333334, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8cv3"]
 _data = {
 &"RESET": SubResource("Animation_ukcco"),
 &"execute_bruteforce": SubResource("Animation_l8cv3"),
 &"execute_cyberattack": SubResource("Animation_jxt7v"),
-&"play_ransomware": ExtResource("17_ukcco")
+&"play_ransomware": ExtResource("17_ukcco"),
+&"play_ransomware_fail": SubResource("Animation_c0nd6")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oum07"]
@@ -423,11 +524,11 @@ shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcs5i"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+bg_color = Color(0.5011245, 0.5747152, 0.9071604, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5q12"]
 expand_margin_left = 10.0
@@ -448,8 +549,6 @@ shadow_size = 15
 
 [node name="Computer" type="Node3D" node_paths=PackedStringArray("login_screen", "minigame", "tab", "node_viewport", "node_quad", "node_area", "camera", "interactable", "deployment_buttons")]
 script = ExtResource("1_jd3qi")
-password = null
-username = null
 login_screen = NodePath("Model/SubViewport/TabContainer/Login")
 flashdrive_item = ExtResource("2_2rmg2")
 minigame = NodePath("FlashdriveMinigame")
@@ -551,7 +650,7 @@ anchor_left = 0.105642
 anchor_top = 0.204013
 anchor_right = 0.805522
 anchor_bottom = 0.817726
-offset_bottom = 3.05176e-05
+offset_bottom = 6.1035156e-05
 
 [node name="Background" parent="Model/SubViewport/TabContainer/Login/Window" index="0"]
 self_modulate = Color(0.321728, 0.321728, 0.321728, 1)
@@ -803,10 +902,9 @@ sn2MKbJtÑ5
 ['E', 'y', 'U', 'w', '0', 'q', 'd', '9', 'H', 'c']
 EyUw0qd9Hc
 ['ñ', 'A', '7', 'e', 'Q', 'N', '4', 'J', 'k', 'Z']
-ñA7eQN4JkZ
-The password is Cypher2025"
+ñA7eQN4JkZ"
 editable = false
-scroll_vertical = 215.0
+scroll_vertical = 214.0
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -1180,7 +1278,7 @@ theme_override_font_sizes/normal_font_size = 46
 text = "Victim Screencam"
 horizontal_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="RansowmareSuccess"]
+[node name="PanelContainer2" type="Control" parent="RansowmareSuccess"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1193,10 +1291,22 @@ offset_right = 401.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hcs5i")
+
+[node name="ColorRect" type="ColorRect" parent="RansowmareSuccess/PanelContainer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25565878, 0.25565878, 0.25565878, 1)
 
 [node name="Desktop" type="VFlowContainer" parent="RansowmareSuccess/PanelContainer2"]
-layout_mode = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 792.0
+offset_bottom = 470.0
 theme_override_constants/h_separation = 20
 
 [node name="Data_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" instance=ExtResource("5_yrttm")]
@@ -1243,6 +1353,44 @@ icon = ExtResource("20_l8cv3")
 
 [node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Key_icon" index="1"]
 text = "key.key"
+
+[node name="RansomwareAntivirus" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -143.0
+offset_right = 222.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs5i")
+
+[node name="MarginContainer" type="MarginContainer" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus/MarginContainer"]
+custom_minimum_size = Vector2(424, 101)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Windows protected your PC
+
+Defender prevented an unrecognized app from starting. Running this app might put your PC at risk"
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus"]
+custom_minimum_size = Vector2(47.67, 36.945)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="RansowmareSuccess"]
 layout_mode = 1
@@ -1360,8 +1508,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -196.0
-offset_bottom = -146.0
+offset_right = -195.99982
+offset_bottom = -145.9997
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
