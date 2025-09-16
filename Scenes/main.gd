@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var corridor_door : Node3D
-
+@export var day : int = 1
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
@@ -13,6 +13,7 @@ func _ready() -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 			UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
 			
+	DayAndNightManager.initial_day = day
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
 	ConfigFileHandler.apply_display_mode()

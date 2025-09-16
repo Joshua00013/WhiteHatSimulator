@@ -10,5 +10,9 @@ func play():
 	visible = true
 
 func _on_button_pressed():
+	GameManager.reset()
+	CyberattackManager.reset()
+	DayAndNightManager.set_initial_time()
+	
 	get_tree().paused = false
 	get_tree().reload_current_scene()

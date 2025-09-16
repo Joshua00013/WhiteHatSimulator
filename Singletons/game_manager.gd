@@ -1,6 +1,7 @@
 extends Node
 
 signal ui_updated
+@warning_ignore("unused_signal")
 signal item_stolen
 
 @onready var emulate_mouse = ProjectSettings.get_setting("input_devices/pointing/emulate_mouse_from_touch")
@@ -25,6 +26,9 @@ func _ready():
 		"Android":
 			ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", true)
 
+func reset():
+	stage_finished = false
+	is_crouching= false
 #TODO : Function for removing inventory item. Emit a signal for inventory update
 
 func add_item(item:InvItem):
