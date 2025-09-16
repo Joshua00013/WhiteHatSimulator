@@ -4,6 +4,7 @@ extends Control
 @export var status : Label
 @export var passing_score : int = 10
 @export var quiz_card : Control
+
 @onready var finished_window: Control = $FinishedWindow
 
 func _ready():
