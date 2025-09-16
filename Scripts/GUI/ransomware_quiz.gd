@@ -17,6 +17,7 @@ var current_question : int = 0
 var point_counter : int = 0
 var question_counter: int =0
 
+# Unused array of all questions
 var questions = [
 	{
 		"question":"What is the main goal of a ransomware attack?",
@@ -322,7 +323,7 @@ var questions = [
 		"correct_answer": 1
 	}
 ]
-var day_one_questions = [
+var day_one_questions = [ #TODO : Insert ransomware questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
@@ -344,7 +345,7 @@ var day_one_questions = [
 		"correct_answer": 0
 	},
 ]
-var day_two_questions = [
+var day_two_questions = [ #TODO : Insert bruteforce questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
@@ -366,7 +367,7 @@ var day_two_questions = [
 		"correct_answer": 0
 	},
 ]
-var day_three_questions = [
+var day_three_questions = [ #TODO : Insert ransomware questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
@@ -388,7 +389,7 @@ var day_three_questions = [
 		"correct_answer": 0
 	},
 ]
-var day_four_questions = [
+var day_four_questions = [ #TODO : Insert phishing questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
@@ -410,7 +411,7 @@ var day_four_questions = [
 		"correct_answer": 0
 	},
 ]
-var day_five_questions = [
+var day_five_questions = [ #TODO : Insert DOS questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
