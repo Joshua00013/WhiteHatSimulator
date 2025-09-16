@@ -29,6 +29,15 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
 layout_mode = 2
 
+[node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
 visible = false
 layout_mode = 2
