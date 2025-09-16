@@ -433,7 +433,7 @@ transform = Transform3D(0.0188931, 0, 0, 0, 0.0188931, 0, 0, 0, 0.0188931, -0.09
 shape = SubResource("BoxShape3D_icmsk")
 
 [node name="SubViewport" type="SubViewport" parent="." index="3"]
-size = Vector2i(1152, 628)
+size = Vector2i(1152, 648)
 
 [node name="DesktopTabs" parent="SubViewport" index="0" instance=ExtResource("5_57jh0")]
 
