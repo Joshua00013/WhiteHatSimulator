@@ -7,6 +7,10 @@ extends Control
 
 @onready var cyberattack_player = $CyberattackPlayer
 
+signal ransomware_sent
+signal phishing_sent
+signal fileless_sent
+
 enum Attachments { PHISHING, RANSOMWARE, FILELESS }
 func _ready():
 	email_options.connect("pressed", update_email_buttons)
@@ -26,6 +30,8 @@ func update_email_buttons():
 	var usable := CyberattackManager.get_usable_emails()
 	for address in usable:
 		email_options.add_item(address)
+	if usable.is_empty():
+		send_button.disabled = true
 
 func update_attachment_options():
 	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_ready)
@@ -45,10 +51,29 @@ func play_cyberattack_animation(index : int):
 			cyberattack_player.play("fileless_email")
 
 func _on_animation_finished(animation : String):
-	send_button.disabled = false
+	var usable := CyberattackManager.get_usable_emails()
+	if not usable.is_empty():
+		send_button.disabled = false
 
 func _on_email_sent():
-	if CyberattackAdaptationManager.phishing_used == false:
-		CyberattackManager.delivery_finished = true
-		CyberattackAdaptationManager.phishing_used = true
+	var selected_email_index = email_options.get_selected_id()
+	if selected_email_index == -1:
+		print("No email selected, cannot send.")
+		return
+	var attachment_index = attachment_type.get_selected_id()
+	
+	match attachment_index:
+		Attachments.PHISHING:
+			if not CyberattackAdaptationManager.phishing_used:
+				CyberattackManager.delivery_finished = true
+				CyberattackAdaptationManager.phishing_used = true
+				phishing_sent.emit()
+		Attachments.RANSOMWARE:
+			CyberattackManager.delivery_finished = true
+			ransomware_sent.emit()
+		Attachments.FILELESS:
+			if not CyberattackAdaptationManager.fileless_used:
+				CyberattackManager.delivery_finished = true
+				CyberattackAdaptationManager.fileless_used = true
+				fileless_sent.emit()
 		#TODO : Animation showing myrione logged in 

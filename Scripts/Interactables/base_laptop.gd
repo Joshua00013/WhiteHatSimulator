@@ -17,6 +17,7 @@ var flash_drive_inserted := false
 @export var laptop_inv_item : InvItem
 @export var flashdrive_item : InvItem
 @export var minigame : Node3D
+@export var success_animation : AnimationPlayer
 
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $laptop_base/laptop_screen/Screen
@@ -31,6 +32,10 @@ var flash_drive_inserted := false
 signal closed
 
 func _ready():
+	UiManager.connect("laptop_play_fileless", _play_fileless_success)
+	UiManager.connect("laptop_play_ransomware", _play_ransomware_success)
+	UiManager.connect("laptop_play_phishing", _play_phishing_success)
+	
 	if OS.get_name() == "Android":
 		camera.position.z = -0.12
 	UiManager.hide_nav_buttons.connect(toggle_controller_buttons.bind(false))
@@ -185,3 +190,49 @@ func _on_laptop_minigame_component_minigame_finished() -> void:
 	display_laptop_ui()
 	#active = true
 	#camera.current = true
+
+func _play_fileless_success():
+	if not CyberattackAdaptationManager.antivirus_updated:
+		success_animation.play("open_fileless_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_fileless")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_fileless")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
+func _play_ransomware_success():
+	if not CyberattackAdaptationManager.antivirus_installed:
+		
+		success_animation.play("open_ransomware_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_ransomware")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_ransomware")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
+	
+func _play_phishing_success():
+	if not CyberattackAdaptationManager.antivirus_installed:
+		
+		success_animation.play("open_phishing_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_phishing")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_phishing")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
