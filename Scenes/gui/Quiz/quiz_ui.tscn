@@ -49,4 +49,5 @@ layout_mode = 2
 
 [connection signal="quiz_finished" from="QuizCard" to="." method="_on_quiz_card_quiz_finished"]
 
+[editable path="QuizCard"]
 [editable path="FinishedWindow/Window"]

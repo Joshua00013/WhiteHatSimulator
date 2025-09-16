@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqcp28vc5y0pl"]
+[gd_scene load_steps=13 format=3 uid="uid://dqcp28vc5y0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dek5mdad312c" path="res://Assets/Exported3dModel/Koro.glb" id="1_3wsxs"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_w4y5k"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_bar17"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_hysm3"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="6_3yqji"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="6_hysm3"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -21,6 +22,7 @@ animation = &"sitting"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3yqji"]
 graph_offset = Vector2(-214.101, 59.1805)
+nodes/output/position = Vector2(940, 340)
 nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
 nodes/Run/position = Vector2(320, 320)
 nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
@@ -31,33 +33,32 @@ nodes/Sit/position = Vector2(520, 320)
 "nodes/anim run/position" = Vector2(60, 300)
 "nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
 "nodes/anim sit/position" = Vector2(320, 600)
-nodes/output/position = Vector2(940, 340)
-node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
+node_connections = [&"output", 0, &"Sit", &"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit"]
 
 [node name="Koro" instance=ExtResource("1_3wsxs")]
 script = ExtResource("2_w4y5k")
 dialogue = "Koro"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.45083, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.0085486, -0.0564076, 0.990941, -0.12158)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0273437, -0.0328064, 0.999026, 0.0111093)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0419919, -0.000399962, -0.0234493, 0.998843)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.603191, 0.00144018, 0.0536432, 0.79579)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0107964, -0.0613525, 0.991348, 0.115535)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00438006, -0.0338626, 0.999379, -0.00868598)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0419919, 0.000399962, 0.0234493, 0.998843)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.604003, -0.0275768, -0.0354849, 0.795714)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.4502685, -0.04415529)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.008436005, -0.05693124, 0.99066216, -0.12359695)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.02737435, -0.029822726, 0.9991346, 0.009553166)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.04779394, -0.00039982496, -0.026689228, 0.9985005)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.6054675, 0.0022462807, 0.05493038, 0.79396904)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.010636941, -0.06054161, 0.99119395, 0.11728694)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.004340688, -0.03093044, 0.99948746, -0.0070356894)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.04779394, 0.00039982397, 0.026689228, 0.9985005)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.60623866, -0.0284363, -0.0368467, 0.7939196)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
@@ -87,3 +88,5 @@ prompt_message = "Koro"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_bar17")
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("6_hysm3")]

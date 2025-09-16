@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwxfel7ymtk5m" path="res://Scripts/GUI/ransomware_quiz.gd" id="1_83403"]
 
-[node name="QuizCard" type="Control" node_paths=PackedStringArray("question_label", "button_a", "button_b", "button_c", "button_d", "timer_label", "timer", "score_label")]
+[node name="QuizCard" type="Control" node_paths=PackedStringArray("question_label", "button_a", "button_b", "button_c", "button_d", "timer_label", "timer", "score_label", "question_counter_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +18,7 @@ button_d = NodePath("MarginContainer/VBoxContainer/AnswerContainer/Option D")
 timer_label = NodePath("MarginContainer/VBoxContainer/TImer")
 timer = NodePath("Timer")
 score_label = NodePath("MarginContainer/ScoreLabel")
+question_counter_label = NodePath("MarginContainer/VBoxContainer/QuestionContainer/QuestionCounter")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -62,7 +63,7 @@ alignment = 1
 self_modulate = Color(1, 1, 1, 0.376471)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Question % of %"
+text = "Question 1 of 30"
 metadata/_edit_use_anchors_ = true
 
 [node name="Question" type="Label" parent="MarginContainer/VBoxContainer/QuestionContainer"]

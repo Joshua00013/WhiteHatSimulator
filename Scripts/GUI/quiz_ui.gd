@@ -4,6 +4,7 @@ extends Control
 @export var status : Label
 @export var passing_score : int = 10
 @export var quiz_card : Control
+
 @onready var finished_window: Control = $FinishedWindow
 
 func _ready():
@@ -11,12 +12,23 @@ func _ready():
 	hide()
 
 func _on_quiz_card_quiz_finished(point_counter: int) -> void:
-	finished_window.visible = true
-	score_label.text = "Score" + str(point_counter)
+	# TODO : Code cleanup and remove finished window
+	#finished_window.visible = true
+	#score_label.text = "Score" + str(point_counter)
+	
 	if point_counter < passing_score:
-		status.text = "Failed"
+		#status.text = "Failed"
+		UiManager.game_over_ui.play()
 	else:
-		status.text = "Passed"
+		#status.text = "Passed"
+		UiManager.popup.display_popup("Passed","Take a rest and proceed to your next day!")
+		
+		# Reinitialize the stage and increment the days
+		DayAndNightManager.initial_day += 1
+		GameManager.reset()
+		CyberattackManager.reset()
+		DayAndNightManager.set_initial_time()
+		get_tree().reload_current_scene()
 
 func start_quiz():
 	quiz_card.start_quiz()

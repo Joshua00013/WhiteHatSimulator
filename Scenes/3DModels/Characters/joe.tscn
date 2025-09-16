@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxt6lvdira2jx"]
+[gd_scene load_steps=11 format=3 uid="uid://cxt6lvdira2jx"]
 
 [ext_resource type="PackedScene" uid="uid://ponng5cs3heb" path="res://Assets/Exported3dModel/Joe.glb" id="1_1q3bb"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_7p7ob"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cad55in337a26" path="res://Scenes/Components/NPC_Parts/nav_agent_refresh_timer.tscn" id="7_wap7l"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="8_x28o7"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="9_8hop3"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="10_7p7ob"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="10_cc6rh"]
 
 [node name="Joe" instance=ExtResource("1_1q3bb")]
@@ -15,25 +16,25 @@ script = ExtResource("2_7p7ob")
 dialogue = "Joe"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44845, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00801414, -0.0588893, 0.98958, -0.131143)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0274705, -0.0210159, 0.999389, 0.0049658)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0649102, -0.000399313, -0.0362473, 0.997233)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.61216, 0.00462405, 0.0587405, 0.788536)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.0100398, -0.0575037, 0.990584, 0.12384)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00421661, -0.0222747, 0.999741, -0.00217003)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0649102, 0.00039931, 0.0362473, 0.997233)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.612805, -0.0309696, -0.0408754, 0.788568)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.449894, -0.04415529)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.008341267, -0.057371467, 0.9904246, -0.12529305)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.027397882, -0.027597353, 0.99920833, 0.008393194)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.052120272, -0.00039970994, -0.029105136, 0.99821657)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.6071619, 0.0028470852, 0.05589121, 0.79260504)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.010502828, -0.059859347, 0.99106145, 0.118759856)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.0043104296, -0.02874344, 0.9995608, -0.005805479)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.052120272, 0.0003997096, 0.029105136, 0.99821657)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.607914, -0.02908124, -0.037870854, 0.79256594)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
@@ -55,3 +56,5 @@ prompt_message = "Shion"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("10_cc6rh")
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("10_7p7ob")]

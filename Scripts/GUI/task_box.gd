@@ -8,16 +8,18 @@ func _ready():
 	CyberattackManager.phase_updated.connect(_on_phase_updated)
 	UiManager.task_box = self
 	GameManager.connect("ui_updated",toggle)
+	
+	_on_phase_updated(CyberattackManager.current_phase)
 
 func toggle(value):
 	pass
 	#visible = not value
 
-func set_initial_task():
-	task_desc.text = "Reconnaisance, find a vulnerability to exploit (Read the file in the inventory for info)"
-
 func _on_phase_updated(phase : String):
+	print(phase)
 	match phase:
+		"reset":
+			task_desc.text = "Reconnaisance, find a vulnerability to exploit (Read the file in the inventory for info)"
 		"reconnaissance":
 			task_desc.text = "Weaponization: go to the cafeteria and program a cyberattack"
 		"weaponization":

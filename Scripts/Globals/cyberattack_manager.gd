@@ -6,6 +6,8 @@ signal piracy_seen_changed
 signal website_seen_changed
 signal email_updated
 
+var current_phase : String = "reset"
+
 var reconnaissance_finished: bool = false : set = set_reconnaissance
 var weaponization_finished: bool = false : set = set_weaponization
 var delivery_finished: bool = false : set = set_delivery
@@ -42,6 +44,47 @@ var emails := {
 	"wisadel@company.com": false
 }
 
+func reset():
+	current_phase = "reset"
+	
+	reconnaissance_finished = false
+	weaponization_finished = false
+	delivery_finished = false
+	exploitation_finished = false
+	exploitation_finished = false
+	installation_finished = false
+	command_and_control_finished = false
+	actions_on_objectives_finished = false
+	
+	ransomware_ready = false
+	bruteforce_ready = false
+	phishing_ready = false
+	fileless_ready = false
+	dos_ready = false
+	
+	website_seen = false
+	piracy_seen = false
+	
+	emails = {
+	"al@company.com": false,
+	"brian@company.com": false,
+	"gigi@company.com": false,
+	"joe@company.com": false,
+	"john@company.com": false,
+	"koro@company.com": false,
+	"liz@company.com": false,
+	"mike@company.com": false,
+	"mococo@company.com": false,
+	"myrione@company.com": false,
+	"robert@company.com": false,
+	"sai@company.com": false,
+	"shion@company.com": false,
+	"walter@company.com": false,
+	"wisadel@company.com": false
+	}
+	
+	phase_updated.emit("reset")
+
 func set_website_seen(value: bool) -> void:
 	website_seen = value
 	website_seen_changed.emit(value)
@@ -61,46 +104,67 @@ func get_usable_emails() -> Array:
 		if emails[address] == true:
 			usable.append(address)
 	return usable
-	
+
 func set_reconnaissance(value: bool) -> void:
 	if not reconnaissance_finished and value:
 		reconnaissance_finished = true
+		current_phase = "reconnaissance"
 		emit_signal("phase_updated", "reconnaissance")
+	else:
+		reconnaissance_finished = false
 
 func set_weaponization(value: bool) -> void:
 	if reconnaissance_finished and not weaponization_finished and value:
 		weaponization_finished = true
+		current_phase = "weaponization"
 		emit_signal("phase_updated", "weaponization")
+	else:
+		weaponization_finished = false
 
 func set_delivery(value: bool) -> void: # True upon accessing a computer, selecting a deployment button from laptop
 	if weaponization_finished and not delivery_finished and value:
 		delivery_finished = true
+		current_phase = "delivery"
 		emit_signal("phase_updated", "delivery")
 		UiManager.popup.display_popup("Delivery Phase Finished", "You have found a way to deliver a cyberattack", false )
+	else:
+		delivery_finished = false
 
 func set_exploitation(value: bool) -> void: # True upon the start of deployment attempt
 	if not exploitation_finished and value:
 		exploitation_finished = true
+		current_phase = "exploitation"
 		emit_signal("phase_updated", "exploitation")
 		UiManager.popup.display_popup("Exploitation Phase Finished", "You are now exploiting the system", false )
+	else:
+		exploitation_finished = false
 
 func set_installation(value: bool) -> void: # True after a successful deployment
 	if not installation_finished and value:
 		installation_finished = true
+		current_phase = "installation"
 		emit_signal("phase_updated", "installation")
 		UiManager.popup.display_popup("Installation Phase Finished", "You have installed the cyberattack", false )
+	else:
+		installation_finished = false
 
 func set_command_and_control(value: bool) -> void: # True immediately after installation or opening a laptop to access a pc. Can fail if theres antivirus
 	if not command_and_control_finished and value:
 		command_and_control_finished = true
+		current_phase = "command_and_control"
 		emit_signal("phase_updated", "command_and_control")
 		UiManager.popup.display_popup("Command and Control Phase Finished", "Your cyberattack persisted against the defenses", false )
+	else:
+		command_and_control_finished = false
 
 func set_actions_on_objectives(value: bool) -> void: # Tell the player to head out of the door to evaluate the system
 	if not actions_on_objectives_finished and value:
 		actions_on_objectives_finished = true
+		current_phase = "actions_on_objectives"
 		emit_signal("phase_updated", "actions_on_objectives")
 		GameManager.stage_finished = true
+	else:
+		actions_on_objectives_finished = false
 
 ## Setters for the cyberattacks: -------------------------------------------------
 

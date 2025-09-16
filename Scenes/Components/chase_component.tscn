@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cme0kvtc7kemi"]
+
+[ext_resource type="Script" uid="uid://5gldyivbfdb1" path="res://Scripts/Components/chase_component.gd" id="1_o4m55"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ptbeh"]
+radius = 1.4665265
+
+[node name="ChaseComponent" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_o4m55")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5948935, 0)
+shape = SubResource("SphereShape3D_ptbeh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

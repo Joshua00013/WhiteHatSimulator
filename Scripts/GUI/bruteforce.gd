@@ -87,4 +87,5 @@ func set_step(new_step: int):
 			animation.play("BruteforceWindow")
 						
 func _on_window_window_exited() -> void:
+	CyberattackManager.bruteforce_ready = true
 	bruteforce_ready.emit()

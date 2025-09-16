@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5x6g71gvoldn"]
+[gd_scene load_steps=5 format=3 uid="uid://byp0i4hd8g2lk"]
 
-[ext_resource type="Script" uid="uid://dmi2ygnuwwssg" path="res://Scripts/GUI/popup.gd" id="1_7jnqt"]
-[ext_resource type="Texture2D" uid="uid://c3wygbiu770h3" path="res://Assets/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="1_71nst"]
-[ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_7jnqt"]
+[ext_resource type="Script" uid="uid://1ts1tvnweyyq" path="res://Scripts/GUI/game_over.gd" id="1_71fk1"]
+[ext_resource type="Texture2D" uid="uid://c3wygbiu770h3" path="res://Assets/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="2_dja28"]
+[ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_upun0"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yihuh"]
-texture = ExtResource("1_71nst")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2ies"]
+texture = ExtResource("2_dja28")
 texture_margin_left = 15.0
 texture_margin_top = 16.0
 texture_margin_right = 14.0
 texture_margin_bottom = 25.0
 region_rect = Rect2(0, 0, 608, 210)
 
-[node name="Popup" type="Control" node_paths=PackedStringArray("heading", "body")]
+[node name="GameOver" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 8
@@ -22,11 +22,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_7jnqt")
-heading = NodePath("PanelContainer/VBoxContainer/Heading")
-body = NodePath("PanelContainer/VBoxContainer/Body")
+script = ExtResource("1_71fk1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 texture_filter = 1
@@ -43,29 +39,29 @@ offset_right = 179.0
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_yihuh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_r2ies")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-theme = ExtResource("3_7jnqt")
+theme = ExtResource("3_upun0")
 theme_override_constants/separation = 25
 
 [node name="Heading" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
-text = "Well Done!"
+text = "Game Over"
 horizontal_alignment = 1
 
 [node name="Body" type="Label" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(264, 23)
 layout_mode = 2
-text = "You have completed the % phase. "
+text = "You have been caught!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Next"
+text = "Restart"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://do7fp5wy6f4e0" path="res://Scripts/Components/crime_check_component.gd" id="1_gwj1t"]
 
 [node name="CrimeCheckComponent" type="Area3D"]
+collision_layer = 17
+collision_mask = 17
 script = ExtResource("1_gwj1t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

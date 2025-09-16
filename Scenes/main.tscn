@@ -1,11 +1,10 @@
-[gd_scene load_steps=100 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=99 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
-[ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="3_jekl6"]
-[ext_resource type="AudioStream" uid="uid://bdq157g434mnf" path="res://Sounds/Harvest Dawn 4.mp3" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://byp0i4hd8g2lk" path="res://Scenes/GUI/game_over.tscn" id="7_33qc4"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://bjlrbotrykvgn" path="res://Assets/Illustrator/hand_button.svg" id="14_ihvwq"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_ueoa1"]
@@ -75,7 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
-[ext_resource type="Script" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
+[ext_resource type="Script" uid="uid://dt3afsg6tphbb" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="75_pfx1i"]
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
 [ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]
@@ -132,15 +131,13 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_87bhu"]
+[sub_resource type="Resource" id="Resource_55idt"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
 username = "myrione"
 password = "11223344"
 email = "myrione@company.com"
-text = ""
-pirating = false
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fg68e"]
@@ -155,7 +152,6 @@ corridor_door = NodePath("Interactables/DoorIron2")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_jjvhh")
-test_item = ExtResource("3_jekl6")
 
 [node name="HandTrackerServer" type="Node" parent="."]
 script = ExtResource("19_hibaj")
@@ -173,11 +169,10 @@ environment = SubResource("Environment_6bp64")
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.02907, 0.00288701, 4.04424)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109589, 1.50504, -1.10609)
-stream = ExtResource("5_kry3j")
-
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="HUD" instance=ExtResource("7_33qc4")]
+visible = false
 
 [node name="InventoryUI" parent="HUD" instance=ExtResource("79_qnggo")]
 visible = false
@@ -259,7 +254,7 @@ metadata/_edit_use_anchors_ = true
 [node name="NPC" type="Node3D" parent="."]
 
 [node name="mococo_hair" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("29_6vcvc")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 3, 0, -1)
+transform = Transform3D(-4.3711367e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711367e-08, 2.1749525, 0, 4)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer4")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col4")
 
@@ -288,11 +283,11 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/HRVisibleOnScreenNotifier3D/Room/SimpleOfficeChair-col")
 
 [node name="Joe" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("51_v1mrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.1749525, 0, -1)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col11")
 
 [node name="Robert" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("52_fd3ed")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.1749525, 0, -3)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col13")
 
 [node name="Brian" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("53_v1mrv")]
@@ -301,29 +296,29 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer6")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
 
 [node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5") instance=ExtResource("68_ovafv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, 3)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_5 = NodePath("../../Markers/Cafeteria")
 
 [node name="John" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("69_owhal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -2)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col15")
 
 [node name="Sai" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("70_uv6w5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -5)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col14")
 
 [node name="Walter" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("71_r7bbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -3)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer7")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col5")
 
 [node name="Wisadel" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("72_e5peh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, 1)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col10")
 
 [node name="Shion" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("73_f6rfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4577456, 0, 2.2003393)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col9")
 
 [node name="Lights" type="Node3D" parent="."]
@@ -1568,7 +1563,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_87bhu")
+npc_resource = SubResource("Resource_55idt")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)
@@ -1641,6 +1636,7 @@ light_data = ExtResource("78_6h1fc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56889, -0.00113273, 0.493915)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("89_87bhu")
 volume_db = -18.4
 autoplay = true

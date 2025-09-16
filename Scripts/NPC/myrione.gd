@@ -39,6 +39,7 @@ var schedule : Dictionary = {}
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var interactable: Interactable = $Interactable
+@onready var chase_component = $ChaseComponent
 
 func _ready() -> void:
 	navigation_agent_3d.connect("navigation_finished",_on_navigation_agent_3d_navigation_finished)
@@ -190,6 +191,7 @@ func stop_movement():
 func change_state(value):
 	state = value
 	if state == WorkState.CHASE:
+		chase_component.enable_chase()
 		speed *= 2
 		change_target(GameManager.player)
 		nav_agent_refresh_timer.start()
