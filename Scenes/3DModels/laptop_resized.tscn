@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=42 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -314,11 +314,65 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": ["Your direct deposit for this pay period failed. To ensure you receive your salary, please open the attached payroll document and update your information.
+
+Attachment: [u]payroll_details.pdf"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Email:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Email/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(334, 132), Vector2(406, 299.135)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Email/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 1.69, 1.89),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.345, 1.345), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6y342"]
+resource_name = "open_fileless_email"
+length = 2.2465
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Email/PanelContainer/VBox/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": ["Hi team member,
 
 Please review the attached client files before our meeting tomorrow morning. The client requested urgent changes.
 
-Attachment:[u] client_files.zip "]
+Attachment: client_files.zip "]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -361,6 +415,7 @@ tracks/3/keys = {
 _data = {
 &"RESET": SubResource("Animation_l8jl3"),
 &"download_ransomware": SubResource("Animation_y8dab"),
+&"open_fileless_email": SubResource("Animation_6y342"),
 &"open_ransomware_email": SubResource("Animation_pcl5q"),
 &"play_ransomware": ExtResource("13_j8lv2")
 }

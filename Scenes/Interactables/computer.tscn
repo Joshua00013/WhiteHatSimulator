@@ -264,7 +264,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("FilelessSucess:visible")
+tracks/7/path = NodePath("PhishingSuccess:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -276,58 +276,46 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("PhishingSuccess:visible")
+tracks/8/path = NodePath("Model/SubViewport/TabContainer/Login/Window:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Model/SubViewport/TabContainer/Login/Window:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0.001),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Model/SubViewport/TabContainer/Login/Window:size")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Model/SubViewport/TabContainer/Login/Window:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(979.83203, 490.97046)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1036,12 +1024,6 @@ theme = ExtResource("11_yrttm")
 theme_override_font_sizes/font_size = 31
 text = "Ransomware"
 
-[node name="Fileless" type="Button" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("11_yrttm")
-theme_override_font_sizes/font_size = 31
-text = "Fileless Malware"
-
 [node name="Camera3D" type="Camera3D" parent="Model"]
 transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 0.809907, 0, -3.54022e-08)
 
@@ -1083,11 +1065,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_l8cv3")
 }
 
-[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "fileless_btn", "deployment_animation", "deployment_choice")]
+[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "deployment_animation", "deployment_choice")]
 script = ExtResource("4_qfcx5")
 ransomware_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware")
 bruteforce_btn = NodePath("../Model/SubViewport/TabContainer/Login/Bruteforce")
-fileless_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Fileless")
 deployment_animation = NodePath("../DesktopAnimations")
 deployment_choice = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice")
 
@@ -1243,16 +1224,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
 expand_mode = 1
-
-[node name="FilelessSucess" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="RansowmareSuccess" type="Control" parent="."]
 visible = false
@@ -1519,7 +1490,6 @@ expand_mode = 1
 [connection signal="login_successful" from="Model/SubViewport/TabContainer/Login" to="." method="_on_control_login_successful"]
 [connection signal="pressed" from="Model/SubViewport/TabContainer/Login/Bruteforce" to="DeploymentComponent" method="_on_bruteforce_pressed"]
 [connection signal="pressed" from="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware" to="DeploymentComponent" method="_on_ransomware_pressed"]
-[connection signal="pressed" from="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Fileless" to="DeploymentComponent" method="_on_fileless_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="flashdrive_plugged" from="FlashdriveMinigame" to="." method="_on_flashdrive_minigame_flashdrive_plugged"]
 

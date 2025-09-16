@@ -2,7 +2,6 @@ extends Node
 
 @export var ransomware_btn : Button
 @export var bruteforce_btn : Button
-@export var fileless_btn : Button
 
 @export var deployment_animation: AnimationPlayer
 @export var deployment_choice : Control
@@ -10,7 +9,6 @@ func _ready():
 	bruteforce_btn.hide()
 	
 	ransomware_btn.disabled = true
-	fileless_btn.disabled = true
 	
 	CyberattackManager.cyberattack_ready.connect(update_buttons)
 
@@ -21,8 +19,6 @@ func update_buttons(attack_name):
 		"bruteforce":
 			if CyberattackManager.bruteforce_ready:
 				bruteforce_btn.show()
-		"fileless":
-			fileless_btn.disabled = not CyberattackManager.fileless_ready
 
 # TODO: Animations for deploying on pc
 func _on_ransomware_pressed():

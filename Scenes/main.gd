@@ -17,8 +17,9 @@ func _ready() -> void:
 				"Android":
 					UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
 		2:
-			UiManager.popup.display_popup("Congratulations!", "You survived your first day")
-	
+			UiManager.popup.display_popup("Congratulations!", "You are now at your second day. You unlocked a new cyberattack, but you need a flashdrive to deploy it.")
+		3:
+			UiManager.popup.display_popup("Great job!","There are reports stating that some employees don't update their antivirus. Do an penetration testing as usual")
 	if OS.get_name() == "Android": # Change this to a default display setting for android
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	

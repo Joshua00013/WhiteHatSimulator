@@ -193,7 +193,9 @@ func _on_laptop_minigame_component_minigame_finished() -> void:
 	#camera.current = true
 
 func _play_fileless_success():
-	if not CyberattackAdaptationManager.antivirus_updated:
+	if not CyberattackAdaptationManager.email_used:
+		CyberattackAdaptationManager.email_used = true
+		
 		success_animation.play("open_fileless_email")
 		await success_animation.animation_finished
 		CyberattackManager.exploitation_finished = true
@@ -206,8 +208,10 @@ func _play_fileless_success():
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
+		
 func _play_ransomware_success():
-	if not CyberattackAdaptationManager.antivirus_installed:
+	if not CyberattackAdaptationManager.email_used:
+		CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_ransomware_email")
 		await success_animation.animation_finished

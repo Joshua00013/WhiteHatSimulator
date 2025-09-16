@@ -116,7 +116,7 @@ ransomware_recon_done = true
 
 [node name="Website" parent="WindowContainer" instance=ExtResource("9_qd57o")]
 visible = false
-layout_mode = 2
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -206,8 +206,8 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
 editable = false
 
 [node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
@@ -232,8 +232,8 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
 text = "import os from cryptography.fernet 
 import fernet
 
@@ -281,8 +281,8 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
 text = "import os 
 from cryptography.fernetimport fernet
 
@@ -366,20 +366,23 @@ text = "A brute force attack is when someone tries to guess a password by testin
 
 [node name="Phishing_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
-unlocked_day = 3
+unlock_override = true
+unlocked_day = 4
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
 text = "Phishing"
 
 [node name="Fileless_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
-unlocked_day = 4
+unlock_override = true
+unlocked_day = 3
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Fileless_card/MarginContainer/VBoxContainer" index="0"]
 text = "Fileless"
 
 [node name="DoS_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
+unlock_override = true
 unlocked_day = 5
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/DoS_card/MarginContainer/VBoxContainer" index="0"]
