@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://k13rolchshia"]
+[gd_scene load_steps=11 format=3 uid="uid://k13rolchshia"]
 
 [ext_resource type="PackedScene" uid="uid://c1ygryi0os6g3" path="res://Assets/Exported3dModel/mococo_hair.glb" id="1_q7fol"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_b3scq"]
@@ -9,31 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="8_ffgae"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="9_5k58n"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="10_5k58n"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="10_7fpkf"]
 
 [node name="mococo_hair" instance=ExtResource("1_q7fol")]
 script = ExtResource("2_b3scq")
 dialogue = "Mococo"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44105, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00619782, -0.0672516, 0.984239, -0.16344)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0277647, 0.00258778, 0.999585, -0.00728695)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.112463, -0.00039702, -0.0628016, 0.991669)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.629807, 0.0109601, 0.0689725, 0.773606)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00747559, -0.0444545, 0.987376, 0.151842)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00383452, 0.000920052, 0.999934, 0.0108275)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.112463, 0.000397023, 0.0628016, 0.991669)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.630129, -0.0377138, -0.051709, 0.773849)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.4457856, -0.04415529)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.007419985, -0.06163687, 0.9879549, -0.14174262)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.027581926, -0.011537571, 0.99955297, 3.7660844e-05)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.083302595, -0.00039857381, -0.04651796, 0.995438)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.6192881, 0.007172439, 0.06283969, 0.7826124)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.009199589, -0.053228542, 0.98963743, 0.13304079)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.0040724846, -0.012960923, 0.999903, 0.0030569502)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.08330259, 0.0003985752, 0.04651796, 0.995438)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.61980516, -0.033684082, -0.04521638, 0.7827276)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
@@ -55,3 +56,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("9_5k58n")
 
 [node name="DoorCheckComponent" parent="." index="7" instance=ExtResource("10_5k58n")]
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("10_7fpkf")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c77tpfyc0afl5"]
+[gd_scene load_steps=14 format=3 uid="uid://c77tpfyc0afl5"]
 
 [ext_resource type="PackedScene" uid="uid://bx13rwxrl7i2c" path="res://Assets/Exported3dModel/liz_smooth.glb" id="1_3qni5"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_f4v16"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_0pu0i"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_otknr"]
 [ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="6_gw22a"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="7_oxqfn"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -21,6 +22,7 @@ animation = &"run"
 animation = &"sitting"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_rfsek"]
+nodes/output/position = Vector2(940, 340)
 nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
 nodes/Run/position = Vector2(320, 320)
 nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
@@ -31,8 +33,7 @@ nodes/Sit/position = Vector2(520, 320)
 "nodes/anim run/position" = Vector2(60, 300)
 "nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
 "nodes/anim sit/position" = Vector2(320, 600)
-nodes/output/position = Vector2(940, 340)
-node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
+node_connections = [&"output", 0, &"Sit", &"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit"]
 
 [node name="liz_smooth" node_paths=PackedStringArray("collision_shape") instance=ExtResource("1_3qni5")]
 script = ExtResource("2_f4v16")
@@ -40,25 +41,25 @@ dialogue = "Liz"
 collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44462, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00715819, -0.0628438, 0.987201, -0.146402)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0276263, -0.00795545, 0.999585, -0.00182215)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0902463, -0.000398247, -0.0503955, 0.994644)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.621969, 0.00813457, 0.0643929, 0.780348)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00882896, -0.0513425, 0.989188, 0.137091)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00401477, -0.00944074, 0.999935, 0.00502983)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0902463, 0.000398249, 0.0503955, 0.994644)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.622436, -0.0347081, -0.0468605, 0.780495)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.4424891, -0.044155285)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.0066795056, -0.06504466, 0.98576313, -0.1549053)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.027701765, -0.002103945, 0.99960226, -0.004856809)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.10157858, -0.000397659, -0.056723632, 0.993209)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.6263283, 0.009703888, 0.06693321, 0.7766201)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.0081518665, -0.047896653, 0.9883144, 0.14447908)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.003916601, -0.0036904514, 0.9999515, 0.008249209)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.101578586, 0.00039765864, 0.05672364, 0.993209)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.62671494, -0.03637779, -0.04954978, 0.77682036)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
@@ -85,3 +86,5 @@ shape = ExtResource("3_rfsek")
 [node name="NavAgentRefreshTimer" type="Timer" parent="." index="6"]
 
 [node name="NavigationAgent3D" parent="." index="7" instance=ExtResource("6_gw22a")]
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("7_oxqfn")]

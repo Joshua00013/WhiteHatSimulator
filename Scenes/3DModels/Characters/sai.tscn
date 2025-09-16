@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b85hd4820di47"]
+[gd_scene load_steps=11 format=3 uid="uid://b85hd4820di47"]
 
 [ext_resource type="PackedScene" uid="uid://bsuk20g1d1bnp" path="res://Assets/Exported3dModel/Sai.glb" id="1_li610"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_fw20k"]
@@ -9,31 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="8_u0qft"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="9_xvjoj"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="10_07bpq"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="10_fw20k"]
 
 [node name="Sai" instance=ExtResource("1_li610")]
 script = ExtResource("2_fw20k")
 dialogue = "Sai"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44866, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00806019, -0.0586758, 0.989701, -0.13032)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0274611, -0.0218521, 0.999369, 0.00540111)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.063287, -0.000399368, -0.0353409, 0.997369)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.611531, 0.00439985, 0.0583814, 0.789051)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.010105, -0.0578353, 0.990653, 0.123126)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00422859, -0.023096, 0.999721, -0.00263157)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.063287, 0.000399365, 0.0353409, 0.997369)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.612187, -0.0307304, -0.040494, 0.789078)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.451085, -0.044155285)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.008638761, -0.055988047, 0.99116063, -0.11996398)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.027314913, -0.03567903, 0.99891037, 0.012608287)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.036404006, -0.000400077, -0.02032886, 0.99913037)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.60099256, 0.00066355075, 0.052404504, 0.79753447)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.010904975, -0.061905105, 0.99145097, 0.11434123)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.0044169705, -0.036685817, 0.9992643, -0.010275647)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.036404002, 0.00040007755, 0.02032886, 0.99913037)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.6018456, -0.02674857, -0.034174662, 0.7974324)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
@@ -55,3 +56,5 @@ prompt_message = "Shion"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("10_07bpq")
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("10_fw20k")]

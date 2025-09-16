@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfdsy8k3erseu"]
+[gd_scene load_steps=13 format=3 uid="uid://dfdsy8k3erseu"]
 
 [ext_resource type="PackedScene" uid="uid://ugseipi45ywe" path="res://Assets/Exported3dModel/Gigi.glb" id="1_55d3d"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_brddr"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_3rfs0"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_2pfhg"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_3rfs0"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="6_2pfhg"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -20,6 +21,7 @@ animation = &"run"
 animation = &"sitting"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_001hj"]
+nodes/output/position = Vector2(940, 340)
 nodes/Run/node = SubResource("AnimationNodeBlend2_e5w7g")
 nodes/Run/position = Vector2(320, 320)
 nodes/Sit/node = SubResource("AnimationNodeBlend2_ehqv8")
@@ -30,8 +32,7 @@ nodes/Sit/position = Vector2(520, 320)
 "nodes/anim run/position" = Vector2(60, 300)
 "nodes/anim sit/node" = SubResource("AnimationNodeAnimation_o0p50")
 "nodes/anim sit/position" = Vector2(320, 600)
-nodes/output/position = Vector2(940, 340)
-node_connections = [&"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit", &"output", 0, &"Sit"]
+node_connections = [&"output", 0, &"Sit", &"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit"]
 
 [node name="Gigi" node_paths=PackedStringArray("collision_shape") instance=ExtResource("1_55d3d")]
 script = ExtResource("2_brddr")
@@ -39,25 +40,25 @@ dialogue = "Gigi"
 collision_shape = NodePath("CollisionShape3D")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44805, -0.0441553)
-bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
-bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00792842, -0.0592864, 0.989353, -0.132674)
-bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0274879, -0.0194594, 0.999424, 0.0041556)
-bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0679306, -0.000399206, -0.0379339, 0.996969)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.613329, 0.0050413, 0.0594088, 0.787574)
-bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00991851, -0.0568866, 0.990453, 0.12517)
-bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00419429, -0.0207459, 0.999775, -0.00131103)
-bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0679306, 0.000399203, 0.0379339, 0.996969)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.613956, -0.0314148, -0.0415853, 0.787618)
-bones/11/scale = Vector3(1, 1.00001, 1)
+bones/0/position = Vector3(0, 1.4477887, -0.04415529)
+bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
+bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
+bones/2/rotation = Quaternion(-0.007868308, -0.059564747, 0.9891925, -0.13374792)
+bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
+bones/4/rotation = Quaternion(-0.027499659, -0.018440742, 0.99944514, 0.0036257037)
+bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/5/rotation = Quaternion(-0.069908455, -0.0003991312, -0.039038416, 0.99678916)
+bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
+bones/6/rotation = Quaternion(0.6140973, 0.00531559, 0.059849687, 0.78693986)
+bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
+bones/7/rotation = Quaternion(0.009833441, -0.056453742, 0.9903608, 0.12610234)
+bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
+bones/9/rotation = Quaternion(-0.004179064, -0.019744828, 0.9997961, -0.0007489843)
+bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
+bones/10/rotation = Quaternion(-0.06990844, 0.00039912903, 0.03903841, 0.9967892)
+bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
+bones/11/rotation = Quaternion(0.6147102, -0.03170691, -0.04205187, 0.7869928)
+bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
@@ -84,3 +85,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_3rfs0")
 
 [node name="NavAgentRefreshTimer" type="Timer" parent="." index="7"]
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("6_2pfhg")]

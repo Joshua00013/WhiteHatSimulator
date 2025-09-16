@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0fkypkbaaqgw"]
+[gd_scene load_steps=11 format=3 uid="uid://0fkypkbaaqgw"]
 
 [ext_resource type="PackedScene" uid="uid://bctqthg8vm5cg" path="res://Assets/Exported3dModel/myrione.glb" id="1_jbe5r"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_p1dbb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vskcj500jrbd" path="res://Scenes/Components/NPC_Parts/animation_tree.tscn" id="5_20lve"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_ndxcc"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="5_nf8c0"]
+[ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="10_olryk"]
 [ext_resource type="PackedScene" uid="uid://cad55in337a26" path="res://Scenes/Components/NPC_Parts/nav_agent_refresh_timer.tscn" id="10_x75sr"]
 
 [node name="myrione" instance=ExtResource("1_jbe5r")]
@@ -15,24 +16,24 @@ script = ExtResource("2_p1dbb")
 dialogue = "Myrione"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.4503453, -0.04415529)
+bones/0/position = Vector3(0, 1.449621, -0.04415529)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.00845295, -0.056852467, 0.99070436, -0.12329343)
+bones/2/rotation = Quaternion(-0.008275958, -0.05767478, 0.9902589, -0.12646186)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.02736988, -0.030255487, 0.99911964, 0.009778837)
+bones/4/rotation = Quaternion(-0.0274135, -0.026163995, 0.99925256, 0.0076464773)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.04695253, -0.000399846, -0.026219368, 0.998553)
+bones/5/rotation = Quaternion(-0.054906387, -0.00039963043, -0.03066096, 0.99802065)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.60513765, 0.0021293852, 0.054743655, 0.7942337)
+bones/6/rotation = Quaternion(0.6082519, 0.003234079, 0.056510866, 0.7917232)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.010660933, -0.06066365, 0.9912174, 0.11702336)
+bones/7/rotation = Quaternion(0.010410378, -0.05938902, 0.9909686, 0.119774885)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.004346451, -0.031355735, 0.9994724, -0.007275016)
+bones/9/rotation = Quaternion(-0.004290473, -0.027333906, 0.9996046, -0.0050129425)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.04695253, 0.0003998453, 0.026219368, 0.998553)
+bones/10/rotation = Quaternion(-0.054906387, 0.0003996302, 0.030660957, 0.9980206)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.60591483, -0.02831168, -0.036649153, 0.7941804)
+bones/11/rotation = Quaternion(0.60898435, -0.029493798, -0.03852646, 0.7916969)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -56,3 +57,5 @@ shape = ExtResource("3_e5w7g")
 
 [node name="NavAgentRefreshTimer" parent="." index="7" instance=ExtResource("10_x75sr")]
 wait_time = 0.5
+
+[node name="ChaseComponent" parent="." index="8" instance=ExtResource("10_olryk")]
