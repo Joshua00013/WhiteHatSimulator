@@ -1,7 +1,7 @@
 extends Panel
 
-@onready var button = $Button
-@onready var label = $Label
+@export var button : TextureButton
+@export var label : Label
 var slot_item : InvItem
 
 signal slot_clicked

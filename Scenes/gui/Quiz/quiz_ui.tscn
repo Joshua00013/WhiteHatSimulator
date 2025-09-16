@@ -1,23 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://b788xwn3k7nxn"]
+[gd_scene load_steps=5 format=3 uid="uid://b788xwn3k7nxn"]
 
 [ext_resource type="Script" uid="uid://x18i1kyjiw46" path="res://Scripts/GUI/quiz_ui.gd" id="1_wmnlc"]
 [ext_resource type="PackedScene" uid="uid://drl8d6deyphis" path="res://Scenes/GUI/Quiz/quiz_card.tscn" id="2_f6k7j"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_67fnu"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_f6k7j"]
 
-[node name="QuizUI" type="CanvasLayer" node_paths=PackedStringArray("score_label", "status")]
+[node name="QuizUI" type="Control" node_paths=PackedStringArray("score_label", "status", "quiz_card")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wmnlc")
 score_label = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Results")
 status = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Status")
 passing_score = 2
+quiz_card = NodePath("QuizCard")
 
 [node name="QuizCard" parent="." instance=ExtResource("2_f6k7j")]
+layout_mode = 1
+theme = ExtResource("3_f6k7j")
 
 [node name="QuestionCounter" parent="QuizCard/MarginContainer/VBoxContainer/QuestionContainer" index="0"]
 text = "Question 1 of 30"
 
 [node name="FinishedWindow" type="Control" parent="."]
 visible = false
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

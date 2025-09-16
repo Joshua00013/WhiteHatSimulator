@@ -7,7 +7,7 @@ var active : bool = false
 @export var item_name : Label
 @export var item_description : Label
 
-@onready var inv : Inv = preload("res://Items/player_inventory.tres")
+@onready var inv : Inv = GameManager.player.inventory
 
 func _ready() -> void:
 	GameManager.inv = self
@@ -40,7 +40,8 @@ func update_slots():
 	slots = slot_container.get_children()
 	
 	for slot in slots:
-		slot.slot_clicked.connect(self._on_slot_clicked)
+		if not slot.slot_clicked.is_connected(self._on_slot_clicked):
+			slot.slot_clicked.connect(self._on_slot_clicked)
 	
 	for i in range(min(inv.items.size(), slots.size())):
 		slots[i].update(inv.items[i])

@@ -1313,6 +1313,7 @@ password_box = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/Password
 message_label = NodePath("../MarginContainer/VBoxContainer/Label")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(265, 0)
 layout_mode = 2
 alignment = 1
 last_wrap_alignment = 2
@@ -1326,6 +1327,7 @@ text = "Create the code for the good shit"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 8

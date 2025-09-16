@@ -17,16 +17,29 @@ var flash_drive_inserted := false
 @export var laptop_inv_item : InvItem
 @export var flashdrive_item : InvItem
 @export var minigame : Node3D
+@export var success_animation : AnimationPlayer
 
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $laptop_base/laptop_screen/Screen
 @onready var camera = $Camera3D
 @onready var node_area = $laptop_base/laptop_screen/Screen/Area3D
 @onready var animation_player = $AnimationPlayer
+@onready var return_button = $ReturnButton
+@onready var next_button: Button = $Next
+@onready var back_button: Button = $Back
+
 
 signal closed
 
 func _ready():
+	UiManager.connect("laptop_play_fileless", _play_fileless_success)
+	UiManager.connect("laptop_play_ransomware", _play_ransomware_success)
+	UiManager.connect("laptop_play_phishing", _play_phishing_success)
+	
+	if OS.get_name() == "Android":
+		camera.position.z = -0.12
+	UiManager.hide_nav_buttons.connect(toggle_controller_buttons.bind(false))
+	UiManager.show_nav_buttons.connect(toggle_controller_buttons.bind(true))
 	animation_player.play("open_laptop")
 	
 	#login_screen.password = password
@@ -38,7 +51,6 @@ func _ready():
 
 func _mouse_entered_area():
 	is_mouse_inside = true
-
 
 func _mouse_exited_area():
 	is_mouse_inside = false
@@ -60,8 +72,6 @@ func _unhandled_input(event):
 			# handled via Physics Picking.
 			return
 	node_viewport.push_input(event)
-
-
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
@@ -129,19 +139,23 @@ func _on_interactable_interact_triggered():
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
 		minigame.minigame_start()
 	elif camera.is_current() == false:
-		GameManager.player.exit_tool_tip.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		camera.current = true
-		GameManager.ui_active = true
-		active = true
-
-		
+		display_laptop_ui()
+		#GameManager.player.exit_tool_tip.visible = true
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#camera.current = true
+		#GameManager.ui_active = true
+		#active = true
+		#next_button.show()
+	# READ THE COMMENT
+	# READ: SHOW RETURN BUTTON REGARDLESS IF MINIGAME IS TRIGGERED OR NOT 
+	return_button.show()
+	
 func exit_ui():
+	toggle_controller_buttons(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.player.exit_tool_tip.visible = false
 	active = false
 	GameManager.player_camera.current = true
-	GameManager.ui_active = false
 	animation_player.play("close_laptop")
 	GameManager.add_item(laptop_inv_item)
 	if flash_drive_inserted:
@@ -151,11 +165,74 @@ func exit_ui():
 	#tab.current_tab = 1
 	
 func free_laptop():
+	GameManager.ui_active = false
 	closed.emit()
 	call_deferred("queue_free")
 
+func display_laptop_ui():
+	GameManager.player.exit_tool_tip.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	camera.current = true
+	GameManager.ui_active = true
+	active = true
+
+func toggle_controller_buttons(visibility : bool):
+	if visibility == true:
+		next_button.show()
+		back_button.show()
+	elif visibility == false:
+		next_button.hide()
+		back_button.hide()
+
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
-	active = true
 	flash_drive_inserted = true
-	camera.current = true
+	display_laptop_ui()
+	#active = true
+	#camera.current = true
+
+func _play_fileless_success():
+	if not CyberattackAdaptationManager.antivirus_updated:
+		success_animation.play("open_fileless_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_fileless")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_fileless")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
+func _play_ransomware_success():
+	if not CyberattackAdaptationManager.antivirus_installed:
+		
+		success_animation.play("open_ransomware_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_ransomware")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_ransomware")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
+	
+func _play_phishing_success():
+	if not CyberattackAdaptationManager.antivirus_installed:
+		
+		success_animation.play("open_phishing_email")
+		await success_animation.animation_finished
+		CyberattackManager.exploitation_finished = true
+		
+		success_animation.play("download_phishing")
+		await success_animation.animation_finished
+		CyberattackManager.installation_finished = true
+		
+		success_animation.play("play_phishing")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true

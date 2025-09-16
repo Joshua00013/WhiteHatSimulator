@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dupw6ocq2d2ma" path="res://Assets/Exported3dModel/Table-col.glb" id="15_onmcy"]
 [ext_resource type="PackedScene" uid="uid://d07bmjtmbnvn8" path="res://Scenes/3DModels/officechair.tscn" id="16_omqq0"]
 [ext_resource type="PackedScene" uid="uid://c7yowoih0rjeg" path="res://Scenes/GUI/Phishing UI/phishing assets/computer_phishing.tscn" id="17_ehgen"]
-[ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Interactables/Server/hand_tracker_server.gd" id="18_t8okm"]
+[ext_resource type="Script" uid="uid://8l07b1buhbmq" path="res://Scripts/Globals/hand_tracker_server.gd" id="18_t8okm"]
 [ext_resource type="PackedScene" uid="uid://d0qfb2b1l0kbl" path="res://Scenes/Interactables/card_swipe.tscn" id="19_o3rw1"]
 [ext_resource type="PackedScene" uid="uid://bas4ywriyhh35" path="res://Scenes/Interactables/flash_drive_collectible.tscn" id="20_k1c3d"]
 [ext_resource type="PackedScene" uid="uid://d4li83vetffx6" path="res://Scenes/test_scenes/Card-col.glb" id="21_gmcfy"]

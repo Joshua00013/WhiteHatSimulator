@@ -817,6 +817,7 @@ libraries = {
 }
 
 [node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(265, 0)
 layout_mode = 2
 alignment = 1
 last_wrap_alignment = 2
@@ -826,10 +827,11 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 18
-text = "Create the code for the good shit"
+text = "Write the code"
 fit_content = true
 
 [node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 8

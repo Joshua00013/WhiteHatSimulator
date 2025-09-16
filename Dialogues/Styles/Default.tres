@@ -13,22 +13,18 @@
 
 [sub_resource type="Resource" id="Resource_72d8t"]
 script = ExtResource("1_x63un")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_e5pw7"]
 script = ExtResource("1_x63un")
 scene = ExtResource("2_r7rid")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_5h2by"]
 script = ExtResource("1_x63un")
 scene = ExtResource("3_mqueb")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_gvhht"]
 script = ExtResource("1_x63un")
 scene = ExtResource("4_rfbpr")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_olb57"]
 script = ExtResource("1_x63un")
@@ -41,22 +37,18 @@ overrides = {
 [sub_resource type="Resource" id="Resource_0vls3"]
 script = ExtResource("1_x63un")
 scene = ExtResource("6_hy51d")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_8xgra"]
 script = ExtResource("1_x63un")
 scene = ExtResource("7_bkpbx")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_oq35u"]
 script = ExtResource("1_x63un")
 scene = ExtResource("8_ha4kk")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_n3lex"]
 script = ExtResource("1_x63un")
 scene = ExtResource("9_07o3w")
-overrides = {}
 
 [resource]
 script = ExtResource("10_8fpfd")
@@ -73,6 +65,4 @@ layer_info = {
 "16": SubResource("Resource_oq35u"),
 "17": SubResource("Resource_n3lex")
 }
-base_overrides = {}
-layers = Array[ExtResource("1_x63un")]([])
 metadata/_latest_layer = "13"

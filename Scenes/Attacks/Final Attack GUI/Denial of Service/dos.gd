@@ -51,6 +51,8 @@ func set_step(step: int) -> void:
 			animation.play("loic_14")
 		14:
 			animation.play("ddos_result")
+		15:
+			CyberattackManager.dos_ready = true
 
 
 

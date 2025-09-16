@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=41 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -8,7 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://c651ldtbfalgc" path="res://Scenes/GUI/Ransomware/clean_ransomware.tscn" id="5_57jh0"]
 [ext_resource type="PackedScene" uid="uid://bxxmt6q0sooxp" path="res://Scenes/Components/Minigames/flash_drive_low_poly.tscn" id="7_oho7i"]
 [ext_resource type="Script" uid="uid://c72iqie28grx3" path="res://Scripts/Components/Minigames/laptop_minigame_component.gd" id="8_itk1b"]
+[ext_resource type="PackedScene" uid="uid://bx0paynrsx1un" path="res://Scenes/GUI/return_button.tscn" id="9_aerrq"]
 [ext_resource type="Script" uid="uid://dwvjl10gtjqar" path="res://Scripts/Debug/viewport_adjuster.gd" id="9_itk1b"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="10_fd17r"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="11_bpdqv"]
+[ext_resource type="Animation" uid="uid://dhg0asdswm03a" path="res://animations/play_ransomware.res" id="13_j8lv2"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="14_6y342"]
+[ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="14_qcv3o"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="15_qcv3o"]
+[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="16_pcl5q"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="17_y8dab"]
+[ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="18_6u205"]
+[ext_resource type="Texture2D" uid="uid://btwl1kfbblox4" path="res://Assets/Illustrator/pdfv2.png" id="19_sb1hh"]
+[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="20_ctr30"]
+[ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="21_714hg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.62, 0.545)
@@ -71,6 +84,32 @@ tracks/1/keys = {
 "method": &"free_laptop"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ReturnButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"toggle_controller_buttons"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_57jh0"]
 resource_name = "open_laptop"
@@ -94,13 +133,280 @@ _data = {
 &"open_laptop": SubResource("Animation_57jh0")
 }
 
-[node name="Laptop" node_paths=PackedStringArray("minigame") instance=ExtResource("1_2ohll")]
+[sub_resource type="Animation" id="Animation_l8jl3"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(334, 132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Email/PanelContainer/VBox/RichTextLabel:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Hi team member,
+
+Please review the attached client files before our meeting tomorrow morning. The client requested urgent changes.
+
+Attachment:[u] client_files.zip "]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Email:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Email/TextureRect:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(334, 132)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Email/TextureRect:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Downloading:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Downloading/PanelContainer/VBoxContainer/ProgressBar:value")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y8dab"]
+resource_name = "download_ransomware"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Downloading:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Downloading/PanelContainer/VBoxContainer/ProgressBar:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_pcl5q"]
+resource_name = "open_ransomware_email"
+length = 2.2465
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Email/PanelContainer/VBox/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Hi team member,
+
+Please review the attached client files before our meeting tomorrow morning. The client requested urgent changes.
+
+Attachment:[u] client_files.zip "]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Email:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Email/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(334, 132), Vector2(406, 345)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Email/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 1.69, 1.89),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.345, 1.345), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bescv"]
+_data = {
+&"RESET": SubResource("Animation_l8jl3"),
+&"download_ransomware": SubResource("Animation_y8dab"),
+&"open_ransomware_email": SubResource("Animation_pcl5q"),
+&"play_ransomware": ExtResource("13_j8lv2")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u205"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyne"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2pro"]
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_3407j"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u45uk"]
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[node name="Laptop" node_paths=PackedStringArray("minigame", "success_animation") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
 username = "whitehat"
 password = "whitehat553322"
 laptop_inv_item = ExtResource("3_62orf")
 flashdrive_item = ExtResource("4_itk1b")
 minigame = NodePath("LaptopMinigameComponent")
+success_animation = NodePath("SuccessAnimationPlayer")
 
 [node name="laptop_screen" parent="laptop_base" index="1"]
 transform = Transform3D(1, 0, 0, 0, -3.11901e-06, 1, 0, -0.861608, -3.61999e-06, -0.0955432, 0.0471079, 0.235429)
@@ -118,7 +424,7 @@ transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_aerrq")
 
 [node name="Camera3D" type="Camera3D" parent="." index="1"]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.255)
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.225)
 
 [node name="Interactable" parent="." index="2" instance=ExtResource("3_57jh0")]
 
@@ -150,7 +456,35 @@ flash_drive_item = ExtResource("4_itk1b")
 [node name="Camera3D" type="Camera3D" parent="LaptopMinigameComponent" index="0"]
 transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119, 1, 1.07582e-08, -4.23668e-08, -1.38729, 0.229147, -0.0490917)
 
-[node name="Node" type="CanvasLayer" parent="." index="7" node_paths=PackedStringArray("subviewport")]
+[node name="ReturnButton" parent="." index="7" instance=ExtResource("9_aerrq")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 70.0
+offset_bottom = -33.0
+
+[node name="Next" parent="." index="8" instance=ExtResource("10_fd17r")]
+visible = false
+anchor_left = 0.736111
+anchor_top = 0.802469
+anchor_right = 0.865451
+anchor_bottom = 0.859568
+
+[node name="Back" parent="." index="9" instance=ExtResource("11_bpdqv")]
+visible = false
+anchor_left = 0.131944
+anchor_top = 0.802469
+anchor_right = 0.262153
+anchor_bottom = 0.859568
+text = "Back"
+
+[node name="Node" type="CanvasLayer" parent="." index="10" node_paths=PackedStringArray("subviewport")]
+visible = false
 script = ExtResource("9_itk1b")
 subviewport = NodePath("../SubViewport")
 
@@ -184,9 +518,405 @@ text = "y+"
 layout_mode = 2
 text = "y-"
 
+[node name="SuccessAnimationPlayer" type="AnimationPlayer" parent="." index="11"]
+libraries = {
+&"": SubResource("AnimationLibrary_bescv")
+}
+
+[node name="Email" type="Control" parent="." index="12"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Email" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -178.0
+offset_right = 326.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u205")
+
+[node name="VBox" type="VBoxContainer" parent="Email/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Email/PanelContainer/VBox" index="0"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Email/PanelContainer/VBox/HBox" index="0"]
+layout_mode = 2
+texture = ExtResource("14_qcv3o")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Email/PanelContainer/VBox/HBox" index="1"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "whitehat@work.com"
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Email/PanelContainer/VBox" index="1"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+bbcode_enabled = true
+text = "Hi team member,
+
+Please review the attached client files before our meeting tomorrow morning. The client requested urgent changes.
+
+Attachment:[u] client_files.zip "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Email" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_right = 247.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Email" index="2"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -196.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RansowmareSuccess" type="Control" parent="." index="13"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RansowmareSuccess" index="0"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.0
+offset_right = 391.0
+offset_bottom = 460.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="RansowmareSuccess" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -240.0
+offset_right = 401.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgyne")
+
+[node name="Desktop" type="VFlowContainer" parent="RansowmareSuccess/PanelContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="Data_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="0" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+
+[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Data_icon" index="0"]
+icon = ExtResource("16_pcl5q")
+
+[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Data_icon" index="1"]
+text = "data.sql"
+
+[node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+
+[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon" index="0"]
+icon = ExtResource("17_y8dab")
+
+[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon" index="1"]
+text = "godot.png"
+
+[node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+
+[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Text_icon" index="0"]
+icon = ExtResource("18_6u205")
+
+[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Text_icon" index="1"]
+text = "text.txt"
+
+[node name="Malware_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="3" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+
+[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon" index="0"]
+icon = ExtResource("19_sb1hh")
+
+[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon" index="1"]
+text = "PDF.exe"
+
+[node name="Key_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="4" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+
+[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Key_icon" index="0"]
+icon = ExtResource("20_ctr30")
+
+[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Key_icon" index="1"]
+text = "key.key"
+
+[node name="PanelContainer" type="PanelContainer" parent="RansowmareSuccess" index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -62.0
+offset_right = 290.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_6y342")
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2pro")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "All your files have been encrypted."
+label_settings = SubResource("LabelSettings_3407j")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(400, 180)
+layout_mode = 2
+text = "This computer has been breached! All your files have been encrypted. Unless you pay the ransom, all your files will stay encrypted."
+label_settings = SubResource("LabelSettings_3407j")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+text = "Send $100 worth of alcoins to this address:
+12Y34KuF6JkMi4KsIM4F"
+label_settings = SubResource("LabelSettings_3407j")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Button" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Check Payment"
+
+[node name="Button2" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "Decrypt"
+
+[node name="PanelContainer3" type="PanelContainer" parent="RansowmareSuccess" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -62.0
+offset_right = 290.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_6y342")
+theme_override_styles/panel = SubResource("StyleBoxFlat_u45uk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Enter the password and open the key file to decrypt"
+label_settings = SubResource("LabelSettings_3407j")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Password"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Cancel" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="OpenKey" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "Open Key"
+
+[node name="Confirm" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="TextureRect" type="TextureRect" parent="RansowmareSuccess" index="4"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -196.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+
+[node name="Downloading" type="Control" parent="." index="14"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Downloading" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -178.0
+offset_right = 326.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u205")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Downloading/PanelContainer" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Downloading/PanelContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 41.965)
+layout_mode = 2
+bbcode_enabled = true
+text = "[wave]Downloading"
+
+[node name="ProgressBar" type="ProgressBar" parent="Downloading/PanelContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Downloading" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.675
+anchor_top = -7.525
+anchor_right = 6.675
+anchor_bottom = -5.65
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Downloading" index="2"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -196.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Piracy" type="Control" parent="." index="15"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hosting" type="Control" parent="." index="16"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button" to="Node" method="_on_button_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button2" to="Node" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button3" to="Node" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button4" to="Node" method="_on_button_4_pressed"]
+
+[editable path="RansowmareSuccess/PanelContainer2/Desktop/Data_icon"]
+[editable path="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon"]
+[editable path="RansowmareSuccess/PanelContainer2/Desktop/Text_icon"]
+[editable path="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon"]
+[editable path="RansowmareSuccess/PanelContainer2/Desktop/Key_icon"]

@@ -1,27 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://kd4g4p40rm1l"]
+[gd_scene load_steps=5 format=3 uid="uid://kd4g4p40rm1l"]
 
 [ext_resource type="Script" uid="uid://daj1h1xsejg3b" path="res://GUI/TimerUI/timer_ui.gd" id="1_joet6"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_tuxor"]
 
-[node name="TimerUI" type="VBoxContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8y1t"]
+bg_color = Color(0.151276, 0.151276, 0.151276, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnx41"]
+bg_color = Color(0.129558, 0.129559, 0.129558, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+
+[node name="TimerUI" type="HBoxContainer" node_paths=PackedStringArray("time_label", "day_label")]
 anchors_preset = -1
-anchor_right = 0.122396
-anchor_bottom = 0.157407
-grow_horizontal = 2
+anchor_right = 0.185764
+anchor_bottom = 0.117284
+theme = ExtResource("1_tuxor")
 script = ExtResource("1_joet6")
+time_label = NodePath("ColorRect/TimeLabel")
+day_label = NodePath("PanelContainer/DayLabel")
 metadata/_edit_use_anchors_ = true
 
-[node name="Time_Label" type="Label" parent="."]
+[node name="ColorRect" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8y1t")
+
+[node name="TimeLabel" type="Label" parent="ColorRect"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.332881, 0.332881, 0.332881, 1)
-theme_override_font_sizes/font_size = 55
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "08:30"
 metadata/_edit_use_anchors_ = true
 
-[node name="Day_Label" type="Label" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wnx41")
+
+[node name="DayLabel" type="Label" parent="PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
 text = "Day 1"
 metadata/_edit_use_anchors_ = true
 

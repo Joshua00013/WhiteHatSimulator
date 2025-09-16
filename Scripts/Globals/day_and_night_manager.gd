@@ -5,6 +5,7 @@ const 	MINUTES_PER_HOUR: int = 60
 const GAME_MINUTES_DURATION:float = TAU / MINUTES_PER_DAY
 
 # Speed ng Time 
+var active : bool = false
 var game_speed: float = 2.0
 
 var initial_day: int = 1
@@ -24,6 +25,9 @@ func _ready() ->void:
 	set_initial_time()
 	
 func _process(delta: float) -> void:
+	if not active:
+		return
+	
 	time += delta * game_speed * GAME_MINUTES_DURATION
 	game_time.emit(time)
 	

@@ -5,7 +5,7 @@
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_r8q6d"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_r8q6d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_so210"]
-[ext_resource type="Script" uid="uid://crltns0px1fim" path="res://Scripts/Components/dialogue_handler_component.gd" id="6_gdaa7"]
+[ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="6_gdaa7"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e5w7g"]
 
@@ -40,24 +40,24 @@ script = ExtResource("2_pjn6v")
 dialogue = "Alwyn"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.44466, -0.0441553)
+bones/0/position = Vector3(0, 1.44064, -0.0441553)
 bones/0/rotation = Quaternion(-0.0418603, 0, 0, 0.999124)
 bones/1/rotation = Quaternion(0.171125, 1.17451e-07, 2.03997e-08, 0.985249)
-bones/2/rotation = Quaternion(-0.00716863, -0.0627957, 0.987232, -0.146217)
+bones/2/rotation = Quaternion(-0.00622017, -0.0671494, 0.984311, -0.163044)
 bones/3/rotation = Quaternion(0.0516092, -0.00022717, -0.0150832, 0.998554)
-bones/4/rotation = Quaternion(-0.0276246, -0.00808912, 0.999584, -0.00175279)
+bones/4/rotation = Quaternion(-0.0277692, 0.00291774, 0.999582, -0.00745776)
 bones/4/scale = Vector3(1, 1, 1.00003)
-bones/5/rotation = Quaternion(-0.0899873, -0.00039826, -0.0502508, 0.994674)
+bones/5/rotation = Quaternion(-0.111369, -0.000397088, -0.0621906, 0.991831)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.621869, 0.00809869, 0.0643349, 0.780432)
+bones/6/rotation = Quaternion(0.630051, 0.0110484, 0.069116, 0.773393)
 bones/6/scale = Vector3(0.999999, 1.00001, 1)
-bones/7/rotation = Quaternion(0.00884375, -0.0514178, 0.989206, 0.13693)
+bones/7/rotation = Quaternion(0.00751034, -0.0446314, 0.987426, 0.151464)
 bones/8/rotation = Quaternion(0.0516092, 0.000227171, 0.0150832, 0.998554)
-bones/9/rotation = Quaternion(-0.00401696, -0.00957209, 0.999934, 0.00495625)
+bones/9/rotation = Quaternion(-0.00382864, 0.00124429, 0.999931, 0.0110087)
 bones/9/scale = Vector3(1, 1, 1.00003)
-bones/10/rotation = Quaternion(-0.0899873, 0.000398262, 0.0502508, 0.994674)
+bones/10/rotation = Quaternion(-0.111369, 0.000397091, 0.0621905, 0.991831)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.622338, -0.0346699, -0.0467991, 0.780579)
+bones/11/rotation = Quaternion(0.630368, -0.0378076, -0.051861, 0.773639)
 bones/11/scale = Vector3(1, 1.00001, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -67,37 +67,21 @@ autoplay = "idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_r8q6d")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]
-path_height_offset = 1.0
-avoidance_enabled = true
-debug_enabled = true
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeBlendTree_so210")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Run/blend_amount = 0.0
 parameters/Sit/blend_amount = 0.0
 
-[node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("4_r8q6d")]
+[node name="DoorCheckComponent" parent="." index="4" instance=ExtResource("4_r8q6d")]
 
-[node name="Interactable" parent="." index="6" instance=ExtResource("5_so210")]
+[node name="Interactable" parent="." index="5" instance=ExtResource("5_so210")]
 prompt_message = "Al"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_r8q6d")
 
-[node name="DialogueHandlerComponent" type="Label3D" parent="." index="7" node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17772, 0)
-billboard = 1
-script = ExtResource("6_gdaa7")
-interactable = NodePath("../Interactable")
+[node name="NavAgentRefreshTimer" type="Timer" parent="." index="6"]
 
-[node name="Timer" type="Timer" parent="DialogueHandlerComponent" index="0"]
-wait_time = 15.0
-one_shot = true
-
-[node name="NavAgentRefreshTimer" type="Timer" parent="." index="8"]
-
-[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[node name="NavigationAgent3D" parent="." index="7" instance=ExtResource("6_gdaa7")]

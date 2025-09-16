@@ -1,11 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk4gi6kkn3olt"]
 
 [ext_resource type="PackedScene" uid="uid://xjc0rqxgpjdp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part1.tscn" id="1_ga11f"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://cc0buatvhcvhp" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
-[ext_resource type="PackedScene" uid="uid://0w4kvb0cp6ed" path="res://Scenes/gui/Ransomware/ransomwarwDecrypt.tscn" id="3_n2t3j"]
-[ext_resource type="PackedScene" uid="uid://cnv1pkk0wsxok" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Middle.tscn" id="3_usm0c"]
-=======
 [ext_resource type="Script" uid="uid://do1svo7hf88dx" path="res://Scripts/ransomware_attack.gd" id="1_tsboj"]
 [ext_resource type="PackedScene" uid="uid://brfa613gvi1ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Start.tscn" id="2_tq67b"]
 [ext_resource type="Texture2D" uid="uid://diyxqq8doqn4u" path="res://Assets/5ebae275-6c72-4b68-b539-f031698853c6-removebg-preview.png" id="2_tsboj"]
@@ -27,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bb67nixe8x8ku" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part18.tscn" id="18_gnamn"]
 [ext_resource type="PackedScene" uid="uid://csj80tyfh1rg" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part19.tscn" id="20_m553r"]
 [ext_resource type="PackedScene" uid="uid://cbys5wyehbo2e" path="res://Scenes/gui/Ransomware/ransomwareEncrypt_Part20.tscn" id="21_tq67b"]
->>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 
 [node name="RansomwareAttack" type="Control"]
 layout_mode = 3
@@ -36,11 +30,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-<<<<<<< HEAD
-metadata/_edit_use_anchors_ = true
-
-[node name="RansomwareEncryt_Start" parent="." instance=ExtResource("2_tq67b")]
-=======
 script = ExtResource("1_tsboj")
 
 [node name="RansomwarePlayer" type="TabContainer" parent="."]
@@ -114,7 +103,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hdarq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdarq")
 
 [node name="Ransomeware1" parent="RansomwarePlayer" instance=ExtResource("1_ga11f")]
->>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f
 visible = false
 layout_mode = 1
 
@@ -131,8 +119,6 @@ layout_mode = 1
 anchors_preset = -1
 offset_bottom = 6.10352e-05
 metadata/_edit_use_anchors_ = true
-<<<<<<< HEAD
-=======
 
 [node name="Ransomeware_back_btn" type="Button" parent="RansomwarePlayer/Control"]
 layout_mode = 1
@@ -929,4 +915,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="RansomwarePlayer/Control15/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_next_btn" to="." method="_on_ransomeware_next_pressed"]
 [connection signal="pressed" from="RansomwarePlayer/Control17/Ransomeware_back_btn" to="." method="_on_ransomeware_back_btn_pressed"]
->>>>>>> d41bd97ee657d6ac66e34ae5cb908c880951e29f

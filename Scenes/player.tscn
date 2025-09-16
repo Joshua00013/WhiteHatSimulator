@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4fjgut4ak6ob"]
+[gd_scene load_steps=14 format=3 uid="uid://4fjgut4ak6ob"]
 
 [ext_resource type="Script" uid="uid://cnwlth5l2crfv" path="res://node_3d.gd" id="1_4flbx"]
 [ext_resource type="Resource" uid="uid://ysbc0wl30il1" path="res://Items/player_inventory.tres" id="2_3smsa"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://GUI/Pause Menu/pause_menu.tscn" id="4_vgqql"]
-[ext_resource type="PackedScene" uid="uid://br15oeyra3fbx" path="res://Scenes/GUI/inventory_ui.tscn" id="7_8erm5"]
+[ext_resource type="Script" uid="uid://eh1hfcmjlvad" path="res://Scripts/States/state_machine.gd" id="8_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 height = 2.5
@@ -14,10 +14,74 @@ height = 2.5
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
 height = 2.2
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3smsa"]
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "headbob"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/PlayerCamera:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0712209, 0), Vector3(0.05, 0.15, 0), Vector3(0, 0.071, 0), Vector3(-0.05, 0.15, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/InteractRay:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.234869, 0.497191, 0.734842),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.071, 0), Vector3(0.05, 0.15, 0), Vector3(0, 0.071, 0), Vector3(-0.05, 0.015, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8erm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/PlayerCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0712209, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/InteractRay:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0415704, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f1ek2"]
+_data = {
+&"RESET": SubResource("Animation_8erm5"),
+&"headbob": SubResource("Animation_3smsa")
+}
+
 [node name="Node3D" type="CharacterBody3D"]
 collision_mask = 5
 script = ExtResource("1_4flbx")
-inventory = ExtResource("2_3smsa")
+start_inventory = ExtResource("2_3smsa")
+accel = 20
 crouch_height = 1.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -29,16 +93,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09598, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_i3pqv")
 
+[node name="HeadCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72327, 0)
+shape = SubResource("SphereShape3D_3smsa")
+
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58059, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0712209, 0)
-fov = 90.3
 far = 3990.4
 script = ExtResource("2_fkybt")
 
 [node name="InteractRay" parent="Head" instance=ExtResource("2_6t5aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0415704, 0)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -66,4 +134,10 @@ text = "Press ESC to exit"
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_vgqql")]
 
-[node name="InventoryUI" parent="." instance=ExtResource("7_8erm5")]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("8_8erm5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f1ek2")
+}

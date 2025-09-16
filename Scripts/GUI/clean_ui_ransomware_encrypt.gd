@@ -26,22 +26,25 @@ func _ready() -> void:
 	#code_edit.text = ""
 	overlay.visible = false 
 	rich_text_label.text = "⚠️ DANGER: RANSOMWARE ALERT ⚠️\n\nRansomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them. To protect yourself from ransomware, always back up your files, keep your system updated, use strong security tools, and be careful with emails and links, because prevention is much easier than fixing the damage."
-	
+
+func _process(_delta: float) -> void:
+	if visible:
+		if Input.is_action_just_pressed("next_pressed"):
+			back_button.disabled = false
+			step += 1
+			set_step(step)
+
+		elif Input.is_action_just_pressed("back_pressed"):
+			if step > 0:
+				step -= 1
+				set_step(step)
+				back_button.disabled = step == 0
 
 func _on_back_button_down() -> void:
-	# TODO: Set limits on back and next
-	if step > 0:
-		step -= 1
-		set_step(step)
-		back_button.disabled = false
-	if step == 0:
-		set_step(step)
-		back_button.disabled = true
+	pass
 
 func _on_next_button_down() -> void:
-	back_button.disabled = false
-	step += 1
-	set_step(step)
+	pass
 
 func set_step(step: int) -> void:
 	match step:

@@ -3,6 +3,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 10
 
+@export var start_inventory : Inv
 @export var inventory : Inv
 @export var sensitivity := 0.25
 @export var min_angle = -80
@@ -12,22 +13,28 @@ const JUMP_VELOCITY = 10
 @export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
 @export var sprint_speed = 10.0
 
+@export_group("Headbob")
+
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
 @onready var exit_tool_tip = $PanelContainer/ExitToolTip
+@onready var animation_player = $AnimationPlayer
 
 var stand_height : float
 var look_rotation : Vector2
 var stand_height_offset : float = 0.0
 func _ready():
-	GameManager.player = self
+	GameManager.player = self # The inventory ui is pointing to the Gamemanager.player.inventory
+	inventory = start_inventory.duplicate(true)
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
 	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	look_rotation = Vector2(head.rotation_degrees.x, rotation_degrees.y)
+	
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && GameManager.ui_active == false:
 		look_rotation.y -= (event.relative.x * sensitivity) #Subtract horizontal mouse movement (x) from the head's y rotation (horizontal rotation from y pole)
 		look_rotation.x -= (event.relative.y * sensitivity)
 		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle) #Minimum and maximum rotation of the vertical rotation
@@ -64,17 +71,24 @@ func _physics_process(delta):
 			if Input.is_action_pressed("sprint"):
 				velocity.x = lerp(velocity.x, direction.x * sprint_speed, accel * delta)
 				velocity.z = lerp(velocity.z, direction.z * sprint_speed, accel * delta)
+				animation_player.speed_scale = 1.5
+				animation_player.play("headbob")
 			else:
 				velocity.x = lerp(velocity.x, direction.x * SPEED, accel * delta)
 				velocity.z = lerp(velocity.z, direction.z * SPEED, accel * delta)
+				animation_player.speed_scale = 1.0
+				animation_player.play("headbob")
 		else:
 			velocity.x = lerp(velocity.x, 0.0, accel * delta)
 			velocity.z = lerp(velocity.z, 0.0, accel * delta)
-
+			animation_player.pause()
+			
 		move_and_slide()
 		
 		head.rotation_degrees.x = look_rotation.x # Set the vertical rotation to the head
 		rotation_degrees.y = look_rotation.y # Set the horizontal rotation to the whole body
+	elif GameManager.ui_active == true:
+		animation_player.pause()
 
 func crouch(delta : float, inactive = false):
 	var target_height : float = crouch_height if inactive == false else stand_height

@@ -27,7 +27,19 @@ func _ready() -> void:
 	code_edit.text = ""
 	overlay.visible = false 
 	rich_text_label.text = "This code is a simple decryption program that scans through all files in the folder, skipping \"malware.py\", \"key.key\", and \"decr.py\". It asks the user for a password and checks if it matches a preset passphrase \"WhiteHat\". If the password is correct, it retrieves the actual encryption key from key.key, uses it with the Fernet library to decrypt each file’s contents, and restores them to their original state. If the password is wrong, the program refuses to decrypt and instead displays a message demanding payment, imitating the behavior of ransomware."
-	
+
+func _process(_delta: float) -> void:
+	if visible: # If the tab is active, only then will we handle the input
+		if Input.is_action_just_pressed("next_pressed"):
+			back_button.disabled = false
+			step += 1
+			set_step(step)
+
+		elif Input.is_action_just_pressed("back_pressed"):
+			if step > 0:
+				step -= 1
+				set_step(step)
+				back_button.disabled = step == 0
 
 func _on_back_button_down() -> void:
 	# TODO: Set limits on back and next
@@ -96,4 +108,5 @@ func set_step(step: int) -> void:
 			
 			
 func _on_password_check_component_correct_password() -> void:
+	CyberattackManager.ransomware_ready = true
 	ransomware_decrypt_finished.emit()

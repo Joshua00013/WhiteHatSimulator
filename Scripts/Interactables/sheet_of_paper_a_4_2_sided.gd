@@ -7,7 +7,7 @@ var active
 func _ready() -> void:
 	paper_ui.hide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
 
