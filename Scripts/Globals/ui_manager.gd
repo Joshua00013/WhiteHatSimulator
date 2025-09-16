@@ -5,6 +5,8 @@ var task_box : TaskBox
 var quiz_ui : Control
 var game_over_ui : Control
 
+var nav_buttons_active := false
+
 signal show_nav_buttons
 signal hide_nav_buttons
 
