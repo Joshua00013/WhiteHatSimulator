@@ -520,7 +520,7 @@ metadata/_tab_index = 0
 
 [node name="Bruteforce" type="Button" parent="Model/SubViewport/TabContainer/Login"]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 493.0
 offset_top = 402.5
 offset_right = 907.0
@@ -545,8 +545,7 @@ self_modulate = Color(0.321728, 0.321728, 0.321728, 1)
 text = "Terminal"
 
 [node name="CodeEdit" type="CodeEdit" parent="Model/SubViewport/TabContainer/Login/Window"]
-visible = false
-layout_mode = 2
+layout_mode = 0
 anchor_top = -0.0217984
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -857,7 +856,7 @@ mouse_filter = 2
 
 [node name="NotePad" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
 visible = false
-layout_mode = 2
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.405185
 anchor_bottom = 0.405333
@@ -931,7 +930,7 @@ theme_override_font_sizes/font_size = 31
 text = "Fileless Malware"
 
 [node name="Camera3D" type="Camera3D" parent="Model"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.809907, 0, -3.54022e-08)
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 0.809907, 0, -3.54022e-08)
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." node_paths=PackedStringArray("room")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312329, -0.413228)
@@ -1025,8 +1024,8 @@ text = "Username:"
 [node name="username" type="TextEdit" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(390, 40)
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vay25")
 placeholder_text = "Username"
 metadata/_edit_use_anchors_ = true
@@ -1043,8 +1042,8 @@ text = "Password:"
 [node name="password" type="TextEdit" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(390, 40)
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vay25")
 placeholder_text = "Password"
 metadata/_edit_use_anchors_ = true

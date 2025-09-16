@@ -22,7 +22,13 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 	else:
 		#status.text = "Passed"
 		UiManager.popup.display_popup("Passed","Take a rest and proceed to your next day!")
-		# TODO : Initialize the next stage
+		
+		# Reinitialize the stage and increment the days
+		DayAndNightManager.initial_day += 1
+		GameManager.reset()
+		CyberattackManager.reset()
+		DayAndNightManager.set_initial_time()
+		get_tree().reload_current_scene()
 
 func start_quiz():
 	quiz_card.start_quiz()

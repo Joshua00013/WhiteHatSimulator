@@ -1,8 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsfqbqpynx1hy"]
+[gd_scene load_steps=5 format=3 uid="uid://dbrnv4kakgloa"]
 
-[ext_resource type="Script" uid="uid://dtu7x0c0eckui" path="res://Scenes/GUI/game_over_popup.gd" id="1_uoy07"]
 [ext_resource type="Texture2D" uid="uid://c3wygbiu770h3" path="res://Assets/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="2_y1srn"]
 [ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_uoy07"]
+
+[sub_resource type="GDScript" id="GDScript_m6ycd"]
+script/source = "extends Control
+
+@export var heading : Label
+@export var body : Label
+
+var reset_mouse := true
+
+func _ready():
+	UiManager.game_over_ui = self
+	hide()
+
+func display_popup(new_heading : String = \"Game Over\", new_body : String = \"You have been caught\", reset_mouse_check : bool = true):
+	reset_mouse = reset_mouse_check
+	heading.text = new_heading
+	body.text = new_body
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	GameManager.ui_active = true
+	show()
+
+func _on_button_pressed():
+	if reset_mouse:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		GameManager.ui_active = false
+	hide()
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yihuh"]
 texture = ExtResource("2_y1srn")
@@ -22,7 +48,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uoy07")
+script = SubResource("GDScript_m6ycd")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 texture_filter = 1
