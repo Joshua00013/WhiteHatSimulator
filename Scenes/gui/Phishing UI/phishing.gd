@@ -6,6 +6,7 @@ var scene = 1
 signal change_to_website
 
 func _ready() -> void:
+	UiManager.nav_buttons_active = true
 	_play_scene_animation()
 	
 	
