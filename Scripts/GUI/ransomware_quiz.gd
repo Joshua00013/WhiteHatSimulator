@@ -321,11 +321,120 @@ var questions = [
 		],
 		"correct_answer": 1
 	}
-		
 ]
+var day_one_questions = [
+	{
+		"question":"What is the main goal of a ransomware attack?",
+		"answers":[
+			"A. To secretly spy on internet activity",
+			"B. To encrypt files and demand payment",
+			"C. To delete all system files permanently",
+			"D. To improve computer performance"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Which of the following is the way ransomware most often enters a system?",
+		"answers":[
+			"A. Fake emails with attachments or links",
+			"B. Downloading system updates",
+			"C. Installing antivirus software",
+			"D. Using strong passwords"
+		],
+		"correct_answer": 0
+	},
+]
+var day_two_questions = [
+	{
+		"question":"What is the main goal of a ransomware attack?",
+		"answers":[
+			"A. To secretly spy on internet activity",
+			"B. To encrypt files and demand payment",
+			"C. To delete all system files permanently",
+			"D. To improve computer performance"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Which of the following is the way ransomware most often enters a system?",
+		"answers":[
+			"A. Fake emails with attachments or links",
+			"B. Downloading system updates",
+			"C. Installing antivirus software",
+			"D. Using strong passwords"
+		],
+		"correct_answer": 0
+	},
+]
+var day_three_questions = [
+	{
+		"question":"What is the main goal of a ransomware attack?",
+		"answers":[
+			"A. To secretly spy on internet activity",
+			"B. To encrypt files and demand payment",
+			"C. To delete all system files permanently",
+			"D. To improve computer performance"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Which of the following is the way ransomware most often enters a system?",
+		"answers":[
+			"A. Fake emails with attachments or links",
+			"B. Downloading system updates",
+			"C. Installing antivirus software",
+			"D. Using strong passwords"
+		],
+		"correct_answer": 0
+	},
+]
+var day_four_questions = [
+	{
+		"question":"What is the main goal of a ransomware attack?",
+		"answers":[
+			"A. To secretly spy on internet activity",
+			"B. To encrypt files and demand payment",
+			"C. To delete all system files permanently",
+			"D. To improve computer performance"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Which of the following is the way ransomware most often enters a system?",
+		"answers":[
+			"A. Fake emails with attachments or links",
+			"B. Downloading system updates",
+			"C. Installing antivirus software",
+			"D. Using strong passwords"
+		],
+		"correct_answer": 0
+	},
+]
+var day_five_questions = [
+	{
+		"question":"What is the main goal of a ransomware attack?",
+		"answers":[
+			"A. To secretly spy on internet activity",
+			"B. To encrypt files and demand payment",
+			"C. To delete all system files permanently",
+			"D. To improve computer performance"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Which of the following is the way ransomware most often enters a system?",
+		"answers":[
+			"A. Fake emails with attachments or links",
+			"B. Downloading system updates",
+			"C. Installing antivirus software",
+			"D. Using strong passwords"
+		],
+		"correct_answer": 0
+	},
+]
+var active_questions = [] # Store the questions here to be used consistently throughout the whole code. 
 
 func _ready() -> void:
-	questions.shuffle()
 	timer.timeout.connect(_on_timer_timeout)
 
 	# Connect button presses with their index
@@ -333,7 +442,20 @@ func _ready() -> void:
 	button_b.pressed.connect(_on_answer_pressed.bind(1))
 	button_c.pressed.connect(_on_answer_pressed.bind(2))
 	button_d.pressed.connect(_on_answer_pressed.bind(3))
-
+	
+	match DayAndNightManager.initial_day:
+		1:
+			active_questions = day_one_questions
+		2:
+			active_questions = day_two_questions
+		3:
+			active_questions = day_three_questions
+		4:
+			active_questions = day_four_questions
+		5:
+			active_questions = day_five_questions
+	
+	active_questions.shuffle()
 	display_question(current_question)
 
 func start_quiz():
@@ -344,8 +466,8 @@ func _physics_process(_delta: float) -> void:
 	timer_label.text = str(timer.time_left)
 
 func display_question(array_number: int) -> void:
-	if array_number < questions.size():
-		var quiz_item = questions[array_number]
+	if array_number < active_questions.size():
+		var quiz_item = active_questions[array_number]
 		question_label.text = quiz_item["question"]
 
 		var answers = quiz_item["answers"]
@@ -355,7 +477,7 @@ func display_question(array_number: int) -> void:
 		button_d.text = answers[3]
 
 func _on_answer_pressed(answer_index: int) -> void:
-	var quiz_item = questions[current_question]
+	var quiz_item = active_questions[current_question]
 
 	if answer_index == quiz_item["correct_answer"]:
 		point_counter += 1
@@ -372,7 +494,7 @@ func _on_answer_pressed(answer_index: int) -> void:
 
 	# Move to next question
 	current_question += 1
-	if current_question < questions.size():
+	if current_question < active_questions.size():
 		display_question(current_question)
 	else:
 		question_counter +=1
@@ -381,7 +503,7 @@ func _on_answer_pressed(answer_index: int) -> void:
 
 func _on_timer_timeout() -> void:
 	current_question += 1
-	if current_question < questions.size():
+	if current_question < active_questions.size():
 		display_question(current_question)
 	else:
 		quiz_finished.emit(point_counter)

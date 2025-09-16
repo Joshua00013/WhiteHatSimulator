@@ -22,9 +22,6 @@ quiz_card = NodePath("QuizCard")
 layout_mode = 1
 theme = ExtResource("3_f6k7j")
 
-[node name="QuestionCounter" parent="QuizCard/MarginContainer/VBoxContainer/QuestionContainer" index="0"]
-text = "Question 1 of 30"
-
 [node name="FinishedWindow" type="Control" parent="."]
 visible = false
 layout_mode = 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4d6admfoa0q5"]
+[gd_scene load_steps=3 format=3 uid="uid://4d6admfoa0q5"]
 
 [ext_resource type="Script" uid="uid://773v8arehy8x" path="res://Scripts/GUI/interact_ray.gd" id="1_8gtvq"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="2_biwi5"]
 
 [node name="InteractRay" type="RayCast3D" groups=["interact_ray"]]
 target_position = Vector3(0, 0, -4)
@@ -16,8 +17,10 @@ anchor_bottom = 0.785849
 offset_top = -3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_biwi5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
