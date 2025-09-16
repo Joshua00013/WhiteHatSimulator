@@ -12,6 +12,7 @@ signal change_to_terminal
 signal change_to_deployment
 
 func _ready() -> void:
+	UiManager.nav_buttons_active = true
 	_play_scene_animation()
 
 func _on_search_icon_pressed() -> void:

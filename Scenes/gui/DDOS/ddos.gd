@@ -6,6 +6,7 @@ var step: int = 0
 
 signal change_to_result
 func _ready() -> void:
+	UiManager.nav_buttons_active = true
 	animation.play("start_of_ddos")
 	
 func _process(_delta: float) -> void:
