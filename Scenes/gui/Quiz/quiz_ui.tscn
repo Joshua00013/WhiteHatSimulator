@@ -10,8 +10,7 @@ score_label = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Resu
 status = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Status")
 passing_score = 2
 
-[node name="QuizCard" parent="." node_paths=PackedStringArray("question_counter_label") instance=ExtResource("2_f6k7j")]
-question_counter_label = NodePath("MarginContainer/VBoxContainer/QuestionContainer/QuestionCounter")
+[node name="QuizCard" parent="." instance=ExtResource("2_f6k7j")]
 
 [node name="QuestionCounter" parent="QuizCard/MarginContainer/VBoxContainer/QuestionContainer" index="0"]
 text = "Question 1 of 30"

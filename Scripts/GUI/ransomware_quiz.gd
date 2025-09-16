@@ -15,7 +15,7 @@ signal quiz_finished(point_counter : int)
 
 var current_question : int = 0
 var point_counter : int = 0
-var question_counter: int =1
+var question_counter: int =0
 
 var questions = [
 	{
