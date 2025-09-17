@@ -79,16 +79,33 @@ func calc_schedule(hour: int):
 			change_state(WorkState.WORK)
 
 func handle_computer(_day:int, _hour:int, _minutes:int):
-	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
+	# Different logic : log in during work hours and if sitting. 
+	#if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
+		#if logged_in == false:
+			#logged_in = true
+			#PersonalComputer.login()
+			#PersonalComputer.in_use = true
+	#elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+		#if logged_in == true:
+			#logged_in = false
+			#PersonalComputer.logout()
+			#PersonalComputer.in_use = false
+	#elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+		#PersonalComputer.in_use = false
+	
+	# When the npc is sitting, they are considered working. Logout when they are no longer sitting
+	if cur_anim == SIT && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
 			PersonalComputer.login()
 			PersonalComputer.in_use = true
-	elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+	elif cur_anim != SIT && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
 		if logged_in == true:
 			logged_in = false
 			PersonalComputer.logout()
 			PersonalComputer.in_use = false
+	elif cur_anim != SIT && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+		PersonalComputer.in_use = false
 func change_target(new_target):
 	if new_target == null:
 		return
