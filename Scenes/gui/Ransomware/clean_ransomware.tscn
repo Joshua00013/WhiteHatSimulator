@@ -20,13 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 6
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
+visible = false
 layout_mode = 2
 
 [node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
@@ -60,7 +61,6 @@ visible = false
 layout_mode = 2
 
 [node name="FilelessDesktop" parent="." instance=ExtResource("8_o0l8t")]
-visible = false
 layout_mode = 2
 
 [node name="Phishing" parent="." instance=ExtResource("9_qm60n")]
@@ -96,8 +96,7 @@ metadata/_tab_index = 11
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="fileless_change_scene" from="Fileless" to="." method="_on_fileless_scene_change"]
 [connection signal="fileless_ready" from="Fileless" to="." method="_on_weaponization_finished"]
-[connection signal="boilerplate" from="FilelessDesktop" to="." method="_on_terminal_boilerplate"]
-[connection signal="listener" from="FilelessDesktop" to="." method="_on_terminal_listener"]
+[connection signal="from_desktop_to_ide" from="FilelessDesktop" to="." method="_on_fileless_desktop_from_desktop_to_ide"]
 [connection signal="change_to_website" from="Phishing" to="." method="_on_phishing_change_to_website"]
 [connection signal="change_to_deployment" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_deployment"]
 [connection signal="change_to_terminal" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_terminal"]

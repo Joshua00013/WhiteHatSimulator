@@ -3,7 +3,6 @@ extends MarginContainer
 @export var animation: AnimationPlayer
 signal dos_ready
 func _ready() -> void:
-	UiManager.nav_buttons_active = true
 	animation.play("results")
 	
 

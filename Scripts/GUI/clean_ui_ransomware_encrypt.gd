@@ -22,7 +22,6 @@ var ransomware_code = {
 signal ransomware_encrypt_finished
 
 func _ready() -> void:
-	UiManager.nav_buttons_active = true
 	back_button.disabled = true
 	#code_edit.text = ""
 	overlay.visible = false 

@@ -178,7 +178,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="KeyWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
 visible = false
-layout_mode = 2
+layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.364791
 anchor_top = 0.167224
@@ -203,8 +203,8 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
 editable = false
 
 [node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
@@ -229,8 +229,8 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
 text = "import os from cryptography.fernet 
 import fernet
 
