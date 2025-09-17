@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv4cget8tfrcd"]
 
 [ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/GUI/CleanUI/icon.gd" id="1_p513o"]
-[ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="2_p513o"]
+[ext_resource type="Texture2D" uid="uid://btwl1kfbblox4" path="res://Assets/Illustrator/pdfv2.png" id="2_p513o"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_vvn3y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kctp"]
@@ -14,6 +14,7 @@ anchor_bottom = 0.223534
 theme_override_constants/separation = -4
 script = ExtResource("1_p513o")
 icon = ExtResource("2_p513o")
+icon_name = "PDF"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
@@ -35,6 +36,6 @@ size_flags_horizontal = 4
 theme = ExtResource("3_vvn3y")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Files"
+text = "PDF"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
