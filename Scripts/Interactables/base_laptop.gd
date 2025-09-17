@@ -208,6 +208,10 @@ func _play_fileless_success():
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
+	elif CyberattackAdaptationManager.email_used:
+		success_animation.play("open_fileless_email_fail")
+		await success_animation.animation_finished
+		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
 		
 func _play_ransomware_success():
 	if not CyberattackAdaptationManager.email_used:
@@ -225,9 +229,14 @@ func _play_ransomware_success():
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
+	elif CyberattackAdaptationManager.email_used:
+		success_animation.play("open_ransomware_email_fail")
+		await success_animation.animation_finished
+		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
 	
 func _play_phishing_success():
-	if not CyberattackAdaptationManager.antivirus_installed:
+	if not CyberattackAdaptationManager.email_used:
+		CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_phishing_email")
 		await success_animation.animation_finished
@@ -241,3 +250,8 @@ func _play_phishing_success():
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
+	elif CyberattackAdaptationManager.email_used:
+		success_animation.play("open_phishing_email_fail")
+		await success_animation.animation_finished
+		UiManager.popup.display_popup("Email failed","The target did not click the link")
+	
