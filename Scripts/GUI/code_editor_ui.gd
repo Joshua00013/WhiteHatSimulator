@@ -5,7 +5,7 @@ signal code_finished
 @onready var anim_player = $AnimationPlayer
 
 var animations: PackedStringArray = []
-var current_index := 1
+var current_index := 0
 
 func _ready():
 	animations = anim_player.get_animation_list()

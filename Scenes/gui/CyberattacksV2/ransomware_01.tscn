@@ -1,11 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://6rlquqsnaweb"]
+[gd_scene load_steps=52 format=3 uid="uid://pjd74vpf8568"]
 
-[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_cxtjw"]
-[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="1_qmx2e"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_0tp54"]
-[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="3_0tp54"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_wf7ls"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_vuf0p"]
+[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_ukyhv"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_4drp0"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_h841u"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_tdj7a"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_li13q"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_oqmtb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -21,7 +21,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_h8m8q"]
-base_font = ExtResource("2_0tp54")
+base_font = ExtResource("3_h841u")
 
 [sub_resource type="DPITexture" id="DPITexture_pkbn6"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
@@ -52,7 +52,7 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
 
 [sub_resource type="FontVariation" id="FontVariation_31cwg"]
-base_font = ExtResource("2_0tp54")
+base_font = ExtResource("3_h841u")
 
 [sub_resource type="Theme" id="Theme_x5n46"]
 FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
@@ -1904,7 +1904,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cxtjw")
+script = ExtResource("1_ukyhv")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1927,7 +1927,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qmx2e")
+theme_override_fonts/font = ExtResource("2_4drp0")
 text = "VScode"
 
 [node name="Body" type="HBoxContainer" parent="."]
@@ -2004,7 +2004,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_0tp54")
+theme_override_fonts/normal_font = ExtResource("3_h841u")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[wave]This is my text"
@@ -2025,7 +2025,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.17254902)
-script = ExtResource("3_0tp54")
+script = ExtResource("4_tdj7a")
 
 [node name="Window" type="PanelContainer" parent="WindowBackground"]
 clip_children = 2
@@ -2054,7 +2054,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 [node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("2_0tp54")
+theme_override_fonts/font = ExtResource("3_h841u")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
@@ -2086,7 +2086,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Next" parent="Debug" instance=ExtResource("5_wf7ls")]
+[node name="Next" parent="Debug" instance=ExtResource("5_li13q")]
 layout_mode = 1
 anchor_left = 0.736111
 anchor_top = 0.802469
@@ -2097,7 +2097,7 @@ offset_top = 487.90118
 offset_right = 962.3815
 offset_bottom = 522.6172
 
-[node name="Back" parent="Debug" instance=ExtResource("6_vuf0p")]
+[node name="Back" parent="Debug" instance=ExtResource("6_oqmtb")]
 layout_mode = 1
 anchor_left = 0.131944
 anchor_top = 0.802469
