@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ch21mccnclukw"]
+[gd_scene load_steps=32 format=3 uid="uid://ch21mccnclukw"]
 
 [ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/Phishing UI/phishing_website.gd" id="1_b7w0f"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="3_io6ah"]
@@ -123,7 +123,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["This is the company's website, let's try to duplicate and collect their credentials."]
+"values": ["This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."]
 }
 
 [sub_resource type="Animation" id="Animation_4rrk1"]
@@ -288,8 +288,24 @@ resource_name = "website_search"
 resource_name = "wrong_url"
 length = 3.0
 
+[sub_resource type="Animation" id="Animation_io6ah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Background/Company Website/TextPanel/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmhk"]
 _data = {
+&"RESET": SubResource("Animation_io6ah"),
 &"phishing_desktop_3": SubResource("Animation_e6qcw"),
 &"phishing_desktop_start": SubResource("Animation_4rrk1"),
 &"phishing_fake_website": SubResource("Animation_b7w0f"),
@@ -477,7 +493,7 @@ offset_top = 1.52588e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TabContainer/Background/Page"]
-layout_mode = 2
+layout_mode = 0
 anchor_left = 0.0954861
 anchor_top = 0.451271
 anchor_right = 0.904514
@@ -665,8 +681,8 @@ anchor_left = 0.0645159
 anchor_top = 0.150121
 anchor_right = 0.923388
 anchor_bottom = 1.26362
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_f7gv8")
 placeholder_text = "Username"
 metadata/_edit_use_anchors_ = true
@@ -692,8 +708,8 @@ anchor_left = 0.0645159
 anchor_top = 0.170117
 anchor_right = 1.01613
 anchor_bottom = 1.31736
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_f7gv8")
 placeholder_text = "Password"
 metadata/_edit_use_anchors_ = true
@@ -750,7 +766,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "This is the company's website, let's try to duplicate and collect their credentials."
+text = "This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="TabContainer/Background/Company Website/TextPanel/Label"]

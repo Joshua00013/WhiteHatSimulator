@@ -54,13 +54,6 @@ func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
 func _on_fileless_scene_change() -> void:
 	current_tab = 6
 
-func _on_terminal_boilerplate() -> void:
-	current_tab = 5 
-	emit_signal("boilerplate")
-
-func _on_terminal_listener() -> void:
-	current_tab = 5
-	emit_signal("listener")
 
 func _on_phishing_change_to_website() -> void:
 	current_tab = 8
@@ -76,3 +69,6 @@ func _on_ddos_change_to_result() -> void:
 
 func _on_phishing_website_change_to_deployment() -> void:
 	current_tab = 12
+
+func _on_fileless_desktop_from_desktop_to_ide() -> void:
+	current_tab = 5

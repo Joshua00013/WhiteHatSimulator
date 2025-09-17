@@ -20,7 +20,6 @@ var bruteforce_code = {
 }
 
 func _ready() -> void:
-	UiManager.nav_buttons_active = true
 	terminal_window.visible = false
 	code_edit.text=""
 	description.text = "Brute Force\n\nA brute force attack is a way hackers try to break into a system by guessing the password or key through every possible combination. Instead of using smart tricks, they rely on the computer’s speed to test thousands or even millions of possibilities until the right one works. Think of it like trying to open a lock by testing every single key until one finally fits. While this method always works eventually, it can take a very long time if the password is strong and complex."

@@ -15,6 +15,7 @@ var phishing_used := false
 var antivirus_installed := false
 var antivirus_updated := false
 
+
 func reset():
 	flashdrive_used = false
 	weak_passwords = true
