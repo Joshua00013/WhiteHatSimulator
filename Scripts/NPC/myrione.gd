@@ -4,13 +4,20 @@ class_name NPC
 
 enum {IDLE, RUN, SIT, SPRINT}
 enum WorkState {WORK, BREAK, CHASE}
-var cur_anim = IDLE
+var cur_anim :int = IDLE : 
+	set(value):
+		if cur_anim == SIT && value != SIT:
+			stood_up = true
+		cur_anim = value
 var sitting := false
 var talking := false
 var idle := false
 var target_area
 var logged_in := false
-
+var stood_up : bool = false
+var destination : Vector3
+var local_destination : Vector3
+var direction : Vector3
 var speed = 3
 var run_val = 0
 var sit_val = 0
@@ -80,32 +87,37 @@ func calc_schedule(hour: int):
 
 func handle_computer(_day:int, _hour:int, _minutes:int):
 	# Different logic : log in during work hours and if sitting. 
-	#if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
-		#if logged_in == false:
-			#logged_in = true
-			#PersonalComputer.login()
-			#PersonalComputer.in_use = true
-	#elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
-		#if logged_in == true:
-			#logged_in = false
-			#PersonalComputer.logout()
-			#PersonalComputer.in_use = false
-	#elif state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
-		#PersonalComputer.in_use = false
-	
-	# When the npc is sitting, they are considered working. Logout when they are no longer sitting
-	if cur_anim == SIT && PersonalComputer != null:
+	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
 			PersonalComputer.login()
 			PersonalComputer.in_use = true
-	elif cur_anim != SIT && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+		stood_up = false
 		if logged_in == true:
 			logged_in = false
 			PersonalComputer.logout()
 			PersonalComputer.in_use = false
-	elif cur_anim != SIT && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+		stood_up = false
 		PersonalComputer.in_use = false
+	
+	# When the npc is sitting, they are considered working. Logout when they are no longer sitting
+	#if cur_anim == SIT && PersonalComputer != null:
+		#if logged_in == false:
+			#logged_in = true
+			#PersonalComputer.login()
+			#PersonalComputer.in_use = true
+	#elif stood_up == true && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+		#stood_up = false
+		#if logged_in == true:
+			#logged_in = false
+			#PersonalComputer.logout()
+			#PersonalComputer.in_use = false
+	#elif stood_up == true && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+		#stood_up = false
+		#PersonalComputer.in_use = false
+
 func change_target(new_target):
 	if new_target == null:
 		return
@@ -146,17 +158,18 @@ func randomize_position():
 	random_position.z = randf_range(-5.0, -5.0)
 	random_position.x = randf_range(-5.0, -5.0)
 
+
 func _physics_process(delta: float) -> void:
 	
 	handle_animation(delta)
 	update_tree()
-	var destination = navigation_agent_3d.get_next_path_position()
-	var local_destination = destination - global_position
-	var direction = local_destination.normalized()
+	destination = navigation_agent_3d.get_next_path_position()
+	local_destination = destination - global_position
+	direction = local_destination.normalized()
 	var new_velocity = direction * speed
 	navigation_agent_3d.set_velocity(new_velocity)
 	
-	var rotation_dir = global_position.direction_to(destination)
+	#var rotation_dir = global_position.direction_to(destination)
 	#velocity = rotation_dir * speed
 	
 	#Handle animations

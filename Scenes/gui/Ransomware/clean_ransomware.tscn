@@ -31,7 +31,6 @@ visible = false
 layout_mode = 2
 
 [node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 1152.0
