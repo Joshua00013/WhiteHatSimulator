@@ -1,18 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://jjhva651ce8b"]
+[gd_scene load_steps=14 format=3 uid="uid://jjhva651ce8b"]
 
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
+[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/gui/Ransomware/desktop_default.gd" id="1_pekke"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
-[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_bikpg"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_qd57o"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="6_bikpg"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_vlt0p"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_pga4f"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="9_p75vd"]
-[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/GUI/laptop_browser.tscn" id="9_qd57o"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="9_p75vd"]
+[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/gui/laptop_browser.tscn" id="9_qd57o"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="10_o41mf"]
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="10_pekke"]
-[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
+[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/gui/cyberattack_card.tscn" id="11_woodw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bikpg"]
 shader = ExtResource("10_pekke")
@@ -40,72 +39,43 @@ theme_override_constants/h_separation = 20
 [node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
-
-[node name="Button" parent="Desktop/Data_icon" index="0"]
 icon = ExtResource("3_pekke")
-
-[node name="Label" parent="Desktop/Data_icon" index="1"]
-text = "data.sql"
+icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
-
-[node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = ExtResource("4_bikpg")
-
-[node name="Label" parent="Desktop/Godot_icon" index="1"]
-text = "godot.png"
+icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/Text_1Window")
-
-[node name="Button" parent="Desktop/Text_icon" index="0"]
 icon = ExtResource("5_qd57o")
-
-[node name="Label" parent="Desktop/Text_icon" index="1"]
-text = "text.txt"
+icon_name = "Text.txt"
 
 [node name="BrowserIcon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/Website")
-
-[node name="Button" parent="Desktop/BrowserIcon" index="0"]
 icon = ExtResource("6_bikpg")
-
-[node name="Label" parent="Desktop/BrowserIcon" index="1"]
-text = "Browser"
+icon_name = "Browser"
 
 [node name="Malware_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/MalwareWindow")
-
-[node name="Button" parent="Desktop/Malware_icon" index="0"]
 icon = ExtResource("6_vlt0p")
-
-[node name="Label" parent="Desktop/Malware_icon" index="1"]
-text = "malware.py"
+icon_name = "Malware.py"
 
 [node name="Decr_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/DecryWindow")
-
-[node name="Button" parent="Desktop/Decr_icon" index="0"]
 icon = ExtResource("6_vlt0p")
-
-[node name="Label" parent="Desktop/Decr_icon" index="1"]
-text = "decr.py"
+icon_name = "Decr.py"
 
 [node name="Key_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/KeyWindow")
-
-[node name="Button" parent="Desktop/Key_icon" index="0"]
 icon = ExtResource("5_qd57o")
-
-[node name="Label" parent="Desktop/Key_icon" index="1"]
-text = "key.key"
+icon_name = "Key.key"
 
 [node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
@@ -124,6 +94,8 @@ offset_left = -25.0
 offset_top = -25.0
 offset_right = 1127.0
 offset_bottom = 623.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="GodotWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
 visible = false
@@ -394,13 +366,6 @@ text = "Denial of Services"
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/Fileless_card/Button" to="." method="_fileless_pressed"]
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/DoS_card/Button" to="." method="_dos_pressed"]
 
-[editable path="Desktop/Data_icon"]
-[editable path="Desktop/Godot_icon"]
-[editable path="Desktop/Text_icon"]
-[editable path="Desktop/BrowserIcon"]
-[editable path="Desktop/Malware_icon"]
-[editable path="Desktop/Decr_icon"]
-[editable path="Desktop/Key_icon"]
 [editable path="WindowContainer/GodotWindow"]
 [editable path="WindowContainer/SQLWindow"]
 [editable path="WindowContainer/Text_1Window"]
