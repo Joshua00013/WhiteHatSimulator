@@ -25,6 +25,7 @@ func _ready() -> void:
 	
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
+	CyberattackAdaptationManager.save_snapshot() # Save the values at the start of the day to be used for resets
 	ConfigFileHandler.apply_display_mode()
 	Dialogic.VAR.reset()
 

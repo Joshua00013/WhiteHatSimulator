@@ -3,6 +3,9 @@ extends Control
 class_name TaskBox
 
 @export var task_desc : RichTextLabel
+@export var animation_player : AnimationPlayer
+
+var enabled : bool = true
 
 func _ready():
 	CyberattackManager.phase_updated.connect(_on_phase_updated)
@@ -34,3 +37,11 @@ func _on_phase_updated(phase : String):
 			task_desc.text = "Actions on objectives: You have now achieved your objective. Head out to the door to finish the stage"
 		"actions_on_objectives":
 			task_desc.text = "Actions on objectives: You have now achieved your objective. Head out to the door to finish the stage"
+
+
+func _on_button_button_down():
+	if enabled == true:
+		animation_player.play("hide")
+	elif enabled == false:
+		animation_player.play_backwards("hide")
+	enabled = !enabled

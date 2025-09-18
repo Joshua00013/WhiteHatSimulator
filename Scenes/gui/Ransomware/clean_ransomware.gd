@@ -19,9 +19,10 @@ const TABS := {
 }
 
 func _ready() -> void:
-	current_tab = 0
+	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
+	current_tab = TABS.Login
 
-func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
+func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
 		"Ransomware":
 			current_tab = TABS.Fileless
@@ -47,10 +48,11 @@ func _on_weaponization_finished() -> void:
 
 func _on_window_window_exited() -> void:
 	current_tab = TABS.PostRansomwareEncrypt
+	UiManager.popup.display_popup("Encryption finished", "Now the files have been encrypted. The files should only display a hash when opened. Press next to proceed",false)
 
 func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
 	current_tab = TABS.RansomwareDecrypt
-
+	
 func _on_fileless_scene_change() -> void:
 	current_tab = 6
 

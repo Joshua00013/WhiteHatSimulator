@@ -20,23 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 6
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
-visible = false
 layout_mode = 2
-
-[node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
 visible = false
@@ -61,6 +52,7 @@ layout_mode = 2
 metadata/_tab_index = 5
 
 [node name="FilelessDesktop" parent="." instance=ExtResource("8_o0l8t")]
+visible = false
 layout_mode = 2
 
 [node name="Phishing" parent="." instance=ExtResource("9_qm60n")]
@@ -87,37 +79,14 @@ username = "whitehat"
 password = "whitehat553322"
 metadata/_tab_index = 11
 
-[connection signal="cyberattack_selected" from="DesktopDefault" to="." method="_on_desktop_default_cyberattack_selected"]
+[connection signal="boilerplate" from="." to="Fileless" method="_on_change_boilerplate"]
+[connection signal="listener" from="." to="Fileless" method="_on_change_listener"]
 [connection signal="ransomware_encrypt_finished" from="RansomwareEncrypt" to="." method="_on_window_window_exited"]
 [connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
 [connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_weaponization_finished"]
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
-[connection signal="from_desktop_to_ide" from="FilelessDesktop" to="." method="_on_fileless_desktop_from_desktop_to_ide"]
+[connection signal="fileless_change_scene" from="Fileless" to="." method="_on_fileless_scene_change"]
 [connection signal="change_to_website" from="Phishing" to="." method="_on_phishing_change_to_website"]
-[connection signal="change_to_deployment" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_deployment"]
 [connection signal="change_to_terminal" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_terminal"]
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
-[connection signal="dos_ready" from="DDOSResult" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
-
-[editable path="DesktopDefault"]
-[editable path="DesktopDefault/Desktop/Data_icon"]
-[editable path="DesktopDefault/Desktop/Godot_icon"]
-[editable path="DesktopDefault/Desktop/Text_icon"]
-[editable path="DesktopDefault/Desktop/BrowserIcon"]
-[editable path="DesktopDefault/Desktop/Malware_icon"]
-[editable path="DesktopDefault/Desktop/Decr_icon"]
-[editable path="DesktopDefault/Desktop/Key_icon"]
-[editable path="DesktopDefault/WindowContainer/GodotWindow"]
-[editable path="DesktopDefault/WindowContainer/SQLWindow"]
-[editable path="DesktopDefault/WindowContainer/Text_1Window"]
-[editable path="DesktopDefault/WindowContainer/KeyWindow"]
-[editable path="DesktopDefault/WindowContainer/MalwareWindow"]
-[editable path="DesktopDefault/WindowContainer/DecryWindow"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Ransomware_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Bruteforce_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Phishing_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Fileless_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/DoS_card"]
-[editable path="RansomwareEncrypt"]
-[editable path="RansomwareEncrypt/HSplitContainer/CodeEdit/Window"]
