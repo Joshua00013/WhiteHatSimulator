@@ -39,6 +39,7 @@ func _on_quit_to_menu_button_down():
 func _on_restart_button_button_down():
 	GameManager.reset()
 	CyberattackManager.reset()
+	CyberattackAdaptationManager.restore_snapshot()
 	DayAndNightManager.set_initial_time()
 	
 	get_tree().paused = false

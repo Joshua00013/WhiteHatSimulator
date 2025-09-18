@@ -18,6 +18,7 @@ func play(message : String = default_message):
 func _on_button_pressed():
 	GameManager.reset()
 	CyberattackManager.reset()
+	CyberattackAdaptationManager.restore_snapshot() # This allows us to reset to the previous day's value
 	DayAndNightManager.set_initial_time()
 	
 	get_tree().paused = false

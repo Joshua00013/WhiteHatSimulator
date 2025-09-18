@@ -1,5 +1,8 @@
 extends Node
 
+@warning_ignore("unused_signal")
+signal stage_finished()
+
 var current_step_1 = 1
 var current_step_2 = 2
 var current_step_3 = 3

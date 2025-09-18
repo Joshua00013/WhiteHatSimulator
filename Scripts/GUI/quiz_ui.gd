@@ -25,7 +25,7 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		
 		# Reinitialize the stage and increment the days
 		DayAndNightManager.initial_day += 1
-		CyberattackAdaptationManager.finalize_stage() # IMPORTANT TO CALL THIS BEFORE RESETTING GAME MANAGER, IT IS DEPENDENT
+		SignalBus.stage_finished.emit()
 		GameManager.reset()
 		CyberattackManager.reset()
 		DayAndNightManager.set_initial_time()

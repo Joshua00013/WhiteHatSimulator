@@ -17,142 +17,61 @@ var phishing_used: bool = false : set = set_phishing_used
 var antivirus_installed: bool = false : set = set_antivirus_installed
 var antivirus_updated: bool = false : set = set_antivirus_updated
 
-
-# Temporary values (during stage)
-var _temp_flashdrive_used := false
-var _temp_email_used := false
-
-var _temp_weak_passwords := true
-var _temp_no_password_used := true
-
-var _temp_sharing_passwords_used := false
-var _temp_noting_passwords := false
-var _temp_tailgating_used := false
-var _temp_job_application_used := false
-var _temp_unattended_pc_used := false
-var _temp_bruteforce_used := false
-var _temp_phishing_used := false
-var _temp_antivirus_installed := false
-var _temp_antivirus_updated := false
-
-
 # --- Setters redirect to temporary ---
 func set_flashdrive_used(val):
-	if GameManager.stage_finished == false:
-		_temp_flashdrive_used = val
-	else:
-		flashdrive_used = val
+	await SignalBus.stage_finished
+	flashdrive_used = val
 
 func set_email_used(val):
-	if GameManager.stage_finished == false:
-		_temp_email_used = val
-	else:
-		email_used = val
+	await SignalBus.stage_finished
+	email_used = val
 
 func set_weak_passwords(val):
-	if GameManager.stage_finished == false:
-		_temp_weak_passwords = val
-	else:
-		weak_passwords = val
+	await SignalBus.stage_finished
+	weak_passwords = val
 
 func set_no_password_used(val):
-	if GameManager.stage_finished == false:
-		_temp_no_password_used = val
-	else:
-		no_password_used = val
+	await SignalBus.stage_finished
+	no_password_used = val
 
 func set_sharing_passwords_used(val):
-	if GameManager.stage_finished == false:
-		_temp_sharing_passwords_used = val
-	else:
-		sharing_passwords_used = val
+	await SignalBus.stage_finished
+	sharing_passwords_used = val
 
 func set_noting_passwords(val):
-	if GameManager.stage_finished == false:
-		_temp_noting_passwords = val
-	else:
-		noting_passwords = val
+	await SignalBus.stage_finished
+	noting_passwords = val
 
 func set_tailgating_used(val):
-	if GameManager.stage_finished == false:
-		_temp_tailgating_used = val
-	else:
-		tailgating_used = val
+	await SignalBus.stage_finished
+	tailgating_used = val
 
 func set_job_application_used(val):
-	if GameManager.stage_finished == false:
-		_temp_job_application_used = val
-	else:
-		job_application_used = val
+	await SignalBus.stage_finished
+	job_application_used = val
 
 func set_unattended_pc_used(val):
-	if GameManager.stage_finished == false:
-		_temp_unattended_pc_used = val
-	else:
-		unattended_pc_used = val
+	await SignalBus.stage_finished
+	unattended_pc_used = val
 
 func set_bruteforce_used(val):
-	if GameManager.stage_finished == false:
-		_temp_bruteforce_used = val
-	else:
-		bruteforce_used = val
+	await SignalBus.stage_finished
+	bruteforce_used = val
 
 func set_phishing_used(val):
-	if GameManager.stage_finished == false:
-		_temp_phishing_used = val
-	else:
-		phishing_used = val
+	await SignalBus.stage_finished
+	phishing_used = val
 
 func set_antivirus_installed(val):
-	if GameManager.stage_finished == false:
-		_temp_antivirus_installed = val
-	else:
-		antivirus_installed = val
+	await SignalBus.stage_finished
+	antivirus_installed = val
 
 func set_antivirus_updated(val):
-	if GameManager.stage_finished == false:
-		_temp_antivirus_updated = val
-	else:
-		antivirus_updated = val
-
-
-# --- Called at end of stage ---
-func finalize_stage():
-	flashdrive_used = _temp_flashdrive_used
-	email_used = _temp_email_used
-	weak_passwords = _temp_weak_passwords
-	no_password_used = _temp_no_password_used
-	
-	print("Weak passwords:" + str(weak_passwords))
-	print("No passwords:" + str(no_password_used))
-	sharing_passwords_used = _temp_sharing_passwords_used
-	noting_passwords = _temp_noting_passwords
-	tailgating_used = _temp_tailgating_used
-	job_application_used = _temp_job_application_used
-	unattended_pc_used = _temp_unattended_pc_used
-	bruteforce_used = _temp_bruteforce_used
-	phishing_used = _temp_phishing_used
-	antivirus_installed = _temp_antivirus_installed
-	antivirus_updated = _temp_antivirus_updated
-
-
-# --- Reset temp values ---
-func reset_temp():
-	_temp_flashdrive_used = false
-	_temp_email_used = false
-	_temp_weak_passwords = true
-	_temp_no_password_used = true
-	_temp_sharing_passwords_used = false
-	_temp_noting_passwords = false
-	_temp_tailgating_used = false
-	_temp_job_application_used = false
-	_temp_unattended_pc_used = false
-	_temp_bruteforce_used = false
-	_temp_phishing_used = false
-	_temp_antivirus_installed = false
-	_temp_antivirus_updated = false
+	await SignalBus.stage_finished
+	antivirus_updated = val
 
 func reset():
+	
 	flashdrive_used = false
 	email_used = false
 	
@@ -171,4 +90,45 @@ func reset():
 	antivirus_installed = false
 	antivirus_updated = false
 	
-	reset_temp()
+	SignalBus.stage_finished.emit()
+	
+var _snapshot := {}
+
+func save_snapshot():
+	_snapshot = {
+		"flashdrive_used": flashdrive_used,
+		"email_used": email_used,
+		"weak_passwords": weak_passwords,
+		"no_password_used": no_password_used,
+		"sharing_passwords_used": sharing_passwords_used,
+		"noting_passwords": noting_passwords,
+		"tailgating_used": tailgating_used,
+		"job_application_used": job_application_used,
+		"unattended_pc_used": unattended_pc_used,
+		"bruteforce_used": bruteforce_used,
+		"phishing_used": phishing_used,
+		"antivirus_installed": antivirus_installed,
+		"antivirus_updated": antivirus_updated,
+	}
+	print("Snapshot saved: ", _snapshot)
+
+func restore_snapshot():
+	if _snapshot.is_empty():
+		print("No snapshot to restore!")
+		return
+
+	flashdrive_used       = _snapshot["flashdrive_used"]
+	email_used            = _snapshot["email_used"]
+	weak_passwords        = _snapshot["weak_passwords"]
+	no_password_used      = _snapshot["no_password_used"]
+	sharing_passwords_used = _snapshot["sharing_passwords_used"]
+	noting_passwords      = _snapshot["noting_passwords"]
+	tailgating_used       = _snapshot["tailgating_used"]
+	job_application_used  = _snapshot["job_application_used"]
+	unattended_pc_used    = _snapshot["unattended_pc_used"]
+	bruteforce_used       = _snapshot["bruteforce_used"]
+	phishing_used         = _snapshot["phishing_used"]
+	antivirus_installed   = _snapshot["antivirus_installed"]
+	antivirus_updated     = _snapshot["antivirus_updated"]
+
+	print("Snapshot restored")
