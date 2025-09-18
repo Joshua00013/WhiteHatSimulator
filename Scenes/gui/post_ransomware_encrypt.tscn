@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://4g07llena6ub"]
+[gd_scene load_steps=8 format=3 uid="uid://4g07llena6ub"]
 
 [ext_resource type="Script" uid="uid://cj8kbppv1mu68" path="res://Scripts/GUI/post_ransomware_encrypt.gd" id="1_qli7n"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_ebhja"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_ebhja"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_qli7n"]
-[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_ebhja"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_1kqxe"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_svgyg"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="8_cclec"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="8_cclec"]
 
 [node name="PostRansomwareEncrypt" type="MarginContainer"]
 anchors_preset = 15
@@ -29,58 +28,36 @@ theme_override_constants/h_separation = 20
 [node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
-
-[node name="Button" parent="Desktop/Data_icon" index="0"]
 icon = ExtResource("3_qli7n")
-
-[node name="Label" parent="Desktop/Data_icon" index="1"]
-text = "data.sql"
+icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
-
-[node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = ExtResource("4_ebhja")
-
-[node name="Label" parent="Desktop/Godot_icon" index="1"]
-text = "godot.png"
+icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/TextWindow")
-
-[node name="Button" parent="Desktop/Text_icon" index="0"]
 icon = ExtResource("5_1kqxe")
-
-[node name="Label" parent="Desktop/Text_icon" index="1"]
-text = "text.txt"
+icon_name = "Text.txt"
 
 [node name="Malware_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/MalwareWindow")
-
-[node name="Button" parent="Desktop/Malware_icon" index="0"]
 icon = ExtResource("6_svgyg")
-
-[node name="Label" parent="Desktop/Malware_icon" index="1"]
-text = "malware.py"
+icon_name = "Malware.py"
 
 [node name="Key_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/KeyWindow")
-
-[node name="Button" parent="Desktop/Key_icon" index="0"]
 icon = ExtResource("6_svgyg")
+icon_name = "key.key"
 
-[node name="Label" parent="Desktop/Key_icon" index="1"]
-text = "key.key"
-
-[node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
+[node name="WindowContainer" type="Control" parent="."]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("7_t7dtt")
-cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
 [node name="GodotWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
@@ -188,9 +165,16 @@ offset_left = -25.0
 offset_top = -25.0
 offset_right = -25.0
 offset_bottom = -25.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" parent="WindowContainer/KeyWindow/HBoxContainer" index="0"]
 text = "key.key"
+
+[node name="Label" type="Label" parent="WindowContainer/KeyWindow/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o=
+"
 
 [node name="CodeEdit" type="CodeEdit" parent="WindowContainer/KeyWindow"]
 layout_mode = 1
@@ -256,21 +240,6 @@ for file in allfiles:
 print('All your files have been encrypted')"
 editable = false
 
-[node name="Label" type="Label" parent="WindowContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0154265
-anchor_top = 0.958194
-anchor_right = 0.99637
-anchor_bottom = 1.01003
-offset_left = -0.000123978
-offset_top = -0.00201416
-offset_right = 0.00012207
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 22
-text = "Now the files have been encrypted. You can view the files or press next to proceed with programming."
-
 [node name="Button" type="Button" parent="WindowContainer"]
 visible = false
 layout_mode = 1
@@ -288,11 +257,6 @@ text = "Next"
 
 [connection signal="pressed" from="WindowContainer/Button" to="." method="_on_button_pressed"]
 
-[editable path="Desktop/Data_icon"]
-[editable path="Desktop/Godot_icon"]
-[editable path="Desktop/Text_icon"]
-[editable path="Desktop/Malware_icon"]
-[editable path="Desktop/Key_icon"]
 [editable path="WindowContainer/GodotWindow"]
 [editable path="WindowContainer/SQLWindow"]
 [editable path="WindowContainer/TextWindow"]

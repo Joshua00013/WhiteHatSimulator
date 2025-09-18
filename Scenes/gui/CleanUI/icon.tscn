@@ -1,22 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnlake8o686ww"]
+[gd_scene load_steps=5 format=3 uid="uid://cnlake8o686ww"]
 
-[ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/GUI/CleanUI/icon.gd" id="1_4kctp"]
-[ext_resource type="Texture2D" uid="uid://yhjc1ekownnt" path="res://Assets/Icons - icones/_icons.png" id="1_nsh2i"]
+[ext_resource type="Script" uid="uid://bgfcpc2751jae" path="res://Scenes/gui/CleanUI/icon.gd" id="1_4kctp"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="2_n8yum"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_4ro7u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kctp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kctp"]
-atlas = ExtResource("1_nsh2i")
-region = Rect2(34, 35, 28, 25)
-
-[node name="Control" type="VBoxContainer"]
+[node name="Control" type="VBoxContainer" node_paths=PackedStringArray("button", "label")]
 anchors_preset = -1
 anchor_top = 0.010571
 anchor_right = 0.124479
 anchor_bottom = 0.223534
 theme_override_constants/separation = -4
 script = ExtResource("1_4kctp")
+icon = ExtResource("2_n8yum")
+icon_name = "Default"
+button = NodePath("Button")
+label = NodePath("Label")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
@@ -26,7 +26,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4kctp")
-icon = SubResource("AtlasTexture_4kctp")
+icon = ExtResource("2_n8yum")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
@@ -38,6 +38,6 @@ size_flags_horizontal = 4
 theme = ExtResource("3_4ro7u")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Files"
+text = "Default"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
