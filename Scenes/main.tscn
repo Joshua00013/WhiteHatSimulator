@@ -229,8 +229,16 @@ action_right = "strafe_right"
 action_up = "move_forward"
 action_down = "move_backward"
 
-[node name="InteractButton" type="TouchScreenButton" parent="AndroidUI/Control"]
-position = Vector2(905, 502)
+[node name="InteractContainer" type="Control" parent="AndroidUI/Control"]
+layout_mode = 1
+anchor_left = 0.7291667
+anchor_top = 0.77160496
+anchor_right = 0.8394097
+anchor_bottom = 0.9691358
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractButton" type="TouchScreenButton" parent="AndroidUI/Control/InteractContainer"]
 texture_normal = ExtResource("14_ihvwq")
 action = "interact"
 metadata/_edit_use_anchors_ = true
@@ -272,7 +280,7 @@ target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreen
 target_area_5 = NodePath("../../Markers/Cafeteria")
 
 [node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.7901, -0.00113225, 7.25286)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.455342, -0.0011329651, 7.9807043)
 
 [node name="Koro" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("49_sasc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3554, -0.00113297, 2.53087)
@@ -573,7 +581,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9692, 1.48516, 48.1129)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.6154, 1.76646, 13.2758)
 
 [node name="FlashDriveCollectible3" parent="Interactables" instance=ExtResource("19_ee4r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7271, 1.78271, -1.82909)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.335246, 1.0112036, 39.894897)
 
 [node name="VendingCupCoffee_Grande" parent="Interactables" instance=ExtResource("77_jekl6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2946, 1.8346, 50.5916)

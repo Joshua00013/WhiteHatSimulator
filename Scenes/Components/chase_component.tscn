@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://5gldyivbfdb1" path="res://Scripts/Components/chase_component.gd" id="1_o4m55"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ptbeh"]
-radius = 1.4665265
+radius = 0.97008586
 
 [node name="ChaseComponent" type="Area3D"]
 collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_o4m55")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
