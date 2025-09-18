@@ -10,6 +10,7 @@ var last_event_time: float = -1.0
 @export var npc_resource : NpcData
 @export var password := ""
 @export var username := ""
+@export var resource_override_password :bool = false
 
 @export var login_screen : Control
 @export var flashdrive_item : InvItem
@@ -26,6 +27,8 @@ var last_event_time: float = -1.0
 @onready var npc_browser = $Model/SubViewport/TabContainer/Desktop/Windows/NPCBrowser
 @onready var notepad_text = %NotepadText
 
+
+var logged_in : bool = false
 var weak_passwords = ["", "12345678"]
 var strong_password : String = "kdkfiiiJJ34"
 var default_prompt_message : String
@@ -56,10 +59,22 @@ func _ready():
 		login_screen.username = username
 		login_screen.password = password
 
-	if CyberattackAdaptationManager.no_password_used == true:
+# IF NPCS USE WEAK PASSWORDS OR NO PASSWORDS, RANDOMIZE BETWEEN THESE
+	if  CyberattackAdaptationManager.no_password_used == true:
 		login_screen.password = weak_passwords.pick_random()
-	if CyberattackAdaptationManager.weak_passwords == false:
+	if CyberattackAdaptationManager.weak_passwords == true && CyberattackAdaptationManager.no_password_used == false: # Weak passwords are simply checks for bruteforce
 		login_screen.password = strong_password
+	
+	# IF NPCS SHARE PASSWORDS, AND OVERRIDE IS ON, KEEP THE DEFAULT
+	if CyberattackAdaptationManager.sharing_passwords_used == false && resource_override_password == true:
+		if npc_resource != null:
+			login_screen.password = npc_resource.password
+		#else: # RANDOMIZE AS USUAL IF THEY DONT SHARE
+			#if CyberattackAdaptationManager.no_password_used == true:
+				#login_screen.password = weak_passwords.pick_random()
+			#if CyberattackAdaptationManager.weak_passwords == false:
+				#login_screen.password = strong_password
+			
 func _mouse_entered_area():
 	is_mouse_inside = true
 
@@ -147,6 +162,11 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 func _on_interactable_interact_triggered():
 	if in_use:
 		return
+	#if CyberattackAdaptationManager.weak_passwords == true && login_screen.password == "12345678": # Start using strong passwords if the password is in the weak pool
+		#CyberattackAdaptationManager.weak_passwords = false 
+	#if CyberattackAdaptationManager.no_password_used == true && login_screen.password == "":
+		#CyberattackAdaptationManager.no_password_used = false
+		#CyberattackAdaptationManager.weak_passwords = false
 	if CyberattackManager.weaponization_finished:
 		deployment_buttons.show()
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
@@ -159,6 +179,8 @@ func _on_interactable_interact_triggered():
 		return_button.show()
 		active = true
 	CyberattackManager.delivery_finished = true
+	if logged_in:
+		CyberattackAdaptationManager.unattended_pc_used = true
 
 func exit_ui():
 	if flashdrive_plugged == true:
@@ -179,10 +201,11 @@ func _on_control_login_successful() -> void:
 
 func login():
 	tab.current_tab = 1
+	logged_in = true
 	
 func logout():
 	tab.current_tab = 0
-
+	logged_in = false
 
 func _on_return_button_pressed():
 	Input.action_press("exit_ui")

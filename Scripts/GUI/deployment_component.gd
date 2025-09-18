@@ -69,9 +69,9 @@ func _on_bruteforce_finished():
 		CyberattackManager.installation_finished = true
 		CyberattackManager.command_and_control_finished = true
 		
-		if CyberattackAdaptationManager.weak_passwords == false:
-			UiManager.popup.display_popup("Bruteforce failed", "It seems that this PC has a strong password, you should use a different approach", false)
-		else:
-			$"../Model/SubViewport/TabContainer/Login/Window/CodeEdit".text = "Password: " + str(get_parent().login_screen.password)
-			CyberattackAdaptationManager.bruteforce_used = true
-			UiManager.popup.display_popup("Bruteforce Successful!","You have found the password", false )
+	if CyberattackAdaptationManager.weak_passwords == false:
+		UiManager.popup.display_popup("Bruteforce failed", "It seems that this PC has a strong password, you should use a different approach", false)
+	else:
+		$"../Model/SubViewport/TabContainer/Login/Window/CodeEdit".text = "Password: " + str(get_parent().login_screen.password)
+		CyberattackAdaptationManager.bruteforce_used = true
+		UiManager.popup.display_popup("Bruteforce Successful!","You have found the password", false )
