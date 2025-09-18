@@ -89,6 +89,3 @@ metadata/_tab_index = 11
 [connection signal="change_to_terminal" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_terminal"]
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
-
-[editable path="RansomwareEncrypt"]
-[editable path="RansomwareEncrypt/HSplitContainer/CodeEdit/Window"]

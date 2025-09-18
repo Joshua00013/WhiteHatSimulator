@@ -45,7 +45,6 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
-icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
