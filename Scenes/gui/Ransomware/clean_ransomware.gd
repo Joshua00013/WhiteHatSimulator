@@ -19,12 +19,12 @@ const TABS := {
 }
 
 func _ready() -> void:
-	current_tab = TABS.Login
+	current_tab = 0
 
 func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 	match cyberattack:
 		"Ransomware":
-			current_tab = TABS.Ransomware
+			current_tab = TABS.Fileless
 			
 		"Bruteforce":
 			current_tab = TABS.Bruteforce
