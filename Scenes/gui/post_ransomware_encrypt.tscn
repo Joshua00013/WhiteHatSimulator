@@ -192,6 +192,11 @@ offset_bottom = -25.0
 [node name="Title" parent="WindowContainer/KeyWindow/HBoxContainer" index="0"]
 text = "key.key"
 
+[node name="Label" type="Label" parent="WindowContainer/KeyWindow/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o=
+"
+
 [node name="CodeEdit" type="CodeEdit" parent="WindowContainer/KeyWindow"]
 layout_mode = 1
 anchors_preset = 15

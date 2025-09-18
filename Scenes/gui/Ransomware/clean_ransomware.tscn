@@ -30,13 +30,40 @@ malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 visible = false
 layout_mode = 2
 
+[node name="Button" parent="DesktopDefault/Desktop/Data_icon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/Godot_icon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/Text_icon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/BrowserIcon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/Malware_icon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/Decr_icon" index="0"]
+icon = null
+
+[node name="Button" parent="DesktopDefault/Desktop/Key_icon" index="0"]
+icon = null
+
 [node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
+layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Label" type="Label" parent="DesktopDefault/WindowContainer/KeyWindow/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o=
+"
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
 visible = false
@@ -94,13 +121,11 @@ metadata/_tab_index = 11
 [connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_weaponization_finished"]
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="fileless_change_scene" from="Fileless" to="." method="_on_fileless_scene_change"]
-[connection signal="fileless_ready" from="Fileless" to="." method="_on_weaponization_finished"]
-[connection signal="from_desktop_to_ide" from="FilelessDesktop" to="." method="_on_fileless_desktop_from_desktop_to_ide"]
+[connection signal="boilerplate" from="FilelessDesktop" to="." method="_on_terminal_boilerplate"]
+[connection signal="listener" from="FilelessDesktop" to="." method="_on_terminal_listener"]
 [connection signal="change_to_website" from="Phishing" to="." method="_on_phishing_change_to_website"]
-[connection signal="change_to_deployment" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_deployment"]
 [connection signal="change_to_terminal" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_terminal"]
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
-[connection signal="dos_ready" from="DDOSResult" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
 
 [editable path="DesktopDefault"]
