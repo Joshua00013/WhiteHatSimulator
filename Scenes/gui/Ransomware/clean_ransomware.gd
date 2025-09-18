@@ -19,7 +19,7 @@ const TABS := {
 }
 
 func _ready() -> void:
-	current_tab = 0
+	current_tab = TABS.Login
 
 func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
 	match cyberattack:
