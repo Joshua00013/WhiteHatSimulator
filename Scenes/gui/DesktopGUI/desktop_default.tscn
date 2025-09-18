@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=3 uid="uid://jjhva651ce8b"]
 
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/gui/Ransomware/desktop_default.gd" id="1_pekke"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_bikpg"]
+[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_qd57o"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="6_bikpg"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_vlt0p"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_pga4f"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="9_p75vd"]
-[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/gui/laptop_browser.tscn" id="9_qd57o"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="9_p75vd"]
+[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/GUI/laptop_browser.tscn" id="9_qd57o"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="10_o41mf"]
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="10_pekke"]
-[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/gui/cyberattack_card.tscn" id="11_woodw"]
+[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bikpg"]
 shader = ExtResource("10_pekke")
@@ -45,6 +45,7 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
+icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]

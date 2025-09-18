@@ -1,18 +1,18 @@
 [gd_scene load_steps=14 format=3 uid="uid://c651ldtbfalgc"]
 
-[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/gui/Ransomware/clean_ransomware.gd" id="1_7e48o"]
-[ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/gui/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
-[ext_resource type="PackedScene" uid="uid://dtk1usoh0w54w" path="res://Scenes/gui/ransomware_encrypt.tscn" id="3_8imo2"]
-[ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/gui/post_ransomware_encrypt.tscn" id="4_atxjj"]
-[ext_resource type="PackedScene" uid="uid://dronc4jjmcb4r" path="res://Scenes/gui/ransomware_decrypt.tscn" id="5_lko46"]
-[ext_resource type="PackedScene" uid="uid://b8ldolfyse76l" path="res://Scenes/gui/Fileless Malware/FilelessMalware.tscn" id="7_8imo2"]
-[ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/gui/Fileless Malware/fileless_desktop.tscn" id="8_o0l8t"]
-[ext_resource type="PackedScene" uid="uid://cyrattnnrxu4k" path="res://Scenes/gui/Phishing UI/phishing.tscn" id="9_qm60n"]
-[ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/gui/Phishing UI/phishing_website.tscn" id="10_e7as3"]
-[ext_resource type="PackedScene" uid="uid://dug3problsltr" path="res://Scenes/gui/DDOS/ddos.tscn" id="11_qm60n"]
-[ext_resource type="PackedScene" uid="uid://b0o4iae3kp35t" path="res://Scenes/gui/DDOS/ddos_result.tscn" id="12_ojgsj"]
-[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
-[ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/gui/Bruteforce.tscn" id="14_8imo2"]
+[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
+[ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/GUI/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
+[ext_resource type="PackedScene" uid="uid://dtk1usoh0w54w" path="res://Scenes/GUI/ransomware_encrypt.tscn" id="3_8imo2"]
+[ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/GUI/post_ransomware_encrypt.tscn" id="4_atxjj"]
+[ext_resource type="PackedScene" uid="uid://dronc4jjmcb4r" path="res://Scenes/GUI/ransomware_decrypt.tscn" id="5_lko46"]
+[ext_resource type="PackedScene" uid="uid://b8ldolfyse76l" path="res://Scenes/GUI/Fileless Malware/FilelessMalware.tscn" id="7_8imo2"]
+[ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/GUI/Fileless Malware/fileless_desktop.tscn" id="8_o0l8t"]
+[ext_resource type="PackedScene" uid="uid://cyrattnnrxu4k" path="res://Scenes/GUI/Phishing UI/phishing.tscn" id="9_qm60n"]
+[ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/GUI/Phishing UI/phishing_website.tscn" id="10_e7as3"]
+[ext_resource type="PackedScene" uid="uid://dug3problsltr" path="res://Scenes/GUI/DDOS/ddos.tscn" id="11_qm60n"]
+[ext_resource type="PackedScene" uid="uid://b0o4iae3kp35t" path="res://Scenes/GUI/DDOS/ddos_result.tscn" id="12_ojgsj"]
+[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
+[ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
 
 [node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon")]
 anchors_preset = 15
@@ -20,49 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 3
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
-visible = false
 layout_mode = 2
-
-[node name="Button" parent="DesktopDefault/Desktop/Data_icon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/Godot_icon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/Text_icon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/BrowserIcon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/Malware_icon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/Decr_icon" index="0"]
-icon = null
-
-[node name="Button" parent="DesktopDefault/Desktop/Key_icon" index="0"]
-icon = null
-
-[node name="Website" parent="DesktopDefault/WindowContainer" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Label" type="Label" parent="DesktopDefault/WindowContainer/KeyWindow/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o=
-"
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
 visible = false
@@ -73,6 +38,7 @@ visible = false
 layout_mode = 2
 
 [node name="RansomwareDecrypt" parent="." instance=ExtResource("5_lko46")]
+visible = false
 layout_mode = 2
 
 [node name="BruteforceDesktop" parent="." instance=ExtResource("14_8imo2")]
@@ -114,7 +80,6 @@ metadata/_tab_index = 11
 
 [connection signal="boilerplate" from="." to="Fileless" method="_on_change_boilerplate"]
 [connection signal="listener" from="." to="Fileless" method="_on_change_listener"]
-[connection signal="cyberattack_selected" from="DesktopDefault" to="." method="_on_desktop_default_cyberattack_selected"]
 [connection signal="ransomware_encrypt_finished" from="RansomwareEncrypt" to="." method="_on_window_window_exited"]
 [connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
 [connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_weaponization_finished"]
@@ -125,24 +90,5 @@ metadata/_tab_index = 11
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
 
-[editable path="DesktopDefault"]
-[editable path="DesktopDefault/Desktop/Data_icon"]
-[editable path="DesktopDefault/Desktop/Godot_icon"]
-[editable path="DesktopDefault/Desktop/Text_icon"]
-[editable path="DesktopDefault/Desktop/BrowserIcon"]
-[editable path="DesktopDefault/Desktop/Malware_icon"]
-[editable path="DesktopDefault/Desktop/Decr_icon"]
-[editable path="DesktopDefault/Desktop/Key_icon"]
-[editable path="DesktopDefault/WindowContainer/GodotWindow"]
-[editable path="DesktopDefault/WindowContainer/SQLWindow"]
-[editable path="DesktopDefault/WindowContainer/Text_1Window"]
-[editable path="DesktopDefault/WindowContainer/KeyWindow"]
-[editable path="DesktopDefault/WindowContainer/MalwareWindow"]
-[editable path="DesktopDefault/WindowContainer/DecryWindow"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Ransomware_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Bruteforce_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Phishing_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/Fileless_card"]
-[editable path="DesktopDefault/CyberAttackCards/VBoxContainer/DoS_card"]
 [editable path="RansomwareEncrypt"]
 [editable path="RansomwareEncrypt/HSplitContainer/CodeEdit/Window"]

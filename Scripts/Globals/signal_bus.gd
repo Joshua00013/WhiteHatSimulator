@@ -19,6 +19,8 @@ signal ransomware_desktop_exited
 @warning_ignore("unused_signal")
 signal ransomware_decrypt_finished
 
+signal cyberattack_selected(cyberattack : String)
+
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:
 # func _ready()

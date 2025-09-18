@@ -19,9 +19,10 @@ const TABS := {
 }
 
 func _ready() -> void:
+	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
 	current_tab = TABS.Login
 
-func _on_desktop_default_cyberattack_selected(cyberattack: Variant) -> void:
+func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
 		"Ransomware":
 			current_tab = TABS.Ransomware
