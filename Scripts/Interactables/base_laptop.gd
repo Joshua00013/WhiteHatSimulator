@@ -241,12 +241,12 @@ func _play_ransomware(email : String):
 		else:
 			success_animation.play("play_ransomware_fail")
 			await success_animation.animation_finished
-			UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware")
+			UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware",false)
 			
 	elif CyberattackAdaptationManager.email_used:
 		success_animation.play("open_ransomware_email_fail")
 		await success_animation.animation_finished
-		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
+		UiManager.popup.display_popup("Email failed","The target did not click the attachment",false)
 	
 func _play_phishing(email : String):
 	if not CyberattackAdaptationManager.email_used:
@@ -272,7 +272,7 @@ func _play_phishing(email : String):
 	 #TODO : Create a function connected to SignalBus email sent that changes the string for the email labels etc.
 func _play_ransomware_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:
-		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites")
+		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites",false)
 		return
 	
 	success_animation.play("piracy_download")
@@ -287,7 +287,7 @@ func _play_ransomware_piracy():
 	if CyberattackAdaptationManager.antivirus_installed == true:
 		success_animation.play("play_ransomware_fail")
 		await success_animation.animation_finished
-		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware")
+		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware",false)
 	elif CyberattackAdaptationManager.antivirus_installed == false:
 		success_animation.play("play_ransomware")
 		await success_animation.animation_finished
@@ -298,14 +298,27 @@ func _play_ransomware_piracy():
 
 func _play_fileless_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:
-		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites")
+		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites",false)
 		return
 	
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
 	CyberattackAdaptationManager.piracy_exploited = true
+	CyberattackManager.exploitation_finished = true
 	
-	success_animation.play("download_ransomware")
+	success_animation.play("download_fileless") 
 	await success_animation.animation_finished
+	CyberattackManager.installation_finished = true
 	
-	#TODO: Animate fileless success and fails
+	if CyberattackAdaptationManager.antivirus_installed == true:
+		success_animation.play("play_fileless_fail") #TODO : Show the user running a fileless malware app and the antivirus catches it
+		await success_animation.animation_finished
+		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the fileless malware",false)
+	elif CyberattackAdaptationManager.antivirus_installed == false:
+		success_animation.play("play_fileless") # TODO : Add an animation for a successful fileless attack.
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
+		
+	CyberattackAdaptationManager.antivirus_installed = true
+	
