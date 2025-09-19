@@ -26,6 +26,9 @@ signal ransomware_email_sent (email : String)
 signal fileless_email_sent (email : String)
 signal phishing_email_sent (email : String)
 
+signal ransomware_uploaded # Only used for piracy
+signal fileless_uploaded
+
 @warning_ignore("unused_signal")
 signal fileless_part1_finished
 @warning_ignore("unused_signal")

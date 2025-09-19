@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=75 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="10_sx6w8"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_vq5yb"]
 [ext_resource type="Script" uid="uid://b1a37u0q6msy8" path="res://Scripts/GUI/email.gd" id="12_28080"]
+[ext_resource type="Script" uid="uid://dcqsw7q1b2t5t" path="res://Scripts/GUI/piracy.gd" id="14_213el"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -2736,7 +2737,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(29, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(30, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -2975,7 +2976,7 @@ cache/4/14/0/glyphs/73/size = Vector2(13, 15)
 cache/4/14/0/glyphs/73/uv_rect = Rect2(96, 15, 13, 15)
 cache/4/14/0/glyphs/73/texture_idx = 0
 
-[sub_resource type="Image" id="Image_mqwrb"]
+[sub_resource type="Image" id="Image_5wnap"]
 data = {
 "data": PackedByteArray("sbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCysrIAsrKyALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsZmxsbGmsbGxErKysgCysrIAsrKyALKysgCxsbESsbGxprKyspeysrIAsbGxALGxsaaysrLZsrKysrKyshKysrIAsrKyALKyshKysrKzsrKy2bKysqWysrIAsbGxALGxsRKysrKysrKy2bKysrKysrISsrKyErKysrOysrLZsrKysrKyshGysrIAsbGxALKysgCysrISsrKysrKystmysrLFsrKyxbKystmysrKysrKyEbKysgCysrIAsrKyALKysgCysrIAsrKyErKysrKysrLZsrKy2bKysrKysrIRsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKyshKysrKlsrKypbKyshGysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIA"),
 "format": "RGBA8",
@@ -2985,7 +2986,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jc5ig"]
-image = SubResource("Image_mqwrb")
+image = SubResource("Image_5wnap")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq5yb"]
 bg_color = Color(1, 1, 1, 0)
@@ -3171,6 +3172,180 @@ _data = {
 &"phishing_email": SubResource("Animation_hp5ny"),
 &"ransomware_email": SubResource("Animation_ti25j")
 }
+
+[sub_resource type="FontVariation" id="FontVariation_sec7e"]
+base_font = ExtResource("11_vq5yb")
+spacing_glyph = 3
+
+[sub_resource type="Theme" id="Theme_g833x"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = SubResource("FontVariation_sec7e")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0.501406, 0.50140685, 0.5014061, 0.79607844)
+TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_213el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hp5ny"]
+
+[sub_resource type="Theme" id="Theme_ekgtk"]
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_213el")
+ProgressBar/styles/fill = SubResource("StyleBoxEmpty_hp5ny")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jc5ig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pnmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tja30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nrqd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h18rk"]
+
+[sub_resource type="Animation" id="Animation_mu48v"]
+resource_name = "upload_cyberattack"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/ProgressBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/ProgressBar:value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 3.4822013),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["File uploaded!"]
+}
+
+[sub_resource type="Animation" id="Animation_wyft7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/ProgressBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/ProgressBar:value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["6556x"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxs6i"]
+_data = {
+&"RESET": SubResource("Animation_wyft7"),
+&"upload_cyberattack": SubResource("Animation_mu48v")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rado2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffwko"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8xn0"]
+bg_color = Color(0.452027, 0.270059, 0.836414, 1)
+border_width_left = 40
+border_width_right = 40
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wv5w"]
+bg_color = Color(0.614341, 0.512609, 0.961783, 1)
+shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
 
 [node name="Website" type="Control" node_paths=PackedStringArray("email_btn", "upload_btn", "website_btn")]
 custom_minimum_size = Vector2(1152, 648)
@@ -3496,30 +3671,216 @@ libraries = {
 &"": SubResource("AnimationLibrary_mu48v")
 }
 
-[node name="Piracy" type="ColorRect" parent="MarginContainer/Background"]
-visible = false
-custom_minimum_size = Vector2(0, 472)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.271605
+[node name="Piracy" type="ColorRect" parent="MarginContainer/Background" node_paths=PackedStringArray("upload_options", "piracy_anim_player", "message")]
+layout_mode = 0
+anchor_top = 0.27006173
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.52588e-05
-theme = ExtResource("10_sx6w8")
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.044844903, 0.16842699, 0.20892552, 1)
+script = ExtResource("14_213el")
+upload_options = NodePath("UploadButton")
+piracy_anim_player = NodePath("PiracyAnimation")
+message = NodePath("VBoxContainer/Label")
 metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/Piracy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g833x")
+theme_override_constants/separation = 51
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Piracy/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 92
+text = "6556x"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/Piracy/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_sx6w8")
+theme_override_constants/separation = 89
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Movies"
+
+[node name="Button2" type="Button" parent="MarginContainer/Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Games"
+
+[node name="Button3" type="Button" parent="MarginContainer/Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Apps"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Background/Piracy/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_ekgtk")
+
+[node name="UploadButton" type="OptionButton" parent="MarginContainer/Background/Piracy"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -234.0
+offset_top = 13.0
+offset_right = -43.0
+offset_bottom = 93.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jc5ig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5pnmm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tja30")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nrqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h18rk")
+item_count = 2
+popup/item_0/text = "Ransomware"
+popup/item_0/id = 0
+popup/item_1/text = "Fileless Malware"
+popup/item_1/id = 1
+
+[node name="PiracyAnimation" type="AnimationPlayer" parent="MarginContainer/Background/Piracy"]
+libraries = {
+&"": SubResource("AnimationLibrary_cxs6i")
+}
 
 [node name="Website" type="ColorRect" parent="MarginContainer/Background"]
 visible = false
-custom_minimum_size = Vector2(0, 472)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.271605
+anchor_top = 0.27006173
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.52588e-05
-theme = ExtResource("10_sx6w8")
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5153631, 0.81745213, 0.92452157, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="LoginPanel" type="PanelContainer" parent="MarginContainer/Background/Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27517354
+anchor_top = 0.17284
+anchor_right = 0.7256944
+anchor_bottom = 0.807099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rado2")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/Website/LoginPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LoginLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOGIN TO PULSEFIRE "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+
+[node name="Username" type="TextEdit" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffwko")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PasswordLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+
+[node name="Password" type="TextEdit" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffwko")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="ForgotPasswordLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Forgot Password?"
+horizontal_alignment = 1
+
+[node name="Login Button" type="Panel" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c8xn0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/Login Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39375
+anchor_top = 0.214327
+anchor_right = 0.60625
+anchor_bottom = 0.785673
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wv5w")
+metadata/_edit_use_anchors_ = true
+
+[node name="NeedHelpLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -11.5
+offset_right = 229.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
+[connection signal="item_selected" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_item_selected"]
+[connection signal="pressed" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_pressed"]

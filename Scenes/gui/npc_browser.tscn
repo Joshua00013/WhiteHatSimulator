@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6rxlv0hvnwmr"]
+[gd_scene load_steps=34 format=3 uid="uid://c6rxlv0hvnwmr"]
 
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_2jwan"]
 [ext_resource type="Script" uid="uid://comasfojm3i37" path="res://Scripts/GUI/npc_browser.gd" id="1_qw6go"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="9_c7d30"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_ew7o2"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="12_t6p0q"]
+[ext_resource type="Texture2D" uid="uid://d33h5gqfrugos" path="res://Assets/Illustrator/BrowserAssets/upload_white_super_small.png" id="13_e2y3f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -82,6 +83,16 @@ Label/fonts/font = SubResource("FontVariation_e2y3f")
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_placeholder_color = Color(0.501406, 0.50140685, 0.5014061, 0.79607844)
 TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xj06y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rkm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7d30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_atq2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx8in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew7o2"]
 corner_radius_top_left = 10
@@ -447,30 +458,55 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_sec7e")
-theme_override_constants/separation = 11
+theme_override_constants/separation = 51
 alignment = 1
 
 [node name="Label" type="Label" parent="Background/Piracy/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 92
 text = "6556x"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/Piracy/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("12_t6p0q")
+theme_override_constants/separation = 89
 alignment = 1
 
 [node name="Button" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 46
 text = "Movies"
 
 [node name="Button2" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 46
 text = "Games"
 
 [node name="Button3" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 46
 text = "Apps"
+
+[node name="Button" type="Button" parent="Background/Piracy"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -234.0
+offset_top = 13.0
+offset_right = -43.0
+offset_bottom = 93.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xj06y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rkm8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c7d30")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_atq2y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rx8in")
+text = "Upload"
+icon = ExtResource("13_e2y3f")
 
 [node name="Email" type="PanelContainer" parent="."]
 visible = false
