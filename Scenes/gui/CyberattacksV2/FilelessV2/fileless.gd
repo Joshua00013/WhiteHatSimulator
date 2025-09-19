@@ -21,7 +21,7 @@ func _process(_delta):
 		if animations[current_index] == "fileless_01" or animations[current_index] == "fileless_10":
 			SignalBus.fileless_part1_finished.emit()
 		elif animations[current_index] == "fileless_18":
-			CyberattackManager.ransomware_ready = true
+			CyberattackManager.fileless_ready = true
 			emit_signal("code_finished")
 		
 		_play_next()
