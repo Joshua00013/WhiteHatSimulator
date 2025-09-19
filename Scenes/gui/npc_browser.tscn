@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6rxlv0hvnwmr"]
+[gd_scene load_steps=28 format=3 uid="uid://c6rxlv0hvnwmr"]
 
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_2jwan"]
 [ext_resource type="Script" uid="uid://comasfojm3i37" path="res://Scripts/GUI/npc_browser.gd" id="1_qw6go"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="7_xj06y"]
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="8_3rkm8"]
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="9_c7d30"]
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_ew7o2"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="12_t6p0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -34,6 +36,53 @@ OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
 OptionButton/styles/hover = SubResource("StyleBoxFlat_qw6go")
 OptionButton/styles/normal = SubResource("StyleBoxEmpty_ew7o2")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6p0q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sec7e"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj06y"]
+bg_color = Color(0.452027, 0.270059, 0.836414, 1)
+border_width_left = 40
+border_width_right = 40
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rkm8"]
+bg_color = Color(0.614341, 0.512609, 0.961783, 1)
+shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="FontVariation" id="FontVariation_e2y3f"]
+base_font = ExtResource("11_ew7o2")
+spacing_glyph = 3
+
+[sub_resource type="Theme" id="Theme_sec7e"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = SubResource("FontVariation_e2y3f")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0.501406, 0.50140685, 0.5014061, 0.79607844)
+TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew7o2"]
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -42,6 +91,19 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="Theme" id="Theme_t6p0q"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ew7o2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2y3f"]
+bg_color = Color(0.8217887, 0.8217887, 0.8217885, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sec7e"]
 
 [node name="NPCBrowser" type="Control"]
 layout_mode = 3
@@ -53,7 +115,7 @@ grow_vertical = 2
 script = ExtResource("1_qw6go")
 
 [node name="Background" type="ColorRect" parent="."]
-layout_mode = 2
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.72, 0.72, 0.72, 1)
@@ -168,7 +230,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 item_count = 2
 popup/item_0/text = "https://"
 popup/item_0/id = 0
-popup/item_1/text = "https://www.pulseforge-studio.com"
+popup/item_1/text = "https://www.pulsefire-studio.com"
 popup/item_1/id = 1
 
 [node name="Favorites" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
@@ -185,6 +247,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Downloads" type="TextureButton" parent="Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("7_xj06y")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -213,7 +276,7 @@ offset_top = 1.52588e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Background/Page"]
-layout_mode = 2
+layout_mode = 0
 anchor_left = 0.0954861
 anchor_top = 0.451271
 anchor_right = 0.904514
@@ -241,9 +304,177 @@ texture = ExtResource("1_2jwan")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="RealWebsite" type="ColorRect" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27006173
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5153631, 0.81745213, 0.92452157, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="LoginPanel" type="PanelContainer" parent="Background/RealWebsite"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27517354
+anchor_top = 0.17284
+anchor_right = 0.7256944
+anchor_bottom = 0.807099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6p0q")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/RealWebsite/LoginPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LoginLabel" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOGIN TO PULSEFIRE "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+
+[node name="Username" type="TextEdit" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sec7e")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PasswordLabel" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+
+[node name="Password" type="TextEdit" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sec7e")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="ForgotPasswordLabel" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Forgot Password?"
+horizontal_alignment = 1
+
+[node name="Login Button" type="Panel" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xj06y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer/Login Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39375
+anchor_top = 0.214327
+anchor_right = 0.60625
+anchor_bottom = 0.785673
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Background/RealWebsite/LoginPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3rkm8")
+metadata/_edit_use_anchors_ = true
+
+[node name="NeedHelpLabel" type="Label" parent="Background/RealWebsite/LoginPanel/VBoxContainer/HBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -11.5
+offset_right = 229.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
+horizontal_alignment = 1
+
+[node name="Piracy" type="ColorRect" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27006173
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.044844903, 0.16842699, 0.20892552, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Piracy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sec7e")
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Piracy/VBoxContainer"]
+layout_mode = 2
+text = "6556x"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Piracy/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_t6p0q")
+alignment = 1
+
+[node name="Button" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Movies"
+
+[node name="Button2" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Games"
+
+[node name="Button3" type="Button" parent="Background/Piracy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Apps"
+
 [node name="Email" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 2
+layout_mode = 0
 anchor_left = 0.525174
 anchor_top = 0.270062
 anchor_right = 0.977431
@@ -274,5 +505,48 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "myrione.work@gmail.com"
 
+[node name="Downloads" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5251736
+anchor_top = 0.27623457
+anchor_right = 0.9097222
+anchor_bottom = 0.4398148
+theme_override_styles/panel = SubResource("StyleBoxFlat_e2y3f")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Downloads"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Downloads/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_t6p0q")
+theme_override_colors/font_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+text = "Downloads"
+
+[node name="HSeparator" type="HSeparator" parent="Downloads/VBoxContainer"]
+layout_mode = 2
+
+[node name="DownloadItem" type="PanelContainer" parent="Downloads/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_t6p0q")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sec7e")
+
+[node name="File" type="Label" parent="Downloads/VBoxContainer/DownloadItem"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "loboshop.zip"
+
+[node name="Link" type="Label" parent="Downloads/VBoxContainer/DownloadItem"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "6556x.com"
+
 [connection signal="item_selected" from="Background/SearchBar/ButtonsContainer/Panel/Links" to="." method="_on_links_item_selected"]
+[connection signal="toggled" from="Background/SearchBar/ButtonsContainer/Downloads" to="." method="_on_downloads_pressed"]
 [connection signal="toggled" from="Background/SearchBar/ButtonsContainer/User" to="." method="_on_user_toggled"]

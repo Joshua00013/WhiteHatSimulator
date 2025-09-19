@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=50 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -17,11 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="14_qcv3o"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="15_qcv3o"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="16_pcl5q"]
-[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="17_y8dab"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="18_6u205"]
 [ext_resource type="Texture2D" uid="uid://btwl1kfbblox4" path="res://Assets/Illustrator/pdfv2.png" id="19_sb1hh"]
-[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="20_ctr30"]
 [ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="21_714hg"]
+[ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="21_j8lv2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.62, 0.545)
@@ -335,10 +334,22 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("RansowmareSuccess/RansomwareAntivirus:visible")
+tracks/16/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -945,7 +956,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RansowmareSuccess/RansomwareAntivirus:visible")
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -992,36 +1003,54 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyne"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y342"]
+bg_color = Color(0.3761072, 0.37773806, 0.4216681, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2pro"]
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-shadow_size = 15
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcv3o"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="LabelSettings" id="LabelSettings_3407j"]
-font_size = 25
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pcl5q"]
+content_margin_left = 15.0
+content_margin_right = 15.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u45uk"]
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-shadow_size = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3407j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8dab"]
+content_margin_top = 15.0
+content_margin_right = 15.0
 bg_color = Color(0.5011245, 0.5747152, 0.9071604, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb1hh"]
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctr30"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_714hg"]
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
 
 [node name="Laptop" node_paths=PackedStringArray("minigame", "success_animation") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
@@ -1226,264 +1255,14 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -196.0
-offset_bottom = -145.99985
+offset_bottom = -145.99982
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="RansowmareSuccess" type="Control" parent="." index="13"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="RansowmareSuccess" index="0"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -391.0
-offset_right = 391.0
-offset_bottom = 460.0
-grow_horizontal = 2
-theme = ExtResource("14_6y342")
-theme_override_font_sizes/normal_font_size = 46
-text = "Victim Screencam"
-horizontal_alignment = 1
-
-[node name="PanelContainer2" type="PanelContainer" parent="RansowmareSuccess" index="1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -401.0
-offset_top = -240.0
-offset_right = 401.0
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hgyne")
-
-[node name="Desktop" type="VFlowContainer" parent="RansowmareSuccess/PanelContainer2" index="0"]
-layout_mode = 2
-theme_override_constants/h_separation = 20
-
-[node name="Data_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="0" instance=ExtResource("15_qcv3o")]
-layout_mode = 2
-
-[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Data_icon" index="0"]
-icon = ExtResource("16_pcl5q")
-
-[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Data_icon" index="1"]
-text = "data.sql"
-
-[node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
-layout_mode = 2
-
-[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon" index="0"]
-icon = ExtResource("17_y8dab")
-
-[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon" index="1"]
-text = "godot.png"
-
-[node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
-layout_mode = 2
-
-[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Text_icon" index="0"]
-icon = ExtResource("18_6u205")
-
-[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Text_icon" index="1"]
-text = "text.txt"
-
-[node name="Malware_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="3" instance=ExtResource("15_qcv3o")]
-layout_mode = 2
-
-[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon" index="0"]
-icon = ExtResource("19_sb1hh")
-
-[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon" index="1"]
-text = "PDF.exe"
-
-[node name="Key_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="4" instance=ExtResource("15_qcv3o")]
-layout_mode = 2
-
-[node name="Button" parent="RansowmareSuccess/PanelContainer2/Desktop/Key_icon" index="0"]
-icon = ExtResource("20_ctr30")
-
-[node name="Label" parent="RansowmareSuccess/PanelContainer2/Desktop/Key_icon" index="1"]
-text = "key.key"
-
-[node name="PanelContainer" type="PanelContainer" parent="RansowmareSuccess" index="2"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -290.0
-offset_top = -62.0
-offset_right = 290.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("14_6y342")
-theme_override_styles/panel = SubResource("StyleBoxFlat_x2pro")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer" index="0"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "All your files have been encrypted."
-label_settings = SubResource("LabelSettings_3407j")
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(400, 180)
-layout_mode = 2
-text = "This computer has been breached! All your files have been encrypted. Unless you pay the ransom, all your files will stay encrypted."
-label_settings = SubResource("LabelSettings_3407j")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Label3" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="2"]
-custom_minimum_size = Vector2(0, 73)
-layout_mode = 2
-text = "Send $100 worth of alcoins to this address:
-12Y34KuF6JkMi4KsIM4F"
-label_settings = SubResource("LabelSettings_3407j")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="3"]
-layout_mode = 2
-theme_override_constants/separation = 80
-alignment = 1
-
-[node name="Button" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-text = "Check Payment"
-
-[node name="Button2" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
-layout_mode = 2
-text = "Decrypt"
-
-[node name="PanelContainer3" type="PanelContainer" parent="RansowmareSuccess" index="3"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -290.0
-offset_top = -62.0
-offset_right = 290.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("14_6y342")
-theme_override_styles/panel = SubResource("StyleBoxFlat_u45uk")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer3" index="0"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "Enter the password and open the key file to decrypt"
-label_settings = SubResource("LabelSettings_3407j")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="TextEdit" type="TextEdit" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-placeholder_text = "Password"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="2"]
-layout_mode = 2
-theme_override_constants/separation = 80
-alignment = 1
-
-[node name="Cancel" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-text = "Cancel"
-
-[node name="OpenKey" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="1"]
-layout_mode = 2
-text = "Open Key"
-
-[node name="Confirm" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="2"]
-layout_mode = 2
-text = "Confirm"
-
-[node name="RansomwareAntivirus" type="PanelContainer" parent="RansowmareSuccess" index="4"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -222.0
-offset_top = -143.0
-offset_right = 222.0
-offset_bottom = 143.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3407j")
-
-[node name="MarginContainer" type="MarginContainer" parent="RansowmareSuccess/RansomwareAntivirus" index="0"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="RansowmareSuccess/RansomwareAntivirus/MarginContainer" index="0"]
-custom_minimum_size = Vector2(424, 101)
-layout_mode = 2
-size_flags_vertical = 0
-text = "Windows protected your PC
-
-Defender prevented an unrecognized app from starting. Running this app might put your PC at risk"
-autowrap_mode = 3
-
-[node name="ColorRect" type="ColorRect" parent="RansowmareSuccess/RansomwareAntivirus" index="1"]
-custom_minimum_size = Vector2(47.67, 36.945)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="RansowmareSuccess" index="5"]
-custom_minimum_size = Vector2(46, 46)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -242.0
-offset_top = -192.0
-offset_right = -195.99997
-offset_bottom = -145.99979
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("21_714hg")
-expand_mode = 1
-
-[node name="Downloading" type="Control" parent="." index="14"]
+[node name="Downloading" type="Control" parent="." index="13"]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -1562,19 +1341,328 @@ texture = ExtResource("21_714hg")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Piracy" type="Control" parent="." index="15"]
+[node name="Piracy" type="Control" parent="." index="14"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Hosting" type="Control" parent="." index="16"]
+[node name="Hosting" type="Control" parent="." index="15"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="RansowmareSuccess" type="Control" parent="." index="16"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RansowmareSuccess" index="0"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.0
+offset_right = 391.0
+offset_bottom = 460.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="Control" parent="RansowmareSuccess" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -240.0
+offset_right = 401.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="RansowmareSuccess/PanelContainer2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Desktop" type="VFlowContainer" parent="RansowmareSuccess/PanelContainer2" index="1"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 792.0
+offset_bottom = 470.0
+theme_override_constants/h_separation = 20
+
+[node name="Data_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="0" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("16_pcl5q")
+icon_name = "Data.sql"
+
+[node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon_name = "Godot.png"
+
+[node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("18_6u205")
+icon_name = "text.txt"
+
+[node name="Malware_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="3" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("19_sb1hh")
+icon_name = "PDF.exe"
+
+[node name="Key_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="4" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("18_6u205")
+icon_name = "key.key"
+
+[node name="WindowContainer" type="Control" parent="RansowmareSuccess/PanelContainer2" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GodotWindow" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2/WindowContainer" index="0"]
+visible = false
+clip_children = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -120.0
+offset_right = 194.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6y342")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow" index="0"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 28.39)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcv3o")
+
+[node name="TextureButton" type="TextureButton" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("21_j8lv2")
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "text.txt"
+
+[node name="PanelContainer2" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pcl5q")
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2" index="0"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "ak$imsdUkGp08McvjK"
+
+[node name="RansomwareAntivirus" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -143.0
+offset_right = 222.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8dab")
+
+[node name="MarginContainer" type="MarginContainer" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus/MarginContainer" index="0"]
+custom_minimum_size = Vector2(424, 101)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Windows protected your PC
+
+Defender prevented an unrecognized app from starting. Running this app might put your PC at risk"
+autowrap_mode = 3
+
+[node name="ColorRect" type="TextureButton" parent="RansowmareSuccess/PanelContainer2/RansomwareAntivirus" index="1"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("21_j8lv2")
+
+[node name="PanelContainer" type="PanelContainer" parent="RansowmareSuccess" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -62.0
+offset_right = 290.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_6y342")
+theme_override_styles/panel = SubResource("StyleBoxFlat_sb1hh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "All your files have been encrypted."
+label_settings = SubResource("LabelSettings_ctr30")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(400, 180)
+layout_mode = 2
+text = "This computer has been breached! All your files have been encrypted. Unless you pay the ransom, all your files will stay encrypted."
+label_settings = SubResource("LabelSettings_ctr30")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+text = "Send $100 worth of alcoins to this address:
+12Y34KuF6JkMi4KsIM4F"
+label_settings = SubResource("LabelSettings_ctr30")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Button" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Button3" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "Check Payment"
+
+[node name="Button2" type="Button" parent="RansowmareSuccess/PanelContainer/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "Decrypt"
+
+[node name="PanelContainer3" type="PanelContainer" parent="RansowmareSuccess" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -150.0
+offset_right = 317.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_6y342")
+theme_override_styles/panel = SubResource("StyleBoxFlat_714hg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RansowmareSuccess/PanelContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Enter the password and open the key file to decrypt"
+label_settings = SubResource("LabelSettings_ctr30")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Password"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RansowmareSuccess/PanelContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Cancel" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="OpenKey" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "Open Key"
+
+[node name="Confirm" type="Button" parent="RansowmareSuccess/PanelContainer3/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="TextureRect" type="TextureRect" parent="RansowmareSuccess" index="4"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -195.9997
+offset_bottom = -145.99985
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+
+[node name="Phishing" type="Control" parent="." index="17"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]
@@ -1582,9 +1670,3 @@ offset_bottom = 40.0
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button2" to="Node" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button3" to="Node" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button4" to="Node" method="_on_button_4_pressed"]
-
-[editable path="RansowmareSuccess/PanelContainer2/Desktop/Data_icon"]
-[editable path="RansowmareSuccess/PanelContainer2/Desktop/Godot_icon"]
-[editable path="RansowmareSuccess/PanelContainer2/Desktop/Text_icon"]
-[editable path="RansowmareSuccess/PanelContainer2/Desktop/Malware_icon"]
-[editable path="RansowmareSuccess/PanelContainer2/Desktop/Key_icon"]

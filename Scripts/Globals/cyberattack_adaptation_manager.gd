@@ -16,6 +16,7 @@ var phishing_used: bool = false : set = set_phishing_used
 
 var antivirus_installed: bool = false : set = set_antivirus_installed
 var antivirus_updated: bool = false : set = set_antivirus_updated
+var piracy_exploited: bool = false : set = set_piracy_exploited
 
 # --- Setters redirect to temporary ---
 func set_flashdrive_used(val):
@@ -70,6 +71,10 @@ func set_antivirus_updated(val):
 	await SignalBus.stage_finished
 	antivirus_updated = val
 
+func set_piracy_exploited(val):
+	await SignalBus.stage_finished
+	piracy_exploited = val
+	
 func reset():
 	
 	flashdrive_used = false
@@ -89,6 +94,7 @@ func reset():
 
 	antivirus_installed = false
 	antivirus_updated = false
+	piracy_exploited = false
 	
 	SignalBus.stage_finished.emit()
 	
@@ -109,6 +115,7 @@ func save_snapshot():
 		"phishing_used": phishing_used,
 		"antivirus_installed": antivirus_installed,
 		"antivirus_updated": antivirus_updated,
+		"piracy_exploited" : piracy_exploited
 	}
 	print("Snapshot saved: ", _snapshot)
 
@@ -116,7 +123,6 @@ func restore_snapshot():
 	if _snapshot.is_empty():
 		print("No snapshot to restore!")
 		return
-
 	flashdrive_used       = _snapshot["flashdrive_used"]
 	email_used            = _snapshot["email_used"]
 	weak_passwords        = _snapshot["weak_passwords"]
@@ -130,5 +136,5 @@ func restore_snapshot():
 	phishing_used         = _snapshot["phishing_used"]
 	antivirus_installed   = _snapshot["antivirus_installed"]
 	antivirus_updated     = _snapshot["antivirus_updated"]
-
+	piracy_exploited      = _snapshot["piracy_exploited"]
 	print("Snapshot restored")

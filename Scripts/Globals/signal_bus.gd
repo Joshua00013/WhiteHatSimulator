@@ -20,7 +20,8 @@ signal ransomware_desktop_exited
 signal ransomware_decrypt_finished
 
 signal cyberattack_selected(cyberattack : String)
-
+signal website_seen
+signal piracy_seen
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:
 # func _ready()
