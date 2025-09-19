@@ -20,3 +20,7 @@ extends VBoxContainer
 func _on_button_button_down() -> void:
 	if window != null:
 		window.visible = true
+
+
+func _on_internet_pressed() -> void:
+	pass # Replace with function body.

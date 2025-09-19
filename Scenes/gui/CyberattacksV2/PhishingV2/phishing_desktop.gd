@@ -1,29 +1,26 @@
-extends MarginContainer
+extends Control
+
+signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 
-var animations: PackedStringArray = ["phishing_desktop_start", "phishing_desktop_2"]
+var animations: PackedStringArray = ["phishing_desktop_1", "phishing_desktop_2"]
 var current_index := 0
 
 func _ready():
+	animations = anim_player.get_animation_list()
 	if animations.size() > 0:
 		anim_player.play(animations[current_index])
 
 func _process(_delta):
 	if not visible or animations.is_empty():
 		return
-
+	
 	if Input.is_action_just_pressed("next_pressed"):
-		if animations[current_index] == "phishing_desktop_start":
-			return
-		elif animations[current_index] == "phishing_desktop_2":
-			SignalBus.phshing_website_to_terminal.emit()
+		if animations[current_index] != "phshing_2":
 			_play_next()
-		elif animations[current_index] == "fileless_18":
-			CyberattackManager.ransomware_ready = true
-			emit_signal("code_finished")
-		else:
-			_play_next()
+	elif Input.is_action_just_pressed("back_pressed"):
+		_play_previous()
 
 func _play_next():
 	if current_index < animations.size() - 1:
@@ -38,6 +35,6 @@ func _play_previous():
 		current_index -= 1
 		anim_player.play(animations[current_index])
 
-func _on_option_button_item_selected(index: int) -> void:
-	if index == 0:
-		_play_next()
+func _on_internet_pressed() -> void:
+	SignalBus.phshing_desktop_to_website.emit()
+	_play_next()
