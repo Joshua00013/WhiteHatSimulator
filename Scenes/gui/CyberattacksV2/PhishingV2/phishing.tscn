@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cc0iffvnt6fcb"]
+[gd_scene load_steps=58 format=3 uid="uid://cc0iffvnt6fcb"]
 
 [ext_resource type="Script" uid="uid://b0do5oyth30hg" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_f46kx"]
@@ -6,6 +6,278 @@
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_8i5sj"]
 [ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_pjo8h"]
 [ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_yyso8"]
+
+[sub_resource type="Animation" id="Animation_fybg0"]
+resource_name = "phishing_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["And to top it all off, our request to get the credential and save it to our database. We are all done"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<?php
+// Database connection
+$host = \"localhost\";
+$dbname = \"pulsefire_db\";
+$user = \"root\"; // Change if needed
+$pass = \"\"; // Change if needed
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if ($conn->connect_error) {
+    die(\"Connection failed: \" . $conn->connect_error);
+}
+
+// Collect credentials securely
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// Prepare SQL to prevent SQL Injection
+$stmt = $conn->prepare(\"INSERT INTO login_attempts (username, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password);
+
+if ($stmt->execute()) {
+    echo \"Credentials saved successfully!\";
+} else {
+    echo \"Error: \" . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+?>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 28.0]
+}
 
 [sub_resource type="Animation" id="Animation_53vgl"]
 resource_name = "phishing_1"
@@ -1918,352 +2190,18 @@ tracks/19/keys = {
 "values": [0.0, 2.0]
 }
 
-[sub_resource type="Animation" id="Animation_qfxv8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["For the submit button (CSS)"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["<style>
-button {
-      background: #8686d6;
-      color: black;
-      padding: 5px 15px;
-      border: 1px solid #333;
-      cursor: pointer;
-      margin-top: 10px;
-      box-shadow: 2px 2px #666;
-    }
-</style>"]
-}
-
-[sub_resource type="Animation" id="Animation_fybg0"]
-resource_name = "phishing_10"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WindowBackground:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["And to top it all off, our request to get the credential and save it to our database. We are all done"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 2: DUPLICATING"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": ["<?php
-// Database connection
-$host = \"localhost\";
-$dbname = \"pulsefire_db\";
-$user = \"root\"; // Change if needed
-$pass = \"\"; // Change if needed
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-if ($conn->connect_error) {
-    die(\"Connection failed: \" . $conn->connect_error);
-}
-
-// Collect credentials securely
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-// Prepare SQL to prevent SQL Injection
-$stmt = $conn->prepare(\"INSERT INTO login_attempts (username, password) VALUES (?, ?)\");
-$stmt->bind_param(\"ss\", $username, $password);
-
-if ($stmt->execute()) {
-    echo \"Credentials saved successfully!\";
-} else {
-    echo \"Error: \" . $stmt->error;
-}
-
-$stmt->close();
-$conn->close();
-?>"]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("PanelContainer:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 28.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
 _data = {
-&"RESET": SubResource("Animation_qfxv8"),
-&"phishing_1": SubResource("Animation_53vgl"),
-&"phishing_10": SubResource("Animation_fybg0"),
-&"phishing_2": SubResource("Animation_5pnsx"),
-&"phishing_3": SubResource("Animation_d41sb"),
-&"phishing_4": SubResource("Animation_mc467"),
-&"phishing_5": SubResource("Animation_8dh8r"),
-&"phishing_6": SubResource("Animation_cyexu"),
-&"phishing_7": SubResource("Animation_4boi2"),
-&"phishing_8": SubResource("Animation_al7cx"),
-&"phishing_9": SubResource("Animation_wasjd")
+&"phishing_01": SubResource("Animation_53vgl"),
+&"phishing_02": SubResource("Animation_5pnsx"),
+&"phishing_03": SubResource("Animation_d41sb"),
+&"phishing_04": SubResource("Animation_mc467"),
+&"phishing_05": SubResource("Animation_8dh8r"),
+&"phishing_06": SubResource("Animation_cyexu"),
+&"phishing_07": SubResource("Animation_4boi2"),
+&"phishing_08": SubResource("Animation_al7cx"),
+&"phishing_09": SubResource("Animation_wasjd"),
+&"phishing_10": SubResource("Animation_fybg0")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
@@ -2560,13 +2498,13 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "STEP 2: DUPLICATING"
+title = "⚠️PHISHING⚠️"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
-text = "For the submit button (CSS)"
+text = "Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
@@ -2581,6 +2519,7 @@ size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_0dqkl")
 
 [node name="Company Website" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+visible = false
 layout_mode = 2
 color = Color(0.650128, 0.650128, 0.650128, 1)
 metadata/_tab_index = 1
@@ -2848,6 +2787,7 @@ offset_bottom = 522.6172
 text = "Back"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 clip_children = 2
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)

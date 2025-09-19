@@ -4,11 +4,12 @@ signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 
-var animations: PackedStringArray = ["fileless_1", "fileless_2", "fileless_3", "fileless_4", "fileless_5", "fileless_6", "fileless_7", "fileless_8", "fileless_9", "fileless_10", "fileless_11", "fileless_12", "fileless_13", "fileless_14", "fileless_15", "fileless_16", "fileless_17", "fileless_18"]
+var animations: PackedStringArray = []
 
 var current_index := 0
 
 func _ready():
+	animations = anim_player.get_animation_list()
 	if animations.size() > 0:
 		anim_player.play(animations[current_index])
 
@@ -17,7 +18,7 @@ func _process(_delta):
 		return
 
 	if Input.is_action_just_pressed("next_pressed"):
-		if animations[current_index] == "fileless_1" or animations[current_index] == "fileless_10":
+		if animations[current_index] == "fileless_01" or animations[current_index] == "fileless_10":
 			SignalBus.fileless_terminal_to_desktop.emit()
 		elif animations[current_index] == "fileless_18":
 			CyberattackManager.ransomware_ready = true

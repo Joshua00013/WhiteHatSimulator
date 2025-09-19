@@ -30,7 +30,7 @@ func _ready() -> void:
 func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
 		"Ransomware":
-			current_tab = TABS.Ransomware
+			current_tab = TABS.Fileless
 			
 		"Bruteforce":
 			current_tab = TABS.Bruteforce
