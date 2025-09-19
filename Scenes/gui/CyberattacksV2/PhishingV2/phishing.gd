@@ -18,7 +18,7 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("next_pressed"):
 		if animations[current_index] == "phishing_01":
-			SignalBus.phshing_terminal_to_desktop.emit()
+			SignalBus.phishing_part1_finished.emit()
 		elif animations[current_index] == "phishing_10":
 			CyberattackManager.phishing_ready = true
 			emit_signal("code_finished")

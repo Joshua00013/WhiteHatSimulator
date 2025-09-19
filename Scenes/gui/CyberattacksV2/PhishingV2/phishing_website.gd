@@ -18,7 +18,7 @@ func _process(_delta):
 		if animations[current_index] == "phishing_desktop_1":
 			return
 		elif animations[current_index] == "phishing_desktop_2":
-			SignalBus.phshing_website_to_terminal.emit()
+			SignalBus.phishing_part3_finished.emit()
 			_play_next()
 		else:
 			_play_next()
