@@ -8,7 +8,10 @@ signal website_btn_pressed
 @export var upload_btn : Button
 @export var website_btn : Button
 
-@export var email : Control
+@onready var email = $MarginContainer/Background/Email
+@onready var piracy = $MarginContainer/Background/Piracy
+@onready var website = $MarginContainer/Background/Website
+
 func _ready():
 	CyberattackManager.email_updated.connect(update_buttons)
 	CyberattackManager.website_seen_changed.connect(update_buttons)
@@ -37,7 +40,24 @@ func update_buttons():
 	else:
 		upload_btn.disabled = false
 
-
+func hide_pages():
+	email.hide()
+	piracy.hide()
+	website.hide()
 
 #TODO : Add piracy page and website hosting page. Create animations for uploading to piracy page then play the laptop animations
 # based on the type used
+
+func _on_website_button_pressed():
+	hide_pages()
+	website.show()
+
+
+func _on_upload_button_pressed():
+	hide_pages()
+	piracy.show()
+
+
+func _on_email_button_pressed():
+	hide_pages()
+	email.show()

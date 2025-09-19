@@ -55,7 +55,7 @@ func _ready():
 		login_screen.username = npc_resource.username
 		login_screen.password = npc_resource.password
 		npc_browser.change_email(npc_resource.email)
-		npc_browser.toggle_piracy(npc_resource.pirating)
+		npc_browser.initialize_piracy(npc_resource.pirating)
 	else: # Fallback if the resource is left empty
 		login_screen.username = username
 		login_screen.password = password

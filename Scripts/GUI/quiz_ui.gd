@@ -2,7 +2,7 @@ extends Control
 
 @export var score_label : Label
 @export var status : Label
-@export var passing_score : int = 10
+@export var passing_score : int = 5
 @export var quiz_card : Control
 
 @onready var finished_window: Control = $FinishedWindow

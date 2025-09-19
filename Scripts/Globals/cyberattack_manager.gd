@@ -22,8 +22,8 @@ var phishing_ready : bool = false : set = set_phishing_ready
 var fileless_ready : bool = false : set = set_fileless_ready
 var dos_ready : bool = false : set = set_dos_ready
 
-var website_seen := false
-var piracy_seen := false
+var website_seen := false : set = set_website_seen
+var piracy_seen := false : set = set_piracy_seen
 
 # Dictionary of emails and whether they are usable
 var emails := {
@@ -90,6 +90,7 @@ func set_website_seen(value: bool) -> void:
 	website_seen_changed.emit(value)
 
 func set_piracy_seen(value: bool) -> void:
+	print("piracy_seen setter called with:", value, " (from:", get_stack(), ")")
 	piracy_seen = value
 	piracy_seen_changed.emit(value)
 
