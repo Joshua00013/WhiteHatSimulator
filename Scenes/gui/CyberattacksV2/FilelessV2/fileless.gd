@@ -9,7 +9,6 @@ var animations: PackedStringArray = ["fileless_1", "fileless_2", "fileless_3", "
 var current_index := 0
 
 func _ready():
-	print(anim_player.get_animation_list())
 	if animations.size() > 0:
 		anim_player.play(animations[current_index])
 
@@ -18,9 +17,8 @@ func _process(_delta):
 		return
 
 	if Input.is_action_just_pressed("next_pressed"):
-		print(animations[current_index])
 		if animations[current_index] == "fileless_1" or animations[current_index] == "fileless_10":
-			_payload_finished()
+			SignalBus.fileless_terminal_to_desktop.emit()
 		elif animations[current_index] == "fileless_18":
 			CyberattackManager.ransomware_ready = true
 			emit_signal("code_finished")
@@ -41,6 +39,3 @@ func _play_previous():
 	if current_index > 0:
 		current_index -= 1
 		anim_player.play(animations[current_index])
-		
-func _payload_finished():
-	SignalBus.fileless_terminal_to_desktop.emit()
