@@ -30,6 +30,12 @@ signal phishing_email_sent (email : String)
 signal fileless_terminal_to_desktop
 @warning_ignore("unused_signal")
 signal fileless_desktop_to_terminal
+@warning_ignore("unused_signal")
+signal phshing_terminal_to_desktop
+@warning_ignore("unused_signal")
+signal phshing_desktop_to_website
+@warning_ignore("unused_signal")
+signal phshing_website_to_terminal
 
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:

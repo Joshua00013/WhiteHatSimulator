@@ -5,7 +5,6 @@ signal code_finished
 @onready var anim_player = $AnimationPlayer
 
 var animations: PackedStringArray = []
-
 var current_index := 0
 
 func _ready():
@@ -16,15 +15,10 @@ func _ready():
 func _process(_delta):
 	if not visible or animations.is_empty():
 		return
-
+	
 	if Input.is_action_just_pressed("next_pressed"):
-		if animations[current_index] == "fileless_01" or animations[current_index] == "fileless_10":
-			SignalBus.fileless_terminal_to_desktop.emit()
-		elif animations[current_index] == "fileless_18":
-			CyberattackManager.ransomware_ready = true
-			emit_signal("code_finished")
-		
-		_play_next()
+		if animations[current_index] != "phshing_2":
+			_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
 
@@ -40,3 +34,7 @@ func _play_previous():
 	if current_index > 0:
 		current_index -= 1
 		anim_player.play(animations[current_index])
+
+func _on_internet_pressed() -> void:
+	SignalBus.phshing_desktop_to_website.emit()
+	_play_next()

@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://ch21mccnclukw"]
+[gd_scene load_steps=26 format=3 uid="uid://ch21mccnclukw"]
 
-[ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/Phishing UI/phishing_website.gd" id="1_b7w0f"]
+[ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_website.gd" id="1_b7w0f"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="3_io6ah"]
 [ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="4_6u6vw"]
 [ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="5_22wq5"]
@@ -11,72 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="10_f7gv8"]
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="11_jbxnd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgs5f"]
-bg_color = Color(0.941176, 0.941176, 0.941176, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8wsj"]
-bg_color = Color(0.823212, 0.823212, 0.823212, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unsyy"]
-bg_color = Color(0.976471, 0.960784, 0.94902, 1)
-border_width_top = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtke"]
-bg_color = Color(0.458824, 0.458824, 0.458824, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u6vw"]
-bg_color = Color(0.819608, 0.807843, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22wq5"]
-bg_color = Color(0.490196, 0.513726, 0.819608, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6qcw"]
-bg_color = Color(0.980392, 0.964706, 0.952941, 1)
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-shadow_size = 7
-shadow_offset = Vector2(0, 7)
-
-[sub_resource type="FontVariation" id="FontVariation_pbmhk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7as"]
-bg_color = Color(0.976471, 0.960784, 0.94902, 1)
-border_width_top = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4pc"]
-bg_color = Color(0.819608, 0.807843, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-shadow_size = 5
-shadow_offset = Vector2(3, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7gv8"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbxnd"]
-bg_color = Color(0.501961, 0.52549, 0.831373, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g46c"]
-bg_color = Color(0.458824, 0.458824, 0.458824, 1)
-
 [sub_resource type="Animation" id="Animation_e6qcw"]
-resource_name = "phishing_desktop_3"
+resource_name = "phishing_desktop_2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -125,9 +61,21 @@ tracks/3/keys = {
 "update": 1,
 "values": ["This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["https://www.pulseforge-studio.com"]
+}
 
 [sub_resource type="Animation" id="Animation_4rrk1"]
-resource_name = "phishing_desktop_start"
+resource_name = "phishing_desktop_1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -150,7 +98,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Let's type in the website url, click the search button after"]
+"values": ["Type in the url that you have found (Click the search bar)"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -200,129 +148,102 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_b7w0f"]
-resource_name = "phishing_fake_website"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TabContainer/Background/Company Website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/OptionButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TabContainer/Background/Company Website/Label Header:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["P U L S E F I R E"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TabContainer/Background/Company Website/TextPanel/Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This is our website, everything seems to be right except for one thing..."]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TabContainer/Background/Tabs Row/Tab/IconHBox/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Pulsef1re"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["localhost:5000"]
-}
-
-[sub_resource type="Animation" id="Animation_pbmhk"]
-resource_name = "phishing_fake_website_2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TabContainer/Background/Company Website/TextPanel/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["As seen up top, our website's name is misspelled, let's leave it there and see if they notice it, 
-
-Let's deploy our website"]
-}
-
-[sub_resource type="Animation" id="Animation_yc5dg"]
-resource_name = "website_search"
-
-[sub_resource type="Animation" id="Animation_22wq5"]
-resource_name = "wrong_url"
-length = 3.0
-
-[sub_resource type="Animation" id="Animation_io6ah"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TabContainer/Background/Company Website/TextPanel/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmhk"]
 _data = {
-&"RESET": SubResource("Animation_io6ah"),
-&"phishing_desktop_3": SubResource("Animation_e6qcw"),
-&"phishing_desktop_start": SubResource("Animation_4rrk1"),
-&"phishing_fake_website": SubResource("Animation_b7w0f"),
-&"phishing_fake_website_2": SubResource("Animation_pbmhk"),
-&"website_search": SubResource("Animation_yc5dg"),
-&"wrong_url": SubResource("Animation_22wq5")
+&"phishing_desktop_1": SubResource("Animation_4rrk1"),
+&"phishing_desktop_2": SubResource("Animation_e6qcw")
 }
 
-[node name="PhishingWebsite" type="MarginContainer" node_paths=PackedStringArray("animation")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgs5f"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8wsj"]
+bg_color = Color(0.823212, 0.823212, 0.823212, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unsyy"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtke"]
+bg_color = Color(0.458824, 0.458824, 0.458824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u6vw"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22wq5"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6qcw"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_offset = Vector2(0, 7)
+
+[sub_resource type="FontVariation" id="FontVariation_pbmhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7as"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4pc"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7gv8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbxnd"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="PhishingWebsite" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b7w0f")
-animation = NodePath("AnimationPlayer")
 metadata/_tab_index = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pbmhk")
+}
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 2
@@ -439,6 +360,7 @@ popup/item_0/text = "https://www.pulseforge-studio.com"
 popup/item_0/id = 0
 
 [node name="Label" type="Label" parent="TabContainer/Background/SearchBar/ButtonsContainer/Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -449,7 +371,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
-text = "localhost:5000"
+text = "https://www.pulseforge-studio.com"
 vertical_alignment = 1
 
 [node name="Favorites" type="TextureButton" parent="TabContainer/Background/SearchBar/ButtonsContainer"]
@@ -541,7 +463,7 @@ anchor_right = 0.740452
 anchor_bottom = 0.287978
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Let's type in the website url, click the search button after"
+text = "Type in the url that you have found (Click the search bar)"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="TabContainer/Background/TextPanel/Label"]
@@ -573,6 +495,7 @@ text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="Company Website" type="ColorRect" parent="TabContainer/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.259259
@@ -748,7 +671,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -152.0
+offset_top = -101.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jh7as")
@@ -769,36 +692,5 @@ theme_override_font_sizes/font_size = 16
 text = "This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="TabContainer/Background/Company Website/TextPanel/Label"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.675776
-anchor_top = 3.97308
-anchor_right = 0.76047
-anchor_bottom = 5.09878
-theme_override_font_sizes/font_size = 18
-text = "Back"
-metadata/_edit_use_anchors_ = true
-
-[node name="Next" type="Button" parent="TabContainer/Background/Company Website/TextPanel/Label"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.762836
-anchor_top = 0.326733
-anchor_right = 0.847596
-anchor_bottom = 0.821782
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 18
-theme_override_styles/disabled = SubResource("StyleBoxFlat_4g46c")
-text = "Next"
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pbmhk")
-}
-
 [connection signal="item_selected" from="TabContainer/Background/SearchBar/ButtonsContainer/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="TabContainer/Background/TextPanel/Label/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="TabContainer/Background/Company Website/TextPanel/Label/Next" to="." method="_on_next_pressed"]

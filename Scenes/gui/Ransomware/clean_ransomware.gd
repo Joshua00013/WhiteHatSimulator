@@ -21,13 +21,16 @@ const TABS := {
 func _ready() -> void:
 	SignalBus.fileless_terminal_to_desktop.connect(_fileless_desktop)
 	SignalBus.fileless_desktop_to_terminal.connect(_fileless_terminal)
+	SignalBus.phshing_terminal_to_desktop.connect(_phishing_desktop)
+	SignalBus.phshing_desktop_to_website.connect(_phishing_website)
+	SignalBus.phshing_website_to_terminal.connect(_phishing_terminal)
 	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
 	current_tab = TABS.Login
 
 func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
 		"Ransomware":
-			current_tab = TABS.Ransomware
+			current_tab = TABS.Fileless
 			
 		"Bruteforce":
 			current_tab = TABS.Bruteforce
@@ -63,3 +66,12 @@ func _fileless_desktop():
 	
 func _fileless_terminal():
 	current_tab = TABS.Fileless
+	
+func _phishing_desktop():
+	current_tab = 12
+	
+func _phishing_website():
+	current_tab = 8
+
+func _phishing_terminal():
+	current_tab = TABS.Phishing

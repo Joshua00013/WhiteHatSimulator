@@ -1,0 +1,2838 @@
+[gd_scene load_steps=58 format=3 uid="uid://cc0iffvnt6fcb"]
+
+[ext_resource type="Script" uid="uid://b0do5oyth30hg" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_f46kx"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_24yo8"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_8i5sj"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_pjo8h"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_yyso8"]
+
+[sub_resource type="Animation" id="Animation_fybg0"]
+resource_name = "phishing_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["And to top it all off, our request to get the credential and save it to our database. We are all done"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<?php
+// Database connection
+$host = \"localhost\";
+$dbname = \"pulsefire_db\";
+$user = \"root\"; // Change if needed
+$pass = \"\"; // Change if needed
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if ($conn->connect_error) {
+    die(\"Connection failed: \" . $conn->connect_error);
+}
+
+// Collect credentials securely
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// Prepare SQL to prevent SQL Injection
+$stmt = $conn->prepare(\"INSERT INTO login_attempts (username, password) VALUES (?, ?)\");
+$stmt->bind_param(\"ss\", $username, $password);
+
+if ($stmt->execute()) {
+    echo \"Credentials saved successfully!\";
+} else {
+    echo \"Error: \" . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+?>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 28.0]
+}
+
+[sub_resource type="Animation" id="Animation_53vgl"]
+resource_name = "phishing_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["⚠️PHISHING⚠️"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5pnsx"]
+resource_name = "phishing_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's try to duplicate the company's website"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d41sb"]
+resource_name = "phishing_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["We are using HTML and CSS
+
+This is the background (Css)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<style>
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#8686d6 40%, #c8c8f5 40%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mc467"]
+resource_name = "phishing_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the Header (HTML & CSS)
+
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<header>PULSEFIRE</header>
+
+<style>
+header {
+      background: #f8f8f8;
+      width: 100%;
+      padding: 10px;
+      border-bottom: 2px solid #444;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-align: left;
+      padding-left: 15px;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="Animation" id="Animation_8dh8r"]
+resource_name = "phishing_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the Login Box (HTML)
+and input bars"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [" <div class=\"login-box\">
+    <h2>WELCOME <br> TO <br> PULSEFIRE</h2>
+    <form action=\"login.php\" method=\"POST\">
+      <input type=\"text\" name=\"username\" placeholder=\"Username\" required>
+      <input type=\"password\" name=\"password\" placeholder=\"Password\" required>
+      <button type=\"submit\">Log In</button>
+    </form>
+  </div>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.9999999999999982]
+}
+
+[sub_resource type="Animation" id="Animation_cyexu"]
+resource_name = "phishing_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the Login Box (CSS)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<style>
+.login-box {
+      background: #f8f8f8;
+      border: 1px solid #000;
+      margin-top: 50px;
+      padding: 30px 40px;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.9999999999999982]
+}
+
+[sub_resource type="Animation" id="Animation_4boi2"]
+resource_name = "phishing_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the Login Box Header (CSS)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<style>
+.login-box h2 {
+      margin: 0 0 15px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.9999999999999982]
+}
+
+[sub_resource type="Animation" id="Animation_al7cx"]
+resource_name = "phishing_8"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the text line input (CSS)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<style>
+input[type=\"text\"], input[type=\"password\"] {
+      width: 180px;
+      padding: 5px;
+      margin: 8px 0;
+      border: 1px solid #333;
+      background: #d4d4ff;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 2px 2px #666;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="Animation" id="Animation_wasjd"]
+resource_name = "phishing_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["For the submit button (CSS)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2: DUPLICATING"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Company Website:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Background2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/Label Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar/Urlbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2/Urlbar:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3/InterneWelcome:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PanelContainer/MarginContainer/CodeEdit:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["<style>
+button {
+      background: #8686d6;
+      color: black;
+      padding: 5px 15px;
+      border: 1px solid #333;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 2px 2px #666;
+    }
+</style>"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PanelContainer:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
+_data = {
+&"phishing_01": SubResource("Animation_53vgl"),
+&"phishing_02": SubResource("Animation_5pnsx"),
+&"phishing_03": SubResource("Animation_d41sb"),
+&"phishing_04": SubResource("Animation_mc467"),
+&"phishing_05": SubResource("Animation_8dh8r"),
+&"phishing_06": SubResource("Animation_cyexu"),
+&"phishing_07": SubResource("Animation_4boi2"),
+&"phishing_08": SubResource("Animation_al7cx"),
+&"phishing_09": SubResource("Animation_wasjd"),
+&"phishing_10": SubResource("Animation_fybg0")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
+content_margin_left = 19.0
+bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmx2e"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.11960501, 0.1159, 0.19, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="FontVariation" id="FontVariation_h8m8q"]
+base_font = ExtResource("3_24yo8")
+
+[sub_resource type="DPITexture" id="DPITexture_pkbn6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_cxtjw"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m11.011063 9.9776246-3.0222094-2.9776246-2.9776247 3.02221\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_wf7ls"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m6 11 3-3-3-3\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_vuf0p"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m9 11-3-3 3-3\"/></svg>
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu46y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oekl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7g13"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4s4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwue7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
+
+[sub_resource type="FontVariation" id="FontVariation_31cwg"]
+base_font = ExtResource("3_24yo8")
+
+[sub_resource type="Theme" id="Theme_x5n46"]
+FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/font_outline_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/hover_font_color = Color(0.95, 0.95, 0.95, 1)
+FoldableContainer/constants/h_separation = 2
+FoldableContainer/constants/outline_size = 0
+FoldableContainer/font_sizes/font_size = 24
+FoldableContainer/fonts/font = SubResource("FontVariation_h8m8q")
+FoldableContainer/icons/expanded_arrow = SubResource("DPITexture_pkbn6")
+FoldableContainer/icons/expanded_arrow_mirrored = SubResource("DPITexture_cxtjw")
+FoldableContainer/icons/folded_arrow = SubResource("DPITexture_wf7ls")
+FoldableContainer/icons/folded_arrow_mirrored = SubResource("DPITexture_vuf0p")
+FoldableContainer/styles/focus = SubResource("StyleBoxEmpty_gu46y")
+FoldableContainer/styles/panel = SubResource("StyleBoxEmpty_oekl0")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxEmpty_i7g13")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxEmpty_k4s4l")
+FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxEmpty_xwue7")
+FoldableContainer/styles/title_panel = SubResource("StyleBoxEmpty_de0th")
+RichTextLabel/font_sizes/normal_font_size = 22
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_31cwg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dqkl"]
+bg_color = Color(0.11960501, 0.1159, 0.19, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dh8r"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc467"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyexu"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_offset = Vector2(0, 7)
+
+[sub_resource type="FontVariation" id="FontVariation_4boi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al7cx"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wasjd"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfxv8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fybg0"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_wwpmy"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gu46y"]
+resource_local_to_scene = true
+shader = SubResource("Shader_wwpmy")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.135, 3.555)
+shader_parameter/hole_size = Vector2(3.735, 0.28)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
+bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkbn6"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxtjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wf7ls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuf0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31cwg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5n46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4boi2"]
+bg_color = Color(0.11960501, 0.1159, 0.19, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_al7cx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wasjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfxv8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fybg0"]
+
+[sub_resource type="Shader" id="Shader_0rnj0"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_317yi"]
+resource_local_to_scene = true
+shader = SubResource("Shader_0rnj0")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.025, -0.2)
+shader_parameter/hole_size = Vector2(3.7, 1.865)
+
+[node name="CodeEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53vgl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_de0th")
+}
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18985915, 0.23259696, 0.31803992, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.074074075
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t4n35")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f46kx")
+text = "VScode"
+
+[node name="Body" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006076389
+anchor_top = 0.094135806
+anchor_right = 0.9939236
+anchor_bottom = 0.970679
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ExplanationPanel" type="PanelContainer" parent="Body"]
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(370, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmx2e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Body/ExplanationPanel"]
+layout_mode = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_x5n46")
+title = "⚠️PHISHING⚠️"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
+custom_minimum_size = Vector2(0, 531.305)
+layout_mode = 2
+bbcode_enabled = true
+text = "Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."
+
+[node name="CodeContainer" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="Body/CodeContainer"]
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(733.03, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dqkl")
+
+[node name="Company Website" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.650128, 0.650128, 0.650128, 1)
+metadata/_tab_index = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.493827
+anchor_right = 1.0
+anchor_bottom = 0.987654
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dh8r")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background2" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.493827
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0065806, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc467")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00625
+anchor_right = 1.0
+anchor_bottom = 0.129167
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cyexu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="Body/CodeContainer/PanelContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_4boi2")
+theme_override_font_sizes/font_size = 26
+text = "P U L S E F I R E"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel2" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_top = 0.197531
+anchor_right = 0.701389
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_al7cx")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310345
+anchor_top = 0.04
+anchor_right = 0.689655
+anchor_bottom = 0.28
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_4boi2")
+theme_override_font_sizes/font_size = 19
+text = "W E L C O M E
+T O
+P U L S E F I R E"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.340045
+anchor_right = 0.673517
+anchor_bottom = 0.439983
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_wasjd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0645159
+anchor_top = 0.150121
+anchor_right = 0.923388
+anchor_bottom = 1.26362
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfxv8")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar2" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.500045
+anchor_right = 0.673517
+anchor_bottom = 0.599983
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_wasjd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0645159
+anchor_top = 0.170117
+anchor_right = 1.01613
+anchor_bottom = 1.31736
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfxv8")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar3" type="Panel" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143724
+anchor_top = 0.682545
+anchor_right = 0.679983
+anchor_bottom = 0.782483
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_fybg0")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="Body/CodeContainer/PanelContainer/Company Website/TextPanel2/Searchbar3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278226
+anchor_top = -0.0348381
+anchor_right = 0.697581
+anchor_bottom = 1.17989
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_4boi2")
+theme_override_font_sizes/font_size = 22
+text = "Log In"
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+visible = false
+material = SubResource("ShaderMaterial_gu46y")
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="WindowBackground" type="ColorRect" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.17254902)
+script = ExtResource("4_8i5sj")
+
+[node name="Window" type="PanelContainer" parent="WindowBackground"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -105.0
+offset_right = 210.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h8m8q")
+
+[node name="WindowContents" type="VBoxContainer" parent="WindowBackground/Window"]
+layout_mode = 2
+
+[node name="WindowHeader" type="PanelContainer" parent="WindowBackground/Window/WindowContents"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
+
+[node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_24yo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_31cwg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5n46")
+text = "X"
+
+[node name="SampleHeader" type="Label" parent="WindowBackground/Window/WindowContents/WindowHeader"]
+layout_mode = 2
+text = "ransomware.exe"
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window/WindowContents"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Contents"
+
+[node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Debug" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Next" parent="Debug" instance=ExtResource("5_pjo8h")]
+layout_mode = 1
+anchor_left = 0.736111
+anchor_top = 0.802469
+anchor_right = 0.865451
+anchor_bottom = 0.859568
+offset_left = 818.55505
+offset_top = 487.90118
+offset_right = 962.3815
+offset_bottom = 522.6172
+
+[node name="Back" parent="Debug" instance=ExtResource("6_yyso8")]
+layout_mode = 1
+anchor_left = 0.131944
+anchor_top = 0.802469
+anchor_right = 0.262153
+anchor_bottom = 0.859568
+offset_left = 146.72173
+offset_top = 487.90118
+offset_right = 291.51337
+offset_bottom = 522.6172
+text = "Back"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 624.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4boi2")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CodeEdit" type="CodeEdit" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxEmpty_al7cx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wasjd")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_qfxv8")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_fybg0")
+text = "<style>
+button {
+      background: #8686d6;
+      color: black;
+      padding: 5px 15px;
+      border: 1px solid #333;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 2px 2px #666;
+    }
+</style>"
+wrap_mode = 1
+autowrap_mode = 2
+gutters_draw_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="PanelContainer"]
+visible = false
+material = SubResource("ShaderMaterial_317yi")
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="WindowBackground/Window/WindowContents/WindowHeader/Button" to="WindowBackground" method="_on_button_pressed"]
