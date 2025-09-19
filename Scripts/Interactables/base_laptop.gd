@@ -212,7 +212,7 @@ func _play_fileless(email : String):
 		await success_animation.animation_finished
 		CyberattackManager.installation_finished = true
 		
-		success_animation.play("play_fileless")
+		success_animation.play("play_fileless") # TODO : Fileless animation needed
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
@@ -285,11 +285,11 @@ func _play_ransomware_piracy():
 	CyberattackManager.installation_finished = true
 	
 	if CyberattackAdaptationManager.antivirus_installed == true:
-		success_animation.play("play_ransomware_fail")
+		success_animation.play("play_ransomware_fail_piracy")
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware",false)
 	elif CyberattackAdaptationManager.antivirus_installed == false:
-		success_animation.play("play_ransomware")
+		success_animation.play("play_ransomware_piracy")
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true

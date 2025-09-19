@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=72 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -15,6 +15,7 @@
 [ext_resource type="Animation" uid="uid://dhg0asdswm03a" path="res://animations/play_ransomware.res" id="13_j8lv2"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="14_6y342"]
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="14_qcv3o"]
+[ext_resource type="Texture2D" uid="uid://dqqd2x4wfauqw" path="res://Assets/Illustrator/loboshop.png" id="15_6u205"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="15_qcv3o"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="16_pcl5q"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="17_qcv3o"]
@@ -23,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://btwl1kfbblox4" path="res://Assets/Illustrator/pdfv2.png" id="19_sb1hh"]
 [ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="21_714hg"]
 [ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="21_j8lv2"]
+[ext_resource type="Texture2D" uid="uid://jdrwk5rkeqto" path="res://Assets/Illustrator/zip.png" id="25_sb1hh"]
+[ext_resource type="Theme" uid="uid://d2c7tbwjgxp7r" path="res://Themes/windows.tres" id="26_ctr30"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.62, 0.545)
@@ -424,6 +427,138 @@ tracks/23/path = NodePath("Piracy/Piracy/VBoxContainer/Label2:visible")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_sb1hh")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["PDF.exe"]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("FilelessSuccess:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("FilelessSuccess/TextureRect:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(334, 132)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("FilelessSuccess/TextureRect:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow/VBoxContainer/ProgressBar:value")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:scale")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Malware_icon:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Key_icon:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("FilelessSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1128,6 +1263,432 @@ tracks/5/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_x2pro"]
+resource_name = "play_ransomware_piracy"
+length = 10.161
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.1232),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.8209302, 7.9609303),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 1.17, 2.4975, 2.8971002, 3.3942602, 3.8609302, 4.69426, 5.7276, 6.3942633, 6.7309303, 7.627597, 7.9209304, 8.494264),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1.31951, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(200, 400), Vector2(200, 400), Vector2(728.18, 215.305), Vector2(728.18, 215.305), Vector2(334, 132), Vector2(334, 132), Vector2(829.02, 469), Vector2(829.02, 469), Vector2(320, 303.02), Vector2(320, 303.02), Vector2(320, 468.655), Vector2(320, 468.655), Vector2(220.85, 399.845)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.76, 0.94000006, 1.1400001, 2.4975002, 2.6775002, 2.8775003, 3.4309301, 3.6109302, 3.8109303, 4.7276, 4.8942604, 5.0609303, 6.39093, 6.55759, 6.7242603, 7.60093, 7.76759, 7.9342604, 8.500931, 8.66759, 8.834261),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.08093, 6.76093),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 2.664, 8.853098),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.93240005, 8.853098),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Company announcement:
+
+Please check your emails regularly!", "ak$imsdUkGp08McvjK"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_6u205")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Loboshop.exe"]
+}
+
+[sub_resource type="Animation" id="Animation_3407j"]
+resource_name = "play_ransomware_fail_piracy"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_6u205")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Loboshop.exe"]
+}
+
+[sub_resource type="Animation" id="Animation_u45uk"]
+resource_name = "play_fileless"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FilelessSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FilelessSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3.1, 3.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(600, 350), Vector2(350, 130), Vector2(350, 130), Vector2(350, 269.9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FilelessSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.1666666, 1.32, 3.43, 3.5966668, 3.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.395, 1.395), Vector2(1, 1), Vector2(1, 1), Vector2(1.395, 1.395), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow/VBoxContainer/ProgressBar:value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.32, 2.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.7666667, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Malware_icon:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Key_icon:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_hb7e4"]
+resource_name = "play_fileless_fail"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FilelessSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FilelessSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3.1, 3.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(600, 350), Vector2(350, 130), Vector2(350, 130), Vector2(350, 269.9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FilelessSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.1666666, 1.32, 3.43, 3.5966668, 3.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.395, 1.395), Vector2(1, 1), Vector2(1, 1), Vector2(1.395, 1.395), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow/VBoxContainer/ProgressBar:value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.32, 2.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.7666667, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Malware_icon:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FilelessSuccess/PanelContainer2/Desktop/Key_icon:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("FilelessSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bescv"]
 _data = {
 &"RESET": SubResource("Animation_l8jl3"),
@@ -1140,8 +1701,12 @@ _data = {
 &"open_ransomware_email": SubResource("Animation_pcl5q"),
 &"open_ransomware_email_fail": SubResource("Animation_sb1hh"),
 &"piracy_download": SubResource("Animation_hgyne"),
+&"play_fileless": SubResource("Animation_u45uk"),
+&"play_fileless_fail": SubResource("Animation_hb7e4"),
 &"play_ransomware": ExtResource("13_j8lv2"),
-&"play_ransomware_fail": SubResource("Animation_bescv")
+&"play_ransomware_fail": SubResource("Animation_bescv"),
+&"play_ransomware_fail_piracy": SubResource("Animation_3407j"),
+&"play_ransomware_piracy": SubResource("Animation_x2pro")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u205"]
@@ -1224,6 +1789,9 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 15
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3er6d"]
+load_path = "res://.godot/imported/txtv2.png-f0cd2bef59fd0ed329693e3ec4435350.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8lv2"]
 bg_color = Color(1, 1, 1, 1)
@@ -1463,7 +2031,7 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -196.0
-offset_bottom = -145.99982
+offset_bottom = -145.99988
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -1735,7 +2303,6 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
 layout_mode = 2
-icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
@@ -1969,13 +2536,237 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -195.99963
-offset_bottom = -145.99976
+offset_bottom = -145.99982
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
 expand_mode = 1
 
-[node name="PhishingSuccess" type="Control" parent="." index="17"]
+[node name="FilelessSuccess" type="Control" parent="." index="17"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FilelessSuccess" index="0"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.0
+offset_right = 391.0
+offset_bottom = 460.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="Control" parent="FilelessSuccess" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -240.0
+offset_right = 401.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="FilelessSuccess/PanelContainer2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Desktop" type="VFlowContainer" parent="FilelessSuccess/PanelContainer2" index="1"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 792.0
+offset_bottom = 470.0
+theme_override_constants/h_separation = 20
+
+[node name="Data_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="0" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("16_pcl5q")
+icon_name = "Data.sql"
+
+[node name="Godot_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon_name = "Godot.png"
+
+[node name="Text_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("18_6u205")
+icon_name = "text.txt"
+
+[node name="ZipIcon" parent="FilelessSuccess/PanelContainer2/Desktop" index="3" instance=ExtResource("15_qcv3o")]
+layout_mode = 2
+icon = ExtResource("25_sb1hh")
+icon_name = "client_files.zip"
+
+[node name="Malware_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="4" instance=ExtResource("15_qcv3o")]
+visible = false
+layout_mode = 2
+icon = ExtResource("15_6u205")
+icon_name = "Loboshop.exe"
+
+[node name="Key_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="5" instance=ExtResource("15_qcv3o")]
+visible = false
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_3er6d")
+icon_name = "shellcode.txt"
+
+[node name="WindowContainer" type="Control" parent="FilelessSuccess/PanelContainer2" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GodotWindow" type="PanelContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer" index="0"]
+visible = false
+clip_children = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -120.0
+offset_right = 194.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6y342")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow" index="0"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 28.39)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcv3o")
+
+[node name="TextureButton" type="TextureButton" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("21_j8lv2")
+
+[node name="Label" type="Label" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "text.txt"
+
+[node name="PanelContainer2" type="PanelContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pcl5q")
+
+[node name="Label" type="Label" parent="FilelessSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2" index="0"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Company announcement:
+
+Please check your emails regularly!"
+
+[node name="ZipWindow" type="PanelContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer" index="1"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -109.0
+offset_right = 192.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("26_ctr30")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Extracting..."
+
+[node name="ProgressBar" type="ProgressBar" parent="FilelessSuccess/PanelContainer2/WindowContainer/ZipWindow/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="RansomwareAntivirus" type="PanelContainer" parent="FilelessSuccess/PanelContainer2" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -143.0
+offset_right = 222.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8dab")
+
+[node name="MarginContainer" type="MarginContainer" parent="FilelessSuccess/PanelContainer2/RansomwareAntivirus" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="FilelessSuccess/PanelContainer2/RansomwareAntivirus/MarginContainer" index="0"]
+custom_minimum_size = Vector2(424, 101)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Windows protected your PC
+
+Defender prevented an unrecognized app from starting. Running this app might put your PC at risk"
+autowrap_mode = 3
+
+[node name="ColorRect" type="TextureButton" parent="FilelessSuccess/PanelContainer2/RansomwareAntivirus" index="1"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("21_j8lv2")
+
+[node name="TextureRect" type="TextureRect" parent="FilelessSuccess" index="2"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -195.99655
+offset_bottom = -145.9996
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+
+[node name="PhishingSuccess" type="Control" parent="." index="18"]
 visible = false
 layout_mode = 3
 anchors_preset = 15

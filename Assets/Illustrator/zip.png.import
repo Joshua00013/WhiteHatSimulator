@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccvhq2bsrwnvt"
-path="res://.godot/imported/background_computer.jpg-6197caf1357d12f86921a0ba4e6d381a.ctex"
+uid="uid://jdrwk5rkeqto"
+path="res://.godot/imported/zip.png-b161988befd7fa124446fb35a76ce0a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/gui/Phishing UI/phishing assets/background_computer.jpg"
-dest_files=["res://.godot/imported/background_computer.jpg-6197caf1357d12f86921a0ba4e6d381a.ctex"]
+source_file="res://Assets/Illustrator/zip.png"
+dest_files=["res://.godot/imported/zip.png-b161988befd7fa124446fb35a76ce0a5.ctex"]
 
 [params]
 
