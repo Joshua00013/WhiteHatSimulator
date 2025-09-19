@@ -36,5 +36,5 @@ func _play_previous():
 		anim_player.play(animations[current_index])
 
 func _on_internet_pressed() -> void:
-	SignalBus.phshing_desktop_to_website.emit()
+	SignalBus.phishing_part2_finished.emit()
 	_play_next()

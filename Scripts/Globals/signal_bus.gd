@@ -27,15 +27,15 @@ signal fileless_email_sent (email : String)
 signal phishing_email_sent (email : String)
 
 @warning_ignore("unused_signal")
-signal fileless_terminal_to_desktop
+signal fileless_part1_finished
 @warning_ignore("unused_signal")
-signal fileless_desktop_to_terminal
+signal fileless_part2_finished
 @warning_ignore("unused_signal")
-signal phshing_terminal_to_desktop
+signal phishing_part1_finished
 @warning_ignore("unused_signal")
-signal phshing_desktop_to_website
+signal phishing_part2_finished
 @warning_ignore("unused_signal")
-signal phshing_website_to_terminal
+signal phishing_part3_finished
 
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:
