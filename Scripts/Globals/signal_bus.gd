@@ -19,6 +19,12 @@ signal ransomware_desktop_exited
 signal ransomware_decrypt_finished
 
 signal cyberattack_selected(cyberattack : String)
+signal website_seen
+signal piracy_seen
+
+signal ransomware_email_sent (email : String)
+signal fileless_email_sent (email : String)
+signal phishing_email_sent (email : String)
 
 @warning_ignore("unused_signal")
 signal fileless_terminal_to_desktop

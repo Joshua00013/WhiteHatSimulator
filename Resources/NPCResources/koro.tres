@@ -8,4 +8,5 @@ name = "Koro"
 username = "Koro"
 password = "123"
 email = "koro@company.com"
+pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"

@@ -2736,7 +2736,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(26, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(28, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -2975,7 +2975,7 @@ cache/4/14/0/glyphs/73/size = Vector2(13, 15)
 cache/4/14/0/glyphs/73/uv_rect = Rect2(96, 15, 13, 15)
 cache/4/14/0/glyphs/73/texture_idx = 0
 
-[sub_resource type="Image" id="Image_5wnap"]
+[sub_resource type="Image" id="Image_mqwrb"]
 data = {
 "data": PackedByteArray("sbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCysrIAsrKyALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsZmxsbGmsbGxErKysgCysrIAsrKyALKysgCxsbESsbGxprKyspeysrIAsbGxALGxsaaysrLZsrKysrKyshKysrIAsrKyALKyshKysrKzsrKy2bKysqWysrIAsbGxALGxsRKysrKysrKy2bKysrKysrISsrKyErKysrOysrLZsrKysrKyshGysrIAsbGxALKysgCysrISsrKysrKystmysrLFsrKyxbKystmysrKysrKyEbKysgCysrIAsrKyALKysgCysrIAsrKyErKysrKysrLZsrKy2bKysrKysrIRsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKyshKysrKlsrKypbKyshGysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIA"),
 "format": "RGBA8",
@@ -2985,7 +2985,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jc5ig"]
-image = SubResource("Image_5wnap")
+image = SubResource("Image_mqwrb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq5yb"]
 bg_color = Color(1, 1, 1, 0)
@@ -3031,11 +3031,11 @@ spacing_glyph = 2
 base_font = ExtResource("11_vq5yb")
 spacing_glyph = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekgtk"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp5ny"]
 bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekgtk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_ekgtk"]
 length = 0.001
@@ -3373,7 +3373,6 @@ theme_override_font_sizes/font_size = 36
 text = "Host a website"
 
 [node name="Email" type="Control" parent="MarginContainer/Background" node_paths=PackedStringArray("email_options", "attachment_type", "body", "send_button")]
-visible = false
 custom_minimum_size = Vector2(0, 472)
 layout_mode = 1
 anchor_top = 0.271605
@@ -3454,8 +3453,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = SubResource("FontVariation_213el")
 theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ekgtk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hp5ny")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ekgtk")
 text = "Hello employee,
 
 We detected unusual activity on your account. Please confirm your login details immediately to avoid suspension.
@@ -3524,6 +3523,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
-[connection signal="fileless_sent" from="MarginContainer/Background/Email" to="." method="_on_email_fileless_sent"]
-[connection signal="phishing_sent" from="MarginContainer/Background/Email" to="." method="_on_email_phishing_sent"]
-[connection signal="ransomware_sent" from="MarginContainer/Background/Email" to="." method="_on_email_ransomware_sent"]

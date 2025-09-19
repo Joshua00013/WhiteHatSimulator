@@ -37,30 +37,7 @@ func update_buttons():
 	else:
 		upload_btn.disabled = false
 
-func _on_email_button_pressed():
-	email.show()
 
-
-func _on_upload_button_pressed():
-	pass # Replace with function body.
-
-
-func _on_website_button_pressed():
-	pass # Replace with function body.
-
-
-# EMAIL SUCCESS EVENTS -- CONNECTED TO THE MAIN NODE TO TRIGGER ANIMATIONS ON SCREEN
-
-func _on_email_fileless_sent():
-	UiManager.laptop_play_fileless.emit()
-
-
-func _on_email_phishing_sent():
-	UiManager.laptop_play_phishing.emit()
-
-
-func _on_email_ransomware_sent():
-	UiManager.laptop_play_ransomware.emit()
 
 #TODO : Add piracy page and website hosting page. Create animations for uploading to piracy page then play the laptop animations
 # based on the type used
