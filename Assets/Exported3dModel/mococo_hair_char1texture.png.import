@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fpp0e0v3fot1"
+uid="uid://3601o6xqvid6"
 path.s3tc="res://.godot/imported/mococo_hair_char1texture.png-f476235fd754bd55bd682ed3bde568cc.s3tc.ctex"
 path.etc2="res://.godot/imported/mococo_hair_char1texture.png-f476235fd754bd55bd682ed3bde568cc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "f8311167eb7c2b726e8aa01246b26d85"
 }
 
 [deps]

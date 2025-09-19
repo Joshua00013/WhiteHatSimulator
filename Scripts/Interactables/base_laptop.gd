@@ -18,6 +18,7 @@ var flash_drive_inserted := false
 @export var flashdrive_item : InvItem
 @export var minigame : Node3D
 @export var success_animation : AnimationPlayer
+@export var phishing_email_box : TextEdit
 
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $laptop_base/laptop_screen/Screen
@@ -32,9 +33,13 @@ var flash_drive_inserted := false
 signal closed
 
 func _ready():
-	UiManager.connect("laptop_play_fileless", _play_fileless_success)
-	UiManager.connect("laptop_play_ransomware", _play_ransomware_success)
-	UiManager.connect("laptop_play_phishing", _play_phishing_success)
+	#UiManager.connect("laptop_play_fileless", _play_fileless_success)
+	#UiManager.connect("laptop_play_ransomware", _play_ransomware_success)
+	#UiManager.connect("laptop_play_phishing", _play_phishing_success)
+	
+	SignalBus.ransomware_email_sent.connect(_play_ransomware)
+	SignalBus.phishing_email_sent.connect(_play_phishing)
+	SignalBus.fileless_email_sent.connect(_play_fileless)
 	
 	if OS.get_name() == "Android":
 		camera.position.z = -0.12
@@ -192,7 +197,7 @@ func _on_laptop_minigame_component_minigame_finished() -> void:
 	#active = true
 	#camera.current = true
 
-func _play_fileless_success():
+func _play_fileless(email : String):
 	if not CyberattackAdaptationManager.email_used:
 		CyberattackAdaptationManager.email_used = true
 		
@@ -213,7 +218,8 @@ func _play_fileless_success():
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
 		
-func _play_ransomware_success():
+func _play_ransomware(email : String):
+	print("PLAYING RANSOMWARE")
 	if not CyberattackAdaptationManager.email_used:
 		CyberattackAdaptationManager.email_used = true
 		
@@ -234,15 +240,16 @@ func _play_ransomware_success():
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
 	
-func _play_phishing_success():
+func _play_phishing(email : String):
 	if not CyberattackAdaptationManager.email_used:
+		phishing_email_box.text = email
 		CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_phishing_email")
 		await success_animation.animation_finished
 		CyberattackManager.exploitation_finished = true
 		
-		success_animation.play("download_phishing")
+		success_animation.play("login_phishing")
 		await success_animation.animation_finished
 		CyberattackManager.installation_finished = true
 		
@@ -255,3 +262,4 @@ func _play_phishing_success():
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the link")
 	
+# TODO : Create a function connected to SignalBus email sent that changes the string for the email labels etc.

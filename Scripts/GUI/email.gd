@@ -7,9 +7,7 @@ extends Control
 
 @onready var cyberattack_player = $CyberattackPlayer
 
-signal ransomware_sent
-signal phishing_sent
-signal fileless_sent
+var selected_email : String
 
 enum Attachments { PHISHING, RANSOMWARE, FILELESS }
 func _ready():
@@ -39,6 +37,7 @@ func update_attachment_options():
 	attachment_type.set_item_disabled(Attachments.FILELESS, not CyberattackManager.fileless_ready)
 
 func play_cyberattack_animation(index : int):
+	selected_email = attachment_type.get_item_text(index)
 	if email_options.get_selected_id() == -1: 
 		print("No email selected, skipping animation") 
 		return
@@ -67,13 +66,13 @@ func _on_email_sent():
 			if not CyberattackAdaptationManager.phishing_used:
 				CyberattackManager.delivery_finished = true
 				CyberattackAdaptationManager.phishing_used = true
-				phishing_sent.emit()
+				SignalBus.phishing_email_sent.emit(selected_email)
 		Attachments.RANSOMWARE:
 			CyberattackManager.delivery_finished = true
-			ransomware_sent.emit()
+			SignalBus.ransomware_email_sent.emit(selected_email)
 		Attachments.FILELESS:
 			if not CyberattackAdaptationManager.fileless_used:
 				CyberattackManager.delivery_finished = true
 				CyberattackAdaptationManager.fileless_used = true
-				fileless_sent.emit()
+				SignalBus.phishing_email_sent.emit(selected_email)
 		#TODO : Animation showing myrione logged in 

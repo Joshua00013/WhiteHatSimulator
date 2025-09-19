@@ -3,7 +3,6 @@ extends Node
 @warning_ignore("unused_signal")
 signal stage_finished()
 
-# PAGAWANG DESCRIPTIVE TO, GLOBAL VARIABLES ANG SIGNAL. SAKA HINDI VARIABLES ANG GINAGAMIT
 var current_step_1 = 1
 var current_step_2 = 2
 var current_step_3 = 3
@@ -22,6 +21,16 @@ signal ransomware_decrypt_finished
 signal cyberattack_selected(cyberattack : String)
 signal website_seen
 signal piracy_seen
+
+signal ransomware_email_sent (email : String)
+signal fileless_email_sent (email : String)
+signal phishing_email_sent (email : String)
+
+@warning_ignore("unused_signal")
+signal fileless_terminal_to_desktop
+@warning_ignore("unused_signal")
+signal fileless_desktop_to_terminal
+
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:
 # func _ready()

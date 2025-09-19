@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=54 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -1052,6 +1052,41 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8lv2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcl5q"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctr30"]
+bg_color = Color(0.452027, 0.270059, 0.836414, 1)
+border_width_left = 40
+border_width_right = 40
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8jl3"]
+bg_color = Color(0.614341, 0.512609, 0.961783, 1)
+shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
 [node name="Laptop" node_paths=PackedStringArray("minigame", "success_animation") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
 username = "whitehat"
@@ -1486,7 +1521,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_pcl5q")
 [node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2" index="0"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "ak$imsdUkGp08McvjK"
+text = "Company announcement:
+
+Please check your emails regularly!"
 
 [node name="RansomwareAntivirus" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2" index="3"]
 visible = false
@@ -1647,14 +1684,15 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -195.9997
-offset_bottom = -145.99985
+offset_right = -195.99951
+offset_bottom = -145.99988
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
 expand_mode = 1
 
-[node name="Phishing" type="Control" parent="." index="17"]
+[node name="PhishingSuccess" type="Control" parent="." index="17"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1663,6 +1701,149 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="LoginPanel" type="PanelContainer" parent="PhishingSuccess" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222222
+anchor_top = 0.17284
+anchor_right = 0.778646
+anchor_bottom = 0.807099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j8lv2")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/LoginPanel" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LoginLabel" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOGIN TO PULSEFIRE "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+
+[node name="UsernameBox" type="TextEdit" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pcl5q")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="PasswordLabel" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+
+[node name="PasswordBox" type="TextEdit" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pcl5q")
+text = "********"
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="ForgotPassword" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Forgot Password?"
+horizontal_alignment = 1
+
+[node name="Login Button" type="Panel" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ctr30")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer/Login Button" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39375
+anchor_top = 0.214327
+anchor_right = 0.60625
+anchor_bottom = 0.785673
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer3" index="0"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_l8jl3")
+metadata/_edit_use_anchors_ = true
+
+[node name="needhelp?" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer3/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -11.5
+offset_right = 229.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PhishingSuccess" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_right = 247.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess" index="2"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.61499
+offset_top = 44.51999
+offset_right = -44.614746
+offset_bottom = 90.520325
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]

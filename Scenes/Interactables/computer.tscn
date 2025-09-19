@@ -1066,8 +1066,8 @@ theme_override_constants/h_separation = 20
 
 [node name="DatabaseIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-icon = null
-icon_name = ""
+icon = ExtResource("6_6l7aj")
+icon_name = "data.sql"
 
 [node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon" index="0"]
 icon = ExtResource("6_6l7aj")
@@ -1077,7 +1077,6 @@ text = "data.sql"
 
 [node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-icon = null
 icon_name = "godot.png"
 
 [node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="1"]
@@ -1086,8 +1085,8 @@ text = "godot.png"
 [node name="TextIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
 window = NodePath("../../Windows/NotePad")
-icon = null
-icon_name = ""
+icon = ExtResource("8_a8fdl")
+icon_name = "Notepad.txt"
 
 [node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon" index="0"]
 icon = ExtResource("8_a8fdl")
@@ -1098,8 +1097,8 @@ text = "Notepad.txt"
 [node name="BrowserIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
 window = NodePath("../../Windows/NPCBrowser")
-icon = null
-icon_name = ""
+icon = ExtResource("9_tdfle")
+icon_name = "Browser"
 
 [node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon" index="0"]
 icon = ExtResource("9_tdfle")
@@ -1374,10 +1373,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -23.0
-offset_right = 23.000244
-offset_bottom = 23.000336
+offset_left = -90.61499
+offset_top = 44.51999
+offset_right = -44.614746
+offset_bottom = 90.520325
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
@@ -1445,7 +1444,6 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" instance=ExtResource("5_yrttm")]

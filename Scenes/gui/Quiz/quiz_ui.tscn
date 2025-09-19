@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b788xwn3k7nxn"]
 
 [ext_resource type="Script" uid="uid://x18i1kyjiw46" path="res://Scripts/GUI/quiz_ui.gd" id="1_wmnlc"]
-[ext_resource type="PackedScene" uid="uid://drl8d6deyphis" path="res://Scenes/GUI/Quiz/quiz_card.tscn" id="2_f6k7j"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="3_67fnu"]
+[ext_resource type="PackedScene" uid="uid://drl8d6deyphis" path="res://Scenes/gui/Quiz/quiz_card.tscn" id="2_f6k7j"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="3_67fnu"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_f6k7j"]
 
 [node name="QuizUI" type="Control" node_paths=PackedStringArray("score_label", "status", "quiz_card")]

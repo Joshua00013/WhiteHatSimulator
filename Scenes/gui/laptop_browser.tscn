@@ -2736,7 +2736,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(27, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(28, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -3523,6 +3523,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
-[connection signal="fileless_sent" from="MarginContainer/Background/Email" to="." method="_on_email_fileless_sent"]
-[connection signal="phishing_sent" from="MarginContainer/Background/Email" to="." method="_on_email_phishing_sent"]
-[connection signal="ransomware_sent" from="MarginContainer/Background/Email" to="." method="_on_email_ransomware_sent"]
