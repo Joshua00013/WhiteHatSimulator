@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtk1usoh0w54w" path="res://Scenes/GUI/ransomware_encrypt.tscn" id="3_8imo2"]
 [ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/GUI/post_ransomware_encrypt.tscn" id="4_atxjj"]
 [ext_resource type="PackedScene" uid="uid://dronc4jjmcb4r" path="res://Scenes/GUI/ransomware_decrypt.tscn" id="5_lko46"]
-[ext_resource type="PackedScene" uid="uid://b8ldolfyse76l" path="res://Scenes/GUI/Fileless Malware/FilelessMalware.tscn" id="7_8imo2"]
+[ext_resource type="PackedScene" uid="uid://dnj8fsi1dawwb" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.tscn" id="7_ojgsj"]
 [ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/GUI/Fileless Malware/fileless_desktop.tscn" id="8_o0l8t"]
 [ext_resource type="PackedScene" uid="uid://cyrattnnrxu4k" path="res://Scenes/GUI/Phishing UI/phishing.tscn" id="9_qm60n"]
 [ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/GUI/Phishing UI/phishing_website.tscn" id="10_e7as3"]
@@ -46,9 +46,10 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Fileless" parent="." instance=ExtResource("7_8imo2")]
+[node name="Fileless" parent="." instance=ExtResource("7_ojgsj")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 5
 
 [node name="FilelessDesktop" parent="." instance=ExtResource("8_o0l8t")]
 visible = false
@@ -78,13 +79,11 @@ username = "whitehat"
 password = "whitehat553322"
 metadata/_tab_index = 11
 
-[connection signal="boilerplate" from="." to="Fileless" method="_on_change_boilerplate"]
-[connection signal="listener" from="." to="Fileless" method="_on_change_listener"]
 [connection signal="ransomware_encrypt_finished" from="RansomwareEncrypt" to="." method="_on_window_window_exited"]
 [connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
 [connection signal="ransomware_decrypt_finished" from="RansomwareDecrypt" to="." method="_on_weaponization_finished"]
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
-[connection signal="fileless_change_scene" from="Fileless" to="." method="_on_fileless_scene_change"]
+[connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="change_to_website" from="Phishing" to="." method="_on_phishing_change_to_website"]
 [connection signal="change_to_terminal" from="PhishingWebsite" to="." method="_on_phishing_website_change_to_terminal"]
 [connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
