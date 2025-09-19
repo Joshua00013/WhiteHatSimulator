@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=64 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="14_qcv3o"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="15_qcv3o"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="16_pcl5q"]
+[ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="17_qcv3o"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="18_6u205"]
+[ext_resource type="Texture2D" uid="uid://d33h5gqfrugos" path="res://Assets/Illustrator/BrowserAssets/upload_white_super_small.png" id="18_pcl5q"]
 [ext_resource type="Texture2D" uid="uid://btwl1kfbblox4" path="res://Assets/Illustrator/pdfv2.png" id="19_sb1hh"]
 [ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="21_714hg"]
 [ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="21_j8lv2"]
@@ -350,6 +352,78 @@ tracks/17/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/God
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Piracy:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Piracy/TextureRect:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(334, 132)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Piracy/TextureRect:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Piracy/Piracy/VBoxContainer/HBoxContainer:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Piracy/Piracy/VBoxContainer/Label:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Piracy/Piracy/VBoxContainer/Label2:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -978,6 +1052,82 @@ tracks/5/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_hgyne"]
+resource_name = "piracy_download"
+length = 3.1435
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Piracy:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Piracy/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.3, 2.2666667, 2.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(334, 132), Vector2(900, 420), Vector2(900, 420), Vector2(500, 341.225), Vector2(500, 341.225)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Piracy/TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.1333333, 1.2666667, 2.28, 2.4133334, 2.5466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.965, 1.965), Vector2(1, 1), Vector2(1, 1), Vector2(1.965, 1.965), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Piracy/Piracy/VBoxContainer/HBoxContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Piracy/Piracy/VBoxContainer/Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Piracy/Piracy/VBoxContainer/Label2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.3333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bescv"]
 _data = {
 &"RESET": SubResource("Animation_l8jl3"),
@@ -989,6 +1139,7 @@ _data = {
 &"open_phishing_email_fail": SubResource("Animation_714hg"),
 &"open_ransomware_email": SubResource("Animation_pcl5q"),
 &"open_ransomware_email_fail": SubResource("Animation_sb1hh"),
+&"piracy_download": SubResource("Animation_hgyne"),
 &"play_ransomware": ExtResource("13_j8lv2"),
 &"play_ransomware_fail": SubResource("Animation_bescv")
 }
@@ -1002,6 +1153,28 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_y8dab"]
+base_font = ExtResource("17_qcv3o")
+spacing_glyph = 3
+
+[sub_resource type="Theme" id="Theme_6u205"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = SubResource("FontVariation_y8dab")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0.501406, 0.50140685, 0.5014061, 0.79607844)
+TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb1hh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctr30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_714hg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8jl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bescv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y342"]
 bg_color = Color(0.3761072, 0.37773806, 0.4216681, 1)
@@ -1379,9 +1552,119 @@ metadata/_edit_use_anchors_ = true
 [node name="Piracy" type="Control" parent="." index="14"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Piracy" type="ColorRect" parent="Piracy" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 148.0
+offset_top = 86.0
+offset_right = -148.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.044844903, 0.16842699, 0.20892552, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Piracy/Piracy" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6u205")
+theme_override_constants/separation = 51
+alignment = 1
+
+[node name="Label" type="Label" parent="Piracy/Piracy/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 92
+text = "6556x"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Piracy/Piracy/VBoxContainer" index="1"]
+layout_mode = 2
+theme = ExtResource("14_6y342")
+theme_override_constants/separation = 89
+alignment = 1
+
+[node name="Button" type="Button" parent="Piracy/Piracy/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Movies"
+
+[node name="Button2" type="Button" parent="Piracy/Piracy/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Games"
+
+[node name="Button3" type="Button" parent="Piracy/Piracy/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Apps"
+
+[node name="Label2" type="Label" parent="Piracy/Piracy/VBoxContainer" index="2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Loboshop2021
+Loboshop2021v2"
+
+[node name="Button" type="Button" parent="Piracy/Piracy" index="1"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_bottom = 80.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sb1hh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ctr30")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_714hg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l8jl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bescv")
+text = "Upload"
+icon = ExtResource("18_pcl5q")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Piracy" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_right = 247.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("14_6y342")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Piracy" index="2"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -192.0
+offset_right = -196.0
+offset_bottom = -145.99997
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_714hg")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Hosting" type="Control" parent="." index="15"]
 visible = false
@@ -1452,6 +1735,7 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
 layout_mode = 2
+icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
@@ -1684,8 +1968,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -195.99951
-offset_bottom = -145.99988
+offset_right = -195.99963
+offset_bottom = -145.99976
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
