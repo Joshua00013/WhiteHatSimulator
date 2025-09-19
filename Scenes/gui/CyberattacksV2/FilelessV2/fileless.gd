@@ -19,7 +19,7 @@ func _process(_delta):
 
 	if Input.is_action_just_pressed("next_pressed"):
 		if animations[current_index] == "fileless_01" or animations[current_index] == "fileless_10":
-			SignalBus.fileless_terminal_to_desktop.emit()
+			SignalBus.fileless_part1_finished.emit()
 		elif animations[current_index] == "fileless_18":
 			CyberattackManager.ransomware_ready = true
 			emit_signal("code_finished")
