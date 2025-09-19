@@ -929,48 +929,551 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
   }
 ]
 var day_four_questions = [ #TODO : Insert phishing questions here
-	{
-		"question":"What is the main goal of a ransomware attack?",
+		{
+		"question":"What is phishing?",
 		"answers":[
-			"A. To secretly spy on internet activity",
-			"B. To encrypt files and demand payment",
-			"C. To delete all system files permanently",
-			"D. To improve computer performance"
+			"A. A way to speed up internet",
+			"B. A trick to steal personal information using fake messages",
+			"C. A tool to clean viruses",
+			"D. A type of firewall"
 		],
 		"correct_answer": 1
 	},
 	{
-		"question":"Which of the following is the way ransomware most often enters a system?",
+		"question":"What should you check before clicking a link in an email?",
 		"answers":[
-			"A. Fake emails with attachments or links",
-			"B. Downloading system updates",
-			"C. Installing antivirus software",
-			"D. Using strong passwords"
+			"A. The sender’s email address",
+			"B. The color of the email",
+			"C. The time the email was sent",
+			"D. The subject line only"
 		],
 		"correct_answer": 0
 	},
+	{
+		"question":"Phishing is mostly done through:",
+		"answers":[
+			"A. Email and fake websites",
+			"B. USB drives",
+			"C. Computer fans",
+			"D. Hardware upgrades"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"How can you spot a phishing email?",
+		"answers":[
+			"A. It asks for personal info and looks suspicious",
+			"B. It always has correct spelling",
+			"C. It comes only from friends",
+			"D. It never contains links"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Which is a safe way to avoid phishing?",
+		"answers":[
+			"A. Never click links from unknown emails",
+			"B. Always download email attachments",
+			"C. Reply quickly to all emails",
+			"D. Share passwords through email"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Why do attackers use phishing?",
+		"answers":[
+			"A. To steal logins and money",
+			"B. To fix your internet speed",
+			"C. To update your computer",
+			"D. To protect your files"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"If an email says your bank account is locked and asks for your password, what should you do?",
+		"answers":[
+			"A. Call the bank directly using their official number",
+			"B. Reply with your password",
+			"C. Click the link right away",
+			"D. Forward to all friends"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"What is the best practice to prevent phishing?",
+		"answers":[
+			"A. Use the same password everywhere",
+			"B. Always verify links and senders before clicking or sharing any personal information.",
+			"C. Write it on sticky notes",
+			"D. Share with friends"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Why should you not open unknown attachments?",
+		"answers":[
+			"A. They upgrade your system",
+			"B. They speed up your PC",
+			"C. They are always safe",
+			"D. They may contain viruses or spyware"
+		],
+		"correct_answer": 3
+	},
+	{
+		"question":"What should you do if you suspect a phishing site?",
+		"answers":[
+			"A. Close it and report it",
+			"B. Enter fake details",
+			"C. Save it for later",
+			"D. Share it with friends"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Why should you enable two-step verification?",
+		"answers":[
+			"A. It removes passwords",
+			"B. It makes login slower",
+			"C. It makes accounts safer even if someone knows your password",
+			"D. It makes emails faster"
+		],
+		"correct_answer": 2
+	},
+	{
+		"question":"Which is safer?",
+		"answers":[
+			"A. Downloading from pop-ups",
+			"B. Clicking random links in emails",
+			"C. Typing website addresses directly",
+			"D. Trusting every link"
+		],
+		"correct_answer": 2
+	},
+	{
+		"question":"How can you train yourself against phishing?",
+		"answers":[
+			"A. Never read emails",
+			"B. Be mindful and join awareness programs",
+			"C. Trust every message",
+			"D. Only use free Wi-Fi"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Why do fake emails often sound urgent?",
+		"answers":[
+			"A. To trick you into acting fast without thinking",
+			"B. To give you time to check",
+			"C. To make it look boring",
+			"D. To entertain readers"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"What’s the safest step if unsure about an email?",
+		"answers":[
+			"A. Ignore security warnings",
+			"B. Click and see what happens",
+			"C. Share on social media",
+			"D. Verify with the real company directly"
+		],
+		"correct_answer": 3
+	},
+	{
+		"question":"Anna gets an email saying she won a free iPhone and must click a link. What should she do?",
+		"answers":[
+			"A. Click the link right away",
+			"B. Delete the email",
+			"C. Share with friends",
+			"D. Reply with her address"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"John receives a message from 'banksecurity@gmail.com' asking for his login. What’s the safe step?",
+		"answers":[
+			"A. Ignore and report it",
+			"B. Enter his password",
+			"C. Forward it to friends",
+			"D. Save it for later"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Lisa gets a text with a link saying her package is delayed. What should she do first?",
+		"answers":[
+			"A. Reply to the text",
+			"B. Click the link to confirm",
+			"C. Check with the official delivery app or site",
+			"D. Send to her friends"
+		],
+		"correct_answer": 2
+	},
+	
+	{
+		"question":"Emma gets an email with poor grammar asking for donations. What should she think?",
+		"answers":[
+			"A. It may be a phishing scam",
+			"B. It must be real",
+			"C. It’s from her friend",
+			"D. It’s safe to click"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"A fake website looks almost like Facebook. How can Alex notice it’s fake?",
+		"answers":[
+			"A. By looking at the color",
+			"B. By checking the website address (URL)",
+			"C. By the number of ads",
+			"D. By how fast it loads"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"Sarah receives a job offer email but it asks her to pay a fee first. What’s correct?",
+		"answers":[
+			"A. Real jobs don’t ask for money upfront",
+			"B. It’s normal practice",
+			"C. It’s always safe",
+			"D. She should pay quickly"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Tom gets a warning email saying his account will be closed in 1 hour unless he clicks. What’s this?",
+		"answers":[
+			"A. A safe offer",
+			"B. A real system update",
+			"C. A phishing scam using urgency",
+			"D. An email from a friend"
+		],
+		"correct_answer": 2
+	},
+	{
+		"question":"Nina receives a file from an unknown sender. What should she do?",
+		"answers":[
+			"A. Don’t open it and delete it",
+			"B. Open quickly",
+			"C. Send it to friends",
+			"D. Trust it"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"A message says: 'Confirm your password to continue using email.' What should Ben do?",
+		"answers":[
+			"A. Ignore security rules",
+			"B. Type it quickly",
+			"C. Share it with friends",
+			"D. Never type his password into such links"
+		],
+		"correct_answer": 3
+	},
+	{
+		"question":"Olivia gets a mail with 'Click here for free gift card.' What’s the right step?",
+		"answers":[
+			"A. Click the link fast",
+			"B. Delete and report the email",
+			"C. Share with family",
+			"D. Save it"
+		],
+		"correct_answer": 1
+	},
+	{
+		"question":"David receives an email from his school but the email domain looks strange. What should he think?",
+		"answers":[
+			"A. It’s always safe",
+			"B. It’s 100% real",
+			"C. It could be phishing; verify it directly with the school",
+			"D. It’s a free bonus"
+		],
+		"correct_answer": 2
+	},
+	{
+		"question":"An email says: 'Update your payment now by clicking here.' What’s safest?",
+		"answers":[
+			"A. Go directly to the real company’s website",
+			"B. Click the link in the email",
+			"C. Forward to friends",
+			"D. Reply with credit card info"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Sophia gets an email prize but must log in with her Gmail account. What’s correct?",
+		"answers":[
+			"A. It’s a phishing trick to steal Gmail login",
+			"B. It’s a real prize",
+			"C. It’s normal",
+			"D. It’s always safe"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"What should Kevin do if unsure about a message?",
+		"answers":[
+			"A. Reply quickly",
+			"B. Trust the email fully",
+			"C. Share it online",
+			"D. Verify with the company using official contacts"
+		],
+		"correct_answer": 3
+	}
 ]
 var day_five_questions = [ #TODO : Insert DOS questions here
-	{
-		"question":"What is the main goal of a ransomware attack?",
-		"answers":[
-			"A. To secretly spy on internet activity",
-			"B. To encrypt files and demand payment",
-			"C. To delete all system files permanently",
-			"D. To improve computer performance"
-		],
-		"correct_answer": 1
-	},
-	{
-		"question":"Which of the following is the way ransomware most often enters a system?",
-		"answers":[
-			"A. Fake emails with attachments or links",
-			"B. Downloading system updates",
-			"C. Installing antivirus software",
-			"D. Using strong passwords"
-		],
-		"correct_answer": 0
-	},
+	  {
+	"question": "What is a Denial-of-Service (DoS) attack?",
+	"answers": [
+	  "A. A way to speed up a website",
+	  "B. A normal system update",
+	  "C. An attack that floods a site so users can't use it",
+      "D. A backup process"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Which sign shows a site may be under a DoS attack?",
+	"answers": [
+	  "A. The site becomes slow or does not load",
+	  "B. The site sends a welcome email",
+	  "C. The site changes its logo",
+      "D. The site gets more posts"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Which simple step helps reduce DoS impact?",
+	"answers": [
+	  "A. Delete all user accounts",
+	  "B. Use a CDN or DDoS protection service to absorb bad traffic",
+	  "C. Turn off the site permanently",
+      "D. Disable backups"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "How does rate-limiting help a website?",
+	"answers": [
+	  "A. It removes security entirely",
+	  "B. It increases the number of requests allowed",
+	  "C. It limits how many requests one IP or user can make in a short time",
+      "D. It makes the server invisible"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Why is monitoring normal traffic useful against DoS?",
+	"answers": [
+	  "A. It blocks all users",
+	  "B. It hides attacks completely",
+	  "C. It makes traffic slower",
+      "D. It helps detect unusual spikes quickly so you can respond"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "Which low-cost measure can small sites use to reduce DoS risk?",
+	"answers": [
+	  "A. Use free CDN tiers and basic rate-limits",
+	  "B. Host the site on a home router with no firewall",
+	  "C. Share the server IP publicly",
+      "D. Turn off monitoring"
+	],
+	"correct_answer": 0
+  },
+  
+  {
+	"question": "Which architectural choice improves resistance to DoS attacks?",
+	"answers": [
+	  "A. Distribute servers across regions and use load balancers",
+	  "B. Use a single small server with no backup",
+	  "C. Host everything on a personal laptop",
+      "D. Use only one DNS provider with no failover"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why are Internet-of-Things (IoT) devices often used in DDoS attacks?",
+	"answers": [
+	  "A. They always have built-in DDoS protection",
+	  "B. Many are poorly secured and can be controlled to send traffic",
+	  "C. They are too expensive to use",
+      "D. They never connect to the internet"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Which is a good prevention step for servers against SYN flood attacks?",
+	"answers": [
+	  "A. Turn off TCP entirely",
+	  "B. Enable SYN cookies and tune TCP settings",
+	  "C. Increase keep-alive times indefinitely",
+      "D. Remove firewalls"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "How does caching help during an attack on a website?",
+	"answers": [
+	  "A. It serves stored content from edges so the origin handles fewer requests",
+	  "B. It deletes old content to save space",
+	  "C. It exposes user data",
+      "D. It makes the origin server slower"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why should you have multiple DNS providers?",
+	"answers": [
+	  "A. To increase DNS costs unnecessarily",
+	  "B. To confuse users",
+	  "C. For redundancy so DNS remains available if one provider is attacked",
+      "D. Because one is always bad"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "What is a common short-term action when a DoS attack starts?",
+	"answers": [
+	  "A. Contact your CDN/ISP and enable mitigation or rerouting",
+	  "B. Send emails to all users asking them to try again later",
+	  "C. Post the attack on social media without steps",
+      "D. Delete all server logs"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why is having an incident plan important for DoS events?",
+	"answers": [
+	  "A. It ensures attacks never happen",
+	  "B. It allows quick, organized response to reduce downtime and cost",
+	  "C. It replaces the need for monitoring",
+      "D. It makes the site slower"
+	],
+	"correct_answer": 1
+  },
+
+  {
+	"question": "Your school website becomes very slow for everyone. What is the most likely cause?",
+	"answers": [
+	  "A. A printer jam",
+	  "B: A huge DoS attack flooding the site",
+	  "C: A staff meeting",
+      "D: A change in font settings"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Many users report the site is down, but the server is running. What should you check first?",
+	"answers": [
+	  "A. If the staff calendar has events",
+	  "B. If the coffee machine is working",
+	  "C. If the office lights are on",
+      "D. If there is an unusual spike in incoming traffic"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "You notice thousands of small UDP packets hitting your DNS server from many IPs. What is likely happening?",
+	"answers": [
+	  "A. A harmless test",
+	  "B. A normal update",
+	  "C. DNS amplification attack",
+      "D. A new user signup"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A website slows down only when users try to search. Which targeted DoS defense could help?",
+	"answers": [
+	  "A. Add caching and rate-limits on the search endpoint",
+	  "B. Delete the search feature permanently",
+	  "C. Make the search require a phone call",
+      "D. Disable images on the site"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Your cloud bills spike during an attack because autoscaling kept adding servers. What should be prearranged to avoid this?",
+	"answers": [
+	  "A. Giving attackers free credits",
+	  "B. A scrubbing/DDoS protection plan with your provider",
+	  "C. Doubling the budget without limits",
+      "D. Turning off monitoring"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "A small business has no budget for commercial DDoS services. Which cheap option can help?",
+	"answers": [
+	  "A. Use CDN free tiers and simple firewall rules",
+	  "B. Host everything on a personal home network",
+	  "C. Publish internal IP addresses",
+      "D. Disable all security to save money"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Your server is seeing many half-open TCP connections exhausting resources. Which immediate setting helps?",
+	"answers": [
+	  "A. Change the website colors",
+	  "B. Increase the login timeout",
+	  "C. Enable SYN cookies on the server",
+      "D. Remove user accounts"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "An attacker targets your API with many valid-looking requests to overload the database. What helps most?",
+	"answers": [
+	  "A. Add caching, request validation, and per-user throttling",
+	  "B. Remove authentication from the API",
+	  "C. Allow unlimited requests",
+      "D. Move the API to a personal laptop"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "You see a sudden flood of traffic from IPs in one country. What short-term action can reduce impact?",
+	"answers": [
+	  "A. Change the company logo",
+	  "B. Open more ports",
+	  "C. Delete the server",
+      "D. Block or rate-limit that country’s IPs while investigating"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "A competitor is suspected of launching intermittent small attacks to damage your service. What long-term step is useful?",
+	"answers": [
+	  "A. Work with your ISP, gather evidence, and strengthen mitigation plans",
+	  "B. Sue immediately without proof",
+	  "C. Hide the problem forever",
+      "D. Give the competitor admin access"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Your DNS provider is under attack and your domain cannot be resolved. What redundancy helps most?",
+	"answers": [
+	  "A. Change domain daily",
+	  "B. Keep only one DNS provider and hope",
+	  "C. Turn off DNS entirely",
+      "D. Use multiple authoritative DNS providers and failover"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "A test caused a DoS in production by mistake. What policy could have prevented this?",
+	"answers": [
+	  "A. Isolated test environments and approved load testing",
+	  "B. Running all tests directly in production",
+	  "C. No testing at all",
+      "D. Letting anyone run unlimited load tests"
+	],
+	"correct_answer": 0
+  }
 ]
 var active_questions = [] # Store the questions here to be used consistently throughout the whole code. 
 
