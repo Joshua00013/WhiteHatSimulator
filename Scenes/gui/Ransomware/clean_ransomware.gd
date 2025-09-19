@@ -19,13 +19,15 @@ const TABS := {
 }
 
 func _ready() -> void:
+	SignalBus.fileless_terminal_to_desktop.connect(_fileless_desktop)
+	SignalBus.fileless_desktop_to_terminal.connect(_fileless_terminal)
 	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
 	current_tab = TABS.Login
 
 func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
 		"Ransomware":
-			current_tab = TABS.Fileless
+			current_tab = TABS.Ransomware
 			
 		"Bruteforce":
 			current_tab = TABS.Bruteforce
@@ -52,25 +54,12 @@ func _on_window_window_exited() -> void:
 
 func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
 	current_tab = TABS.RansomwareDecrypt
-	
-func _on_fileless_scene_change() -> void:
-	current_tab = 6
-
-
-func _on_phishing_change_to_website() -> void:
-	current_tab = 8
-
-func _on_phishing_website_change_to_terminal() -> void:
-	current_tab = 7
 
 func _on_login_login_successful() -> void:
 	current_tab = 0
 
-func _on_ddos_change_to_result() -> void:
-	current_tab = 10
-
-func _on_phishing_website_change_to_deployment() -> void:
-	current_tab = 12
-
-func _on_fileless_desktop_from_desktop_to_ide() -> void:
-	current_tab = 5
+func _fileless_desktop():
+	current_tab = 6
+	
+func _fileless_terminal():
+	current_tab = TABS.Fileless
