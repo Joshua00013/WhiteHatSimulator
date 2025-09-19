@@ -4,10 +4,11 @@ signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 
-var animations: PackedStringArray = ["phishing_1", "phishing_2", "phishing_3", "phishing_4", "phishing_5", "phishing_6", "phishing_7", "phishing_8", "phishing_9", "phishing_10"]
+var animations: PackedStringArray = []
 var current_index := 0
 
 func _ready():
+	animations = anim_player.get_animation_list()
 	if animations.size() > 0:
 		anim_player.play(animations[current_index])
 
@@ -16,7 +17,7 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("next_pressed"):
-		if animations[current_index] == "phishing_1":
+		if animations[current_index] == "phishing_01":
 			SignalBus.phshing_terminal_to_desktop.emit()
 		elif animations[current_index] == "phishing_10":
 			CyberattackManager.phishing_ready = true

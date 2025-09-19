@@ -306,6 +306,7 @@ icon = ExtResource("4_qqktv")
 icon_name = "Browser"
 
 [node name="Button" parent="Desktop/Internet" index="0"]
+disabled = true
 icon = ExtResource("4_qqktv")
 
 [node name="Label" parent="Desktop/Internet" index="1"]
@@ -364,7 +365,9 @@ anchor_bottom = 1.0050167
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
-text = "Click the browser to continue"
+text = "STEP 1: FINDING THE WEBSITE
+
+Finding the website to duplicate"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true

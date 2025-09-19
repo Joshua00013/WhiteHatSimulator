@@ -4,7 +4,7 @@ signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 
-var animations: PackedStringArray = ["phishing_desktop_1", "phishing_desktop_2"]
+var animations: PackedStringArray = []
 var current_index := 0
 
 func _ready():
