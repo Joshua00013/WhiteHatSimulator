@@ -16,9 +16,10 @@ signal quiz_finished(point_counter : int)
 var current_question : int = 0
 var point_counter : int = 0
 var question_counter: int =0
-
 # Unused array of all questions
-var questions = [
+#var questions = []
+
+var day_one_questions = [ #TODO : Insert ransomware questions here
 	{
 		"question":"What is the main goal of a ransomware attack?",
 		"answers":[
@@ -323,71 +324,609 @@ var questions = [
 		"correct_answer": 1
 	}
 ]
-var day_one_questions = [ #TODO : Insert ransomware questions here
-	{
-		"question":"What is the main goal of a ransomware attack?",
-		"answers":[
-			"A. To secretly spy on internet activity",
-			"B. To encrypt files and demand payment",
-			"C. To delete all system files permanently",
-			"D. To improve computer performance"
-		],
-		"correct_answer": 1
-	},
-	{
-		"question":"Which of the following is the way ransomware most often enters a system?",
-		"answers":[
-			"A. Fake emails with attachments or links",
-			"B. Downloading system updates",
-			"C. Installing antivirus software",
-			"D. Using strong passwords"
-		],
-		"correct_answer": 0
-	},
-]
 var day_two_questions = [ #TODO : Insert bruteforce questions here
-	{
-		"question":"What is the main goal of a ransomware attack?",
-		"answers":[
-			"A. To secretly spy on internet activity",
-			"B. To encrypt files and demand payment",
-			"C. To delete all system files permanently",
-			"D. To improve computer performance"
-		],
-		"correct_answer": 1
-	},
-	{
-		"question":"Which of the following is the way ransomware most often enters a system?",
-		"answers":[
-			"A. Fake emails with attachments or links",
-			"B. Downloading system updates",
-			"C. Installing antivirus software",
-			"D. Using strong passwords"
-		],
-		"correct_answer": 0
-	},
+	 {
+	"question": "What is a brute force attack?",
+	"answers": [
+	  "A. Asking nicely for the password",
+	  "B. Guessing passwords by trying many combinations",
+	  "C. Writing the password in a notebook",
+      "D. Asking IT support for the password"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Why do hackers use brute force attacks?",
+	"answers": [
+	  "A. To make friends",
+	  "B. To steal personal information's and passwords",
+	  "C. To fix your computer",
+      "D. To slow the internet"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Which password is easiest to break with brute force?",
+	"answers": [
+	  "A. 1234",
+	  "B. Pa$$w0rd!X9",
+	  "C. mySecretKey123",
+      "D. qWeRTy$7K!"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Which password is strongest?",
+	"answers": [
+	  "A. dog",
+	  "B. 12345",
+	  "C. MyD0gL0vesB0nes!",
+      "D. password"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "How can you prevent brute force attacks?",
+	"answers": [
+	  "A. Use long, strong passwords",
+	  "B. Share your password",
+	  "C. Use “123456” for memory",
+      "D. Avoid using a password"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "What does two-step verification do?",
+	"answers": [
+	  "A. Requires a second code (like SMS) after the password",
+	  "B. Deletes your password",
+	  "C. Makes login slower",
+      "D. Lets friends log in for you"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why is using the same password for many accounts risky?",
+	"answers": [
+	  "A. Hackers can break into all accounts if one password is stolen",
+	  "B. It’s harder to remember",
+	  "C. It costs money",
+      "D. It makes login faster"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "What happens in a brute force attack if your password is short?",
+	"answers": [
+	  "A. Hackers guess it quickly",
+	  "B. Hackers get tired",
+	  "C. Hackers quit",
+      "D. Hackers fail"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Which is safer?",
+	"answers": [
+	  "A. A password with only numbers",
+	  "B. A password with letters, numbers, and symbols",
+	  "C. A 4-letter word",
+      "D. Your birthday"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What tool do hackers often use for brute force?",
+	"answers": [
+	  "A. Automated password-guessing programs",
+	  "B. Pencils and paper",
+	  "C. Phone calls",
+      "D. Notebooks"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why are account lockouts helpful?",
+	"answers": [
+	  "A. They stop hackers from guessing endless passwords",
+	  "B. They make users angry",
+	  "C. They slow your typing",
+      "D. They save electricity"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "How often should you change your password to be safe?",
+	"answers": [
+	  "A. Regularly, every few months",
+	  "B. Never",
+	  "C. Only if you feel like it",
+      "D. Once in your life"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Which password should you avoid?",
+	"answers": [
+	  "A. My!D0g1234House",
+	  "B. 987654",
+	  "C. $C00lP@ss2025",
+      "D. Safe#LockX7"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "How can companies fight brute force attacks?",
+	"answers": [
+	  "A. Limit login attempts and use CAPTCHAs",
+	  "B. Remove passwords",
+	  "C. Allow unlimited tries",
+      "D. Use short PIN codes"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "Why should you not use personal details (like birthday) as passwords?",
+	"answers": [
+	  "A. They are easy for hackers to guess",
+	  "B. They take too long to type",
+	  "C. They are expensive",
+      "D. They cannot be remembered"
+	],
+	"correct_answer": 0
+  },
+  {
+	"question": "John keeps trying 200 different passwords to enter his friend’s email. What is he doing?",
+	"answers": [
+	  "A. Fileless attack",
+	  "B. Phishing attack",
+	  "C. Brute force attack",
+      "D. DoS attack"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Maria uses “12345” as her password. A hacker cracks it in seconds. Why?",
+	"answers": [
+	  "A. The hacker sent her an email",
+	  "B. The hacker overloaded the website",
+	  "C. The password was too simple",
+      "D. The hacker installed a virus"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A bank locks you out after 5 wrong login tries. What is this stopping?",
+	"answers": [
+	  "A. Phishing",
+	  "B. Brute force attack",
+	  "C. Fileless attack",
+      "D. Email spam"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "A hacker uses a program that tests thousands of passwords every second. What attack is this?",
+	"answers": [
+	  "A. Phishing attack",
+	  "B. DoS attack",
+	  "C. Brute force attack",
+      "D. Spyware attack"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "You add numbers and symbols to your password. What attack are you preventing?",
+	"answers": [
+	  "A. Fileless",
+	  "B. DoS",
+	  "C. Brute force attack",
+      "D. Phishing"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A student’s account is safe because it requires a code sent to their phone after login. What protection is this?",
+	"answers": [
+	  "A. Fileless",
+	  "B. DoS",
+	  "C. Phishing",
+      "D. Two-step verification against brute force"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "Hackers fail to guess Anna’s password because it has 15 characters with mixed symbols. Why?",
+	"answers": [
+	  "A. She used phishing prevention",
+	  "B. She avoided fileless attacks",
+	  "C. Password was too strong for brute force",
+      "D. She blocked DoS"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A school account gets hacked because the password was “school123.” What happened?",
+	"answers": [
+	  "A. The student clicked a phishing link",
+	  "B. The system crashed from DoS",
+	  "C. Easy password guessed by brute force",
+      "D. A fileless virus attacked it"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A company uses CAPTCHA after 3 wrong tries. What does this block?",
+	"answers": [
+	  "A. Phishing emails",
+	  "B. Brute force attacks",
+	  "C. Viruses",
+      "D. DoS attacks"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "A hacker spends hours typing in random words until one works. What is this called?",
+	"answers": [
+	  "A. DoS attack",
+	  "B. Phishing",
+	  "C. Fileless",
+      "D. Brute force attack"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "John’s password is “ILOVEpizza#2025!!” Hackers give up. Why?",
+	"answers": [
+	  "A. DoS blocked them",
+	  "B. Fileless didn’t work",
+	  "C. Password was too strong for brute force",
+      "D. It was phishing-safe"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Your account is locked after too many failed logins. What attack was stopped?",
+	"answers": [
+	  "A. Phishing",
+	  "B. DoS",
+	  "C. Fileless",
+      "D. Brute force attack"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "Maria uses the same password for school, email, and games. A hacker gets into all three. Why?",
+	"answers": [
+	  "A. The attacker used phishing",
+	  "B. Same password used everywhere",
+	  "C. A fileless attack",
+      "D. A DoS flood"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "A login system allows unlimited wrong tries. What attack could happen?",
+	"answers": [
+	  "A. Phishing",
+	  "B. Fileless",
+	  "C. DoS",
+      "D. Brute force attack"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "Hackers fail to guess a student’s password because the account needed fingerprint login. What is this?",
+	"answers": [
+	  "A. Fileless prevention",
+	  "B. DoS prevention",
+	  "C. Phishing prevention",
+      "D. Extra security against brute force"
+	],
+	"correct_answer": 3
+  }
 ]
-var day_three_questions = [ #TODO : Insert ransomware questions here
+var day_three_questions = [ #TODO : Insert Filelss questions here
 	{
-		"question":"What is the main goal of a ransomware attack?",
-		"answers":[
-			"A. To secretly spy on internet activity",
-			"B. To encrypt files and demand payment",
-			"C. To delete all system files permanently",
-			"D. To improve computer performance"
-		],
-		"correct_answer": 1
-	},
-	{
-		"question":"Which of the following is the way ransomware most often enters a system?",
-		"answers":[
-			"A. Fake emails with attachments or links",
-			"B. Downloading system updates",
-			"C. Installing antivirus software",
-			"D. Using strong passwords"
-		],
-		"correct_answer": 0
-	},
+	"question": "What is fileless malware?",
+	"answers": [
+	  "A. A virus that only uses USB drives",
+	  "B. Malware that runs in memory or uses regular tools without saving files",
+	  "C. A program that deletes files only",
+      "D. A harmless app"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Why is fileless malware harder to find?",
+	"answers": [
+	  "A. It always turns the screen blue",
+	  "B. It does not leave normal files for antivirus to scan",
+	  "C. It needs a floppy disk",
+      "D. It only attacks printers"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Which common tool do attackers sometimes use for fileless attacks on Windows?",
+	"answers": [
+	  "A. Paint",
+	  "B. Notepad",
+	  "C. PowerShell or system tools",
+      "D. Calculator"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "How can you reduce the chance of fileless attacks from email attachments?",
+	"answers": [
+	  "A. Open every attachment quickly",
+	  "B. Save attachments to desktop first",
+	  "C. Don't open unknown attachments and disable macros",
+      "D. Forward attachments to friends"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Why should organizations keep software up to date?",
+	"answers": [
+	  "A. Updates slow down computers",
+	  "B. Updates fix holes hackers use for attacks",
+	  "C. Updates delete personal files",
+      "D. Updates change passwords automatically"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What does 'least privilege' mean for stopping fileless attacks?",
+	"answers": [
+	  "A. Give everyone admin access",
+	  "B. Give each account only the access it needs",
+	  "C. Share passwords among users",
+      "D. Disable accounts permanently"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "How does application whitelisting help?",
+	"answers": [
+	  "A. It allows any program to run",
+	  "B. It only allows approved programs to run, blocking unknown scripts",
+	  "C. It removes all security warnings",
+      "D. It formats the drive daily"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What logging helps detect fileless attacks?",
+	"answers": [
+	  "A. Wallpaper change logs",
+	  "B. PowerShell, system command, and process activity logs",
+	  "C. Printer queue history",
+      "D. Font installation logs"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Why avoid running unsigned scripts from the internet?",
+	"answers": [
+	  "A. They are always slow",
+	  "B. They might contain hidden harmful code",
+	  "C. They improve performance",
+      "D. They only work on weekends"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "How does removing local admin rights help?",
+	"answers": [
+	  "A. It stops users from saving files",
+	  "B. It stops attackers from running powerful actions easily",
+	  "C. It deletes user accounts",
+      "D. It speeds up the computer"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Why is backing up important after a fileless attack?",
+	"answers": [
+	  "A. Backups only save pictures",
+	  "B. Backups let you restore clean systems if needed",
+	  "C. Backups stop attacks instantly",
+      "D. Backups slow the network"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What is a simple step users can take to avoid fileless threats?",
+	"answers": [
+	  "A. Click any link labeled 'update'",
+	  "B. Be cautious with links and only install software from trusted sources",
+	  "C. Share software installs in chat groups",
+      "D. Disable antivirus"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Which tool helps spot in-memory threats better than basic antivirus?",
+	"answers": [
+	  "A. Calculator app",
+	  "B. Endpoint detection and response (EDR) or behavior monitoring",
+	  "C. Paint program",
+      "D. Disk defragmenter"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What should IT do if they find a suspicious script running?",
+	"answers": [
+	  "A. Ignore it and wait",
+	  "B. Isolate the computer and investigate immediately",
+	  "C. Post it on social media",
+      "D. Turn off all logging"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Why is training staff useful against fileless attacks?",
+	"answers": [
+	  "A. Training wastes time",
+	  "B. Staff who know the risks are less likely to run unknown scripts or attachments",
+	  "C. Training removes malware automatically",
+      "D. Training reduces internet speed"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Maria opens a Word file and enables macros. Minutes later, the computer starts contacting strange servers but no new files appear. What likely happened?",
+	"answers": [
+	  "A. A printer jam occurred",
+	  "B. A normal update ran",
+	  "C. A fileless attack ran code in memory via macros",
+      "D. The screen saver started"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "You see 'powershell.exe' running with a long, encoded command and the user did not run it. What should you suspect?",
+	"answers": [
+	  "A. A scheduled wallpaper change",
+	  "B. A safe system backup",
+	  "C. A fileless script or malicious use of PowerShell",
+      "D. A printer driver update"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "An admin tool that normally runs as a trusted program starts opening web connections to unknown sites. No new files are on disk. What is likely happening?",
+	"answers": [
+	  "A. The tool is updating normally",
+	  "B. The internet is slow today",
+	  "C. A trusted process is abused by fileless malware",
+      "D. The monitor brightness changed"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A computer shows odd command-line activity but an antivirus scan finds nothing. What is the next best step?",
+	"answers": [
+	  "A. Reboot and ignore it",
+	  "B. Collect memory/EDR logs and investigate for fileless activity",
+	  "C. Delete the user account without checking",
+      "D. Reinstall printer drivers"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "John received an email with a link. He clicked and a script ran inside the browser, stealing some info without leaving files. What attack type is this?",
+	"answers": [
+	  "A. A normal website visit",
+	  "B. A DoS attack",
+	  "C. A fileless attack using browser memory",
+      "D. Phishing only"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "An attacker used 'certutil' to download remote content and execute it without saving files. Which defense could have stopped this?",
+	"answers": [
+	  "A. Allowing all downloads",
+	  "B. Disabling logging",
+	  "C. Restricting or monitoring use of system tools like certutil",
+      "D. Increasing screen resolution"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A helpdesk script runs with high privileges and is stored unsigned. An attacker uses it to run code in memory. What should the org do to prevent this?",
+	"answers": [
+	  "A. Share the script more widely",
+	  "B. Remove helpdesk tools completely",
+	  "C. Require scripts to be signed and run with limited rights",
+      "D. Give all users admin rights"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A server shows many WMI events invoking strange commands. No malware files found. What is likely taking place?",
+	"answers": [
+	  "A. Normal backup logs",
+	  "B. Printer policies being applied",
+	  "C. Fileless persistence using WMI",
+      "D. A browser cache clear"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Sally downloads a tool from an unknown site and runs it; it runs only in memory and hides. How could she have avoided this?",
+	"answers": [
+	  "A. Download from more sites",
+	  "B. Always run unknown tools as admin",
+	  "C. Only download tools from trusted sources and verify signatures",
+      "D. Disable the firewall permanently"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A company wants to be sure that only approved programs run. What control helps most?",
+	"answers": [
+	  "A. Let everyone install apps",
+	  "B. Use application whitelisting (only approved apps run)",
+	  "C. Block all internet access forever",
+      "D. Allow unsigned apps from friends"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "An attacker uses PowerShell to load a .NET payload in memory. Which monitoring would catch this?",
+	"answers": [
+	  "A. Printer queue size logs",
+	  "B. PowerShell command logging and EDR alerts",
+	  "C. Wallpaper change alerts",
+      "D. Disk cleanup history"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "A laptop shows scheduled tasks that download and run code but create no files. What is the best immediate action?",
+	"answers": [
+	  "A. Reboot the laptop and forget it",
+	  "B. Isolate the laptop from the network and investigate the scheduled tasks",
+	  "C. Uninstall the web browser",
+      "D. Change desktop theme"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "Your company blocks unsigned macros but a user enabled macros to view a document. What risk did they accept?",
+	"answers": [
+	  "A. Faster document loading",
+	  "B. Better video quality",
+	  "C. They allowed a possible fileless macro to run",
+      "D. More disk space"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A fileless attack used a legitimate admin account to spread. Which long-term change helps most?",
+	"answers": [
+	  "A. Give every user admin rights",
+	  "B. Remove all user accounts",
+	  "C. Restrict admin use and require separate service accounts with strict controls",
+      "D. Publish admin passwords internally"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "You detect many hosts running similar base64 PowerShell commands pulled from the same URL. What is the likely situation?",
+	"answers": [
+	  "A. A normal scheduled update for everyone",
+	  "B. A classroom exercise",
+	  "C. A coordinated fileless campaign needing immediate containment",
+      "D. A harmless script for wallpapers"
+	],
+	"correct_answer": 2
+  }
 ]
 var day_four_questions = [ #TODO : Insert phishing questions here
 	{
