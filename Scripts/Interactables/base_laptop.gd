@@ -278,16 +278,23 @@ func _play_ransomware_piracy():
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
 	CyberattackAdaptationManager.piracy_exploited = true
+	CyberattackManager.exploitation_finished = true
 	
 	success_animation.play("download_ransomware")
 	await success_animation.animation_finished
+	CyberattackManager.installation_finished = true
 	
-	if CyberattackAdaptationManager.antivirus_installed == false:
-		CyberattackAdaptationManager.antivirus_installed = true
+	if CyberattackAdaptationManager.antivirus_installed == true:
 		success_animation.play("play_ransomware_fail")
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the ransomware")
+	elif CyberattackAdaptationManager.antivirus_installed == false:
+		success_animation.play("play_ransomware")
+		await success_animation.animation_finished
+		CyberattackManager.command_and_control_finished = true
+		GameManager.stage_finished = true
 		
+	CyberattackAdaptationManager.antivirus_installed = true
 
 func _play_fileless_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:
