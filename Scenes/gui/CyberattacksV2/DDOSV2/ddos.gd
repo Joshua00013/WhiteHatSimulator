@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 signal code_finished
 
@@ -33,6 +33,7 @@ func _play_previous():
 	if current_index > 0:
 		current_index -= 1
 		anim_player.play(animations[current_index])
+
 
 func _on_loic_pressed() -> void:
 	_play_next()
