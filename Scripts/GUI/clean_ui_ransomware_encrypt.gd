@@ -101,7 +101,7 @@ func set_step(step: int) -> void:
 			animation.play("encrypt_13")
 		14:
 			#code_edit.text = ransomware_code.step_1 + "\n\n" + ransomware_code.step_2  + ransomware_code.step_3 + ransomware_code.step_4 + ransomware_code.step_5
-			rich_text_label.text = "step 5: Final Confirmation\n\nThe program prints a message to confirm that all the files have been encrypted.”"
+			rich_text_label.text = "step 5: Final Confirmation\n\nThe program prints a message to confirm that all the files have been encrypted."
 			animation.play("encrypt_14")
 		15: 
 			rich_text_label.text = "Now we will run the code and generate a key."
