@@ -29,6 +29,7 @@ ConfigFileHandler="*res://Scripts/Globals/config_file_handler.gd"
 HandTrackerServer="*res://Scripts/Globals/hand_tracker_server.gd"
 SceneTransition="*res://Scenes/GUI/scene_transition.tscn"
 SignalBus="*res://Scripts/Globals/signal_bus.gd"
+MusicPlayer="*res://Sounds/audio_stream_player.tscn"
 
 [dialogic]
 

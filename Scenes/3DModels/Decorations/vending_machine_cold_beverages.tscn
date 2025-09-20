@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx2s5sy80a50o"]
+
+[ext_resource type="PackedScene" uid="uid://o8ngd04olepe" path="res://Assets/export_LPOP_FULL/VendingMachine_ColdBeverages.fbx" id="1_j6ubs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kpkx"]
+size = Vector3(2.3648682, 3.7559814, 1.3118896)
+
+[node name="VendingMachine_ColdBeverages" instance=ExtResource("1_j6ubs")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03741455, 1.8905973, 0.1005249)
+shape = SubResource("BoxShape3D_1kpkx")

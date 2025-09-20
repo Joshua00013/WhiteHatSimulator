@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl67v5ax1ffrv"]
+
+[ext_resource type="PackedScene" uid="uid://tyi8sb0h2vs3" path="res://Assets/export_LPOP_FULL/Light_DownLight.fbx" id="1_55m1h"]
+
+[node name="Light_DownLight" instance=ExtResource("1_55m1h")]

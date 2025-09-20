@@ -5,3 +5,10 @@ extends MarginContainer
 func _ready():
 	if OS.get_name() != "Windows":
 		hide()
+	GameManager.ui_updated.connect(toggle)
+
+func toggle(value):
+	if value == true:
+		hide()
+	else:
+		show()

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://to68ce6jrsd"]
+
+[ext_resource type="PackedScene" uid="uid://cbic7374vykma" path="res://Assets/export_LPOP_FULL/Chair_ReadingChair.fbx" id="1_kij40"]
+
+[node name="Chair_ReadingChair" instance=ExtResource("1_kij40")]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnylmyeipw280"]
+
+[ext_resource type="PackedScene" uid="uid://codaq3e0xersi" path="res://Assets/export_LPOP_FULL/Tray_Stack.fbx" id="1_s0swh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0swh"]
+size = Vector3(0.6455078, 0.55804443, 0.7607422)
+
+[node name="Tray_Stack" instance=ExtResource("1_s0swh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28378296, 0)
+shape = SubResource("BoxShape3D_s0swh")
