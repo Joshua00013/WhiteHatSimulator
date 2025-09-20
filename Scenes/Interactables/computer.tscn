@@ -462,70 +462,6 @@ tracks/1/keys = {
 "values": [0.0, 100.0]
 }
 
-[sub_resource type="Animation" id="Animation_c0nd6"]
-resource_name = "play_ransomware_fail"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RansowmareSuccess:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.9333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.9333334, 1.9666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_oum07"]
 resource_name = "play_phishing"
 length = 3.9895
@@ -590,6 +526,70 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["********"]
+}
+
+[sub_resource type="Animation" id="Animation_c0nd6"]
+resource_name = "play_ransomware_fail"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.9333334, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8cv3"]
@@ -1077,6 +1077,7 @@ text = "data.sql"
 
 [node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
+icon = null
 icon_name = "godot.png"
 
 [node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="1"]
@@ -1132,7 +1133,6 @@ visible = false
 layout_mode = 1
 
 [node name="CyberattackExecution" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
-visible = false
 layout_mode = 1
 anchor_left = 0.319444
 anchor_top = 0.263889
@@ -1146,7 +1146,6 @@ text = "Executing..."
 layout_mode = 2
 
 [node name="DeploymentChoice" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
@@ -1375,8 +1374,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -90.61499
 offset_top = 44.51999
-offset_right = -44.614746
-offset_bottom = 90.520325
+offset_right = -44.614502
+offset_bottom = 90.520905
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
@@ -1444,6 +1443,7 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
+icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" instance=ExtResource("5_yrttm")]
@@ -1671,10 +1671,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -242.0
-offset_top = -192.0
-offset_right = -196.0
-offset_bottom = -145.99948
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 23.000244
+offset_bottom = 23.000458
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")

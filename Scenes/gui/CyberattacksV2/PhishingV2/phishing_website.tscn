@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ch21mccnclukw"]
+[gd_scene load_steps=21 format=3 uid="uid://ch21mccnclukw"]
 
 [ext_resource type="Script" uid="uid://bfr31lq73kwh0" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_website.gd" id="1_b7w0f"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="3_io6ah"]
@@ -10,69 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="9_qk4pc"]
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="10_f7gv8"]
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="11_jbxnd"]
-
-[sub_resource type="Animation" id="Animation_e6qcw"]
-resource_name = "phishing_desktop_2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TabContainer/Background/Company Website:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TabContainer/Background/Tabs Row/Tab/IconHBox/Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Pulsefire"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TabContainer/Background/Company Website/TextPanel/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["https://www.pulseforge-studio.com"]
-}
 
 [sub_resource type="Animation" id="Animation_4rrk1"]
 resource_name = "phishing_desktop_1"
@@ -103,19 +40,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TabContainer/Background/TextPanel/Label/Next:disabled")
+tracks/2/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TabContainer/Background/TextPanel/Label/Next:visible")
+tracks/3/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/OptionButton:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -127,7 +64,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TabContainer/Background/Company Website:visible")
+tracks/4/path = NodePath("TabContainer/Background/Website:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -139,26 +76,77 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:visible")
+tracks/5/path = NodePath("TabContainer/Background/Page:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/OptionButton:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+
+[sub_resource type="Animation" id="Animation_e6qcw"]
+resource_name = "phishing_desktop_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TabContainer/Background/Tabs Row/Tab/IconHBox/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Pulsefire"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TabContainer/Background/SearchBar/ButtonsContainer/Panel/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["https://www.pulseforge-studio.com"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TabContainer/Background/Website:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TabContainer/Background/TextPanel/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This is the company's website, Let's try to duplicate..."]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmhk"]
@@ -179,56 +167,44 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikkst"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ixre"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weoqn"]
+bg_color = Color(0.452027, 0.270059, 0.836414, 1)
+border_width_left = 40
+border_width_right = 40
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxsrw"]
+bg_color = Color(0.614341, 0.512609, 0.961783, 1)
+shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unsyy"]
 bg_color = Color(0.976471, 0.960784, 0.94902, 1)
 border_width_top = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtke"]
-bg_color = Color(0.458824, 0.458824, 0.458824, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u6vw"]
-bg_color = Color(0.819608, 0.807843, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22wq5"]
-bg_color = Color(0.490196, 0.513726, 0.819608, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6qcw"]
-bg_color = Color(0.980392, 0.964706, 0.952941, 1)
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-shadow_size = 7
-shadow_offset = Vector2(0, 7)
-
-[sub_resource type="FontVariation" id="FontVariation_pbmhk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7as"]
-bg_color = Color(0.976471, 0.960784, 0.94902, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4pc"]
-bg_color = Color(0.819608, 0.807843, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-shadow_size = 5
-shadow_offset = Vector2(3, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7gv8"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbxnd"]
-bg_color = Color(0.501961, 0.52549, 0.831373, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [node name="PhishingWebsite" type="MarginContainer"]
@@ -360,7 +336,6 @@ popup/item_0/text = "https://www.pulseforge-studio.com"
 popup/item_0/id = 0
 
 [node name="Label" type="Label" parent="TabContainer/Background/SearchBar/ButtonsContainer/Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -443,6 +418,128 @@ texture = ExtResource("3_io6ah")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="Website" type="ColorRect" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27006173
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5153631, 0.81745213, 0.92452157, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="LoginPanel" type="PanelContainer" parent="TabContainer/Background/Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27517354
+anchor_top = 0.17284
+anchor_right = 0.7256944
+anchor_bottom = 0.807099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ikkst")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Background/Website/LoginPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LoginLabel" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOGIN TO PULSEFIRE "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+
+[node name="Username" type="TextEdit" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ixre")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PasswordLabel" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+
+[node name="Password" type="TextEdit" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(390, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ixre")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="ForgotPasswordLabel" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Forgot Password?"
+horizontal_alignment = 1
+
+[node name="Login Button" type="Panel" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_weoqn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/Login Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39375
+anchor_top = 0.214327
+anchor_right = 0.60625
+anchor_bottom = 0.785673
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxsrw")
+metadata/_edit_use_anchors_ = true
+
+[node name="NeedHelpLabel" type="Label" parent="TabContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -11.5
+offset_right = 229.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
+horizontal_alignment = 1
+
 [node name="TextPanel" type="Panel" parent="TabContainer/Background"]
 layout_mode = 1
 anchors_preset = -1
@@ -463,234 +560,7 @@ anchor_right = 0.740452
 anchor_bottom = 0.287978
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Type in the url that you have found (Click the search bar)"
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="Button" parent="TabContainer/Background/TextPanel/Label"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.675776
-anchor_top = 3.97308
-anchor_right = 0.76047
-anchor_bottom = 5.09878
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Back"
-metadata/_edit_use_anchors_ = true
-
-[node name="Next" type="Button" parent="TabContainer/Background/TextPanel/Label"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.556521
-anchor_top = 3.97308
-anchor_right = 0.640993
-anchor_bottom = 5.03257
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 18
-theme_override_styles/disabled = SubResource("StyleBoxFlat_1xtke")
-disabled = true
-text = "Next"
-metadata/_edit_use_anchors_ = true
-
-[node name="Company Website" type="ColorRect" parent="TabContainer/Background"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.259259
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.650128, 0.650128, 0.650128, 1)
-metadata/_tab_index = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Background" type="Panel" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.493827
-anchor_right = 1.0
-anchor_bottom = 0.987654
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6u6vw")
-metadata/_edit_use_anchors_ = true
-
-[node name="Background2" type="Panel" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.00617284
-anchor_right = 1.0
-anchor_bottom = 0.493827
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_22wq5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Header" type="Panel" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.00625
-anchor_right = 1.0
-anchor_bottom = 0.129167
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_e6qcw")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label Header" type="Label" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0295139
-anchor_top = 0.0401235
-anchor_right = 0.208333
-anchor_bottom = 0.100309
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_pbmhk")
-theme_override_font_sizes/font_size = 26
-text = "P U L S E F I R E"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextPanel2" type="Panel" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.298611
-anchor_top = 0.197531
-anchor_right = 0.701389
-anchor_bottom = 0.814815
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jh7as")
-metadata/_edit_use_anchors_ = true
-
-[node name="InterneWelcome" type="Label" parent="TabContainer/Background/Company Website/TextPanel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.310345
-anchor_top = 0.04
-anchor_right = 0.689655
-anchor_bottom = 0.28
-offset_bottom = -1.52588e-05
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_pbmhk")
-theme_override_font_sizes/font_size = 19
-text = "W E L C O M E
-T O
-P U L S E F I R E"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Searchbar" type="Panel" parent="TabContainer/Background/Company Website/TextPanel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.137259
-anchor_top = 0.340045
-anchor_right = 0.673517
-anchor_bottom = 0.439983
-offset_left = 0.311981
-offset_top = -0.0180016
-offset_right = -0.512085
-offset_bottom = 0.00699615
-theme_override_styles/panel = SubResource("StyleBoxFlat_qk4pc")
-metadata/_edit_use_anchors_ = true
-
-[node name="Urlbar" type="TextEdit" parent="TabContainer/Background/Company Website/TextPanel2/Searchbar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0645159
-anchor_top = 0.150121
-anchor_right = 0.923388
-anchor_bottom = 1.26362
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_f7gv8")
-placeholder_text = "Username"
-metadata/_edit_use_anchors_ = true
-
-[node name="Searchbar2" type="Panel" parent="TabContainer/Background/Company Website/TextPanel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.137259
-anchor_top = 0.500045
-anchor_right = 0.673517
-anchor_bottom = 0.599983
-offset_left = 0.311981
-offset_top = -0.0180054
-offset_right = -0.512085
-offset_bottom = 0.00698853
-theme_override_styles/panel = SubResource("StyleBoxFlat_qk4pc")
-metadata/_edit_use_anchors_ = true
-
-[node name="Urlbar" type="TextEdit" parent="TabContainer/Background/Company Website/TextPanel2/Searchbar2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0645159
-anchor_top = 0.170117
-anchor_right = 1.01613
-anchor_bottom = 1.31736
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_f7gv8")
-placeholder_text = "Password"
-metadata/_edit_use_anchors_ = true
-
-[node name="Searchbar3" type="Panel" parent="TabContainer/Background/Company Website/TextPanel2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.143724
-anchor_top = 0.682545
-anchor_right = 0.679983
-anchor_bottom = 0.782483
-offset_left = 0.311981
-offset_top = -0.0180054
-offset_right = -0.512085
-offset_bottom = 0.00698853
-theme_override_styles/panel = SubResource("StyleBoxFlat_jbxnd")
-metadata/_edit_use_anchors_ = true
-
-[node name="InterneWelcome" type="Label" parent="TabContainer/Background/Company Website/TextPanel2/Searchbar3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.278226
-anchor_top = -0.0348381
-anchor_right = 0.697581
-anchor_bottom = 1.17989
-offset_bottom = 1.52588e-05
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_pbmhk")
-theme_override_font_sizes/font_size = 22
-text = "Log In"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextPanel" type="Panel" parent="TabContainer/Background/Company Website"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -101.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jh7as")
-
-[node name="Label" type="Label" parent="TabContainer/Background/Company Website/TextPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0416667
-anchor_top = 0.0657895
-anchor_right = 1.10677
-anchor_bottom = 0.559211
-offset_top = 13.0
-offset_bottom = -13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "This is the company's website, Screenshot this and let's try to duplicate and collect their credentials."
+text = "This is the company's website, Let's try to duplicate..."
 metadata/_edit_use_anchors_ = true
 
 [connection signal="item_selected" from="TabContainer/Background/SearchBar/ButtonsContainer/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="TabContainer/Background/TextPanel/Label/Next" to="." method="_on_next_pressed"]

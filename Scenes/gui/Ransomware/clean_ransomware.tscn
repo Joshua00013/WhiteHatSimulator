@@ -69,6 +69,7 @@ metadata/_tab_index = 8
 [node name="DDOS" parent="." instance=ExtResource("11_qm60n")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 9
 
 [node name="DDOSResult" parent="." instance=ExtResource("12_ojgsj")]
 visible = false
@@ -92,5 +93,4 @@ metadata/_tab_index = 12
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]
-[connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]
