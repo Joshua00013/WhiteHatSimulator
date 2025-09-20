@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=78 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -653,38 +653,50 @@ tracks/41/keys = {
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer2:visible")
+tracks/42/path = NodePath("PhishingSuccess/RichTextLabel:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel/Label:text")
+tracks/43/path = NodePath("PhishingSuccess/LoginPanel:visible")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["mike12345"]
+"values": [false]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel2/Label:text")
+tracks/44/path = NodePath("PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3:visible")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["12345678"]
+"values": [true]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("PhishingSuccess/sql:visible")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_qcv3o"]
@@ -737,6 +749,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhishingSuccess/sql:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_y8dab"]
@@ -2130,6 +2154,25 @@ shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bescv"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyne"]
+bg_color = Color(1, 1, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2pro"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [node name="Laptop" node_paths=PackedStringArray("minigame", "success_animation") instance=ExtResource("1_2ohll")]
 script = ExtResource("2_x3n0d")
 username = "whitehat"
@@ -2675,9 +2718,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_pcl5q")
 [node name="Label" type="Label" parent="RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2" index="0"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Company announcement:
-
-Please check your emails regularly!"
+text = "ak$imsdUkGp08McvjK"
 
 [node name="RansomwareAntivirus" type="PanelContainer" parent="RansowmareSuccess/PanelContainer2" index="3"]
 visible = false
@@ -2839,7 +2880,7 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -195.99982
-offset_bottom = -145.99988
+offset_bottom = -145.99994
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -3189,274 +3230,215 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
 horizontal_alignment = 1
 
-[node name="Background" type="ColorRect" parent="PhishingSuccess" index="1"]
+[node name="sql" type="ColorRect" parent="PhishingSuccess" index="1"]
 visible = false
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 0
-anchor_right = 0.9939236
-anchor_bottom = 0.8919753
-color = Color(0.25808161, 0.25808161, 0.25808161, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/Background" index="0"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.26302084
-anchor_bottom = 1.0
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(50, 100)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.1875
+anchor_top = 0.16049382
+anchor_right = 0.8171296
+anchor_bottom = 0.79012346
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/sql" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.40653178
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="0"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "SOURCES"
-horizontal_alignment = 1
+text = " SOURCES	                +"
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Label2" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="1"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel2" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "Users"
-horizontal_alignment = 1
+text = " Users"
 vertical_alignment = 1
 
-[node name="Panel3" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="2"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Label3" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="2"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel3" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "Manage Roles"
-horizontal_alignment = 1
+text = " Navigation"
 vertical_alignment = 1
 
-[node name="Panel4" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="3"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Label4" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="3"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "MySQL"
-horizontal_alignment = 1
+text = " Create"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="1"]
+[node name="Label5" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "   credentials_table 
+- Table"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess/sql/VBoxContainer/Label5" index="0"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8679868
-anchor_top = 0.24
-anchor_right = 0.96039605
-anchor_bottom = 0.8
+anchor_left = 0.013201321
+anchor_top = 0.41176468
+anchor_right = 0.04950495
+anchor_bottom = 0.6317647
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("27_sb1hh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="2"]
-layout_mode = 0
-anchor_left = 0.15511551
-anchor_top = 1.04
-anchor_right = 1.0
-anchor_bottom = 1.84
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel3" type="Panel" parent="PhishingSuccess/Background/VBoxContainer/Panel4/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Label6" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="5"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel4/VBoxContainer/Panel3" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "credentials"
-horizontal_alignment = 1
+text = "          username"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="PanelContainer" parent="PhishingSuccess/Background" index="1"]
+[node name="Label7" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "          password"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="PhishingSuccess/sql/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "    New row"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess/sql/VBoxContainer/Label8" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026402641
+anchor_top = 0.3529412
+anchor_right = 0.051089108
+anchor_bottom = 0.3529412
+offset_top = 11.0
+offset_right = 3.5200005
+offset_bottom = 18.48
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5707964
+texture = ExtResource("27_sb1hh")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="PanelContainer" parent="PhishingSuccess/sql" index="1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.265625
-anchor_right = 1.0
+anchor_right = 0.99954045
 anchor_bottom = 0.13580246
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(846, 0)
+[node name="Panel" type="Panel" parent="PhishingSuccess/sql/HBoxContainer" index="0"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bescv")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer/Panel" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/sql/HBoxContainer/Panel" index="0"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -318.66663
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(200, 0)
+[node name="Label" type="Label" parent="PhishingSuccess/sql/HBoxContainer/Panel/HBoxContainer" index="0"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer/Panel" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "username"
+text = "credentials_table"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer" index="1"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer/Panel2" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "password"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="Panel" parent="PhishingSuccess/Background" index="2"]
+[node name="HBoxContainer2" type="Panel" parent="PhishingSuccess/sql" index="2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.265625
 anchor_top = 0.14814815
 anchor_right = 1.0
 anchor_bottom = 0.99691355
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgyne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="PhishingSuccess/Background/HBoxContainer2" index="0"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer2" index="1"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 0.09090909
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "mike12345"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer" index="1"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel2" index="0"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "12345678"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer2" index="2"]
-custom_minimum_size = Vector2(0, 50)
+[node name="PanelContainer" type="PanelContainer" parent="PhishingSuccess/sql/HBoxContainer2" index="0"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00016723962
-anchor_top = 0.118980825
-anchor_right = 0.99983275
-anchor_bottom = 0.22089967
+anchor_left = 0.06146572
+anchor_top = 0.06909091
+anchor_right = 0.9420804
+anchor_bottom = 0.5981819
+offset_bottom = -3.0517578e-05
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2pro")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2" index="0"]
-custom_minimum_size = Vector2(200, 50)
+[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2/Panel" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "+"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2" index="1"]
-custom_minimum_size = Vector2(200, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer" index="0"]
 layout_mode = 2
+theme_override_constants/separation = 69
 
-[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2/Panel2" index="0"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "+"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " id"
+
+[node name="Label2" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "username"
+
+[node name="Label3" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "password"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 69
+
+[node name="Label" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " 1"
+
+[node name="Label2" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "dummie12"
+
+[node name="Label3" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "12345678"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 69
+
+[node name="Label" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " 2"
+
+[node name="Label2" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "mike12345"
+
+[node name="Label3" type="Label" parent="PhishingSuccess/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00000000"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PhishingSuccess" index="2"]
 visible = false
@@ -3474,6 +3456,7 @@ text = "Victim Screencam"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="PhishingSuccess" index="3"]
+visible = false
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 1
 anchors_preset = 8
