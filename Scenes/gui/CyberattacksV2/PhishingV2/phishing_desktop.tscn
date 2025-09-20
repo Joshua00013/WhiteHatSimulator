@@ -258,6 +258,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0301478, 1)
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
@@ -292,13 +293,13 @@ text = "godot.png"
 [node name="Text_icon" parent="Desktop" instance=ExtResource("1_1i5hb")]
 layout_mode = 2
 icon = null
-icon_name = ""
+icon_name = "text"
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]
 icon = ExtResource("3_3m1as")
 
 [node name="Label" parent="Desktop/Text_icon" index="1"]
-text = "text.txt"
+text = "text"
 
 [node name="Internet" parent="Desktop" instance=ExtResource("1_1i5hb")]
 layout_mode = 2
