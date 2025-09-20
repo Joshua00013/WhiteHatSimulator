@@ -16,24 +16,24 @@ script = ExtResource("2_fw20k")
 dialogue = "Sai"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.451085, -0.044155285)
+bones/0/position = Vector3(0, 1.4507732, -0.044155285)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.008638761, -0.055988047, 0.99116063, -0.11996398)
+bones/2/rotation = Quaternion(-0.008585217, -0.05623726, 0.99103034, -0.12092371)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.027314913, -0.03567903, 0.99891037, 0.012608287)
+bones/4/rotation = Quaternion(-0.027333131, -0.033853214, 0.998985, 0.0116554545)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.036404006, -0.000400077, -0.02032886, 0.99913037)
+bones/5/rotation = Quaternion(-0.03995577, -0.00040000584, -0.02231224, 0.99895227)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.60099256, 0.00066355075, 0.052404504, 0.79753447)
+bones/6/rotation = Quaternion(0.60239035, 0.001157219, 0.05319169, 0.79642665)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.010904975, -0.061905105, 0.99145097, 0.11434123)
+bones/7/rotation = Quaternion(0.010840303, -0.061576117, 0.9913899, 0.115052186)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.0044169705, -0.036685817, 0.9992643, -0.010275647)
+bones/9/rotation = Quaternion(-0.0043936367, -0.03489145, 0.99933857, -0.009265188)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.036404002, 0.00040007755, 0.02032886, 0.99913037)
+bones/10/rotation = Quaternion(-0.03995577, 0.0004000064, 0.022312243, 0.99895227)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.6018456, -0.02674857, -0.034174662, 0.7974324)
+bones/11/rotation = Quaternion(0.6032178, -0.027275078, -0.03500734, 0.796341)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47014, 0)
 [node name="DoorCheckComponent" parent="." index="6" instance=ExtResource("8_u0qft")]
 
 [node name="Interactable" parent="." index="7" instance=ExtResource("9_xvjoj")]
-prompt_message = "Shion"
+prompt_message = "Sai"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
