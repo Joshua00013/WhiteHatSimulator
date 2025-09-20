@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_csv02")
 name = "001-Mission File"
-description = "Phishing is a type of cyberattack that uses fraudulent emails, text messages, phone calls or websites to trick people into sharing sensitive data, downloading malware or otherwise exposing themselves to cybercrime.Your mission is to use Phishing to gain access to any employee's computer by preparing it and sending it through email or fake application."
+description = "For your first day on the job, you may use a ransomware and see how far you can get through the system. We have also received reports of employees using weak passwords such as 12345678 or no password at all. Everyone uses their name for their PC username. Good luck!"
 metadata/_custom_type_script = "uid://g4ulyqcfe2ao"
