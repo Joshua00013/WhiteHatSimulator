@@ -21,14 +21,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 2
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
-visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
@@ -36,6 +35,7 @@ visible = false
 layout_mode = 2
 
 [node name="PostRansomwareEncrypt" parent="." instance=ExtResource("4_atxjj")]
+visible = false
 layout_mode = 2
 
 [node name="RansomwareDecrypt" parent="." instance=ExtResource("5_lko46")]
