@@ -50,3 +50,5 @@ text = "Password: "
 [node name="PasswordLabel" type="Label" parent="ColorRect" index="1"]
 layout_mode = 2
 text = "1234"
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
