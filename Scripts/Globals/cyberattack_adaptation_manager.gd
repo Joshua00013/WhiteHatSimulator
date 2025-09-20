@@ -13,7 +13,7 @@ var job_application_used: bool = false : set = set_job_application_used
 var unattended_pc_used: bool = false : set = set_unattended_pc_used
 var bruteforce_used: bool = false : set = set_bruteforce_used
 var phishing_used: bool = false : set = set_phishing_used
-
+var fileless_used: bool = false : set = set_fileless_used
 var antivirus_installed: bool = false : set = set_antivirus_installed
 var antivirus_updated: bool = false : set = set_antivirus_updated
 var piracy_exploited: bool = false : set = set_piracy_exploited
@@ -60,6 +60,10 @@ func set_bruteforce_used(val):
 	bruteforce_used = val
 
 func set_phishing_used(val):
+	await SignalBus.stage_finished
+	phishing_used = val
+
+func set_fileless_used(val):
 	await SignalBus.stage_finished
 	phishing_used = val
 
@@ -112,6 +116,7 @@ func save_snapshot():
 		"unattended_pc_used": unattended_pc_used,
 		"bruteforce_used": bruteforce_used,
 		"phishing_used": phishing_used,
+		"fileless_used" : fileless_used,
 		"antivirus_installed": antivirus_installed,
 		"antivirus_updated": antivirus_updated,
 		"piracy_exploited" : piracy_exploited
@@ -132,6 +137,7 @@ func restore_snapshot():
 	unattended_pc_used    = _snapshot["unattended_pc_used"]
 	bruteforce_used       = _snapshot["bruteforce_used"]
 	phishing_used         = _snapshot["phishing_used"]
+	fileless_used         = _snapshot['fileless_used']
 	antivirus_installed   = _snapshot["antivirus_installed"]
 	antivirus_updated     = _snapshot["antivirus_updated"]
 	piracy_exploited      = _snapshot["piracy_exploited"]

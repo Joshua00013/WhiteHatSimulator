@@ -74,5 +74,5 @@ func _on_email_sent():
 			if not CyberattackAdaptationManager.fileless_used:
 				CyberattackManager.delivery_finished = true
 				CyberattackAdaptationManager.fileless_used = true
-				SignalBus.phishing_email_sent.emit(selected_email)
+				SignalBus.fileless_email_sent.emit(selected_email)
 		#TODO : Animation showing myrione logged in 
