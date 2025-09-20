@@ -1,12 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://cc0iffvnt6fcb"]
+[gd_scene load_steps=54 format=3 uid="uid://cc0iffvnt6fcb"]
 
 [ext_resource type="Script" uid="uid://b0do5oyth30hg" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_f46kx"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_24yo8"]
 [ext_resource type="PackedScene" uid="uid://elboq6yr26sl" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/sql_database.tscn" id="4_5pnsx"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_8i5sj"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_pjo8h"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_yyso8"]
 
 [sub_resource type="Animation" id="Animation_53vgl"]
 resource_name = "phishing_1"
@@ -1720,13 +1718,13 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "STEP 2: DUPLICATING"
+title = "⚠️PHISHING⚠️"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
-text = "And here is our database that will contain all the save credentials. We are all done"
+text = "Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
@@ -1741,6 +1739,7 @@ size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_0dqkl")
 
 [node name="Website" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
+visible = false
 layout_mode = 2
 color = Color(0.5153631, 0.81745213, 0.92452157, 1)
 metadata/_edit_use_anchors_ = true
@@ -1865,6 +1864,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="SqlDatabase" parent="Body/CodeContainer/PanelContainer" instance=ExtResource("4_5pnsx")]
+visible = false
 layout_mode = 2
 
 [node name="WindowBackground" type="ColorRect" parent="."]
@@ -1934,35 +1934,8 @@ text = "Contents"
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Debug" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Next" parent="Debug" instance=ExtResource("5_pjo8h")]
-layout_mode = 1
-anchor_left = 0.736111
-anchor_top = 0.802469
-anchor_right = 0.865451
-anchor_bottom = 0.859568
-offset_left = 818.55505
-offset_top = 487.90118
-offset_right = 962.3815
-offset_bottom = 522.6172
-
-[node name="Back" parent="Debug" instance=ExtResource("6_yyso8")]
-layout_mode = 1
-anchor_left = 0.131944
-anchor_top = 0.802469
-anchor_right = 0.262153
-anchor_bottom = 0.859568
-offset_left = 146.72173
-offset_top = 487.90118
-offset_right = 291.51337
-offset_bottom = 522.6172
-text = "Back"
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 clip_children = 2
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
