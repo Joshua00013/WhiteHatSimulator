@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://csexcx3sqghcf"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_4hyg1"]
+
+[resource]
+script = ExtResource("1_4hyg1")
+name = "File - 002"
+description = "You did a great job in your first day. The employees have learned based on what you did. I hope you can improve our system even more. You are now allowed to use bruteforce to open up PCs."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

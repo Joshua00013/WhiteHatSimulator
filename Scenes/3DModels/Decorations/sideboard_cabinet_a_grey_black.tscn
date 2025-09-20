@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://6dod3fx8ss1q"]
+[gd_scene load_steps=3 format=3 uid="uid://6dod3fx8ss1q"]
 
 [ext_resource type="PackedScene" uid="uid://5v1lrmafsh45" path="res://Assets/export_LPOP_FULL/SideboardCabinet_A_GreyBlack.fbx" id="1_v7sjt"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7sjt"]
+size = Vector3(7.545166, 1.75, 1.9979858)
+
 [node name="SideboardCabinet_A_GreyBlack" instance=ExtResource("1_v7sjt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8876065, -0.024505615)
+shape = SubResource("BoxShape3D_v7sjt")

@@ -27,9 +27,11 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		DayAndNightManager.initial_day += 1
 		SignalBus.stage_finished.emit()
 		GameManager.reset()
+		GameManager.ui_active = false
 		CyberattackManager.reset()
 		DayAndNightManager.set_initial_time()
 		get_tree().reload_current_scene()
 
 func start_quiz():
+	GameManager.ui_active = true
 	quiz_card.start_quiz()

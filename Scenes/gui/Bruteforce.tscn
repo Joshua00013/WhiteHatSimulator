@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://s7ebjmaahksf"]
 
 [ext_resource type="Script" uid="uid://b2aiatoukub8p" path="res://Scripts/GUI/bruteforce.gd" id="1_7o13g"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="4_4pc1q"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="4_4pc1q"]
 
 [sub_resource type="Shader" id="Shader_fi43v"]
 code = "shader_type canvas_item;
@@ -468,6 +468,7 @@ while (guess != password):
 print(\"The password is \"+ guess)
 "
 editable = false
+scroll_v_scroll_speed = 80.86
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
@@ -499,6 +500,8 @@ anchor_top = 0.204013
 anchor_right = 0.805522
 anchor_bottom = 0.817726
 offset_bottom = 3.05176e-05
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Background" parent="HSplitContainer/CodeEdit/Window" index="0"]
 self_modulate = Color(0.321728, 0.321728, 0.321728, 1)

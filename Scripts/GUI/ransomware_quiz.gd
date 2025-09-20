@@ -1525,19 +1525,19 @@ func _on_answer_pressed(answer_index: int) -> void:
 	if answer_index == quiz_item["correct_answer"]:
 		point_counter += 1
 		question_counter +=1
-		question_counter_label.text = "Question " + str(question_counter) + " of 30"
+		question_counter_label.text = "Question " + str(question_counter) + " of 10"
 		score_label.text = "Score: " + str(point_counter)
 		timer.start()
 		print("✅ Correct!")
 	else:
 		timer.start()
 		question_counter +=1
-		question_counter_label.text = "Question " + str(question_counter) + " of 30"
+		question_counter_label.text = "Question " + str(question_counter) + " of 10"
 		print("❌ Wrong! Correct answer: " + quiz_item["answers"][quiz_item["correct_answer"]])
 
 	# Move to next question
 	current_question += 1
-	if current_question < active_questions.size():
+	if current_question < 10:
 		display_question(current_question)
 	else:
 		question_counter +=1

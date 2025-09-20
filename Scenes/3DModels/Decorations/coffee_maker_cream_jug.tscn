@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpxbe1kdof3q1"]
+
+[ext_resource type="PackedScene" uid="uid://v8fy1ofqohpp" path="res://Assets/export_LPOP_FULL/CoffeeMakerCreamJug.fbx" id="1_8wh66"]
+
+[node name="CoffeeMakerCreamJug" instance=ExtResource("1_8wh66")]

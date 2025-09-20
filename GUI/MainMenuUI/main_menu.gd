@@ -6,6 +6,7 @@ func _ready():
 	DayAndNightManager.active = false
 
 func _on_start_pressed():
+	print("start")
 	get_tree().change_scene_to_file("res://Scenes/GUI/loading.tscn")
 
 func _on_load_pressed():

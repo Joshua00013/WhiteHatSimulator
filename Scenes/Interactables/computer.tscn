@@ -291,10 +291,10 @@ tracks/9/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/Cyberat
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.001),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -1069,22 +1069,9 @@ layout_mode = 2
 icon = ExtResource("6_6l7aj")
 icon_name = "data.sql"
 
-[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon" index="0"]
-icon = ExtResource("6_6l7aj")
-
-[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon" index="1"]
-text = "data.sql"
-
 [node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
 layout_mode = 2
-icon = null
 icon_name = "godot.png"
-
-[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="0"]
-icon = null
-
-[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon" index="1"]
-text = "godot.png"
 
 [node name="TextIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
@@ -1092,23 +1079,11 @@ window = NodePath("../../Windows/NotePad")
 icon = ExtResource("8_a8fdl")
 icon_name = "Notepad.txt"
 
-[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon" index="0"]
-icon = ExtResource("8_a8fdl")
-
-[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon" index="1"]
-text = "Notepad.txt"
-
 [node name="BrowserIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
 window = NodePath("../../Windows/NPCBrowser")
 icon = ExtResource("9_tdfle")
 icon_name = "Browser"
-
-[node name="Button" parent="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon" index="0"]
-icon = ExtResource("9_tdfle")
-
-[node name="Label" parent="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon" index="1"]
-text = "Browser"
 
 [node name="Windows" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
 layout_mode = 2
@@ -1136,6 +1111,7 @@ visible = false
 layout_mode = 1
 
 [node name="CyberattackExecution" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
+visible = false
 layout_mode = 1
 anchor_left = 0.319444
 anchor_top = 0.263889
@@ -1149,6 +1125,7 @@ text = "Executing..."
 layout_mode = 2
 
 [node name="DeploymentChoice" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
@@ -1691,9 +1668,5 @@ expand_mode = 1
 [connection signal="flashdrive_plugged" from="FlashdriveMinigame" to="." method="_on_flashdrive_minigame_flashdrive_plugged"]
 
 [editable path="Model/SubViewport/TabContainer/Login/Window"]
-[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/DatabaseIcon"]
-[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/GodotIcon"]
-[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/TextIcon"]
-[editable path="Model/SubViewport/TabContainer/Desktop/Desktop/BrowserIcon"]
 [editable path="Model/SubViewport/TabContainer/Desktop/Windows/NotePad"]
 [editable path="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution"]

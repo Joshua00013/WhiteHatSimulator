@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb2w44o4bxu0x"]
+
+[ext_resource type="PackedScene" uid="uid://do7otdx1tdiw" path="res://Assets/export_LPOP_FULL/DeskFan.fbx" id="1_cnra2"]
+
+[node name="DeskFan" instance=ExtResource("1_cnra2")]
