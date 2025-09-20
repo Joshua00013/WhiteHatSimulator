@@ -25,6 +25,7 @@ func _on_exit_button_pressed() -> void:
 		animation.play("finished")
 	else:
 		animation.play("exit_not_finished")
+		terminal_enable()
 		
 func _process(_delta: float) -> void:
 	if visible && finished == true:

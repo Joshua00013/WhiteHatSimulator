@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bsrnyslwr4n0l"]
+[gd_scene load_steps=75 format=3 uid="uid://bsrnyslwr4n0l"]
 
 [ext_resource type="PackedScene" uid="uid://bux42k1daomws" path="res://Assets/Exported3dModel/Laptop-col.glb" id="1_2ohll"]
 [ext_resource type="Script" uid="uid://1c4lec7fivck" path="res://Scripts/Interactables/base_laptop.gd" id="2_x3n0d"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="21_j8lv2"]
 [ext_resource type="Texture2D" uid="uid://jdrwk5rkeqto" path="res://Assets/Illustrator/zip.png" id="25_sb1hh"]
 [ext_resource type="Theme" uid="uid://d2c7tbwjgxp7r" path="res://Themes/windows.tres" id="26_ctr30"]
+[ext_resource type="Texture2D" uid="uid://c8lmrvlovi86s" path="res://down.png" id="27_sb1hh"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
 size = Vector2(0.62, 0.545)
@@ -563,6 +564,127 @@ tracks/34/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("PhishingSuccess/TextureRect:position")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 232)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("PhishingSuccess/TextureRect:size")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64.00012)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer/UsernameBox:text")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+"]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer/UsernameBox:placeholder_text")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2/PasswordBox:placeholder_text")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2/PasswordBox:text")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("PhishingSuccess:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer2:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel/Label:text")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["mike12345"]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel2/Label:text")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["12345678"]
 }
 
 [sub_resource type="Animation" id="Animation_qcv3o"]
@@ -1111,82 +1233,6 @@ tracks/4/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_bescv"]
-resource_name = "play_ransomware_fail"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RansowmareSuccess:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.9333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_hgyne"]
 resource_name = "piracy_download"
 length = 3.1435
@@ -1261,220 +1307,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_x2pro"]
-resource_name = "play_ransomware_piracy"
-length = 10.161
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RansowmareSuccess:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10.1232),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.8209302, 7.9609303),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.76666665, 1.17, 2.4975, 2.8971002, 3.3942602, 3.8609302, 4.69426, 5.7276, 6.3942633, 6.7309303, 7.627597, 7.9209304, 8.494264),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1.31951, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(553, 301), Vector2(200, 400), Vector2(200, 400), Vector2(728.18, 215.305), Vector2(728.18, 215.305), Vector2(334, 132), Vector2(334, 132), Vector2(829.02, 469), Vector2(829.02, 469), Vector2(320, 303.02), Vector2(320, 303.02), Vector2(320, 468.655), Vector2(320, 468.655), Vector2(220.85, 399.845)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.76, 0.94000006, 1.1400001, 2.4975002, 2.6775002, 2.8775003, 3.4309301, 3.6109302, 3.8109303, 4.7276, 4.8942604, 5.0609303, 6.39093, 6.55759, 6.7242603, 7.60093, 7.76759, 7.9342604, 8.500931, 8.66759, 8.834261),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 5.08093, 6.76093),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.93333334, 2.664, 8.853098),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2/Label:text")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.93240005, 8.853098),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["Company announcement:
-
-Please check your emails regularly!", "ak$imsdUkGp08McvjK"]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_6u205")]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Loboshop.exe"]
-}
-
-[sub_resource type="Animation" id="Animation_3407j"]
-resource_name = "play_ransomware_fail_piracy"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RansowmareSuccess:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.9333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_6u205")]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Loboshop.exe"]
 }
 
 [sub_resource type="Animation" id="Animation_u45uk"]
@@ -1689,11 +1521,480 @@ tracks/8/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_bescv"]
+resource_name = "play_ransomware_fail"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3407j"]
+resource_name = "play_ransomware_fail_piracy"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(334, 132), Vector2(334, 132), Vector2(558.61694, 330.15683)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.77, 1.95, 2.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer2/RansomwareAntivirus:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_6u205")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Loboshop.exe"]
+}
+
+[sub_resource type="Animation" id="Animation_x2pro"]
+resource_name = "play_ransomware_piracy"
+length = 10.161
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RansowmareSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.1232),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RansowmareSuccess/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.8209302, 7.9609303),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RansowmareSuccess/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 1.17, 2.4975, 2.8971002, 3.3942602, 3.8609302, 4.69426, 5.7276, 6.3942633, 6.7309303, 7.627597, 7.9209304, 8.494264),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1.31951, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(553, 301), Vector2(200, 400), Vector2(200, 400), Vector2(728.18, 215.305), Vector2(728.18, 215.305), Vector2(334, 132), Vector2(334, 132), Vector2(829.02, 469), Vector2(829.02, 469), Vector2(320, 303.02), Vector2(320, 303.02), Vector2(320, 468.655), Vector2(320, 468.655), Vector2(220.85, 399.845)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RansowmareSuccess/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.76, 0.94000006, 1.1400001, 2.4975002, 2.6775002, 2.8775003, 3.4309301, 3.6109302, 3.8109303, 4.7276, 4.8942604, 5.0609303, 6.39093, 6.55759, 6.7242603, 7.60093, 7.76759, 7.9342604, 8.500931, 8.66759, 8.834261),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1), Vector2(1, 1), Vector2(1.49, 1.49), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RansowmareSuccess/PanelContainer3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.08093, 6.76093),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 2.664, 8.853098),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RansowmareSuccess/PanelContainer2/WindowContainer/GodotWindow/VBoxContainer/PanelContainer2/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.93240005, 8.853098),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Company announcement:
+
+Please check your emails regularly!", "ak$imsdUkGp08McvjK"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_6u205")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RansowmareSuccess/PanelContainer2/Desktop/Malware_icon:icon_name")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Loboshop.exe"]
+}
+
+[sub_resource type="Animation" id="Animation_3er6d"]
+resource_name = "login_phishing"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PhishingSuccess:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.6, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PhishingSuccess/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4, 1.8, 2.8, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(485.385, 368.52), Vector2(448, 232), Vector2(448, 232), Vector2(448, 280), Vector2(448, 280), Vector2(560, 376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PhishingSuccess/TextureRect:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 1, 1.8, 2, 2.2, 3.2, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(46, 46.00009), Vector2(64, 64.00012), Vector2(46, 46.00009), Vector2(46, 46.00009), Vector2(64, 64.00012), Vector2(46, 46.00009), Vector2(46, 46.00009), Vector2(64, 64.00012), Vector2(46, 46.00009)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer/UsernameBox:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Username", ""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer/UsernameBox:placeholder_text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.4, 3.6, 3.6333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": ["", "", "mike12345", "mike12345", "Username"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2/PasswordBox:placeholder_text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Password", ""]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PhishingSuccess/LoginPanel/VBoxContainer/HBoxContainer2/PasswordBox:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.8, 3.6, 3.6333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": ["", "", "********", "********", "Password"]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"phishing_part4"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_11uiv"]
+resource_name = "play_phishing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PhishingSuccess/Background:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PhishingSuccess/RichTextLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PhishingSuccess/LoginPanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["+", "mike12345"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel2/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["+", "12345678"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bescv"]
 _data = {
 &"RESET": SubResource("Animation_l8jl3"),
 &"download_fileless": SubResource("Animation_qcv3o"),
 &"download_ransomware": SubResource("Animation_y8dab"),
+&"login_phishing": SubResource("Animation_3er6d"),
 &"open_fileless_email": SubResource("Animation_6y342"),
 &"open_fileless_email_fail": SubResource("Animation_6u205"),
 &"open_phishing_email": SubResource("Animation_ctr30"),
@@ -1703,6 +2004,7 @@ _data = {
 &"piracy_download": SubResource("Animation_hgyne"),
 &"play_fileless": SubResource("Animation_u45uk"),
 &"play_fileless_fail": SubResource("Animation_hb7e4"),
+&"play_phishing": SubResource("Animation_11uiv"),
 &"play_ransomware": ExtResource("13_j8lv2"),
 &"play_ransomware_fail": SubResource("Animation_bescv"),
 &"play_ransomware_fail_piracy": SubResource("Animation_3407j"),
@@ -2030,8 +2332,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -196.0
-offset_bottom = -145.99988
+offset_right = -195.99994
+offset_bottom = -145.99994
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -2226,8 +2528,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -196.0
-offset_bottom = -145.99997
+offset_right = -195.99994
+offset_bottom = -145.99994
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -2303,6 +2605,7 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
 layout_mode = 2
+icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="RansowmareSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
@@ -2535,8 +2838,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -195.99963
-offset_bottom = -145.99982
+offset_right = -195.99982
+offset_bottom = -145.99988
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -2554,31 +2857,26 @@ mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="FilelessSuccess" index="0"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -391.0
-offset_right = 391.0
-offset_bottom = 460.0
+anchors_preset = -1
+anchor_left = 0.16059028
+anchor_right = 0.8394097
+anchor_bottom = 0.70987654
 grow_horizontal = 2
 theme = ExtResource("14_6y342")
 theme_override_font_sizes/normal_font_size = 46
 text = "Victim Screencam"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer2" type="Control" parent="FilelessSuccess" index="1"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -401.0
-offset_top = -240.0
-offset_right = 401.0
-offset_bottom = 240.0
+anchor_left = 0.15190972
+anchor_top = 0.12962963
+anchor_right = 0.8480903
+anchor_bottom = 0.8703704
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="FilelessSuccess/PanelContainer2" index="0"]
 layout_mode = 1
@@ -2604,6 +2902,7 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="1" instance=ExtResource("15_qcv3o")]
 layout_mode = 2
+icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="FilelessSuccess/PanelContainer2/Desktop" index="2" instance=ExtResource("15_qcv3o")]
@@ -2759,8 +3058,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -195.99655
-offset_bottom = -145.9996
+offset_right = -195.99658
+offset_bottom = -145.99976
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -2778,6 +3077,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="LoginPanel" type="PanelContainer" parent="PhishingSuccess" index="0"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.222222
@@ -2815,7 +3115,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pcl5q")
-placeholder_text = "Username"
+text = "
+"
+scroll_vertical = 0.9999999999999998
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="2"]
@@ -2833,8 +3135,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pcl5q")
-text = "********"
-placeholder_text = "Password"
 metadata/_edit_use_anchors_ = true
 
 [node name="ForgotPassword" type="Label" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="3"]
@@ -2889,7 +3189,277 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PhishingSuccess" index="1"]
+[node name="Background" type="ColorRect" parent="PhishingSuccess" index="1"]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+anchor_right = 0.9939236
+anchor_bottom = 0.8919753
+color = Color(0.25808161, 0.25808161, 0.25808161, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/Background" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.26302084
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SOURCES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Users"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Manage Roles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="PhishingSuccess/Background/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "MySQL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8679868
+anchor_top = 0.24
+anchor_right = 0.96039605
+anchor_bottom = 0.8
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("27_sb1hh")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PhishingSuccess/Background/VBoxContainer/Panel4" index="2"]
+layout_mode = 0
+anchor_left = 0.15511551
+anchor_top = 1.04
+anchor_right = 1.0
+anchor_bottom = 1.84
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="Panel" parent="PhishingSuccess/Background/VBoxContainer/Panel4/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/VBoxContainer/Panel4/VBoxContainer/Panel3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "credentials"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="PanelContainer" parent="PhishingSuccess/Background" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265625
+anchor_right = 1.0
+anchor_bottom = 0.13580246
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(846, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer/Panel/HBoxContainer/Panel2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "password"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="Panel" parent="PhishingSuccess/Background" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265625
+anchor_top = 0.14814815
+anchor_right = 1.0
+anchor_bottom = 0.99691355
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PhishingSuccess/Background/HBoxContainer2" index="0"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.09090909
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "mike12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer/Panel2" index="0"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "12345678"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/Background/HBoxContainer2" index="2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00016723962
+anchor_top = 0.118980825
+anchor_right = 0.99983275
+anchor_bottom = 0.22089967
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2" index="0"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhishingSuccess/Background/HBoxContainer2/HBoxContainer2/Panel2" index="0"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PhishingSuccess" index="2"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2903,7 +3473,7 @@ theme_override_font_sizes/normal_font_size = 46
 text = "Victim Screencam"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PhishingSuccess" index="2"]
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess" index="3"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 1
 anchors_preset = 8
@@ -2911,10 +3481,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.61499
-offset_top = 44.51999
-offset_right = -44.614746
-offset_bottom = 90.520325
+offset_left = -128.0
+offset_top = -92.0
+offset_right = -64.0
+offset_bottom = -27.999878
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
