@@ -1,7 +1,6 @@
 extends Control
 
 signal code_finished
-
 @onready var anim_player = $AnimationPlayer
 
 var animations: PackedStringArray = []

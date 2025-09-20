@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/GUI/post_ransomware_encrypt.tscn" id="4_atxjj"]
 [ext_resource type="PackedScene" uid="uid://dronc4jjmcb4r" path="res://Scenes/GUI/ransomware_decrypt.tscn" id="5_lko46"]
 [ext_resource type="PackedScene" uid="uid://dnj8fsi1dawwb" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.tscn" id="7_ojgsj"]
-[ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/GUI/Fileless Malware/fileless_desktop.tscn" id="8_o0l8t"]
+[ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless_desktop.tscn" id="8_o0l8t"]
 [ext_resource type="PackedScene" uid="uid://cc0iffvnt6fcb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.tscn" id="9_8imo2"]
 [ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_website.tscn" id="10_e7as3"]
 [ext_resource type="PackedScene" uid="uid://i2osqq8lau6i" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos.tscn" id="11_qm60n"]
-[ext_resource type="PackedScene" uid="uid://b0o4iae3kp35t" path="res://Scenes/GUI/DDOS/ddos_result.tscn" id="12_ojgsj"]
+[ext_resource type="PackedScene" uid="uid://bcj0c85yx8jgb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/ddos_website.tscn" id="12_8imo2"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
 [ext_resource type="PackedScene" uid="uid://b38jachcmca75" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_desktop.tscn" id="14_atxjj"]
@@ -21,13 +21,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 10
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
+visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
@@ -69,10 +70,11 @@ metadata/_tab_index = 8
 [node name="DDOS" parent="." instance=ExtResource("11_qm60n")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 9
 
-[node name="DDOSResult" parent="." instance=ExtResource("12_ojgsj")]
-visible = false
+[node name="DDOSWebsite" parent="." instance=ExtResource("12_8imo2")]
 layout_mode = 2
+metadata/_tab_index = 10
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
 visible = false
@@ -92,5 +94,5 @@ metadata/_tab_index = 12
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]
-[connection signal="change_to_result" from="DDOS" to="." method="_on_ddos_change_to_result"]
+[connection signal="code_finished" from="DDOSWebsite" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]

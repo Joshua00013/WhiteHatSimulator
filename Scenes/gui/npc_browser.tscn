@@ -509,7 +509,6 @@ text = "Upload"
 icon = ExtResource("13_e2y3f")
 
 [node name="Email" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 0
 anchor_left = 0.525174
 anchor_top = 0.270062
