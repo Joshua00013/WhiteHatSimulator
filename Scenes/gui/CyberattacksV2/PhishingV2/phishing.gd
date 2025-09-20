@@ -11,6 +11,7 @@ func _ready():
 	animations = anim_player.get_animation_list()
 	if animations.size() > 0:
 		anim_player.play(animations[current_index])
+	print(animations[current_index])
 
 func _process(_delta):
 	if not visible or animations.is_empty():
@@ -19,7 +20,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_pressed"):
 		if animations[current_index] == "phishing_01":
 			SignalBus.phishing_part1_finished.emit()
-		elif animations[current_index] == "phishing_10":
+		elif animations[current_index] == "phishing_12":
 			CyberattackManager.phishing_ready = true
 			emit_signal("code_finished")
 		_play_next()
