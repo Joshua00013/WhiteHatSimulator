@@ -96,8 +96,7 @@ func reset():
 	antivirus_updated = false
 	piracy_exploited = false
 	
-	SignalBus.stage_finished.emit()
-	
+
 var _snapshot := {}
 
 func save_snapshot():
@@ -117,7 +116,6 @@ func save_snapshot():
 		"antivirus_updated": antivirus_updated,
 		"piracy_exploited" : piracy_exploited
 	}
-	print("Snapshot saved: ", _snapshot)
 
 func restore_snapshot():
 	if _snapshot.is_empty():

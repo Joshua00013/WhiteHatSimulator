@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=101 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://byp0i4hd8g2lk" path="res://Scenes/GUI/game_over.tscn" id="7_33qc4"]
 [ext_resource type="Script" uid="uid://dbo0pgwpnvcgh" path="res://Scripts/GUI/android_ui.gd" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://c0ius047ie6in" path="res://Scenes/GUI/keys.tscn" id="11_e6rcu"]
 [ext_resource type="Texture2D" uid="uid://bjlrbotrykvgn" path="res://Assets/Illustrator/hand_button.svg" id="14_ihvwq"]
 [ext_resource type="PackedScene" uid="uid://kd4g4p40rm1l" path="res://GUI/TimerUI/timer_ui.tscn" id="14_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://b555p62txmwg6" path="res://Assets/Illustrator/inventory_button.svg" id="15_k8rh3"]
@@ -132,7 +133,7 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_87bhu"]
+[sub_resource type="Resource" id="Resource_33qc4"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -204,6 +205,8 @@ visible = false
 
 [node name="Popup" parent="HUD" instance=ExtResource("78_tab3y")]
 
+[node name="Keys" parent="HUD" instance=ExtResource("11_e6rcu")]
+
 [node name="AndroidUI" type="CanvasLayer" parent="."]
 script = ExtResource("7_ynf5e")
 
@@ -263,7 +266,7 @@ metadata/_edit_use_anchors_ = true
 [node name="NPC" type="Node3D" parent="."]
 
 [node name="mococo_hair" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("29_6vcvc")]
-transform = Transform3D(-4.3711367e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711367e-08, 2.1749525, 0, 4)
+transform = Transform3D(-4.3711367e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711367e-08, -0.72374845, -0.0011334419, 1.0525503)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer4")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col4")
 
@@ -280,7 +283,7 @@ target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreen
 target_area_5 = NodePath("../../Markers/Cafeteria")
 
 [node name="mike" parent="NPC" instance=ExtResource("33_neg2b")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.455342, -0.0011329651, 7.9807043)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.333046, -0.0011334419, 6.910524)
 
 [node name="Koro" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("49_sasc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3554, -0.00113297, 2.53087)
@@ -305,7 +308,7 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer6")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
 
 [node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5") instance=ExtResource("68_ovafv")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, 3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75778645, -0.0011329651, 0.71310234)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_5 = NodePath("../../Markers/Cafeteria")
 
@@ -328,7 +331,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.17
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col10")
 
 [node name="Shion" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("73_f6rfp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4577456, 0, 2.2003393)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.761726, -0.0011329651, 0.13944674)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col9")
 
 [node name="Lights" type="Node3D" parent="."]
@@ -1575,7 +1578,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_87bhu")
+npc_resource = SubResource("Resource_33qc4")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)

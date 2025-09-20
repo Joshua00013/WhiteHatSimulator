@@ -55,7 +55,6 @@ func has_flashdrive() -> bool:
 	
 func _on_interactable_interact_triggered() -> void:
 	if not has_flashdrive():
-		print("Flashdrive not in inventory.")
 		return
 		
 	match OS.get_name():
