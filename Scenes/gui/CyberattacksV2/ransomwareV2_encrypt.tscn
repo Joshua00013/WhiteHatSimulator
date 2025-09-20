@@ -4,8 +4,8 @@
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_nmigk"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_vuwby"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_m28fk"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_7i6ny"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_6g5gb"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_7i6ny"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_6g5gb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -1375,7 +1375,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 1.41)]
+"values": [Vector2(0.1, 1.41)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1704,7 +1704,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 3.555)]
+"values": [Vector2(0.1, 3.555)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1790,7 +1790,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Now let's run the program."]
+"values": [""]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1802,7 +1802,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Final Confirmation"]
+"values": ["Run the Code"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1814,7 +1814,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 3.555)]
+"values": [Vector2(0.1, 3.555)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1862,7 +1862,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["ransomware.exe"]
+"values": ["malware.exe"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
