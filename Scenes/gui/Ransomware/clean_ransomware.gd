@@ -3,9 +3,6 @@ extends TabContainer
 @onready var desktop_default: MarginContainer = $DesktopDefault
 @export var malware_icon := VBoxContainer
 
-signal boilerplate
-signal listener
-
 const TABS := {
 	"Ransomware": 1,
 	"PostRansomwareEncrypt": 2,

@@ -41,6 +41,8 @@ signal phishing_part2_finished
 @warning_ignore("unused_signal")
 signal phishing_part3_finished
 @warning_ignore("unused_signal")
+signal phishing_part4_finished
+@warning_ignore("unused_signal")
 signal ddos_part1_finished
 
 #PANO I CONNECT:

