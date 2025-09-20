@@ -1499,6 +1499,7 @@ func _ready() -> void:
 			active_questions = day_five_questions
 	
 	active_questions.shuffle()
+	#_shuffle_answers_for_questions(active_questions)
 	display_question(current_question)
 
 func start_quiz():
@@ -1525,14 +1526,14 @@ func _on_answer_pressed(answer_index: int) -> void:
 	if answer_index == quiz_item["correct_answer"]:
 		point_counter += 1
 		question_counter +=1
-		question_counter_label.text = "Question " + str(question_counter) + " of 30"
+		question_counter_label.text = "Question " + str(question_counter) + " of 10"
 		score_label.text = "Score: " + str(point_counter)
 		timer.start()
 		print("✅ Correct!")
 	else:
 		timer.start()
 		question_counter +=1
-		question_counter_label.text = "Question " + str(question_counter) + " of 30"
+		question_counter_label.text = "Question " + str(question_counter) + " of 10"
 		print("❌ Wrong! Correct answer: " + quiz_item["answers"][quiz_item["correct_answer"]])
 
 	# Move to next question
@@ -1551,3 +1552,21 @@ func _on_timer_timeout() -> void:
 	else:
 		quiz_finished.emit(point_counter)
 		print("⏰ Time’s up! Quiz finished! Final Score: ", point_counter)
+		
+
+#func _question_counter_checker(question_count: int):
+	#if question_count == 10:
+		#print("Quiz finish")
+				#
+#func _pick_random_questions(source: Array, count: int) -> Array:
+	#var copy = source.duplicate()
+	#copy.shuffle()
+	#return copy.slice(0, min(count, copy.size()))
+#
+#func _shuffle_answers_for_questions(questions: Array) -> void:
+	#for item in questions:
+		#var correct_text = item["answers"][item["correct_answer"]]
+		#var answers_copy = item["answers"].duplicate()
+		#answers_copy.shuffle()
+		#item["answers"] = answers_copy
+		#item["correct_answer"] = answers_copy.find(correct_text)
