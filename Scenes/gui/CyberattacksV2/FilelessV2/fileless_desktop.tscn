@@ -1,22 +1,22 @@
 [gd_scene load_steps=54 format=3 uid="uid://bm1xtqsg5bvxb"]
 
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_2itw6"]
-[ext_resource type="Script" uid="uid://ddiajstfrgmi0" path="res://Scenes/GUI/Fileless Malware/fileless_desktop.gd" id="1_b3o0d"]
-[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_3w3re"]
-[ext_resource type="Texture2D" uid="uid://dxi4f6remoigf" path="res://Assets/Illustrator/WindowNinePatch.png" id="5_7waw2"]
-[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="5_51gj3"]
-[ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_gmbrv"]
-[ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="5_irnc6"]
-[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_gmbrv"]
-[ext_resource type="Texture2D" uid="uid://dry2p2161qtif" path="res://Assets/Illustrator/WindowDarkNinePatch.png" id="7_7waw2"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="7_or6ws"]
-[ext_resource type="Texture2D" uid="uid://dqqd2x4wfauqw" path="res://Assets/Illustrator/loboshop.png" id="9_irnc6"]
-[ext_resource type="Texture2D" uid="uid://tvb0y8lcsa8i" path="res://Assets/Illustrator/window_ninepatch_dark.png" id="12_irnc6"]
-[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="13_uip1u"]
-[ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="14_gxgi5"]
-[ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="15_igunv"]
+[ext_resource type="Script" uid="uid://ddiajstfrgmi0" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless_desktop.gd" id="1_0ff3m"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_jrtar"]
+[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_d5gfc"]
+[ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="4_xclpl"]
+[ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="5_jvibn"]
+[ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_igjcc"]
+[ext_resource type="Texture2D" uid="uid://dry2p2161qtif" path="res://Assets/Illustrator/WindowDarkNinePatch.png" id="7_qc8f3"]
+[ext_resource type="Texture2D" uid="uid://dxi4f6remoigf" path="res://Assets/Illustrator/WindowNinePatch.png" id="8_0qj35"]
+[ext_resource type="Texture2D" uid="uid://dqqd2x4wfauqw" path="res://Assets/Illustrator/loboshop.png" id="9_mhhlr"]
+[ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="10_jbemc"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="11_csfkx"]
+[ext_resource type="Texture2D" uid="uid://tvb0y8lcsa8i" path="res://Assets/Illustrator/window_ninepatch_dark.png" id="12_2fkou"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="13_t8pxu"]
+[ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="14_ss5sd"]
+[ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="15_8784c"]
 
-[sub_resource type="Shader" id="Shader_uip1u"]
+[sub_resource type="Shader" id="Shader_pajh4"]
 code = "shader_type canvas_item;
 render_mode blend_mix, unshaded;
 
@@ -46,7 +46,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_irnc6"]
-shader = SubResource("Shader_uip1u")
+shader = SubResource("Shader_pajh4")
 shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
 shader_parameter/hole_position = Vector2(0.87, -0.12)
 shader_parameter/hole_size = Vector2(0.39499998, 0.545)
@@ -3718,7 +3718,7 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("1_b3o0d")
+script = ExtResource("1_0ff3m")
 animation = NodePath("AnimationPlayer")
 metadata/_tab_index = 6
 
@@ -3726,13 +3726,13 @@ metadata/_tab_index = 6
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_2itw6")]
+[node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
-icon = ExtResource("3_3w3re")
+icon = ExtResource("3_d5gfc")
 icon_name = "Data.sql"
 
-[node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_2itw6")]
+[node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
 icon = null
@@ -3744,82 +3744,82 @@ icon = null
 [node name="Label" parent="Desktop/Godot_icon" index="1"]
 text = "godot.png"
 
-[node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_2itw6")]
+[node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/TextWindow")
 icon = null
 icon_name = ""
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]
-icon = ExtResource("5_gmbrv")
+icon = ExtResource("4_xclpl")
 
 [node name="Label" parent="Desktop/Text_icon" index="1"]
 text = "text.txt"
 
-[node name="Internet" parent="Desktop" instance=ExtResource("1_2itw6")]
+[node name="Internet" parent="Desktop" instance=ExtResource("2_jrtar")]
 layout_mode = 2
-icon = ExtResource("5_irnc6")
+icon = ExtResource("5_jvibn")
 icon_name = "Browser"
 
 [node name="Button" parent="Desktop/Internet" index="0"]
-icon = ExtResource("5_irnc6")
+icon = ExtResource("5_jvibn")
 
 [node name="Label" parent="Desktop/Internet" index="1"]
 text = "Browser"
 
-[node name="IDE1" parent="Desktop" instance=ExtResource("1_2itw6")]
+[node name="IDE1" parent="Desktop" instance=ExtResource("2_jrtar")]
 layout_mode = 2
-icon = ExtResource("5_51gj3")
+icon = ExtResource("6_igjcc")
 icon_name = "IDE"
 
 [node name="Button" parent="Desktop/IDE1" index="0"]
-icon = ExtResource("5_51gj3")
+icon = ExtResource("6_igjcc")
 
 [node name="Label" parent="Desktop/IDE1" index="1"]
 text = "IDE"
 
-[node name="terminal1" parent="Desktop" instance=ExtResource("1_2itw6")]
+[node name="terminal1" parent="Desktop" instance=ExtResource("2_jrtar")]
 layout_mode = 2
-icon = ExtResource("7_7waw2")
+icon = ExtResource("7_qc8f3")
 icon_name = "terminal"
 
 [node name="Button" parent="Desktop/terminal1" index="0"]
 disabled = true
-icon = ExtResource("7_7waw2")
+icon = ExtResource("7_qc8f3")
 
 [node name="Label" parent="Desktop/terminal1" index="1"]
 text = "terminal"
 
-[node name="shellcodetxt" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("1_2itw6")]
+[node name="shellcodetxt" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 visible = false
 layout_mode = 2
 window = NodePath("../../WindowContainer/shellcode_txt")
-icon = ExtResource("5_gmbrv")
+icon = ExtResource("4_xclpl")
 icon_name = "shellcode.txt"
 
 [node name="Button" parent="Desktop/shellcodetxt" index="0"]
-icon = ExtResource("5_gmbrv")
+icon = ExtResource("4_xclpl")
 
 [node name="Label" parent="Desktop/shellcodetxt" index="1"]
 text = "shellcode.txt"
 
-[node name="boilerplate" parent="Desktop" instance=ExtResource("1_2itw6")]
+[node name="boilerplate" parent="Desktop" instance=ExtResource("2_jrtar")]
 layout_mode = 2
 script = null
 
 [node name="Button" parent="Desktop/boilerplate" index="0"]
-icon = ExtResource("5_7waw2")
+icon = ExtResource("8_0qj35")
 
 [node name="Label" parent="Desktop/boilerplate" index="1"]
 theme_override_font_sizes/font_size = 21
 text = "file.cpp"
 
-[node name="fileexe" parent="Desktop" instance=ExtResource("1_2itw6")]
+[node name="fileexe" parent="Desktop" instance=ExtResource("2_jrtar")]
 layout_mode = 2
 script = null
 
 [node name="Button" parent="Desktop/fileexe" index="0"]
-icon = ExtResource("9_irnc6")
+icon = ExtResource("9_mhhlr")
 
 [node name="Label" parent="Desktop/fileexe" index="1"]
 theme_override_font_sizes/font_size = 21
@@ -3828,7 +3828,7 @@ text = "loboshop.exe"
 [node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
 mouse_filter = 2
-script = ExtResource("6_gmbrv")
+script = ExtResource("10_jbemc")
 cyberattack_lbl = NodePath("Label")
 ransomware_recon_done = true
 
@@ -3847,7 +3847,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="shellcode_txt" parent="WindowContainer" instance=ExtResource("7_or6ws")]
+[node name="shellcode_txt" parent="WindowContainer" instance=ExtResource("11_csfkx")]
 visible = false
 layout_mode = 1
 anchor_left = 0.342105
@@ -3888,7 +3888,7 @@ text = "unsigned char buf[] =
 \"\\x8f\\xdf\\x22\\xaf\\x17\\xfc\\xf3\\xce\\x36\\x53\\x8f\\x88\\x98\";"
 metadata/_edit_use_anchors_ = true
 
-[node name="GodotWindow" parent="WindowContainer" instance=ExtResource("7_or6ws")]
+[node name="GodotWindow" parent="WindowContainer" instance=ExtResource("11_csfkx")]
 visible = false
 layout_mode = 1
 anchor_left = 0.392015
@@ -3919,7 +3919,7 @@ size_flags_vertical = 0
 text = "hsbhfieurmzbhiwwefpwbhabewibdjs"
 metadata/_edit_use_anchors_ = true
 
-[node name="SQLWindow" parent="WindowContainer" instance=ExtResource("7_or6ws")]
+[node name="SQLWindow" parent="WindowContainer" instance=ExtResource("11_csfkx")]
 visible = false
 layout_mode = 1
 anchor_left = 0.391107
@@ -3950,7 +3950,7 @@ size_flags_vertical = 0
 text = "jbqisbsifsbcsierqobamfkdoneuvindfjxf"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextWindow" parent="WindowContainer" instance=ExtResource("7_or6ws")]
+[node name="TextWindow" parent="WindowContainer" instance=ExtResource("11_csfkx")]
 visible = false
 layout_mode = 1
 anchor_left = 0.342105
@@ -3996,7 +3996,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_irnc6")
+texture = ExtResource("12_2fkou")
 region_rect = Rect2(0, 0, 300, 300)
 patch_margin_left = 19
 patch_margin_top = 44
@@ -4017,7 +4017,7 @@ theme_override_constants/margin_right = 10
 [node name="Title" type="Label" parent="WindowContainer/Terminal/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("13_uip1u")
+theme = ExtResource("13_t8pxu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
 text = "Terminal"
@@ -4028,8 +4028,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture_normal = ExtResource("14_gxgi5")
-texture_hover = ExtResource("15_igunv")
+texture_normal = ExtResource("14_ss5sd")
+texture_hover = ExtResource("15_8784c")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Terminal"]
@@ -4116,7 +4116,7 @@ visible_characters = 0
 visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="generating exe" parent="WindowContainer/Terminal" instance=ExtResource("7_or6ws")]
+[node name="generating exe" parent="WindowContainer/Terminal" instance=ExtResource("11_csfkx")]
 layout_mode = 1
 anchor_left = 0.28935245
 anchor_top = 0.21073072
