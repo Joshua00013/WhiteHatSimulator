@@ -6,6 +6,7 @@ signal code_finished
 
 var animations: PackedStringArray = []
 var current_index := 0
+var password_entered := false
 
 func _ready():
 	animations = anim_player.get_animation_list()
@@ -33,3 +34,7 @@ func _play_previous():
 	if current_index > 0:
 		current_index -= 1
 		anim_player.play(animations[current_index])
+
+
+func _on_window_background_window_exited():
+	emit_signal("code_finished")

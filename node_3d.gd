@@ -23,6 +23,7 @@ const JUMP_VELOCITY = 10
 var stand_height : float
 var look_rotation : Vector2
 var stand_height_offset : float = 0.0
+var trespassing : bool = false
 func _ready():
 	GameManager.player = self # The inventory ui is pointing to the Gamemanager.player.inventory
 	inventory = start_inventory.duplicate(true)

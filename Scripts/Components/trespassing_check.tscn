@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5l0bymfcv2vg"]
+
+[ext_resource type="Script" uid="uid://dn1sw443uvaqp" path="res://Scripts/Components/trespassing_check.gd" id="1_wdgmk"]
+
+[node name="TrespassingCheck" type="Area3D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_wdgmk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

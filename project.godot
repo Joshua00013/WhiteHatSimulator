@@ -53,9 +53,13 @@ directories/dtl_directory={
 "caught": "res://Dialogues/Timelines/caught.dtl"
 }
 variables={
+"al_rumor_heard": false,
 "has_coffee": false,
 "has_id": false,
-"has_pass": false
+"has_pass": false,
+"lied_to_al": false,
+"lied_to_mike": false,
+"trespassing": false
 }
 layout/style_list=["res://Dialogues/Styles/Default.tres"]
 layout/default_style="res://Dialogues/Styles/Default.tres"
@@ -105,6 +109,7 @@ folder_colors={
 [global_group]
 
 interact_ray=""
+npc=""
 
 [input]
 

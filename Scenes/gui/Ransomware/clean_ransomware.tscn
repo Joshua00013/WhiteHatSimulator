@@ -90,7 +90,9 @@ metadata/_tab_index = 11
 layout_mode = 2
 metadata/_tab_index = 12
 
-[connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
+[connection signal="code_finished" from="ransomwareV2 Encypt" to="." method="_on_ransomware_encrypt_finished"]
+[connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_exited"]
+[connection signal="code_finished" from="ransomwareV2 Decrypt" to="." method="_on_weaponization_finished"]
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]

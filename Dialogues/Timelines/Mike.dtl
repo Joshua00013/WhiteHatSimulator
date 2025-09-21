@@ -4,9 +4,9 @@ Show me your ID please.
 	[signal arg="corridor_unlocked"]
 - [Show Office Pass] Sorry, I'm here for the interview. | [if {has_pass} == true] [else="disable"]
 	Ah, so you're here for an interview. Please head right in.
-	But I'm watching you.
 	[signal arg="corridor_unlocked"]
 - [Lie] I'm here to check on the data server
 	Oh sure, it's right behind the security door at the end of the corridor.
+	set CyberattackAdaptationManager.lied_to_mike = true
 - I don't have one
 	Sorry, I can't allow unauthorized people inside. Safety protocol.

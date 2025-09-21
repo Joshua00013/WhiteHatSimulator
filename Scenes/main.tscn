@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=113 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -100,6 +100,7 @@
 [ext_resource type="PackedScene" uid="uid://rnnvcd2efuhy" path="res://Scenes/3DModels/Decorations/plant_type_a.tscn" id="91_t014q"]
 [ext_resource type="PackedScene" uid="uid://b8v1x63tfvc5h" path="res://Scenes/3DModels/Decorations/coffee_maker_base.tscn" id="92_lpdpw"]
 [ext_resource type="PackedScene" uid="uid://dpxbe1kdof3q1" path="res://Scenes/3DModels/Decorations/coffee_maker_cream_jug.tscn" id="93_jrou0"]
+[ext_resource type="PackedScene" uid="uid://5l0bymfcv2vg" path="res://Scripts/Components/trespassing_check.tscn" id="97_3ahwd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -157,6 +158,9 @@ size = Vector3(19.1973, 4.71716, 27.3146)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jekl6"]
 size = Vector3(14.4878, 4.8042, 23.9239)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xsn"]
+size = Vector3(21.183441, 1, 67.844925)
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("corridor_door")]
 script = ExtResource("1_6bp64")
@@ -322,12 +326,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2441, -0.0011332, 44.1063)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer6")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
 
-[node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5", "target_area_7", "target_area_9") instance=ExtResource("68_ovafv")]
+[node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5", "target_area_7", "target_area_9", "koro") instance=ExtResource("68_ovafv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75778645, -0.0011329651, 0.71310234)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_5 = NodePath("../../Markers/Cafeteria")
 target_area_7 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_9 = NodePath("../../Markers/Reception2")
+koro = NodePath("../Koro")
 
 [node name="John" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5") instance=ExtResource("69_owhal")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -2)
@@ -1794,6 +1799,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7595, 1.4687, 51.468)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrimeCheckComponent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16972, 0.9021, 1.74832)
 shape = SubResource("BoxShape3D_jekl6")
+
+[node name="TrespassingCheck" parent="." instance=ExtResource("97_3ahwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.772545, -0.0011329651, 25.160954)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrespassingCheck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.482834, 0, 2.07621)
+shape = SubResource("BoxShape3D_b4xsn")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 supersampling = true
