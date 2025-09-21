@@ -1,1 +1,8 @@
 What do you want?
+- Do you know anything about the guy in the Data Center? | [if {} == ""]
+	# Add condition if Player talks to Alwyn [If they entered the data center that is]
+	Oh, you mean Alwyn? Yeah, he always look like he has a stick up inside his butt.
+	But I know his weakness. He always goes to the registrar to chat with miss Koro.
+	You didn't hear it from me, okay?
+	- Okay??
+- Nothing, sorry
