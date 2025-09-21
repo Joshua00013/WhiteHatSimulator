@@ -24,13 +24,13 @@ func _on_send_button_pressed():
 func update_buttons():
 	var useable = CyberattackManager.get_usable_emails()
 	
-	# Email button
+	# Email button 
 	if useable.is_empty():
 		email_btn.disabled = true
 	else:
 		email_btn.disabled = false  # Enable if there is at least one usable email
 	# Website button
-	if not CyberattackManager.website_seen:
+	if not CyberattackManager.phishing_ready:
 		website_btn.disabled = true
 	else:
 		website_btn.disabled = false

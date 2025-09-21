@@ -15,6 +15,7 @@ var stage_finished : bool = false # Being set in main script ready to be false
 var game_paused : bool = false # Variable for pausing the game
 var is_crouching :bool = false
 var android_ui : CanvasLayer
+var player_name : String
 var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control
