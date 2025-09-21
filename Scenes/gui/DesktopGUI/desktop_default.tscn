@@ -225,7 +225,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/background_color = Color(0, 0, 0, 0)
-text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o="
 editable = false
 
 [node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
@@ -561,6 +560,14 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "<= faster   Speed   slower =>"
 horizontal_alignment = 1
+
+[node name="DecryptedMessage" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 22
+text = "Now the files have been dencrypted. You can now access all the files"
+metadata/_edit_use_anchors_ = true
 
 [node name="BlurShader" type="ColorRect" parent="."]
 visible = false
