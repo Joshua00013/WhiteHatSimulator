@@ -42,3 +42,4 @@ func _play_previous():
 
 func _on_loic_pressed() -> void:
 	_play_next()
+	
