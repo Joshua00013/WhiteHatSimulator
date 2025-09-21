@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://i2osqq8lau6i"]
+[gd_scene load_steps=49 format=3 uid="uid://i2osqq8lau6i"]
 
 [ext_resource type="Script" uid="uid://bvskfjemnktkj" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos.gd" id="1_t2pxy"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_iflec"]
@@ -2486,6 +2486,177 @@ tracks/9/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_rs6kj"]
+resource_name = "dos_website_not_seen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You haven't found the URL yet, find it first to continue"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/LOIC/Button:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WindowContainer/PanelContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Attack Option/Timeout/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["9001"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Attack Option/HTTP Subtitle/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["/"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Attack Option/TCP UDP/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I love cookies <3 <3"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Attack Option/Port/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4500"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Attack Option/Method:selected")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowContainer/PanelContainer/Overlay:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/url & ip/url bar/url text:visible_characters")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/Selected Target/ADDRESS:visible_characters")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/url & ip/ip bar/ip text:visible_characters")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WindowContainer/PanelContainer/ColorRect/Body/CHARGING/Charging BOX/Charging Label:text")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["CHARGING LAZER"]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("WindowContainer/Terminal:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
 _data = {
 &"RESET": SubResource("Animation_jvkw3"),
@@ -2506,7 +2677,8 @@ _data = {
 &"dos_15": SubResource("Animation_u7777"),
 &"dos_16": SubResource("Animation_slgw8"),
 &"dos_17": SubResource("Animation_3nt0p"),
-&"dos_18_attack": SubResource("Animation_n03k0")
+&"dos_18_attack": SubResource("Animation_n03k0"),
+&"dos_website_not_seen": SubResource("Animation_rs6kj")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4mbm"]
@@ -4563,10 +4735,10 @@ anchor_left = 0.4891107
 anchor_top = 0.5819398
 anchor_right = 0.54355717
 anchor_bottom = 0.6705685
-offset_left = 173.0
-offset_top = -86.0
-offset_right = 173.0
-offset_bottom = -85.99997
+offset_left = 712.0
+offset_top = 262.0
+offset_right = 772.0
+offset_bottom = 315.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_iflec")
