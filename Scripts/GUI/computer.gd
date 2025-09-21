@@ -12,6 +12,7 @@ var last_event_time: float = -1.0
 @export var username := ""
 @export var resource_override_password :bool = false
 
+@export var server_computer : bool = false
 @export var login_screen : Control
 @export var flashdrive_item : InvItem
 @export var minigame : Node3D
@@ -49,13 +50,14 @@ func _ready():
 	node_area.input_event.connect(_mouse_input_event)
 	
 	default_prompt_message = interactable.prompt_message
-	
+	npc_browser.initialize_server(server_computer)
 	if npc_resource != null:
 		notepad_text.text = npc_resource.text
 		login_screen.username = npc_resource.username
 		login_screen.password = npc_resource.password
 		npc_browser.change_email(npc_resource.email)
 		npc_browser.initialize_piracy(npc_resource.pirating)
+		
 	else: # Fallback if the resource is left empty
 		login_screen.username = username
 		login_screen.password = password

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c6rxlv0hvnwmr"]
+[gd_scene load_steps=36 format=3 uid="uid://c6rxlv0hvnwmr"]
 
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_2jwan"]
 [ext_resource type="Script" uid="uid://comasfojm3i37" path="res://Scripts/GUI/npc_browser.gd" id="1_qw6go"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="8_3rkm8"]
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="9_c7d30"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_ew7o2"]
+[ext_resource type="Theme" uid="uid://i6cyr37ngy2d" path="res://Themes/npc_browser.tres" id="11_xj06y"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="12_3rkm8"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="12_t6p0q"]
 [ext_resource type="Texture2D" uid="uid://d33h5gqfrugos" path="res://Assets/Illustrator/BrowserAssets/upload_white_super_small.png" id="13_e2y3f"]
 
@@ -438,6 +440,173 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
 horizontal_alignment = 1
 
+[node name="DatabaseWebsite" type="ColorRect" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27006173
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5153631, 0.81745213, 0.92452157, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/DatabaseWebsite"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSide" type="PanelContainer" parent="Background/DatabaseWebsite/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("11_xj06y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89464605, 0.44344726, 0.19307274, 1)
+theme_override_fonts/font = ExtResource("12_3rkm8")
+theme_override_font_sizes/font_size = 26
+text = "hphMyAdmin"
+
+[node name="TextEdit" type="TextEdit" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+custom_minimum_size = Vector2(0, 36.78)
+layout_mode = 2
+placeholder_text = "Recent Tables"
+
+[node name="Label2" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+text = "information schema"
+
+[node name="Label3" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+text = "mydatabase"
+
+[node name="Label4" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+text = "mysql"
+
+[node name="Label5" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+text = "performance_schema"
+
+[node name="Label6" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/LeftSide/VBoxContainer"]
+layout_mode = 2
+text = "testdb"
+
+[node name="Body" type="PanelContainer" parent="Background/DatabaseWebsite/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("11_xj06y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer"]
+layout_mode = 2
+text = "localhost"
+
+[node name="TabContainer" type="TabContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Databases" type="VBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Databases"
+
+[node name="Label2" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases"]
+layout_mode = 2
+text = "Create Database"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer"]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+placeholder_text = "Database Name"
+
+[node name="OptionButton" type="OptionButton" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "utf8_unicode_ci"
+popup/item_0/id = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases"]
+layout_mode = 2
+theme_override_constants/separation = 104
+
+[node name="Label2" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Database"
+
+[node name="Label4" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Collation"
+
+[node name="Label3" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Action"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases"]
+layout_mode = 2
+theme_override_constants/separation = 104
+
+[node name="Label2" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer3"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "chart"
+
+[node name="Label4" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer3"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "utf8mb4_general_ci"
+
+[node name="Label3" type="Label" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer/Databases/HBoxContainer3"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Check previleges"
+
+[node name="SQL" type="Control" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Status" type="Control" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Export" type="Control" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Import" type="Control" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Settings" type="Control" parent="Background/DatabaseWebsite/HBoxContainer/Body/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
 [node name="Piracy" type="ColorRect" parent="Background"]
 visible = false
 layout_mode = 1
@@ -509,6 +678,7 @@ text = "Upload"
 icon = ExtResource("13_e2y3f")
 
 [node name="Email" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 anchor_left = 0.525174
 anchor_top = 0.270062

@@ -1,23 +1,52 @@
-[gd_scene load_steps=14 format=3 uid="uid://jjhva651ce8b"]
+[gd_scene load_steps=26 format=3 uid="uid://jjhva651ce8b"]
 
 [ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_xxt4y"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_qd57o"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="6_bikpg"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_vlt0p"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_pga4f"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="9_p75vd"]
-[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/gui/laptop_browser.tscn" id="9_qd57o"]
+[ext_resource type="Texture2D" uid="uid://5wmj07ol6sdc" path="res://Assets/Illustrator/vscode.png" id="7_qd57o"]
+[ext_resource type="Texture2D" uid="uid://u0hu4tpihhy7" path="res://Assets/Illustrator/exe.png" id="8_hyjlr"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="9_p75vd"]
+[ext_resource type="PackedScene" uid="uid://d1uhpiic8wwi3" path="res://Scenes/GUI/laptop_browser.tscn" id="9_qd57o"]
 [ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="10_o41mf"]
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="10_pekke"]
-[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/gui/cyberattack_card.tscn" id="11_woodw"]
+[ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
+[ext_resource type="Theme" uid="uid://rartua8qh51p" path="res://Themes/LOIC.tres" id="13_hyjlr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxt4y"]
+content_margin_left = 50.0
+content_margin_top = 25.0
+content_margin_right = 50.0
+content_margin_bottom = 25.0
+bg_color = Color(0.18039216, 0.20784314, 0.23921569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4a78q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hk0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0ku7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmr1e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxfw1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bikpg"]
 shader = ExtResource("10_pekke")
 shader_parameter/amount = 2.775
 
-[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container", "attack_message")]
+[sub_resource type="Animation" id="Animation_xxt4y"]
+resource_name = "dos"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pga4f"]
+_data = {
+&"dos": SubResource("Animation_xxt4y")
+}
+
+[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +59,6 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("1_pekke")
 shader = NodePath("BlurShader")
 cards_container = NodePath("CyberAttackCards")
-attack_message = NodePath("DecryptedMessage")
 metadata/_tab_index = 0
 
 [node name="Desktop" type="VFlowContainer" parent="."]
@@ -46,6 +74,7 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
+icon = ExtResource("4_xxt4y")
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
@@ -61,22 +90,37 @@ icon = ExtResource("6_bikpg")
 icon_name = "Browser"
 
 [node name="Malware_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
+visible = false
 layout_mode = 2
 window = NodePath("../../WindowContainer/MalwareWindow")
 icon = ExtResource("6_vlt0p")
 icon_name = "Malware.py"
 
 [node name="Decr_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
+visible = false
 layout_mode = 2
 window = NodePath("../../WindowContainer/DecryWindow")
 icon = ExtResource("6_vlt0p")
 icon_name = "Decr.py"
 
 [node name="Key_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
+visible = false
 layout_mode = 2
 window = NodePath("../../WindowContainer/KeyWindow")
 icon = ExtResource("5_qd57o")
 icon_name = "Key.key"
+
+[node name="VSIcon" parent="Desktop" instance=ExtResource("2_bikpg")]
+visible = false
+layout_mode = 2
+icon = ExtResource("7_qd57o")
+icon_name = "VSCode"
+
+[node name="LOICIcon" parent="Desktop" instance=ExtResource("2_bikpg")]
+visible = false
+layout_mode = 2
+icon = ExtResource("8_hyjlr")
+icon_name = "LOIC"
 
 [node name="WindowContainer" type="Control" parent="." node_paths=PackedStringArray("cyberattack_lbl")]
 layout_mode = 2
@@ -519,16 +563,27 @@ text = "<= faster   Speed   slower =>"
 horizontal_alignment = 1
 
 [node name="BlurShader" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_bikpg")
 layout_mode = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.309804)
 
 [node name="CyberAttackCards" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CyberAttackCards"]
 layout_mode = 2
+
+[node name="NoneCard" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
+layout_mode = 2
+
+[node name="Title" parent="CyberAttackCards/VBoxContainer/NoneCard/MarginContainer/VBoxContainer" index="0"]
+text = "None"
+
+[node name="Label" parent="CyberAttackCards/VBoxContainer/NoneCard/MarginContainer/VBoxContainer" index="2"]
+text = "Return to desktop"
 
 [node name="Ransomware_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
@@ -547,34 +602,39 @@ text = "Bruteforce"
 [node name="Label" parent="CyberAttackCards/VBoxContainer/Bruteforce_card/MarginContainer/VBoxContainer" index="2"]
 text = "A brute force attack is when someone tries to guess a password by testing every possible combination until they find the right one. It’s like trying every key on a keychain to open a locked door—slow but effective if the lock (or password) is weak. To prevent this change your password more frequently and use special characters."
 
-[node name="Phishing_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
-layout_mode = 2
-unlock_override = true
-unlocked_day = 4
-
-[node name="Title" parent="CyberAttackCards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
-text = "Phishing"
-
 [node name="Fileless_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
-unlock_override = true
 unlocked_day = 3
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/Fileless_card/MarginContainer/VBoxContainer" index="0"]
 text = "Fileless"
 
+[node name="Phishing_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
+layout_mode = 2
+unlocked_day = 4
+
+[node name="Title" parent="CyberAttackCards/VBoxContainer/Phishing_card/MarginContainer/VBoxContainer" index="0"]
+text = "Phishing"
+
 [node name="DoS_card" parent="CyberAttackCards/VBoxContainer" instance=ExtResource("11_woodw")]
 layout_mode = 2
-unlock_override = true
 unlocked_day = 5
 
 [node name="Title" parent="CyberAttackCards/VBoxContainer/DoS_card/MarginContainer/VBoxContainer" index="0"]
 text = "Denial of Services"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pga4f")
+}
+
+[connection signal="pressed" from="Desktop/VSIcon" to="." method="show_cards"]
+[connection signal="pressed" from="Desktop/LOICIcon" to="." method="_on_loic_icon_pressed"]
+[connection signal="pressed" from="CyberAttackCards/VBoxContainer/NoneCard/Button" to="." method="hide_cards"]
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/Ransomware_card/Button" to="." method="_ransomware_pressed"]
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/Bruteforce_card/Button" to="." method="_bruteforce_pressed"]
-[connection signal="pressed" from="CyberAttackCards/VBoxContainer/Phishing_card/Button" to="." method="_phishing_pressed"]
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/Fileless_card/Button" to="." method="_fileless_pressed"]
+[connection signal="pressed" from="CyberAttackCards/VBoxContainer/Phishing_card/Button" to="." method="_phishing_pressed"]
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/DoS_card/Button" to="." method="_dos_pressed"]
 
 [editable path="WindowContainer/GodotWindow"]
@@ -583,8 +643,9 @@ text = "Denial of Services"
 [editable path="WindowContainer/KeyWindow"]
 [editable path="WindowContainer/MalwareWindow"]
 [editable path="WindowContainer/DecryWindow"]
+[editable path="CyberAttackCards/VBoxContainer/NoneCard"]
 [editable path="CyberAttackCards/VBoxContainer/Ransomware_card"]
 [editable path="CyberAttackCards/VBoxContainer/Bruteforce_card"]
-[editable path="CyberAttackCards/VBoxContainer/Phishing_card"]
 [editable path="CyberAttackCards/VBoxContainer/Fileless_card"]
+[editable path="CyberAttackCards/VBoxContainer/Phishing_card"]
 [editable path="CyberAttackCards/VBoxContainer/DoS_card"]

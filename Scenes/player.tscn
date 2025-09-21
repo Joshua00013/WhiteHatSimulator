@@ -1,12 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://4fjgut4ak6ob"]
+[gd_scene load_steps=19 format=3 uid="uid://4fjgut4ak6ob"]
 
 [ext_resource type="Script" uid="uid://cnwlth5l2crfv" path="res://node_3d.gd" id="1_4flbx"]
 [ext_resource type="Resource" uid="uid://ysbc0wl30il1" path="res://Items/player_inventory.tres" id="2_3smsa"]
 [ext_resource type="PackedScene" uid="uid://4d6admfoa0q5" path="res://Scenes/Components/interact_ray.tscn" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://cveawjeisjs1m" path="res://Scripts/GUI/player_camera.gd" id="2_fkybt"]
+[ext_resource type="Resource" uid="uid://csexcx3sqghcf" path="res://Items/file002.tres" id="3_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://vec8y8iude51" path="res://Assets/ELR_Corsshairs-export.png" id="3_vgqql"]
+[ext_resource type="Resource" uid="uid://baj1yndfhlmnr" path="res://Items/file003tres.tres" id="4_ukyrk"]
 [ext_resource type="PackedScene" uid="uid://duf7na8if78iu" path="res://GUI/Pause Menu/pause_menu.tscn" id="4_vgqql"]
+[ext_resource type="Resource" uid="uid://b6dbkghaottey" path="res://Items/file004.tres" id="5_7dp3o"]
 [ext_resource type="Script" uid="uid://cpuwsuvvovkqi" path="res://Scripts/GUI/crosshair.gd" id="5_8erm5"]
+[ext_resource type="Resource" uid="uid://c4mvhljn36eg2" path="res://Items/file005.tres" id="6_h4iuc"]
 [ext_resource type="Script" uid="uid://eh1hfcmjlvad" path="res://Scripts/States/state_machine.gd" id="8_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
@@ -85,6 +89,10 @@ script = ExtResource("1_4flbx")
 start_inventory = ExtResource("2_3smsa")
 accel = 20
 crouch_height = 1.5
+file_002 = ExtResource("3_pu2lt")
+file_003 = ExtResource("4_ukyrk")
+file_004 = ExtResource("5_7dp3o")
+file_005 = ExtResource("6_h4iuc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25589, 0)
