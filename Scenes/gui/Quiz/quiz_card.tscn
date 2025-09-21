@@ -63,7 +63,7 @@ alignment = 1
 self_modulate = Color(1, 1, 1, 0.376471)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Question 1 of 30"
+text = "Question 1 of 10"
 metadata/_edit_use_anchors_ = true
 
 [node name="Question" type="Label" parent="MarginContainer/VBoxContainer/QuestionContainer"]

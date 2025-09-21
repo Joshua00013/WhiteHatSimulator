@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcj0c85yx8jgb"]
+[gd_scene load_steps=29 format=3 uid="uid://bcj0c85yx8jgb"]
 
 [ext_resource type="Script" uid="uid://wfh21y1e645i" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos_website.gd" id="1_js44a"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="2_h4vce"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="8_xc20g"]
 [ext_resource type="Texture2D" uid="uid://c7gqb5hqnyf3r" path="res://Assets/Illustrator/BrowserAssets/user.png" id="9_62qgu"]
 [ext_resource type="Texture2D" uid="uid://m6ibbwu4yhki" path="res://Assets/Illustrator/BrowserAssets/dots.png" id="10_lrxqp"]
-[ext_resource type="Texture2D" uid="uid://batmk3xgl720t" path="res://Assets/Illustrator/BrowserAssets/60fe968c3d624000048712a0.png" id="11_h4vce"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="12_xlwa0"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="13_xia3y"]
 
@@ -287,17 +286,31 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xia3y"]
-bg_color = Color(0.39607844, 0.6, 0.6, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-shadow_color = Color(1, 1, 1, 0.5686275)
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.5686275)
 shadow_size = 7
-shadow_offset = Vector2(5, 0)
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4xf8"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.06885071, 0.3787295, 0.48226804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unsyy"]
 bg_color = Color(0.976471, 0.960784, 0.94902, 1)
@@ -547,25 +560,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1.5258789e-05
 offset_bottom = 6.1035156e-05
-color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TabContainer/Background/LOIC SITE"]
-layout_mode = 0
-anchor_left = 0.24565972
-anchor_top = 0.052965973
-anchor_right = 0.7282986
-anchor_bottom = 0.85169476
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16666667
+anchor_top = 0.016949024
+anchor_right = 0.8333333
+anchor_bottom = 0.6588982
 theme_override_styles/panel = SubResource("StyleBoxFlat_xia3y")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="TabContainer/Background/LOIC SITE/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.29442972
+anchor_left = 0.0013020834
+anchor_top = 0.10231023
+anchor_right = 1.0013021
+anchor_bottom = 0.39673996
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
 text = "DOWNLOAD LOIC NOW"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -574,23 +590,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Button" type="Button" parent="TabContainer/Background/LOIC SITE/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.57733816
-anchor_top = 0.42175066
-anchor_right = 0.87589926
-anchor_bottom = 0.52785146
+anchor_left = 0.32291666
+anchor_top = 0.5280528
+anchor_right = 0.6770833
+anchor_bottom = 0.76567656
 theme_override_styles/normal = SubResource("StyleBoxFlat_d4xf8")
 text = "INSTALL"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="TabContainer/Background/LOIC SITE/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.13489209
-anchor_top = 0.3448276
-anchor_right = 0.43764988
-anchor_bottom = 0.6127321
-texture = ExtResource("11_h4vce")
-expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TextPanel" type="Panel" parent="TabContainer/Background"]
