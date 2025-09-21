@@ -117,7 +117,7 @@ func handle_computer(_day:int, _hour:int, _minutes:int):
 		#PersonalComputer.in_use = false
 
 func change_target(new_target):
-	if new_target == null:
+	if new_target == null or not new_target.is_inside_tree():
 		return
 		
 	sitting = false

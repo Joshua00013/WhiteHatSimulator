@@ -32,11 +32,13 @@ var trespassing : bool = false
 func _ready():
 	GameManager.player = self # The inventory ui is pointing to the Gamemanager.player.inventory
 	inventory = start_inventory.duplicate(true)
+	add_starting_item()
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
 	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	look_rotation = Vector2(head.rotation_degrees.x, rotation_degrees.y)
+	
 
 func add_starting_item():
 	match DayAndNightManager.current_days:
