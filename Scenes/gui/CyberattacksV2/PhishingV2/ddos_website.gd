@@ -54,6 +54,6 @@ func _on_close_pressed() -> void:
 	SignalBus.ddos_part1_finished.emit()
 	emit_signal("code_finished")
 
-func _weaponization():
-	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)
-	CyberattackManager.weaponization_finished = true
+#func _weaponization():
+	#UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)
+	#CyberattackManager.weaponization_finished = true

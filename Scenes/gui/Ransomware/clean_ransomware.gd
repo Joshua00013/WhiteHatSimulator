@@ -43,13 +43,17 @@ func _on_cyberattack_selected(cyberattack: String) -> void:
 			current_tab = TABS.DOS
 	UiManager.show_nav_buttons.emit()
 
-func _on_weaponization_finished() -> void:
+#func _on_ransomware_decrypt_ransomware_decrypt_finished() -> void:
+#func _on_ransomware_v_2_decrypt_decryt_window_finish() -> void:
+func _on_ransomware_v2_decrypt_finished() -> void:
 	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)
 	CyberattackManager.weaponization_finished = true
 	desktop_default.hide_cards()
 	current_tab = 0
+	
+#func _on_window_window_exited() -> void:
 
-func _on_window_window_exited() -> void:
+func _on_malware_exe_window_malware_window_finished() -> void:
 	current_tab = TABS.PostRansomwareEncrypt
 	UiManager.popup.display_popup("Encryption finished", "Now the files have been encrypted. The files should only display a hash when opened. Press next to proceed",false)
 
