@@ -9,7 +9,7 @@ var active : bool = false
 var game_speed: float = 2.0
 
 var initial_day: int = 1
-var initial_hour: int = 10
+var initial_hour: int = 8
 var initial_minutes: int = 30
 
 var time: float = 0.0

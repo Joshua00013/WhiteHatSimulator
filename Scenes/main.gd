@@ -22,6 +22,7 @@ func _ready() -> void:
 			UiManager.popup.display_popup("Congratulations!", "You are now at your second day. You unlocked a new cyberattack, but you need a flashdrive to deploy it.")
 		3:
 			UiManager.popup.display_popup("Great job!","There are reports stating that some employees don't update their antivirus. Do an penetration testing as usual")
+			#TODO: Add day specific messages here
 	if OS.get_name() == "Android": # Change this to a default display setting for android
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	
