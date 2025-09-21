@@ -3673,6 +3673,7 @@ libraries = {
 }
 
 [node name="Piracy" type="ColorRect" parent="MarginContainer/Background" node_paths=PackedStringArray("upload_options", "piracy_anim_player", "message")]
+visible = false
 layout_mode = 0
 anchor_top = 0.27006173
 anchor_right = 1.0
