@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bcj0c85yx8jgb"]
 
-[ext_resource type="Script" uid="uid://wfh21y1e645i" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos_website.gd" id="1_js44a"]
+[ext_resource type="Script" uid="uid://wfh21y1e645i" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/ddos_website.gd" id="1_js44a"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="2_h4vce"]
 [ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="3_auor4"]
 [ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="4_xlwa0"]
