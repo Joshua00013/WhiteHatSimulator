@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://c4mvhljn36eg2"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_f8aq1"]
+
+[resource]
+script = ExtResource("1_f8aq1")
+name = "File - 005"
+description = "You have reached your final day in the job! Finish this and you will earn your pardon. Thanks to you, the security has drastically improved. For your final task, you should try to perform a DOS attack against the server. It should help stress test and also check the security of the other side. Good luck!"
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"
