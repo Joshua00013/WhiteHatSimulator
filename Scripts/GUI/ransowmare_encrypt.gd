@@ -20,21 +20,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_pressed") && freeze_animations == false:
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
-		if freeze_animations == false:
-			freeze_animations = true
 		_play_previous()
 
 func _play_next():
-	if current_index < animations.size() - 1 :
+	if current_index < animations.size() - 1:
 		current_index += 1
-		#if animations[current_index] == "ransomware_step_14":
-			#freeze_animations = true
-			#anim_player.play(animations[current_index])
-			#await password_check_component.correct_password
-			#current_index += 1
-			#anim_player.play(animations[current_index])
-			#freeze_animations = false
-		#else:
 		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
@@ -47,5 +37,4 @@ func _play_previous():
 
 
 func _on_window_background_window_exited():
-		CyberattackManager.ransomware_ready = true
 		emit_signal("code_finished")

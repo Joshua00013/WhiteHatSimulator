@@ -144,7 +144,7 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_nb1ia"]
+[sub_resource type="Resource" id="Resource_3ahwd"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -1347,8 +1347,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.159, 1.49638, 47.5462)
 [node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("67_nay3j")]
 transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 31.8646, 1.48254, 47.6258)
 
-[node name="sticky_note" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("55_t014q")]
+[node name="sticky_note" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" node_paths=PackedStringArray("computer") instance=ExtResource("55_t014q")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 31.435831, 2.5429087, 49.06926)
+computer = NodePath("../../../Computer5")
 
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
@@ -1691,7 +1692,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_nb1ia")
+npc_resource = SubResource("Resource_3ahwd")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)

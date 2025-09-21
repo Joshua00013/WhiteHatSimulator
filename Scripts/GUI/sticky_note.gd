@@ -4,6 +4,7 @@ var active
 
 @export var password_text: String
 @export var heading_text : String
+@export var computer : Node3D
 
 @export var paper_ui : PanelContainer
 @export var password_label : Label
@@ -14,6 +15,8 @@ func _ready() -> void:
 	if heading_text != null:
 		heading.text = heading_text
 	
+	if CyberattackAdaptationManager.weak_passwords == true || CyberattackAdaptationManager.no_password_used == true:
+		queue_free()
 	paper_ui.hide()
 
 func _process(_delta: float) -> void:
@@ -21,6 +24,10 @@ func _process(_delta: float) -> void:
 		exit_ui()
 
 func _on_interactable_interact_triggered() -> void:
+	if computer != null:
+		password_label.text = "Pass: " + computer.login_screen.password
+		heading.text = "Username: " + str(computer.login_screen.username)
+	
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = false #Change Android UI visibility to hidden

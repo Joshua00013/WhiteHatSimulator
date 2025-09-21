@@ -65,7 +65,8 @@ func _ready():
 		login_screen.password = weak_passwords.pick_random()
 	if CyberattackAdaptationManager.weak_passwords == true && CyberattackAdaptationManager.no_password_used == false: # Weak passwords are simply checks for bruteforce
 		login_screen.password = strong_password
-	
+	if CyberattackAdaptationManager.weak_passwords == false:
+		login_screen.password = strong_password
 	# IF NPCS SHARE PASSWORDS, AND OVERRIDE IS ON, KEEP THE DEFAULT
 	if CyberattackAdaptationManager.sharing_passwords_used == false && resource_override_password == true:
 		if npc_resource != null:

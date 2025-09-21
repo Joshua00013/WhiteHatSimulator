@@ -1,10 +1,22 @@
 extends MarginContainer
-signal bruteforce_finished
 
 var encrypted := false
 @export var shader: ColorRect
 @export var cards_container: ScrollContainer
-@export var attack_message: Label
+
+@export var malware_icon : VBoxContainer
+@export var decr_icon : VBoxContainer
+@export var key_icon : VBoxContainer
+@export var loic_icon : VBoxContainer
+
+@onready var animation_player = $AnimationPlayer
+
+func _ready():
+	malware_icon.hide()
+	decr_icon.hide()
+	key_icon.hide()
+	loic_icon.hide()
+	CyberattackManager.cyberattack_ready.connect(_on_cyberattack_ready)
 
 func _ransomware_pressed():
 	SignalBus.cyberattack_selected.emit("Ransomware")
@@ -29,6 +41,14 @@ func show_cards():
 	shader.show()
 	cards_container.show()
 
-func _bruteforce_exited() -> void:
-	bruteforce_finished.emit()
-	attack_message.text = "Upload complete: files saved to flash drive."
+func _on_cyberattack_ready(cyberattack):
+	if cyberattack == "ransomware":
+		malware_icon.show()
+		decr_icon.show()
+		key_icon.show()
+	if cyberattack == "dos":
+		loic_icon.show()
+
+
+func _on_loic_icon_pressed():
+	pass # Replace with function body.

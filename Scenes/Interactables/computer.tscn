@@ -1,10 +1,9 @@
-[gd_scene load_steps=56 format=3 uid="uid://dx0pda45jmvnh"]
+[gd_scene load_steps=55 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_2rmg2"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rmuk0"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="3_wyedc"]
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="4_6l7aj"]
 [ext_resource type="Script" uid="uid://vrlbq1ob1dnl" path="res://Scripts/GUI/deployment_component.gd" id="4_qfcx5"]
 [ext_resource type="Script" uid="uid://bo4cm6edw36my" path="res://Scripts/Components/room_visibility_notifier.gd" id="4_w0wty"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="5_yrttm"]
@@ -1057,7 +1056,6 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("4_6l7aj")
 metadata/_tab_index = 1
 
 [node name="Desktop" type="VFlowContainer" parent="Model/SubViewport/TabContainer/Desktop"]

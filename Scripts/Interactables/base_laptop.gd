@@ -203,7 +203,8 @@ func _on_laptop_minigame_component_minigame_finished() -> void:
 
 func _play_fileless(email : String):
 	if not CyberattackAdaptationManager.email_used:
-		CyberattackAdaptationManager.email_used = true
+		if GameManager.stage_finished == false:
+			CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_fileless_email")
 		await success_animation.animation_finished
@@ -220,11 +221,12 @@ func _play_fileless(email : String):
 	elif CyberattackAdaptationManager.email_used:
 		success_animation.play("open_fileless_email_fail")
 		await success_animation.animation_finished
-		UiManager.popup.display_popup("Email failed","The target did not click the attachment")
+		UiManager.popup.display_popup("Email failed","The target did not click the attachment",false)
 		
 func _play_ransomware(email : String):
 	if not CyberattackAdaptationManager.email_used:
-		CyberattackAdaptationManager.email_used = true
+		if GameManager.stage_finished == false: # If the player sends an email after the stage is finished
+			CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_ransomware_email")
 		await success_animation.animation_finished
@@ -239,6 +241,7 @@ func _play_ransomware(email : String):
 			await success_animation.animation_finished
 			CyberattackManager.command_and_control_finished = true
 			GameManager.stage_finished = true
+			CyberattackAdaptationManager.antivirus_installed = true
 		else:
 			success_animation.play("play_ransomware_fail")
 			await success_animation.animation_finished
@@ -250,7 +253,7 @@ func _play_ransomware(email : String):
 		UiManager.popup.display_popup("Email failed","The target did not click the attachment",false)
 	
 func _play_phishing(email : String):
-	if not CyberattackAdaptationManager.email_used:
+	if not CyberattackAdaptationManager.email_used || not CyberattackAdaptationManager.phishing_used:
 		CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_phishing_email")
@@ -264,8 +267,9 @@ func _play_phishing(email : String):
 		success_animation.play("play_phishing")
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
+		CyberattackAdaptationManager.phishing_used = true
 		GameManager.stage_finished = true
-	elif CyberattackAdaptationManager.email_used:
+	elif CyberattackAdaptationManager.email_used && CyberattackAdaptationManager.phishing_used:
 		success_animation.play("open_phishing_email_fail")
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the link")

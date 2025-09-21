@@ -16,15 +16,11 @@ extends VBoxContainer
 @export var button : Button
 @export var label : Label
 
+signal pressed
 
 func _on_button_button_down() -> void:
 	if window != null:
 		window.visible = true
+	pressed.emit()
 
-
-func _on_internet_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_loic_pressed() -> void:
-	pass # Replace with function body.
+#BOBO BASE SCRIPT TO WAG GAGALAWIN 

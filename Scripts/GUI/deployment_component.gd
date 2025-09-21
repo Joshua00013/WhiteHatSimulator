@@ -75,3 +75,4 @@ func _on_bruteforce_finished():
 		$"../Model/SubViewport/TabContainer/Login/Window/CodeEdit".text = "Password: " + str(get_parent().login_screen.password)
 		CyberattackAdaptationManager.bruteforce_used = true
 		UiManager.popup.display_popup("Bruteforce Successful!","You have found the password", false )
+		GameManager.stage_finished = true

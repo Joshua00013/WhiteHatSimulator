@@ -17,12 +17,18 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("next_pressed"):
-		_play_next()
-		if animations[current_index] == "dos_17":
-			CyberattackManager.exploitation_finished = true
-		elif animations[current_index] == "dos_18_attack":
-			CyberattackManager.installation_finished = true
-			CyberattackManager.command_and_control_finished = true
+		if CyberattackManager.website_seen == false:
+			anim_player.play("dos_website_not_seen")
+		else:
+			if animations[current_index] == "dos_17":
+				CyberattackManager.exploitation_finished = true
+				_play_next()
+			elif animations[current_index] == "dos_18_attack":
+				CyberattackManager.installation_finished = true
+				CyberattackManager.command_and_control_finished = true
+			else:
+				_play_next()
+
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
 
