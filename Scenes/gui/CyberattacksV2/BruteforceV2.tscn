@@ -1,11 +1,11 @@
 [gd_scene load_steps=51 format=3 uid="uid://dxlue7cpddlnh"]
 
-[ext_resource type="Script" uid="uid://01c71kr8ucd6" path="res://Scenes/gui/CyberattacksV2/bruteforce_v2.gd" id="1_gi6xj"]
+[ext_resource type="Script" path="res://Scenes/gui/CyberattacksV2/bruteforce_v2.gd" id="1_gi6xj"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_jxoe6"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_t1hkx"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_yxh0e"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_n672d"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_fkg8t"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_n672d"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_fkg8t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -2385,6 +2385,7 @@ oP1c9L6sR2
 ['C','y','p','h',e','r','2','0','2','5']
 Cypher2025"
 editable = false
+scroll_vertical = 115.0
 line_folding = true
 
 [node name="Debug" type="Control" parent="."]

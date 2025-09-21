@@ -6,10 +6,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6wus"]
 bg_color = Color(0.211765, 0.239216, 0.321569, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpomq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epux4"]
-bg_color = Color(0.347467, 0.369752, 0.428993, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrhvm"]
+bg_color = Color(0.141176, 0.152941, 0.184314, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -22,12 +20,14 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrhvm"]
-bg_color = Color(0.141176, 0.152941, 0.184314, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epux4"]
+bg_color = Color(0.347467, 0.369752, 0.428993, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpomq"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("username_box", "password_box", "error_message")]
 custom_minimum_size = Vector2(250, 30)
@@ -104,10 +104,10 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xpomq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_epux4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrhvm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lwri2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epux4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xpomq")
 text = ">"
 
 [node name="ErrorMessage" type="Label" parent="Login"]

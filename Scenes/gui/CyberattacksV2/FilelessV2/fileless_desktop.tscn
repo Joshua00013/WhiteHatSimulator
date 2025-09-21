@@ -3783,8 +3783,6 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
-icon = null
-icon_name = ""
 
 [node name="Button" parent="Desktop/Godot_icon" index="0"]
 icon = null
@@ -3795,8 +3793,6 @@ text = "godot.png"
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_jrtar")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/TextWindow")
-icon = null
-icon_name = ""
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]
 icon = ExtResource("4_xclpl")
