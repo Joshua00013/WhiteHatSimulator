@@ -10,6 +10,10 @@ func _ready():
 	if DayAndNightManager.current_days == 2 && unlocked_day == 2:
 		lock_card()
 		GameManager.laptop_flashdrive_inserted.connect(unlock_card)
+		
+	if DayAndNightManager.current_days == 5 && unlocked_day == 5:
+		lock_card()
+		CyberattackManager.website_seen_changed.connect(unlock_card)
 
 func lock_card():
 	modulate = Color(0.3, 0.3, 0.3, 1)
