@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc0iffvnt6fcb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.tscn" id="9_8imo2"]
 [ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_website.tscn" id="10_e7as3"]
 [ext_resource type="PackedScene" uid="uid://i2osqq8lau6i" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos.tscn" id="11_qm60n"]
-[ext_resource type="PackedScene" uid="uid://bcj0c85yx8jgb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/ddos_website.tscn" id="12_8imo2"]
+[ext_resource type="PackedScene" uid="uid://bcj0c85yx8jgb" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos_website.tscn" id="12_8imo2"]
 [ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
 [ext_resource type="PackedScene" uid="uid://b38jachcmca75" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_desktop.tscn" id="14_atxjj"]
