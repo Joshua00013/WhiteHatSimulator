@@ -4,6 +4,7 @@ signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 
+var finished
 var animations: PackedStringArray = []
 var current_index := 0
 
@@ -16,18 +17,17 @@ func _process(_delta):
 	if not visible or animations.is_empty():
 		return
 	
-	if Input.is_action_just_pressed("next_pressed"):
-		if CyberattackManager.website_seen == false:
-			anim_player.play("dos_website_not_seen")
+	if Input.is_action_just_pressed("next_pressed") && finished == true:
+		if animations[current_index] == "dos_01":
+			CyberattackManager.exploitation_finished = true
+			_play_next()
+		elif animations[current_index] == "dos_02":
+			CyberattackManager.installation_finished = true
+			_play_next()
+		elif animations[current_index] == "dos_02_attack":
+			CyberattackManager.command_and_control_finished = true
 		else:
-			if animations[current_index] == "dos_17":
-				CyberattackManager.exploitation_finished = true
-				_play_next()
-			elif animations[current_index] == "dos_18_attack":
-				CyberattackManager.installation_finished = true
-				CyberattackManager.command_and_control_finished = true
-			else:
-				_play_next()
+			_play_next()
 
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
@@ -45,7 +45,15 @@ func _play_previous():
 		current_index -= 1
 		anim_player.play(animations[current_index])
 
-
+func terminal_disable():
+	finished = false
+	
+func terminal_enable():
+	finished = true
+	
 func _on_loic_pressed() -> void:
-	_play_next()
+	if CyberattackManager.data_server_seen == false:
+		anim_player.play("dos_data_server_not _seen")
+	else:
+		_play_next()
 	
