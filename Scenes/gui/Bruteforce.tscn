@@ -492,7 +492,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Window" parent="HSplitContainer/CodeEdit" instance=ExtResource("4_4pc1q")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.105642
