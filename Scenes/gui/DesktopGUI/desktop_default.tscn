@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://jjhva651ce8b"]
 
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
+[ext_resource type="Script" uid="uid://ds26kq6wue5fa" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
 [ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_xxt4y"]
@@ -46,7 +46,7 @@ _data = {
 &"dos": SubResource("Animation_xxt4y")
 }
 
-[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container")]
+[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container", "malware_icon", "decr_icon", "key_icon", "loic_icon")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,6 +59,10 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("1_pekke")
 shader = NodePath("BlurShader")
 cards_container = NodePath("CyberAttackCards")
+malware_icon = NodePath("Desktop/Malware_icon")
+decr_icon = NodePath("Desktop/Decr_icon")
+key_icon = NodePath("Desktop/Key_icon")
+loic_icon = NodePath("Desktop/LOICIcon")
 metadata/_tab_index = 0
 
 [node name="Desktop" type="VFlowContainer" parent="."]
@@ -111,7 +115,6 @@ icon = ExtResource("5_qd57o")
 icon_name = "Key.key"
 
 [node name="VSIcon" parent="Desktop" instance=ExtResource("2_bikpg")]
-visible = false
 layout_mode = 2
 icon = ExtResource("7_qd57o")
 icon_name = "VSCode"

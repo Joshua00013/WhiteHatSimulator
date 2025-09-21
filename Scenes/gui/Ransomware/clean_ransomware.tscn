@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c651ldtbfalgc"]
 
-[ext_resource type="Script" uid="uid://dd7ggkki1plsm" path="res://Scenes/gui/Ransomware/clean_ransomware.gd" id="1_7e48o"]
+[ext_resource type="Script" uid="uid://dd7ggkki1plsm" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
 [ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/GUI/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
 [ext_resource type="PackedScene" uid="uid://cvlbm3qymf244" path="res://Scenes/GUI/CyberattacksV2/ransomwareV2_encrypt.tscn" id="3_8imo2"]
 [ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/GUI/post_ransomware_encrypt.tscn" id="4_atxjj"]

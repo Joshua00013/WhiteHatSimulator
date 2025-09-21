@@ -46,7 +46,6 @@ func _on_option_button_item_selected(index: int) -> void:
 
 
 func _on_install_pressed() -> void:
-	print("nigga")
 	_play_next()
 
 func _on_close_pressed() -> void:
