@@ -27,15 +27,15 @@ func _process(_delta):
 func _play_next():
 	if current_index < animations.size() - 1 :
 		current_index += 1
-		if animations[current_index] == "ransomware_step_14":
-			freeze_animations = true
-			anim_player.play(animations[current_index])
-			await password_check_component.correct_password
-			current_index += 1
-			anim_player.play(animations[current_index])
-			freeze_animations = false
-		else:
-			anim_player.play(animations[current_index])
+		#if animations[current_index] == "ransomware_step_14":
+			#freeze_animations = true
+			#anim_player.play(animations[current_index])
+			#await password_check_component.correct_password
+			#current_index += 1
+			#anim_player.play(animations[current_index])
+			#freeze_animations = false
+		#else:
+		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
 			pass

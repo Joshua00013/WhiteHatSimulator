@@ -1,6 +1,6 @@
 extends Control
 
-signal code_finished
+signal bruteforce_exited
 
 @onready var anim_player = $AnimationPlayer
 
@@ -33,3 +33,7 @@ func _play_previous():
 	if current_index > 0:
 		current_index -= 1
 		anim_player.play(animations[current_index])
+
+
+func _window_exited() -> void:
+	bruteforce_exited.emit()

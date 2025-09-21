@@ -1,8 +1,10 @@
 extends MarginContainer
+signal bruteforce_finished
 
 var encrypted := false
 @export var shader: ColorRect
 @export var cards_container: ScrollContainer
+@export var attack_message: Label
 
 func _ransomware_pressed():
 	SignalBus.cyberattack_selected.emit("Ransomware")
@@ -26,3 +28,7 @@ func hide_cards():
 func show_cards():
 	shader.show()
 	cards_container.show()
+
+func _bruteforce_exited() -> void:
+	bruteforce_finished.emit()
+	attack_message.text = "Upload complete: files saved to flash drive."

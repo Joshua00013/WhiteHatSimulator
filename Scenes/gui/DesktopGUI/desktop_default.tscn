@@ -17,7 +17,7 @@
 shader = ExtResource("10_pekke")
 shader_parameter/amount = 2.775
 
-[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container")]
+[node name="DesktopDefault" type="MarginContainer" node_paths=PackedStringArray("shader", "cards_container", "attack_message")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,6 +30,7 @@ theme_override_constants/margin_bottom = 25
 script = ExtResource("1_pekke")
 shader = NodePath("BlurShader")
 cards_container = NodePath("CyberAttackCards")
+attack_message = NodePath("DecryptedMessage")
 metadata/_tab_index = 0
 
 [node name="Desktop" type="VFlowContainer" parent="."]
@@ -45,7 +46,6 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
-icon = null
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]

