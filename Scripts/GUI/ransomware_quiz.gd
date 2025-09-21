@@ -635,17 +635,17 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. A program that deletes files only",
       "D. A harmless app"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
-	"question": "Why is fileless malware harder to find?",
+	"question": "Where does fileless malware keep its code while running?",
 	"answers": [
-	  "A. It always turns the screen blue",
-	  "B. It does not leave normal files for antivirus to scan",
-	  "C. It needs a floppy disk",
-      "D. It only attacks printers"
+	  "A. In the USB flashdrive",
+	  "B. In the RAM",
+	  "C. In the downloads folder",
+      "D. In the Recycle Bin"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
 	"question": "Which common tool do attackers sometimes use for fileless attacks on Windows?",
@@ -655,7 +655,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. PowerShell or system tools",
       "D. Calculator"
 	],
-	"correct_answer": 2
+	"correct_answer": 3
   },
   {
 	"question": "How can you reduce the chance of fileless attacks from email attachments?",
@@ -665,7 +665,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Don't open unknown attachments and disable macros",
       "D. Forward attachments to friends"
 	],
-	"correct_answer": 2
+	"correct_answer": 3
   },
   {
 	"question": "Why should organizations keep software up to date?",
@@ -675,55 +675,55 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Updates delete personal files",
       "D. Updates change passwords automatically"
 	],
-	"correct_answer": 1
+	"correct_answer": 4
   },
   {
-	"question": "What does 'least privilege' mean for stopping fileless attacks?",
+	"question": "What tool can be used to listen for a fileless malware connection?",
 	"answers": [
-	  "A. Give everyone admin access",
-	  "B. Give each account only the access it needs",
-	  "C. Share passwords among users",
-      "D. Disable accounts permanently"
+	  "A. Task Manager",
+	  "B. Metasploit",
+	  "C. Notepad",
+      "D. WinRAR"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
-	"question": "How does application whitelisting help?",
+	"question": "What does the payload do in fileless malware?",
 	"answers": [
-	  "A. It allows any program to run",
-	  "B. It only allows approved programs to run, blocking unknown scripts",
-	  "C. It removes all security warnings",
-      "D. It formats the drive daily"
+	  "A. Shows a warning message",
+	  "B. Executes malicious actions in memory",
+	  "C. Deletes antivirus",
+      "D. Formats the hard drive"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
-	"question": "What logging helps detect fileless attacks?",
+	"question": "What is the purpose of shellcode in this type of attack?",
 	"answers": [
-	  "A. Wallpaper change logs",
-	  "B. PowerShell, system command, and process activity logs",
-	  "C. Printer queue history",
-      "D. Font installation logs"
+	  "A. Store pictures in a folder",
+	  "B. Store usernames in the database",
+	  "C. Store machine instructions that will run in memory",
+      "D. Store Wi-Fi passwords in the database"
 	],
-	"correct_answer": 1
+	"correct_answer": 3
   },
   {
-	"question": "Why avoid running unsigned scripts from the internet?",
+	"question": "Which command creates the raw shellcode we discussed?",
 	"answers": [
-	  "A. They are always slow",
-	  "B. They might contain hidden harmful code",
-	  "C. They improve performance",
-      "D. They only work on weekends"
+	  "A. gcc",
+	  "B. msfvenom",
+	  "C. ifconfig",
+      "D. curl"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
-	"question": "How does removing local admin rights help?",
+	"question": "What happens when the loader runs?",
 	"answers": [
-	  "A. It stops users from saving files",
-	  "B. It stops attackers from running powerful actions easily",
-	  "C. It deletes user accounts",
-      "D. It speeds up the computer"
+	  "A. It writes the code to a file",
+	  "B. It downloads and executes shellcode directly in memory",
+	  "C. It restarts the PC",
+      "D. It shows an error"
 	],
 	"correct_answer": 1
   },
