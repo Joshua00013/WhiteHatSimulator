@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://dronc4jjmcb4r"]
 
 [ext_resource type="Script" uid="uid://bqyk03rse0met" path="res://Scripts/GUI/clean_ui_ransomware_decrypt.gd" id="1_u0evs"]
-[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="2_ttfhu"]
-[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="3_jhany"]
+[ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/gui/CleanUI/window.tscn" id="2_ttfhu"]
+[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/gui/Ransomware/password_check_component.gd" id="3_jhany"]
 
 [sub_resource type="Shader" id="Shader_wwpmy"]
 code = "shader_type canvas_item;
@@ -36,8 +36,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4e7k"]
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.135, 0.64)
-shader_parameter/hole_size = Vector2(3.025, 1.605)
+shader_parameter/hole_position = Vector2(0.135, 0.05)
+shader_parameter/hole_size = Vector2(3.025, 0.385)
 
 [sub_resource type="Animation" id="Animation_7e48o"]
 length = 0.001
@@ -114,84 +114,6 @@ tracks/5/keys = {
 "values": [Vector2(3.025, 1.605)]
 }
 
-[sub_resource type="Animation" id="Animation_pnwk5"]
-resource_name = "decrypt_ransomware_step1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 0.05)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.185)]
-}
-
-[sub_resource type="Animation" id="Animation_atxjj"]
-resource_name = "decrypt_ransomware_step1.2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scroll_vertical")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.135, 0.245)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.025, 0.18)]
-}
-
 [sub_resource type="Animation" id="Animation_4yk5j"]
 resource_name = "decrypt_ransomware_step3"
 tracks/0/type = "value"
@@ -229,6 +151,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3.025, 0.37)]
+}
+
+[sub_resource type="Animation" id="Animation_u0evs"]
+resource_name = "decrypy_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9.0, 9.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.135, 2.655), Vector2(0.135, 3.045)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.025, 0.39), Vector2(3.025, 0.195)]
 }
 
 [sub_resource type="Animation" id="Animation_gq7c2"]
@@ -543,8 +504,8 @@ tracks/2/keys = {
 "values": [Vector2(3.025, 0.195), Vector2(3.025, 0.39)]
 }
 
-[sub_resource type="Animation" id="Animation_u0evs"]
-resource_name = "decrypy_11"
+[sub_resource type="Animation" id="Animation_pnwk5"]
+resource_name = "decrypt_ransomware_step1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -552,10 +513,10 @@ tracks/0/path = NodePath(".:scroll_vertical")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.06666667, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [9.0, 9.0]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -564,10 +525,10 @@ tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.06666667, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.135, 2.655), Vector2(0.135, 3.045)]
+"values": [Vector2(0.135, 0.05)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -576,10 +537,49 @@ tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.06666667, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.025, 0.39), Vector2(3.025, 0.195)]
+"values": [Vector2(3.025, 0.185)]
+}
+
+[sub_resource type="Animation" id="Animation_atxjj"]
+resource_name = "decrypt_ransomware_step1.2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:material:shader_parameter/hole_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.135, 0.245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:material:shader_parameter/hole_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.025, 0.18)]
 }
 
 [sub_resource type="Animation" id="Animation_ttfhu"]
@@ -715,13 +715,14 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DecryptorWindow" parent="HSplitContainer/CodeEdit" instance=ExtResource("2_ttfhu")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.267707
 anchor_top = 0.262542
 anchor_right = 0.885954
 anchor_bottom = 0.742475
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" parent="HSplitContainer/CodeEdit/DecryptorWindow/HBoxContainer" index="0"]
 text = "decr.py"

@@ -16,24 +16,24 @@ script = ExtResource("2_r2q8s")
 dialogue = "Wisadel"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.4477705, -0.04415529)
+bones/0/position = Vector3(0, 1.4408158, -0.04415528)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.007864132, -0.05958408, 0.9891813, -0.13382249)
+bones/2/rotation = Quaternion(-0.006297653, -0.06679489, 0.9845612, -0.16167276)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.027500475, -0.018370004, 0.99944663, 0.003588911)
+bones/4/rotation = Quaternion(-0.027758088, 0.0021028197, 0.9995877, -0.007035902)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.070045784, -0.00039912594, -0.0391151, 0.9967766)
+bones/5/rotation = Quaternion(-0.109783754, -0.00039718594, -0.06130558, 0.9920631)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.6141507, 0.0053346376, 0.059880294, 0.7868958)
+bones/6/rotation = Quaternion(0.62944806, 0.010830336, 0.068761624, 0.7739184)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.00982753, -0.056423675, 0.9903543, 0.12616712)
+bones/7/rotation = Quaternion(0.0076119825, -0.045148753, 0.98757076, 0.15035848)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.0041780057, -0.019675313, 0.99979746, -0.0007099599)
+bones/9/rotation = Quaternion(-0.0038431655, 0.0004434834, 0.9999368, 0.01056111)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.07004577, 0.00039912405, 0.039115097, 0.9967766)
+bones/10/rotation = Quaternion(-0.10978374, 0.00039718734, 0.06130558, 0.9920631)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.6147626, -0.03172719, -0.042084266, 0.78694934)
+bones/11/rotation = Quaternion(0.6297768, -0.0375758, -0.051485684, 0.77415675)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -50,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47014, 0)
 
 [node name="DoorCheckComponent" parent="." index="6" instance=ExtResource("8_n88cj")]
 
-[node name="Interactable" parent="." index="7" instance=ExtResource("9_2dess")]
+[node name="Interactable" parent="." index="7" groups=["npc"] instance=ExtResource("9_2dess")]
 prompt_message = "Wisadel"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]

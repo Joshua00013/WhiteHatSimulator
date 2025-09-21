@@ -1,19 +1,19 @@
 [gd_scene load_steps=15 format=3 uid="uid://c651ldtbfalgc"]
 
-[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/GUI/Ransomware/clean_ransomware.gd" id="1_7e48o"]
-[ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/GUI/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
-[ext_resource type="PackedScene" uid="uid://cvlbm3qymf244" path="res://Scenes/GUI/CyberattacksV2/ransomwareV2_encrypt.tscn" id="3_8imo2"]
-[ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/GUI/post_ransomware_encrypt.tscn" id="4_atxjj"]
-[ext_resource type="PackedScene" uid="uid://6yl41qxmeq2t" path="res://Scenes/GUI/CyberattacksV2/ransomwareV2_decrypt.tscn" id="5_8imo2"]
-[ext_resource type="PackedScene" uid="uid://dnj8fsi1dawwb" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.tscn" id="7_ojgsj"]
-[ext_resource type="PackedScene" uid="uid://bm1xtqsg5bvxb" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless_desktop.tscn" id="8_o0l8t"]
-[ext_resource type="PackedScene" uid="uid://cc0iffvnt6fcb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.tscn" id="9_8imo2"]
-[ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_website.tscn" id="10_e7as3"]
-[ext_resource type="PackedScene" uid="uid://i2osqq8lau6i" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos.tscn" id="11_qm60n"]
-[ext_resource type="PackedScene" uid="uid://bcj0c85yx8jgb" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/ddos_website.tscn" id="12_8imo2"]
-[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/GUI/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
-[ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/GUI/Bruteforce.tscn" id="14_8imo2"]
-[ext_resource type="PackedScene" uid="uid://b38jachcmca75" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_desktop.tscn" id="14_atxjj"]
+[ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/gui/Ransomware/clean_ransomware.gd" id="1_7e48o"]
+[ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/gui/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
+[ext_resource type="PackedScene" uid="uid://cvlbm3qymf244" path="res://Scenes/gui/CyberattacksV2/ransomwareV2_encrypt.tscn" id="3_8imo2"]
+[ext_resource type="PackedScene" uid="uid://4g07llena6ub" path="res://Scenes/gui/post_ransomware_encrypt.tscn" id="4_atxjj"]
+[ext_resource type="PackedScene" uid="uid://6yl41qxmeq2t" path="res://Scenes/gui/CyberattacksV2/ransomwareV2_decrypt.tscn" id="5_8imo2"]
+[ext_resource type="PackedScene" uid="uid://dnj8fsi1dawwb" path="res://Scenes/gui/CyberattacksV2/FilelessV2/fileless.tscn" id="7_ojgsj"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless_desktop.tscn" id="8_o0l8t"]
+[ext_resource type="PackedScene" uid="uid://cc0iffvnt6fcb" path="res://Scenes/gui/CyberattacksV2/PhishingV2/phishing.tscn" id="9_8imo2"]
+[ext_resource type="PackedScene" uid="uid://ch21mccnclukw" path="res://Scenes/gui/CyberattacksV2/PhishingV2/phishing_website.tscn" id="10_e7as3"]
+[ext_resource type="PackedScene" uid="uid://i2osqq8lau6i" path="res://Scenes/gui/CyberattacksV2/DDOSV2/ddos.tscn" id="11_qm60n"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/ddos_website.tscn" id="12_8imo2"]
+[ext_resource type="PackedScene" uid="uid://yma6vkusf8cc" path="res://Scenes/gui/DesktopGUI/computer_login_screen.tscn" id="12_qm60n"]
+[ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/gui/Bruteforce.tscn" id="14_8imo2"]
+[ext_resource type="PackedScene" uid="uid://b38jachcmca75" path="res://Scenes/gui/CyberattacksV2/PhishingV2/phishing_desktop.tscn" id="14_atxjj"]
 
 [node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon")]
 anchors_preset = 15
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 12
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
@@ -32,7 +32,6 @@ visible = false
 layout_mode = 2
 
 [node name="ransomwareV2 Encypt" parent="." instance=ExtResource("3_8imo2")]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -87,10 +86,13 @@ password = "whitehat553322"
 metadata/_tab_index = 11
 
 [node name="PhishingDesktop" parent="." instance=ExtResource("14_atxjj")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 12
 
-[connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_post_ransomware_encrypt_exited"]
+[connection signal="code_finished" from="ransomwareV2 Encypt" to="." method="_on_ransomware_encrypt_finished"]
+[connection signal="post_ransomware_encrypt_exited" from="PostRansomwareEncrypt" to="." method="_on_post_ransomware_encrypt_exited"]
+[connection signal="code_finished" from="ransomwareV2 Decrypt" to="." method="_on_weaponization_finished"]
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]

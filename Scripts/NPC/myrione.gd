@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-class_name NPC
-
 enum {IDLE, RUN, SIT, SPRINT}
 enum WorkState {WORK, BREAK, CHASE}
 var cur_anim :int = IDLE : 

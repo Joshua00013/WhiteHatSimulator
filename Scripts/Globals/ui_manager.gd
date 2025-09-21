@@ -7,6 +7,9 @@ var game_over_ui : Control
 
 var nav_button_active := false
 
+var next_button : Button
+var back_button : Button
+
 signal show_nav_buttons
 signal hide_nav_buttons
 

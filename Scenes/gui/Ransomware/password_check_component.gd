@@ -7,6 +7,7 @@ var password : String = "WhiteHat"
 var input_pass : String
 
 signal correct_password
+signal ransomware_decrypt_finished
 
 func _on_ransomware_decrypt_submit_button_pressed() -> void:
 	input_pass = password_box.text
@@ -14,3 +15,7 @@ func _on_ransomware_decrypt_submit_button_pressed() -> void:
 		correct_password.emit()
 	else:
 		message_label.text = "Incorrect Password"
+
+func _on_password_check_component_correct_password() -> void:
+	CyberattackManager.ransomware_ready = true
+	ransomware_decrypt_finished.emit()

@@ -18,6 +18,9 @@ var antivirus_installed: bool = false : set = set_antivirus_installed
 var antivirus_updated: bool = false : set = set_antivirus_updated
 var piracy_exploited: bool = false : set = set_piracy_exploited
 
+var lied_to_al : bool = false : set = set_lied_to_al
+var lied_to_mike : bool = false : set = set_lied_to_mike
+
 # --- Setters redirect to temporary ---
 func set_flashdrive_used(val):
 	await SignalBus.stage_finished
@@ -65,7 +68,7 @@ func set_phishing_used(val):
 
 func set_fileless_used(val):
 	await SignalBus.stage_finished
-	phishing_used = val
+	fileless_used = val
 
 func set_antivirus_installed(val):
 	await SignalBus.stage_finished
@@ -79,6 +82,13 @@ func set_piracy_exploited(val):
 	await SignalBus.stage_finished
 	piracy_exploited = val
 	
+func set_lied_to_al(val):
+	await SignalBus.stage_finished
+	lied_to_al = val
+	
+func set_lied_to_mike(val):
+	await SignalBus.stage_finished
+	lied_to_mike = val
 func reset():
 	
 	flashdrive_used = false
@@ -100,6 +110,8 @@ func reset():
 	antivirus_updated = false
 	piracy_exploited = false
 	
+	lied_to_al = false
+	lied_to_mike = false
 
 var _snapshot := {}
 
@@ -119,7 +131,9 @@ func save_snapshot():
 		"fileless_used" : fileless_used,
 		"antivirus_installed": antivirus_installed,
 		"antivirus_updated": antivirus_updated,
-		"piracy_exploited" : piracy_exploited
+		"piracy_exploited" : piracy_exploited,
+		"lied_to_al" : lied_to_al,
+		"lied_to_mike" : lied_to_mike
 	}
 
 func restore_snapshot():
@@ -141,4 +155,6 @@ func restore_snapshot():
 	antivirus_installed   = _snapshot["antivirus_installed"]
 	antivirus_updated     = _snapshot["antivirus_updated"]
 	piracy_exploited      = _snapshot["piracy_exploited"]
+	lied_to_al            = _snapshot["lied_to_al"]
+	lied_to_mike          = _snapshot["lied_to_mike"]
 	print("Snapshot restored")

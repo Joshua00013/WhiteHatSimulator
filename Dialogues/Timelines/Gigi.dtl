@@ -3,5 +3,6 @@ Nice day for coding, isn't it? Haha!
 - What do you know about Al?
 	He's a charmer, he always visits us early in the morning to make sure our computers are working.
 	But I do hear rumors about him being infatuated to miss Koro at the registrar.
+	set {al_rumor_heard} = true
 	I'm not sure though.
 	- Okay, thank you for the help!

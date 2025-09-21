@@ -49,11 +49,11 @@ func _on_weaponization_finished() -> void:
 	desktop_default.hide_cards()
 	current_tab = 0
 
-func _on_window_window_exited() -> void:
+func _on_ransomware_encrypt_finished():
 	current_tab = TABS.PostRansomwareEncrypt
 	UiManager.popup.display_popup("Encryption finished", "Now the files have been encrypted. The files should only display a hash when opened. Press next to proceed",false)
 
-func _on_post_ransomware_encrypt_post_ransomware_encrypt_exited() -> void:
+func _on_post_ransomware_encrypt_exited() -> void:
 	current_tab = TABS.RansomwareDecrypt
 
 func _on_login_login_successful() -> void:
