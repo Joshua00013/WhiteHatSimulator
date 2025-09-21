@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbo64xqi8mb47"]
+
+[ext_resource type="PackedScene" uid="uid://cb0dk5mkcemq6" path="res://Assets/Exported3dModel/keycard_blue.glb" id="1_fwn1k"]
+[ext_resource type="Script" uid="uid://cbt6ihhbw45q1" path="res://Scripts/Interactables/keycard_blue.gd" id="2_be2ge"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_go2h2"]
+[ext_resource type="Resource" uid="uid://cxmos82sk45c1" path="res://Items/blue_keycard.tres" id="3_gxkwx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxkwx"]
+size = Vector3(0.056640625, 0.32092285, 0.22070313)
+
+[node name="keycard_blue" instance=ExtResource("1_fwn1k")]
+script = ExtResource("2_be2ge")
+blue_keycard_item = ExtResource("3_gxkwx")
+
+[node name="Interactable" parent="." index="1" instance=ExtResource("3_go2h2")]
+prompt_message = "Take"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0018197894, 0.0010979548)
+shape = SubResource("BoxShape3D_gxkwx")
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

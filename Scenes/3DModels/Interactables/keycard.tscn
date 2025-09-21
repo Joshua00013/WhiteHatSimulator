@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmini8a3qee8g"]
-
-[ext_resource type="PackedScene" uid="uid://cttdt8exf6wu3" path="res://Assets/Exported3dModel/keycard.glb" id="1_glr6h"]
-
-[node name="keycard" instance=ExtResource("1_glr6h")]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://b6dbkghaottey"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_068tb"]
+
+[resource]
+script = ExtResource("1_068tb")
+name = "File - 004"
+description = "You have managed to do a fantastic job from this past few days, management is very pleased. The system has improved alot since then. However, we have received reports that some employees still gets tricked into clicking malicious links. We hope you can find a way to confirm this and teach them a lesson."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

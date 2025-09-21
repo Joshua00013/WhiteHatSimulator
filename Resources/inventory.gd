@@ -16,7 +16,6 @@ func remove(target_item: InvItem):
 			items[i] = null
 			return true
 
-
 func check_inv(target_item: InvItem):
 	for i in range(items.size()):
 		if items[i] == target_item:

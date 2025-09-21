@@ -281,7 +281,8 @@ func _play_ransomware_piracy():
 	
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
-	CyberattackAdaptationManager.piracy_exploited = true
+	if GameManager.stage_finished == false:
+		CyberattackAdaptationManager.piracy_exploited = true
 	CyberattackManager.exploitation_finished = true
 	
 	success_animation.play("download_ransomware")
@@ -307,7 +308,8 @@ func _play_fileless_piracy():
 	
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
-	CyberattackAdaptationManager.piracy_exploited = true
+	if GameManager.stage_finished == false:
+		CyberattackAdaptationManager.piracy_exploited = true
 	CyberattackManager.exploitation_finished = true
 	
 	success_animation.play("download_fileless") 
