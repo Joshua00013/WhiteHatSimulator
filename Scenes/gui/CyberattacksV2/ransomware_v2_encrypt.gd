@@ -1,6 +1,6 @@
 extends Control
 
-signal code_finished
+signal encryptV2_finished
 
 @onready var anim_player = $AnimationPlayer
 
@@ -17,18 +17,7 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("next_pressed"):
-		if CyberattackManager.website_seen == false:
-			anim_player.play("dos_website_not_seen")
-		else:
-			if animations[current_index] == "dos_17":
-				CyberattackManager.exploitation_finished = true
-				_play_next()
-			elif animations[current_index] == "dos_18_attack":
-				CyberattackManager.installation_finished = true
-				CyberattackManager.command_and_control_finished = true
-			else:
-				_play_next()
-
+		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
 
@@ -46,6 +35,5 @@ func _play_previous():
 		anim_player.play(animations[current_index])
 
 
-func _on_loic_pressed() -> void:
-	_play_next()
-	
+func _on_malware_exe_window_malware_window_finished() -> void:
+	encryptV2_finished.emit()
