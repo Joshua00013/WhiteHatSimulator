@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c70p4jiuket4g"]
+[gd_scene load_steps=9 format=3 uid="uid://c5ybr4psxlrb6"]
 
 [ext_resource type="Texture2D" uid="uid://c5x62prpu6d6m" path="res://Scenes/GUI/Phishing UI/phishing assets/trash.png" id="1_c0rhy"]
 [ext_resource type="Texture2D" uid="uid://p636w3knxqpy" path="res://Scenes/GUI/Phishing UI/phishing assets/computer.png" id="2_sikyu"]

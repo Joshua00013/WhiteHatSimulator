@@ -2832,8 +2832,6 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" instance=ExtResource("2_iflec")]
 layout_mode = 2
-icon = null
-icon_name = ""
 
 [node name="Button" parent="Desktop/Godot_icon" index="0"]
 icon = null
@@ -2843,7 +2841,6 @@ text = "godot.png"
 
 [node name="Text_icon" parent="Desktop" instance=ExtResource("2_iflec")]
 layout_mode = 2
-icon = null
 icon_name = "text"
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]
