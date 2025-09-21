@@ -6,6 +6,7 @@ signal code_finished
 
 var animations: PackedStringArray = []
 var current_index := 0
+var password_entered := false
 
 func _ready():
 	animations = anim_player.get_animation_list()
@@ -18,11 +19,6 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("next_pressed"):
 		_play_next()
-		if animations[current_index] == "dos_17":
-			CyberattackManager.exploitation_finished = true
-		elif animations[current_index] == "dos_18_attack":
-			CyberattackManager.installation_finished = true
-			CyberattackManager.command_and_control_finished = true
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
 
@@ -32,7 +28,7 @@ func _play_next():
 		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
-			emit_signal("code_finished")
+			pass
 
 func _play_previous():
 	if current_index > 0:
@@ -40,6 +36,5 @@ func _play_previous():
 		anim_player.play(animations[current_index])
 
 
-func _on_loic_pressed() -> void:
-	_play_next()
-	
+func _on_window_background_window_exited():
+	emit_signal("code_finished")

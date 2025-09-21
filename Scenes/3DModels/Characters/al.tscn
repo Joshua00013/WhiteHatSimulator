@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dho6k74etc68v"]
 
 [ext_resource type="PackedScene" uid="uid://c5yk10phhn0hv" path="res://Assets/Exported3dModel/al.glb" id="1_vp2hp"]
-[ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_pjn6v"]
+[ext_resource type="Script" uid="uid://hyujk0o555ho" path="res://Scripts/NPC/al.gd" id="2_cqbdc"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_r8q6d"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_r8q6d"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="5_so210"]
@@ -36,29 +36,29 @@ nodes/Sit/position = Vector2(520, 320)
 "nodes/anim sit/position" = Vector2(320, 600)
 node_connections = [&"output", 0, &"Sit", &"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit"]
 
-[node name="al" instance=ExtResource("1_vp2hp")]
-script = ExtResource("2_pjn6v")
+[node name="al" groups=["npc"] instance=ExtResource("1_vp2hp")]
+script = ExtResource("2_cqbdc")
 dialogue = "Alwyn"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.4417853, -0.044155285)
+bones/0/position = Vector3(0, 1.4412714, -0.044155285)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.0065249037, -0.06575386, 0.98528236, -0.15764694)
+bones/2/rotation = Quaternion(-0.006218083, -0.067159, 0.98430467, -0.16308121)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.027725134, -0.00033847426, 0.99959886, -0.005771631)
+bones/4/rotation = Quaternion(-0.027759716, 0.0022220656, 0.999587, -0.0070976326)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.1049948, -0.00039746563, -0.058631334, 0.9927429)
+bones/5/rotation = Quaternion(-0.111411035, -0.0003970854, -0.062214285, 0.991825)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.6276392, 0.010176838, 0.067700274, 0.7754885)
+bones/6/rotation = Quaternion(0.62953633, 0.0108622415, 0.06881349, 0.77384156)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.007933268, -0.046784066, 0.9880183, 0.14686088)
+bones/7/rotation = Quaternion(0.007527672, -0.044719603, 0.98745084, 0.15127571)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.0038861288, -0.0019555315, 0.999948, 0.009219761)
+bones/9/rotation = Quaternion(-0.0038410414, 0.00056067057, 0.99993604, 0.0106266085)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.1049948, 0.00039746703, 0.058631334, 0.9927429)
+bones/10/rotation = Quaternion(-0.11141102, 0.00039708876, 0.062214267, 0.991825)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.6280014, -0.036880825, -0.050361894, 0.7757047)
+bones/11/rotation = Quaternion(0.6298633, -0.03760973, -0.05154061, 0.77408093)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]

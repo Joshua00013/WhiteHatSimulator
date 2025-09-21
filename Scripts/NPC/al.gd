@@ -19,6 +19,7 @@ var direction : Vector3
 var speed = 3
 var run_val = 0
 var sit_val = 0
+var lied_to : bool = false
 
 @export var dialogue : String
 @export var PersonalComputer : Node3D
@@ -33,7 +34,7 @@ var sit_val = 0
 @export var target_area_8 : Node3D
 @export var target_area_9 : Node3D
 @export var target_area_10 : Node3D
-
+@export var koro : Node3D
 var schedule : Dictionary = {}
 
 @export var blend_speed = 15
@@ -53,6 +54,7 @@ func _ready() -> void:
 	interactable.connect("interact_triggered",_on_interactable_interact_triggered)
 	
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	DayAndNightManager.time_tick_hour.connect(calc_schedule)
 	DayAndNightManager.time_tick.connect(handle_computer)
 	
@@ -73,7 +75,7 @@ func _ready() -> void:
 		navigation_agent_3d.set_target_position(target_area.global_position)
 
 func calc_schedule(hour: int):
-	if schedule.has(hour) and schedule[hour] != null and state != WorkState.CHASE: #Proceed as usual if not chasing a target
+	if schedule.has(hour) and schedule[hour] != null and state != WorkState.CHASE and lied_to == false: #Proceed as usual if not chasing a target
 		change_target(schedule[hour])
 		
 		if hour >= 8 and hour <= 10:
@@ -243,3 +245,10 @@ func _on_timeline_ended():
 func _on_interactable_interact_triggered() -> void:
 	show_dialogoue(dialogue)
 	
+func _on_dialogic_signal(arg : String):
+	if arg == "lied_to_al":
+		move_to_koro()
+
+func move_to_koro():
+	lied_to = true
+	change_target(koro)

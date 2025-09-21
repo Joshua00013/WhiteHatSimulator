@@ -36,8 +36,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4e7k"]
 shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
-shader_parameter/hole_position = Vector2(0.135, 0.64)
-shader_parameter/hole_size = Vector2(3.025, 1.605)
+shader_parameter/hole_position = Vector2(0.135, 0.05)
+shader_parameter/hole_size = Vector2(3.025, 0.385)
 
 [sub_resource type="Animation" id="Animation_7e48o"]
 length = 0.001
@@ -715,7 +715,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DecryptorWindow" parent="HSplitContainer/CodeEdit" instance=ExtResource("2_ttfhu")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.267707

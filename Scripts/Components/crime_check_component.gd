@@ -17,7 +17,7 @@ func _on_body_exited(body: Node3D) -> void:
 func notify_room():
 	if GameManager.player in occupants:
 		for occupant in occupants:
-			if occupant is NPC:
+			if occupant.is_in_group("npc"):
 				occupant.change_state(occupant.WorkState.CHASE)
 
 func get_initial_occupants():

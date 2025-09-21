@@ -40,24 +40,24 @@ script = ExtResource("2_w4y5k")
 dialogue = "Koro"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.4410211, -0.04415528)
+bones/0/position = Vector3(0, 1.4437845, -0.04415528)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.006197824, -0.06725165, 0.9842389, -0.1634397)
+bones/2/rotation = Quaternion(-0.0069706272, -0.06370704, 0.9866468, -0.14973654)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.027765479, 0.0026440762, 0.9995842, -0.007316095)
+bones/4/rotation = Quaternion(-0.02765646, -0.005586494, 0.9995973, -0.0030512298)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.1125901, -0.00039701228, -0.062872685, 0.99165034)
+bones/5/rotation = Quaternion(-0.09483581, -0.00039801607, -0.052958336, 0.9940833)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.62984854, 0.010975147, 0.06899703, 0.7735695)
+bones/6/rotation = Quaternion(0.62373644, 0.008770244, 0.06542093, 0.77884287)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.007467579, -0.044413723, 0.9873648, 0.15192935)
+bones/7/rotation = Quaternion(0.008563549, -0.049991846, 0.98885316, 0.13998911)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.0038335212, 0.0009753705, 0.9999333, 0.010858391)
+bones/9/rotation = Quaternion(-0.003975595, -0.0071127512, 0.9999468, 0.0063336873)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.11259008, 0.0003970153, 0.062872685, 0.99165034)
+bones/10/rotation = Quaternion(-0.09483581, 0.00039801828, 0.052958336, 0.9940833)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.6301698, -0.03772979, -0.051734954, 0.7738127)
+bones/11/rotation = Quaternion(0.62417126, -0.035384543, -0.047948755, 0.77901167)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -89,4 +89,4 @@ prompt_message = "Koro"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_bar17")
 
-[node name="ChaseComponent" parent="." index="8" instance=ExtResource("6_hysm3")]
+[node name="ChaseComponent" parent="." index="8" groups=["npc"] instance=ExtResource("6_hysm3")]

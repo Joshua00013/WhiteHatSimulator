@@ -1,11 +1,12 @@
-Show me your ID
-- Show ID | [if {has_id} == true] [else="disable"]
-	Alright, you can go in.
+Show me your ID please.
+- [Show ID] Here | [if {has_id} == true] [else="disable"]
+	Alright, you can go in. No funny business.
 	[signal arg="corridor_unlocked"]
-- Show Office Pass | [if {has_pass} == true] [else="disable"]
-	Oh, so you here for an interview. Please head right in.
+- [Show Office Pass] Sorry, I'm here for the interview. | [if {has_pass} == true] [else="disable"]
+	Ah, so you're here for an interview. Please head right in.
 	[signal arg="corridor_unlocked"]
-- (Lie) I'm here to check on the data server
-	Oh sure, its right behind the security door at the end of the corridor.
+- [Lie] I'm here to check on the data server
+	Oh sure, it's right behind the security door at the end of the corridor.
+	set CyberattackAdaptationManager.lied_to_mike = true
 - I don't have one
-	I can't allow unauthorized people inside
+	Sorry, I can't allow unauthorized people inside. Safety protocol.

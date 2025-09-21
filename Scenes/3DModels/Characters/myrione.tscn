@@ -11,29 +11,29 @@
 [ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="10_olryk"]
 [ext_resource type="PackedScene" uid="uid://cad55in337a26" path="res://Scenes/Components/NPC_Parts/nav_agent_refresh_timer.tscn" id="10_x75sr"]
 
-[node name="myrione" instance=ExtResource("1_jbe5r")]
+[node name="myrione" groups=["npc"] instance=ExtResource("1_jbe5r")]
 script = ExtResource("2_p1dbb")
 dialogue = "Myrione"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.449621, -0.04415529)
+bones/0/position = Vector3(0, 1.4461937, -0.04415529)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.008275958, -0.05767478, 0.9902589, -0.12646186)
+bones/2/rotation = Quaternion(-0.00751113, -0.06121615, 0.98821205, -0.14011881)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.0274135, -0.026163995, 0.99925256, 0.0076464773)
+bones/4/rotation = Quaternion(-0.027565869, -0.012852545, 0.9995371, 0.00072070514)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.054906387, -0.00039963043, -0.03066096, 0.99802065)
+bones/5/rotation = Quaternion(-0.08075238, -0.00039868633, -0.04509387, 0.9957136)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.6082519, 0.003234079, 0.056510866, 0.7917232)
+bones/6/rotation = Quaternion(0.61830175, 0.006819025, 0.062269736, 0.78344053)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.010410378, -0.05938902, 0.9909686, 0.119774885)
+bones/7/rotation = Quaternion(0.009328778, -0.053885914, 0.98978966, 0.13162775)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.004290473, -0.027333906, 0.9996046, -0.0050129425)
+bones/9/rotation = Quaternion(-0.0040933047, -0.014253176, 0.9998874, 0.002332397)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.054906387, 0.0003996302, 0.030660957, 0.9980206)
+bones/10/rotation = Quaternion(-0.080752365, 0.0003986882, 0.045093864, 0.9957136)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.60898435, -0.029493798, -0.03852646, 0.7916969)
+bones/11/rotation = Quaternion(0.6188371, -0.033307847, -0.044613108, 0.7835438)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
