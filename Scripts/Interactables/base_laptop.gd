@@ -239,6 +239,7 @@ func _play_ransomware(email : String):
 			await success_animation.animation_finished
 			CyberattackManager.command_and_control_finished = true
 			GameManager.stage_finished = true
+			CyberattackAdaptationManager.antivirus_installed = true
 		else:
 			success_animation.play("play_ransomware_fail")
 			await success_animation.animation_finished
