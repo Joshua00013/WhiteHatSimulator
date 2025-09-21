@@ -4,7 +4,7 @@ signal phase_updated(phase: String)
 signal cyberattack_ready(attack_name: String)
 signal piracy_seen_changed
 signal website_seen_changed
-signal email_updated
+signal email_updated (address, value)
 
 var current_phase : String = "reset"
 
