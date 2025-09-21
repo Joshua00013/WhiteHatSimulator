@@ -52,7 +52,6 @@ func _on_install_pressed() -> void:
 func _on_close_pressed() -> void:
 	CyberattackManager.dos_ready = true
 	SignalBus.ddos_part1_finished.emit()
-	emit_signal("code_finished")
 
 func _weaponization():
 	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)

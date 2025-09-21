@@ -1,10 +1,1 @@
-# Please add code where Alwyn get's alerted that the player entered the data center. It should unlock the diologue choice for John
-Hey! You're not supposed to be here.
-- Miss Koro is asking for you at the registrar. | [if {} == ""]
-	# Make it that it turns on when player gets the hint about Al having a crush on Koro that he always goes to registrar to chat with her
-	# Please make code to make Al go to Koro thank youuujhbfajkhbgaj
-	Oh, s-she did? I'll go right away!
-	do 
-- Sorry, my bad.
-	Alright, but you better not come back here again, you hear?
-	This is the Data Center, important stuff!
+You're not supposed to be here
