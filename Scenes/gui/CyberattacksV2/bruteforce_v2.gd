@@ -1,12 +1,11 @@
 extends Control
 
-signal ransomwareV2_decypt_finished
+signal bruteforce_exited
 
 @onready var anim_player = $AnimationPlayer
 
 var animations: PackedStringArray = []
 var current_index := 0
-var password_entered := false
 
 func _ready():
 	animations = anim_player.get_animation_list()
@@ -21,13 +20,11 @@ func _process(_delta):
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
-@onready var decryptor_window: Control = $DecryptorWindow
 
 func _play_next():
 	if current_index < animations.size() - 1:
 		current_index += 1
 		anim_player.play(animations[current_index])
-			
 	else:
 		if animations[current_index] == "reset":
 			pass
@@ -38,12 +35,6 @@ func _play_previous():
 		anim_player.play(animations[current_index])
 
 
-func _on_window_background_window_exited():
-	emit_signal("code_finished")
-
-func _on_window_background_correct_pass() -> void:
-	ransomwareV2_decypt_finished.emit()
-
-
-func _correct_password() -> void:
-	ransomwareV2_decypt_finished.emit()
+func _window_exited() -> void:
+	bruteforce_exited.emit()
+	CyberattackManager.bruteforce_ready =true

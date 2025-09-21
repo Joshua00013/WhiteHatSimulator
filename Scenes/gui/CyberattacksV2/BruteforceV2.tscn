@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://dxlue7cpddlnh"]
 
-[ext_resource type="Script" uid="uid://ckfxgu1kkib3k" path="res://Scripts/GUI/code_editor_ui.gd" id="1_gi6xj"]
+[ext_resource type="Script" uid="uid://01c71kr8ucd6" path="res://Scenes/gui/CyberattacksV2/bruteforce_v2.gd" id="1_gi6xj"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_jxoe6"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_t1hkx"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_yxh0e"]
@@ -2385,7 +2385,6 @@ oP1c9L6sR2
 ['C','y','p','h',e','r','2','0','2','5']
 Cypher2025"
 editable = false
-scroll_vertical = 115.0
 line_folding = true
 
 [node name="Debug" type="Control" parent="."]
