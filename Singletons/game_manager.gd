@@ -40,7 +40,7 @@ func remove_item(item:InvItem):
 	return inv.remove(item)
 
 func check_inv(item:InvItem):
-	return inv.check_inv(item)
+	return player.inventory.check_inv(item)
 	
 func dialogue_remove_item(target_item: String):
 	var item : InvItem

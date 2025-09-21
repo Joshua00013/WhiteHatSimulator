@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://c872l4kd08mbe"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_yscaj"]
+
+[resource]
+script = ExtResource("1_yscaj")
+name = "Green Keycard"
+description = "Keycard used by the security operations center employees. "
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

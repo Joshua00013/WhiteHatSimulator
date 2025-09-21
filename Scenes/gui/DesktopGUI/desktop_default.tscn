@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://jjhva651ce8b"]
 
-[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/gui/Ransomware/desktop_default.gd" id="1_pekke"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_bikpg"]
+[ext_resource type="Script" uid="uid://c336up6annq50" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_qd57o"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="6_bikpg"]
@@ -301,12 +301,222 @@ grow_vertical = 0
 text = "simple"
 metadata/_edit_use_anchors_ = true
 
-[node name="DecryptedMessage" type="Label" parent="."]
+[node name="LOICWindow" type="PanelContainer" parent="WindowContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxt4y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/LOICWindow"]
+layout_mode = 2
+theme = ExtResource("13_hyjlr")
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Low Orbit Ion Cannon"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "URL: "
+
+[node name="OptionButton" type="OptionButton" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 15)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Lock"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "IP: "
+
+[node name="OptionButton" type="OptionButton" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 15)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Lock"
+
+[node name="PanelContainer2" type="PanelContainer" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4a78q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4hk0t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n0ku7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rmr1e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pxfw1")
+text = "STOP FLOODING"
+
+[node name="IPContainer" type="PanelContainer" parent="WindowContainer/LOICWindow/VBoxContainer"]
+layout_mode = 2
+
+[node name="IPAddress" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/IPContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "192.168.41.1"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="WindowContainer/LOICWindow/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="TopRow" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+alignment = 1
+
+[node name="Timeout" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/Timeout"]
+layout_mode = 2
+text = "Timeout"
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/Timeout"]
+layout_mode = 2
+text = "9001"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/VBoxContainer2"]
+layout_mode = 2
+text = "HTTP Subtitle"
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/VBoxContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "/"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/VBoxContainer3"]
+layout_mode = 2
+text = "TCP/UDP Message"
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/TopRow/VBoxContainer3"]
+layout_mode = 2
+text = "I love cookies <3"
+
+[node name="BottomRow" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Port" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Port"]
+layout_mode = 2
+text = "Port"
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Port"]
+layout_mode = 2
+text = "4500"
+
+[node name="Methods" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Methods"]
+layout_mode = 2
+text = "Methods"
+
+[node name="OptionButton" type="OptionButton" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Methods"]
+layout_mode = 2
+selected = 1
+item_count = 6
+popup/item_0/text = "TCP"
+popup/item_0/id = 0
+popup/item_1/text = "UDP"
+popup/item_1/id = 1
+popup/item_2/text = "HTTP"
+popup/item_2/id = 2
+popup/item_3/text = "ReCol"
+popup/item_3/id = 3
+popup/item_4/text = "SlowLOIC"
+popup/item_4/id = 4
+popup/item_5/text = "UCMP"
+popup/item_5/id = 5
+
+[node name="Threads" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Threads"]
+layout_mode = 2
+text = "Threads"
+
+[node name="Button" type="Button" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/Threads"]
+layout_mode = 2
+text = "10"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 22
-text = "Now the files have been dencrypted. You can now access all the files"
-metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Wait for reply"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="HSlider" type="HSlider" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WindowContainer/LOICWindow/VBoxContainer/PanelContainer2/VBoxContainer/BottomRow/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "<= faster   Speed   slower =>"
+horizontal_alignment = 1
 
 [node name="BlurShader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_bikpg")

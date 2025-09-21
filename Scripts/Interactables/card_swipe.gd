@@ -5,6 +5,7 @@ extends Node3D
 
 @export var door : Node3D
 @export var keycard_scene : PackedScene
+@export var keycard_item : InvItem
 
 var keycard: Node3D
 var sensitivity = 0.01
@@ -46,17 +47,18 @@ func _input(event):
 					last_mouse_y = mouse_pos.y
 				
 func _on_interactable_interact_triggered() -> void:
-	match OS.get_name():
-		"Android":
-			GameManager.android_ui.visible = false #Change Android UI visibility to hidden
-			
-	if card_camera.is_current() == false:
-		GameManager.player.exit_tool_tip.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		card_camera.current = true
-		GameManager.ui_active = true
-		active = true
-		initialize_keycard()
+	print(GameManager.check_inv(keycard_item))
+	if GameManager.check_inv(keycard_item) == true:
+		match OS.get_name():
+			"Android":
+				GameManager.android_ui.visible = false #Change Android UI visibility to hidden
+		if card_camera.is_current() == false:
+			GameManager.player.exit_tool_tip.visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			card_camera.current = true
+			GameManager.ui_active = true
+			active = true
+			initialize_keycard()
 		
 func exit_ui():
 	match OS.get_name():

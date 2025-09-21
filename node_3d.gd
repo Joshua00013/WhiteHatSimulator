@@ -13,6 +13,11 @@ const JUMP_VELOCITY = 10
 @export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
 @export var sprint_speed = 10.0
 
+@export var file_002 : InvItem
+@export var file_003 : InvItem
+@export var file_004 : InvItem
+@export var file_005 : InvItem
+
 @export_group("Headbob")
 
 @onready var collision_shape = $CollisionShape3D
@@ -32,7 +37,20 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	look_rotation = Vector2(head.rotation_degrees.x, rotation_degrees.y)
-	
+
+func add_starting_item():
+	match DayAndNightManager.current_days:
+		2:
+			inventory.add(file_002)
+		3:
+			for item in [file_002, file_003]:
+				inventory.add(item)
+		4:
+			for item in [file_002, file_003, file_004]:
+				inventory.add(item)
+		5:
+			for item in [file_002, file_003, file_004, file_005]:
+				inventory.add(item)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && GameManager.ui_active == false:

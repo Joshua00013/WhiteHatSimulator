@@ -16,7 +16,10 @@ func _ready() -> void:
 		heading.text = heading_text
 	
 	if CyberattackAdaptationManager.weak_passwords == true || CyberattackAdaptationManager.no_password_used == true:
-		queue_free()
+		if CyberattackAdaptationManager.noting_passwords == true:
+			CyberattackAdaptationManager.noting_passwords = false
+			queue_free()
+			
 	paper_ui.hide()
 
 func _process(_delta: float) -> void:

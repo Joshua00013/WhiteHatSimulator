@@ -20,9 +20,10 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		#status.text = "Failed"
 		UiManager.game_over_ui.play()
 	else:
-		#status.text = "Passed"
-		UiManager.popup.display_popup("Passed","Take a rest and proceed to your next day!")
+		#TODO : Add ending scene if the DayAndNightManager days == 5
 		
+		#status.text = "Passed"
+		SceneTransition.fade_in()
 		# Reinitialize the stage and increment the days
 		DayAndNightManager.initial_day += 1
 		SignalBus.stage_finished.emit()

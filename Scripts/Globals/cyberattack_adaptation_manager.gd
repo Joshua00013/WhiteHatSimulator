@@ -7,7 +7,7 @@ var weak_passwords: bool = true : set = set_weak_passwords
 var no_password_used: bool = true : set = set_no_password_used
 
 var sharing_passwords_used: bool = false : set = set_sharing_passwords_used
-var noting_passwords: bool = false : set = set_noting_passwords
+var noting_passwords: bool = true : set = set_noting_passwords
 var tailgating_used: bool = false : set = set_tailgating_used
 var job_application_used: bool = false : set = set_job_application_used
 var unattended_pc_used: bool = false : set = set_unattended_pc_used
@@ -98,7 +98,7 @@ func reset():
 	no_password_used = true
 	
 	sharing_passwords_used = false
-	noting_passwords = false
+	noting_passwords = true
 	tailgating_used = false
 	job_application_used = false
 	unattended_pc_used = false

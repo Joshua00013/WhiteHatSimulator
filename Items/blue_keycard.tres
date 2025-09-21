@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://cxmos82sk45c1"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_x2cgj"]
+
+[resource]
+script = ExtResource("1_x2cgj")
+name = "Blue Keycard"
+description = "Keycard that can be used to gain access inside the data center."
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"
