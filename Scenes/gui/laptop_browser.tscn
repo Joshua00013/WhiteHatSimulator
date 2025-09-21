@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=76 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="11_vq5yb"]
 [ext_resource type="Script" uid="uid://b1a37u0q6msy8" path="res://Scripts/GUI/email.gd" id="12_28080"]
 [ext_resource type="Script" uid="uid://dcqsw7q1b2t5t" path="res://Scripts/GUI/piracy.gd" id="14_213el"]
+[ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="15_hp5ny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -2737,7 +2738,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(32, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(33, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -3878,8 +3879,21 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
 horizontal_alignment = 1
 
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9548611
+anchor_top = 0.033950616
+anchor_right = 0.9895833
+anchor_bottom = 0.095679015
+grow_horizontal = 0
+texture_normal = ExtResource("15_hp5ny")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
 [connection signal="item_selected" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_item_selected"]
 [connection signal="pressed" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

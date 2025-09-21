@@ -34,5 +34,6 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		get_tree().reload_current_scene()
 
 func start_quiz():
+	DayAndNightManager.active = false
 	GameManager.ui_active = true
 	quiz_card.start_quiz()

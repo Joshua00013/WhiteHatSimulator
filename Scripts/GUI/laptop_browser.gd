@@ -61,3 +61,7 @@ func _on_upload_button_pressed():
 func _on_email_button_pressed():
 	hide_pages()
 	email.show()
+
+
+func _on_texture_button_pressed():
+	hide()
