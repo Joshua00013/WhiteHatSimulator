@@ -725,45 +725,45 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. It restarts the PC",
       "D. It shows an error"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
-	"question": "What is a simple way to block this attack?",
+	"question": "Why is backing up important after a fileless attack?",
 	"answers": [
-	  "A. Stop using your PC",
-	  "B. Block unknown PowerShell and script executions",
-	  "C. Remove RAM from the PC",
-      "D. Never open a browser again"
-	],
-	"correct_answer": 2
-  },
-  {
-	"question": "Why should you check USB drives before running files?",
-	"answers": [
-	  "A. They may contain memory-only loaders",
-	  "B. They may contain music",
-	  "C. They make PCs slower",
-      "D. They erase Windows"
+	  "A. Backups only save pictures",
+	  "B. Backups let you restore clean systems if needed",
+	  "C. Backups stop attacks instantly",
+      "D. Backups slow the network"
 	],
 	"correct_answer": 1
   },
   {
-	"question": "Why should you disable autorun on USB drives?",
+	"question": "What is a simple step users can take to avoid fileless threats?",
 	"answers": [
-	  "A. It prevents loaders from starting automatically",
-	  "B. It makes copying files faster",
-	  "C. It protects RAM",
-      "D. It fixes the registry"
+	  "A. Click any link labeled 'update'",
+	  "B. Be cautious with links and only install software from trusted sources",
+	  "C. Share software installs in chat groups",
+      "D. Disable antivirus"
 	],
 	"correct_answer": 1
   },
   {
-	"question": "Why is rebooting sometimes a solution?",
+	"question": "Which tool helps spot in-memory threats better than basic antivirus?",
 	"answers": [
-	  "A. It deletes shellcode from memory",
-	  "B. It formats your PC",
-	  "C. It downloads more shellcode",
-      "D. It disables the internet"
+	  "A. Calculator app",
+	  "B. Endpoint detection and response (EDR) or behavior monitoring",
+	  "C. Paint program",
+      "D. Disk defragmenter"
+	],
+	"correct_answer": 1
+  },
+  {
+	"question": "What should IT do if they find a suspicious script running?",
+	"answers": [
+	  "A. Ignore it and wait",
+	  "B. Isolate the computer and investigate immediately",
+	  "C. Post it on social media",
+      "D. Turn off all logging"
 	],
 	"correct_answer": 1
   },
@@ -775,17 +775,17 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Training removes malware automatically",
       "D. Training reduces internet speed"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
-	"question": "Which of these are ways a payload can get to a victim?",
+	"question": "Maria opens a Word file and enables macros. Minutes later, the computer starts contacting strange servers but no new files appear. What likely happened?",
 	"answers": [
-	  "A. Downloaded from a malicious application",
-	  "B. Installed manually from CD",
-	  "C. Through a printer",
-      "D. Through a fan"
+	  "A. A printer jam occurred",
+	  "B. A normal update ran",
+	  "C. A fileless attack ran code in memory via macros",
+      "D. The screen saver started"
 	],
-	"correct_answer": 1
+	"correct_answer": 2
   },
   {
 	"question": "You see 'powershell.exe' running with a long, encoded command and the user did not run it. What should you suspect?",
@@ -795,15 +795,15 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. A fileless script or malicious use of PowerShell",
       "D. A printer driver update"
 	],
-	"correct_answer": 3
+	"correct_answer": 2
   },
   {
-	"question": "How can a malicious file start the attack?",
+	"question": "An admin tool that normally runs as a trusted program starts opening web connections to unknown sites. No new files are on disk. What is likely happening?",
 	"answers": [
-	  "A. By opening a fake image",
-	  "B. By running a small EXE that loads shellcode",
-	  "C. By changing wallpapers",
-      "D. By renaming folders"
+	  "A. The tool is updating normally",
+	  "B. The internet is slow today",
+	  "C. A trusted process is abused by fileless malware",
+      "D. The monitor brightness changed"
 	],
 	"correct_answer": 2
   },
@@ -815,95 +815,95 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Delete the user account without checking",
       "D. Reinstall printer drivers"
 	],
+	"correct_answer": 1
+  },
+  {
+	"question": "John received an email with a link. He clicked and a script ran inside the browser, stealing some info without leaving files. What attack type is this?",
+	"answers": [
+	  "A. A normal website visit",
+	  "B. A DoS attack",
+	  "C. A fileless attack using browser memory",
+      "D. Phishing only"
+	],
 	"correct_answer": 2
   },
   {
-	"question": "What command can download shellcode from a hosted server?",
+	"question": "An attacker used 'certutil' to download remote content and execute it without saving files. Which defense could have stopped this?",
 	"answers": [
-	  "A. cpr::Get",
-	  "B. printf",
-	  "C. free",
-      "D. copy con"
+	  "A. Allowing all downloads",
+	  "B. Disabling logging",
+	  "C. Restricting or monitoring use of system tools like certutil",
+      "D. Increasing screen resolution"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A helpdesk script runs with high privileges and is stored unsigned. An attacker uses it to run code in memory. What should the org do to prevent this?",
+	"answers": [
+	  "A. Share the script more widely",
+	  "B. Remove helpdesk tools completely",
+	  "C. Require scripts to be signed and run with limited rights",
+      "D. Give all users admin rights"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A server shows many WMI events invoking strange commands. No malware files found. What is likely taking place?",
+	"answers": [
+	  "A. Normal backup logs",
+	  "B. Printer policies being applied",
+	  "C. Fileless persistence using WMI",
+      "D. A browser cache clear"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "Sally downloads a tool from an unknown site and runs it; it runs only in memory and hides. How could she have avoided this?",
+	"answers": [
+	  "A. Download from more sites",
+	  "B. Always run unknown tools as admin",
+	  "C. Only download tools from trusted sources and verify signatures",
+      "D. Disable the firewall permanently"
+	],
+	"correct_answer": 2
+  },
+  {
+	"question": "A company wants to be sure that only approved programs run. What control helps most?",
+	"answers": [
+	  "A. Let everyone install apps",
+	  "B. Use application whitelisting (only approved apps run)",
+	  "C. Block all internet access forever",
+      "D. Allow unsigned apps from friends"
 	],
 	"correct_answer": 1
   },
   {
-	"question": "What are the 2 most important things you need when creating a reverse shell payload?",
+	"question": "An attacker uses PowerShell to load a .NET payload in memory. Which monitoring would catch this?",
 	"answers": [
-	  "A. Username & Password",
-	  "B. Hostname & Browser",
-	  "C. IP Address & Port",
-      "D. MAC Address & Gateway"
-	],
-	"correct_answer": 3
-  },
-  {
-	"question": "What command generates the payload code in Metasploit?",
-	"answers": [
-	  "A. msfvenom",
-	  "B. msfconsole",
-	  "C. ifconfig",
-      "D. gcc"
+	  "A. Printer queue size logs",
+	  "B. PowerShell command logging and EDR alerts",
+	  "C. Wallpaper change alerts",
+      "D. Disk cleanup history"
 	],
 	"correct_answer": 1
   },
   {
-	"question": "What kind of encoder is commonly used to evade basic antivirus?",
+	"question": "A laptop shows scheduled tasks that download and run code but create no files. What is the best immediate action?",
 	"answers": [
-	  "A. Base64",
-	  "B. ROT13",
-	  "C. Shikata Ga Nai",
-      "D. AES"
+	  "A. Reboot the laptop and forget it",
+	  "B. Isolate the laptop from the network and investigate the scheduled tasks",
+	  "C. Uninstall the web browser",
+      "D. Change desktop theme"
 	],
-	"correct_answer": 3
+	"correct_answer": 1
   },
   {
-	"question": "What does the LHOST option represent?",
+	"question": "Your company blocks unsigned macros but a user enabled macros to view a document. What risk did they accept?",
 	"answers": [
-	  "A. Victim’s PC",
-	  "B. Attacker’s IP Address",
-	  "C. Website URL",
-      "D. Port Number"
-	],
-	"correct_answer": 2
-  },
-  {
-	"question": "What does the LPORT option represent?",
-	"answers": [
-	  "A. Browser",
-	  "B. Port to listen for the reverse connection",
-	  "C. Wi-Fi password",
-      "D. File size"
-	],
-	"correct_answer": 2
-  },
-  {
-	"question": "What is the output format when using -f c in msfvenom?",
-	"answers": [
-	  "A. Compiled exe",
-	  "B. Python script",
-	  "C. C-style shellcode array",
-      "D. JSON file"
-	],
-	"correct_answer": 3
-  },
-  {
-	"question": "Why is the shellcode saved to a .txt file first?",
-	"answers": [
-	  "A. To run directly",
-	  "B. To hide from antivirus",
-	  "C. To copy it into a boilerplate program later",
-      "D. To share on email"
-	],
-	"correct_answer": 3
-  },
-  {
-	"question": "What does the boilerplate code do with the shellcode?",
-	"answers": [
-	  "A. Deletes it",
-	  "B. Loads it into memory and executes it",
-	  "C. Uploads it to the server",
-      "D. Encrypts it"
+	  "A. Faster document loading",
+	  "B. Better video quality",
+	  "C. They allowed a possible fileless macro to run",
+      "D. More disk space"
 	],
 	"correct_answer": 2
   },
@@ -918,14 +918,14 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	"correct_answer": 2
   },
   {
-	"question": "What Metasploit command is used to open the listener?",
+	"question": "You detect many hosts running similar base64 PowerShell commands pulled from the same URL. What is the likely situation?",
 	"answers": [
-	  "A. msfvenom",
-	  "B. curl",
-	  "C. use exploit/multi/handler",
-      "D. ifconfig"
+	  "A. A normal scheduled update for everyone",
+	  "B. A classroom exercise",
+	  "C. A coordinated fileless campaign needing immediate containment",
+      "D. A harmless script for wallpapers"
 	],
-	"correct_answer": 3
+	"correct_answer": 2
   }
 ]
 var day_four_questions = [ #TODO : Insert phishing questions here
@@ -937,57 +937,57 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 			"C. A tool to clean viruses",
 			"D. A type of firewall"
 		],
-		"correct_answer": 2
-	},
-	{
-		"question":"What is the main goal of phishing?",
-		"answers":[
-			"A. To break your keyboard",
-			"B. To get private data like passwords or cards",
-			"C. To make your files disappear",
-			"D. To slow down your internet"
-		],
-		"correct_answer": 2
-	},
-	{
-		"question":"Which of these is a common phishing method?",
-		"answers":[
-			"A. Fake emails that look real",
-			"B. Installing PC drivers",
-			"C. Burning software CDs",
-			"D. Using cheat codes"
-		],
 		"correct_answer": 1
 	},
 	{
-		"question":"Why is phishing dangerous?",
+		"question":"What should you check before clicking a link in an email?",
 		"answers":[
-			"A. It fills your hard drive",
-			"B. It steals personal information secretly",
-			"C. It slows your RAM speed",
-			"D. It overheats your CPU"
+			"A. The sender’s email address",
+			"B. The color of the email",
+			"C. The time the email was sent",
+			"D. The subject line only"
 		],
-		"correct_answer": 2
+		"correct_answer": 0
 	},
 	{
-		"question":"What do phishing sites usually copy?",
+		"question":"Phishing is mostly done through:",
 		"answers":[
-			"A. Game websites and wallpaper shops",
-			"B. Bank, email, or social media pages",
-			"C. News websites and blogs",
-			"D. Video streaming portals"
+			"A. Email and fake websites",
+			"B. USB drives",
+			"C. Computer fans",
+			"D. Hardware upgrades"
 		],
-		"correct_answer": 2
+		"correct_answer": 0
 	},
 	{
-		"question":"Which of these is NOT phishing?",
+		"question":"How can you spot a phishing email?",
 		"answers":[
-			"A. Fake email asking for password",
-			"B. Fake site asking for login",
-			"C. Installing a game from DVD",
-			"D. QR code that opens fake form"
+			"A. It asks for personal info and looks suspicious",
+			"B. It always has correct spelling",
+			"C. It comes only from friends",
+			"D. It never contains links"
 		],
-		"correct_answer": 3
+		"correct_answer": 0
+	},
+	{
+		"question":"Which is a safe way to avoid phishing?",
+		"answers":[
+			"A. Never click links from unknown emails",
+			"B. Always download email attachments",
+			"C. Reply quickly to all emails",
+			"D. Share passwords through email"
+		],
+		"correct_answer": 0
+	},
+	{
+		"question":"Why do attackers use phishing?",
+		"answers":[
+			"A. To steal logins and money",
+			"B. To fix your internet speed",
+			"C. To update your computer",
+			"D. To protect your files"
+		],
+		"correct_answer": 0
 	},
 	{
 		"question":"If an email says your bank account is locked and asks for your password, what should you do?",
@@ -1010,14 +1010,14 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 		"correct_answer": 1
 	},
 	{
-		"question":"How do phishing attacks usually reach victims?",
+		"question":"Why should you not open unknown attachments?",
 		"answers":[
-			"A. Through software updates",
-			"B. Through emails with links or files",
-			"C. Through Wi-Fi router settings",
-			"D. Through Bluetooth devices"
+			"A. They upgrade your system",
+			"B. They speed up your PC",
+			"C. They are always safe",
+			"D. They may contain viruses or spyware"
 		],
-		"correct_answer": 2
+		"correct_answer": 3
 	},
 	{
 		"question":"What should you do if you suspect a phishing site?",
@@ -1030,44 +1030,44 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 		"correct_answer": 0
 	},
 	{
-		"question":"How do phishing emails trick users?",
+		"question":"Why should you enable two-step verification?",
 		"answers":[
-			"A. By playing music",
-			"B. By warning account suspension",
-			"C. By installing updates",
-			"D. By deleting files"
+			"A. It removes passwords",
+			"B. It makes login slower",
+			"C. It makes accounts safer even if someone knows your password",
+			"D. It makes emails faster"
 		],
 		"correct_answer": 2
 	},
 	{
-		"question":"What happens when you click a phishing link?",
+		"question":"Which is safer?",
 		"answers":[
-			"A. Screen turns blue",
-			"B. You open a fake login page",
-			"C. Your PC shuts down",
-			"D. Nothing happens"
+			"A. Downloading from pop-ups",
+			"B. Clicking random links in emails",
+			"C. Typing website addresses directly",
+			"D. Trusting every link"
 		],
 		"correct_answer": 2
 	},
 	{
-		"question":"Best way to avoid phishing?",
+		"question":"How can you train yourself against phishing?",
 		"answers":[
-			"A. Never use the internet",
-			"B. Check the URL before typing login",
-			"C. Always click links fast",
-			"D. Ignore antivirus alerts"
+			"A. Never read emails",
+			"B. Be mindful and join awareness programs",
+			"C. Trust every message",
+			"D. Only use free Wi-Fi"
 		],
-		"correct_answer": 2
+		"correct_answer": 1
 	},
 	{
-		"question":"What should you do with suspicious emails?",
+		"question":"Why do fake emails often sound urgent?",
 		"answers":[
-			"A. Open links to check them",
-			"B. Report to email provider",
-			"C. Download all attachments",
-			"D. Reply with login info"
+			"A. To trick you into acting fast without thinking",
+			"B. To give you time to check",
+			"C. To make it look boring",
+			"D. To entertain readers"
 		],
-		"correct_answer": 2
+		"correct_answer": 0
 	},
 	{
 		"question":"What’s the safest step if unsure about an email?",
@@ -1080,12 +1080,12 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 		"correct_answer": 3
 	},
 	{
-		"question":"Safe way to access bank account?",
+		"question":"Anna gets an email saying she won a free iPhone and must click a link. What should she do?",
 		"answers":[
-			"A. Manually type official bank URL",
-			"B. Click random links",
-			"C. Use QR codes from strangers",
-			"D. Ask someone for link"
+			"A. Click the link right away",
+			"B. Delete the email",
+			"C. Share with friends",
+			"D. Reply with her address"
 		],
 		"correct_answer": 1
 	},
@@ -1100,25 +1100,25 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 		"correct_answer": 0
 	},
 	{
-		"question":"What happens if you fall for phishing?",
+		"question":"Lisa gets a text with a link saying her package is delayed. What should she do first?",
 		"answers":[
-			"A. PC becomes faster",
-			"B. Login credentials are stolen",
-			"C. Hard disk repairs itself",
-			"D. You get free games"
+			"A. Reply to the text",
+			"B. Click the link to confirm",
+			"C. Check with the official delivery app or site",
+			"D. Send to her friends"
 		],
 		"correct_answer": 2
 	},
 	
 	{
-		"question":"Can phishing lead to ransomware?",
+		"question":"Emma gets an email with poor grammar asking for donations. What should she think?",
 		"answers":[
-			"A. No",
-			"B. Yes, often",
-			"C. Only on phones",
-			"D. Only on Linux"
+			"A. It may be a phishing scam",
+			"B. It must be real",
+			"C. It’s from her friend",
+			"D. It’s safe to click"
 		],
-		"correct_answer": 2
+		"correct_answer": 0
 	},
 	{
 		"question":"A fake website looks almost like Facebook. How can Alex notice it’s fake?",
@@ -1223,15 +1223,15 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 ]
 var day_five_questions = [ #TODO : Insert DOS questions here
 	  {
-		"question":"What is a DoS attack?",
-		"answers":[
-			"A. A way to fix broken servers",
-			"B. A method to overload and stop a service",
-			"C. A tool to boost internet speed",
-			"D. A type of antivirus scan"
-		],
-		"correct_answer": 2
-	},
+	"question": "What is a Denial-of-Service (DoS) attack?",
+	"answers": [
+	  "A. A way to speed up a website",
+	  "B. A normal system update",
+	  "C. An attack that floods a site so users can't use it",
+      "D. A backup process"
+	],
+	"correct_answer": 2
+  },
   {
 	"question": "Which sign shows a site may be under a DoS attack?",
 	"answers": [
@@ -1243,116 +1243,116 @@ var day_five_questions = [ #TODO : Insert DOS questions here
 	"correct_answer": 0
   },
   {
-		"question":"What does DDoS stand for?",
-		"answers":[
-			"A. Distributed Denial of Service",
-			"B. Direct Data Output System",
-			"C. Distributed Disk Operating System",
-			"D. Data Delivery Over Socket"
-		],
-		"correct_answer": 1
-	},				
- {
-		"question":"Which network layer is often targeted by DoS attacks?",
-		"answers":[
-			"A. Physical layer",
-			"B. Transport or Application layer",
-			"C. Presentation layer",
-			"D. Data link layer"
-		],
-		"correct_answer": 2
-	},
+	"question": "Which simple step helps reduce DoS impact?",
+	"answers": [
+	  "A. Delete all user accounts",
+	  "B. Use a CDN or DDoS protection service to absorb bad traffic",
+	  "C. Turn off the site permanently",
+      "D. Disable backups"
+	],
+	"correct_answer": 1
+  },
   {
-		"question":"What is the goal of a DoS attack?",
-		"answers":[
-			"A. To make a website unavailable for users",
-			"B. To steal passwords",
-			"C. To install drivers",
-			"D. To update software"
-		],
-		"correct_answer": 1
-	},
+	"question": "How does rate-limiting help a website?",
+	"answers": [
+	  "A. It removes security entirely",
+	  "B. It increases the number of requests allowed",
+	  "C. It limits how many requests one IP or user can make in a short time",
+      "D. It makes the server invisible"
+	],
+	"correct_answer": 2
+  },
   {
-		"question":"Which of these is a symptom of a DoS attack?",
-		"answers":[
-			"A. Slower network response",
-			"B. Faster website loading",
-			"C. Increased CPU temperature only",
-			"D. Reduced RAM usage"
-		],
-		"correct_answer": 1
-	},
+	"question": "Why is monitoring normal traffic useful against DoS?",
+	"answers": [
+	  "A. It blocks all users",
+	  "B. It hides attacks completely",
+	  "C. It makes traffic slower",
+      "D. It helps detect unusual spikes quickly so you can respond"
+	],
+	"correct_answer": 3
+  },
+  {
+	"question": "Which low-cost measure can small sites use to reduce DoS risk?",
+	"answers": [
+	  "A. Use free CDN tiers and basic rate-limits",
+	  "B. Host the site on a home router with no firewall",
+	  "C. Share the server IP publicly",
+      "D. Turn off monitoring"
+	],
+	"correct_answer": 0
+  },
   
   {
-		"question":"Which protocol is commonly abused in DoS floods?",
-		"answers":[
-			"A. SMTP",
-			"B. HTTP or TCP",
-			"C. DNS only",
-			"D. POP3"
-		],
-		"correct_answer": 2
-	},
+	"question": "Which architectural choice improves resistance to DoS attacks?",
+	"answers": [
+	  "A. Distribute servers across regions and use load balancers",
+	  "B. Use a single small server with no backup",
+	  "C. Host everything on a personal laptop",
+      "D. Use only one DNS provider with no failover"
+	],
+	"correct_answer": 0
+  },
   {
-		"question":"What can be a target of a DoS attack?",
-		"answers":[
-			"A. Websites, game servers, APIs",
-			"B. USB flash drives",
-			"C. RAM chips",
-			"D. Keyboard drivers"
-		],
-		"correct_answer": 1
-	},
+	"question": "Why are Internet-of-Things (IoT) devices often used in DDoS attacks?",
+	"answers": [
+	  "A. They always have built-in DDoS protection",
+	  "B. Many are poorly secured and can be controlled to send traffic",
+	  "C. They are too expensive to use",
+      "D. They never connect to the internet"
+	],
+	"correct_answer": 1
+  },
   {
-		"question":"How does a DDoS attack typically start?",
-		"answers":[
-			"A. By infecting many devices with malware",
-			"B. By installing a single driver",
-			"C. By using a firewall update",
-			"D. By removing internet connection"
-		],
-		"correct_answer": 1
-	},
+	"question": "Which is a good prevention step for servers against SYN flood attacks?",
+	"answers": [
+	  "A. Turn off TCP entirely",
+	  "B. Enable SYN cookies and tune TCP settings",
+	  "C. Increase keep-alive times indefinitely",
+      "D. Remove firewalls"
+	],
+	"correct_answer": 1
+  },
   {
-		"question":"What should you avoid clicking to stay safe?",
-		"answers":[
-			"A. Random scripts that run floods",
-			"B. Safe official pages",
-			"C. Browser refresh button",
-			"D. Search bar"
-		],
-		"correct_answer": 1
-	},
+	"question": "How does caching help during an attack on a website?",
+	"answers": [
+	  "A. It serves stored content from edges so the origin handles fewer requests",
+	  "B. It deletes old content to save space",
+	  "C. It exposes user data",
+      "D. It makes the origin server slower"
+	],
+	"correct_answer": 0
+  },
   {
-		"question":"What is one way to mitigate DoS attacks?",
-		"answers":[
-			"A. Use load balancers or firewalls",
-			"B. Turn off antivirus",
-			"C. Disconnect router permanently",
-			"D. Use free public Wi-Fi"
-		],
-		"correct_answer": 1
-	},
+	"question": "Why should you have multiple DNS providers?",
+	"answers": [
+	  "A. To increase DNS costs unnecessarily",
+	  "B. To confuse users",
+	  "C. For redundancy so DNS remains available if one provider is attacked",
+      "D. Because one is always bad"
+	],
+	"correct_answer": 2
+  },
   {
-		"question":"Which is a good practice to prevent DoS?",
-		"answers":[
-			"A. Rate limiting requests per IP",
-			"B. Allow unlimited requests",
-			"C. Disable firewall",
-			"D. Use default passwords"
-		],
-		"correct_answer": 1
-	},
+	"question": "What is a common short-term action when a DoS attack starts?",
+	"answers": [
+	  "A. Contact your CDN/ISP and enable mitigation or rerouting",
+	  "B. Send emails to all users asking them to try again later",
+	  "C. Post the attack on social media without steps",
+      "D. Delete all server logs"
+	],
+	"correct_answer": 0
+  },
   {
-		"question":"What should be monitored to detect DoS early?",
-		"answers":[
-			"A. Network traffic spikes",
-			"B. Screen brightness",
-			"C. Keyboard usage",
-			"D. Mouse clicks"
-		],
-		"correct_answer": 1
-	},
+	"question": "Why is having an incident plan important for DoS events?",
+	"answers": [
+	  "A. It ensures attacks never happen",
+	  "B. It allows quick, organized response to reduce downtime and cost",
+	  "C. It replaces the need for monitoring",
+      "D. It makes the site slower"
+	],
+	"correct_answer": 1
+  },
 
   {
 	"question": "Your school website becomes very slow for everyone. What is the most likely cause?",
@@ -1375,15 +1375,15 @@ var day_five_questions = [ #TODO : Insert DOS questions here
 	"correct_answer": 3
   },
   {
-		"question":"What is an IP address used for in a stress test?",
-		"answers":[
-			"A. To find and target the server",
-			"B. To speed up browser cache",
-			"C. To update firewall rules",
-			"D. To hide PC temperature"
-		],
-		"correct_answer": 1
-	},
+	"question": "You notice thousands of small UDP packets hitting your DNS server from many IPs. What is likely happening?",
+	"answers": [
+	  "A. A harmless test",
+	  "B. A normal update",
+	  "C. DNS amplification attack",
+      "D. A new user signup"
+	],
+	"correct_answer": 2
+  },
   {
 	"question": "A website slows down only when users try to search. Which targeted DoS defense could help?",
 	"answers": [
@@ -1395,35 +1395,35 @@ var day_five_questions = [ #TODO : Insert DOS questions here
 	"correct_answer": 0
   },
   {
-		"question":"Which parameter controls attack duration?",
-		"answers":[
-			"A. Timeout",
-			"B. IP",
-			"C. Threads",
-			"D. URL"
-		],
-		"correct_answer": 1
-	},
+	"question": "Your cloud bills spike during an attack because autoscaling kept adding servers. What should be prearranged to avoid this?",
+	"answers": [
+	  "A. Giving attackers free credits",
+	  "B. A scrubbing/DDoS protection plan with your provider",
+	  "C. Doubling the budget without limits",
+      "D. Turning off monitoring"
+	],
+	"correct_answer": 1
+  },
   {
-		"question":"What does choosing HTTP as a method do?",
-		"answers":[
-			"A. Sends floods using web requests",
-			"B. Shuts down TCP connection",
-			"C. Deletes server logs",
-			"D. Blocks DNS lookups"
-		],
-		"correct_answer": 1
-	},
+	"question": "A small business has no budget for commercial DDoS services. Which cheap option can help?",
+	"answers": [
+	  "A. Use CDN free tiers and simple firewall rules",
+	  "B. Host everything on a personal home network",
+	  "C. Publish internal IP addresses",
+      "D. Disable all security to save money"
+	],
+	"correct_answer": 0
+  },
   {
-		"question":"Why set subtitle as '/' in HTTP flood?",
-		"answers":[
-			"A. To target the main page root",
-			"B. To attack images only",
-			"C. To change the IP",
-			"D. To skip DNS resolution"
-		],
-		"correct_answer": 1
-	},
+	"question": "Your server is seeing many half-open TCP connections exhausting resources. Which immediate setting helps?",
+	"answers": [
+	  "A. Change the website colors",
+	  "B. Increase the login timeout",
+	  "C. Enable SYN cookies on the server",
+      "D. Remove user accounts"
+	],
+	"correct_answer": 2
+  },
   {
 	"question": "An attacker targets your API with many valid-looking requests to overload the database. What helps most?",
 	"answers": [
