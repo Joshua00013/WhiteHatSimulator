@@ -1,5 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c651ldtbfalgc"]
 
+
 [ext_resource type="Script" uid="uid://c2ug4fslyhbmy" path="res://Scenes/gui/Ransomware/clean_ransomware.gd" id="1_7e48o"]
 [ext_resource type="PackedScene" uid="uid://jjhva651ce8b" path="res://Scenes/gui/DesktopGUI/desktop_default.tscn" id="2_ojgsj"]
 [ext_resource type="PackedScene" uid="uid://dtk1usoh0w54w" path="res://Scenes/gui/ransomware_encrypt.tscn" id="3_8imo2"]
@@ -15,19 +16,21 @@
 [ext_resource type="PackedScene" uid="uid://s7ebjmaahksf" path="res://Scenes/gui/Bruteforce.tscn" id="14_8imo2"]
 [ext_resource type="PackedScene" uid="uid://b38jachcmca75" path="res://Scenes/gui/CyberattacksV2/PhishingV2/phishing_desktop.tscn" id="14_atxjj"]
 
+
 [node name="DesktopTabs" type="TabContainer" node_paths=PackedStringArray("malware_icon")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 10
 clip_tabs = false
 tabs_visible = false
 script = ExtResource("1_7e48o")
 malware_icon = NodePath("DesktopDefault/Desktop/Malware_icon")
 
 [node name="DesktopDefault" parent="." instance=ExtResource("2_ojgsj")]
+visible = false
 layout_mode = 2
 
 [node name="RansomwareEncrypt" parent="." instance=ExtResource("3_8imo2")]
@@ -71,9 +74,9 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 9
 
-[node name="DDOSResult" parent="." instance=ExtResource("12_ojgsj")]
-visible = false
+[node name="DDOSWebsite" parent="." instance=ExtResource("12_8imo2")]
 layout_mode = 2
+metadata/_tab_index = 10
 
 [node name="Login" parent="." instance=ExtResource("12_qm60n")]
 visible = false
@@ -93,4 +96,5 @@ metadata/_tab_index = 12
 [connection signal="bruteforce_ready" from="BruteforceDesktop" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]
+[connection signal="code_finished" from="DDOSWebsite" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]

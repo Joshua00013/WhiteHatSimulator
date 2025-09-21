@@ -1,7 +1,8 @@
 extends Node
 
 @warning_ignore("unused_signal")
-signal stage_finished()
+signal stage_finished
+signal intro_finished
 
 var current_step_1 = 1
 var current_step_2 = 2
@@ -39,6 +40,10 @@ signal phishing_part1_finished
 signal phishing_part2_finished
 @warning_ignore("unused_signal")
 signal phishing_part3_finished
+@warning_ignore("unused_signal")
+signal phishing_part4_finished
+@warning_ignore("unused_signal")
+signal ddos_part1_finished
 
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:

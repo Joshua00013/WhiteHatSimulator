@@ -3,9 +3,6 @@ extends TabContainer
 @onready var desktop_default: MarginContainer = $DesktopDefault
 @export var malware_icon := VBoxContainer
 
-signal boilerplate
-signal listener
-
 const TABS := {
 	"Ransomware": 1,
 	"PostRansomwareEncrypt": 2,
@@ -13,7 +10,7 @@ const TABS := {
 	"Bruteforce": 4,
 	"Phishing": 7,
 	"Fileless": 5,
-	"DOS": 9,
+	"DOS": 10,
 	"Login" : 11
 	# TODO : Add all page names here to avoid magic numbers and use the dictionary instead
 }
@@ -24,6 +21,7 @@ func _ready() -> void:
 	SignalBus.phishing_part1_finished.connect(_phishing_desktop)
 	SignalBus.phishing_part2_finished.connect(_phishing_website)
 	SignalBus.phishing_part3_finished.connect(_phishing_terminal)
+	SignalBus.ddos_part1_finished.connect(_ddos_desktop)
 	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
 	current_tab = TABS.Login
 
@@ -75,3 +73,6 @@ func _phishing_website():
 
 func _phishing_terminal():
 	current_tab = TABS.Phishing
+
+func _ddos_desktop():
+	current_tab = TABS.DOS

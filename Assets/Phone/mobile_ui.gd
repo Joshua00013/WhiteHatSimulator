@@ -26,7 +26,6 @@ func _on_timer_timeout() -> void:
 		timeInSec =0
 		toMin = 0
 		startHour = 8	
-		print("Day is done")#Tester Only
 		
 	$Time_Label.text = '%02d:%02d' % [startHour, toMin]
 	$Day_Label.text = 'Day %02d'% [day + 1]

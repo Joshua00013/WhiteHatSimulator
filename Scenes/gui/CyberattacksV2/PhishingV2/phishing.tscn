@@ -1,12 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://cc0iffvnt6fcb"]
+[gd_scene load_steps=57 format=3 uid="uid://cc0iffvnt6fcb"]
 
 [ext_resource type="Script" uid="uid://b0do5oyth30hg" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_f46kx"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_24yo8"]
-[ext_resource type="PackedScene" uid="uid://elboq6yr26sl" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/sql_database.tscn" id="4_5pnsx"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_8i5sj"]
-[ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_pjo8h"]
-[ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_yyso8"]
+[ext_resource type="Texture2D" uid="uid://c8lmrvlovi86s" path="res://down.png" id="4_qxiq4"]
 
 [sub_resource type="Animation" id="Animation_53vgl"]
 resource_name = "phishing_1"
@@ -85,7 +83,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/SqlDatabase:visible")
+tracks/6/path = NodePath("Body/CodeContainer/PanelContainer/sql:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -298,22 +296,10 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Body/CodeContainer/PanelContainer/SqlDatabase:visible")
+tracks/10/path = NodePath("PanelContainer/MarginContainer/CodeEdit:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("PanelContainer/MarginContainer/CodeEdit:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1258,7 +1244,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/SqlDatabase:visible")
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/sql:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1410,7 +1396,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/SqlDatabase:visible")
+tracks/9/path = NodePath("Body/CodeContainer/PanelContainer/sql:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1581,6 +1567,25 @@ shader = SubResource("Shader_wwpmy")
 shader_parameter/rect_color = Color(0, 0, 0, 0.505882)
 shader_parameter/hole_position = Vector2(0.135, 3.555)
 shader_parameter/hole_size = Vector2(3.735, 0.28)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53vgl"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pnsx"]
+bg_color = Color(1, 1, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d41sb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m8q"]
 bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
@@ -1864,8 +1869,188 @@ layout_mode = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="SqlDatabase" parent="Body/CodeContainer/PanelContainer" instance=ExtResource("4_5pnsx")]
+[node name="sql" type="ColorRect" parent="Body/CodeContainer/PanelContainer"]
 layout_mode = 2
+color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Body/CodeContainer/PanelContainer/sql"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.40653178
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " SOURCES	                +"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = " Users"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = " Navigation"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = " Create"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "   credentials_table 
+- Table"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer/Label5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013201321
+anchor_top = 0.41176468
+anchor_right = 0.04950495
+anchor_bottom = 0.6317647
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_qxiq4")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "          username"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "          password"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "    New row"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Body/CodeContainer/PanelContainer/sql/VBoxContainer/Label8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026402641
+anchor_top = 0.3529412
+anchor_right = 0.051089108
+anchor_bottom = 0.3529412
+offset_top = 11.0
+offset_right = 3.5200005
+offset_bottom = 18.48
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5707964
+texture = ExtResource("4_qxiq4")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="PanelContainer" parent="Body/CodeContainer/PanelContainer/sql"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265625
+anchor_right = 1.0
+anchor_bottom = 0.13580246
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer"]
+custom_minimum_size = Vector2(846, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_53vgl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "credentials_table"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="Panel" parent="Body/CodeContainer/PanelContainer/sql"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265625
+anchor_top = 0.14814815
+anchor_right = 1.0
+anchor_bottom = 0.99691355
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pnsx")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06146572
+anchor_top = 0.06909091
+anchor_right = 0.9420804
+anchor_bottom = 0.5981819
+offset_bottom = -3.0517578e-05
+theme_override_styles/panel = SubResource("StyleBoxFlat_d41sb")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 69
+
+[node name="Label" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " id"
+
+[node name="Label2" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "username"
+
+[node name="Label3" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "password"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 69
+
+[node name="Label" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " 1"
+
+[node name="Label2" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "mike12345"
+
+[node name="Label3" type="Label" parent="Body/CodeContainer/PanelContainer/sql/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "12345678"
 
 [node name="WindowBackground" type="ColorRect" parent="."]
 process_mode = 3
@@ -1933,34 +2118,6 @@ text = "Contents"
 [node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-
-[node name="Debug" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Next" parent="Debug" instance=ExtResource("5_pjo8h")]
-layout_mode = 1
-anchor_left = 0.736111
-anchor_top = 0.802469
-anchor_right = 0.865451
-anchor_bottom = 0.859568
-offset_left = 818.55505
-offset_top = 487.90118
-offset_right = 962.3815
-offset_bottom = 522.6172
-
-[node name="Back" parent="Debug" instance=ExtResource("6_yyso8")]
-layout_mode = 1
-anchor_left = 0.131944
-anchor_top = 0.802469
-anchor_right = 0.262153
-anchor_bottom = 0.859568
-offset_left = 146.72173
-offset_top = 487.90118
-offset_right = 291.51337
-offset_bottom = 522.6172
-text = "Back"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 clip_children = 2

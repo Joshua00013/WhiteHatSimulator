@@ -33,6 +33,12 @@ func _on_quit_to_desktop_button_down():
 
 
 func _on_quit_to_menu_button_down():
+	GameManager.reset()
+	CyberattackManager.reset()
+	CyberattackAdaptationManager.reset()
+	DayAndNightManager.set_initial_time()
+	DayAndNightManager.active = false
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://GUI/MainMenuUI/main_menu.tscn")
 
 

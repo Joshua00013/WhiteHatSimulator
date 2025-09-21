@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://p1vsqrja8fac"]
+
+[ext_resource type="PackedScene" uid="uid://dfwwgpxilh0kl" path="res://Assets/Exported3dModel/sticky_note.glb" id="1_lmhf6"]
+[ext_resource type="Script" uid="uid://bw7ppf2jcki5m" path="res://Scripts/GUI/sticky_note.gd" id="2_megpp"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_jd8fo"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lhujc"]
+data = PackedVector3Array(8.010799, 7.6473, 0, -8.010799, -7.6473, 0, 8.010799, -7.6473, 0, 8.010799, 7.6473, 0, -8.010799, 7.6473, 0, -8.010799, -7.6473, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdhcg"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6706683, 0.7519587, 0.40777186, 1)
+
+[node name="sticky_note" node_paths=PackedStringArray("paper_ui", "password_label", "heading") instance=ExtResource("1_lmhf6")]
+script = ExtResource("2_megpp")
+paper_ui = NodePath("ColorRect")
+password_label = NodePath("ColorRect/PasswordLabel")
+heading = NodePath("ColorRect/Heading")
+
+[node name="Interactable" parent="." index="0" instance=ExtResource("3_jd8fo")]
+prompt_message = "Read"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(0, 0.01, 0, -0.01, 0, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_lhujc")
+
+[node name="ColorRect" type="PanelContainer" parent="." index="2"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -150.0
+offset_right = 160.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdhcg")
+
+[node name="Heading" type="Label" parent="ColorRect" index="0"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Password: "
+
+[node name="PasswordLabel" type="Label" parent="ColorRect" index="1"]
+layout_mode = 2
+text = "1234"
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

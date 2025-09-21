@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0jclgbdnti4o"]
+
+[ext_resource type="PackedScene" uid="uid://cv3av7quacvtp" path="res://Assets/export_LPOP_FULL/Light_UpLight.fbx" id="1_yvf4p"]
+
+[node name="Light_UpLight" instance=ExtResource("1_yvf4p")]

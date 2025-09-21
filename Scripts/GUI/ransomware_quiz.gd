@@ -1538,7 +1538,7 @@ func _on_answer_pressed(answer_index: int) -> void:
 
 	# Move to next question
 	current_question += 1
-	if current_question < active_questions.size():
+	if current_question < 10:
 		display_question(current_question)
 	else:
 		question_counter +=1

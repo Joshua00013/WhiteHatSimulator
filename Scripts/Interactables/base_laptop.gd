@@ -20,6 +20,7 @@ var flash_drive_inserted := false
 @export var success_animation : AnimationPlayer
 @export var phishing_email_box : TextEdit
 
+@onready var desktop_default: TabContainer = $SubViewport/DesktopTabs
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $laptop_base/laptop_screen/Screen
 @onready var camera = $Camera3D
@@ -250,7 +251,6 @@ func _play_ransomware(email : String):
 	
 func _play_phishing(email : String):
 	if not CyberattackAdaptationManager.email_used:
-		phishing_email_box.text = email
 		CyberattackAdaptationManager.email_used = true
 		
 		success_animation.play("open_phishing_email")
@@ -321,4 +321,3 @@ func _play_fileless_piracy():
 		GameManager.stage_finished = true
 		
 	CyberattackAdaptationManager.antivirus_installed = true
-	

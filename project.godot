@@ -29,6 +29,7 @@ ConfigFileHandler="*res://Scripts/Globals/config_file_handler.gd"
 HandTrackerServer="*res://Scripts/Globals/hand_tracker_server.gd"
 SceneTransition="*res://Scenes/GUI/scene_transition.tscn"
 SignalBus="*res://Scripts/Globals/signal_bus.gd"
+MusicPlayer="*res://Sounds/audio_stream_player.tscn"
 
 [dialogic]
 
@@ -37,10 +38,12 @@ directories/dtl_directory={
 "Alwyn": "res://Dialogues/Timelines/Alwyn.dtl",
 "Brian": "res://Dialogues/Timelines/Brian.dtl",
 "Gigi": "res://Dialogues/Timelines/Gigi.dtl",
+"Joe": "res://Dialogues/Timelines/Joe.dtl",
 "John": "res://Dialogues/Timelines/John.dtl",
 "Koro": "res://Dialogues/Timelines/Koro.dtl",
 "Liz": "res://Dialogues/Timelines/Liz.dtl",
 "Mike": "res://Dialogues/Timelines/Mike.dtl",
+"Mococo": "res://Dialogues/Timelines/Mococo.dtl",
 "Myrione": "res://Dialogues/Timelines/Myrione.dtl",
 "Robert": "res://Dialogues/Timelines/Robert.dtl",
 "Sai": "res://Dialogues/Timelines/Sai.dtl",

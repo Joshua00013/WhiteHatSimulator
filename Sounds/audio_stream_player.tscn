@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvsdgdqy56mb8"]
+
+[ext_resource type="AudioStream" uid="uid://b4iko5fm2yxul" path="res://Assets/Audio/Eden_Flavor.mp3" id="1_c1rpt"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_c1rpt")
+autoplay = true
+bus = &"Music"

@@ -115,10 +115,6 @@ func set_reconnaissance(value: bool) -> void:
 		reconnaissance_finished = false
 
 func set_weaponization(value: bool) -> void:
-	print("WEAPONIZATION IS DONE")
-	print(value)
-	print(weaponization_finished)
-	print(reconnaissance_finished)
 	if reconnaissance_finished and not weaponization_finished and value:
 		weaponization_finished = true
 		current_phase = "weaponization"
