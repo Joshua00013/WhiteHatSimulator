@@ -23,7 +23,7 @@ func _ready() -> void:
 	SignalBus.phishing_part3_finished.connect(_phishing_terminal)
 	SignalBus.ddos_part1_finished.connect(_ddos_desktop)
 	SignalBus.cyberattack_selected.connect(_on_cyberattack_selected)
-	current_tab = TABS.Login
+	current_tab = 0
 
 func _on_cyberattack_selected(cyberattack: String) -> void:
 	match cyberattack:
@@ -75,4 +75,4 @@ func _phishing_terminal():
 	current_tab = TABS.Phishing
 
 func _ddos_desktop():
-	current_tab = TABS.DOS
+	current_tab = 9
