@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://baj1yndfhlmnr"]
+
+[ext_resource type="Script" uid="uid://g4ulyqcfe2ao" path="res://Resources/inventory_item.gd" id="1_atjho"]
+
+[resource]
+script = ExtResource("1_atjho")
+name = "File-003"
+description = "You are doing a great job so far. Keep this up and you might soon be allowed to go free. About your job for today, we have received reports of employees refusing to update their antiviruses. You might also want to keep an eye on employees leaving notes of their passwords everywhere, very reckless. Good luck!"
+metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

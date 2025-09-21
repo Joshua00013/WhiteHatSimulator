@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=117 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -62,7 +62,9 @@
 [ext_resource type="PackedScene" uid="uid://bnaq8sr3khlq" path="res://Scenes/3DModels/Decorations/projector.tscn" id="57_6ml46"]
 [ext_resource type="PackedScene" uid="uid://blpwoddkm3wqs" path="res://Scenes/3DModels/Decorations/server.tscn" id="58_2060n"]
 [ext_resource type="PackedScene" uid="uid://dwe5ena6xdg63" path="res://Scenes/3DModels/Decorations/aircon.tscn" id="59_6ml46"]
+[ext_resource type="Resource" uid="uid://c872l4kd08mbe" path="res://Items/green_keycard.tres" id="60_64lof"]
 [ext_resource type="PackedScene" uid="uid://bjptryd4ma7k0" path="res://Scenes/3DModels/Decorations/avr.tscn" id="60_qax2n"]
+[ext_resource type="Resource" uid="uid://cxmos82sk45c1" path="res://Items/blue_keycard.tres" id="61_b4mik"]
 [ext_resource type="PackedScene" uid="uid://edri81jaiv43" path="res://Scenes/3DModels/Decorations/battery.tscn" id="61_y86h7"]
 [ext_resource type="PackedScene" uid="uid://b6061x1r2nqo5" path="res://Scenes/3DModels/Decorations/monitor_large.tscn" id="62_y86h7"]
 [ext_resource type="PackedScene" uid="uid://mlxpg5dsbqht" path="res://Scenes/3DModels/Interactables/door_iron.tscn" id="63_my4ki"]
@@ -101,6 +103,8 @@
 [ext_resource type="PackedScene" uid="uid://b8v1x63tfvc5h" path="res://Scenes/3DModels/Decorations/coffee_maker_base.tscn" id="92_lpdpw"]
 [ext_resource type="PackedScene" uid="uid://dpxbe1kdof3q1" path="res://Scenes/3DModels/Decorations/coffee_maker_cream_jug.tscn" id="93_jrou0"]
 [ext_resource type="PackedScene" uid="uid://5l0bymfcv2vg" path="res://Scripts/Components/trespassing_check.tscn" id="97_3ahwd"]
+[ext_resource type="PackedScene" uid="uid://bmini8a3qee8g" path="res://Scenes/3DModels/Interactables/keycard_green.tscn" id="102_ot5ec"]
+[ext_resource type="PackedScene" uid="uid://bbo64xqi8mb47" path="res://Scenes/Interactables/keycard_blue.tscn" id="103_aok0f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -144,7 +148,7 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_nb1ia"]
+[sub_resource type="Resource" id="Resource_urine"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -650,6 +654,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8487, 0.000842333, -4.3079
 
 [node name="DoorIron4" parent="Interactables" instance=ExtResource("63_my4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3376, 0.000840306, 9.90374)
+
+[node name="DoorIron9" parent="Interactables" instance=ExtResource("63_my4ki")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 63.517643, 0.00084221363, 5.628791)
+
+[node name="DoorIron10" parent="Interactables" instance=ExtResource("63_my4ki")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 65.31108, 0.00084221363, 33.391937)
+
+[node name="DoorIron11" parent="Interactables" instance=ExtResource("63_my4ki")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 65.31108, 0.00084221363, 47.559334)
 
 [node name="DoorIron5" parent="Interactables" instance=ExtResource("63_my4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2108, 0.000840306, -4.30796)
@@ -1347,20 +1360,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.159, 1.49638, 47.5462)
 [node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("67_nay3j")]
 transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 31.8646, 1.48254, 47.6258)
 
-[node name="sticky_note" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" instance=ExtResource("55_t014q")]
+[node name="sticky_note" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" node_paths=PackedStringArray("computer") instance=ExtResource("55_t014q")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 31.435831, 2.5429087, 49.06926)
+computer = NodePath("../../../Computer5")
 
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
 door = NodePath("../../../Interactables/DoorIron")
+keycard_item = ExtResource("60_64lof")
 
 [node name="CardSwipe2" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 46.8302, 2.43886, 12.3245)
 door = NodePath("../../../Interactables/DoorIron4")
+keycard_item = ExtResource("60_64lof")
+
+[node name="CardSwipe4" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
+transform = Transform3D(-4.371141e-08, 0, 1, 0, 1, 0, -1, 0, -4.371141e-08, 62.93108, 2.2385533, 5.087979)
+door = NodePath("../../../Interactables/DoorIron9")
+keycard_item = ExtResource("61_b4mik")
+
+[node name="CardSwipe5" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
+transform = Transform3D(-4.371141e-08, 0, 1, 0, 1, 0, -1, 0, -4.371141e-08, 62.97206, 2.140465, 33.07035)
+door = NodePath("../../../Interactables/DoorIron10")
+keycard_item = ExtResource("61_b4mik")
+
+[node name="CardSwipe6" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
+transform = Transform3D(-4.371141e-08, 0, 1, 0, 1, 0, -1, 0, -4.371141e-08, 62.96337, 2.2983742, 47.16945)
+door = NodePath("../../../Interactables/DoorIron11")
+keycard_item = ExtResource("61_b4mik")
 
 [node name="CardSwipe3" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 46.8302, 2.43886, -1.50138)
 door = NodePath("../../../Interactables/DoorIron5")
+keycard_item = ExtResource("60_64lof")
 
 [node name="Lamp_Conical_Small" parent="NavigationRegion3D/Objects" instance=ExtResource("30_r33sp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3384, 1.75, -4.87641)
@@ -1691,7 +1723,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_nb1ia")
+npc_resource = SubResource("Resource_urine")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)
@@ -1821,3 +1853,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.680414, 1.7637196, 56.56779
 
 [node name="CoffeeMakerCreamJug" parent="." instance=ExtResource("93_jrou0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.811216, 1.762638, 57.0983)
+
+[node name="keycard" parent="." instance=ExtResource("102_ot5ec")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.2290378, 1.2903695, 12.859698)
+
+[node name="keycard_blue" parent="." instance=ExtResource("103_aok0f")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 55.534588, 0.07514982, -2.4146256)

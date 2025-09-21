@@ -789,6 +789,7 @@ anchor_top = 0.204013
 anchor_right = 0.805522
 anchor_bottom = 0.817726
 offset_bottom = 6.1035156e-05
+script = null
 
 [node name="Background" parent="Model/SubViewport/TabContainer/Login/Window" index="0"]
 self_modulate = Color(0.321728, 0.321728, 0.321728, 1)

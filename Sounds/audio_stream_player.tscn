@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://b4iko5fm2yxul" path="res://Assets/Audio/Eden_Flavor.mp3" id="1_c1rpt"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_c1rpt")
 autoplay = true
 bus = &"Music"
