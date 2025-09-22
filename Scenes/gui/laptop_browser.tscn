@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=92 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
@@ -15,6 +15,11 @@
 [ext_resource type="Script" uid="uid://b1a37u0q6msy8" path="res://Scripts/GUI/email.gd" id="12_28080"]
 [ext_resource type="Script" uid="uid://dcqsw7q1b2t5t" path="res://Scripts/GUI/piracy.gd" id="14_213el"]
 [ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="15_hp5ny"]
+[ext_resource type="Script" uid="uid://8du82ex4hwab" path="res://Scenes/GUI/website.gd" id="15_ti25j"]
+[ext_resource type="Texture2D" uid="uid://cyw0v5ikgxa21" path="res://Assets/Illustrator/FolderIcon.png" id="16_yc451"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="17_wyft7"]
+[ext_resource type="Script" uid="uid://bc2frwp1sy1j3" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="18_cxs6i"]
+[ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="19_sifis"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -2738,7 +2743,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(34, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(36, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -3313,40 +3318,397 @@ _data = {
 &"upload_cyberattack": SubResource("Animation_mu48v")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rado2"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="Animation" id="Animation_niyc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("folder1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 521)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("folder2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1224, 57)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("folder3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, 97)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("folder4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(896, 497)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("folder5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-160, 321)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("folder1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("folder2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("folder3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("folder4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("folder5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Window2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("mouse:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(760, 505)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("mouse:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64.00012)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer/PasswordInput:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_0015x"]
+resource_name = "hosting_uploading"
+length = 7.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("folder1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48, 521), Vector2(456, 169)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("folder2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1224, 57), Vector2(560, 161)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("folder3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-152, 97), Vector2(480, 153)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("folder4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(896, 497), Vector2(512, 201)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("folder5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-136, 265), Vector2(520, 233)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("folder1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("folder2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("folder3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("folder4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("folder5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Window2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("mouse:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(5, 6, 6.6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(760, 505), Vector2(392, 201), Vector2(392, 201), Vector2(672, 201)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("mouse:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(6.2, 6.4, 6.6, 7, 7.2, 7.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(64, 64.00012), Vector2(80, 80.00015), Vector2(64, 64.00012), Vector2(64, 64.00012), Vector2(80, 80.00015), Vector2(64, 64.00012)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer/PasswordInput:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(6.6, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "https://www.pulseforge-studio.com/verify"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62uyl"]
+_data = {
+&"RESET": SubResource("Animation_niyc4"),
+&"hosting_uploading": SubResource("Animation_0015x")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g833x"]
+bg_color = Color(1, 0.94509804, 0.90588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc5ig"]
+bg_color = Color(0.70980394, 0.8235294, 0.9019608, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pnmm"]
+texture = ExtResource("16_yc451")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyft7"]
+texture = ExtResource("16_yc451")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxs6i"]
+texture = ExtResource("16_yc451")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts51p"]
+bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffwko"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y31o"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8xn0"]
-bg_color = Color(0.452027, 0.270059, 0.836414, 1)
-border_width_left = 40
-border_width_right = 40
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_objf3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wv5w"]
-bg_color = Color(0.614341, 0.512609, 0.961783, 1)
-shadow_color = Color(0.553959, 0.418906, 0.936871, 0.658824)
-shadow_size = 1
-shadow_offset = Vector2(0, 2)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tt2ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jviqw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wnap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g833x"]
 
 [node name="Website" type="Control" node_paths=PackedStringArray("email_btn", "upload_btn", "website_btn")]
 custom_minimum_size = Vector2(1152, 648)
@@ -3464,6 +3826,18 @@ custom_minimum_size = Vector2(574.12, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0cln0")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/Background/SearchBar/ButtonsContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "https::\\www.hostipy.com"
+vertical_alignment = 1
 
 [node name="Favorites" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
@@ -3769,118 +4143,212 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5153631, 0.81745213, 0.92452157, 1)
+script = ExtResource("15_ti25j")
 metadata/_edit_use_anchors_ = true
 
-[node name="LoginPanel" type="PanelContainer" parent="MarginContainer/Background/Website"]
+[node name="HostingPlayer" type="AnimationPlayer" parent="MarginContainer/Background/Website"]
+libraries = {
+&"": SubResource("AnimationLibrary_62uyl")
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Background/Website"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.27517354
-anchor_top = 0.17284
-anchor_right = 0.7256944
-anchor_bottom = 0.807099
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rado2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_g833x")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Background/Website/PanelContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Background/Website/PanelContainer/CenterContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jc5ig")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/Website/PanelContainer/CenterContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Website/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "U p l o a d  y o u r  F i l e s"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/Background/Website/PanelContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pnmm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wyft7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cxs6i")
+expand_icon = true
+
+[node name="Window2" type="PanelContainer" parent="MarginContainer/Background/Website"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31770834
+anchor_top = 0.2780127
+anchor_right = 0.6822917
+anchor_bottom = 0.7219873
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ts51p")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/Website/LoginPanel"]
+[node name="WindowContents" type="VBoxContainer" parent="MarginContainer/Background/Website/Window2"]
+layout_mode = 2
+
+[node name="WindowHeader" type="PanelContainer" parent="MarginContainer/Background/Website/Window2/WindowContents"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1y31o")
+
+[node name="Button" type="Button" parent="MarginContainer/Background/Website/Window2/WindowContents/WindowHeader"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("17_wyft7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_objf3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tt2ot")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jviqw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5wnap")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g833x")
+text = "X"
+
+[node name="SampleHeader" type="Label" parent="MarginContainer/Background/Website/Window2/WindowContents/WindowHeader"]
+layout_mode = 2
+text = "Website Deployed"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/Website/Window2/WindowContents"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="PasswordCheckComponent" type="Control" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer" node_paths=PackedStringArray("password_box", "message_label")]
+layout_mode = 2
+script = ExtResource("18_cxs6i")
+password_box = NodePath("../VBoxContainer/HBoxContainer/PasswordInput")
+message_label = NodePath("../VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("10_sx6w8")
+
+[node name="Label" type="Label" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Type Website Host Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
-alignment = 1
 
-[node name="LoginLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+[node name="PasswordInput" type="TextEdit" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(238.385, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "LOGIN TO PULSEFIRE "
-horizontal_alignment = 1
+scroll_fit_content_height = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
+[node name="SubmitButton" type="Button" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-alignment = 1
+text = "Submit"
 
-[node name="UsernameLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Username:"
-
-[node name="Username" type="TextEdit" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(390, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
-theme_override_styles/normal = SubResource("StyleBoxFlat_ffwko")
-placeholder_text = "Username"
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="PasswordLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Password:"
-
-[node name="Password" type="TextEdit" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(390, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
-theme_override_styles/normal = SubResource("StyleBoxFlat_ffwko")
-placeholder_text = "Password"
-metadata/_edit_use_anchors_ = true
-
-[node name="ForgotPasswordLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 11
-text = "Forgot Password?"
-horizontal_alignment = 1
-
-[node name="Login Button" type="Panel" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
-custom_minimum_size = Vector2(240, 40)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_c8xn0")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/Login Button"]
+[node name="folder1" type="TextureRect" parent="MarginContainer/Background/Website"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.39375
-anchor_top = 0.214327
-anchor_right = 0.60625
-anchor_bottom = 0.785673
-grow_horizontal = 2
-grow_vertical = 2
-text = "LOGIN"
-horizontal_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_6wv5w")
+anchor_left = 0.39583334
+anchor_top = 0.35729387
+anchor_right = 0.45423958
+anchor_bottom = 0.47145876
+offset_left = -408.0
+offset_top = 352.0
+offset_right = -407.99957
+offset_bottom = 351.99994
+texture = ExtResource("16_yc451")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NeedHelpLabel" type="Label" parent="MarginContainer/Background/Website/LoginPanel/VBoxContainer/HBoxContainer3/Panel"]
+[node name="folder2" type="TextureRect" parent="MarginContainer/Background/Website"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -229.0
-offset_top = -11.5
-offset_right = 229.0
-offset_bottom = 11.5
+anchors_preset = -1
+anchor_left = 0.4861111
+anchor_top = 0.34038055
+anchor_right = 0.5445173
+anchor_bottom = 0.45454547
+offset_left = 664.0
+offset_top = -104.0
+offset_right = 663.99976
+offset_bottom = -103.99994
+texture = ExtResource("16_yc451")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="folder3" type="TextureRect" parent="MarginContainer/Background/Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37055552
+anchor_top = 0.3410571
+anchor_right = 0.4289617
+anchor_bottom = 0.455222
+offset_left = -578.87994
+offset_top = -64.32001
+offset_right = -578.87994
+offset_bottom = -64.32019
+texture = ExtResource("16_yc451")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="folder4" type="TextureRect" parent="MarginContainer/Background/Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10666662
+anchor_top = -0.16634248
+anchor_right = 0.16507281
+anchor_bottom = -0.052177574
+offset_left = 773.12006
+offset_top = 575.68
+offset_right = 773.12006
+offset_bottom = 575.6801
+texture = ExtResource("16_yc451")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="folder5" type="TextureRect" parent="MarginContainer/Background/Website"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45583344
+anchor_top = 0.07044399
+anchor_right = -0.39742723
+anchor_bottom = 0.18460889
+offset_left = 365.12012
+offset_top = 287.68
+offset_right = 365.12012
+offset_bottom = 287.6798
+texture = ExtResource("16_yc451")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mouse" type="TextureRect" parent="MarginContainer/Background/Website"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5833333
+anchor_top = 0.42494714
+anchor_right = 0.6527778
+anchor_bottom = 0.5940807
+offset_left = 88.0
+offset_top = 304.0
+offset_right = 72.0
+offset_bottom = 287.99997
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "NEED HELP LOGGING IN OR RECOVERING YOUR ACCOUNT? "
-horizontal_alignment = 1
+texture = ExtResource("19_sifis")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -3899,4 +4367,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]
 [connection signal="item_selected" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_item_selected"]
 [connection signal="pressed" from="MarginContainer/Background/Piracy/UploadButton" to="MarginContainer/Background/Piracy" method="_on_upload_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Background/Website/PanelContainer/CenterContainer/VBoxContainer/Button" to="MarginContainer/Background/Website" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer/SubmitButton" to="MarginContainer/Background/Website" method="_on_submit_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

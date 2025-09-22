@@ -26,6 +26,7 @@ var dos_ready : bool = false : set = set_dos_ready
 var website_seen := false : set = set_website_seen
 var piracy_seen := false : set = set_piracy_seen
 var data_server_seen := false : set = set_data_server_seen
+var phishing_site_hosted := false
 # Dictionary of emails and whether they are usable
 var emails := {
 	"al@company.com": false,

@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://dnj8fsi1dawwb"]
 
-[ext_resource type="Script" uid="uid://5e1pg0h8twbo" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.gd" id="1_q0tlf"]
+[ext_resource type="Script" uid="uid://d2sm53egw0jgh" path="res://Scenes/GUI/CyberattacksV2/FilelessV2/fileless.gd" id="1_q0tlf"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_qxdw1"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_oducy"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_dsue1"]

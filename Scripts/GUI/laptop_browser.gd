@@ -16,6 +16,7 @@ func _ready():
 	CyberattackManager.email_updated.connect(update_buttons)
 	CyberattackManager.website_seen_changed.connect(update_buttons)
 	CyberattackManager.piracy_seen_changed.connect(update_buttons)
+	SignalBus.phishing_site_hosted.connect(hide_pages)
 	update_buttons()
 
 func _on_send_button_pressed():
@@ -30,7 +31,7 @@ func update_buttons():
 	else:
 		email_btn.disabled = false  # Enable if there is at least one usable email
 	# Website button
-	if not CyberattackManager.phishing_ready:
+	if CyberattackManager.phishing_ready:
 		website_btn.disabled = true
 	else:
 		website_btn.disabled = false
