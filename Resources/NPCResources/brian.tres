@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://botxokshquf50"]
+
+[ext_resource type="Script" uid="uid://cn4vcnytc42jl" path="res://Resources/npc_data.gd" id="1_68134"]
+
+[resource]
+script = ExtResource("1_68134")
+name = "Brian"
+email = "brian@company.com"
+text = "I heard al looking for a blue keycard yesterday, he's funny"
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://jvsw5ddi4qv4"]
+
+[ext_resource type="PackedScene" uid="uid://tsvsvgcgr1ly" path="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx" id="1_0yg5u"]
+[ext_resource type="Script" uid="uid://bmp7vmxvh24k3" path="res://Scripts/GUI/registrar_paper.gd" id="2_0yg5u"]
+[ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rqmcl"]
+[ext_resource type="Texture2D" uid="uid://b5f8vg7ee7pe3" path="res://Assets/Illustrator/design-space-paper-textured-background.jpg" id="4_4rxox"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a6ghd"]
+data = PackedVector3Array(-0.2638, -0.3713, 0, 0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, 0.3713, 0, -0.2638, 0.3713, 0, -0.2638, -0.3713, 0, 0.2638, 0.3713, 0, 0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, -0.3713, 0, -0.2638, 0.3713, 0, 0.2638, 0.3713, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8jro"]
+texture = ExtResource("4_4rxox")
+
+[node name="SheetOfPaper_A4_2Sided" node_paths=PackedStringArray("paper_ui", "label") instance=ExtResource("1_0yg5u")]
+script = ExtResource("2_0yg5u")
+email_address = "shion@company.com"
+paper_ui = NodePath("ColorRect")
+label = NodePath("ColorRect/Label")
+
+[node name="SheetOfPaper_A4_2Sided" parent="." index="0"]
+transform = Transform3D(0, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -1, -1.91069e-15, -4.37114e-08, 0, 0.0138395, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SheetOfPaper_A4_2Sided" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SheetOfPaper_A4_2Sided/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_a6ghd")
+
+[node name="Interactable" parent="." index="2" instance=ExtResource("3_rqmcl")]
+prompt_message = "Read"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0.0145946, 0)
+shape = SubResource("ConcavePolygonShape3D_a6ghd")
+
+[node name="ColorRect" type="PanelContainer" parent="." index="3"]
+custom_minimum_size = Vector2(320, 434)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -217.0
+offset_right = 160.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_w8jro")
+
+[node name="Label" type="Label" parent="ColorRect" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Report: 
+
+18:00 - The credentials have been
+recorded in the registrar
+
+19:00  - Server has been backed up. 
+Al finished checking inside the
+server room."
+horizontal_alignment = 1
+
+[connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

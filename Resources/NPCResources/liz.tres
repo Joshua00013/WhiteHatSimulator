@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://j1xgbgemi67b"]
+
+[ext_resource type="Script" uid="uid://cn4vcnytc42jl" path="res://Resources/npc_data.gd" id="1_2ppnq"]
+
+[resource]
+script = ExtResource("1_2ppnq")
+name = "Liz"
+email = "liz@company.com"
+text = "John is so cute"
+pirating = true
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"

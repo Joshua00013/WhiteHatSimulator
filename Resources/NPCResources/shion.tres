@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://bil2lmbajjnqd"]
+
+[ext_resource type="Script" uid="uid://cn4vcnytc42jl" path="res://Resources/npc_data.gd" id="1_b2l6e"]
+
+[resource]
+script = ExtResource("1_b2l6e")
+name = "Shion"
+email = "shion@company.com"
+text = "Registrar password : 1234"
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"

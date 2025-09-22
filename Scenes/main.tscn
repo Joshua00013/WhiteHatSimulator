@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=123 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dtevhosmv1n34" path="res://Scenes/3DModels/Interactables/paper_filing_folder_yellow.tscn" id="45_jut3y"]
 [ext_resource type="PackedScene" uid="uid://bb0b2smujjru1" path="res://Scenes/3DModels/Decorations/plant_pot_large_c.tscn" id="46_v2nl5"]
 [ext_resource type="PackedScene" uid="uid://bi3nr2twfr3k2" path="res://Assets/export_LPOP_FULL/PlantPotLargeC.fbx" id="47_dmskm"]
+[ext_resource type="PackedScene" uid="uid://jvsw5ddi4qv4" path="res://Scenes/3DModels/Interactables/registrar_paper.tscn" id="48_o2owy"]
 [ext_resource type="PackedScene" uid="uid://bojq1sdo633rm" path="res://Scenes/3DModels/Decorations/shelving_3_tier_stylised_brown.tscn" id="48_xdkp6"]
 [ext_resource type="PackedScene" uid="uid://dqcp28vc5y0pl" path="res://Scenes/3DModels/Characters/koro.tscn" id="49_sasc4"]
 [ext_resource type="PackedScene" uid="uid://bpuvc5yikthu2" path="res://Scenes/3DModels/Decorations/l_chair.tscn" id="49_v2nl5"]
@@ -100,8 +101,11 @@
 [ext_resource type="PackedScene" uid="uid://cnylmyeipw280" path="res://Scenes/3DModels/Decorations/tray_stack.tscn" id="85_phube"]
 [ext_resource type="Resource" uid="uid://c1vbatxqxn8wp" path="res://Resources/NPCResources/sai.tres" id="88_nb1ia"]
 [ext_resource type="PackedScene" uid="uid://rnnvcd2efuhy" path="res://Scenes/3DModels/Decorations/plant_type_a.tscn" id="91_t014q"]
+[ext_resource type="Resource" uid="uid://j1xgbgemi67b" path="res://Resources/NPCResources/liz.tres" id="92_5vy51"]
 [ext_resource type="PackedScene" uid="uid://b8v1x63tfvc5h" path="res://Scenes/3DModels/Decorations/coffee_maker_base.tscn" id="92_lpdpw"]
 [ext_resource type="PackedScene" uid="uid://dpxbe1kdof3q1" path="res://Scenes/3DModels/Decorations/coffee_maker_cream_jug.tscn" id="93_jrou0"]
+[ext_resource type="Resource" uid="uid://dxjv1ucg5didf" path="res://Resources/NPCResources/mococo.tres" id="94_o2owy"]
+[ext_resource type="Resource" uid="uid://botxokshquf50" path="res://Resources/NPCResources/brian.tres" id="95_ylsbi"]
 [ext_resource type="PackedScene" uid="uid://5l0bymfcv2vg" path="res://Scripts/Components/trespassing_check.tscn" id="97_3ahwd"]
 [ext_resource type="PackedScene" uid="uid://bmini8a3qee8g" path="res://Scenes/3DModels/Interactables/keycard_green.tscn" id="102_ot5ec"]
 [ext_resource type="PackedScene" uid="uid://bbo64xqi8mb47" path="res://Scenes/Interactables/keycard_blue.tscn" id="103_aok0f"]
@@ -148,7 +152,21 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_64lof"]
+[sub_resource type="Resource" id="Resource_ceghn"]
+script = ExtResource("82_55idt")
+name = "Robert"
+email = "robert@company.com"
+pirating = true
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"
+
+[sub_resource type="Resource" id="Resource_3h4bx"]
+script = ExtResource("82_55idt")
+name = "John"
+email = "john@company.com"
+pirating = true
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"
+
+[sub_resource type="Resource" id="Resource_xg142"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -343,16 +361,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2441, -0.0011332, 44.1063)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer6")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
 
-[node name="al" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5", "target_area_7", "target_area_9", "koro") instance=ExtResource("68_ovafv")]
+[node name="al" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5", "target_area_7", "target_area_9", "koro") instance=ExtResource("68_ovafv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75778645, -0.0011329651, 0.71310234)
+PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer11")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_5 = NodePath("../../Markers/Cafeteria")
 target_area_7 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col8")
 target_area_9 = NodePath("../../Markers/Reception2")
 koro = NodePath("../Koro")
 
-[node name="John" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5") instance=ExtResource("69_owhal")]
+[node name="John" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") instance=ExtResource("69_owhal")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -2)
+PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer10")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col15")
 target_area_5 = NodePath("../../Markers/Reception2")
 
@@ -1261,6 +1281,26 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.82
 [node name="FilingCabinetThreeStack_Case35" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("37_nwwfm")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.8222866, -0.9999997, 14.7062025)
 
+[node name="SheetOfPaper_A4_2Sided" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.833624, 0.01870054, 7.316823)
+email_address = "gigi@company.com"
+
+[node name="SheetOfPaper_A4_2Sided2" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.793949, 0.96810013, 7.3975954)
+email_address = "koro@company.com"
+
+[node name="SheetOfPaper_A4_2Sided3" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.842138, 0.01870054, 7.363017)
+email_address = "mike@company.com"
+
+[node name="SheetOfPaper_A4_2Sided4" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 7.8488445, 0.01870042, 14.479882)
+email_address = "joe@company.com"
+
+[node name="SheetOfPaper_A4_2Sided5" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.008896, 0.75113505, 4.0454617)
+email_address = "al@company.com"
+
 [node name="HRVisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("room")]
 transform = Transform3D(1.00853, 0, 0, 0, 1, 0, 0, 0, 1, 7.08009, 0.998867, 21.0639)
 aabb = AABB(-9.00062, -4.74681, -11.4173, 13.8655, 8.87546, 22.8347)
@@ -1713,9 +1753,11 @@ npc_resource = ExtResource("88_nb1ia")
 
 [node name="Computer9" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 34.8216, 2.52734, 1.73123)
+npc_resource = SubResource("Resource_ceghn")
 
 [node name="Computer10" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30.217, 2.52734, 7.00781)
+npc_resource = SubResource("Resource_3h4bx")
 
 [node name="Computer11" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 61.8756, 2.16155, 54.1885)
@@ -1726,6 +1768,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 57.1758,
 
 [node name="Computer2" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512, 2.16154, 49.377)
+npc_resource = ExtResource("92_5vy51")
 resource_override_password = true
 
 [node name="Computer3" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
@@ -1734,13 +1777,15 @@ npc_resource = ExtResource("81_87bhu")
 
 [node name="Computer4" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512, 2.16154, 57.5312)
+npc_resource = ExtResource("94_o2owy")
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_64lof")
+npc_resource = SubResource("Resource_xg142")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)
+npc_resource = ExtResource("95_ylsbi")
 
 [node name="Computer7" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 57.5312)
