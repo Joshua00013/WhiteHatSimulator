@@ -62,9 +62,9 @@
 [ext_resource type="PackedScene" uid="uid://bnaq8sr3khlq" path="res://Scenes/3DModels/Decorations/projector.tscn" id="57_6ml46"]
 [ext_resource type="PackedScene" uid="uid://blpwoddkm3wqs" path="res://Scenes/3DModels/Decorations/server.tscn" id="58_2060n"]
 [ext_resource type="PackedScene" uid="uid://dwe5ena6xdg63" path="res://Scenes/3DModels/Decorations/aircon.tscn" id="59_6ml46"]
-[ext_resource type="Resource" path="res://Items/green_keycard.tres" id="60_64lof"]
+[ext_resource type="Resource" uid="uid://c872l4kd08mbe" path="res://Items/green_keycard.tres" id="60_64lof"]
 [ext_resource type="PackedScene" uid="uid://bjptryd4ma7k0" path="res://Scenes/3DModels/Decorations/avr.tscn" id="60_qax2n"]
-[ext_resource type="Resource" path="res://Items/blue_keycard.tres" id="61_b4mik"]
+[ext_resource type="Resource" uid="uid://cxmos82sk45c1" path="res://Items/blue_keycard.tres" id="61_b4mik"]
 [ext_resource type="PackedScene" uid="uid://edri81jaiv43" path="res://Scenes/3DModels/Decorations/battery.tscn" id="61_y86h7"]
 [ext_resource type="PackedScene" uid="uid://b6061x1r2nqo5" path="res://Scenes/3DModels/Decorations/monitor_large.tscn" id="62_y86h7"]
 [ext_resource type="PackedScene" uid="uid://mlxpg5dsbqht" path="res://Scenes/3DModels/Interactables/door_iron.tscn" id="63_my4ki"]
@@ -77,7 +77,7 @@
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
-[ext_resource type="Script" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
+[ext_resource type="Script" uid="uid://dt3afsg6tphbb" path="res://Scripts/Components/marker_rotation.gd" id="74_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="75_pfx1i"]
 [ext_resource type="PackedScene" uid="uid://u1hs78wju3a2" path="res://Scenes/Components/crime_check_component.tscn" id="76_fg68e"]
 [ext_resource type="PackedScene" uid="uid://dpyjt63bw16vk" path="res://Scenes/Interactables/vending_cup_coffee_grande.tscn" id="77_jekl6"]
@@ -103,8 +103,8 @@
 [ext_resource type="PackedScene" uid="uid://b8v1x63tfvc5h" path="res://Scenes/3DModels/Decorations/coffee_maker_base.tscn" id="92_lpdpw"]
 [ext_resource type="PackedScene" uid="uid://dpxbe1kdof3q1" path="res://Scenes/3DModels/Decorations/coffee_maker_cream_jug.tscn" id="93_jrou0"]
 [ext_resource type="PackedScene" uid="uid://5l0bymfcv2vg" path="res://Scripts/Components/trespassing_check.tscn" id="97_3ahwd"]
-[ext_resource type="PackedScene" path="res://Scenes/3DModels/Interactables/keycard_green.tscn" id="102_ot5ec"]
-[ext_resource type="PackedScene" path="res://Scenes/Interactables/keycard_blue.tscn" id="103_aok0f"]
+[ext_resource type="PackedScene" uid="uid://bmini8a3qee8g" path="res://Scenes/3DModels/Interactables/keycard_green.tscn" id="102_ot5ec"]
+[ext_resource type="PackedScene" uid="uid://bbo64xqi8mb47" path="res://Scenes/Interactables/keycard_blue.tscn" id="103_aok0f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kry3j"]
 
@@ -148,7 +148,7 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
-[sub_resource type="Resource" id="Resource_64lof"]
+[sub_resource type="Resource" id="Resource_b4mik"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -238,19 +238,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
-layout_mode = 1
-offset_top = -300.0
-offset_bottom = 0.0
-scale = Vector2(0.7, 0.7)
-pivot_offset = Vector2(150, 150)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-action_left = "strafe_left"
-action_right = "strafe_right"
-action_up = "move_forward"
-action_down = "move_backward"
-
 [node name="InteractContainer" type="Control" parent="AndroidUI/Control"]
 layout_mode = 1
 anchor_left = 0.7291667
@@ -265,22 +252,48 @@ texture_normal = ExtResource("14_ihvwq")
 action = "interact"
 metadata/_edit_use_anchors_ = true
 
-[node name="InventoryButton" type="TouchScreenButton" parent="AndroidUI/Control"]
-position = Vector2(1014, 406)
+[node name="InventoryContainer" type="Control" parent="AndroidUI/Control"]
+anchors_preset = 0
+anchor_left = 0.8802083
+anchor_top = 0.6265432
+anchor_right = 0.9913194
+anchor_bottom = 0.8240741
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryButton" type="TouchScreenButton" parent="AndroidUI/Control/InventoryContainer"]
 texture_normal = ExtResource("15_k8rh3")
 action = "inventory"
 metadata/_edit_use_anchors_ = true
 
-[node name="PauseButton" type="TouchScreenButton" parent="AndroidUI/Control"]
-position = Vector2(1037, 17)
-scale = Vector2(0.686567, 0.686567)
-texture_normal = ExtResource("16_55idt")
+[node name="PauseContainer" type="Control" parent="AndroidUI/Control"]
+anchors_preset = 0
+anchor_left = 0.9001736
+anchor_top = 0.026234567
+anchor_right = 0.9800347
+anchor_bottom = 0.16666667
 metadata/_edit_use_anchors_ = true
 
-[node name="SprintButton" type="TouchScreenButton" parent="AndroidUI/Control"]
+[node name="PauseButton" type="TouchScreenButton" parent="AndroidUI/Control/PauseContainer"]
+scale = Vector2(0.686567, 0.686567)
+texture_normal = ExtResource("16_55idt")
+action = "exit_ui"
+metadata/_edit_use_anchors_ = true
+
+[node name="SprintContainer" type="Control" parent="AndroidUI/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SprintButton" type="TouchScreenButton" parent="AndroidUI/Control/SprintContainer"]
 position = Vector2(870, 361)
 texture_normal = ExtResource("17_87bhu")
+action = "sprint"
 metadata/_edit_use_anchors_ = true
+
+[node name="Virtual Joystick" parent="AndroidUI/Control" instance=ExtResource("7_6bp64")]
+layout_mode = 1
+pressed_color = Color(0.75, 0.75, 0.75, 1)
+joystick_mode = 1
 
 [node name="NPC" type="Node3D" parent="."]
 
@@ -1724,7 +1737,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_64lof")
+npc_resource = SubResource("Resource_b4mik")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6lbrvmvf5bp0"]
+
+[ext_resource type="Script" uid="uid://j4f6tlmxptli" path="res://Scripts/GUI/inventory_description.gd" id="1_nhtaf"]
+
+[node name="InventoryDescription" type="ColorRect"]
+self_modulate = Color(1, 1, 1, 0.227451)
+anchors_preset = -1
+anchor_left = 0.737847
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhtaf")
+metadata/_edit_use_anchors_ = true
+
+[node name="NamePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.140432
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemName" type="Label" parent="NamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3
+
+[node name="DescriptionPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.140432
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemDescription" type="Label" parent="DescriptionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3

@@ -14,6 +14,10 @@ offset_right = 300.0
 offset_bottom = -8.0
 grow_vertical = 0
 script = ExtResource("1_8x4dy")
+action_left = "strafe_left"
+action_right = "strafe_right"
+action_up = "move_forward"
+action_down = "move_backward"
 
 [node name="Base" type="TextureRect" parent="."]
 layout_mode = 1

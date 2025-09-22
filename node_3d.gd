@@ -59,6 +59,11 @@ func _unhandled_input(event):
 		look_rotation.y -= (event.relative.x * sensitivity) #Subtract horizontal mouse movement (x) from the head's y rotation (horizontal rotation from y pole)
 		look_rotation.x -= (event.relative.y * sensitivity)
 		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle) #Minimum and maximum rotation of the vertical rotation
+		# Touch look (Android multitouch)
+	elif event is InputEventScreenDrag:
+		look_rotation.y -= (event.relative.x * sensitivity) # scaled down
+		look_rotation.x -= (event.relative.y * sensitivity)
+		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle)
 		
 	elif event.is_action_pressed("interact") && GameManager.ui_active == true :
 		#Set the cursor visibility to default when a UI is active or game has been paused.

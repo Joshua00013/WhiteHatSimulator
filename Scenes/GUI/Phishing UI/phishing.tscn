@@ -1,0 +1,1340 @@
+[gd_scene load_steps=23 format=3 uid="uid://cyrattnnrxu4k"]
+
+[ext_resource type="Script" uid="uid://dpn418dc3ynn5" path="res://Scenes/GUI/Phishing UI/phishing.gd" id="1_65cbd"]
+
+[sub_resource type="Shader" id="Shader_sp02v"]
+code = "shader_type canvas_item;
+render_mode blend_mix, unshaded;
+
+// The full color of the rectangle
+uniform vec4 rect_color : source_color = vec4(1.0, 0.2, 0.2, 1.0); // red
+
+// Hole configuration
+uniform vec2 hole_position = vec2(0.0, 0.0); // Top-left corner of the hole (in pixels)
+uniform vec2 hole_size = vec2(50.0, 50.0);   // Width and height of the hole (square or rectangle)
+
+void fragment() {
+    // Convert UV to local pixel coordinates
+    vec2 pixel_pos = UV * vec2(textureSize(TEXTURE, 0));
+
+    // Check if we're inside the hole area
+    bool in_hole = pixel_pos.x > hole_position.x &&
+                   pixel_pos.x < hole_position.x + hole_size.x &&
+                   pixel_pos.y > hole_position.y &&
+                   pixel_pos.y < hole_position.y + hole_size.y;
+
+    if (in_hole) {
+        discard; // Make transparent
+    }
+
+    COLOR = rect_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65cbd"]
+shader = SubResource("Shader_sp02v")
+shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
+shader_parameter/hole_position = Vector2(0.115, 0.41)
+shader_parameter/hole_size = Vector2(3.3, 0.465)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65cbd"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an7l2"]
+bg_color = Color(0.490196, 0.513726, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l74se"]
+bg_color = Color(0.980392, 0.964706, 0.952941, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_offset = Vector2(0, 7)
+
+[sub_resource type="FontVariation" id="FontVariation_g3xo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lx8m"]
+bg_color = Color(0.976471, 0.960784, 0.94902, 1)
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp0a6"]
+bg_color = Color(0.819608, 0.807843, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge4a7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o6qi"]
+bg_color = Color(0.501961, 0.52549, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojgsj"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[sub_resource type="Animation" id="Animation_65cbd"]
+resource_name = "phishing_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's try to copy the website"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(837.00006, 598), Vector2(837.00006, 598)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect/Company Website:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(666.99994, 590), Vector2(32, 79)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/ColorRect/Company Website:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.19353005, -0.0024628378), Vector2(0.9219766, 0.77590466)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l74se"]
+resource_name = "phishing_2"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Let's try to copy the website", "Let's create our database so we can collect their info"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website/Background:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect/Company Website/Background2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/ColorRect/Company Website/Header:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/ColorRect/Company Website/Label Header:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8lx8m"]
+resource_name = "phishing_3"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Now this is our database to collect the info or credentials of our victim via our fake website.", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_an7l2"]
+resource_name = "start_of_phishing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["⚠️ DANGER: FILELESS MALWARE ALERT ⚠️
+
+Phishing is a deceptive cyberattack where attackers trick people into revealing sensitive information, like usernames, passwords, or credit card details. They often use fake emails or websites that look real, luring victims to enter their credentials, which are then stolen and used for malicious purposes."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Next:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/HFlowContainer/Buttons/Back:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g3xo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Let's try to copy the website"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/InterneWelcome:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/ColorRect/Company Website/TextPanel2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/ColorRect/Company Website/Label Header:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HSplitContainer/ColorRect/Company Website/Header:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HSplitContainer/ColorRect/Company Website/Background2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HSplitContainer/ColorRect/Company Website/Background:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("HSplitContainer/ColorRect/Company Website:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9219766, 0.77590466)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("HSplitContainer/ColorRect/Company Website:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 79)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("HSplitContainer/ColorRect/Company Website:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(837.00006, 598)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<? php
+
+"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.41)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.3, 0.465)]
+}
+
+[sub_resource type="Animation" id="Animation_cp0a6"]
+resource_name = "phishing_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Now this database can help us collect the credentials which will be typed out in our fake website's login form", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<? php
+
+"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ge4a7"]
+resource_name = "phishing_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["$_POST['username'] and $_POST['password'] grab whatever the user typed into the form fields.", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<? php
+
+$username = isset($_POST['username']) ? trim($_POST['username']) : '';
+$password = isset($_POST['password']) ? trim($_POST['password']) : '';"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.3, 0.465)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.115, 0.41)]
+}
+
+[sub_resource type="Animation" id="Animation_7o6qi"]
+resource_name = "phishing_6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["$_POST['username'] and $_POST['password'] grab whatever the user typed into the form fields.", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<? php
+
+$username = isset($_POST['username']) ? trim($_POST['username']) : '';
+$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+
+if ($username === '' && $password === '') {
+    header('Location: index.html');
+    exit;
+}"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.3, 0.465), Vector2(3.3, 0.87)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.115, 0.41), Vector2(0.115, 1.055)]
+}
+
+[sub_resource type="Animation" id="Animation_y8s6t"]
+resource_name = "phishing_7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HSplitContainer/HFlowContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["$_POST['username'] and $_POST['password'] grab whatever the user typed into the form fields.", "Now it's done, then for our database so we can collect the credentials"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HSplitContainer/ColorRect/Company Website:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HSplitContainer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HSplitContainer/CodeEdit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HSplitContainer/CodeEdit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<? php
+
+$username = isset($_POST['username']) ? trim($_POST['username']) : '';
+$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+
+if ($username === '' && $password === '') {
+    header('Location: index.html');
+    exit;
+}
+
+$entry = date('Y-m-d H:i:s') . \" | user: \" . addslashes($username) . \" | pass: \" . 
+addslashes($password) . PHP_EOL;"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HSplitContainer/CodeEdit/Overlay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.3, 0.465), Vector2(3.3, 0.87)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HSplitContainer/CodeEdit/Overlay:material:shader_parameter/hole_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.115, 0.41), Vector2(0.115, 1.055)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l74se"]
+_data = {
+&"RESET": SubResource("Animation_g3xo2"),
+&"phishing_1": SubResource("Animation_65cbd"),
+&"phishing_2": SubResource("Animation_l74se"),
+&"phishing_3": SubResource("Animation_8lx8m"),
+&"phishing_4": SubResource("Animation_cp0a6"),
+&"phishing_5": SubResource("Animation_ge4a7"),
+&"phishing_6": SubResource("Animation_7o6qi"),
+&"phishing_7": SubResource("Animation_y8s6t"),
+&"start_of_phishing": SubResource("Animation_an7l2")
+}
+
+[node name="Phishing" type="MarginContainer" node_paths=PackedStringArray("animation")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_65cbd")
+animation = NodePath("AnimationPlayer")
+metadata/_tab_index = 7
+
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0.00385345, 0.0292899, 3.00817e-09, 1)
+theme_override_font_sizes/font_size = 18
+text = "<? php
+
+"
+scroll_smooth = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+
+[node name="Overlay" type="ColorRect" parent="HSplitContainer/CodeEdit"]
+material = SubResource("ShaderMaterial_65cbd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer"]
+visible = false
+custom_minimum_size = Vector2(837, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Company Website" type="ColorRect" parent="HSplitContainer/ColorRect"]
+visible = false
+custom_minimum_size = Vector2(837, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03345281
+anchor_top = 0.13210702
+anchor_right = 0.03345288
+anchor_bottom = 0.13210702
+offset_left = 3.999998
+offset_right = 841.0
+offset_bottom = 598.0
+scale = Vector2(0.9219766, 0.77590466)
+color = Color(0.650128, 0.650128, 0.650128, 1)
+metadata/_tab_index = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="HSplitContainer/ColorRect/Company Website"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.493827
+anchor_right = 1.0
+anchor_bottom = 0.987654
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_65cbd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background2" type="Panel" parent="HSplitContainer/ColorRect/Company Website"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00617284
+anchor_right = 1.0
+anchor_bottom = 0.493827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_an7l2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Header" type="Panel" parent="HSplitContainer/ColorRect/Company Website"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00625
+anchor_right = 1.0
+anchor_bottom = 0.129167
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l74se")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Header" type="Label" parent="HSplitContainer/ColorRect/Company Website"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0295139
+anchor_top = 0.0401235
+anchor_right = 0.208333
+anchor_bottom = 0.100309
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_g3xo2")
+theme_override_font_sizes/font_size = 26
+text = "P U L S E F I R E"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextPanel2" type="Panel" parent="HSplitContainer/ColorRect/Company Website"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_top = 0.197531
+anchor_right = 0.701389
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8lx8m")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="HSplitContainer/ColorRect/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310345
+anchor_top = 0.04
+anchor_right = 0.689655
+anchor_bottom = 0.28
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_g3xo2")
+theme_override_font_sizes/font_size = 19
+text = "W E L C O M E
+T O
+P U L S E F I R E"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar" type="Panel" parent="HSplitContainer/ColorRect/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.340045
+anchor_right = 0.673517
+anchor_bottom = 0.439983
+offset_left = 0.311981
+offset_top = -0.0180016
+offset_right = -0.512085
+offset_bottom = 0.00699615
+theme_override_styles/panel = SubResource("StyleBoxFlat_cp0a6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0645159
+anchor_top = 0.150121
+anchor_right = 0.923388
+anchor_bottom = 1.26362
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ge4a7")
+placeholder_text = "Username"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar2" type="Panel" parent="HSplitContainer/ColorRect/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137259
+anchor_top = 0.500045
+anchor_right = 0.673517
+anchor_bottom = 0.599983
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_cp0a6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Urlbar" type="TextEdit" parent="HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0645159
+anchor_top = 0.170117
+anchor_right = 1.01613
+anchor_bottom = 1.31736
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ge4a7")
+placeholder_text = "Password"
+metadata/_edit_use_anchors_ = true
+
+[node name="Searchbar3" type="Panel" parent="HSplitContainer/ColorRect/Company Website/TextPanel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143724
+anchor_top = 0.682545
+anchor_right = 0.679983
+anchor_bottom = 0.782483
+offset_left = 0.311981
+offset_top = -0.0180054
+offset_right = -0.512085
+offset_bottom = 0.00698853
+theme_override_styles/panel = SubResource("StyleBoxFlat_7o6qi")
+metadata/_edit_use_anchors_ = true
+
+[node name="InterneWelcome" type="Label" parent="HSplitContainer/ColorRect/Company Website/TextPanel2/Searchbar3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278226
+anchor_top = -0.0348381
+anchor_right = 0.697581
+anchor_bottom = 1.17989
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_g3xo2")
+theme_override_font_sizes/font_size = 22
+text = "Log In"
+metadata/_edit_use_anchors_ = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/HFlowContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 18
+text = "Let's try to copy the website"
+fit_content = true
+
+[node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HFlowContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 165
+
+[node name="Back" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="HSplitContainer/HFlowContainer/Buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ojgsj")
+disabled = true
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l74se")
+}
+
+[connection signal="pressed" from="HSplitContainer/HFlowContainer/Buttons/Next" to="." method="_on_next_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccfo1y3ncacsm"]
+
+[ext_resource type="Texture2D" uid="uid://drtq7yl0yijaj" path="res://Assets/Illustrator/SKIP_1.png" id="1_uiq0a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.08506945
+anchor_bottom = 0.09104938
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+scale = Vector2(0.47199997, 0.472)
+texture_normal = ExtResource("1_uiq0a")
+action = "exit_ui"
