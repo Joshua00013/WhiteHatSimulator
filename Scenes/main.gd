@@ -31,7 +31,9 @@ func _ready() -> void:
 	CyberattackAdaptationManager.save_snapshot() # Save the values at the start of the day to be used for resets
 	ConfigFileHandler.apply_display_mode()
 	Dialogic.VAR.reset()
-
+	
+	await get_tree().create_timer(1).timeout
+	SaveManager.save_data()
 func _on_dialogic_signal(argument: String):
 	match argument:
 		"corridor_unlocked":

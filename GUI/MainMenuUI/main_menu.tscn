@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw63rufk8of5w"]
+[gd_scene load_steps=21 format=3 uid="uid://bw63rufk8of5w"]
 
 [ext_resource type="Script" uid="uid://skwa24u0pu8" path="res://GUI/MainMenuUI/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://clf722iyeb32e" path="res://Scripts/GUI/main_menu.gd" id="1_ir4l5"]
@@ -7,6 +7,10 @@
 [ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_41b15"]
 [ext_resource type="PackedScene" uid="uid://c2v5sap2ns8ix" path="res://Scenes/3DModels/Decorations/table_office_desk_2_col.tscn" id="4_5j0qv"]
 [ext_resource type="PackedScene" uid="uid://1o70vuj3pxw" path="res://Scenes/Interactables/computer_main.tscn" id="5_5j0qv"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="6_prijn"]
+[ext_resource type="Script" uid="uid://cmppg701rsorj" path="res://Scripts/GUI/name_container.gd" id="7_nat8f"]
+[ext_resource type="Script" uid="uid://bcwf53kfrrs7e" path="res://Scripts/GUI/load_container.gd" id="8_ueaw5"]
+[ext_resource type="PackedScene" uid="uid://c255f8fuojath" path="res://GUI/MainMenuUI/save_slot.tscn" id="9_e4lvi"]
 
 [sub_resource type="Sky" id="Sky_ir4l5"]
 
@@ -16,6 +20,61 @@ sky = SubResource("Sky_ir4l5")
 
 [sub_resource type="Theme" id="Theme_lfg1o"]
 Label/fonts/font = ExtResource("1_v5uxc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueaw5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.5569528, 0.5569531, 0.556953, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prijn"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nat8f"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4lvi"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgykf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.16470589, 0.18039216, 0.21568628, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="QuadMesh" id="QuadMesh_prijn"]
 size = Vector2(2000, 2000)
@@ -100,10 +159,100 @@ alignment = 0
 visible = false
 layout_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="MainMenuUI"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="NameContainer" type="PanelContainer" parent="MainMenuUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -132.0
+offset_right = 240.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_prijn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ueaw5")
+script = ExtResource("7_nat8f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/NameContainer"]
+layout_mode = 2
+theme_override_constants/separation = 74
+
+[node name="Label" type="Label" parent="MainMenuUI/NameContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter your name"
+
+[node name="LineEdit" type="LineEdit" parent="MainMenuUI/NameContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 39.435)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_prijn")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_nat8f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e4lvi")
+placeholder_text = "Name"
+emoji_menu_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuUI/NameContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 149
+alignment = 1
+
+[node name="Back" type="Button" parent="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Confirm" type="Button" parent="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="LoadContainer" type="PanelContainer" parent="MainMenuUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgykf")
+script = ExtResource("8_ueaw5")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/LoadContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuUI/LoadContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 66.025)
+layout_mode = 2
+theme = ExtResource("6_prijn")
+theme_override_font_sizes/normal_font_size = 71
+bbcode_enabled = true
+text = "[wave amp = 50]Load"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Saves" type="ScrollContainer" parent="MainMenuUI/LoadContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/LoadContainer/VBoxContainer/Saves"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SaveSlot" parent="MainMenuUI/LoadContainer/VBoxContainer/Saves/VBoxContainer" instance=ExtResource("9_e4lvi")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuUI/LoadContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("6_prijn")
+theme_override_font_sizes/font_size = 26
+text = "Back"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.12958, 0)
@@ -125,3 +274,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.6757
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/LoadGame" to="MainMenuUI" method="_on_load_pressed"]
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Settings" to="MainMenuUI" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Quit" to="MainMenuUI" method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer/Back" to="MainMenuUI/NameContainer" method="_on_back_pressed"]
+[connection signal="pressed" from="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer/Confirm" to="MainMenuUI/NameContainer" method="_on_confirm_pressed"]
+[connection signal="pressed" from="MainMenuUI/LoadContainer/VBoxContainer/Back" to="MainMenuUI/LoadContainer" method="_on_back_pressed"]

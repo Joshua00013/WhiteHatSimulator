@@ -1,16 +1,18 @@
 extends Control
 
 @export var settings : Control
+@onready var name_container = $NameContainer
+@onready var load_container = $LoadContainer
 
 func _ready():
 	DayAndNightManager.active = false
 
 func _on_start_pressed():
-	print("start")
-	get_tree().change_scene_to_file("res://Scenes/GUI/loading.tscn")
+	name_container.show()
 
 func _on_load_pressed():
-	get_tree().change_scene_to_file("res://Scenes/GUI/load_menu.tscn")
+	load_container.refresh_saves()
+	load_container.show()
 
 func _on_settings_pressed():
 	settings.show()

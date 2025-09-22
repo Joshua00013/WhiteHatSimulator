@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv41k0e1jlamw"]
+
+[ext_resource type="Script" uid="uid://cbqgr40fot4x1" path="res://Scripts/GUI/loading_save.gd" id="1_fi8fd"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="2_nwpbl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqvux"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="LoadingSave" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fi8fd")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqvux")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_nwpbl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 156
+text = "100%"
+horizontal_alignment = 1
