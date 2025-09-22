@@ -626,7 +626,7 @@ var day_two_questions = [ #TODO : Insert bruteforce questions here
 	"correct_answer": 3
   }
 ]
-var day_three_questions = [ #TODO : Insert Filelss questions here
+var day_three_questions = [ #TODO : Insert Fileless questions here
 	{
 	"question": "What is fileless malware?",
 	"answers": [
@@ -635,7 +635,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. A program that deletes files only",
       "D. A harmless app"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
 	"question": "Where does fileless malware keep its code while running?",
@@ -645,7 +645,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. In the downloads folder",
       "D. In the Recycle Bin"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
 	"question": "Which common tool do attackers sometimes use for fileless attacks on Windows?",
@@ -655,7 +655,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. PowerShell or system tools",
       "D. Calculator"
 	],
-	"correct_answer": 3
+	"correct_answer": 2
   },
   {
 	"question": "How can you reduce the chance of fileless attacks from email attachments?",
@@ -665,7 +665,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Don't open unknown attachments and disable macros",
       "D. Forward attachments to friends"
 	],
-	"correct_answer": 3
+	"correct_answer": 2
   },
   {
 	"question": "Why should organizations keep software up to date?",
@@ -675,7 +675,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Updates delete personal files",
       "D. Updates change passwords automatically"
 	],
-	"correct_answer": 4
+	"correct_answer": 1
   },
   {
 	"question": "What tool can be used to listen for a fileless malware connection?",
@@ -685,7 +685,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Notepad",
       "D. WinRAR"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
 	"question": "What does the payload do in fileless malware?",
@@ -695,7 +695,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Deletes antivirus",
       "D. Formats the hard drive"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
 	"question": "What is the purpose of shellcode in this type of attack?",
@@ -705,7 +705,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Store machine instructions that will run in memory",
       "D. Store Wi-Fi passwords in the database"
 	],
-	"correct_answer": 3
+	"correct_answer": 2
   },
   {
 	"question": "Which command creates the raw shellcode we discussed?",
@@ -715,7 +715,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. ifconfig",
       "D. curl"
 	],
-	"correct_answer": 2
+	"correct_answer": 1
   },
   {
 	"question": "What happens when the loader runs?",
@@ -725,7 +725,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. It restarts the PC",
       "D. It shows an error"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "Why is backing up important after a fileless attack?",
@@ -735,7 +735,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Backups stop attacks instantly",
       "D. Backups slow the network"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "What is a simple step users can take to avoid fileless threats?",
@@ -745,7 +745,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Share software installs in chat groups",
       "D. Disable antivirus"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "Which tool helps spot in-memory threats better than basic antivirus?",
@@ -755,7 +755,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Paint program",
       "D. Disk defragmenter"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "What should IT do if they find a suspicious script running?",
@@ -765,7 +765,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Post it on social media",
       "D. Turn off all logging"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "Why is training staff useful against fileless attacks?",
@@ -775,7 +775,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "C. Training removes malware automatically",
       "D. Training reduces internet speed"
 	],
-	"correct_answer": 1
+	"correct_answer": 0
   },
   {
 	"question": "Maria opens a Word file and enables macros. Minutes later, the computer starts contacting strange servers but no new files appear. What likely happened?",
@@ -923,7 +923,7 @@ var day_three_questions = [ #TODO : Insert Filelss questions here
 	  "A. A normal scheduled update for everyone",
 	  "B. A classroom exercise",
 	  "C. A coordinated fileless campaign needing immediate containment",
-      "D. A harmless script for wallpapers"
+	  "D. A harmless script for wallpapers"
 	],
 	"correct_answer": 2
   }
@@ -1109,7 +1109,6 @@ var day_four_questions = [ #TODO : Insert phishing questions here
 		],
 		"correct_answer": 2
 	},
-	
 	{
 		"question":"Emma gets an email with poor grammar asking for donations. What should she think?",
 		"answers":[
@@ -1534,7 +1533,6 @@ func _on_answer_pressed(answer_index: int) -> void:
 		timer.start()
 		question_counter +=1
 		question_counter_label.text = "Question " + str(question_counter) + " of 10"
-		print("❌ Wrong! Correct answer: " + quiz_item["answers"][quiz_item["correct_answer"]])
 
 	# Move to next question
 	current_question += 1

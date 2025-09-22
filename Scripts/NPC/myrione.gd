@@ -88,8 +88,11 @@ func handle_computer(_day:int, _hour:int, _minutes:int):
 	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
+			if PersonalComputer.player_in_use == true:
+				UiManager.game_over_ui.play()
 			PersonalComputer.login()
 			PersonalComputer.in_use = true
+			
 	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
 		stood_up = false
 		if logged_in == true:
@@ -241,5 +244,7 @@ func _on_timeline_ended():
 	GameManager.ui_active = false
 
 func _on_interactable_interact_triggered() -> void:
+	if dialogue == "Liz":
+		Dialogic.VAR.liz_password = PersonalComputer.login_screen.password
 	show_dialogoue(dialogue)
 	

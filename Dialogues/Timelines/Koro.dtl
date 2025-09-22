@@ -1,5 +1,5 @@
 Hello! Welcome to PulseFire Inc. How may I help you?
-- (Lie) I'm here to apply for a job position. | [if {has_pass} == false] [else="hide"]
+- (Lie) I'm here to apply for a job position. | [if {has_pass}  ==  false] [else="hide"]
 	I see. Please head to the HR department, first room to the right.
 	Here is a pass that you can show to the guard.
 	set {has_pass} = true

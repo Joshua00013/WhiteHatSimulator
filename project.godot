@@ -58,7 +58,9 @@ variables={
 "has_id": false,
 "has_pass": false,
 "lied_to_al": false,
+"lied_to_liz": false,
 "lied_to_mike": false,
+"liz_password": "12345678",
 "trespassing": false
 }
 layout/style_list=["res://Dialogues/Styles/Default.tres"]

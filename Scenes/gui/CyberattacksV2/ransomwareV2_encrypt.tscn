@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_vuwby"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_m28fk"]
 [ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_7i6ny"]
-[ext_resource type="Script" uid="uid://bc2frwp1sy1j3" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="5_8fnya"]
+[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="5_8fnya"]
 [ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_6g5gb"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="6_vb8no"]
 
@@ -2496,6 +2496,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="CodeEdit" type="CodeEdit" parent="Body/CodeContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_readonly_color = Color(0.88, 0.88, 0.88, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qmx2e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0tp54")

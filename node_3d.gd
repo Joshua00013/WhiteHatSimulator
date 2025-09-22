@@ -32,27 +32,28 @@ var trespassing : bool = false
 func _ready():
 	GameManager.player = self # The inventory ui is pointing to the Gamemanager.player.inventory
 	inventory = start_inventory.duplicate(true)
-	add_starting_item()
 	stand_height = collision_shape.shape.height #Store the height of the collision shape when the player is standing
 	stand_height += stand_height_offset
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	look_rotation = Vector2(head.rotation_degrees.x, rotation_degrees.y)
-	
-
+	add_starting_item()
 func add_starting_item():
-	match DayAndNightManager.current_days:
+	match DayAndNightManager.initial_day:
 		2:
 			inventory.add(file_002)
 		3:
-			for item in [file_002, file_003]:
-				inventory.add(item)
+			inventory.add(file_002)
+			inventory.add(file_003)
 		4:
-			for item in [file_002, file_003, file_004]:
-				inventory.add(item)
+			inventory.add(file_002)
+			inventory.add(file_003)
+			inventory.add(file_004)
 		5:
-			for item in [file_002, file_003, file_004, file_005]:
-				inventory.add(item)
+			inventory.add(file_002)
+			inventory.add(file_003)
+			inventory.add(file_004)
+			inventory.add(file_005)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && GameManager.ui_active == false:

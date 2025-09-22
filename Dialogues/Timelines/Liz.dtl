@@ -1,9 +1,14 @@
-Hey, new guy! Can you do me a favor?
-Can you login to my PC for me and send an email to Al?
-- Yeah, sure.
-	Nice! You're the best!
-	Okay okay, the password is Liz2004 and the username is Liz.
-	Siimple, right?
-- Sorry, I'm busy right now.
-	Okay then.
-	Guess I'll eat dust here or whatever.
+if {lied_to_liz}  ==  false and CyberattackAdaptationManager.lied_to_liz == false:
+	Hey, new guy! Can you do me a favor?
+	Can you login to my PC for me and send an email to Al?
+	- Yeah, sure.
+		Nice! You're the best!
+		Okay okay, the username is Liz and the password is {liz_password}
+		Siimple, right?
+		set {lied_to_liz} = true
+		set {CyberattackAdaptationManager.lied_to_liz} = true
+	- Sorry, I'm busy right now.
+		Okay then.
+		Guess I'll eat dust here or whatever.
+elif {lied_to_liz} == true or  CyberattackAdaptationManager.lied_to_liz == true:
+	Go away

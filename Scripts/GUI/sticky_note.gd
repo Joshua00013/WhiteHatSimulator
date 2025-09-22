@@ -15,9 +15,12 @@ func _ready() -> void:
 	if heading_text != null:
 		heading.text = heading_text
 	
+	if CyberattackAdaptationManager.noting_passwords == false:
+		queue_free()
+	
+	# I want the sticky notes to appear then the users start to use strong passwords. Free it when weak passwords are used
 	if CyberattackAdaptationManager.weak_passwords == true || CyberattackAdaptationManager.no_password_used == true:
 		if CyberattackAdaptationManager.noting_passwords == true:
-			CyberattackAdaptationManager.noting_passwords = false
 			queue_free()
 			
 	paper_ui.hide()
@@ -27,6 +30,8 @@ func _process(_delta: float) -> void:
 		exit_ui()
 
 func _on_interactable_interact_triggered() -> void:
+	CyberattackAdaptationManager.noting_passwords = false
+	
 	if computer != null:
 		password_label.text = "Pass: " + computer.login_screen.password
 		heading.text = "Username: " + str(computer.login_screen.username)

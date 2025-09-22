@@ -20,7 +20,7 @@ var piracy_exploited: bool = false : set = set_piracy_exploited
 
 var lied_to_al : bool = false : set = set_lied_to_al
 var lied_to_mike : bool = false : set = set_lied_to_mike
-
+var lied_to_liz : bool = false : set = set_lied_to_liz
 # --- Setters redirect to temporary ---
 func set_flashdrive_used(val):
 	await SignalBus.stage_finished
@@ -89,6 +89,10 @@ func set_lied_to_al(val):
 func set_lied_to_mike(val):
 	await SignalBus.stage_finished
 	lied_to_mike = val
+	
+func set_lied_to_liz(val):
+	await SignalBus.stage_finished
+	lied_to_liz = val
 func reset():
 	
 	flashdrive_used = false
@@ -112,7 +116,7 @@ func reset():
 	
 	lied_to_al = false
 	lied_to_mike = false
-
+	lied_to_liz = false
 var _snapshot := {}
 
 func save_snapshot():
@@ -133,7 +137,8 @@ func save_snapshot():
 		"antivirus_updated": antivirus_updated,
 		"piracy_exploited" : piracy_exploited,
 		"lied_to_al" : lied_to_al,
-		"lied_to_mike" : lied_to_mike
+		"lied_to_mike" : lied_to_mike,
+		"lied_to_liz" : lied_to_liz
 	}
 
 func restore_snapshot():
@@ -157,4 +162,5 @@ func restore_snapshot():
 	piracy_exploited      = _snapshot["piracy_exploited"]
 	lied_to_al            = _snapshot["lied_to_al"]
 	lied_to_mike          = _snapshot["lied_to_mike"]
+	lied_to_liz           = _snapshot["lied_to_liz"]
 	print("Snapshot restored")

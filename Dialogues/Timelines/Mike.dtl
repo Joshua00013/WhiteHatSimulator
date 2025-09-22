@@ -6,7 +6,11 @@ Show me your ID please.
 	Ah, so you're here for an interview. Please head right in.
 	[signal arg="corridor_unlocked"]
 - [Lie] I'm here to check on the data server
-	Oh sure, it's right behind the security door at the end of the corridor.
-	set CyberattackAdaptationManager.lied_to_mike = true
+	if {lied_to_mike} == false and CyberattackAdaptationManager.lied_to_mike == false:
+		Oh sure, it's right behind the security door at the end of the corridor.
+		set {CyberattackAdaptationManager.lied_to_mike} = true
+		[signal arg="corridor_unlocked"]
+	else:
+		I know you. You were here the other day when the computers started acting weird. Sorry but I can't let you in.
 - I don't have one
 	Sorry, I can't allow unauthorized people inside. Safety protocol.

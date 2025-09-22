@@ -45,7 +45,6 @@ func show_cards():
 
 func _bruteforce_exited() -> void:
 	bruteforce_finished.emit()
-	attack_message.text = "Upload complete: files saved to flash drive."
 	
 func _on_cyberattack_ready(cyberattack):
 	if cyberattack == "ransomware":

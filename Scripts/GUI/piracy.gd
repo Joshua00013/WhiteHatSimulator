@@ -28,3 +28,4 @@ func _on_upload_button_pressed():
 		upload_options.set_item_disabled(1, true)
 	elif CyberattackManager.fileless_ready == true:
 		upload_options.set_item_disabled(1, false)
+		

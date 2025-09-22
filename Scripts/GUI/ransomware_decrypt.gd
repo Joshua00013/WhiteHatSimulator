@@ -52,7 +52,7 @@ func _play_previous():
 		current_index -= 1
 		anim_player.play(animations[current_index])
 
-
-func _on_window_background_window_exited():
+func _on_button_pressed():
 	CyberattackManager.ransomware_ready = true
+	print("CODE DONE")
 	emit_signal("code_finished")
