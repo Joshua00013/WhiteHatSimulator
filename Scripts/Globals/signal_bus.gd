@@ -45,6 +45,8 @@ signal phishing_part4_finished
 @warning_ignore("unused_signal")
 signal ddos_part1_finished
 
+@warning_ignore("unused_signal")
+signal phishing_site_hosted
 #PANO I CONNECT:
 #SCRIPT NG CODE NA NAGLILISTEN:
 # func _ready()
