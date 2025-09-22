@@ -4,7 +4,7 @@ signal code_finished
 signal ransomwareV2_decypt_finished
 
 @onready var anim_player = $AnimationPlayer
-@onready var password_check_component: Control = $DecryptorWindow/PasswordCheckComponent
+@onready var password_check_component: Control = $WindowBackground/Window2/WindowContents/MarginContainer/PasswordCheckComponent
 
 var animations: PackedStringArray = []
 var current_index := 0
@@ -34,6 +34,8 @@ func _play_next():
 		if animations[current_index] == "ransomware_step_12":
 			freeze_animations = true
 			anim_player.play(animations[current_index])
+			UiManager.back_button.hide()
+			UiManager.next_button.hide()
 			await password_check_component.correct_password
 			if current_index < animations.size() - 1:
 				current_index += 1
@@ -54,10 +56,3 @@ func _play_previous():
 func _on_window_background_window_exited():
 	CyberattackManager.ransomware_ready = true
 	emit_signal("code_finished")
-
-func _on_window_background_correct_pass() -> void:
-	ransomwareV2_decypt_finished.emit()
-
-
-func _correct_password() -> void:
-	ransomwareV2_decypt_finished.emit()
