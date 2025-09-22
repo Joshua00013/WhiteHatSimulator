@@ -20,7 +20,7 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		#status.text = "Failed"
 		UiManager.game_over_ui.play()
 	else:
-		#TODO : Add ending scene if the DayAndNightManager days == 5
+	
 		
 		#status.text = "Passed"
 		SceneTransition.fade_in()
@@ -31,6 +31,9 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		GameManager.ui_active = false
 		CyberattackManager.reset()
 		DayAndNightManager.set_initial_time()
+		
+		if DayAndNightManager.initial_day > 5:
+			get_tree().change_scene_to_file("res://Scenes/GUI/ending.tscn")
 		get_tree().reload_current_scene()
 
 func start_quiz():

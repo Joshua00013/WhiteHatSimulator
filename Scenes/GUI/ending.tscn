@@ -1,0 +1,222 @@
+[gd_scene load_steps=10 format=3 uid="uid://bctwrpoyd6fmk"]
+
+[ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="1_4q6te"]
+[ext_resource type="Script" uid="uid://bjegs72raqsg6" path="res://Scripts/GUI/ending.gd" id="1_nvmu1"]
+[ext_resource type="Texture2D" uid="uid://cw1wo8binrpkg" path="res://Assets/Illustrator/seal.png" id="2_nvmu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_078nd"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_netci"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_2yl8j"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_4q6te")
+
+[sub_resource type="Animation" id="Animation_nvmu1"]
+resource_name = "ending"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.7333333, 4.9333334, 7.4666667, 9.3, 12.333333, 14.366667, 17.366667, 18.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.96, 9.3, 14.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Thanks to your work as a white hat hacker, the world stands safer.", "Through your skill and determination, you have prevailed.", "You have finally earned your pardon.", "Thanks for playing!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 14.366667, 16.233334, 18.166666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_078nd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Thanks to your work as a white hat hacker, the world stands safer."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_netci"]
+_data = {
+&"RESET": SubResource("Animation_078nd"),
+&"ending": SubResource("Animation_nvmu1")
+}
+
+[node name="Ending" type="Control" node_paths=PackedStringArray("player_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvmu1")
+player_label = NodePath("PanelContainer/PanelContainer/VBoxContainer/Label4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_078nd")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_netci")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2yl8j")
+theme_override_constants/separation = 9
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Feliser J. Tower"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "President of Siracusa"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Certificate of Pardon"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "[player]"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "was pardoned by the Presidential Proclamation of January 20,2025. The pardon only applies to convictions
+for offenses related to events that occured or near the Siracusa Capiton on January 8, 2025.
+
+As directed by the Proclamation of Pardon and in witness whereof, the Office of the Pardon Attorney has caused the seal of the Department of Justice to be affixed below and issues this certificate of pardon to the named person"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 239
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_nvmu1")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Done at the city of Siracusa on
+January 29, 2025
+"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "Thanks to your work as a white hat hacker, the world stands safer."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_netci")
+}
+autoplay = "ending"
