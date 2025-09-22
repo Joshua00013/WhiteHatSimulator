@@ -1,7 +1,7 @@
 extends TabContainer
 
 @onready var icon: VBoxContainer = $Margin/Desktop/Icon
-#var icon : PackedScene = preload("res://Scenes/gui/CleanUI/icon.tscn")
+#var icon : PackedScene = preload("res://Scenes/GUI/CleanUI/icon.tscn")
 @onready var desktop: VFlowContainer = $Margin/Desktop
 
 func _on_button_button_down() -> void:

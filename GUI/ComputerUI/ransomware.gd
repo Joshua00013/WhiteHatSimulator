@@ -47,7 +47,7 @@ func _update_shader(pos:Vector2, size: Vector2) ->void:
 
 
 
-@onready var ComputerUI: PackedScene = preload("res://Scenes/gui/Ransomware/ComputerUI.tscn")
+@onready var ComputerUI: PackedScene = preload("res://Scenes/GUI/Ransomware/ComputerUI.tscn")
 func set_step(step: int) -> void:
 	if step == 15:
 		#computer_gui.current_tab = 0

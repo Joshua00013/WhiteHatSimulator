@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://emryxlr5jty2"]
 
-[ext_resource type="Script" uid="uid://c1bgcv5xcb0p1" path="res://Scenes/gui/Ransomware/ransomware_encrypt_start_1.gd" id="1_r7830"]
+[ext_resource type="Script" uid="uid://c1bgcv5xcb0p1" path="res://Scenes/GUI/Ransomware/ransomware_encrypt_start_1.gd" id="1_r7830"]
 
 [sub_resource type="FontFile" id="FontFile_gclbg"]
 cache/0/16/0/ascent = 0.0

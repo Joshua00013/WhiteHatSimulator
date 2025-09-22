@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdq1ap0n84b8a" path="res://Assets/PC_Assets/pc_collecting_info.gd" id="1_xadpu"]
 [ext_resource type="PackedScene" uid="uid://blecc4c484i7r" path="res://GUI/ComputerUI/computer_ui.tscn" id="2_au6dr"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="2_bhn80"]
-[ext_resource type="Script" uid="uid://c6sn4oxhw386x" path="res://Scenes/gui/Phishing UI/phishing assets/computer_ui.gd" id="3_bhn80"]
+[ext_resource type="Script" uid="uid://c6sn4oxhw386x" path="res://Scenes/GUI/Phishing UI/phishing assets/computer_ui.gd" id="3_bhn80"]
 [ext_resource type="PackedScene" uid="uid://bb774yratnc62" path="res://GUI/ComputerUI/sign_in_ui.tscn" id="4_3ih8o"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3ih8o"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ofe618bgkock"]
 
 [ext_resource type="Script" uid="uid://w4enlc3e3p0r" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos.gd" id="1_nlydn"]
-[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/gui/CleanUI/icon.tscn" id="2_57peu"]
+[ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_57peu"]
 [ext_resource type="PackedScene" uid="uid://d3dn8ch6v2rb3" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/dos_application.tscn" id="2_qs6s7"]
 [ext_resource type="Script" uid="uid://tjt3n3w55xdi" path="res://Scenes/Attacks/Final Attack GUI/Denial of Service/ddos_application.gd" id="2_wy1dg"]
 [ext_resource type="Script" uid="uid://cpwr37ebspmj0" path="res://addons/RadialMenu/RadialMenu.gd" id="3_qs6s7"]
