@@ -75,45 +75,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("ReturnButton:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"free_laptop"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ReturnButton:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [false],
-"method": &"toggle_controller_buttons"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_57jh0"]
@@ -3537,6 +3509,7 @@ texture = ExtResource("21_714hg")
 expand_mode = 1
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
+[connection signal="minigame_exited" from="LaptopMinigameComponent" to="." method="exit_ui"]
 [connection signal="minigame_finished" from="LaptopMinigameComponent" to="." method="_on_laptop_minigame_component_minigame_finished"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button" to="Node" method="_on_button_pressed"]
 [connection signal="pressed" from="Node/Control/VBoxContainer/Button2" to="Node" method="_on_button_2_pressed"]

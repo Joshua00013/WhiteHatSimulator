@@ -64,6 +64,9 @@ func _on_apply_pressed():
 	
 	ConfigFileHandler.save_audio_setting("music_volume", music_slider.value / 100)
 	ConfigFileHandler.save_audio_setting("sfx_volume", sfx_slider.value / 100)
+	
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_slider.value / 100))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfx_slider.value / 100))
 
 
 func _on_cancel_pressed():
