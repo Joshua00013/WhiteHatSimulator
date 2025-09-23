@@ -93,13 +93,13 @@ func handle_computer(_day:int, _hour:int, _minutes:int):
 			PersonalComputer.login()
 			PersonalComputer.in_use = true
 			
-	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
+	elif stood_up == true && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
 		stood_up = false
 		if logged_in == true:
 			logged_in = false
 			PersonalComputer.logout()
 			PersonalComputer.in_use = false
-	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
+	elif stood_up == true && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == false:
 		stood_up = false
 		PersonalComputer.in_use = false
 	

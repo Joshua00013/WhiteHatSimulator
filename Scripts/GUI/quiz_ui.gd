@@ -16,12 +16,12 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 	#finished_window.visible = true
 	#score_label.text = "Score" + str(point_counter)
 	
-	if point_counter < passing_score:
+	if point_counter <= passing_score:
 		#status.text = "Failed"
-		UiManager.game_over_ui.play()
+		hide()
+		UiManager.game_over_ui.play("You failed the quiz! You have to restart the stage")
+		return
 	else:
-	
-		
 		#status.text = "Passed"
 		SceneTransition.fade_in()
 		# Reinitialize the stage and increment the days
@@ -34,7 +34,8 @@ func _on_quiz_card_quiz_finished(point_counter: int) -> void:
 		
 		if DayAndNightManager.initial_day > 5:
 			get_tree().change_scene_to_file("res://Scenes/GUI/ending.tscn")
-		get_tree().reload_current_scene()
+		else:
+			get_tree().reload_current_scene()
 
 func start_quiz():
 	DayAndNightManager.active = false

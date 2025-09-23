@@ -32,7 +32,7 @@ func update_email_buttons():
 		send_button.disabled = true
 
 func update_attachment_options():
-	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_ready)
+	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_site_hosted)
 	attachment_type.set_item_disabled(Attachments.RANSOMWARE, not CyberattackManager.ransomware_ready)
 	attachment_type.set_item_disabled(Attachments.FILELESS, not CyberattackManager.fileless_ready)
 

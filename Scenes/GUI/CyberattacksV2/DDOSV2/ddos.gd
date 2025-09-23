@@ -1,6 +1,6 @@
 extends Control
 
-signal code_finished
+signal ddos_finished
 
 @onready var anim_player = $AnimationPlayer
 
@@ -18,16 +18,7 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("next_pressed") && finished == true:
-		if animations[current_index] == "dos_01":
-			CyberattackManager.exploitation_finished = true
-			_play_next()
-		elif animations[current_index] == "dos_02":
-			CyberattackManager.installation_finished = true
-			_play_next()
-		elif animations[current_index] == "dos_02_attack":
-			CyberattackManager.command_and_control_finished = true
-		else:
-			_play_next()
+		_play_next()
 
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
@@ -36,6 +27,22 @@ func _play_next():
 	if current_index < animations.size() - 1:
 		current_index += 1
 		anim_player.play(animations[current_index])
+		if animations[current_index] == "dos_01":
+			await anim_player.animation_finished
+			_play_next()
+		elif animations[current_index] == "dos_02":
+			await anim_player.animation_finished
+			CyberattackManager.delivery_finished = true
+			_play_next()
+		elif animations[current_index] == "dos_02_attack":
+			await anim_player.animation_finished
+			CyberattackManager.exploitation_finished = true
+			_play_next()
+		elif animations[current_index] == "dos_03": # This animation calls _on_review_pressed() in the middle of the animations
+			await anim_player.animation_finished
+			CyberattackManager.command_and_control_finished = true
+			GameManager.stage_finished = true
+			ddos_finished.emit()
 	else:
 		if animations[current_index] == "reset":
 			emit_signal("code_finished")
@@ -52,8 +59,11 @@ func terminal_enable():
 	finished = true
 	
 func _on_loic_pressed() -> void:
-	if CyberattackManager.data_server_seen == false:
-		anim_player.play("dos_data_server_not _seen")
-	else:
-		_play_next()
+	#if CyberattackManager.data_server_seen == false:
+		#anim_player.play("dos_data_server_not _seen")
+	#else:
+		#_play_next()
+	_play_next()
 	
+func _on_review_pressed():
+	CyberattackManager.installation_finished = true

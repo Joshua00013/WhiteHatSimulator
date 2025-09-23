@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=124 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -166,7 +166,13 @@ email = "john@company.com"
 pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 
-[sub_resource type="Resource" id="Resource_xg142"]
+[sub_resource type="Resource" id="Resource_o2owy"]
+script = ExtResource("82_55idt")
+name = "Al"
+email = "al@company.com"
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"
+
+[sub_resource type="Resource" id="Resource_ylsbi"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -395,8 +401,9 @@ target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col
 target_area_5 = NodePath("../../Markers/Cafeteria2")
 target_area_7 = NodePath("../../Markers/Cafeteria3")
 
-[node name="Shion" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("73_f6rfp")]
+[node name="Shion" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("73_f6rfp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.761726, -0.0011329651, 0.13944674)
+PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer12")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col9")
 
 [node name="Lights" type="Node3D" parent="."]
@@ -1291,7 +1298,7 @@ email_address = "koro@company.com"
 
 [node name="SheetOfPaper_A4_2Sided3" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.842138, 0.01870054, 7.363017)
-email_address = "mike@company.com"
+email_address = "robert@company.com"
 
 [node name="SheetOfPaper_A4_2Sided4" parent="NavigationRegion3D/Objects/DocumentationVisibilityNotifier/Room" instance=ExtResource("48_o2owy")]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 7.8488445, 0.01870042, 14.479882)
@@ -1761,6 +1768,7 @@ npc_resource = SubResource("Resource_3h4bx")
 
 [node name="Computer11" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 61.8756, 2.16155, 54.1885)
+npc_resource = SubResource("Resource_o2owy")
 server_computer = true
 
 [node name="Computer12" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
@@ -1769,7 +1777,6 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 57.1758,
 [node name="Computer2" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512, 2.16154, 49.377)
 npc_resource = ExtResource("92_5vy51")
-resource_override_password = true
 
 [node name="Computer3" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.512, 2.16154, 53.4747)
@@ -1781,7 +1788,7 @@ npc_resource = ExtResource("94_o2owy")
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_xg142")
+npc_resource = SubResource("Resource_ylsbi")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)

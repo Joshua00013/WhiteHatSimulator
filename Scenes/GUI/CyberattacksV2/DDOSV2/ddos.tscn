@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://i2osqq8lau6i"]
+[gd_scene load_steps=51 format=3 uid="uid://i2osqq8lau6i"]
 
 [ext_resource type="Script" uid="uid://5hoh0kwxrc6o" path="res://Scenes/GUI/CyberattacksV2/DDOSV2/ddos.gd" id="1_t2pxy"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_iflec"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_34y73"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_mymew"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="4_y4mbm"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="5_mymew"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_fep7s"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="12_34y73"]
 [ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="12_iflec"]
 [ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="13_y4mbm"]
+[ext_resource type="Texture2D" uid="uid://dwiv3vlaxstjt" path="res://Assets/Illustrator/loading.png" id="15_y4mbm"]
 
 [sub_resource type="Animation" id="Animation_jvkw3"]
 tracks/0/type = "value"
@@ -127,7 +129,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("WindowContainer/Terminal:visible")
+tracks/9/path = NodePath("Terminal:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -139,7 +141,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("WindowContainer/Terminal/ColorRect/MarginContainer2/CodeEdit:scroll_vertical")
+tracks/10/path = NodePath("Terminal/Background/VBoxContainer/CodeEdit:scroll_vertical")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -244,6 +246,90 @@ tracks/18/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Exploitation:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Exploitation/CursorContainer/TextureRect:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(281, 165)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Exploitation/CursorContainer/TextureRect:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Exploitation/LoadingContainer:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Exploitation/LoadingContainer/TextureRect:rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("WindowContainer:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Terminal/Background:scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_b4c1d"]
 resource_name = "dos_3"
@@ -279,10 +365,10 @@ tracks/2/path = NodePath("WindowContainer/PanelContainer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 45),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -407,7 +493,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("WindowContainer/Terminal:visible")
+tracks/13/path = NodePath("Terminal:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -492,6 +578,82 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["https://db.cascadecorp.internal/api/v1"]
+}
+
+[sub_resource type="Animation" id="Animation_34y73"]
+resource_name = "dos_02"
+length = 7.4945
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Great!!! Our attack is working,,,"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Desktop/LOIC/Button:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Desktop:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Terminal/Background/VBoxContainer/CodeEdit:scroll_vertical")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 108.4599994122982]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Terminal:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.3333335, 6.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Terminal/Background:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5.766667, 6.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.03, 0.03)]
 }
 
 [sub_resource type="Animation" id="Animation_n03k0"]
@@ -779,7 +941,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("WindowContainer/Terminal:visible")
+tracks/13/path = NodePath("Terminal:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -813,68 +975,82 @@ tracks/15/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_34y73"]
-resource_name = "dos_02"
-length = 45.0
+[sub_resource type="Animation" id="Animation_y4mbm"]
+resource_name = "dos_03"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WindowContainer/Label:text")
+tracks/0/path = NodePath("Exploitation:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Great!!! Our attack is working,,,"]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Desktop/LOIC/Button:disabled")
+tracks/1/path = NodePath("Exploitation/CursorContainer/TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(281, 165), Vector2(421.965, 217.145)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Desktop:visible")
+tracks/2/path = NodePath("Exploitation/CursorContainer/TextureRect:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 2, 2.1666667, 2.3666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("WindowContainer/Terminal/ColorRect/MarginContainer2/CodeEdit:scroll_vertical")
+tracks/3/path = NodePath("Exploitation/LoadingContainer:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 45),
+"times": PackedFloat32Array(0, 2.3666666),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 986.0]
+"update": 1,
+"values": [false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("WindowContainer/Terminal:visible")
+tracks/4/path = NodePath("Exploitation/LoadingContainer/TextureRect:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(2.37, 4.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [true]
+"values": [0.0, 4.260348704118159]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_review_pressed"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_de0th"]
@@ -883,6 +1059,7 @@ _data = {
 &"dos_01": SubResource("Animation_b4c1d"),
 &"dos_02": SubResource("Animation_34y73"),
 &"dos_02_attack": SubResource("Animation_n03k0"),
+&"dos_03": SubResource("Animation_y4mbm"),
 &"dos_data_server_not _seen": SubResource("Animation_rs6kj")
 }
 
@@ -1009,6 +1186,62 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34y73"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ogpv"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.62967473, 0.62967485, 0.62967443, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl8xy"]
+bg_color = Color(0.87540454, 0.69963145, 0.75133425, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cg6d"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.921875, 0.921875, 0.921875, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77dte"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.43463135, 0.38671875, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rrkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d225o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7777"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slgw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rs6kj"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n03k0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jvkw3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nt0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21ou3"]
+
 [node name="DDOS" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -1027,6 +1260,7 @@ libraries = {
 }
 
 [node name="Desktop" type="VFlowContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
@@ -1037,12 +1271,8 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" instance=ExtResource("2_iflec")]
 layout_mode = 2
-
-[node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = null
-
-[node name="Label" parent="Desktop/Godot_icon" index="1"]
-text = "godot.png"
+icon = ExtResource("4_mymew")
+icon_name = "godot.png"
 
 [node name="Text_icon" parent="Desktop" instance=ExtResource("2_iflec")]
 layout_mode = 2
@@ -1699,20 +1929,37 @@ layout_mode = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Terminal" type="Control" parent="WindowContainer"]
+[node name="Terminal" type="Control" parent="."]
 visible = false
-layout_mode = 1
-anchor_left = 0.12885663
-anchor_top = 0.025083613
-anchor_right = 0.87658805
-anchor_bottom = 0.81438124
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Background" type="NinePatchRect" parent="WindowContainer/Terminal"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Terminal"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_right = 247.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("11_p46pr")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="Background" type="NinePatchRect" parent="Terminal"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -197.0
+offset_right = 345.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_tjbip")
@@ -1722,20 +1969,25 @@ patch_margin_top = 44
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="HBoxContainer" type="MarginContainer" parent="WindowContainer/Terminal"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Terminal/Background"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.0559876
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Titlebar" type="MarginContainer" parent="Terminal/Background/VBoxContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 10
 
-[node name="Title" type="Label" parent="WindowContainer/Terminal/HBoxContainer"]
+[node name="Title" type="Label" parent="Terminal/Background/VBoxContainer/Titlebar"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("11_p46pr")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
@@ -1743,7 +1995,7 @@ text = "Terminal"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ExitButton" type="TextureButton" parent="WindowContainer/Terminal/HBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="Terminal/Background/VBoxContainer/Titlebar"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -1751,53 +2003,9 @@ texture_normal = ExtResource("12_34y73")
 texture_hover = ExtResource("13_y4mbm")
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Terminal"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 40.0
-offset_right = 0.000244141
-offset_bottom = 0.000274658
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/Terminal/MarginContainer"]
+[node name="CodeEdit" type="CodeEdit" parent="Terminal/Background/VBoxContainer"]
 layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 0
-
-[node name="ColorRect" type="ColorRect" parent="WindowContainer/Terminal"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer2" type="MarginContainer" parent="WindowContainer/Terminal/ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.006067961
-anchor_top = 0.022727204
-anchor_right = 1.006068
-anchor_bottom = 0.9909091
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
-
-[node name="CodeEdit" type="CodeEdit" parent="WindowContainer/Terminal/ColorRect/MarginContainer2"]
-layout_mode = 2
+size_flags_vertical = 3
 text = "192.168.56.102 - - [20/Sep/2025:13:45:12 +0000] \"GET / HTTP/1.1\" 200 532 \"-\" \"LOIC/2.0\" \"Msg: I love cookies <3 <3\" Port:4500 Timeout:9001 Threads:10 URL:https://pulsefireforge-studio.com
 192.168.56.102 - - [20/Sep/2025:13:45:13 +0000] \"GET / HTTP/1.1\" 200 532 \"-\" \"LOIC/2.0\" \"Msg: I love cookies <3 <3\" Port:4500 Timeout:9001 Threads:10 URL:https://pulsefireforge-studio.com
 192.168.56.102 - - [20/Sep/2025:13:45:14 +0000] \"GET / HTTP/1.1\" 200 532 \"-\" \"LOIC/2.0\" \"Msg: I love cookies <3 <3\" Port:4500 Timeout:9001 Threads:10 URL:https://pulsefireforge-studio.com
@@ -2975,9 +3183,183 @@ Error: Unable to process your request
  at this time"
 horizontal_alignment = 1
 
+[node name="Exploitation" type="Control" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Exploitation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_right = 247.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("11_p46pr")
+theme_override_font_sizes/normal_font_size = 46
+text = "Victim Screencam"
+horizontal_alignment = 1
+
+[node name="LoginPanel" type="PanelContainer" parent="Exploitation"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222222
+anchor_top = 0.17284
+anchor_right = 0.778646
+anchor_bottom = 0.807099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_34y73")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Exploitation/LoginPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Exploitation/LoginPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Overview"
+
+[node name="PanelContainer" type="PanelContainer" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer"]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ogpv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sl8xy")
+
+[node name="Label" type="Label" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.59375, 0.16235352, 0.2533512, 1)
+text = "     A DoS attack has been detected on this domain"
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cg6d")
+
+[node name="Label" type="Label" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.3125, 0.3125, 0.3125, 1)
+theme_override_font_sizes/font_size = 12
+text = "This attack may be ongoing and additional actions may be needed"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="Button" type="Button" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_77dte")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0rrkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d225o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_u7777")
+theme_override_styles/focus = SubResource("StyleBoxFlat_slgw8")
+text = "Review Traffic"
+
+[node name="Button2" type="Button" parent="Exploitation/LoginPanel/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.5253906, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rs6kj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n03k0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jvkw3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3nt0p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_21ou3")
+text = "Archive"
+
+[node name="CursorContainer" type="Control" parent="Exploitation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -196.0
+offset_right = 306.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Exploitation/CursorContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.000748
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_iflec")
+expand_mode = 1
+
+[node name="LoadingContainer" type="Control" parent="Exploitation"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -196.0
+offset_right = 306.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Exploitation/LoadingContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+texture = ExtResource("15_y4mbm")
+expand_mode = 1
+
 [connection signal="pressed" from="Desktop/LOIC/Button" to="." method="_on_loic_pressed"]
 
-[editable path="Desktop/Godot_icon"]
 [editable path="Desktop/Text_icon"]
 [editable path="Desktop/Internet"]
 [editable path="Desktop/IDE1"]

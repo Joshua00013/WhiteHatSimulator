@@ -316,14 +316,14 @@ func _play_fileless_piracy():
 	await success_animation.animation_finished
 	CyberattackManager.installation_finished = true
 	
-	if CyberattackAdaptationManager.antivirus_installed == true:
+	if CyberattackAdaptationManager.antivirus_updated == true:
 		success_animation.play("play_fileless_fail") #TODO : Show the user running a fileless malware app and the antivirus catches it
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the fileless malware",false)
-	elif CyberattackAdaptationManager.antivirus_installed == false:
+	elif CyberattackAdaptationManager.antivirus_updated == false:
+		CyberattackAdaptationManager.antivirus_updated = true
 		success_animation.play("play_fileless") # TODO : Add an animation for a successful fileless attack.
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
 		
-	CyberattackAdaptationManager.antivirus_installed = true

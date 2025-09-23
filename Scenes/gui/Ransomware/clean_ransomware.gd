@@ -75,4 +75,11 @@ func _phishing_terminal():
 	current_tab = TABS.Phishing
 
 func _ddos_desktop():
+	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)
+	CyberattackManager.weaponization_finished = true
 	current_tab = 9
+
+
+func _on_ddos_ddos_finished():
+	desktop_default.hide_cards()
+	current_tab = 0

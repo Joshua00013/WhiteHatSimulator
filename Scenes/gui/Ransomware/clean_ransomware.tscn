@@ -97,5 +97,6 @@ metadata/_tab_index = 12
 [connection signal="bruteforce_exited" from="Bruteforce" to="DesktopDefault" method="_bruteforce_exited"]
 [connection signal="code_finished" from="Fileless" to="." method="_on_weaponization_finished"]
 [connection signal="code_finished" from="Phishing" to="." method="_on_weaponization_finished"]
+[connection signal="ddos_finished" from="DDOS" to="." method="_on_ddos_ddos_finished"]
 [connection signal="code_finished" from="DDOSWebsite" to="." method="_on_weaponization_finished"]
 [connection signal="login_successful" from="Login" to="." method="_on_login_login_successful"]

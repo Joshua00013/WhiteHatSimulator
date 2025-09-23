@@ -16,6 +16,7 @@ func _ready():
 	CyberattackManager.email_updated.connect(update_buttons)
 	CyberattackManager.website_seen_changed.connect(update_buttons)
 	CyberattackManager.piracy_seen_changed.connect(update_buttons)
+	CyberattackManager.cyberattack_ready.connect(update_buttons)
 	SignalBus.phishing_site_hosted.connect(hide_pages)
 	update_buttons()
 
