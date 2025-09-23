@@ -30,15 +30,28 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
 	if flashdrive != null && flashdrive.position.z > 0.039 && active == true && flashdrive_snapped == false:
+		flashdrive.position.z = 0.039
 		flashdrive_snapped = true
 	if flashdrive != null && flashdrive.position.x > -0.704 && flashdrive_snapped == true && active == true:
+		flashdrive.position.x = -0.704
 		active = false
 		minigame_finished.emit()
 
 func _input(event):
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
-	
+		# Handle hold start/end to prevent teleport
+	if active:
+		if Input.is_action_just_pressed("hold"):
+			var mouse_pos = get_viewport().get_mouse_position()
+			last_mouse_z = mouse_pos.x
+			last_mouse_x = mouse_pos.y
+			dragging = true
+		elif Input.is_action_just_released("hold"):
+			dragging = false
+	if Input.is_action_just_released("hold") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed):
+		dragging = false
+		
 	if active == true && flashdrive_snapped == false:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT:
@@ -66,9 +79,8 @@ func _input(event):
 	elif active == true && flashdrive_snapped == true:
 		if not snapped_ready:
 		# Wait for the first click to enable control
-			if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) \
-			or Input.is_action_just_pressed("hold"):
-				last_mouse_x = event.position.y
+			if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or Input.is_action_pressed("hold"):
+				last_mouse_x = get_viewport().get_mouse_position().y
 				snapped_ready = true
 		else:
 			if event is InputEventMouseButton:
@@ -77,12 +89,12 @@ func _input(event):
 					last_mouse_x = event.position.y
 			elif event is InputEventMouseMotion and dragging:
 				var screen_pos = camera.unproject_position(global_transform.origin)
-				var screen_width = get_viewport().get_visible_rect().size.x
+				var screen_width = get_viewport().get_visible_rect().size.y
 				var screen_limit = screen_width * screen_limit_ratio
 
 				if screen_pos.y < screen_limit:
-					var delta_z = event.relative.y # Production comment: Replace event with the actual position of the mouse.
-					flashdrive.position.z -= delta_z * sensitivity *0.002
+					var delta_x = event.relative.y # Production comment: Replace event with the actual position of the mouse.
+					flashdrive.position.x -= delta_x * sensitivity *0.2
 					
 			if Input.is_action_pressed("hold"):
 					var mouse_pos = get_viewport().get_mouse_position()
@@ -92,8 +104,8 @@ func _input(event):
 
 					if screen_pos.y < screen_limit:
 						var delta_x = mouse_pos.y - last_mouse_x #last_mouse is the starting position of the mouse according to the object
-						flashdrive.position.x -= delta_x * sensitivity * 0.002
-						last_mouse_z = mouse_pos.x
+						flashdrive.position.x -= delta_x * sensitivity * 0.2
+						last_mouse_x = mouse_pos.y
 
 #func _process(_delta):
 	#if Input.is_action_just_pressed("exit_ui") && active == true:

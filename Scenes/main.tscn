@@ -685,7 +685,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.692
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3447, -0.00113273, 40.7064)
 
 [node name="Door5" parent="Interactables" instance=ExtResource("24_e08e2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.370917, -0.0011327267, 40.632072)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.5449295, -0.0011324883, 40.74441)
 
 [node name="DoorIron" parent="Interactables" instance=ExtResource("63_my4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.09896, 0.0008430481, 34.535034)
@@ -1426,7 +1426,7 @@ transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 31.4
 computer = NodePath("../../../Computer5")
 
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.6418)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.734425)
 door = NodePath("../../../Interactables/DoorIron")
 keycard_item = ExtResource("60_64lof")
 
@@ -1446,7 +1446,7 @@ door = NodePath("../../../Interactables/DoorIron10")
 keycard_item = ExtResource("61_b4mik")
 
 [node name="CardSwipe6" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
-transform = Transform3D(-4.371141e-08, 0, 1, 0, 1, 0, -1, 0, -4.371141e-08, 62.96337, 2.2983742, 47.16945)
+transform = Transform3D(-4.371141e-08, 0, 1, 0, 1, 0, -1, 0, -4.371141e-08, 63.061893, 2.360101, 47.11225)
 door = NodePath("../../../Interactables/DoorIron11")
 keycard_item = ExtResource("61_b4mik")
 
