@@ -31,7 +31,7 @@ func update_buttons():
 	else:
 		email_btn.disabled = false  # Enable if there is at least one usable email
 	# Website button
-	if CyberattackManager.phishing_ready:
+	if not CyberattackManager.phishing_ready:
 		website_btn.disabled = true
 	else:
 		website_btn.disabled = false
