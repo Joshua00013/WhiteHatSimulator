@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=94 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dcqsw7q1b2t5t" path="res://Scripts/GUI/piracy.gd" id="14_213el"]
 [ext_resource type="Texture2D" uid="uid://du25vo0wk5rmb" path="res://Assets/Illustrator/CrossIcon.png" id="15_hp5ny"]
 [ext_resource type="Script" uid="uid://8du82ex4hwab" path="res://Scenes/GUI/website.gd" id="15_ti25j"]
+[ext_resource type="Texture2D" uid="uid://cpwbqcusojype" path="res://Assets/Application Icons/folder.png" id="16_cxs6i"]
 [ext_resource type="Texture2D" uid="uid://cyw0v5ikgxa21" path="res://Assets/Illustrator/FolderIcon.png" id="16_yc451"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="17_wyft7"]
 [ext_resource type="Script" uid="uid://bc2frwp1sy1j3" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="18_cxs6i"]
@@ -2743,7 +2744,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(36, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(37, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -3499,7 +3500,7 @@ tracks/0/path = NodePath("folder1:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(48, 521), Vector2(456, 169)]
@@ -3511,7 +3512,7 @@ tracks/1/path = NodePath("folder2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0.5, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1224, 57), Vector2(560, 161)]
@@ -3523,7 +3524,7 @@ tracks/2/path = NodePath("folder3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2, 3),
+"times": PackedFloat32Array(1, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-152, 97), Vector2(480, 153)]
@@ -3535,7 +3536,7 @@ tracks/3/path = NodePath("folder4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3, 4),
+"times": PackedFloat32Array(1.5, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(896, 497), Vector2(512, 201)]
@@ -3547,7 +3548,7 @@ tracks/4/path = NodePath("folder5:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(2, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-136, 265), Vector2(520, 233)]
@@ -3559,7 +3560,7 @@ tracks/5/path = NodePath("folder1:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3571,7 +3572,7 @@ tracks/6/path = NodePath("folder2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3583,7 +3584,7 @@ tracks/7/path = NodePath("folder3:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3595,7 +3596,7 @@ tracks/8/path = NodePath("folder4:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3607,7 +3608,7 @@ tracks/9/path = NodePath("folder5:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3619,7 +3620,7 @@ tracks/10/path = NodePath("Window2:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -3631,7 +3632,7 @@ tracks/11/path = NodePath("mouse:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(5, 6, 6.6, 7),
+"times": PackedFloat32Array(3, 4, 4.6, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(760, 505), Vector2(392, 201), Vector2(392, 201), Vector2(672, 201)]
@@ -3643,7 +3644,7 @@ tracks/12/path = NodePath("mouse:size")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(6.2, 6.4, 6.6, 7, 7.2, 7.4),
+"times": PackedFloat32Array(4.2, 4.4, 4.6, 5, 5.2, 5.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(64, 64.00012), Vector2(80, 80.00015), Vector2(64, 64.00012), Vector2(64, 64.00012), Vector2(80, 80.00015), Vector2(64, 64.00012)]
@@ -3655,7 +3656,7 @@ tracks/13/path = NodePath("Window2/WindowContents/MarginContainer/VBoxContainer/
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(6.6, 7),
+"times": PackedFloat32Array(4.6, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": ["", "https://www.pulseforge-studio.com/verify"]
@@ -3672,6 +3673,11 @@ bg_color = Color(1, 0.94509804, 0.90588236, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc5ig"]
 bg_color = Color(0.70980394, 0.8235294, 0.9019608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
@@ -3680,7 +3686,7 @@ shadow_size = 3
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pnmm"]
-texture = ExtResource("16_yc451")
+texture = ExtResource("16_cxs6i")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyft7"]
 texture = ExtResource("16_yc451")
@@ -3689,7 +3695,12 @@ texture = ExtResource("16_yc451")
 texture = ExtResource("16_yc451")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts51p"]
-bg_color = Color(0.11764706, 0.11764706, 0.1882353, 1)
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -3698,7 +3709,11 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y31o"]
 content_margin_left = 5.0
 content_margin_right = 5.0
-bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_objf3"]
 
@@ -3709,6 +3724,14 @@ bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wnap"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g833x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h18rk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="Website" type="Control" node_paths=PackedStringArray("email_btn", "upload_btn", "website_btn")]
 custom_minimum_size = Vector2(1152, 648)
@@ -4134,7 +4157,6 @@ libraries = {
 }
 
 [node name="Website" type="ColorRect" parent="MarginContainer/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.27006173
@@ -4222,6 +4244,7 @@ text = "X"
 
 [node name="SampleHeader" type="Label" parent="MarginContainer/Background/Website/Window2/WindowContents/WindowHeader"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Website Deployed"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/Website/Window2/WindowContents"]
@@ -4241,6 +4264,7 @@ theme = ExtResource("10_sx6w8")
 
 [node name="Label" type="Label" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.4862745)
 text = "Type Website Host Name"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer"]
@@ -4250,6 +4274,8 @@ theme_override_constants/separation = 15
 [node name="PasswordInput" type="TextEdit" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(238.385, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h18rk")
 scroll_fit_content_height = true
 
 [node name="SubmitButton" type="Button" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -4266,9 +4292,9 @@ anchor_right = 0.45423958
 anchor_bottom = 0.47145876
 offset_left = -408.0
 offset_top = 352.0
-offset_right = -407.99957
-offset_bottom = 351.99994
-texture = ExtResource("16_yc451")
+offset_right = -407.99945
+offset_bottom = 352.0
+texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -4281,9 +4307,9 @@ anchor_right = 0.5445173
 anchor_bottom = 0.45454547
 offset_left = 664.0
 offset_top = -104.0
-offset_right = 663.99976
-offset_bottom = -103.99994
-texture = ExtResource("16_yc451")
+offset_right = 664.0001
+offset_bottom = -103.99948
+texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -4297,8 +4323,8 @@ anchor_bottom = 0.455222
 offset_left = -578.87994
 offset_top = -64.32001
 offset_right = -578.87994
-offset_bottom = -64.32019
-texture = ExtResource("16_yc451")
+offset_bottom = -64.32013
+texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -4312,8 +4338,8 @@ anchor_bottom = -0.052177574
 offset_left = 773.12006
 offset_top = 575.68
 offset_right = 773.12006
-offset_bottom = 575.6801
-texture = ExtResource("16_yc451")
+offset_bottom = 575.6807
+texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -4327,8 +4353,8 @@ anchor_bottom = 0.18460889
 offset_left = 365.12012
 offset_top = 287.68
 offset_right = 365.12012
-offset_bottom = 287.6798
-texture = ExtResource("16_yc451")
+offset_bottom = 287.68097
+texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
