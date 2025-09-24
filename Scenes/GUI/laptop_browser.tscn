@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=94 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
@@ -18,8 +18,9 @@
 [ext_resource type="Script" uid="uid://8du82ex4hwab" path="res://Scenes/GUI/website.gd" id="15_ti25j"]
 [ext_resource type="Texture2D" uid="uid://cpwbqcusojype" path="res://Assets/Application Icons/folder.png" id="16_cxs6i"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="17_wyft7"]
-[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="18_cxs6i"]
+[ext_resource type="Script" uid="uid://bc2frwp1sy1j3" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="18_cxs6i"]
 [ext_resource type="Texture2D" uid="uid://cjevfnnio833b" path="res://Assets/Illustrator/BrowserAssets/cursor.png" id="19_sifis"]
+[ext_resource type="Texture2D" uid="uid://cbavkjfietsxf" path="res://Assets/Illustrator/cross_no_ouline_small.png" id="21_cxs6i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw3xb"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -2743,7 +2744,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(39, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(40, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -4380,12 +4381,13 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.9548611
-anchor_top = 0.033950616
-anchor_right = 0.9895833
-anchor_bottom = 0.095679015
+anchor_left = 0.9340278
+anchor_top = 0.029320987
+anchor_right = 0.9774306
+anchor_bottom = 0.106481485
 grow_horizontal = 0
 texture_normal = ExtResource("15_hp5ny")
+texture_hover = ExtResource("21_cxs6i")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 

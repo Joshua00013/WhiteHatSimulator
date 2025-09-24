@@ -66,4 +66,5 @@ func _on_email_button_pressed():
 
 
 func _on_texture_button_pressed():
+	print("PRESSED CLOSE BROWSER")
 	hide()
