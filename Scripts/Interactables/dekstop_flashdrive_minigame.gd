@@ -20,6 +20,12 @@ func start_minigame():
 	minigame_active = true
 	animation_player.play("start_minigame")  # camera animation
 
+func _process(_delta):
+	if minigame_active && Input.is_action_pressed("hold"):
+		holding = true
+	else:
+		holding = false
+
 func _on_animation_finished(anim_name: String):
 	print("animation done")
 	if anim_name == "start_minigame" and minigame_active:

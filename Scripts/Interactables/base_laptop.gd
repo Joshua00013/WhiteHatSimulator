@@ -66,6 +66,7 @@ func _mouse_exited_area():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("exit_ui") && active == true:
+		active = false
 		exit_ui()
 
 func _unhandled_input(event):
@@ -161,22 +162,23 @@ func _on_interactable_interact_triggered():
 	
 func exit_ui():
 	toggle_controller_buttons(false)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	GameManager.player.exit_tool_tip.visible = false
-	active = false
+	GameManager.player.exit_tool_tip.hide()
 	GameManager.player_camera.current = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	animation_player.play("close_laptop")
+	await animation_player.animation_finished
 	GameManager.add_item(laptop_inv_item)
 	if flash_drive_inserted:
 		GameManager.add_item(flashdrive_item)
-	
+	free_laptop()
+
 #func _on_login_login_successful():
 	#tab.current_tab = 1
 	
 func free_laptop():
 	GameManager.ui_active = false
 	closed.emit()
-	call_deferred("queue_free")
+	queue_free()
 
 func display_laptop_ui():
 	GameManager.player.exit_tool_tip.visible = true
@@ -195,6 +197,7 @@ func toggle_controller_buttons(visibility : bool):
 
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
+	GameManager.ui_active = false
 	GameManager.laptop_flashdrive_plugged = true
 	flash_drive_inserted = true
 	display_laptop_ui()
@@ -316,14 +319,14 @@ func _play_fileless_piracy():
 	await success_animation.animation_finished
 	CyberattackManager.installation_finished = true
 	
-	if CyberattackAdaptationManager.antivirus_installed == true:
+	if CyberattackAdaptationManager.antivirus_updated == true:
 		success_animation.play("play_fileless_fail") #TODO : Show the user running a fileless malware app and the antivirus catches it
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Ransomware failed","The antivirus caught the fileless malware",false)
-	elif CyberattackAdaptationManager.antivirus_installed == false:
+	elif CyberattackAdaptationManager.antivirus_updated == false:
+		CyberattackAdaptationManager.antivirus_updated = true
 		success_animation.play("play_fileless") # TODO : Add an animation for a successful fileless attack.
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
 		
-	CyberattackAdaptationManager.antivirus_installed = true

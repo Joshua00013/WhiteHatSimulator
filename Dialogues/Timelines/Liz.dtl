@@ -1,9 +1,10 @@
 if {lied_to_liz}  ==  false and CyberattackAdaptationManager.lied_to_liz == false:
+	# only trigger at day 4
 	Hey, new guy! Can you do me a favor?
 	Can you login to my PC for me and send an email to Al?
 	- Yeah, sure.
 		Nice! You're the best!
-		Okay okay, the username is Liz and the password is {liz_password}
+		Okay okay, the username is Liz and the password is "{liz_password}"
 		Siimple, right?
 		set {lied_to_liz} = true
 		set {CyberattackAdaptationManager.lied_to_liz} = true

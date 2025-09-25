@@ -1,6 +1,6 @@
 [gd_scene load_steps=57 format=3 uid="uid://cc0iffvnt6fcb"]
 
-[ext_resource type="Script" uid="uid://b0do5oyth30hg" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
+[ext_resource type="Script" uid="uid://be2l32ioqve5e" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing.gd" id="1_53vgl"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_f46kx"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_24yo8"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_8i5sj"]

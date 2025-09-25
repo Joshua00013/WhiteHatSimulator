@@ -87,9 +87,14 @@ func calc_schedule(hour: int):
 
 func handle_computer(_day:int, _hour:int, _minutes:int):
 	# Different logic : log in during work hours and if sitting. 
+	if lied_to == true:
+		return
+	
 	if cur_anim == SIT && state == WorkState.WORK && PersonalComputer != null:
 		if logged_in == false:
 			logged_in = true
+			if PersonalComputer.player_in_use == true:
+				UiManager.game_over_ui.play()
 			PersonalComputer.login()
 			PersonalComputer.in_use = true
 	elif stood_up == true && state == WorkState.BREAK && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
@@ -251,4 +256,6 @@ func _on_dialogic_signal(arg : String):
 
 func move_to_koro():
 	lied_to = true
+	PersonalComputer.logout()
+	PersonalComputer.in_use = false
 	change_target(koro)

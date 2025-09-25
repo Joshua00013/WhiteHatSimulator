@@ -1,9 +1,5 @@
 extends Control
 
-signal email_btn_pressed
-signal upload_btn_pressed
-signal website_btn_pressed
-
 @export var email_btn : Button
 @export var upload_btn : Button
 @export var website_btn : Button
@@ -16,13 +12,14 @@ func _ready():
 	CyberattackManager.email_updated.connect(update_buttons)
 	CyberattackManager.website_seen_changed.connect(update_buttons)
 	CyberattackManager.piracy_seen_changed.connect(update_buttons)
+	CyberattackManager.cyberattack_ready.connect(update_buttons)
 	SignalBus.phishing_site_hosted.connect(hide_pages)
 	update_buttons()
 
 func _on_send_button_pressed():
 	pass # Replace with function body.
 
-func update_buttons():
+func update_buttons(_cyberattack : String = ""):
 	var useable = CyberattackManager.get_usable_emails()
 	
 	# Email button 
@@ -65,4 +62,5 @@ func _on_email_button_pressed():
 
 
 func _on_texture_button_pressed():
+	print("PRESSED CLOSE BROWSER")
 	hide()

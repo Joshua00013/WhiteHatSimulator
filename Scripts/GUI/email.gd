@@ -16,7 +16,6 @@ func _ready():
 	cyberattack_player.connect("animation_finished",_on_animation_finished)
 	attachment_type.connect("item_selected",play_cyberattack_animation)
 	attachment_type.connect("pressed", update_attachment_options)
-	
 	send_button.disabled = true
 	body.text = ""
 	
@@ -32,7 +31,7 @@ func update_email_buttons():
 		send_button.disabled = true
 
 func update_attachment_options():
-	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_ready)
+	attachment_type.set_item_disabled(Attachments.PHISHING, not CyberattackManager.phishing_site_hosted)
 	attachment_type.set_item_disabled(Attachments.RANSOMWARE, not CyberattackManager.ransomware_ready)
 	attachment_type.set_item_disabled(Attachments.FILELESS, not CyberattackManager.fileless_ready)
 

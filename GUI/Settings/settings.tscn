@@ -113,18 +113,6 @@ text = "Sounds:"
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
-[node name="Sensitivity" type="HBoxContainer" parent="NinePatchRect/Settings"]
-layout_mode = 2
-
-[node name="SensitivityLabel" type="Label" parent="NinePatchRect/Settings/Sensitivity"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-text = "Sensitivity:"
-
-[node name="DensitivityHSlider" type="HSlider" parent="NinePatchRect/Settings/Sensitivity"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-
 [node name="Buttons" type="HBoxContainer" parent="NinePatchRect/Settings"]
 layout_mode = 2
 theme = ExtResource("5_kqylv")

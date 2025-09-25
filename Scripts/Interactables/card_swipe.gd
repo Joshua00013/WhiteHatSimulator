@@ -17,6 +17,8 @@ var last_mouse_y := 192.0 # Initial value of the object position relative to the
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit_ui") && active == true:
 		exit_ui()
+	if keycard != null && keycard.position.y < -0.4:
+		minigame_success()
 
 func _input(event):
 	if active == true:

@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfon3orv6xd2"
-path.s3tc="res://.godot/imported/Server_Machinery1Metalness-Machinery1Roughness.png-0b6d25daa8085afdfa6151f6d6599e5f.s3tc.ctex"
-path.etc2="res://.godot/imported/Server_Machinery1Metalness-Machinery1Roughness.png-0b6d25daa8085afdfa6151f6d6599e5f.etc2.ctex"
+uid="uid://jnv8rte6pvqt"
+path.s3tc="res://.godot/imported/ElectricBox_electric_box.png-8ddf5f3413f5e865cc8c4e8e73462909.s3tc.ctex"
+path.etc2="res://.godot/imported/ElectricBox_electric_box.png-8ddf5f3413f5e865cc8c4e8e73462909.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c93dbd71fde5e55d90aef7bb3d937d72"
+}
 
 [deps]
 
-source_file="res://Assets/Exported3dModel/Server_Machinery1Metalness-Machinery1Roughness.png"
-dest_files=["res://.godot/imported/Server_Machinery1Metalness-Machinery1Roughness.png-0b6d25daa8085afdfa6151f6d6599e5f.s3tc.ctex", "res://.godot/imported/Server_Machinery1Metalness-Machinery1Roughness.png-0b6d25daa8085afdfa6151f6d6599e5f.etc2.ctex"]
+source_file="res://Assets/Exported3dModel/ElectricBox_electric_box.png"
+dest_files=["res://.godot/imported/ElectricBox_electric_box.png-8ddf5f3413f5e865cc8c4e8e73462909.s3tc.ctex", "res://.godot/imported/ElectricBox_electric_box.png-8ddf5f3413f5e865cc8c4e8e73462909.etc2.ctex"]
 
 [params]
 

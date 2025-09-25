@@ -2,11 +2,11 @@ extends Node
 
 var tcpserver = TCPServer.new()
 var client: StreamPeerTCP = null
-var port := 5858 #Change depending on python program
-@export var enabled : bool = false
+var port := 12345 #Change depending on python program
 
+@export var state: bool = false
 func _ready():
-	if enabled:
+	if state == true:
 		start_server()
 
 func start_server():
@@ -33,12 +33,9 @@ func _process(_delta):
 			print("Error receiving data:", err_code)
 			
 var action_map := {
-	"pinch": func():  #Signal from the hand tracker, string
-		Input.action_press("pinch"), #The action to be done
 	"release": func(): 
-		Input.action_release("hold")
-		Input.action_release("pinch"),
-	"hold": func(): 
+		Input.action_release("hold"),
+	"hold": func():
 		Input.action_press("hold")
 }
 
@@ -47,9 +44,19 @@ func handle_input(data: String):
 	if action_map.has(data):
 		action_map[data].call()
 
+func resume_server():
+	if client != null:
+		send_to_python("resume")
+
+func pause_server():
+	if client != null:
+		pass
+		#send_to_python("pause")
 
 func stop_server():
 	if client != null:
+		send_to_python("exit")
+		await get_tree().process_frame
 		client.disconnect_from_host()
 		client = null
 	if tcpserver.is_listening():
@@ -57,9 +64,8 @@ func stop_server():
 		print("TCP server stopped")
 
 func send_to_python(message: String):
-	if client != null and client.is_connected_to_host():
+	if client != null:
 		client.put_utf8_string(message)
-		client.flush()
 		print("Sent to Python:", message)
 
 func _exit_tree():
