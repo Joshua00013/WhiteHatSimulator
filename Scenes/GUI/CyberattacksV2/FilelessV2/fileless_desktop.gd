@@ -27,7 +27,7 @@ func _process(_delta):
 			if not waiting_for_finish:
 				waiting_for_finish = true
 				_handle()
-				SignalBus.fileless_part2_finished.emit()
+				
 		else:
 			_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
@@ -53,4 +53,8 @@ func _handle() -> void:
 	if anim_player.is_playing():
 		await anim_player.animation_finished
 	waiting_for_finish = false
-	_play_next()
+	if animations[current_index] in ["fileless_20", "fileless_28"]:
+		SignalBus.fileless_part2_finished.emit()
+		_play_next()
+	else:
+		_play_next()

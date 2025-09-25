@@ -1726,13 +1726,13 @@ layout_mode = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="Body/ExplanationPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_x5n46")
-title = "⚠️FILELESS MALWARE⚠️"
+title = "STEP 3: BOILERPLATE"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Body/ExplanationPanel/VBoxContainer/FoldableContainer"]
 custom_minimum_size = Vector2(0, 531.305)
 layout_mode = 2
 bbcode_enabled = true
-text = "Fileless malware is a stealthy type of malicious software. Instead of installing a file on your computer, it runs entirely in memory using trusted system tools. This makes it hard to detect and allows attackers to steal data or control your computer without leaving obvious traces.."
+text = "Now let's create our boilerplate"
 
 [node name="CodeContainer" type="VBoxContainer" parent="Body"]
 layout_mode = 2
