@@ -20,7 +20,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_pressed"):
 		if animations[current_index] == "phishing_01":
 			SignalBus.phishing_part1_finished.emit()
-		elif animations[current_index] == "phishing_12":
+		elif animations[current_index] == "phishing_12":#THE CODE FINISHES HERE, NOT ON RESET
 			CyberattackManager.phishing_ready = true
 			emit_signal("code_finished")
 		_play_next()
@@ -32,8 +32,7 @@ func _play_next():
 		current_index += 1
 		anim_player.play(animations[current_index])
 	else:
-		if animations[current_index] == "reset":
-			CyberattackManager.phishing_ready = true
+		if animations[current_index] == "reset": 
 			emit_signal("code_finished")
 
 func _play_previous():

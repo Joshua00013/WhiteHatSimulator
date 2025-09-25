@@ -16,7 +16,6 @@ func _ready():
 	cyberattack_player.connect("animation_finished",_on_animation_finished)
 	attachment_type.connect("item_selected",play_cyberattack_animation)
 	attachment_type.connect("pressed", update_attachment_options)
-	
 	send_button.disabled = true
 	body.text = ""
 	

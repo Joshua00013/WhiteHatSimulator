@@ -1,9 +1,5 @@
 extends Control
 
-signal email_btn_pressed
-signal upload_btn_pressed
-signal website_btn_pressed
-
 @export var email_btn : Button
 @export var upload_btn : Button
 @export var website_btn : Button
@@ -23,7 +19,7 @@ func _ready():
 func _on_send_button_pressed():
 	pass # Replace with function body.
 
-func update_buttons():
+func update_buttons(_cyberattack : String = ""):
 	var useable = CyberattackManager.get_usable_emails()
 	
 	# Email button 

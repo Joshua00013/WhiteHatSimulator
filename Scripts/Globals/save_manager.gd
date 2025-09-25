@@ -40,6 +40,8 @@ func save_data():
 		"lied_to_al": CyberattackAdaptationManager.lied_to_al,
 		"lied_to_mike": CyberattackAdaptationManager.lied_to_mike,
 		"lied_to_liz": CyberattackAdaptationManager.lied_to_liz
+		
+		#TODO: save the scores per day
 	}
 	print("DEBUG: saving data -> ", data) # <--- Debug output
 	file = FileAccess.open(save_path, FileAccess.WRITE)

@@ -1,4 +1,5 @@
 if {lied_to_liz}  ==  false and CyberattackAdaptationManager.lied_to_liz == false:
+	# only trigger at day 4
 	Hey, new guy! Can you do me a favor?
 	Can you login to my PC for me and send an email to Al?
 	- Yeah, sure.
