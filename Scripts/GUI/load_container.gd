@@ -23,6 +23,7 @@ func refresh_saves():
 				var file = FileAccess.open(file_path, FileAccess.READ)
 				if file: # ensure file opened successfully
 					var data = file.get_var()
+					print("DEBUG save contents for", file_name, ":", data, " type:", typeof(data))
 					file.close()
 					
 					if typeof(data) == TYPE_DICTIONARY: # check it's a dictionary

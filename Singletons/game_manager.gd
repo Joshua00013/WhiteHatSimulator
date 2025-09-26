@@ -43,7 +43,7 @@ func remove_item(item:InvItem):
 func check_inv(item:InvItem):
 	return player.inventory.check_inv(item)
 	
-func dialogue_remove_item(target_item: String):
+func _dialogue_remove_item(target_item: String):
 	var item : InvItem
 	match target_item:
 		"Coffee":

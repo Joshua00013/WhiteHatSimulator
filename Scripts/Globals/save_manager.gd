@@ -43,10 +43,9 @@ func save_data():
 		
 		#TODO: save the scores per day
 	}
-	print("DEBUG: saving data -> ", data) # <--- Debug output
 	file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_var(data)
-
+	file.close()
 
 func load_data():
 	if FileAccess.file_exists(save_path):
