@@ -5,9 +5,6 @@
 [resource]
 script = ExtResource("1_5vb8w")
 name = "Walter"
-username = ""
-password = ""
+username = "walter"
 email = "walter@company.com"
-text = ""
-pirating = false
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"

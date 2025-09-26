@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=126 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -105,6 +105,7 @@
 [ext_resource type="Resource" uid="uid://j1xgbgemi67b" path="res://Resources/NPCResources/liz.tres" id="92_5vy51"]
 [ext_resource type="PackedScene" uid="uid://b8v1x63tfvc5h" path="res://Scenes/3DModels/Decorations/coffee_maker_base.tscn" id="92_lpdpw"]
 [ext_resource type="PackedScene" uid="uid://dpxbe1kdof3q1" path="res://Scenes/3DModels/Decorations/coffee_maker_cream_jug.tscn" id="93_jrou0"]
+[ext_resource type="Resource" uid="uid://cl1iiic0753xd" path="res://Resources/NPCResources/al.tres" id="94_ceghn"]
 [ext_resource type="Resource" uid="uid://dxjv1ucg5didf" path="res://Resources/NPCResources/mococo.tres" id="94_o2owy"]
 [ext_resource type="Resource" uid="uid://botxokshquf50" path="res://Resources/NPCResources/brian.tres" id="95_ylsbi"]
 [ext_resource type="PackedScene" uid="uid://5l0bymfcv2vg" path="res://Scripts/Components/trespassing_check.tscn" id="97_3ahwd"]
@@ -153,9 +154,17 @@ agent_height = 1.75
 agent_radius = 0.75
 vertices_per_polygon = 9.0
 
+[sub_resource type="Resource" id="Resource_xg142"]
+script = ExtResource("82_55idt")
+name = "Gigi"
+username = "gigi"
+email = "gigi@company.com"
+metadata/_custom_type_script = "uid://cn4vcnytc42jl"
+
 [sub_resource type="Resource" id="Resource_ceghn"]
 script = ExtResource("82_55idt")
 name = "Robert"
+username = "robert"
 email = "robert@company.com"
 pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
@@ -163,17 +172,12 @@ metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 [sub_resource type="Resource" id="Resource_3h4bx"]
 script = ExtResource("82_55idt")
 name = "John"
+username = "john"
 email = "john@company.com"
 pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 
-[sub_resource type="Resource" id="Resource_o2owy"]
-script = ExtResource("82_55idt")
-name = "Al"
-email = "al@company.com"
-metadata/_custom_type_script = "uid://cn4vcnytc42jl"
-
-[sub_resource type="Resource" id="Resource_ylsbi"]
+[sub_resource type="Resource" id="Resource_rlvxq"]
 resource_local_to_scene = true
 script = ExtResource("82_55idt")
 name = "Myrione"
@@ -325,7 +329,7 @@ joystick_mode = 1
 
 [node name="NPC" type="Node3D" parent="."]
 
-[node name="mococo_hair" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") instance=ExtResource("29_6vcvc")]
+[node name="mococo_hair" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") groups=["npc"] instance=ExtResource("29_6vcvc")]
 transform = Transform3D(-4.3711367e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711367e-08, -0.72374845, -0.0011334419, 1.0525503)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer4")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col4")
@@ -357,7 +361,7 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/HRVisibleOnScreenNotifier3D/Room/SimpleOfficeChair-col")
 target_area_5 = NodePath("../../Markers/Registrar2")
 
-[node name="Joe" parent="NPC" node_paths=PackedStringArray("target_area_1") instance=ExtResource("51_v1mrv")]
+[node name="Joe" parent="NPC" node_paths=PackedStringArray("target_area_1") groups=["npc"] instance=ExtResource("51_v1mrv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.1749525, 0, -1)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col11")
 
@@ -366,7 +370,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.17
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer9")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col13")
 
-[node name="Brian" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") instance=ExtResource("53_v1mrv")]
+[node name="Brian" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1") groups=["npc"] instance=ExtResource("53_v1mrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2441, -0.0011332, 44.1063)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer6")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col6")
@@ -380,13 +384,13 @@ target_area_7 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col
 target_area_9 = NodePath("../../Markers/Reception2")
 koro = NodePath("../Koro")
 
-[node name="John" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") instance=ExtResource("69_owhal")]
+[node name="John" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") groups=["npc"] instance=ExtResource("69_owhal")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -2)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer10")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col15")
 target_area_5 = NodePath("../../Markers/Reception2")
 
-[node name="Sai" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_3") instance=ExtResource("70_uv6w5")]
+[node name="Sai" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_3") groups=["npc"] instance=ExtResource("70_uv6w5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, -5)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer8")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col14")
@@ -399,7 +403,7 @@ target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreen
 target_area_5 = NodePath("../../Markers/Cafeteria")
 target_area_7 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col5")
 
-[node name="Wisadel" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5", "target_area_7") instance=ExtResource("72_e5peh")]
+[node name="Wisadel" parent="NPC" node_paths=PackedStringArray("target_area_1", "target_area_5", "target_area_7") groups=["npc"] instance=ExtResource("72_e5peh")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1749525, 0, 1)
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/SimpleOfficeChair-col10")
 target_area_5 = NodePath("../../Markers/Cafeteria2")
@@ -440,42 +444,49 @@ omni_attenuation = 1.415
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0625, 3.96504, 2.07806)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D26" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0625, 3.96504, 15.5078)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D27" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0625, 3.96504, 20.7612)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D28" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0625, 3.96504, 26.4041)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D29" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.372, 3.91426, 34.7757)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D38" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.652317, 3.91426, 34.7757)
 light_energy = 3.22
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 10.857
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44078, 3.96504, 12.2424)
 light_energy = 2.825
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 omni_attenuation = 2.0
 
@@ -483,90 +494,105 @@ omni_attenuation = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44078, 3.96504, 25.3443)
 light_energy = 6.695
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 omni_attenuation = 2.0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22978, 3.96504, 36.8671)
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4617, 3.96504, 48.3964)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D15" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7997, 3.96504, 48.3964)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D16" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7997, 3.96504, 36.0006)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D17" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7997, 3.96504, 24.3933)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D18" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7997, 3.96504, 12.8286)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D19" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7997, 3.96504, 2.17461)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D20" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0958, 3.96504, 0.220486)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D21" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0958, 3.96504, 13.3086)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D22" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0958, 3.96504, 23.7302)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D23" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0958, 3.96504, 29.5891)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D24" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3122, 3.96504, 40.7831)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D25" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.325, 3.96504, 53.9392)
 light_energy = 4.435
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4617, 3.96504, 59.0581)
 light_energy = 4.105
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 11.65
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="Lights"]
@@ -644,31 +670,39 @@ spot_attenuation = 2.0
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3831, 2.21115, -3.86958)
 light_bake_mode = 1
+distance_fade_enabled = true
 omni_range = 2.303
 
 [node name="OmniLight3D31" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 35.705578, 4.503622, 36.52293)
 light_energy = 7.788
 light_bake_mode = 1
+distance_fade_enabled = true
 spot_angle = 58.85838
 
 [node name="OmniLight3D32" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61498, 3.607498, 20.825628)
+distance_fade_enabled = true
 
 [node name="OmniLight3D33" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61498, 3.607498, 24.689646)
+distance_fade_enabled = true
 
 [node name="OmniLight3D34" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61498, 3.607498, 29.35787)
+distance_fade_enabled = true
 
 [node name="OmniLight3D35" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61498, 3.607498, 16.846018)
+distance_fade_enabled = true
 
 [node name="OmniLight3D36" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.61498, 3.607498, 11.699934)
+distance_fade_enabled = true
 
 [node name="OmniLight3D37" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.339738, 3.607498, 12.84484)
+distance_fade_enabled = true
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4525, 5.20535, 29.5455)
@@ -1757,6 +1791,7 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 61.701
 
 [node name="Computer" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.84517, 2.16154, 24.3436)
+npc_resource = SubResource("Resource_xg142")
 
 [node name="Computer8" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 34.7973, 2.52734, -3.16023)
@@ -1772,7 +1807,7 @@ npc_resource = SubResource("Resource_3h4bx")
 
 [node name="Computer11" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 61.8756, 2.16155, 54.1885)
-npc_resource = SubResource("Resource_o2owy")
+npc_resource = ExtResource("94_ceghn")
 server_computer = true
 
 [node name="Computer12" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
@@ -1792,7 +1827,7 @@ npc_resource = ExtResource("94_o2owy")
 
 [node name="Computer5" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 49.377)
-npc_resource = SubResource("Resource_ylsbi")
+npc_resource = SubResource("Resource_rlvxq")
 
 [node name="Computer6" parent="NavigationRegion3D/Objects" instance=ExtResource("75_pfx1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3807, 2.16154, 53.4747)

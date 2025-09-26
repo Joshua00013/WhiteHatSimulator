@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqcp28vc5y0pl"]
+[gd_scene load_steps=14 format=3 uid="uid://dqcp28vc5y0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dek5mdad312c" path="res://Assets/Exported3dModel/Koro.glb" id="1_3wsxs"]
 [ext_resource type="Script" uid="uid://b4llndyqp8tei" path="res://Scripts/NPC/myrione.gd" id="2_w4y5k"]
 [ext_resource type="Shape3D" uid="uid://bruadih1tmmwk" path="res://Scenes/3DModels/Characters/character_collision.tres" id="3_bar17"]
+[ext_resource type="PackedScene" uid="uid://c1l3s2t2bcv5t" path="res://Scenes/Components/NPC_Parts/navigation_agent_3d.tscn" id="4_3yqji"]
 [ext_resource type="PackedScene" uid="uid://dcmywpe6e7kmv" path="res://Scenes/Components/door_check_component.tscn" id="4_hysm3"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="6_3yqji"]
 [ext_resource type="PackedScene" uid="uid://cme0kvtc7kemi" path="res://Scenes/Components/chase_component.tscn" id="6_hysm3"]
@@ -35,29 +36,29 @@ nodes/Sit/position = Vector2(520, 320)
 "nodes/anim sit/position" = Vector2(320, 600)
 node_connections = [&"output", 0, &"Sit", &"Run", 0, &"anim idle", &"Run", 1, &"anim run", &"Sit", 0, &"Run", &"Sit", 1, &"anim sit"]
 
-[node name="Koro" instance=ExtResource("1_3wsxs")]
+[node name="Koro" groups=["npc"] instance=ExtResource("1_3wsxs")]
 script = ExtResource("2_w4y5k")
 dialogue = "Koro"
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, 1.4437845, -0.04415528)
+bones/0/position = Vector3(0, 1.4450871, -0.044155285)
 bones/0/rotation = Quaternion(-0.04186031, 0, 0, 0.9991235)
 bones/1/rotation = Quaternion(0.17112522, 1.17450895e-07, 2.0399723e-08, 0.9852493)
-bones/2/rotation = Quaternion(-0.0069706272, -0.06370704, 0.9866468, -0.14973654)
+bones/2/rotation = Quaternion(-0.00726371, -0.062357597, 0.9875077, -0.1445249)
 bones/3/rotation = Quaternion(0.051609166, -0.0002271697, -0.015083218, 0.9985535)
-bones/4/rotation = Quaternion(-0.02765646, -0.005586494, 0.9995973, -0.0030512298)
+bones/4/rotation = Quaternion(-0.027608767, -0.009362676, 0.9995744, -0.0010916877)
 bones/4/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/5/rotation = Quaternion(-0.09483581, -0.00039801607, -0.052958336, 0.9940833)
+bones/5/rotation = Quaternion(-0.08751907, -0.00039837952, -0.048872523, 0.9949632)
 bones/5/scale = Vector3(0.9999998, 1.0000001, 0.99999964)
-bones/6/rotation = Quaternion(0.62373644, 0.008770244, 0.06542093, 0.77884287)
+bones/6/rotation = Quaternion(0.62091655, 0.007756712, 0.06378262, 0.781239)
 bones/6/scale = Vector3(0.9999992, 1.0000099, 0.99999994)
-bones/7/rotation = Quaternion(0.008563549, -0.049991846, 0.98885316, 0.13998911)
+bones/7/rotation = Quaternion(0.008978341, -0.052102685, 0.9893713, 0.13545938)
 bones/8/rotation = Quaternion(0.05160917, 0.00022717057, 0.0150831975, 0.9985535)
-bones/9/rotation = Quaternion(-0.003975595, -0.0071127512, 0.9999468, 0.0063336873)
+bones/9/rotation = Quaternion(-0.0040376247, -0.010823631, 0.9999243, 0.004254948)
 bones/9/scale = Vector3(1.0000023, 1.0000006, 1.0000253)
-bones/10/rotation = Quaternion(-0.09483581, 0.00039801828, 0.052958336, 0.9940833)
+bones/10/rotation = Quaternion(-0.08751906, 0.00039838045, 0.048872523, 0.9949632)
 bones/10/scale = Vector3(0.9999999, 1.0000002, 0.9999998)
-bones/11/rotation = Quaternion(0.62417126, -0.035384543, -0.047948755, 0.77901167)
+bones/11/rotation = Quaternion(0.6214035, -0.03430597, -0.04621448, 0.7813738)
 bones/11/scale = Vector3(1.000001, 1.0000085, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -67,16 +68,13 @@ autoplay = "idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48545, 0)
 shape = ExtResource("3_bar17")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]
-path_height_offset = 1.0
-avoidance_enabled = true
-debug_enabled = true
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeBlendTree_3yqji")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Run/blend_amount = 0.0
 parameters/Sit/blend_amount = 0.0
+
+[node name="NavigationAgent3D" parent="." index="4" instance=ExtResource("4_3yqji")]
 
 [node name="DoorCheckComponent" parent="." index="5" instance=ExtResource("4_hysm3")]
 

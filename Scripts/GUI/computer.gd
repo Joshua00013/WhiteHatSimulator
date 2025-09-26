@@ -99,7 +99,8 @@ func _ready():
 				#login_screen.password = weak_passwords.pick_random()
 			#if CyberattackAdaptationManager.weak_passwords == false:
 				#login_screen.password = strong_password
-			
+	if server_computer == true:
+		CyberattackManager.server_room_password = login_screen.password 
 func _mouse_entered_area():
 	is_mouse_inside = true
 

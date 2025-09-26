@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://jjhva651ce8b"]
+[gd_scene load_steps=27 format=3 uid="uid://jjhva651ce8b"]
 
 [ext_resource type="Script" uid="uid://ds26kq6wue5fa" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
-[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_pekke"]
+[ext_resource type="PackedScene" uid="uid://bvsldp4chcrh6" path="res://Scenes/GUI/CleanUI/sql_icon.tscn" id="2_pga4f"]
 [ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_xxt4y"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_qd57o"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="6_bikpg"]
@@ -16,6 +16,7 @@
 [ext_resource type="Shader" uid="uid://bsnbgo8bcttif" path="res://GUI/Pause Menu/blur.gdshader" id="10_pekke"]
 [ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
 [ext_resource type="Theme" uid="uid://rartua8qh51p" path="res://Themes/LOIC.tres" id="13_hyjlr"]
+[ext_resource type="PackedScene" uid="uid://bl2dl6taw3m4s" path="res://Scenes/GUI/CleanUI/sql_window.tscn" id="14_pga4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxt4y"]
 content_margin_left = 50.0
@@ -69,11 +70,9 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="Data_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
+[node name="SQLIcon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_pga4f")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/SQLWindow")
-icon = ExtResource("3_pekke")
-icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_bikpg")]
 layout_mode = 2
@@ -161,26 +160,13 @@ custom_minimum_size = Vector2(-6.2, 260.78)
 layout_mode = 2
 texture = ExtResource("10_o41mf")
 
-[node name="SQLWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
+[node name="SQLWindow" parent="WindowContainer" instance=ExtResource("14_pga4f")]
 visible = false
 layout_mode = 1
-anchor_left = 0.391107
-anchor_top = 0.135452
-anchor_right = 0.90326
-anchor_bottom = 0.715698
-
-[node name="Title" parent="WindowContainer/SQLWindow/HBoxContainer" index="0"]
-text = "data.sql"
-
-[node name="Label" type="Label" parent="WindowContainer/SQLWindow/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "create database test;
-use database test;
-
-create table ransom(
-      rid int auto_increment,
-     rkey bigint not null
-)"
+anchor_left = 0.24500908
+anchor_top = 0.3160535
+anchor_right = 0.6547311
+anchor_bottom = 0.72346056
 
 [node name="Text_1Window" parent="WindowContainer" instance=ExtResource("9_p75vd")]
 visible = false
@@ -657,7 +643,6 @@ libraries = {
 [connection signal="pressed" from="CyberAttackCards/VBoxContainer/DoS_card/Button" to="." method="_dos_pressed"]
 
 [editable path="WindowContainer/GodotWindow"]
-[editable path="WindowContainer/SQLWindow"]
 [editable path="WindowContainer/Text_1Window"]
 [editable path="WindowContainer/KeyWindow"]
 [editable path="WindowContainer/MalwareWindow"]

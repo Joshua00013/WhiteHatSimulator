@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvsldp4chcrh6"]
+
+[ext_resource type="Script" uid="uid://cwkynidn8f32w" path="res://Scripts/GUI/sql_icon.gd" id="1_kpy08"]
+[ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="2_dtr3s"]
+[ext_resource type="Shader" uid="uid://dg6okeg3rm7ev" path="res://EnvironmentShaders/highlight.gdshader" id="3_dtr3s"]
+[ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="3_rrs02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kctp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrs02"]
+shader = ExtResource("3_dtr3s")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[node name="Control" type="VBoxContainer" node_paths=PackedStringArray("button", "label")]
+anchors_preset = -1
+anchor_top = 0.010571
+anchor_right = 0.124479
+anchor_bottom = 0.223534
+theme_override_constants/separation = -4
+script = ExtResource("1_kpy08")
+button = NodePath("Button")
+label = NodePath("Label")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4kctp")
+icon = ExtResource("2_dtr3s")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Button"]
+visible = false
+material = SubResource("ShaderMaterial_rrs02")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(6.21, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_rrs02")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "MySQL"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_68134")
 name = "Brian"
+username = "brian"
 email = "brian@company.com"
 text = "I heard al looking for a blue keycard yesterday, he's funny"
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"

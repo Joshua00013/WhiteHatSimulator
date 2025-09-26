@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_2ppnq")
 name = "Liz"
+username = "liz"
 email = "liz@company.com"
 text = "John is so cute"
 pirating = true

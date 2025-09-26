@@ -5,6 +5,7 @@ signal cyberattack_ready(attack_name: String)
 signal piracy_seen_changed
 signal website_seen_changed
 signal data_server_seen_changed
+signal phishing_site_hosted_changed
 signal email_updated (address, value)
 
 var current_phase : String = "reset"
@@ -26,7 +27,9 @@ var dos_ready : bool = false : set = set_dos_ready
 var website_seen := false : set = set_website_seen
 var piracy_seen := false : set = set_piracy_seen
 var data_server_seen := false : set = set_data_server_seen
-var phishing_site_hosted := false
+var phishing_site_hosted := false : set = set_phishing_site_hosted
+
+var server_room_password : String
 # Dictionary of emails and whether they are usable
 var emails := {
 	"al@company.com": false,
@@ -67,6 +70,7 @@ func reset():
 	website_seen = false
 	piracy_seen = false
 	data_server_seen = false
+	phishing_site_hosted = false
 	
 	emails = {
 	"al@company.com": false,
@@ -87,6 +91,10 @@ func reset():
 	}
 	
 	phase_updated.emit("reset")
+
+func set_phishing_site_hosted(value : bool):
+	phishing_site_hosted = value
+	phishing_site_hosted_changed.emit()
 
 func set_data_server_seen(value: bool) -> void:
 	data_server_seen = value

@@ -114,7 +114,6 @@ content = NodePath("../../../Contents/ContentTabs/Inventory")
 [node name="Contents" type="ScrollContainer" parent="PanelContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-scroll_vertical = 87
 horizontal_scroll_mode = 0
 
 [node name="ContentTabs" type="TabContainer" parent="PanelContainer/PanelContainer/Contents"]
@@ -123,11 +122,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_styles/panel = SubResource("StyleBoxFlat_htdxb")
-current_tab = 5
+current_tab = 0
 tabs_visible = false
 
 [node name="Welcome" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
 metadata/_tab_index = 0
@@ -261,6 +259,7 @@ text = "Follow your tasks and make sure not to skip steps! But don't worry, you 
 autowrap_mode = 2
 
 [node name="Inventory" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
 metadata/_tab_index = 5
