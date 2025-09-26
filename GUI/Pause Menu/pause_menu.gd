@@ -55,3 +55,7 @@ func _on_restart_button_button_down():
 func _on_settings_button_pressed():
 	GameManager.ui_active = true
 	settings.show()
+
+
+func _on_help_button_pressed() -> void:
+	UiManager.tutorial_ui.display_tutorial(true)

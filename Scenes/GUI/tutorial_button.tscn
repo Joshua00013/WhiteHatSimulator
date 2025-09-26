@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxa5xeu4b7mac"]
+
+[ext_resource type="Script" uid="uid://ctcvaaq57myyj" path="res://Scripts/GUI/tutorial_button.gd" id="1_utd04"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utd04"]
+content_margin_left = 10.0
+bg_color = Color(0.17641911, 0.17641908, 0.17641914, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(0, 1.795)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n77m4"]
+content_margin_left = 10.0
+bg_color = Color(0.17641911, 0.17641908, 0.17641914, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(0, 1.795)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88c2f"]
+content_margin_left = 10.0
+bg_color = Color(0.2702221, 0.27022186, 0.27022198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(0, 1.795)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utd04"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(200, 54)
+theme_override_styles/normal = SubResource("StyleBoxFlat_utd04")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n77m4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_88c2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_utd04")
+text = "Reconnaisance"
+alignment = 0
+autowrap_mode = 2
+script = ExtResource("1_utd04")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

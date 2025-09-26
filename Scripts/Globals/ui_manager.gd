@@ -4,6 +4,7 @@ var popup : PopupWindow
 var task_box : TaskBox
 var quiz_ui : Control
 var game_over_ui : Control
+var tutorial_ui : Control
 
 var nav_button_active := false
 

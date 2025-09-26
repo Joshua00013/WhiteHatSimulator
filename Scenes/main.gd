@@ -15,13 +15,19 @@ func _ready() -> void:
 			match OS.get_name():
 				"Windows":
 					#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
-					UiManager.popup.display_popup("Controls","Use the WASD keys to move and your mouse to look around")
+					UiManager.popup.display_popup("Controls","Use the WASD keys to move and your mouse to look around", false)
 				"Android":
 					UiManager.popup.display_popup("Controls","Use the joystick to move and swipe to look around")
+				
+			UiManager.tutorial_ui.display_tutorial()
 		2:
 			UiManager.popup.display_popup("Congratulations!", "You are now at your second day. You unlocked a new cyberattack, but you need a flashdrive to deploy it.")
 		3:
 			UiManager.popup.display_popup("Great job!","There are reports stating that some employees don't update their antivirus. Do an penetration testing as usual")
+		4:
+			UiManager.popup.display_popup("Good Job!","You have managed to reach day four. Don't forget to always check your inventory!")
+		5:
+			UiManager.popup.display_popup("Good Job!", "This is your last day on the job. DoS attack is now unlocked")
 			#TODO: Add day specific messages here
 	if OS.get_name() == "Android": # Change this to a default display setting for android
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
