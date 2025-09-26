@@ -11,7 +11,7 @@ var ui_active : bool = false : #Variable for checking if theres an active ui. De
 		ui_active = value
 		ui_updated.emit(value)
 
-var stage_finished : bool = false # Being set in main script ready to be false
+var stage_finished : bool = true # Being set in main script ready to be false
 var game_paused : bool = false # Variable for pausing the game
 var is_crouching :bool = false
 var android_ui : CanvasLayer

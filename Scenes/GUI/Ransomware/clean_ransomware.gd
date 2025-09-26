@@ -46,6 +46,8 @@ func _on_cyberattack_selected(cyberattack: String) -> void:
 func _on_weaponization_finished() -> void:
 	UiManager.popup.display_popup("Good Job!", "Weaponization is now finished. Now deploy your cyberattack", false)
 	CyberattackManager.weaponization_finished = true
+	UiManager.back_button.hide()
+	UiManager.next_button.hide()
 	desktop_default.hide_cards()
 	current_tab = 0
 

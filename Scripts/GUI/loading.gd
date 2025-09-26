@@ -21,6 +21,7 @@ func _process(delta):
 
 	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED and intro_done:
 		var new_scene = ResourceLoader.load_threaded_get(path)
+		SceneTransition.fade_in()
 		get_tree().change_scene_to_packed(new_scene)
 
 func _on_intro_finished():

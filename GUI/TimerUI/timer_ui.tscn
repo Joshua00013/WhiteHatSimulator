@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://kd4g4p40rm1l"]
+[gd_scene load_steps=6 format=3 uid="uid://kd4g4p40rm1l"]
 
 [ext_resource type="Script" uid="uid://daj1h1xsejg3b" path="res://GUI/TimerUI/timer_ui.gd" id="1_joet6"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_tuxor"]
+[ext_resource type="Texture2D" uid="uid://ttt2eypex2fc" path="res://Assets/Illustrator/clock_1.png" id="3_q8y1t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8y1t"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.151276, 0.151276, 0.151276, 1)
 corner_radius_top_left = 20
 corner_radius_bottom_left = 20
@@ -19,7 +22,7 @@ anchor_right = 0.185764
 anchor_bottom = 0.117284
 theme = ExtResource("1_tuxor")
 script = ExtResource("1_joet6")
-time_label = NodePath("ColorRect/TimeLabel")
+time_label = NodePath("ColorRect/HBoxContainer/TimeLabel")
 day_label = NodePath("PanelContainer/DayLabel")
 metadata/_edit_use_anchors_ = true
 
@@ -29,7 +32,16 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8y1t")
 
-[node name="TimeLabel" type="Label" parent="ColorRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_q8y1t")
+stretch_mode = 3
+
+[node name="TimeLabel" type="Label" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)

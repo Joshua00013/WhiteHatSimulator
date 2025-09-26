@@ -48,8 +48,10 @@ layout_mode = 2
 
 [node name="LockedMessage" type="Label" parent="MarginContainer/VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(329, 0)
 layout_mode = 2
 text = "Unlock by progressing to the other stages"
+autowrap_mode = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 335)

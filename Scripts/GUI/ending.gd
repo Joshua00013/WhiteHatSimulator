@@ -5,7 +5,11 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SceneTransition.fade_out()
+	animation_player.play("ending")
 	player_label.text = GameManager.player_name
-	await animation_player.animation_finished
+
+
+func return_to_main():
 	SceneTransition.fade_in()
 	get_tree().change_scene_to_file("res://GUI/MainMenuUI/main_menu.tscn")
