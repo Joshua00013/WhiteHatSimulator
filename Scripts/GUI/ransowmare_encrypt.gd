@@ -20,8 +20,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_pressed") && freeze_animations == false:
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
-		if freeze_animations == false:
-			freeze_animations = true
+		if freeze_animations == true:
+			freeze_animations = false
 		_play_previous()
 
 func _play_next():
@@ -43,7 +43,7 @@ func _play_next():
 func _play_previous():
 	if current_index > 0:
 		current_index -= 1
-		anim_player.play(animations[current_index])
+		anim_player.play_backwards(animations[current_index])
 
 
 func _on_window_background_window_exited():

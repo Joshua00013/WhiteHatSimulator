@@ -8,7 +8,7 @@ const GAME_MINUTES_DURATION:float = TAU / MINUTES_PER_DAY
 var active : bool = false
 var game_speed: float = 1.0
 
-var initial_day: int = 4
+var initial_day: int = 1
 var initial_hour: int = 8
 var initial_minutes: int = 30
 

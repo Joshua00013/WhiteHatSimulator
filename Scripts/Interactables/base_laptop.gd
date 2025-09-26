@@ -146,6 +146,9 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	node_viewport.push_input(event)
 
 func _on_interactable_interact_triggered():
+	if minigame.active == true:
+		return
+	
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
 		minigame.minigame_start()
 	elif camera.is_current() == false:
@@ -197,7 +200,7 @@ func toggle_controller_buttons(visibility : bool):
 
 
 func _on_laptop_minigame_component_minigame_finished() -> void:
-	GameManager.ui_active = false
+	GameManager.ui_active = true
 	GameManager.laptop_flashdrive_plugged = true
 	flash_drive_inserted = true
 	display_laptop_ui()

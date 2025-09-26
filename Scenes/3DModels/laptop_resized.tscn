@@ -2251,7 +2251,6 @@ flash_drive_item = ExtResource("4_itk1b")
 transform = Transform3D(-4.37114e-08, 0.246119, -0.969239, 0, 0.969239, 0.246119, 1, 1.07582e-08, -4.23668e-08, -1.38729, 0.229147, -0.0490917)
 
 [node name="ReturnButton" parent="." index="7" instance=ExtResource("9_aerrq")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -2263,18 +2262,24 @@ offset_right = 70.0
 offset_bottom = -33.0
 
 [node name="Next" parent="." index="8" instance=ExtResource("10_fd17r")]
-visible = false
 anchor_left = 0.736111
 anchor_top = 0.802469
 anchor_right = 0.865451
 anchor_bottom = 0.859568
+offset_left = 5.000122
+offset_top = 56.00006
+offset_right = 5.0004883
+offset_bottom = 56.00006
 
 [node name="Back" parent="." index="9" instance=ExtResource("11_bpdqv")]
-visible = false
 anchor_left = 0.131944
 anchor_top = 0.802469
 anchor_right = 0.262153
 anchor_bottom = 0.859568
+offset_left = 5.000519
+offset_top = 56.00006
+offset_right = 5.000519
+offset_bottom = 56.00006
 text = "Back"
 
 [node name="Node" type="CanvasLayer" parent="." index="10" node_paths=PackedStringArray("subviewport")]

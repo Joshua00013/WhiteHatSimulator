@@ -1,7 +1,6 @@
 extends Control
 
-signal code_finished	
-signal ransomwareV2_decypt_finished
+signal code_finished
 
 @onready var anim_player = $AnimationPlayer
 @onready var password_check_component: Control = $WindowBackground/Window2/WindowContents/MarginContainer/PasswordCheckComponent
@@ -23,10 +22,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_pressed"):
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
-		if freeze_animations == false:
-			freeze_animations = true
+		if freeze_animations == true:
+			freeze_animations = false
 		_play_previous()
-@onready var decryptor_window: Control = $DecryptorWindow
 
 func _play_next():
 	if current_index < animations.size() - 1:
@@ -50,7 +48,7 @@ func _play_next():
 func _play_previous():
 	if current_index > 0:
 		current_index -= 1
-		anim_player.play(animations[current_index])
+		anim_player.play_backwards(animations[current_index])
 
 func _on_button_pressed():
 	CyberattackManager.ransomware_ready = true

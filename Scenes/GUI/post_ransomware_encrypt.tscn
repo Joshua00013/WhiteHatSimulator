@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4g07llena6ub"]
+[gd_scene load_steps=9 format=3 uid="uid://4g07llena6ub"]
 
 [ext_resource type="Script" uid="uid://cj8kbppv1mu68" path="res://Scripts/GUI/post_ransomware_encrypt.gd" id="1_qli7n"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_ebhja"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_svgyg"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="8_cclec"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="8_qli7n"]
 
 [node name="PostRansomwareEncrypt" type="MarginContainer"]
 anchors_preset = 15
@@ -253,6 +254,16 @@ offset_right = -1.61047
 offset_bottom = 9031.54
 grow_horizontal = 0
 text = "Next"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("8_qli7n")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave] Now we have encrypted the files. Feel free to check on the files or press next to proceed with the decryptor!"
+fit_content = true
 
 [connection signal="pressed" from="WindowContainer/Button" to="." method="_on_button_pressed"]
 

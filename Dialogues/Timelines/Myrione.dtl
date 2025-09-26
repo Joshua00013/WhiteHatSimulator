@@ -1,8 +1,13 @@
-Man! I could really use a hot cup of coffee right now.
-- I have a coffee for you. | [if {has_coffee} == true] [else="disable"]
-	do GameManager._dialogue_remove_item("Coffee")
-	Oh, thank you! Now I can cram even futher and beyond!
-	set {has_coffee} = false
-	- What were you talking about with Liz earlier?
-		She's complaining about her computer. Maybe you should go ask her.
-- Same
+if DayAndNightManager.initial_day == 4:
+	Man! I could really use a hot cup of coffee right now.
+	- I have a coffee for you. | [if {has_coffee} == true] [else="disable"]
+		do GameManager._dialogue_remove_item("Coffee")
+		Oh, thank you! Now I can cram even futher and beyond!
+		set {has_coffee} = false
+		- What were you talking about with Liz earlier?
+			She's complaining about her computer. Maybe you should go ask her.
+	- Same
+else:
+	Hey, if you have seen a keycard laying around, please tell me.
+	- Why?
+		Al would be very mad if he finds out I lost mine.
