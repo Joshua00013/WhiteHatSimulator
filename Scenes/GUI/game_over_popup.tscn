@@ -16,6 +16,7 @@ func _ready():
 	hide()
 
 func display_popup(new_heading : String = \"Game Over\", new_body : String = \"You have been caught\", reset_mouse_check : bool = true):
+	Dialogic.end_timeline()
 	reset_mouse = reset_mouse_check
 	heading.text = new_heading
 	body.text = new_body

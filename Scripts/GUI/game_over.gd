@@ -9,6 +9,9 @@ func _ready():
 	visible = false
 
 func play(message : String = default_message):
+	Dialogic.end_timeline()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	body.text = message
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

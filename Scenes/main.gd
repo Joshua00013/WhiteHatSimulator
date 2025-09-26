@@ -34,6 +34,7 @@ func _ready() -> void:
 	
 	DayAndNightManager.active = true
 	DayAndNightManager.set_initial_time()
+	GameManager.is_game_over = false
 	CyberattackAdaptationManager.save_snapshot() # Save the values at the start of the day to be used for resets
 	ConfigFileHandler.apply_display_mode()
 	Dialogic.VAR.reset()
@@ -50,4 +51,5 @@ func _on_dialogic_signal(argument: String):
 func validate_time(hour: int):
 	var time_out_hour = 18
 	if hour == time_out_hour:
+		GameManager.is_game_over = true
 		UiManager.game_over_ui.play("You ran out of time, the employees are leaving")

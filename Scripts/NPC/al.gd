@@ -244,7 +244,8 @@ func show_dialogoue(dialogue_string):
 
 func _on_timeline_ended():
 	talking = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if not GameManager.is_game_over:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.ui_active = false
 
 func _on_interactable_interact_triggered() -> void:

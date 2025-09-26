@@ -20,7 +20,7 @@ var player_camera : Camera3D
 var player : CharacterBody3D
 var inv : Control
 var laptop_flashdrive_plugged : bool = false : set = plug_flashdrive
-
+var is_game_over : bool = false
 func _ready():
 	match OS.get_name():
 		"Windows":
