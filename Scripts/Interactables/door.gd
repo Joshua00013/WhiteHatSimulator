@@ -18,22 +18,19 @@ func _ready() -> void:
 func _on_interactable_interact_triggered():
 	if locked:
 		return
-	if animation_player.is_playing() && is_open == false:
+	if animation_player.is_playing() && is_open == true:
 		return
 	
 	if is_open == false:
-		is_open = true
 		if flipped:
 			animation_player.play("open_flipped")
 		else:
 			animation_player.play("open")
 	else:
-		is_open = false
 		if flipped:
 			animation_player.play("close_flipped")
 		else:
 			animation_player.play("close")
-
 
 func lock():
 	if player_unlocked == false:
@@ -50,6 +47,14 @@ func npc_unlock():
 	interactable.prompt_message = "Open"
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "open" || anim_name == "open_flipped":
+		is_open = true
+		if player_unlocked == false:
+			if flipped:
+				animation_player.play("close_flipped")
+			else:
+				animation_player.play("close")
 	if anim_name == "close" || anim_name == "close_flipped":
+		is_open = false
 		if player_unlocked == false:
 			lock()
