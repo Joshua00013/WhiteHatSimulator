@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj40cn2dxen1x"]
+
+[ext_resource type="Script" uid="uid://bxv6pvg21sypg" path="res://Scripts/GUI/disclaimer.gd" id="1_7vr68"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jvkb"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3g1qk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2628y"]
+resource_name = "intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 8.028281, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyga8"]
+_data = {
+&"RESET": SubResource("Animation_3g1qk"),
+&"intro": SubResource("Animation_2628y")
+}
+
+[node name="Disclaimer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5jvkb")
+script = ExtResource("1_7vr68")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1122, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "This game is a work of fiction created for educational purposes only. It is designed to raise awareness of cybersecurity risks and does not promote or encourage illegal activity. Any resemblance to real systems, organizations, or events is purely coincidental. The developers are not responsible for any misuse of the game’s content or for any damages, legal consequences, or actions taken by players outside the game environment. Players are solely responsible for their actions."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iyga8")
+}
+autoplay = "intro"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -11,7 +11,7 @@ RichTextLabel/font_sizes/normal_font_size = 32
 
 [sub_resource type="Animation" id="Animation_obduy"]
 resource_name = "Intro"
-length = 40.0
+length = 34.04
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

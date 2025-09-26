@@ -5,5 +5,4 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_c1rpt")
-autoplay = true
 bus = &"Music"
