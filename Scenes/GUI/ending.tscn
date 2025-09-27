@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bctwrpoyd6fmk"]
+[gd_scene load_steps=12 format=3 uid="uid://bctwrpoyd6fmk"]
 
 [ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="1_4q6te"]
 [ext_resource type="Script" uid="uid://bjegs72raqsg6" path="res://Scripts/GUI/ending.gd" id="1_nvmu1"]
 [ext_resource type="Texture2D" uid="uid://cw1wo8binrpkg" path="res://Assets/Illustrator/seal.png" id="2_nvmu1"]
+[ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="4_078nd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_078nd"]
 content_margin_left = 40.0
@@ -23,6 +24,10 @@ border_color = Color(0, 0, 0, 1)
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_4q6te")
+
+[sub_resource type="LabelSettings" id="LabelSettings_netci"]
+font = ExtResource("4_078nd")
+font_size = 32
 
 [sub_resource type="Animation" id="Animation_078nd"]
 length = 0.001
@@ -62,11 +67,23 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scores:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(440, 752)]
+}
 
 [sub_resource type="Animation" id="Animation_nvmu1"]
 resource_name = "ending"
-length = 25.0
-step = 0.033
+length = 40.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,10 +91,10 @@ tracks/0/path = NodePath("ColorRect/Label:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.7333333, 4.9333334, 7.4666667, 9.3, 12.333333, 14.366667, 21.1, 22.266666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.7333333, 4.9333334, 7.4666667, 9.3, 12.333333, 14.366667, 21.1, 22.266666, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -110,12 +127,24 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(25),
+"times": PackedFloat32Array(40),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"return_to_main"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/Scores:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(25.00398, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(440, 752), Vector2(440, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_netci"]
@@ -132,9 +161,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nvmu1")
-player_label = NodePath("PanelContainer/PanelContainer/VBoxContainer/Label4")
+player_label = NodePath("Certificate/PanelContainer/VBoxContainer/Label4")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Certificate" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,40 +173,40 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_078nd")
 metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Certificate"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_netci")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Certificate/PanelContainer"]
 layout_mode = 2
 theme = SubResource("Theme_2yl8j")
 theme_override_constants/separation = 9
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Certificate/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Feliser J. Tower"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Certificate/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "President of Siracusa"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="Certificate/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Certificate of Pardon"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="Certificate/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "[player]"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="Certificate/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
@@ -188,18 +217,18 @@ As directed by the Proclamation of Pardon and in witness whereof, the Office of 
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Certificate/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 239
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Certificate/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_nvmu1")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Certificate/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Done at the city of Siracusa on
 January 29, 2025
@@ -229,6 +258,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 31
 text = "Thanks to your work as a white hat hacker, the world stands safer."
+
+[node name="Scores" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 428.0
+offset_right = 136.0
+offset_bottom = 819.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 59
+
+[node name="Day1Score" type="Label" parent="ColorRect/Scores"]
+layout_mode = 2
+text = "Day 1 Quiz Score:"
+label_settings = SubResource("LabelSettings_netci")
+
+[node name="Day2Score" type="Label" parent="ColorRect/Scores"]
+layout_mode = 2
+text = "Day 2 Quiz Score:"
+label_settings = SubResource("LabelSettings_netci")
+
+[node name="Day3Score" type="Label" parent="ColorRect/Scores"]
+layout_mode = 2
+text = "Day 3 Quiz Score:"
+label_settings = SubResource("LabelSettings_netci")
+
+[node name="Day4Score" type="Label" parent="ColorRect/Scores"]
+layout_mode = 2
+text = "Day 4 Quiz Score:"
+label_settings = SubResource("LabelSettings_netci")
+
+[node name="Day5Score" type="Label" parent="ColorRect/Scores"]
+layout_mode = 2
+text = "Day 5 Quiz Score:"
+label_settings = SubResource("LabelSettings_netci")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

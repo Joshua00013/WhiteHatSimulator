@@ -39,8 +39,13 @@ func save_data():
 		"piracy_exploited": CyberattackAdaptationManager.piracy_exploited,
 		"lied_to_al": CyberattackAdaptationManager.lied_to_al,
 		"lied_to_mike": CyberattackAdaptationManager.lied_to_mike,
-		"lied_to_liz": CyberattackAdaptationManager.lied_to_liz
-		
+		"lied_to_liz": CyberattackAdaptationManager.lied_to_liz,
+		# Quiz Scores
+		"day1_score" : GameManager.day1_score,
+		"day2_score" : GameManager.day2_score,
+		"day3_score" : GameManager.day3_score,
+		"day4_score" : GameManager.day4_score,
+		"day5_score" : GameManager.day5_score
 		#TODO: save the scores per day
 	}
 	file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -55,7 +60,6 @@ func load_data():
 		# Restore (with default fallbacks)
 		GameManager.player_name = data.get("player_name")
 		DayAndNightManager.initial_day = data.get("initial_day")
-		print (DayAndNightManager.initial_day)
 		CyberattackAdaptationManager.flashdrive_used = data.get("flashdrive_used" )
 		CyberattackAdaptationManager.email_used = data.get("email_used" )
 		CyberattackAdaptationManager.weak_passwords = data.get("weak_passwords" )
@@ -74,6 +78,11 @@ func load_data():
 		CyberattackAdaptationManager.lied_to_al = data.get("lied_to_al")
 		CyberattackAdaptationManager.lied_to_mike = data.get("lied_to_mike")
 		CyberattackAdaptationManager.lied_to_liz = data.get("lied_to_liz")
+		GameManager.day1_score = data.get("day1_score")
+		GameManager.day2_score = data.get("day2_score")
+		GameManager.day3_score = data.get("day3_score")
+		GameManager.day4_score = data.get("day4_score")
+		GameManager.day5_score = data.get("day5_score")
 		SignalBus.stage_finished.emit()
 	else:
 		print("No save file found.")

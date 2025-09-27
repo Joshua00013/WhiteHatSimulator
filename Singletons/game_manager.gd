@@ -21,6 +21,13 @@ var player : CharacterBody3D
 var inv : Control
 var laptop_flashdrive_plugged : bool = false : set = plug_flashdrive
 var is_game_over : bool = false
+
+var day1_score : int = 0
+var day2_score : int = 0
+var day3_score: int = 0
+var day4_score : int = 0
+var day5_score :int = 0
+
 func _ready():
 	match OS.get_name():
 		"Windows":
