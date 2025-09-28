@@ -1,8 +1,9 @@
-[gd_scene load_steps=126 format=4 uid="uid://bboey1mf24oe4"]
+[gd_scene load_steps=127 format=4 uid="uid://bboey1mf24oe4"]
 
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
+[ext_resource type="Script" uid="uid://blavcophhc2my" path="res://Scripts/Globals/hand_tracker_launcher.gd" id="3_3h4bx"]
 [ext_resource type="PackedScene" uid="uid://q6572v12x07v" path="res://Scenes/GUI/tutorial.tscn" id="5_ylsbi"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://byp0i4hd8g2lk" path="res://Scenes/GUI/game_over.tscn" id="7_33qc4"]
@@ -201,6 +202,9 @@ corridor_door = NodePath("Interactables/DoorIron2")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_jjvhh")
+
+[node name="HandTrackerLauncher" type="Node" parent="."]
+script = ExtResource("3_3h4bx")
 
 [node name="HandTrackerServer" type="Node" parent="."]
 script = ExtResource("19_hibaj")

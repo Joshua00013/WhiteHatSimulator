@@ -19,6 +19,9 @@ func _ready():
 		display.hide()
 	if OS.get_name() == "Windows":
 		var video_settings = ConfigFileHandler.load_video_settings()
+		if HandTrackerLauncher.check_hand_tracker() == false:
+			hand_tracking.button_pressed = false
+			hand_tracking.hide()
 		if video_settings.has("display_mode"):
 			match video_settings.display_mode:
 				"windowed":
@@ -30,8 +33,9 @@ func _ready():
 					
 		if video_settings.has("hand_tracking"):
 			handtracking_check_box.button_pressed = video_settings.hand_tracking
-			if handtracking_check_box.button_pressed:
+			if handtracking_check_box.button_pressed && HandTrackerLauncher.check_hand_tracker() == true:
 				HandTrackerServer.start_server()
+				HandTrackerLauncher.launch_hand_tracker()
 				
 	var audio_settings = ConfigFileHandler.load_audio_settings()
 	if audio_settings.has("music_volume"):
@@ -44,10 +48,12 @@ func _ready():
 
 
 func _on_apply_pressed():
-	if handtracking_check_box.button_pressed == true:
+	if handtracking_check_box.button_pressed == true && HandTrackerLauncher.check_hand_tracker() == true:
 		HandTrackerServer.start_server()
+		HandTrackerLauncher.launch_hand_tracker()
 	elif handtracking_check_box.button_pressed == false:
 		HandTrackerServer.stop_server()
+		HandTrackerServer.send_to_python("exit")
 	
 	ConfigFileHandler.save_video_setting("hand_tracking", handtracking_check_box.button_pressed)
 	

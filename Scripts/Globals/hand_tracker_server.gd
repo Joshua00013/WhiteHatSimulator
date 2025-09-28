@@ -3,11 +3,20 @@ extends Node
 var tcpserver = TCPServer.new()
 var client: StreamPeerTCP = null
 var port := 12345 #Change depending on python program
-
+var action_map := {
+	"release": func(): 
+		Input.action_release("hold"),
+	"hold": func():
+		Input.action_press("hold")
+}
 @export var state: bool = false
 func _ready():
 	if state == true:
 		start_server()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_tracker"):
+		send_to_python("toggle")
 
 func start_server():
 	var result = tcpserver.listen(port)
@@ -32,26 +41,12 @@ func _process(_delta):
 		else:
 			print("Error receiving data:", err_code)
 			
-var action_map := {
-	"release": func(): 
-		Input.action_release("hold"),
-	"hold": func():
-		Input.action_press("hold")
-}
+
 
 func handle_input(data: String):
 	print("Received:", data)
 	if action_map.has(data):
 		action_map[data].call()
-
-func resume_server():
-	if client != null:
-		send_to_python("resume")
-
-func pause_server():
-	if client != null:
-		pass
-		#send_to_python("pause")
 
 func stop_server():
 	if client != null:
