@@ -8,6 +8,8 @@ base_font = ExtResource("1_7d0ro")
 spacing_glyph = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s72ha"]
+content_margin_left = 25.0
+content_margin_right = 25.0
 bg_color = Color(0.762404, 0.762404, 0.762404, 1)
 border_width_left = 45
 border_width_right = 45
@@ -22,6 +24,8 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm86w"]
+content_margin_left = 25.0
+content_margin_right = 25.0
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 45
 border_width_right = 45
@@ -35,6 +39,8 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1slqh"]
+content_margin_left = 25.0
+content_margin_right = 25.0
 bg_color = Color(0.165656, 0.165656, 0.165656, 1)
 border_width_left = 45
 border_width_right = 45
@@ -49,6 +55,8 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1l07"]
+content_margin_left = 25.0
+content_margin_right = 25.0
 bg_color = Color(0.165656, 0.165656, 0.165656, 1)
 border_width_left = 45
 border_width_right = 45
@@ -63,10 +71,9 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgb2x"]
+content_margin_left = 25.0
+content_margin_right = 25.0
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 45
-border_width_right = 45
-border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
@@ -86,7 +93,8 @@ corner_radius_bottom_left = 20
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0.473974, 0.473976, 0.473977, 1)
+Button/colors/font_disabled_color = Color(0.30078125, 0.30078125, 0.30078125, 0.5019608)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0.678942, 0.678944, 0.678945, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.41598, 0.41598, 0.41598, 1)

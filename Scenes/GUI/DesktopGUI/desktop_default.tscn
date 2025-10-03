@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://jjhva651ce8b"]
 
-[ext_resource type="Script" uid="uid://ds26kq6wue5fa" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
+[ext_resource type="Script" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
 [ext_resource type="PackedScene" uid="uid://bvsldp4chcrh6" path="res://Scenes/GUI/CleanUI/sql_icon.tscn" id="2_pga4f"]
 [ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_xxt4y"]

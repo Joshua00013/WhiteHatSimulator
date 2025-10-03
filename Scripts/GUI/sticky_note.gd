@@ -9,6 +9,9 @@ var active
 @export var paper_ui : PanelContainer
 @export var password_label : Label
 @export var heading : Label
+
+@onready var return_button = $ReturnButton
+
 func _ready() -> void:
 	if password_text != null:
 		password_label.text = password_text
@@ -30,6 +33,7 @@ func _process(_delta: float) -> void:
 		exit_ui()
 
 func _on_interactable_interact_triggered() -> void:
+	return_button.show()
 	CyberattackAdaptationManager.noting_passwords = false
 	
 	if computer != null:
@@ -47,6 +51,7 @@ func _on_interactable_interact_triggered() -> void:
 	paper_ui.show()
 	
 func exit_ui():
+	return_button.hide()
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = true #Change Android UI visibility to shown

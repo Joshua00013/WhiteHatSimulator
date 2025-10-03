@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://ep3w5lovayjv"]
+[gd_scene load_steps=16 format=3 uid="uid://ep3w5lovayjv"]
 
 [ext_resource type="PackedScene" uid="uid://bwgbom7231gc5" path="res://Assets/Exported3dModel/FingerPrint.glb" id="1_gyf6y"]
 [ext_resource type="Script" uid="uid://brjclyjqv4kqa" path="res://Scripts/Interactables/finger_print.gd" id="2_1su4a"]
 [ext_resource type="Texture2D" uid="uid://bjh7gye0hhd4" path="res://Assets/Illustrator/UINinePatch.png" id="3_r16xi"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_xee5w"]
+[ext_resource type="PackedScene" uid="uid://bx0paynrsx1un" path="res://Scenes/GUI/return_button.tscn" id="5_iu4m3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1su4a"]
 size = Vector3(0.866137, 1.38219, 0.423157)
@@ -172,6 +173,8 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = SubResource("Theme_74hp8")
 text = "9"
+
+[node name="ReturnButton" parent="CanvasLayer" index="1" instance=ExtResource("5_iu4m3")]
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 [connection signal="button_down" from="CanvasLayer/Control/NinePatchRect/MarginContainer/VBoxContainer/GridContainer/TextureButton" to="." method="_on_texture_button_button_down"]

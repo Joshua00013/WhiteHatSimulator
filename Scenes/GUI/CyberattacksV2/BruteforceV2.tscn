@@ -2143,6 +2143,8 @@ theme_override_constants/margin_bottom = 5
 
 [node name="CodeEdit" type="CodeEdit" parent="Body/CodeContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qmx2e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0tp54")
@@ -2261,6 +2263,8 @@ size_flags_vertical = 4
 
 [node name="CodeEdit" type="CodeEdit" parent="WindowBackground/Window/WindowContents/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.6)
 text = "['R','4','p','9','t','L','2','m','Q','8']
 R4p9tL2mQ8
@@ -2385,7 +2389,6 @@ oP1c9L6sR2
 ['C','y','p','h',e','r','2','0','2','5']
 Cypher2025"
 editable = false
-scroll_vertical = 115.0
 line_folding = true
 
 [node name="Debug" type="Control" parent="."]

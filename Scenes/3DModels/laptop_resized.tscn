@@ -28,17 +28,19 @@
 [ext_resource type="Theme" uid="uid://d2c7tbwjgxp7r" path="res://Themes/windows.tres" id="26_ctr30"]
 [ext_resource type="Texture2D" uid="uid://c8lmrvlovi86s" path="res://down.png" id="27_sb1hh"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
-size = Vector2(0.62, 0.545)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_57jh0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sb1hh"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62orf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctr30"]
 resource_local_to_scene = true
-shading_mode = 0
-albedo_color = Color(1.1, 1.1, 1.1, 1)
-albedo_texture = SubResource("ViewportTexture_57jh0")
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_sb1hh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oho7i"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ctr30")
+size = Vector2(0.635, 0.625)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aerrq"]
 data = PackedVector3Array(0.2875, -0.3325, 0, -0.2875, -0.3325, 0, 0.2875, 0.3325, 0, -0.2875, -0.3325, 0, -0.2875, 0.3325, 0, 0.2875, 0.3325, 0)
@@ -1457,7 +1459,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_u45uk"]
 resource_name = "play_fileless"
-length = 4.5
+length = 3.8455
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1465,10 +1467,10 @@ tracks/0/path = NodePath("FilelessSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2203,13 +2205,11 @@ minigame = NodePath("LaptopMinigameComponent")
 success_animation = NodePath("SuccessAnimationPlayer")
 
 [node name="laptop_screen" parent="laptop_base" index="1"]
-transform = Transform3D(1, 0, 0, 0, -3.1190125e-06, 1, 0, -0.861608, -3.6199901e-06, -0.0955432, 0.0471079, 0.235429)
+transform = Transform3D(1, 0, 0, 0, -3.1190125e-06, 1, 0, -0.861608, -3.6199901e-06, -0.095543206, 0.047107942, 0.20716384)
 
 [node name="Screen" type="MeshInstance3D" parent="laptop_base/laptop_screen" index="0"]
-transform = Transform3D(-1.76488, 0, -8.74228e-08, 0, 1.20714, 0, 1.5429e-07, 0, -1, -0.000462141, 0.45762, -0.00686061)
+transform = Transform3D(-1.76488, 0, -8.74228e-08, 0, 1.20714, 0, 1.5429e-07, 0, -1, -0.0004621446, 0.40289703, -0.006860614)
 mesh = SubResource("QuadMesh_oho7i")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_62orf")
 
 [node name="Area3D" type="Area3D" parent="laptop_base/laptop_screen/Screen" index="0"]
 
@@ -2218,7 +2218,7 @@ transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_aerrq")
 
 [node name="Camera3D" type="Camera3D" parent="." index="1"]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.448, -0.225)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.091, 0.37470675, -0.1787714)
 
 [node name="Interactable" parent="." index="2" instance=ExtResource("3_57jh0")]
 
@@ -2227,7 +2227,8 @@ transform = Transform3D(0.0188931, 0, 0, 0, 0.0188931, 0, 0, 0, 0.0188931, -0.09
 shape = SubResource("BoxShape3D_icmsk")
 
 [node name="SubViewport" type="SubViewport" parent="." index="3"]
-size = Vector2i(1152, 648)
+canvas_item_default_texture_filter = 0
+size = Vector2i(1157, 678)
 
 [node name="DesktopTabs" parent="SubViewport" index="0" instance=ExtResource("5_57jh0")]
 
@@ -2264,25 +2265,17 @@ offset_bottom = -33.0
 
 [node name="Next" parent="." index="8" instance=ExtResource("10_fd17r")]
 visible = false
-anchor_left = 0.736111
-anchor_top = 0.802469
-anchor_right = 0.865451
-anchor_bottom = 0.859568
-offset_left = 5.000122
-offset_top = 56.00006
-offset_right = 5.0004883
-offset_bottom = 56.00006
+anchor_left = 0.7404514
+anchor_top = 0.8888889
+anchor_right = 0.8697917
+anchor_bottom = 0.9459878
 
 [node name="Back" parent="." index="9" instance=ExtResource("11_bpdqv")]
 visible = false
-anchor_left = 0.131944
-anchor_top = 0.802469
-anchor_right = 0.262153
-anchor_bottom = 0.859568
-offset_left = 5.000519
-offset_top = 56.00006
-offset_right = 5.000519
-offset_bottom = 56.00006
+anchor_left = 0.13628472
+anchor_top = 0.8888889
+anchor_right = 0.2664937
+anchor_bottom = 0.9459878
 text = "Back"
 
 [node name="Node" type="CanvasLayer" parent="." index="10" node_paths=PackedStringArray("subviewport")]
@@ -3142,8 +3135,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
-offset_right = -195.99658
-offset_bottom = -145.99976
+offset_right = -195.99615
+offset_bottom = -145.99991
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -3201,6 +3194,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.819608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pcl5q")
 text = "
 "
+scroll_vertical = 0.9999999999999998
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PhishingSuccess/LoginPanel/VBoxContainer" index="2"]

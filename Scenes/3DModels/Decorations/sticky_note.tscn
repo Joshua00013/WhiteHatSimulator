@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://p1vsqrja8fac"]
+[gd_scene load_steps=7 format=3 uid="uid://p1vsqrja8fac"]
 
 [ext_resource type="PackedScene" uid="uid://dfwwgpxilh0kl" path="res://Assets/Exported3dModel/sticky_note.glb" id="1_lmhf6"]
 [ext_resource type="Script" uid="uid://bw7ppf2jcki5m" path="res://Scripts/GUI/sticky_note.gd" id="2_megpp"]
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_jd8fo"]
+[ext_resource type="PackedScene" uid="uid://bx0paynrsx1un" path="res://Scenes/GUI/return_button.tscn" id="4_jd8fo"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lhujc"]
 data = PackedVector3Array(8.010799, 7.6473, 0, -8.010799, -7.6473, 0, 8.010799, -7.6473, 0, 8.010799, 7.6473, 0, -8.010799, 7.6473, 0, -8.010799, -7.6473, 0)
@@ -50,5 +51,7 @@ text = "Password: "
 [node name="PasswordLabel" type="Label" parent="ColorRect" index="1"]
 layout_mode = 2
 text = "1234"
+
+[node name="ReturnButton" parent="." index="3" instance=ExtResource("4_jd8fo")]
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]

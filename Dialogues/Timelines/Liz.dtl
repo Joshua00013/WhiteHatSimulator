@@ -11,7 +11,7 @@ if {lied_to_liz}  ==  false and CyberattackAdaptationManager.lied_to_liz == fals
 	- Sorry, I'm busy right now.
 		Okay then.
 		Guess I'll eat dust here or whatever.
-elif {lied_to_liz} == true or  CyberattackAdaptationManager.lied_to_liz == true:
+elif CyberattackAdaptationManager.lied_to_liz == true:
 	Go away
 else:
 	Hello there. You seem to be a new face out here.
