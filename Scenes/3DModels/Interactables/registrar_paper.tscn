@@ -62,5 +62,6 @@ server room."
 horizontal_alignment = 1
 
 [node name="ReturnButton" parent="." index="4" instance=ExtResource("5_fv420")]
+visible = false
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
