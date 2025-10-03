@@ -5,13 +5,18 @@ if {lied_to_liz}  ==  false and CyberattackAdaptationManager.lied_to_liz == fals
 	- Yeah, sure.
 		Nice! You're the best!
 		Okay okay, the username is Liz and the password is "{liz_password}"
-		Siimple, right?
+		Siimple, right? I'll be in the cafeteria if you need me.
 		set {lied_to_liz} = true
 		set {CyberattackAdaptationManager.lied_to_liz} = true
+		[signal arg="lied_to_liz"]
 	- Sorry, I'm busy right now.
 		Okay then.
 		Guess I'll eat dust here or whatever.
 elif CyberattackAdaptationManager.lied_to_liz == true:
 	Go away
+elif {lied_to_liz} == true and CyberattackAdaptationManager.lied_to_liz == false:
+	Have you sent the email yet?
+	- Not yet, can you tell me the password again?
+		The password is "{liz_password}"
 else:
 	Hello there. You seem to be a new face out here.

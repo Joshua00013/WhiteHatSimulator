@@ -64,3 +64,8 @@ func _on_email_button_pressed():
 func _on_texture_button_pressed():
 	print("PRESSED CLOSE BROWSER")
 	hide()
+
+
+func _on_left_pressed():
+	print_debug("PRESSED BACK")
+	hide_pages()

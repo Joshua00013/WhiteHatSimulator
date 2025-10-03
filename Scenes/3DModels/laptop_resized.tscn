@@ -542,7 +542,7 @@ tracks/34/keys = {
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("PhishingSuccess/TextureRect:position")
+tracks/35/path = NodePath("PhishingSuccess/Control/TextureRect:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
@@ -554,7 +554,7 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("PhishingSuccess/TextureRect:size")
+tracks/36/path = NodePath("PhishingSuccess/Control/TextureRect:size")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
@@ -799,15 +799,15 @@ tracks/0/path = NodePath("PhishingSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.6, 3.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PhishingSuccess/TextureRect:position")
+tracks/1/path = NodePath("PhishingSuccess/Control/TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -819,7 +819,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PhishingSuccess/TextureRect:size")
+tracks/2/path = NodePath("PhishingSuccess/Control/TextureRect:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -883,12 +883,9 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(3.7),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"phishing_part4"
-}]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -917,7 +914,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("PhishingSuccess/TextureRect:visible")
+tracks/10/path = NodePath("PhishingSuccess/Control/TextureRect:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1723,7 +1720,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PhishingSuccess/TextureRect:visible")
+tracks/4/path = NodePath("PhishingSuccess/Control/TextureRect:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -2398,7 +2395,7 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -195.99994
-offset_bottom = -145.99994
+offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -3136,7 +3133,7 @@ anchor_bottom = 0.5
 offset_left = -242.0
 offset_top = -192.0
 offset_right = -195.99615
-offset_bottom = -145.99991
+offset_bottom = -145.99994
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_714hg")
@@ -3491,8 +3488,15 @@ theme_override_font_sizes/normal_font_size = 46
 text = "Victim Screencam"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PhishingSuccess" index="3"]
-visible = false
+[node name="Control" type="Control" parent="PhishingSuccess" index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PhishingSuccess/Control" index="0"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 1
 anchors_preset = 8

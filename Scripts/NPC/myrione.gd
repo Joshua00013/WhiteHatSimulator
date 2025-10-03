@@ -33,7 +33,7 @@ var sit_val = 0
 @export var target_area_8 : Node3D
 @export var target_area_9 : Node3D
 @export var target_area_10 : Node3D
-
+@export var dialogue_area : Node3D
 var schedule : Dictionary = {}
 
 @export var blend_speed = 15
@@ -52,7 +52,9 @@ func _ready() -> void:
 	nav_agent_refresh_timer.connect("timeout",refresh_agent)
 	interactable.connect("interact_triggered",_on_interactable_interact_triggered)
 	
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	
 	DayAndNightManager.time_tick_hour.connect(calc_schedule)
 	DayAndNightManager.time_tick.connect(handle_computer)
 	
@@ -248,4 +250,8 @@ func _on_interactable_interact_triggered() -> void:
 	if dialogue == "Liz":
 		Dialogic.VAR.liz_password = PersonalComputer.login_screen.password
 	show_dialogoue(dialogue)
-	
+
+func _on_dialogic_signal(arg : String):
+	if arg == "lied_to_liz" && dialogue == "Liz":
+		PersonalComputer.in_use = false
+		change_target(dialogue_area)

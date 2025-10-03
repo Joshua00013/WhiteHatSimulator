@@ -278,7 +278,7 @@ func _play_phishing(email : String):
 	elif CyberattackAdaptationManager.email_used && CyberattackAdaptationManager.phishing_used:
 		success_animation.play("open_phishing_email_fail")
 		await success_animation.animation_finished
-		UiManager.popup.display_popup("Email failed","The target did not click the link")
+		UiManager.popup.display_popup("Email failed","The target did not click the link", false)
 	 #TODO : Create a function connected to SignalBus email sent that changes the string for the email labels etc.
 func _play_ransomware_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:

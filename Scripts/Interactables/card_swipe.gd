@@ -51,8 +51,6 @@ func _input(event):
 					last_mouse_y = mouse_pos.y
 				
 func _on_interactable_interact_triggered() -> void:
-	print(GameManager.check_inv(keycard_item))
-	return_button.show()
 	if GameManager.check_inv(keycard_item) == true:
 		match OS.get_name():
 			"Android":
@@ -64,7 +62,7 @@ func _on_interactable_interact_triggered() -> void:
 			GameManager.ui_active = true
 			active = true
 			initialize_keycard()
-		
+			return_button.show()
 func exit_ui():
 	return_button.hide()
 	match OS.get_name():

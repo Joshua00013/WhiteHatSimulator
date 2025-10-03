@@ -339,11 +339,12 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer4")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col4")
 target_area_5 = NodePath("../../Markers/Cafeteria2")
 
-[node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") instance=ExtResource("21_pdsj5")]
+[node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5", "dialogue_area") instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78581, -0.00113273, 50.0606)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer2")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col2")
 target_area_5 = NodePath("../../Markers/Cafeteria2")
+dialogue_area = NodePath("../../Markers/Cafeteria3")
 
 [node name="myrione" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5", "target_area_7") instance=ExtResource("32_e08e2")]
 transform = Transform3D(0.996387, 0, -0.08493, 0, 1, 0, 0.08493, 0, 0.996387, 4.55009, -0.00113249, 53.2225)
