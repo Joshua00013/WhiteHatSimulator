@@ -20,7 +20,7 @@ func _ready():
 	if OS.get_name() == "Windows":
 		var video_settings = ConfigFileHandler.load_video_settings()
 		if HandTrackerLauncher.check_hand_tracker() == false:
-			hand_tracking.button_pressed = false
+			handtracking_check_box.button_pressed = false
 			hand_tracking.hide()
 		if video_settings.has("display_mode"):
 			match video_settings.display_mode:
@@ -48,6 +48,8 @@ func _ready():
 
 
 func _on_apply_pressed():
+	print(handtracking_check_box.button_pressed)
+	print(HandTrackerLauncher.check_hand_tracker())
 	if handtracking_check_box.button_pressed == true && HandTrackerLauncher.check_hand_tracker() == true:
 		HandTrackerServer.start_server()
 		HandTrackerLauncher.launch_hand_tracker()
