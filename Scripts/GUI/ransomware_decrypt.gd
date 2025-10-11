@@ -55,8 +55,9 @@ func _play_previous():
 		anim_player.play_backwards(animations[current_index])
 
 func _on_button_pressed():
+	current_index = 0
+	anim_player.play("RESET")
 	CyberattackManager.ransomware_ready = true
-	print("CODE DONE")
 	emit_signal("code_finished")
 
 

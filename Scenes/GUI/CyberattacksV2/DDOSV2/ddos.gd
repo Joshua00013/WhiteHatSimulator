@@ -45,6 +45,8 @@ func _play_next():
 			ddos_finished.emit()
 	else:
 		if animations[current_index] == "reset":
+			current_index = 0
+			anim_player.play("RESET")
 			emit_signal("code_finished")
 
 func _play_previous():

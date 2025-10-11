@@ -1270,12 +1270,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_l8cv3")
 }
 
-[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "deployment_animation", "deployment_choice")]
+[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "deployment_animation", "deployment_choice", "return_button")]
 script = ExtResource("4_qfcx5")
 ransomware_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware")
 bruteforce_btn = NodePath("../Model/SubViewport/TabContainer/Login/Bruteforce")
 deployment_animation = NodePath("../DesktopAnimations")
 deployment_choice = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice")
+return_button = NodePath("../ReturnButton")
 
 [node name="PhishingSuccess" type="Control" parent="."]
 visible = false

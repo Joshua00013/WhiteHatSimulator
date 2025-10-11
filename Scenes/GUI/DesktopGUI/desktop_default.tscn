@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://jjhva651ce8b"]
+[gd_scene load_steps=29 format=3 uid="uid://jjhva651ce8b"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/Ransomware/desktop_default.gd" id="1_pekke"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_bikpg"]
@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://bd84mf3o5vdh5" path="res://Scenes/GUI/cyberattack_card.tscn" id="11_woodw"]
 [ext_resource type="Theme" uid="uid://rartua8qh51p" path="res://Themes/LOIC.tres" id="13_hyjlr"]
 [ext_resource type="PackedScene" uid="uid://bl2dl6taw3m4s" path="res://Scenes/GUI/CleanUI/sql_window.tscn" id="14_pga4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pga4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tk1q4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxt4y"]
 content_margin_left = 50.0
@@ -189,31 +193,30 @@ text = "This text file is compose of your personal data such as:
 [node name="KeyWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]
 visible = false
 layout_mode = 1
-anchor_left = 0.364791
-anchor_top = 0.167224
-anchor_right = 0.916515
-anchor_bottom = 0.714047
-offset_left = -25.0
-offset_top = -25.0
-offset_right = -25.0
-offset_bottom = -25.0
+anchor_left = 0.34210497
+anchor_top = 0.12541798
+anchor_right = 0.8938289
+anchor_bottom = 0.67224103
+offset_left = 3.0517578e-05
+offset_right = 6.1035156e-05
 
 [node name="Title" parent="WindowContainer/KeyWindow/HBoxContainer" index="0"]
 text = "key.key"
 
-[node name="CodeEdit" type="CodeEdit" parent="WindowContainer/KeyWindow"]
+[node name="CodeEdit" type="TextEdit" parent="WindowContainer/KeyWindow"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 32.0
-offset_right = -7.0
-offset_bottom = -7.0
+offset_top = 35.000046
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pga4f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tk1q4")
+text = "$2b$12$X9G1Pp0YHltXy4HjOZYRdeS9T7Lk03PZ4vKpY7D7hKMEGhI8FoZhe
+"
 editable = false
 
 [node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("9_p75vd")]

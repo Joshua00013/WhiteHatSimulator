@@ -22,7 +22,6 @@ func _process(_delta):
 		elif animations[current_index] == "fileless_18":
 			CyberattackManager.fileless_ready = true
 			emit_signal("code_finished")
-		
 		_play_next()
 	elif Input.is_action_just_pressed("back_pressed"):
 		if animations[current_index] in ["fileless_02", "fileless_11"]:
@@ -36,6 +35,8 @@ func _play_next():
 		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
+			current_index = 0
+			anim_player.play("RESET")
 			emit_signal("code_finished")
 
 func _play_previous():

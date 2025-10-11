@@ -36,5 +36,7 @@ func _play_previous():
 
 
 func _window_exited() -> void:
+	current_index = 0
+	anim_player.play("RESET")
 	bruteforce_exited.emit()
 	CyberattackManager.bruteforce_ready =true

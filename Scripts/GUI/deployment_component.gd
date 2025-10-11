@@ -5,6 +5,7 @@ extends Node
 
 @export var deployment_animation: AnimationPlayer
 @export var deployment_choice : Control
+@export var return_button : Button
 func _ready():
 	bruteforce_btn.hide()
 	
@@ -22,6 +23,7 @@ func update_buttons(attack_name):
 
 # TODO: Animations for deploying on pc
 func _on_ransomware_pressed():
+	return_button.hide()
 	deployment_choice.hide()
 	CyberattackManager.exploitation_finished = true
 	deployment_animation.play("execute_cyberattack")
@@ -43,6 +45,7 @@ func _on_ransomware_pressed():
 		deployment_animation.play("play_ransomware_fail")
 		await deployment_animation.animation_finished
 		UiManager.popup.display_popup("Installation failed", "It seems that this PC has an antivirus, you should use a better cyberattack", false)
+	return_button.show()
 
 
 func _on_fileless_pressed():

@@ -42,7 +42,8 @@ func _play_next():
 		anim_player.play(animations[current_index])
 	else:
 		if animations[current_index] == "reset":
-			pass
+			current_index = 0
+			anim_player.play("RESET")
 
 func _play_previous():
 	if current_index > 0:
@@ -55,6 +56,4 @@ func _handle() -> void:
 	waiting_for_finish = false
 	if animations[current_index] in ["fileless_20", "fileless_28"]:
 		SignalBus.fileless_part2_finished.emit()
-		_play_next()
-	else:
-		_play_next()
+	_play_next()
