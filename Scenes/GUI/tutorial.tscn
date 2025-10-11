@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxa5xeu4b7mac" path="res://Scenes/GUI/tutorial_button.tscn" id="1_7hedy"]
 [ext_resource type="Texture2D" uid="uid://71oia65mm6vx" path="res://Assets/Photos/Screenshot 2025-09-26 190945.png" id="1_38uaa"]
-[ext_resource type="Script" uid="uid://bm58vayg8s0kx" path="res://Scripts/GUI/tutorial.gd" id="1_w6lqn"]
+[ext_resource type="Script" path="res://Scripts/GUI/tutorial.gd" id="1_w6lqn"]
 [ext_resource type="Texture2D" uid="uid://dso0utxganied" path="res://Assets/Illustrator/close.png" id="1_wh666"]
 [ext_resource type="Texture2D" uid="uid://jy6ldl87dxjg" path="res://Assets/Illustrator/whitehat logo.svg" id="2_ayddh"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="2_fypel"]
@@ -151,7 +151,7 @@ custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
-text = "You are tasked to infiltrate a company to earn your pardon. Discover vulnerabilities and create a variety of cyberattacks to reach your goal!"
+text = "You are tasked to infiltrate a company to earn your pardon. Discover vulnerabilities and create a variety of cyberattacks to reach your goal! You may view this page again from the pause menu."
 autowrap_mode = 2
 
 [node name="Tailgating" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
@@ -167,18 +167,18 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TAILGATING"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
-layout_mode = 2
-texture = ExtResource("1_38uaa")
-expand_mode = 5
-
 [node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
-text = "You can tailgate employees to gain access to different areas. However, be careful as you might find yourself trapped."
+text = "You can tailgate employees to gain access to different areas. However, be careful as you might find yourself trapped. Should you find yourself in that situation, you may wait for an employee to exit the area! Or you may also choose to restart the stage."
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
+layout_mode = 2
+texture = ExtResource("1_38uaa")
+expand_mode = 5
 
 [node name="Time" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
 visible = false
@@ -193,11 +193,6 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TIME"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
-layout_mode = 2
-texture = ExtResource("3_5b13s")
-expand_mode = 5
-
 [node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
@@ -205,6 +200,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
 text = "Employees have their own schedules. You may keep track of the time and watch their movement. Most employees go to the cafeteria at 12:00. Do be careful however, as employees would go home at 18:00 and you will fail your job!"
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
+layout_mode = 2
+texture = ExtResource("3_5b13s")
+expand_mode = 5
 
 [node name="SocialEngineering" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
 visible = false
@@ -219,11 +219,6 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "SOCIAL ENGINEERING"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
-layout_mode = 2
-texture = ExtResource("5_3wvw2")
-expand_mode = 5
-
 [node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
@@ -231,6 +226,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
 text = "You can lie your way into the office and trick employees into giving you essential information. Just make sure you don't get caught!"
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
+layout_mode = 2
+texture = ExtResource("5_3wvw2")
+expand_mode = 5
 
 [node name="Tasks" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
 visible = false
@@ -245,11 +245,6 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TASKS"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
-layout_mode = 2
-texture = ExtResource("6_3wvw2")
-expand_mode = 5
-
 [node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
@@ -257,6 +252,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
 text = "Follow your tasks and make sure not to skip steps! But don't worry, you may still try different attempts if you fail."
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
+layout_mode = 2
+texture = ExtResource("6_3wvw2")
+expand_mode = 5
 
 [node name="Inventory" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
 visible = false
@@ -271,11 +271,6 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "INVENTORY"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
-layout_mode = 2
-texture = ExtResource("9_cjbfe")
-expand_mode = 5
-
 [node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
@@ -283,6 +278,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fypel")
 text = "Your inventory contains different items and often leads to clues on what to do. Be sure to always read the files that the government gave you!"
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
+layout_mode = 2
+texture = ExtResource("9_cjbfe")
+expand_mode = 5
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1

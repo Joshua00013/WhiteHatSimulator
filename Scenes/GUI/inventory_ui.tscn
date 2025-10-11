@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://2n1j3p5rpa0k" path="res://Assets/Assets Wenrexa UI Sci-Fi Minimalism #01/СommonElement/BtnBack.png" id="6_jbs4u"]
 
 [node name="InventoryUI" type="Control" node_paths=PackedStringArray("slot_container", "item_name", "item_description")]
+process_mode = 3
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 3
 anchors_preset = 15

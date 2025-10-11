@@ -54,12 +54,14 @@ func _process(_delta: float) -> void:
 			open()
 
 func open():
+	get_tree().paused = true
 	active = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	GameManager.ui_active = true
 	visible = true
 
 func close():
+	get_tree().paused = false
 	active = false
 	clear_description()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

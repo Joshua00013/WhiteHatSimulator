@@ -93,7 +93,7 @@ func handle_computer(_day:int, _hour:int, _minutes:int):
 			if PersonalComputer.player_in_use == true:
 				UiManager.game_over_ui.play()
 			PersonalComputer.login()
-			PersonalComputer.in_use = true
+		PersonalComputer.in_use = true
 			
 	elif stood_up == true && PersonalComputer != null && CyberattackAdaptationManager.unattended_pc_used == true:
 		stood_up = false
