@@ -185,6 +185,7 @@ name = "Myrione"
 username = "myrione"
 password = "11223344"
 email = "myrione@company.com"
+pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fg68e"]
