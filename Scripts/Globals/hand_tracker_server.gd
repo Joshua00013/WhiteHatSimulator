@@ -5,9 +5,12 @@ var client: StreamPeerTCP = null
 var port := 12345 #Change depending on python program
 var action_map := {
 	"release": func(): 
-		Input.action_release("hold"),
+		Input.action_release("hold")
+		Input.action_release("pinch"),
 	"hold": func():
-		Input.action_press("hold")
+		Input.action_press("hold"),
+	"pinch": func():
+		Input.action_press("pinch")
 }
 @export var state: bool = false
 func _ready():
