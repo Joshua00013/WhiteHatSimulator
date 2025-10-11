@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cgx7d6dgoy5t3"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cgx7d6dgoy5t3"]
 
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="1_7d0ro"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_xgb2x"]
@@ -23,27 +23,12 @@ shadow_color = Color(0, 0, 0, 0.352941)
 shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm86w"]
-content_margin_left = 25.0
-content_margin_right = 25.0
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 45
-border_width_right = 45
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 90
-corner_radius_top_right = 90
-corner_radius_bottom_right = 90
-corner_radius_bottom_left = 90
-shadow_color = Color(0, 0, 0, 0.352941)
-shadow_size = 5
-shadow_offset = Vector2(0, 3)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgb2x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1slqh"]
 content_margin_left = 25.0
 content_margin_right = 25.0
 bg_color = Color(0.165656, 0.165656, 0.165656, 1)
-border_width_left = 45
-border_width_right = 45
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 corner_radius_top_left = 90
@@ -58,8 +43,6 @@ shadow_offset = Vector2(0, 3)
 content_margin_left = 25.0
 content_margin_right = 25.0
 bg_color = Color(0.165656, 0.165656, 0.165656, 1)
-border_width_left = 45
-border_width_right = 45
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 corner_radius_top_left = 90
@@ -74,6 +57,20 @@ shadow_offset = Vector2(0, 3)
 content_margin_left = 25.0
 content_margin_right = 25.0
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+shadow_color = Color(0, 0, 0, 0.352941)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfny2"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
@@ -100,12 +97,13 @@ Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.41598, 0.41598, 0.41598, 1)
 Button/fonts/font = SubResource("FontVariation_xgb2x")
 Button/styles/disabled = SubResource("StyleBoxFlat_s72ha")
-Button/styles/focus = SubResource("StyleBoxFlat_sm86w")
+Button/styles/focus = SubResource("StyleBoxEmpty_xgb2x")
 Button/styles/hover = SubResource("StyleBoxFlat_1slqh")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_h1l07")
 Button/styles/normal = SubResource("StyleBoxFlat_xgb2x")
+Button/styles/pressed = SubResource("StyleBoxFlat_jfny2")
 Label/colors/font_color = Color(1, 1, 1, 0.486275)
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_7d0ro")
 ProgressBar/constants/outline_size = 5
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_7d0ro")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bw63rufk8of5w"]
+[gd_scene load_steps=23 format=3 uid="uid://bw63rufk8of5w"]
 
 [ext_resource type="Script" uid="uid://skwa24u0pu8" path="res://GUI/MainMenuUI/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://clf722iyeb32e" path="res://Scripts/GUI/main_menu.gd" id="1_ir4l5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://cbu50aslph5fy" path="res://Themes/Arknights_Side_Buttons.tres" id="3_41b15"]
 [ext_resource type="PackedScene" uid="uid://c2v5sap2ns8ix" path="res://Scenes/3DModels/Decorations/table_office_desk_2_col.tscn" id="4_5j0qv"]
 [ext_resource type="PackedScene" uid="uid://1o70vuj3pxw" path="res://Scenes/Interactables/computer_main.tscn" id="5_5j0qv"]
+[ext_resource type="Shader" uid="uid://mt7ombc5on8c" path="res://EnvironmentShaders/blur_darken.gdshader" id="6_e4lvi"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="6_prijn"]
 [ext_resource type="Script" uid="uid://cmppg701rsorj" path="res://Scripts/GUI/name_container.gd" id="7_nat8f"]
 [ext_resource type="Script" uid="uid://bcwf53kfrrs7e" path="res://Scripts/GUI/load_container.gd" id="8_ueaw5"]
@@ -21,12 +22,17 @@ sky = SubResource("Sky_ir4l5")
 [sub_resource type="Theme" id="Theme_lfg1o"]
 Label/fonts/font = ExtResource("1_v5uxc")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgykf"]
+shader = ExtResource("6_e4lvi")
+shader_parameter/lod = 2.8290001343775
+shader_parameter/mix_percentage = 0.6490000308275
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueaw5"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.5569528, 0.5569531, 0.556953, 1)
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.19817153, 0.19299316, 0.2421875, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -37,18 +43,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nat8f"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
+bg_color = Color(0.14355467, 0.13989258, 0.1875, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -59,7 +54,18 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.37413922, 0.37413928, 0.37413913, 1)
+bg_color = Color(0.14355467, 0.13989258, 0.1875, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbtpd"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.14355467, 0.13989258, 0.1875, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -99,26 +105,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MainMenuUI"]
 layout_mode = 1
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 656.0
-offset_bottom = 102.0
+anchors_preset = -1
+anchor_left = 0.059895832
+anchor_top = 0.08950617
+anchor_right = 0.5946181
+anchor_bottom = 0.18518518
 theme_override_constants/shadow_offset_y = 30
 theme_override_font_sizes/font_size = 63
 text = "White Hat Simulator"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenuUI"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = -172.0
-offset_right = 464.0
-offset_bottom = 146.0
+anchors_preset = -1
+anchor_left = 0.066840276
+anchor_top = 0.27932099
+anchor_right = 0.4418403
+anchor_bottom = 0.77006173
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/MarginContainer"]
 layout_mode = 2
@@ -159,54 +166,63 @@ alignment = 0
 visible = false
 layout_mode = 1
 
-[node name="NameContainer" type="PanelContainer" parent="MainMenuUI"]
+[node name="NameContainer" type="ColorRect" parent="MainMenuUI"]
 visible = false
+material = SubResource("ShaderMaterial_cgykf")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -132.0
-offset_right = 240.0
-offset_bottom = 132.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("6_prijn")
-theme_override_styles/panel = SubResource("StyleBoxFlat_ueaw5")
 script = ExtResource("7_nat8f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/NameContainer"]
-layout_mode = 2
-theme_override_constants/separation = 74
+[node name="NamePanel" type="PanelContainer" parent="MainMenuUI/NameContainer"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 197.0
+offset_right = 808.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_prijn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ueaw5")
 
-[node name="Label" type="Label" parent="MainMenuUI/NameContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/NameContainer/NamePanel"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MainMenuUI/NameContainer/NamePanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
 text = "Enter your name"
 
-[node name="LineEdit" type="LineEdit" parent="MainMenuUI/NameContainer/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="MainMenuUI/NameContainer/NamePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 39.435)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_prijn")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_nat8f")
-theme_override_styles/focus = SubResource("StyleBoxFlat_e4lvi")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_e4lvi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tbtpd")
 placeholder_text = "Name"
 emoji_menu_enabled = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuUI/NameContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuUI/NameContainer/NamePanel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 149
 alignment = 1
 
-[node name="Back" type="Button" parent="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer"]
+[node name="Back" type="Button" parent="MainMenuUI/NameContainer/NamePanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Back"
 
-[node name="Confirm" type="Button" parent="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer"]
+[node name="Confirm" type="Button" parent="MainMenuUI/NameContainer/NamePanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Confirm"
 
 [node name="LoadContainer" type="PanelContainer" parent="MainMenuUI"]
@@ -263,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 mesh = SubResource("QuadMesh_prijn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.954569, 0, 0.297991, 0, 1, 0, -0.297991, 0, 0.954569, 0.608663, 1.91634, 0.265915)
+transform = Transform3D(0.9545689, 0, 0.29799098, 0, 1, 0, -0.29799098, 0, 0.9545689, 0.608663, 1.91634, 0.265915)
 
 [node name="Table_OfficeDesk2-col" parent="." instance=ExtResource("4_5j0qv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510874, 0, -1.37005)
@@ -275,6 +291,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.6757
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/LoadGame" to="MainMenuUI" method="_on_load_pressed"]
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Settings" to="MainMenuUI" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/Quit" to="MainMenuUI" method="_on_quit_pressed"]
-[connection signal="pressed" from="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer/Back" to="MainMenuUI/NameContainer" method="_on_back_pressed"]
-[connection signal="pressed" from="MainMenuUI/NameContainer/VBoxContainer/HBoxContainer/Confirm" to="MainMenuUI/NameContainer" method="_on_confirm_pressed"]
+[connection signal="pressed" from="MainMenuUI/NameContainer/NamePanel/VBoxContainer/HBoxContainer/Back" to="MainMenuUI/NameContainer" method="_on_back_pressed"]
+[connection signal="pressed" from="MainMenuUI/NameContainer/NamePanel/VBoxContainer/HBoxContainer/Confirm" to="MainMenuUI/NameContainer" method="_on_confirm_pressed"]
 [connection signal="pressed" from="MainMenuUI/LoadContainer/VBoxContainer/Back" to="MainMenuUI/LoadContainer" method="_on_back_pressed"]

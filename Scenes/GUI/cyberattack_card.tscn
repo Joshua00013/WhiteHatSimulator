@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="1_5lndt"]
 [ext_resource type="Texture2D" uid="uid://i4cuokj58hcj" path="res://Assets/Illustrator/dark-9patch.png" id="2_ao5hk"]
 [ext_resource type="Script" uid="uid://ccrr3ow0266e3" path="res://Scripts/GUI/cyberattack_card.gd" id="3_ao5hk"]
-[ext_resource type="Shader" uid="uid://dg6okeg3rm7ev" path="res://EnvironmentShaders/highlight.gdshader" id="4_glfsx"]
+[ext_resource type="Shader" path="res://EnvironmentShaders/highlight.gdshader" id="4_glfsx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi1ln"]
 shader = ExtResource("4_glfsx")
@@ -70,6 +70,7 @@ autowrap_mode = 3
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 335)
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 autowrap_mode = 2
 

@@ -3815,7 +3815,7 @@ anchor_bottom = 0.279247
 offset_bottom = 0.0480003
 grow_horizontal = 2
 scale = Vector2(1.00035, 0.980913)
-mouse_filter = 2
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/Background/SearchBar"]

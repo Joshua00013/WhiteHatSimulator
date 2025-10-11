@@ -6,6 +6,11 @@ extends ColorRect
 @onready var quit_options = $QuitOptions
 @onready var settings = $Settings
 
+func _input(event):
+	if event.is_action_pressed("exit_ui") && get_tree().paused:
+		get_viewport().set_input_as_handled()
+		unpause()
+
 func _ready() -> void:
 	play_button.pressed.connect(unpause)
 	
@@ -16,6 +21,8 @@ func unpause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func pause():
+	quit_options.hide()
+	settings.hide()
 	animator.play("Pause")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

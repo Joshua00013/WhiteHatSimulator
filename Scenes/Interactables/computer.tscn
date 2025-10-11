@@ -1100,6 +1100,7 @@ icon_name = "data.sql"
 [node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
 window = NodePath("../../Windows/GodotWindow")
+icon = ExtResource("18_ukcco")
 icon_name = "godot.png"
 
 [node name="TextIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]

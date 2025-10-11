@@ -5,6 +5,10 @@ signal code_finished
 @onready var anim_player = $AnimationPlayer
 @onready var password_check_component: Control = $WindowBackground/Window2/WindowContents/MarginContainer/PasswordCheckComponent
 
+@export var rerun_btn : Button
+@export var windows : ColorRect
+@export var code_overlay : ColorRect
+
 var animations: PackedStringArray = []
 var current_index := 0
 var password_entered := false
@@ -54,3 +58,15 @@ func _on_button_pressed():
 	CyberattackManager.ransomware_ready = true
 	print("CODE DONE")
 	emit_signal("code_finished")
+
+
+func on_password_closed():
+	code_overlay.hide()
+	windows.hide()
+	rerun_btn.show()
+
+
+func _on_rerun_code_pressed():
+	code_overlay.show()
+	windows.show()
+	rerun_btn.hide()

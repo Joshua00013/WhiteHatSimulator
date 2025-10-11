@@ -1,6 +1,6 @@
 extends Control
 
-@export var password_box : TextEdit
+@export var password_box : LineEdit
 @export var message_label : Label
 
 var password : String = "WhiteHat"
@@ -14,7 +14,7 @@ func _on_ransomware_decrypt_submit_button_pressed() -> void:
 	if input_pass == password:
 		correct_password.emit()
 	else:
-		message_label.text = "Incorrect Password"
+		message_label.text = "Incorrect Password, READ THE CODE!"
 
 func _on_password_check_component_correct_password() -> void:
 	CyberattackManager.ransomware_ready = true

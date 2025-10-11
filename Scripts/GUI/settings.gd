@@ -3,10 +3,10 @@ extends Control
 @export var hand_tracking : HBoxContainer
 @export var display : HBoxContainer
 
-@onready var handtracking_check_box = $NinePatchRect/Settings/HandTracking/handtrackingCheckBox
-@onready var display_options = $NinePatchRect/Settings/Display/DisplayOptionButton
-@onready var music_slider = $NinePatchRect/Settings/Music/MusicSlider
-@onready var sfx_slider = $NinePatchRect/Settings/Sounds/SoundSlider
+@onready var handtracking_check_box = $PanelContainer/Settings/HandTracking/handtrackingCheckBox
+@onready var display_options = $PanelContainer/Settings/Display/DisplayOptionButton
+@onready var music_slider = $PanelContainer/Settings/Music/MusicSlider
+@onready var sfx_slider = $PanelContainer/Settings/Sounds/SoundSlider
 
 enum DisplayChoice {
 	WINDOWED = 0,
