@@ -1468,7 +1468,7 @@ transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 31.4
 computer = NodePath("../../../Computer5")
 
 [node name="sticky_note2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" node_paths=PackedStringArray("computer") instance=ExtResource("55_t014q")]
-transform = Transform3D(-1.3027009e-15, 1, 4.371139e-08, -2.9802322e-08, -4.371139e-08, 1, 1, 0, 2.9802322e-08, 29.239546, 1.4859462, 52.14737)
+transform = Transform3D(3.9081024e-15, -1, -1.3113416e-07, 2.9802322e-08, 1.3113416e-07, -1, 1, 0, 2.9802322e-08, 29.239546, 1.4859959, 52.14737)
 computer = NodePath("../../../Computer3")
 
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
