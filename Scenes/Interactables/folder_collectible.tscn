@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dit2oetrt2ost"]
+[gd_scene load_steps=11 format=3 uid="uid://dit2oetrt2ost"]
 
 [ext_resource type="PackedScene" uid="uid://tsvsvgcgr1ly" path="res://Assets/export_LPOP_FULL/SheetOfPaper_A4_2Sided.fbx" id="1_3y83m"]
 [ext_resource type="Script" uid="uid://62joc3326u4" path="res://Scenes/Interactables/folder_collectible.gd" id="1_rbsqf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="3_rs2h4"]
 [ext_resource type="Resource" uid="uid://baj1yndfhlmnr" path="res://Items/file003tres.tres" id="4_8ygc0"]
 [ext_resource type="Resource" uid="uid://b6dbkghaottey" path="res://Items/file004.tres" id="5_pj4sd"]
+[ext_resource type="Resource" uid="uid://c4mvhljn36eg2" path="res://Items/file005.tres" id="6_rbsqf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2uwf"]
 size = Vector3(0.7939453, 0.670166, 0.099365234)
@@ -18,6 +19,7 @@ day1_file = ExtResource("2_ow41f")
 day2_file = ExtResource("3_q008s")
 day3_file = ExtResource("4_8ygc0")
 day4_file = ExtResource("5_pj4sd")
+day5_file = ExtResource("6_rbsqf")
 
 [node name="SheetOfPaper_A4_2Sided" parent="." instance=ExtResource("1_3y83m")]
 
