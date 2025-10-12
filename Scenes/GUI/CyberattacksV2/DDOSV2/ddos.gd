@@ -7,6 +7,7 @@ signal ddos_finished
 var finished
 var animations: PackedStringArray = []
 var current_index := 0
+var paused : bool = false
 
 func _ready():
 	animations = anim_player.get_animation_list()
@@ -16,10 +17,10 @@ func _ready():
 func _process(_delta):
 	if not visible or animations.is_empty():
 		return
-	
-	if Input.is_action_just_pressed("next_pressed") && finished == true:
+	if Input.is_action_just_pressed("next_pressed") && paused == true:
+		anim_player.speed_scale = 1
+	elif Input.is_action_just_pressed("next_pressed") && finished == true:
 		_play_next()
-
 	elif Input.is_action_just_pressed("back_pressed"):
 		_play_previous()
 
@@ -69,3 +70,7 @@ func _on_loic_pressed() -> void:
 	
 func _on_review_pressed():
 	CyberattackManager.installation_finished = true
+	
+func pause_animation():
+	paused = true
+	anim_player.speed_scale = 0
