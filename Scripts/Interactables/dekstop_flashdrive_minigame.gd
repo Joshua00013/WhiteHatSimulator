@@ -35,7 +35,7 @@ func _process(_delta):
 	if not minigame_active or animation_player.assigned_animation != "plug_flashdrive":
 		return
 	
-	holding = Input.is_action_pressed("pinch") 
+	holding = Input.is_action_pressed("pinch") || Input.is_action_just_pressed("hold") 
 
 	if holding:
 		var mouse_x = get_viewport().get_mouse_position().x
