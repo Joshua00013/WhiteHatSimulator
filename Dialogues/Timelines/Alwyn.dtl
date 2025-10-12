@@ -1,15 +1,15 @@
-if {lied_to_al} == true or CyberattackAdaptationManager.lied_to_al == true :
+if {lied_to_al} == true or CyberattackAdaptationManager.lied_to_al == true:
 	Get out of here you liar.
 elif GameManager.player.trespassing == false:
 	Hello there
 elif CyberattackAdaptationManager.lied_to_al  ==  false and GameManager.player.trespassing == true:
 	Hey! You're not supposed to be here.
-	- Miss Koro is asking for you at the reception hall.
+	- Miss Koro is asking for you at the reception hall. | [if DayAndNightManager.initial_day == 5] [else="hide"]
 		if CyberattackAdaptationManager.lied_to_al == false:
 			set {CyberattackAdaptationManager.lied_to_al} = true
 			set {lied_to_al} = true
 			Okay, I'll be there right away.
 			[signal arg="lied_to_al"]
-	- Nothing, sorry
+	- Sorry
 		You better not come back here again, you hear?
 		This is the Data Center, only authorized employees are allowed inside!
