@@ -48,6 +48,7 @@ func _on_quit_to_menu_button_down():
 	GameManager.reset()
 	CyberattackManager.reset()
 	CyberattackAdaptationManager.reset()
+	SignalBus.stage_finished.emit()
 	DayAndNightManager.set_initial_time()
 	DayAndNightManager.active = false
 	get_tree().paused = false

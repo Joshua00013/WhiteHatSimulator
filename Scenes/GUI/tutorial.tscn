@@ -1,15 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://q6572v12x07v"]
+[gd_scene load_steps=19 format=3 uid="uid://q6572v12x07v"]
 
 [ext_resource type="PackedScene" uid="uid://dxa5xeu4b7mac" path="res://Scenes/GUI/tutorial_button.tscn" id="1_7hedy"]
 [ext_resource type="Texture2D" uid="uid://71oia65mm6vx" path="res://Assets/Photos/Screenshot 2025-09-26 190945.png" id="1_38uaa"]
-[ext_resource type="Script" path="res://Scripts/GUI/tutorial.gd" id="1_w6lqn"]
+[ext_resource type="Script" uid="uid://bm58vayg8s0kx" path="res://Scripts/GUI/tutorial.gd" id="1_w6lqn"]
 [ext_resource type="Texture2D" uid="uid://dso0utxganied" path="res://Assets/Illustrator/close.png" id="1_wh666"]
 [ext_resource type="Texture2D" uid="uid://jy6ldl87dxjg" path="res://Assets/Illustrator/whitehat logo.svg" id="2_ayddh"]
 [ext_resource type="FontFile" uid="uid://c1e18n34mxouo" path="res://Assets/Fonts/NotoSans_Condensed-Medium.ttf" id="2_fypel"]
 [ext_resource type="Texture2D" uid="uid://dgxs6vmb1aokc" path="res://Assets/Photos/timerblur.png" id="3_5b13s"]
 [ext_resource type="Texture2D" uid="uid://w1vtusf0op70" path="res://Assets/Photos/Screenshot 2025-09-26 192546.png" id="5_3wvw2"]
+[ext_resource type="Texture2D" uid="uid://dqv4eowfrjkrq" path="res://Assets/Illustrator/THE-CYBER-KILL-CHAIN-body.png" id="5_63q28"]
 [ext_resource type="Texture2D" uid="uid://bqkqndbmievs2" path="res://Assets/Photos/tasks.png" id="6_3wvw2"]
 [ext_resource type="Texture2D" uid="uid://dx1g4kbaufld0" path="res://Assets/Photos/Screenshot 2025-09-26 194134.png" id="9_cjbfe"]
+[ext_resource type="Texture2D" uid="uid://bvcwtoxl4ympb" path="res://Assets/Illustrator/fist.png" id="11_5xtwd"]
+[ext_resource type="Texture2D" uid="uid://foldvy2d57b0" path="res://Assets/Illustrator/pinch.png" id="12_hbe4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38uaa"]
 content_margin_top = 38.0
@@ -73,50 +76,72 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_38uaa")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wh666")
 
-[node name="Buttons" type="ScrollContainer" parent="PanelContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="PanelContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer/Buttons"]
+[node name="Buttons" type="ScrollContainer" parent="PanelContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button5" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button5" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Welcome"
 content = NodePath("../../../Contents/ContentTabs/Welcome")
 
-[node name="Button2" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button7" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+layout_mode = 2
+text = "CyberKillChain"
+content = NodePath("../../../Contents/ContentTabs/CyberKillChain")
+
+[node name="Button2" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Tailgating"
 content = NodePath("../../../Contents/ContentTabs/Tailgating")
 
-[node name="Button" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Time"
 content = NodePath("../../../Contents/ContentTabs/Time")
 
-[node name="Button3" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button3" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Social
 Engineering"
 content = NodePath("../../../Contents/ContentTabs/SocialEngineering")
 
-[node name="Button4" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button4" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Tasks"
 content = NodePath("../../../Contents/ContentTabs/Tasks")
 
-[node name="Button6" parent="PanelContainer/PanelContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+[node name="Button6" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
 text = "Inventory"
 content = NodePath("../../../Contents/ContentTabs/Inventory")
 
-[node name="Contents" type="ScrollContainer" parent="PanelContainer/PanelContainer"]
+[node name="Button8" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
 layout_mode = 2
-size_flags_horizontal = 8
+text = "Handtracking -
+Keycards"
+content = NodePath("../../../Contents/ContentTabs/HandTrackingKeyCard")
+
+[node name="Button9" parent="PanelContainer/PanelContainer/HBoxContainer/Buttons/PanelContainer" node_paths=PackedStringArray("content") instance=ExtResource("1_7hedy")]
+layout_mode = 2
+text = "Handtracking -
+Flashdrives"
+content = NodePath("../../../Contents/ContentTabs/HandTrackingFlashDrive")
+
+[node name="Contents" type="ScrollContainer" parent="PanelContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
 horizontal_scroll_mode = 0
 
-[node name="ContentTabs" type="TabContainer" parent="PanelContainer/PanelContainer/Contents"]
+[node name="ContentTabs" type="TabContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents"]
 custom_minimum_size = Vector2(750, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -125,28 +150,28 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_htdxb")
 current_tab = 0
 tabs_visible = false
 
-[node name="Welcome" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="Welcome" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 layout_mode = 2
 theme_override_constants/separation = 19
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Welcome"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Welcome"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "WELCOME TO WHITE HAT SIMULATOR"
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Welcome"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Welcome"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w6lqn")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Welcome/PanelContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Welcome/PanelContainer"]
 layout_mode = 2
 texture = ExtResource("2_ayddh")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Welcome"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Welcome"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -154,20 +179,46 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "You are tasked to infiltrate a company to earn your pardon. Discover vulnerabilities and create a variety of cyberattacks to reach your goal! You may view this page again from the pause menu."
 autowrap_mode = 2
 
-[node name="Tailgating" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="CyberKillChain" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/CyberKillChain"]
+custom_minimum_size = Vector2(0, 40.545)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
+text = "CYBER KILL CHAIN"
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/CyberKillChain"]
+custom_minimum_size = Vector2(690, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fypel")
+text = "This game follows the steps of the Cyber Kill Chain by Lockheed Martin. You will learn how cyberattacks work through steps done in this manner."
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/CyberKillChain"]
+layout_mode = 2
+texture = ExtResource("5_63q28")
+expand_mode = 5
+
+[node name="Tailgating" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 19
+metadata/_tab_index = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tailgating"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TAILGATING"
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tailgating"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -175,25 +226,25 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "You can tailgate employees to gain access to different areas. However, be careful as you might find yourself trapped. Should you find yourself in that situation, you may wait for an employee to exit the area! Or you may also choose to restart the stage."
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tailgating"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tailgating"]
 layout_mode = 2
 texture = ExtResource("1_38uaa")
 expand_mode = 5
 
-[node name="Time" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="Time" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Time"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TIME"
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Time"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -201,25 +252,25 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "Employees have their own schedules. You may keep track of the time and watch their movement. Most employees go to the cafeteria at 12:00. Do be careful however, as employees would go home at 18:00 and you will fail your job!"
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Time"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Time"]
 layout_mode = 2
 texture = ExtResource("3_5b13s")
 expand_mode = 5
 
-[node name="SocialEngineering" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="SocialEngineering" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
-metadata/_tab_index = 3
+metadata/_tab_index = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/SocialEngineering"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "SOCIAL ENGINEERING"
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/SocialEngineering"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -227,25 +278,25 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "You can lie your way into the office and trick employees into giving you essential information. Just make sure you don't get caught!"
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/SocialEngineering"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/SocialEngineering"]
 layout_mode = 2
 texture = ExtResource("5_3wvw2")
 expand_mode = 5
 
-[node name="Tasks" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="Tasks" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
-metadata/_tab_index = 4
+metadata/_tab_index = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tasks"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "TASKS"
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tasks"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -253,25 +304,25 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "Follow your tasks and make sure not to skip steps! But don't worry, you may still try different attempts if you fail."
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Tasks"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Tasks"]
 layout_mode = 2
 texture = ExtResource("6_3wvw2")
 expand_mode = 5
 
-[node name="Inventory" type="VBoxContainer" parent="PanelContainer/PanelContainer/Contents/ContentTabs"]
+[node name="Inventory" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 19
-metadata/_tab_index = 5
+metadata/_tab_index = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Inventory"]
 custom_minimum_size = Vector2(0, 40.545)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
 text = "INVENTORY"
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Inventory"]
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -279,9 +330,61 @@ theme_override_fonts/font = ExtResource("2_fypel")
 text = "Your inventory contains different items and often leads to clues on what to do. Be sure to always read the files that the government gave you!"
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/Contents/ContentTabs/Inventory"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/Inventory"]
 layout_mode = 2
 texture = ExtResource("9_cjbfe")
+expand_mode = 5
+
+[node name="HandTrackingKeyCard" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 19
+metadata/_tab_index = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingKeyCard"]
+custom_minimum_size = Vector2(0, 40.545)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
+text = "HANDTRACKING - KEYCARDS"
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingKeyCard"]
+custom_minimum_size = Vector2(690, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fypel")
+text = "If handtracking is enabled from the settings, you can make a fist and swipe downward to finish the keycard minigame!"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingKeyCard"]
+layout_mode = 2
+texture = ExtResource("11_5xtwd")
+expand_mode = 5
+
+[node name="HandTrackingFlashDrive" type="VBoxContainer" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 19
+metadata/_tab_index = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingFlashDrive"]
+custom_minimum_size = Vector2(0, 40.545)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_fypel")
+text = "HANDTRACKING - FLASHDRIVE"
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingFlashDrive"]
+custom_minimum_size = Vector2(690, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fypel")
+text = "If handtracking is enabled from the settings, you can make a pinching gesture and plug the flashdrive!"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/HBoxContainer/Contents/ContentTabs/HandTrackingFlashDrive"]
+layout_mode = 2
+texture = ExtResource("12_hbe4j")
 expand_mode = 5
 
 [node name="TextureButton" type="TextureButton" parent="."]
