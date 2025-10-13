@@ -290,7 +290,7 @@ func _play_ransomware_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:
 		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites",false)
 		return
-	return_button.show()
+	return_button.hide()
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
 	if GameManager.stage_finished == false:
@@ -312,7 +312,7 @@ func _play_ransomware_piracy():
 		GameManager.stage_finished = true
 		
 	CyberattackAdaptationManager.antivirus_installed = true
-	return_button.hide()
+	return_button.show()
 
 func _play_fileless_piracy():
 	return_button.show()
