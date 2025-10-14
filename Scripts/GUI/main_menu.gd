@@ -10,5 +10,7 @@ func _ready():
 	CyberattackManager.reset()
 	CyberattackAdaptationManager.reset()
 	SignalBus.stage_finished.emit()
-	DayAndNightManager.set_initial_time()
 	DayAndNightManager.active = false
+	DayAndNightManager.set_initial_time()
+	DayAndNightManager.initial_day = 1
+	
