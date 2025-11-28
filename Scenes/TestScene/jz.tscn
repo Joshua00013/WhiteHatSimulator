@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsnlkyjvxjck6"]
+
+[ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_42dkl"]
+[ext_resource type="PackedScene" uid="uid://dx0pda45jmvnh" path="res://Scenes/Interactables/computer.tscn" id="2_ph3lk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hayfj"]
+size = Vector3(24.825, 1, 13.615)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_42dkl")]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_hayfj")
+
+[node name="Computer" parent="." instance=ExtResource("2_ph3lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.142564, 0.19284397, 2.163858)

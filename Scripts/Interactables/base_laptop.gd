@@ -153,6 +153,7 @@ func _on_interactable_interact_triggered():
 		minigame.minigame_start()
 	elif camera.is_current() == false:
 		display_laptop_ui()
+		return_button.show()
 		#GameManager.player.exit_tool_tip.visible = true
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#camera.current = true
@@ -161,7 +162,7 @@ func _on_interactable_interact_triggered():
 		#next_button.show()
 	# READ THE COMMENT
 	# READ: SHOW RETURN BUTTON REGARDLESS IF MINIGAME IS TRIGGERED OR NOT 
-	return_button.show()
+	
 	
 func exit_ui():
 	toggle_controller_buttons(false)
@@ -188,6 +189,7 @@ func display_laptop_ui():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	camera.current = true
 	GameManager.ui_active = true
+	return_button.show()
 	active = true
 
 func toggle_controller_buttons(visibility : bool):

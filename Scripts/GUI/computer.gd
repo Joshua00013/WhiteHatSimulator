@@ -64,6 +64,7 @@ var in_use : bool = false :
 		else:
 			interactable.prompt_message = "In use"
 var flashdrive_plugged := false
+var minigame_active := false
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
@@ -108,7 +109,7 @@ func _mouse_exited_area():
 	is_mouse_inside = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("exit_ui") && active == true:
+	if Input.is_action_just_pressed("exit_ui") && active == true && minigame_active == false:
 		exit_ui()
 
 func _unhandled_input(event):
@@ -197,15 +198,24 @@ func _on_interactable_interact_triggered():
 	if CyberattackManager.weaponization_finished:
 		deployment_buttons.show()
 	if camera.is_current() == false && GameManager.remove_item(flashdrive_item) == true:
+		return_button.hide()
 		minigame.start_minigame()
-	if camera.is_current() == false:
+		minigame_active = true
+		camera.current = true
+		GameManager.ui_active = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		active = true
+	if camera.is_current() == false && minigame_active == false:
 		GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		camera.current = true
 		GameManager.ui_active = true
 		return_button.show()
 		active = true
+	
+	# This won't do anything if the steps are followed. Just set delivery finished to true
 	CyberattackManager.delivery_finished = true
+	
 	if logged_in:
 		CyberattackAdaptationManager.unattended_pc_used = true
 
@@ -242,6 +252,8 @@ func _on_return_button_pressed():
 
 func _on_flashdrive_minigame_flashdrive_plugged():
 	flashdrive_plugged = true
+	minigame_active = false
+	return_button.show()
 
 func change_phishing_email():
 	online_username_input.text = npc_resource.email

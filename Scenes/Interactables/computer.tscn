@@ -490,7 +490,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_oum07"]
 resource_name = "play_phishing"
-length = 3.9895
+length = 6.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -498,7 +498,7 @@ tracks/0/path = NodePath("PhishingSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.8333333),
+"times": PackedFloat32Array(0, 6.4666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -556,7 +556,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_c0nd6"]
 resource_name = "play_ransomware_fail"
-length = 4.4965
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -564,7 +564,7 @@ tracks/0/path = NodePath("RansowmareSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.4666667),
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1424,8 +1424,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -23.0
 offset_top = -23.0
-offset_right = 23.00061
-offset_bottom = 23.001373
+offset_right = 23.000244
+offset_bottom = 23.001556
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
@@ -1737,8 +1737,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -67.0
 offset_top = -108.0
-offset_right = -20.996155
-offset_bottom = -61.999023
+offset_right = -20.998657
+offset_bottom = -61.998657
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")

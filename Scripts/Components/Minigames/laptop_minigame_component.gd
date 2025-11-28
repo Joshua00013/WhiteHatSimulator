@@ -27,8 +27,8 @@ signal minigame_finished
 signal minigame_exited
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("exit_ui") && active == true:
-		exit_ui()
+	#if Input.is_action_just_pressed("exit_ui") && active == true:
+		#exit_ui()
 	if flashdrive != null && flashdrive.position.z > 0.039 && active == true && flashdrive_snapped == false:
 		flashdrive.position.z = 0.039
 		flashdrive_snapped = true
@@ -38,8 +38,8 @@ func _process(_delta: float) -> void:
 		minigame_finished.emit()
 
 func _input(event):
-	if Input.is_action_just_pressed("exit_ui") && active == true:
-		exit_ui()
+	#if Input.is_action_just_pressed("exit_ui") && active == true:
+		#exit_ui()
 		# Handle hold start/end to prevent teleport
 	if active:
 		if Input.is_action_just_pressed("pinch") || Input.is_action_just_pressed("hold"):
@@ -154,7 +154,7 @@ func minigame_start() -> void:
 			
 	if camera.is_current() == false:
 		initialize_minigame()
-		GameManager.player.exit_tool_tip.visible = true
+		#GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		active = true
 
