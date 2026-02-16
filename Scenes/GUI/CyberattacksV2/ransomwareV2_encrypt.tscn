@@ -1,11 +1,12 @@
-[gd_scene load_steps=55 format=3 uid="uid://cvlbm3qymf244"]
+[gd_scene load_steps=57 format=3 uid="uid://cvlbm3qymf244"]
 
 [ext_resource type="Script" uid="uid://bfj1dys1yrnvw" path="res://Scripts/GUI/ransowmare_encrypt.gd" id="1_pg7rw"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="2_nmigk"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="3_vuwby"]
 [ext_resource type="Script" uid="uid://dymocqk677j5n" path="res://Scripts/GUI/code_edit_window.gd" id="4_m28fk"]
 [ext_resource type="PackedScene" uid="uid://cbqaj2456biy" path="res://Scenes/GUI/next_button.tscn" id="5_7i6ny"]
-[ext_resource type="Script" uid="uid://3ld1620aeihn" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="5_8fnya"]
+[ext_resource type="Script" path="res://Scenes/GUI/Ransomware/password_check_component.gd" id="5_8fnya"]
+[ext_resource type="Theme" uid="uid://c87kc3sj0r4p4" path="res://Themes/preparation_themes.tres" id="5_vb8no"]
 [ext_resource type="PackedScene" uid="uid://cfnlekhp378nk" path="res://Scenes/GUI/back_button.tscn" id="6_6g5gb"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="6_vb8no"]
 
@@ -240,7 +241,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/Body/MarginContainer/SampleContent:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -264,7 +265,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/Body/MarginContainer/ProgressBar:value")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -2185,7 +2186,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_8fnya"]
 resource_name = "ransomware_step_15"
-length = 3.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2295,14 +2296,14 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/SampleContent:visible")
+tracks/7/path = NodePath("WindowBackground/Window/WindowContents/Body/MarginContainer/SampleContent:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -2319,11 +2320,11 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("WindowBackground/Window/WindowContents/MarginContainer/ProgressBar:value")
+tracks/9/path = NodePath("WindowBackground/Window/WindowContents/Body/MarginContainer/ProgressBar:value")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1.4333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 100.0]
@@ -2406,6 +2407,11 @@ bg_color = Color(0.2303367, 0.44994062, 0.80007863, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31cwg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5n46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8fnya"]
+content_margin_left = 15.0
+content_margin_top = 25.0
+content_margin_right = 15.0
 
 [node name="ransomwareV2 Encypt" type="Control"]
 layout_mode = 3
@@ -2582,6 +2588,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_h8m8q")
 
 [node name="WindowContents" type="VBoxContainer" parent="WindowBackground/Window"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="WindowHeader" type="PanelContainer" parent="WindowBackground/Window/WindowContents"]
 custom_minimum_size = Vector2(0, 30)
@@ -2601,21 +2608,29 @@ text = "X"
 
 [node name="SampleHeader" type="Label" parent="WindowBackground/Window/WindowContents/WindowHeader"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Wow header"
 
-[node name="MarginContainer" type="MarginContainer" parent="WindowBackground/Window/WindowContents"]
+[node name="Body" type="PanelContainer" parent="WindowBackground/Window/WindowContents"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8fnya")
 
-[node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+[node name="MarginContainer" type="VBoxContainer" parent="WindowBackground/Window/WindowContents/Body"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 31
-text = "Contents"
+theme_override_constants/separation = 14
 
-[node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/MarginContainer"]
+[node name="SampleContent" type="Label" parent="WindowBackground/Window/WindowContents/Body/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Executing..."
+
+[node name="ProgressBar" type="ProgressBar" parent="WindowBackground/Window/WindowContents/Body/MarginContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("5_vb8no")
+show_percentage = false
 
 [node name="Window2" type="PanelContainer" parent="WindowBackground"]
 visible = false

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6ybph6suoqq"]
+
+[ext_resource type="Texture2D" uid="uid://b7bcqxvuu27p7" path="res://Assets/Illustrator/exclamation.png" id="1_t78rk"]
+[ext_resource type="Script" uid="uid://c2lcvpty4otx6" path="res://Scripts/NPC/quest.gd" id="2_4wa5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20lve"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("1_t78rk")
+billboard_mode = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvdnt"]
+next_pass = SubResource("StandardMaterial3D_20lve")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+billboard_mode = 1
+billboard_keep_scale = true
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[node name="Quest" type="Sprite3D"]
+material_overlay = SubResource("StandardMaterial3D_kvdnt")
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_t78rk")
+script = ExtResource("2_4wa5x")
+day_visible = 4

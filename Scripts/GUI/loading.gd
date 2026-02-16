@@ -4,6 +4,7 @@ var path := "res://Scenes/main.tscn"
 var progress: Array = []  # keep as array
 var scene_load_status := 0
 @onready var label = $Label
+@onready var intro: AspectRatioContainer = $Control
 
 var intro_done := false
 
@@ -25,4 +26,6 @@ func _process(delta):
 		get_tree().change_scene_to_packed(new_scene)
 
 func _on_intro_finished():
+	intro.hide()
+	label.show()
 	intro_done = true

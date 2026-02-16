@@ -25,7 +25,7 @@ func _ready() -> void:
 		3:
 			UiManager.popup.display_popup("Great job!","There are reports stating that some employees don't update their antivirus. Do an penetration testing as usual")
 		4:
-			UiManager.popup.display_popup("Good Job!","You have managed to reach day four. Don't forget to always check your inventory!")
+			UiManager.popup.display_popup("Good Job!","You have managed to reach day four. Don't forget to always check the files on the desk!")
 		5:
 			UiManager.popup.display_popup("Good Job!", "This is your last day on the job. DoS attack is now unlocked")
 			#TODO: Add day specific messages here

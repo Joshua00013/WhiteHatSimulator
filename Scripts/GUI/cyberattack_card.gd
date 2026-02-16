@@ -20,8 +20,9 @@ func _ready():
 		GameManager.laptop_flashdrive_inserted.connect(unlock_card)
 	if DayAndNightManager.current_days == 3 && unlocked_day == 3:
 		new = true
-	if DayAndNightManager.current_days == 4 && unlocked_day == 4 :
-		new = true
+	if DayAndNightManager.current_days >= 4 && unlocked_day == 4 :
+		if DayAndNightManager.current_days == 4:
+			new = true
 		locked_message.text = "Unlock by being on day 4 after seeing the website"
 		lock_card()
 		if CyberattackManager.website_seen == true:

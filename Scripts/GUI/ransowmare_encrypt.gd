@@ -47,5 +47,7 @@ func _play_previous():
 
 
 func _on_window_background_window_exited():
-		CyberattackManager.ransomware_ready = true
-		emit_signal("code_finished")
+	current_index = 0
+	anim_player.play("RESET")
+	CyberattackManager.ransomware_ready = true
+	emit_signal("code_finished")

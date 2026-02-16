@@ -7,6 +7,8 @@ extends Node3D
 @export var keycard_scene : PackedScene
 @export var keycard_item : InvItem
 
+@onready var return_button = $ReturnButton
+
 var keycard: Node3D
 var sensitivity = 0.01
 var dragging = false
@@ -49,7 +51,6 @@ func _input(event):
 					last_mouse_y = mouse_pos.y
 				
 func _on_interactable_interact_triggered() -> void:
-	print(GameManager.check_inv(keycard_item))
 	if GameManager.check_inv(keycard_item) == true:
 		match OS.get_name():
 			"Android":
@@ -61,8 +62,9 @@ func _on_interactable_interact_triggered() -> void:
 			GameManager.ui_active = true
 			active = true
 			initialize_keycard()
-		
+			return_button.show()
 func exit_ui():
+	return_button.hide()
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = true #Change Android UI visibility to shown

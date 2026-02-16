@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b38jachcmca75"]
+[gd_scene load_steps=14 format=3 uid="uid://b38jachcmca75"]
 
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="1_1i5hb"]
-[ext_resource type="Script" uid="uid://b763r8f3xm34w" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_desktop.gd" id="1_3m1as"]
+[ext_resource type="Script" path="res://Scenes/GUI/CyberattacksV2/PhishingV2/phishing_desktop.gd" id="1_3m1as"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="2_qqktv"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="3_3m1as"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="4_2tbyr"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_pnbv7"]
 [ext_resource type="Texture2D" uid="uid://dic1btggpc3hd" path="res://Assets/Illustrator/browserv2.png" id="4_qqktv"]
 [ext_resource type="Texture2D" uid="uid://dry2p2161qtif" path="res://Assets/Illustrator/WindowDarkNinePatch.png" id="5_pnbv7"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="6_ed5m6"]
@@ -281,18 +282,16 @@ icon_name = "Data.sql"
 
 [node name="Godot_icon" parent="Desktop" instance=ExtResource("1_1i5hb")]
 layout_mode = 2
-icon = null
-icon_name = ""
+icon = ExtResource("4_pnbv7")
 
 [node name="Button" parent="Desktop/Godot_icon" index="0"]
-icon = null
+icon = ExtResource("4_pnbv7")
 
 [node name="Label" parent="Desktop/Godot_icon" index="1"]
 text = "godot.png"
 
 [node name="Text_icon" parent="Desktop" instance=ExtResource("1_1i5hb")]
 layout_mode = 2
-icon = null
 icon_name = "text"
 
 [node name="Button" parent="Desktop/Text_icon" index="0"]

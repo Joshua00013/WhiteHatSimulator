@@ -22,7 +22,7 @@ func _on_phase_updated(phase : String):
 	print(phase)
 	match phase:
 		"reset":
-			task_desc.text = "Reconnaisance, find a vulnerability to exploit (Read the file in the inventory for info)"
+			task_desc.text = "Reconnaisance, find a vulnerability to exploit (Read the file on the desk for info)"
 		"reconnaissance":
 			task_desc.text = "Weaponization: go to the cafeteria and program a cyberattack"
 		"weaponization":
@@ -32,7 +32,7 @@ func _on_phase_updated(phase : String):
 		"exploitation":
 			task_desc.text = "Installation: establish persistence on the target machine. The antivirus should not detect it. If using your own program, run it." #Play animation where the victim installs it, restards the pc and it still persists. 
 		"installation":
-			task_desc.text = "Command and Control: gain access to the inforation that you are looking for (Read the file in the inventory for info)"
+			task_desc.text = "Command and Control: gain access to the inforation that you are looking for (Read the file on the desk for info)"
 		"command_and_control":
 			task_desc.text = "Actions on objectives: You have now achieved your objective. Head out to the door to finish the stage"
 		"actions_on_objectives":

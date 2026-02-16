@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dx0pda45jmvnh"]
+[gd_scene load_steps=57 format=3 uid="uid://dx0pda45jmvnh"]
 
 [ext_resource type="Script" uid="uid://iajut2jis308" path="res://Scripts/GUI/computer.gd" id="1_jd3qi"]
 [ext_resource type="Resource" uid="uid://di5juvawhmoq6" path="res://Items/flashdrive.tres" id="2_2rmg2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6rxlv0hvnwmr" path="res://Scenes/GUI/npc_browser.tscn" id="10_a8fdl"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="10_tdfle"]
 [ext_resource type="Theme" uid="uid://cgx7d6dgoy5t3" path="res://Themes/Arknights.tres" id="11_yrttm"]
+[ext_resource type="Texture2D" uid="uid://bjymg66wnrrvo" path="res://icon.svg" id="12_ukcco"]
 [ext_resource type="Script" uid="uid://byrcwihsa457c" path="res://Scripts/Interactables/dekstop_flashdrive_minigame.gd" id="14_dye1h"]
 [ext_resource type="PackedScene" uid="uid://bxxmt6q0sooxp" path="res://Scenes/Components/Minigames/flash_drive_low_poly.tscn" id="15_2rmg2"]
 [ext_resource type="Animation" uid="uid://dhg0asdswm03a" path="res://animations/play_ransomware.res" id="17_ukcco"]
@@ -380,6 +381,18 @@ tracks/16/keys = {
 "update": 1,
 "values": [""]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_l8cv3"]
 resource_name = "execute_bruteforce"
@@ -437,6 +450,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_jxt7v"]
 resource_name = "execute_cyberattack"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -444,10 +458,10 @@ tracks/0/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/Cyberat
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -461,10 +475,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 100.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.8666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.005, 0.005)]
+}
 
 [sub_resource type="Animation" id="Animation_oum07"]
 resource_name = "play_phishing"
-length = 3.9895
+length = 6.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -472,7 +498,7 @@ tracks/0/path = NodePath("PhishingSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.8333333),
+"times": PackedFloat32Array(0, 6.4666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -530,7 +556,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_c0nd6"]
 resource_name = "play_ransomware_fail"
-length = 4.4965
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -538,7 +564,7 @@ tracks/0/path = NodePath("RansowmareSuccess:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.4666667),
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -773,6 +799,7 @@ layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Bruteforce" type="Button" parent="Model/SubViewport/TabContainer/Login"]
+visible = false
 layout_mode = 0
 offset_left = 493.0
 offset_top = 402.5
@@ -1064,13 +1091,16 @@ metadata/_tab_index = 1
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="DatabaseIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
+[node name="DatabaseIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
+window = NodePath("../../Windows/Database")
 icon = ExtResource("6_6l7aj")
 icon_name = "data.sql"
 
-[node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" instance=ExtResource("5_yrttm")]
+[node name="GodotIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
 layout_mode = 2
+window = NodePath("../../Windows/GodotWindow")
+icon = ExtResource("18_ukcco")
 icon_name = "godot.png"
 
 [node name="TextIcon" parent="Model/SubViewport/TabContainer/Desktop/Desktop" node_paths=PackedStringArray("window") instance=ExtResource("5_yrttm")]
@@ -1106,6 +1136,27 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Hello World"
 
+[node name="Database" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.405185
+anchor_bottom = 0.405333
+offset_left = 256.48
+offset_top = 125.155
+offset_right = 256.47998
+offset_bottom = 125.155
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Title" parent="Model/SubViewport/TabContainer/Desktop/Windows/Database/HBoxContainer" index="0"]
+text = "data.sql"
+
+[node name="NotepadText" type="Label" parent="Model/SubViewport/TabContainer/Desktop/Windows/Database/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "email:
+password:"
+
 [node name="NPCBrowser" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_a8fdl")]
 visible = false
 layout_mode = 1
@@ -1123,6 +1174,22 @@ text = "Executing..."
 
 [node name="ProgressBar" type="ProgressBar" parent="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
+
+[node name="GodotWindow" parent="Model/SubViewport/TabContainer/Desktop/Windows" instance=ExtResource("10_tdfle")]
+visible = false
+layout_mode = 1
+anchor_left = 0.392015
+anchor_top = 0.162207
+anchor_right = 0.95735
+anchor_bottom = 0.737458
+
+[node name="Title" parent="Model/SubViewport/TabContainer/Desktop/Windows/GodotWindow/HBoxContainer" index="0"]
+text = "godot.png"
+
+[node name="TextureRect" type="TextureRect" parent="Model/SubViewport/TabContainer/Desktop/Windows/GodotWindow/MarginContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(-6.2, 260.78)
+layout_mode = 2
+texture = ExtResource("12_ukcco")
 
 [node name="DeploymentChoice" type="Control" parent="Model/SubViewport/TabContainer/Desktop"]
 visible = false
@@ -1147,6 +1214,8 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer"]
 custom_minimum_size = Vector2(414, 93)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.7734375, 0.12689209, 0.12689209, 1)
+theme_override_constants/outline_size = 33
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[wave]Choose a cyberattack"
@@ -1201,12 +1270,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_l8cv3")
 }
 
-[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "deployment_animation", "deployment_choice")]
+[node name="DeploymentComponent" type="Node" parent="." node_paths=PackedStringArray("ransomware_btn", "bruteforce_btn", "deployment_animation", "deployment_choice", "return_button")]
 script = ExtResource("4_qfcx5")
 ransomware_btn = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice/VBoxContainer/Ransomware")
 bruteforce_btn = NodePath("../Model/SubViewport/TabContainer/Login/Bruteforce")
 deployment_animation = NodePath("../DesktopAnimations")
 deployment_choice = NodePath("../Model/SubViewport/TabContainer/Desktop/DeploymentChoice")
+return_button = NodePath("../ReturnButton")
 
 [node name="PhishingSuccess" type="Control" parent="."]
 visible = false
@@ -1354,8 +1424,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -23.0
 offset_top = -23.0
-offset_right = 23.00061
-offset_bottom = 23.001373
+offset_right = 23.000244
+offset_bottom = 23.001556
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
@@ -1667,8 +1737,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -67.0
 offset_top = -108.0
-offset_right = -20.996094
-offset_bottom = -61.999054
+offset_right = -20.998657
+offset_bottom = -61.998657
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_jxt7v")
@@ -1683,4 +1753,6 @@ expand_mode = 1
 
 [editable path="Model/SubViewport/TabContainer/Login/Window"]
 [editable path="Model/SubViewport/TabContainer/Desktop/Windows/NotePad"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Windows/Database"]
 [editable path="Model/SubViewport/TabContainer/Desktop/Windows/CyberattackExecution"]
+[editable path="Model/SubViewport/TabContainer/Desktop/Windows/GodotWindow"]

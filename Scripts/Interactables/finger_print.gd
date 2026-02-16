@@ -1,6 +1,7 @@
 extends Node3D
 
 var active := false
+var message_active := false
 
 @export var ui : CanvasLayer
 @export var password_label: Label
@@ -37,46 +38,45 @@ func exit_ui():
 func _on_texture_button_button_down() -> void:
 	key_press("1")
 
-
 func _on_texture_button_2_button_down() -> void:
 	key_press("2")
-
 
 func _on_texture_button_3_button_down() -> void:
 	key_press("3")
 
-
 func _on_texture_button_4_button_down() -> void:
 	key_press("4")
-
 
 func _on_texture_button_5_button_down() -> void:
 	key_press("5")
 
-
 func _on_texture_button_6_button_down() -> void:
 	key_press("6")
-
 
 func _on_texture_button_7_button_down() -> void:
 	key_press("7")
 
-
 func _on_texture_button_8_button_down() -> void:
 	key_press("8")
-
 
 func _on_texture_button_9_button_down() -> void:
 	key_press("9")
 
-func key_press(digit):
-	password_label.text += digit
-	if len(password_label.text) == 4:
-		check_pass(password_label.text)
+func _on_texture_button_12_pressed():
+	key_press("10")
 
-func check_pass(text_input):
-	if text_input != password:
+func key_press(digit):
+	if len(password_label.text) == 4:
+		return
+	if message_active == true:
 		password_label.text = ""
+		message_active = false
+	password_label.text += digit
+
+func check_pass():
+	if password_label.text != password:
+		password_label.text = "ERROR!"
+		message_active = true
 	else:
 		minigame_success()
 		

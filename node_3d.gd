@@ -13,6 +13,7 @@ const JUMP_VELOCITY = 10
 @export var crouch_transition = 4.0 #Crouch movement smoothing for lerping
 @export var sprint_speed = 10.0
 
+@export var file_001 : InvItem
 @export var file_002 : InvItem
 @export var file_003 : InvItem
 @export var file_004 : InvItem
@@ -41,19 +42,19 @@ func _ready():
 func add_starting_item():
 	match DayAndNightManager.initial_day:
 		2:
-			inventory.add(file_002)
+			inventory.add(file_001)
 		3:
+			inventory.add(file_001)
 			inventory.add(file_002)
-			inventory.add(file_003)
 		4:
+			inventory.add(file_001)
 			inventory.add(file_002)
 			inventory.add(file_003)
-			inventory.add(file_004)
 		5:
+			inventory.add(file_001)
 			inventory.add(file_002)
 			inventory.add(file_003)
 			inventory.add(file_004)
-			inventory.add(file_005)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && GameManager.ui_active == false:
@@ -70,12 +71,7 @@ func _unhandled_input(event):
 		#Set the cursor visibility to default when a UI is active or game has been paused.
 		#Maybe handle game pause/resume and ui active in gamemanager later instead of in the player node.
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-		
-	elif event.is_action_pressed("exit_ui") && GameManager.ui_active == false:
-		#If a ui is active, the game won't pause. The ui_cancel can instead be used to disable the GUI
-		$PauseMenu.pause()
-	
+
 func _physics_process(delta):
 	if GameManager.ui_active == false:
 		# Add the gravity.

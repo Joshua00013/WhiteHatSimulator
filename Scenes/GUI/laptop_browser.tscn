@@ -1,10 +1,11 @@
-[gd_scene load_steps=94 format=4 uid="uid://d1uhpiic8wwi3"]
+[gd_scene load_steps=95 format=4 uid="uid://d1uhpiic8wwi3"]
 
 [ext_resource type="Script" uid="uid://ucocqpsek0pj" path="res://Scripts/GUI/laptop_browser.gd" id="1_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://055m4060qd8o" path="res://Assets/Illustrator/BrowserAssets/internet.png" id="1_s45pd"]
 [ext_resource type="Texture2D" uid="uid://dxg83w5awkq0k" path="res://Assets/Illustrator/BrowserAssets/arrow_left.png" id="2_sx6w8"]
 [ext_resource type="Texture2D" uid="uid://btao1rt15viur" path="res://Assets/Illustrator/BrowserAssets/arrow_right.png" id="3_vq5yb"]
 [ext_resource type="Texture2D" uid="uid://cjcget0bfgyd2" path="res://Assets/Illustrator/BrowserAssets/reload.png" id="4_28080"]
+[ext_resource type="Texture2D" uid="uid://by3uwwndj188j" path="res://Assets/Illustrator/BrowserAssets/arrow_left_hover.svg" id="4_sifis"]
 [ext_resource type="Texture2D" uid="uid://b1nmo4h1pjxx" path="res://Assets/Illustrator/BrowserAssets/star.png" id="5_mqwrb"]
 [ext_resource type="Texture2D" uid="uid://dt0hmo45li3n" path="res://Assets/Illustrator/BrowserAssets/puzzle.png" id="6_213el"]
 [ext_resource type="Texture2D" uid="uid://cpj0ho5diadb1" path="res://Assets/Illustrator/BrowserAssets/download.png" id="7_hp5ny"]
@@ -2744,7 +2745,7 @@ cache/1/40/0/underline_thickness = 2.0
 cache/1/40/0/scale = 1.0
 cache/1/40/0/textures/0/offsets = PackedInt32Array(31, 0, 481, 38)
 cache/1/40/0/textures/0/image = SubResource("Image_1y31o")
-cache/1/40/0/glyphs/21/advance = Vector2(40, 40)
+cache/1/40/0/glyphs/21/advance = Vector2(44, 40)
 cache/1/40/0/glyphs/21/offset = Vector2(-1, -35)
 cache/1/40/0/glyphs/21/size = Vector2(29, 36)
 cache/1/40/0/glyphs/21/uv_rect = Rect2(1, 1, 29, 36)
@@ -3814,6 +3815,7 @@ anchor_bottom = 0.279247
 offset_bottom = 0.0480003
 grow_horizontal = 2
 scale = Vector2(1.00035, 0.980913)
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/Background/SearchBar"]
@@ -3830,6 +3832,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Left" type="TextureButton" parent="MarginContainer/Background/SearchBar/ButtonsContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_sx6w8")
+texture_hover = ExtResource("4_sifis")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
@@ -4274,7 +4277,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="PasswordInput" type="TextEdit" parent="MarginContainer/Background/Website/Window2/WindowContents/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(238.385, 0)
+custom_minimum_size = Vector2(388.295, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_h18rk")
@@ -4310,7 +4313,7 @@ anchor_bottom = 0.45454547
 offset_left = 664.0
 offset_top = -104.0
 offset_right = 664.0001
-offset_bottom = -103.99945
+offset_bottom = -103.999466
 texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -4325,7 +4328,7 @@ anchor_bottom = 0.455222
 offset_left = -578.87994
 offset_top = -64.32001
 offset_right = -578.87994
-offset_bottom = -64.3201
+offset_bottom = -64.320175
 texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -4355,7 +4358,7 @@ anchor_bottom = 0.18460889
 offset_left = 365.12012
 offset_top = 287.68
 offset_right = 365.12012
-offset_bottom = 287.68112
+offset_bottom = 287.68073
 texture = ExtResource("16_cxs6i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -4391,6 +4394,7 @@ texture_hover = ExtResource("21_cxs6i")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="MarginContainer/Background/SearchBar/ButtonsContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/UploadButton" to="." method="_on_upload_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Background/DeploymentPage/VBoxContainer/WebsiteButton" to="." method="_on_website_button_pressed"]

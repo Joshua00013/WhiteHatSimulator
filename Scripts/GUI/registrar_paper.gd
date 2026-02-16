@@ -22,6 +22,8 @@ var active
 @export var paper_ui : PanelContainer
 @export var label : Label
 
+@onready var return_button = $ReturnButton
+
 func _ready() -> void:
 	paper_ui.hide()
 
@@ -30,6 +32,7 @@ func _process(_delta: float) -> void:
 		exit_ui()
 
 func _on_interactable_interact_triggered() -> void:
+	return_button.show()
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = false #Change Android UI visibility to hidden
@@ -45,6 +48,7 @@ func _on_interactable_interact_triggered() -> void:
 	paper_ui.show()
 	
 func exit_ui():
+	return_button.hide()
 	match OS.get_name():
 		"Android":
 			GameManager.android_ui.visible = true #Change Android UI visibility to shown

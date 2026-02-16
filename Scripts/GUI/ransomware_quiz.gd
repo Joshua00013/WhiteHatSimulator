@@ -1545,6 +1545,7 @@ func _on_answer_pressed(answer_index: int) -> void:
 
 func _on_timer_timeout() -> void:
 	current_question += 1
+	question_counter_label.text = "Question " + str(question_counter) + " of 10"
 	if current_question < active_questions.size():
 		display_question(current_question)
 	else:

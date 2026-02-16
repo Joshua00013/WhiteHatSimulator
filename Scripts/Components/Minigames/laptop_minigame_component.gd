@@ -14,7 +14,7 @@ var screen_limit_ratio := 1
 var last_mouse_z := 192.0
 var last_mouse_x := 192.0
 var active := false
-var sensitivity = 0.01
+var sensitivity = 0.008
 var dragging := false 
 var initial_cursor_x = 0.0
 var initial_flashdrive_x
@@ -27,8 +27,8 @@ signal minigame_finished
 signal minigame_exited
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("exit_ui") && active == true:
-		exit_ui()
+	#if Input.is_action_just_pressed("exit_ui") && active == true:
+		#exit_ui()
 	if flashdrive != null && flashdrive.position.z > 0.039 && active == true && flashdrive_snapped == false:
 		flashdrive.position.z = 0.039
 		flashdrive_snapped = true
@@ -38,18 +38,18 @@ func _process(_delta: float) -> void:
 		minigame_finished.emit()
 
 func _input(event):
-	if Input.is_action_just_pressed("exit_ui") && active == true:
-		exit_ui()
+	#if Input.is_action_just_pressed("exit_ui") && active == true:
+		#exit_ui()
 		# Handle hold start/end to prevent teleport
 	if active:
-		if Input.is_action_just_pressed("hold"):
+		if Input.is_action_just_pressed("pinch") || Input.is_action_just_pressed("hold"):
 			var mouse_pos = get_viewport().get_mouse_position()
 			last_mouse_z = mouse_pos.x
 			last_mouse_x = mouse_pos.y
 			dragging = true
-		elif Input.is_action_just_released("hold"):
+		elif Input.is_action_just_released("pinch") || Input.is_action_just_released("hold"):
 			dragging = false
-	if Input.is_action_just_released("hold") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed):
+	if Input.is_action_just_released("pinch") or Input.is_action_just_released("hold") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed):
 		dragging = false
 		
 	if active == true && flashdrive_snapped == false:
@@ -66,7 +66,7 @@ func _input(event):
 				var delta_z = event.relative.x # Production comment: Replace event with the actual position of the mouse.
 				flashdrive.position.z += delta_z * sensitivity *0.2
 				
-		if Input.is_action_pressed("hold"):
+		if Input.is_action_pressed("pinch") || Input.is_action_pressed("hold"):
 				var mouse_pos = get_viewport().get_mouse_position()
 				var screen_pos = camera.unproject_position(global_transform.origin)
 				var screen_height = get_viewport().get_visible_rect().size.x
@@ -79,7 +79,7 @@ func _input(event):
 	elif active == true && flashdrive_snapped == true:
 		if not snapped_ready:
 		# Wait for the first click to enable control
-			if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or Input.is_action_pressed("hold"):
+			if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or Input.is_action_pressed("pinch") or Input.is_action_pressed("hold"):
 				last_mouse_x = get_viewport().get_mouse_position().y
 				snapped_ready = true
 		else:
@@ -96,7 +96,7 @@ func _input(event):
 					var delta_x = event.relative.y # Production comment: Replace event with the actual position of the mouse.
 					flashdrive.position.x -= delta_x * sensitivity *0.2
 					
-			if Input.is_action_pressed("hold"):
+			if Input.is_action_pressed("pinch") || Input.is_action_pressed("hold"):
 					var mouse_pos = get_viewport().get_mouse_position()
 					var screen_pos = camera.unproject_position(global_transform.origin)
 					var screen_height = get_viewport().get_visible_rect().size.y
@@ -154,7 +154,7 @@ func minigame_start() -> void:
 			
 	if camera.is_current() == false:
 		initialize_minigame()
-		GameManager.player.exit_tool_tip.visible = true
+		#GameManager.player.exit_tool_tip.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		active = true
 

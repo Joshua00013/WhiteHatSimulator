@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0qfb2b1l0kbl"]
+[gd_scene load_steps=7 format=3 uid="uid://d0qfb2b1l0kbl"]
 
 [ext_resource type="PackedScene" uid="uid://d1ealwjtxgtib" path="res://Scenes/Components/interactable.tscn" id="1_xnljy"]
 [ext_resource type="Script" uid="uid://cx4vr46x14xm4" path="res://Scripts/Interactables/card_swipe.gd" id="1_ylcda"]
 [ext_resource type="PackedScene" uid="uid://b8dral0sm4tst" path="res://Scenes/3DModels/Interactables/keycard_reader.tscn" id="4_ylcda"]
+[ext_resource type="PackedScene" uid="uid://bx0paynrsx1un" path="res://Scenes/GUI/return_button.tscn" id="5_3e3my"]
 [ext_resource type="PackedScene" uid="uid://ckbahtir4oubp" path="res://Scenes/3DModels/keycard.tscn" id="5_bnpop"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bnpop"]
@@ -23,6 +24,9 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.59141, 0, 0)
 
 [node name="keycard_reader" parent="." instance=ExtResource("4_ylcda")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="ReturnButton" parent="." instance=ExtResource("5_3e3my")]
+visible = false
 
 [connection signal="interact_triggered" from="Interactable" to="." method="_on_interactable_interact_triggered"]
 

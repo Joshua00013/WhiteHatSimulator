@@ -1,10 +1,7 @@
-extends PanelContainer
+extends ColorRect
 
-@onready var line_edit = $VBoxContainer/LineEdit
-@onready var label = $VBoxContainer/Label
-
-func _ready():
-	hide()
+@onready var line_edit = $NamePanel/VBoxContainer/LineEdit
+@onready var label = $NamePanel/VBoxContainer/Label
 
 func _on_back_pressed():
 	hide()

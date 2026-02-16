@@ -153,6 +153,7 @@ func _on_interactable_interact_triggered():
 		minigame.minigame_start()
 	elif camera.is_current() == false:
 		display_laptop_ui()
+		return_button.show()
 		#GameManager.player.exit_tool_tip.visible = true
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#camera.current = true
@@ -161,7 +162,7 @@ func _on_interactable_interact_triggered():
 		#next_button.show()
 	# READ THE COMMENT
 	# READ: SHOW RETURN BUTTON REGARDLESS IF MINIGAME IS TRIGGERED OR NOT 
-	return_button.show()
+	
 	
 func exit_ui():
 	toggle_controller_buttons(false)
@@ -188,6 +189,7 @@ func display_laptop_ui():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	camera.current = true
 	GameManager.ui_active = true
+	return_button.show()
 	active = true
 
 func toggle_controller_buttons(visibility : bool):
@@ -208,6 +210,7 @@ func _on_laptop_minigame_component_minigame_finished() -> void:
 	#camera.current = true
 
 func _play_fileless(email : String):
+	return_button.hide()
 	if not CyberattackAdaptationManager.email_used:
 		if GameManager.stage_finished == false:
 			CyberattackAdaptationManager.email_used = true
@@ -228,8 +231,10 @@ func _play_fileless(email : String):
 		success_animation.play("open_fileless_email_fail")
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the attachment",false)
+	return_button.show()
 		
 func _play_ransomware(email : String):
+	return_button.hide()
 	if not CyberattackAdaptationManager.email_used:
 		if GameManager.stage_finished == false: # If the player sends an email after the stage is finished
 			CyberattackAdaptationManager.email_used = true
@@ -257,8 +262,10 @@ func _play_ransomware(email : String):
 		success_animation.play("open_ransomware_email_fail")
 		await success_animation.animation_finished
 		UiManager.popup.display_popup("Email failed","The target did not click the attachment",false)
+	return_button.show()
 	
 func _play_phishing(email : String):
+	return_button.hide()
 	if not CyberattackAdaptationManager.email_used || not CyberattackAdaptationManager.phishing_used:
 		CyberattackAdaptationManager.email_used = true
 		
@@ -278,13 +285,14 @@ func _play_phishing(email : String):
 	elif CyberattackAdaptationManager.email_used && CyberattackAdaptationManager.phishing_used:
 		success_animation.play("open_phishing_email_fail")
 		await success_animation.animation_finished
-		UiManager.popup.display_popup("Email failed","The target did not click the link")
+		UiManager.popup.display_popup("Email failed","The target did not click the link", false)
+	return_button.show()
 	 #TODO : Create a function connected to SignalBus email sent that changes the string for the email labels etc.
 func _play_ransomware_piracy():
 	if CyberattackAdaptationManager.piracy_exploited == true:
 		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites",false)
 		return
-	
+	return_button.hide()
 	success_animation.play("piracy_download")
 	await success_animation.animation_finished
 	if GameManager.stage_finished == false:
@@ -306,8 +314,10 @@ func _play_ransomware_piracy():
 		GameManager.stage_finished = true
 		
 	CyberattackAdaptationManager.antivirus_installed = true
+	return_button.show()
 
 func _play_fileless_piracy():
+	return_button.show()
 	if CyberattackAdaptationManager.piracy_exploited == true:
 		UiManager.popup.display_popup("Attempt failed", "The target no longer downloads from piracy sites",false)
 		return
@@ -332,4 +342,4 @@ func _play_fileless_piracy():
 		await success_animation.animation_finished
 		CyberattackManager.command_and_control_finished = true
 		GameManager.stage_finished = true
-		
+	return_button.hide()

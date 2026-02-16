@@ -1,15 +1,120 @@
-[gd_scene load_steps=9 format=3 uid="uid://4g07llena6ub"]
+[gd_scene load_steps=17 format=3 uid="uid://4g07llena6ub"]
 
 [ext_resource type="Script" uid="uid://cj8kbppv1mu68" path="res://Scripts/GUI/post_ransomware_encrypt.gd" id="1_qli7n"]
 [ext_resource type="PackedScene" uid="uid://cnlake8o686ww" path="res://Scenes/GUI/CleanUI/icon.tscn" id="2_ebhja"]
 [ext_resource type="Texture2D" uid="uid://bn60eqphar820" path="res://Assets/Illustrator/sqlv2.png" id="3_qli7n"]
+[ext_resource type="Texture2D" uid="uid://b86yma60ro7sv" path="res://Assets/Illustrator/imgv2.png" id="4_ebhja"]
 [ext_resource type="Texture2D" uid="uid://igl7s83ahvyl" path="res://Assets/Illustrator/txtv2.png" id="5_1kqxe"]
 [ext_resource type="Texture2D" uid="uid://cddfhvys55v1f" path="res://Assets/Illustrator/pythonv2.png" id="6_svgyg"]
 [ext_resource type="Script" uid="uid://btalbkmaah46c" path="res://Scripts/GUI/desktop.gd" id="7_t7dtt"]
 [ext_resource type="PackedScene" uid="uid://bcejk3vddejkh" path="res://Scenes/GUI/CleanUI/window.tscn" id="8_cclec"]
 [ext_resource type="FontFile" uid="uid://bbhvwm260bx4g" path="res://Assets/Fonts/avantgarde_demi.ttf" id="8_qli7n"]
 
-[node name="PostRansomwareEncrypt" type="MarginContainer"]
+[sub_resource type="Gradient" id="Gradient_ebhja"]
+offsets = PackedFloat32Array(0, 0.04347826, 0.54545456, 0.95652175, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0.19999993, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 23
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1kqxe"]
+gradient = SubResource("Gradient_ebhja")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svgyg"]
+content_margin_left = 50.0
+content_margin_top = 25.0
+content_margin_right = 50.0
+content_margin_bottom = 25.0
+texture = SubResource("GradientTexture2D_1kqxe")
+
+[sub_resource type="Animation" id="Animation_ebhja"]
+resource_name = "hide_message"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1kqxe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_svgyg"]
+resource_name = "show_message"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svgyg"]
+_data = {
+&"RESET": SubResource("Animation_1kqxe"),
+&"hide_message": SubResource("Animation_ebhja"),
+&"show_message": SubResource("Animation_svgyg")
+}
+
+[node name="PostRansomwareEncrypt" type="MarginContainer" node_paths=PackedStringArray("message", "animation")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,6 +125,8 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("1_qli7n")
+message = NodePath("PanelContainer")
+animation = NodePath("AnimationPlayer")
 metadata/_tab_index = 2
 
 [node name="Desktop" type="VFlowContainer" parent="."]
@@ -35,6 +142,7 @@ icon_name = "Data.sql"
 [node name="Godot_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
 layout_mode = 2
 window = NodePath("../../WindowContainer/GodotWindow")
+icon = ExtResource("4_ebhja")
 icon_name = "Godot.png"
 
 [node name="Text_icon" parent="Desktop" node_paths=PackedStringArray("window") instance=ExtResource("2_ebhja")]
@@ -174,22 +282,8 @@ text = "key.key"
 
 [node name="Label" type="Label" parent="WindowContainer/KeyWindow/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
-text = "mZ6T8qv3Q9wV4Yp1FhK1s2Z0bJ3nR7uL6y5cE8vP0o="
-
-[node name="CodeEdit" type="CodeEdit" parent="WindowContainer/KeyWindow"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 32.0
-offset_right = -7.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/background_color = Color(0, 0, 0, 0)
-editable = false
+text = "$2b$12$X9G1Pp0YHltXy4HjOZYRdeS9T7Lk03PZ4vKpY7D7hKMEGhI8FoZhe
+"
 
 [node name="MalwareWindow" parent="WindowContainer" instance=ExtResource("8_cclec")]
 visible = false
@@ -255,16 +349,27 @@ offset_bottom = 9031.54
 grow_horizontal = 0
 text = "Next"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_svgyg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("8_qli7n")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[wave] Now we have encrypted the files. Feel free to check on the files or press next to proceed with the decryptor!"
 fit_content = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_svgyg")
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="WindowContainer/Button" to="." method="_on_button_pressed"]
 
 [editable path="WindowContainer/GodotWindow"]

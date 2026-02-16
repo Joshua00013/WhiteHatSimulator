@@ -6,16 +6,28 @@ extends ColorRect
 @onready var quit_options = $QuitOptions
 @onready var settings = $Settings
 
+func _input(event):
+	if event.is_action_pressed("exit_ui") && get_tree().paused && visible == true:
+		get_viewport().set_input_as_handled()
+		unpause()
+	elif event.is_action_pressed("exit_ui") && get_tree().paused == false && GameManager.ui_active == false:
+		get_viewport().set_input_as_handled()
+		pause()
+
 func _ready() -> void:
 	play_button.pressed.connect(unpause)
 	
 func unpause():
+	GameManager.ui_active = false
 	animator.play("Unpause")
 	get_tree().paused = false
 	GameManager.ui_active = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func pause():
+	GameManager.ui_active = true
+	quit_options.hide()
+	settings.hide()
 	animator.play("Pause")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -36,6 +48,7 @@ func _on_quit_to_menu_button_down():
 	GameManager.reset()
 	CyberattackManager.reset()
 	CyberattackAdaptationManager.reset()
+	SignalBus.stage_finished.emit()
 	DayAndNightManager.set_initial_time()
 	DayAndNightManager.active = false
 	get_tree().paused = false

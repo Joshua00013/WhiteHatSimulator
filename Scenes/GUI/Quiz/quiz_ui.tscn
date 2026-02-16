@@ -15,7 +15,6 @@ grow_vertical = 2
 script = ExtResource("1_wmnlc")
 score_label = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Results")
 status = NodePath("FinishedWindow/Window/MarginContainer/VBoxContainer/Status")
-passing_score = 2
 quiz_card = NodePath("QuizCard")
 
 [node name="QuizCard" parent="." instance=ExtResource("2_f6k7j")]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://roto0xajc8oj" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://4fjgut4ak6ob" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dvhy6a74kxo4m" path="res://Singletons/game_manager.gd" id="1_jjvhh"]
-[ext_resource type="Script" uid="uid://blavcophhc2my" path="res://Scripts/Globals/hand_tracker_launcher.gd" id="3_3h4bx"]
+[ext_resource type="Script" path="res://Scripts/Globals/hand_tracker_launcher.gd" id="3_3h4bx"]
 [ext_resource type="PackedScene" uid="uid://q6572v12x07v" path="res://Scenes/GUI/tutorial.tscn" id="5_ylsbi"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://byp0i4hd8g2lk" path="res://Scenes/GUI/game_over.tscn" id="7_33qc4"]
@@ -46,7 +46,6 @@
 [ext_resource type="PackedScene" uid="uid://cmgbicatlbg2c" path="res://Assets/export_LPOP_FULL/ProjectorScreen.fbx" id="42_1semv"]
 [ext_resource type="Script" uid="uid://bo4cm6edw36my" path="res://Scripts/Components/room_visibility_notifier.gd" id="42_v1mrv"]
 [ext_resource type="PackedScene" uid="uid://c5nnaik53lhto" path="res://Assets/export_LPOP_FULL/Wall_LightSwitch.fbx" id="43_2060n"]
-[ext_resource type="PackedScene" uid="uid://dtevhosmv1n34" path="res://Scenes/3DModels/Interactables/paper_filing_folder_yellow.tscn" id="45_jut3y"]
 [ext_resource type="PackedScene" uid="uid://bb0b2smujjru1" path="res://Scenes/3DModels/Decorations/plant_pot_large_c.tscn" id="46_v2nl5"]
 [ext_resource type="PackedScene" uid="uid://bi3nr2twfr3k2" path="res://Assets/export_LPOP_FULL/PlantPotLargeC.fbx" id="47_dmskm"]
 [ext_resource type="PackedScene" uid="uid://jvsw5ddi4qv4" path="res://Scenes/3DModels/Interactables/registrar_paper.tscn" id="48_o2owy"]
@@ -77,6 +76,7 @@
 [ext_resource type="PackedScene" uid="uid://dho6k74etc68v" path="res://Scenes/3DModels/Characters/al.tscn" id="68_ovafv"]
 [ext_resource type="PackedScene" uid="uid://dy3mg0v1mrdei" path="res://Scenes/3DModels/Characters/john.tscn" id="69_owhal"]
 [ext_resource type="PackedScene" uid="uid://b85hd4820di47" path="res://Scenes/3DModels/Characters/sai.tscn" id="70_uv6w5"]
+[ext_resource type="PackedScene" uid="uid://dit2oetrt2ost" path="res://Scenes/Interactables/folder_collectible.tscn" id="71_3h4bx"]
 [ext_resource type="PackedScene" uid="uid://1i4tbqot0ri2" path="res://Scenes/3DModels/Characters/walter.tscn" id="71_r7bbj"]
 [ext_resource type="PackedScene" uid="uid://bgi50ryqrb6q8" path="res://Scenes/3DModels/Characters/wisadel.tscn" id="72_e5peh"]
 [ext_resource type="PackedScene" uid="uid://cog4tgfx4okbp" path="res://Scenes/3DModels/Characters/shion.tscn" id="73_f6rfp"]
@@ -185,6 +185,7 @@ name = "Myrione"
 username = "myrione"
 password = "11223344"
 email = "myrione@company.com"
+pirating = true
 metadata/_custom_type_script = "uid://cn4vcnytc42jl"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fg68e"]
@@ -339,11 +340,12 @@ PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer4")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col4")
 target_area_5 = NodePath("../../Markers/Cafeteria2")
 
-[node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5") instance=ExtResource("21_pdsj5")]
+[node name="liz_smooth" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5", "dialogue_area") instance=ExtResource("21_pdsj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78581, -0.00113273, 50.0606)
 PersonalComputer = NodePath("../../NavigationRegion3D/Objects/Computer2")
 target_area_1 = NodePath("../../NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room/SimpleOfficeChair-col2")
 target_area_5 = NodePath("../../Markers/Cafeteria2")
+dialogue_area = NodePath("../../Markers/Cafeteria3")
 
 [node name="myrione" parent="NPC" node_paths=PackedStringArray("PersonalComputer", "target_area_1", "target_area_5", "target_area_7") instance=ExtResource("32_e08e2")]
 transform = Transform3D(0.996387, 0, -0.08493, 0, 1, 0, 0.08493, 0, 0.996387, 4.55009, -0.00113249, 53.2225)
@@ -907,7 +909,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.519
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 34.3152, 2.32458e-06, 8.87693)
 
 [node name="Wall13" parent="NavigationRegion3D/Structures" instance=ExtResource("17_3pmx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.508, 2.32458e-06, 16.3979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.508, 0, 16.385)
 
 [node name="Wall14" parent="NavigationRegion3D/Structures" instance=ExtResource("17_3pmx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.508, 2.32458e-06, 21.1909)
@@ -1466,6 +1468,10 @@ transform = Transform3D(0.908435, 0, -0.418026, 0, 1, 0, 0.418026, 0, 0.908435, 
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 31.435831, 2.5429087, 49.06926)
 computer = NodePath("../../../Computer5")
 
+[node name="sticky_note2" parent="NavigationRegion3D/Objects/OfficeVisibleOnscreenNotifier/Room" node_paths=PackedStringArray("computer") instance=ExtResource("55_t014q")]
+transform = Transform3D(3.9081024e-15, -1, -1.3113416e-07, 2.9802322e-08, 1.3113416e-07, -1, 1, 0, 2.9802322e-08, 29.239546, 1.4859959, 52.14737)
+computer = NodePath("../../../Computer3")
+
 [node name="CardSwipe" parent="NavigationRegion3D/Objects" node_paths=PackedStringArray("door") instance=ExtResource("19_pdsj5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.7051, 2.40725, 36.734425)
 door = NodePath("../../../Interactables/DoorIron")
@@ -1601,8 +1607,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.8793, -1.99451, 33.0137)
 [node name="Wall_LightSwitch" parent="NavigationRegion3D/Objects" instance=ExtResource("43_2060n")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.6083, 2.53676, 8.58128)
 
-[node name="Paper_FilingFolder_Yellow" parent="NavigationRegion3D/Objects" instance=ExtResource("45_jut3y")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.2355, 1.77664, -1.20539)
+[node name="FolderCollectible" parent="NavigationRegion3D/Objects" instance=ExtResource("71_3h4bx")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 15.233328, 1.7766403, -1.3051081)
 
 [node name="PlantPotLargeC" parent="NavigationRegion3D/Objects" instance=ExtResource("46_v2nl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1556, 0.00342915, 7.88573)

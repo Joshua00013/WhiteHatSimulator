@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_5p04s")
 name = "Flash Drive"
-description = "This contains John Mhike's homework files."
+description = "An unattended flashdrive. It might be useable for deploying a cyberattack."
 texture = ExtResource("2_dqq45")
 metadata/_custom_type_script = "uid://g4ulyqcfe2ao"

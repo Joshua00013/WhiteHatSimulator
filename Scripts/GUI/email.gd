@@ -65,7 +65,7 @@ func _on_email_sent():
 			if not CyberattackAdaptationManager.phishing_used:
 				CyberattackManager.delivery_finished = true
 				CyberattackAdaptationManager.phishing_used = true
-				SignalBus.phishing_email_sent.emit(selected_email)
+			SignalBus.phishing_email_sent.emit(selected_email)
 		Attachments.RANSOMWARE:
 			CyberattackManager.delivery_finished = true
 			SignalBus.ransomware_email_sent.emit(selected_email)
@@ -73,5 +73,5 @@ func _on_email_sent():
 			if not CyberattackAdaptationManager.fileless_used:
 				CyberattackManager.delivery_finished = true
 				CyberattackAdaptationManager.fileless_used = true
-				SignalBus.fileless_email_sent.emit(selected_email)
+			SignalBus.fileless_email_sent.emit(selected_email)
 		#TODO : Animation showing myrione logged in 
